@@ -513,11 +513,24 @@ using Amazon.Runtime.Internal.Util;
         {
             if (operation.ChecksumConfiguration != null && !string.IsNullOrEmpty(operation.ChecksumConfiguration.RequestAlgorithmMember))
             {
-                // For some S3 operations, in addition to the checksum specific headers (such as "x-amz-checksum-crc32"), there's also another
-                // header which specifies the algorithm used: "x-amz-sdk-checksum-algorithm"
-                // Even though S3 doesn't validate the latter, it's modeled and could be enforced in the future.
-                var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.PropertyName, operation.ChecksumConfiguration.RequestAlgorithmMember));
-                var headerName = member.MarshallLocation == MarshallLocation.Header ? member.MarshallLocationName : string.Empty;
+                // if a rename happened for the operation, look for the original operation in the model and see if a request algorithm member exists
+                string headerName = null;
+                if (this.Config.ServiceModel.DocumentRoot["operations"][operation.Name] != null && this.Config.ServiceModel.DocumentRoot["operations"][operation.Name][ServiceModel.HttpChecksumKey] != null)
+                {
+                    var memberData = this.Config.ServiceModel.DocumentRoot["shapes"][operation.Name + "Request"]["members"][operation.ChecksumConfiguration.RequestAlgorithmMember];
+                    headerName = (string)memberData["location"] == "header" ? (string)memberData["locationName"] : string.Empty;
+                }
+                else
+                {
+                    // For some S3 operations, in addition to the checksum specific headers (such as "x-amz-checksum-crc32"), there's also another
+                    // header which specifies the algorithm used: "x-amz-sdk-checksum-algorithm"
+                    // Even though S3 doesn't validate the latter, it's modeled and could be enforced in the future.
+                    var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.PropertyName, operation.ChecksumConfiguration.RequestAlgorithmMember));
+                    headerName = member.MarshallLocation == MarshallLocation.Header ? member.MarshallLocationName : string.Empty;
+                }
+
+
+
 #>
                 ChecksumUtils.SetChecksumData(
                     request,

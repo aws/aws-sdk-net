@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ServiceClientGenerator
 {
@@ -428,6 +429,11 @@ namespace ServiceClientGenerator
         public const string ExcludeMembersKey = "excludeMembers";
         public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
         public const string InheritAlternateBaseClassKey = "inheritAlternateBaseClass";
+        public const string DataTypeSwapIsFlattenedKey = "isFlattened";
+        public const string FlattenShapeKey = "flattenShapes";
+        public const string ExcludeShapesKey = "excludeShapes";
+        public const string AlternateLocationNameKey = "alternateLocationName";
+        public const string ImplementsVisitorPatternKey = "implementsVisitorPattern";
 
         JsonData _documentRoot;
 
@@ -939,7 +945,57 @@ namespace ServiceClientGenerator
             if (jsonData[UnmarshallerKey] != null && jsonData[UnmarshallerKey].IsString)
                 unmarshaller = (string)jsonData[UnmarshallerKey];
 
-            return new DataTypeOverride(dataType, marshaller, unmarshaller);
+            bool isFlattened = false;
+            if (jsonData[DataTypeSwapIsFlattenedKey] != null && jsonData[DataTypeSwapIsFlattenedKey].IsBoolean)
+                isFlattened = (bool)jsonData[DataTypeSwapIsFlattenedKey];
+
+            string alternateLocationName = null;
+            if (jsonData[AlternateLocationNameKey] != null && jsonData[AlternateLocationNameKey].IsString)
+                alternateLocationName = (string)jsonData[AlternateLocationNameKey];
+            return new DataTypeOverride(dataType, marshaller, unmarshaller, isFlattened, alternateLocationName);
+        }
+
+
+        /// <summary>
+        /// Use this customization when you want to flatten a member. For example
+        ///     "flattenShape" : {
+        ///       "PutBucketNotificationRequest" : [
+        ///         "NotificationConfiguration"
+        ///         ]
+        ///     }
+        /// This will flatten the NotificationConfiguration member into its respective members 
+        /// so that PutBucketNotificationRequest will not contain NotificationConfiguration and instead
+        /// contain NotificationConfiguration's members instead
+        /// </summary>
+        /// <param name="shapeName"></param>
+        /// <returns></returns>
+        public HashSet<string> FlattenShapes (string shapeName)
+        {
+            var data = _documentRoot[FlattenShapeKey];
+            if (data != null)
+                data = data[shapeName];
+
+            var flattenShapes = data?.Cast<object>()
+                .Select(entry => entry.ToString());
+
+            return new HashSet<string>(flattenShapes ?? new string[0]);
+        }
+
+        /// <summary>
+        /// Use this customization when you want to exclude shapes from being generated
+        /// "excludeShapes":[
+        ///     "NotificationConfiguration"
+        /// ]
+        /// </summary>
+        /// <returns></returns>
+        public HashSet<string> ExcludeShapes()
+        {
+            var data = _documentRoot[ExcludeShapesKey];
+
+            var excludeShapes = data?.Cast<object>()
+                .Select(entry => entry.ToString());
+
+            return new HashSet<string>(excludeShapes ?? new string[0]);
         }
 
         #region ShapeModifier
@@ -959,12 +1015,21 @@ namespace ServiceClientGenerator
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string ExcludeFromMarshallingKey = "excludeFromMarshalling";
             public const string SkipXmlTestExpressionKey = "skipXmlTestExpression";
+            public const string NewObjectIfNullKey = "newObjectIfNull";
+            public const string ShapeDocumentationKey = "shapeDocumentation";
+            public const string ShapeModifierXmlNamespaceKey = "xmlNamespace";
+            public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
+            public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
             private readonly Dictionary<string, JsonData> _injectedProperties;
             private readonly HashSet<string> _excludedMarshallingProperties;
             private readonly HashSet<string> _skipXmlTestExpressionProperties;
+            private readonly HashSet<string> _newObjectIfNullProperties;
+            private readonly HashSet<string> _shapeDocumentation;
+            private readonly string _shapeModifierXmlNamespace;
+            private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
 
             public string DeprecationMessage { get; private set; }
 
@@ -980,7 +1045,10 @@ namespace ServiceClientGenerator
                 _injectedProperties = ParseInjections(data);
                 _excludedMarshallingProperties = ParseExcludedMarshallingProperties(data);
                 _skipXmlTestExpressionProperties = ParseSkipXmlTestExpressionProperties(data);
-
+                _newObjectIfNullProperties = ParseNewObjectIfNullProperties(data);
+                _shapeDocumentation = ParseShapeDocumentation(data);
+                _shapeModifierXmlNamespace = ParseXmlNamespace(data);
+                _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
                 Validate(data);
             }
 
@@ -1005,10 +1073,11 @@ namespace ServiceClientGenerator
             private void Validate(JsonData data)
             {
                 // if a property was excluded, then the injected member must reference the original member that it is replacing
+                // unless the originalMember isn't part of the members array and is from a different shape.
                 if (_excludedProperties.Count == 0 || _injectedProperties.Count == 0)
                     return;
                 int injectedPropertyOriginalMemberCount = _injectedProperties.Values
-                    .Count(jsonData => jsonData[CustomizationsModel.OriginalMemberKey] != null);
+                    .Count(jsonData => jsonData[CustomizationsModel.OriginalMemberKey] != null || jsonData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] != null);
                 if (_excludedProperties.Count != injectedPropertyOriginalMemberCount)
                 {
                     throw new InvalidDataException($"The customization excludes and injects members without specifying the originalMember. If you are excluding a member and injecting a different member, make sure to specify the original member that" +
@@ -1173,6 +1242,91 @@ namespace ServiceClientGenerator
             public HashSet<string> SkipXmlTestExpressionProperties { get { return _skipXmlTestExpressionProperties; } }
 
             #endregion
+
+            #region NewObjectIfNull
+
+            private static HashSet<string> ParseNewObjectIfNullProperties(JsonData data)
+            {
+                var customData = data[ShapeModifier.NewObjectIfNullKey];
+
+                var newObjectIfNullHashSet = customData?.Cast<object>()
+                    .Select(member => member.ToString());
+
+                return new HashSet<string>(newObjectIfNullHashSet ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want the getter of a property to create the object if the object is null.
+            /// For example
+            /// public LifecycleConfiguration Configuration
+            ///   {
+            ///   get 
+            ///    {
+            ///      if (this.configuration == null)
+            ///        this.configuration = new LifecycleConfiguration();
+            ///      return this.configuration; 
+            ///    }
+            /// 
+            ///  For the actual customization entry:
+            ///             "newObjectIfNull":[
+            ///    "Configuration"
+            /// ]
+            /// </summary>
+            public HashSet<string> NewObjectIfNullProperties { get { return _newObjectIfNullProperties; } }
+            #endregion
+
+            #region ShapeDocumentation
+            private static HashSet<string> ParseShapeDocumentation(JsonData data)
+            {
+                var shapeDocumentation = data[ShapeModifier.ShapeDocumentationKey]?.Cast<object>()
+                    .Select(documentationEntry => documentationEntry.ToString());
+
+                return new HashSet<string>(shapeDocumentation ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to add additional documentation to a customization entry. Usually
+            /// when the generated class is a combination of generated and custom code, there is additional information in the 
+            /// documentation that might be deleted once the class is generated. Use this to add that back. 
+            /// 
+            /// Usage:
+            ///             "shapeDocumentation":[
+            ///    "This class contains the configuration Amazon S3 uses to figure out what events you want to listen and send the event to an Amazon Lambda cloud function.",
+            ///    "<para>The queue's policy must allow S3 to send messages to it. The utility method Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string) can be used to help setup the queue policy.</para>"
+            ///  ]
+            /// </summary>
+            public HashSet<string> ShapeDocumentation { get { return _shapeDocumentation; } }
+            #endregion
+            #region XmlNamespace
+            private static string ParseXmlNamespace(JsonData data)
+            {
+                string xmlNamespace = (data[ShapeModifierXmlNamespaceKey] != null && data[ShapeModifierXmlNamespaceKey].IsString) ? (string)data[ShapeModifierXmlNamespaceKey] : null;
+                return xmlNamespace;
+            }
+
+            public string XmlNamespace { get { return _shapeModifierXmlNamespace; } }
+            #endregion
+            #region PredicateListUnmarshallers
+            private static Dictionary<string, JsonData> ParsePredicateListUnmarshallers(JsonData data)
+            {
+                var predicateList = data[ShapeModifier.PredicateListUnmarshallersKey]
+                   ?.Cast<JsonData>()
+                   .Select(modifier => modifier.Cast<KeyValuePair<string, JsonData>>().First());
+
+                return predicateList?.ToDictionary(modifier => modifier.Key, modifier => modifier.Value)
+                    ?? new Dictionary<string, JsonData>();
+
+            }
+            /// <summary>
+            /// This customization tells the generator that the member's shape is a filter type that has predicates
+            /// and operators and that it should be unmarshalled with the PredicateListUnmarshaller type that each
+            /// of the filters has
+            /// usage:
+            /// 
+            /// </summary>
+            public Dictionary<string, JsonData> PredicateListUnmarshallers { get { return _predicateListUnmarshallers; } }
+
+            #endregion
         }
 
         /// <summary>
@@ -1206,6 +1360,27 @@ namespace ServiceClientGenerator
                     return false;
                 }
             }
+
+            #region OriginalMemberIsOutsideContainingShape
+                
+            /// <summary>
+            /// This customization is used when the original member of an injected property is actually from another shape.
+            /// Here is how to use it. First set OriginalMemberIsOutsideContainingShape to true. Then 
+            /// fill in "outsideOriginalMember" as a comma separated string of the name of the shape and then the name of the member
+            /// that we should be injecting.
+            ///             "inject":[
+            ///    {
+            ///        "Configuration" : {
+            ///            "shape": "LifecycleConfiguration",
+            ///            "originalMemberIsOutsideContainingShape":true,
+            ///            "outsideOriginalMember":"PutBucketLifecycleConfigurationRequest,LifecycleConfiguration"
+            ///        }
+            ///    }
+            /// ],
+            /// </summary>
+            public bool OriginalMemberIsOutsideContainingShape { get { return _injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] != null && _injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey].IsBoolean ? (bool)_injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] : false; } }
+
+            #endregion
         }
 
         /// <summary>
@@ -1417,6 +1592,17 @@ namespace ServiceClientGenerator
             return modifiers;
         }
 
+        public bool TryGetOperationModifiers(string operationName, out OperationModifiers operationModifer)
+        {
+            operationModifer = null;
+            if (GetOperationModifiers(operationName) != null)
+            {
+                operationModifer = GetOperationModifiers(operationName);
+                return true;
+            }
+            return false;
+        }
+
         public JsonData GetExamples(string operationName)
         {
 
@@ -1621,11 +1807,17 @@ namespace ServiceClientGenerator
             /// <param name="dataType">The new custom type for a member</param>
             /// <param name="marshaller">The custom marshaller for a member</param>
             /// <param name="unmarshaller">The custom unmarshaller for a member</param>
-            public DataTypeOverride(string dataType, string marshaller, string unmarshaller)
+            public DataTypeOverride(string dataType, string marshaller, string unmarshaller) : this (dataType, marshaller, unmarshaller, false, null)
+            {
+            }
+
+            public DataTypeOverride(string dataType, string marshaller ,string unmarshaller, bool isFlattened, string alternateLocationName)
             {
                 this.DataType = dataType;
                 this.Marshaller = marshaller;
                 this.Unmarshaller = unmarshaller;
+                this.IsFlattened = isFlattened;
+                this.AlternateLocationName = alternateLocationName;
             }
 
             /// <summary>
@@ -1654,8 +1846,110 @@ namespace ServiceClientGenerator
                 get;
                 private set;
             }
+
+            /// <summary>
+            /// Indicates whether the new data type is flattened (only matters for lists and maps)
+            /// </summary>
+            public bool IsFlattened
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// Specifies an alternate location name for the data type override.
+            /// </summary>
+            public string AlternateLocationName
+            {
+                get;
+                private set;
+            }
         }
 
+        /// <summary>
+        /// A class that represents shapes that implement the visitor pattern.
+        /// </summary>
+        public class VisitorPattern
+        {
+            /// <summary>
+            /// Creates a Visitor
+            /// </summary>
+            /// <param name="predicateName"></param>
+            /// <param name="visitorName"></param>
+            /// <param name="visitorParam"></param>
+            public VisitorPattern(string predicateName, string visitorName, string visitorParam)
+            {
+                PredicateName = predicateName;
+                VisitorName = visitorName;
+                VisitorParam = visitorParam;
+            }
+            /// <summary>
+            /// The name of the predicate which is typically a property of a top-level 
+            /// filter class.
+            /// </summary>
+            public string PredicateName
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// The name of the visitor which the predicate accepts.
+            /// </summary>
+            public string VisitorName
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// The argument to pass into the visitor. In XML services, this is typically 
+            /// xmlWriter.
+            /// </summary>
+            public string VisitorParam
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// This is purely to communicate back to the generator that the visitor pattern has been written.
+            /// We want to write the visitor pattern to preserve existing behavior but in the future if more members
+            /// are added to the structure which implements the visitor pattern, we want that to be codegened so we don't have 
+            /// to manually add the new predicates to the visitor.
+            /// Once we write the visitor pattern in the marshaller, we set Visited to true and then proceed with normal code-gen
+            /// for the same structure.
+            /// </summary>
+            public bool Visited
+            {
+                get;
+                set;
+            }
+        }
+
+        public bool TryGetVisitorPattern(string shapeName, out VisitorPattern visitorPattern)
+        {
+            visitorPattern = null;
+            var data = _documentRoot[ImplementsVisitorPatternKey];
+            if (data != null && data[shapeName] != null)
+            {
+                string predicateName = (string)data[shapeName]["predicateName"];
+                string visitorName = (string)data[shapeName]["visitorName"];
+                string visitorParam = (string)data[shapeName]["visitorParam"];
+                visitorPattern = new VisitorPattern(predicateName, visitorName, visitorParam);
+                return true;
+            }
+
+            return false;
+        }
+
+        public VisitorPattern GetVisitorPattern(string shapeName)
+        {
+            if (TryGetVisitorPattern(shapeName, out VisitorPattern visitorPattern))
+                return visitorPattern;
+            else
+                return null;
+        }
         #endregion
 
         #region RuntimePipelineOverride
