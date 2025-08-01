@@ -31,8 +31,8 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceTelemetry operation.
-    /// Returns a list of telemetry configurations for AWS resources supported by telemetry
-    /// config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
+    /// Returns a list of telemetry configurations for Amazon Web Services resources supported
+    /// by telemetry config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
     /// CloudWatch telemetry configurations</a>.
     /// </summary>
     public partial class ListResourceTelemetryRequest : AmazonObservabilityAdminRequest
@@ -115,7 +115,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> ResourceTags
         {
             get { return this._resourceTags; }
@@ -141,7 +141,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=9)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }

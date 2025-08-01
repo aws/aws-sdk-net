@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateTelemetryRuleRequest.RuleName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateTelemetryRuleResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateTelemetryRuleForOrganizationRequest.RuleName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.CreateTelemetryRuleForOrganizationResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.DeleteTelemetryRuleRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.DeleteTelemetryRuleForOrganizationRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleResponse.RuleName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationResponse.RuleName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -21,9 +89,76 @@
     <max>768</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListTelemetryRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListTelemetryRulesForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.UpdateTelemetryRuleRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.UpdateTelemetryRuleResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.UpdateTelemetryRuleForOrganizationRequest.RuleIdentifier</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.UpdateTelemetryRuleForOrganizationResponse.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TelemetryConfiguration.AccountIdentifier</property>
     <min>12</min>
     <max>12</max>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TelemetryDestinationConfiguration.RetentionInDays</property>
+    <min>1</min>
+    <max>3653</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TelemetryRuleSummary.RuleArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TelemetryRuleSummary.RuleName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9A-Za-z-]+</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -31,7 +31,8 @@ namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the StopTelemetryEvaluation operation.
-    /// This action begins offboarding the caller AWS account from the telemetry config feature.
+    /// This action begins offboarding the caller Amazon Web Services account from the telemetry
+    /// config feature.
     /// </summary>
     public partial class StopTelemetryEvaluationRequest : AmazonObservabilityAdminRequest
     {

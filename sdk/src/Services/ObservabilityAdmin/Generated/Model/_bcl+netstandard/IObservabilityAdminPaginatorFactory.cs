@@ -46,5 +46,25 @@ namespace Amazon.ObservabilityAdmin.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListResourceTelemetryForOrganizationPaginator ListResourceTelemetryForOrganization(ListResourceTelemetryForOrganizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListTelemetryRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTelemetryRulesPaginator ListTelemetryRules(ListTelemetryRulesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTelemetryRulesForOrganization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTelemetryRulesForOrganizationPaginator ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request);
     }
 }
