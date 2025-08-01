@@ -148,6 +148,7 @@ namespace Amazon.SecurityHub.Model
         private AwsWafv2WebAclDetails _awsWafv2WebAcl;
         private AwsWafWebAclDetails _awsWafWebAcl;
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
+        private CodeRepositoryDetails _codeRepository;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -1918,6 +1919,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsXrayEncryptionConfig()
         {
             return this._awsXrayEncryptionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeRepository. 
+        /// <para>
+        ///  Details about an external code repository with which you can connect your Amazon
+        /// Web Services resources. The connection is established through Amazon Inspector. 
+        /// </para>
+        /// </summary>
+        public CodeRepositoryDetails CodeRepository
+        {
+            get { return this._codeRepository; }
+            set { this._codeRepository = value; }
+        }
+
+        // Check to see if CodeRepository property is set
+        internal bool IsSetCodeRepository()
+        {
+            return this._codeRepository != null;
         }
 
         /// <summary>

@@ -6162,10 +6162,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
-        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
-        /// fields. 
+        /// Returns the history of a Security Hub finding. The history includes changes made
+        /// to any fields in the Amazon Web Services Security Finding Format (ASFF) except top-level
+        /// timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c> fields. 
         /// 
         ///  
         /// <para>
@@ -6208,10 +6207,9 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Returns the history of a Security Hub finding for the past 90 days. The history includes
-        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
-        /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
-        /// fields. 
+        /// Returns the history of a Security Hub finding. The history includes changes made
+        /// to any fields in the Amazon Web Services Security Finding Format (ASFF) except top-level
+        /// timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c> fields. 
         /// 
         ///  
         /// <para>
