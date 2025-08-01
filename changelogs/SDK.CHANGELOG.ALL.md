@@ -1,3 +1,26 @@
+### 3.7.1093.0 (2025-08-01 18:22 UTC)
+* ACMPCA (3.7.500.1)
+	* Doc-only update to add more information to GetCertificate action.
+* AIOps (3.7.501.0)
+	* This release includes fix for InvestigationGroup timestamp conversion issue.
+* ARCRegionswitch (3.7.500.0)
+	* This is the initial SDK release for Region switch
+* AuditManager (3.7.501.0)
+	* Added a note to Framework APIs (CreateAssessmentFramework, GetAssessmentFramework, UpdateAssessmentFramework) clarifying that the Controls object returns a partial response when called through Framework APIs. Added documentation that the Framework's controlSources parameter is no longer supported.
+* Lightsail (3.7.501.0)
+	* This release adds support for the Asia Pacific (Jakarta) (ap-southeast-3) Region.
+* ObservabilityAdmin (3.7.501.0)
+	* CloudWatch Observability Admin adds the ability to enable telemetry on AWS resources such as Amazon VPCs (Flow Logs) in customers AWS Accounts and Organizations. The release introduces new APIs to manage telemetry rules, which define telemetry settings to be applied on AWS resources.
+* PCS (3.7.501.0)
+	* Add support for IPv6 Networking for Clusters.
+* SecurityHub (3.7.501.0)
+	* Release new resource detail type CodeRepository
+* SimpleNotificationService (3.7.500.1)
+	* Amazon SNS support for Amazon SQS fair queues
+* Core 3.7.500.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1092.0 (2025-07-31 18:27 UTC)
 * CustomerProfiles (3.7.500.0)
 	* The release updates standard profile with 2 new fields that supports account-level engagement. Updated APIs include CreateProfile, UpdateProfile, MergeProfiles, SearchProfiles, BatchGetProfile, GetSegmentMembership, CreateSegmentDefinition, CreateSegmentEstimate.
