@@ -33,7 +33,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// Indicates you don't have permissions to perform the requested operation. The user
     /// or role that is making the request must have at least one IAM permissions policy attached
     /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-    /// management for AWS resources</a> in the IAM user guide.
+    /// management for Amazon Web Services resources</a> in the IAM user guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -59,8 +59,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property TelemetryConfigurations. 
         /// <para>
-        ///  A list of telemetry configurations for AWS resources supported by telemetry config
-        /// in the caller's account. 
+        ///  A list of telemetry configurations for Amazon Web Services resources supported by
+        /// telemetry config in the caller's account. 
         /// </para>
         /// </summary>
         public List<TelemetryConfiguration> TelemetryConfigurations

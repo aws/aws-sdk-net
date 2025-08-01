@@ -121,7 +121,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of resource, for example <c>AWS::EC2::Instance</c>. 
+        ///  The type of resource, for example <c>Amazon Web Services::EC2::Instance</c>. 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

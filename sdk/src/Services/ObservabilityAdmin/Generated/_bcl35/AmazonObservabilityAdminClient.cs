@@ -36,12 +36,13 @@ namespace Amazon.ObservabilityAdmin
     /// <summary>
     /// <para>Implementation for accessing ObservabilityAdmin</para>
     ///
-    /// Amazon CloudWatch Obsersavability Admin to control temletry config for your AWS Organization
-    /// or account. Telemetry config conﬁg to discover and understand the state of telemetry
-    /// conﬁguration for your AWS resources from a central view in the CloudWatch console.
-    /// Telemetry conﬁg simpliﬁes the process of auditing your telemetry collection conﬁgurations
-    /// across multiple resource types across your AWS Organization or account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
+    /// You can use Amazon CloudWatch Observability Admin to discover and understand the
+    /// state of telemetry configuration in CloudWatch for your Amazon Web Services Organization
+    /// or account. This simplifies the process of auditing your telemetry collection configurations
+    /// across multiple resource types within your Amazon Web Services Organization or account.
+    /// By providing a consolidated view, it allows you to easily review and manage telemetry
+    /// settings, helping you ensure proper monitoring and data collection across your Amazon
+    /// Web Services environment. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
     /// CloudWatch telemetry conﬁgurations</a> in the CloudWatch User Guide.
     /// 
     ///  
@@ -276,6 +277,315 @@ namespace Amazon.ObservabilityAdmin
         #endregion
 
 
+        #region  CreateTelemetryRule
+
+        /// <summary>
+        /// Creates a telemetry rule that defines how telemetry should be configured for Amazon
+        /// Web Services resources in your account. The rule specifies which resources should
+        /// have telemetry enabled and how that telemetry data should be collected based on resource
+        /// type, telemetry type, and selection criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateTelemetryRule service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">REST API Reference for CreateTelemetryRule Operation</seealso>
+        public virtual CreateTelemetryRuleResponse CreateTelemetryRule(CreateTelemetryRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTelemetryRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTelemetryRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryRule operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTelemetryRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">REST API Reference for CreateTelemetryRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateTelemetryRule(CreateTelemetryRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTelemetryRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTelemetryRule.</param>
+        /// 
+        /// <returns>Returns a  CreateTelemetryRuleResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">REST API Reference for CreateTelemetryRule Operation</seealso>
+        public virtual CreateTelemetryRuleResponse EndCreateTelemetryRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTelemetryRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTelemetryRuleForOrganization
+
+        /// <summary>
+        /// Creates a telemetry rule that applies across an Amazon Web Services Organization.
+        /// This operation can only be called by the organization's management account or a delegated
+        /// administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryRuleForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the CreateTelemetryRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">REST API Reference for CreateTelemetryRuleForOrganization Operation</seealso>
+        public virtual CreateTelemetryRuleForOrganizationResponse CreateTelemetryRuleForOrganization(CreateTelemetryRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTelemetryRuleForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryRuleForOrganization operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTelemetryRuleForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">REST API Reference for CreateTelemetryRuleForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginCreateTelemetryRuleForOrganization(CreateTelemetryRuleForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTelemetryRuleForOrganization.</param>
+        /// 
+        /// <returns>Returns a  CreateTelemetryRuleForOrganizationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">REST API Reference for CreateTelemetryRuleForOrganization Operation</seealso>
+        public virtual CreateTelemetryRuleForOrganizationResponse EndCreateTelemetryRuleForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTelemetryRuleForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTelemetryRule
+
+        /// <summary>
+        /// Deletes a telemetry rule from your account. Any telemetry configurations previously
+        /// created by the rule will remain but no new resources will be configured by this rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTelemetryRule service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">REST API Reference for DeleteTelemetryRule Operation</seealso>
+        public virtual DeleteTelemetryRuleResponse DeleteTelemetryRule(DeleteTelemetryRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTelemetryRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTelemetryRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryRule operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTelemetryRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">REST API Reference for DeleteTelemetryRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTelemetryRule(DeleteTelemetryRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTelemetryRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTelemetryRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteTelemetryRuleResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">REST API Reference for DeleteTelemetryRule Operation</seealso>
+        public virtual DeleteTelemetryRuleResponse EndDeleteTelemetryRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTelemetryRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTelemetryRuleForOrganization
+
+        /// <summary>
+        /// Deletes an organization-wide telemetry rule. This operation can only be called by
+        /// the organization's management account or a delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryRuleForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTelemetryRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">REST API Reference for DeleteTelemetryRuleForOrganization Operation</seealso>
+        public virtual DeleteTelemetryRuleForOrganizationResponse DeleteTelemetryRuleForOrganization(DeleteTelemetryRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTelemetryRuleForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryRuleForOrganization operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTelemetryRuleForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">REST API Reference for DeleteTelemetryRuleForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTelemetryRuleForOrganization(DeleteTelemetryRuleForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTelemetryRuleForOrganization.</param>
+        /// 
+        /// <returns>Returns a  DeleteTelemetryRuleForOrganizationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">REST API Reference for DeleteTelemetryRuleForOrganization Operation</seealso>
+        public virtual DeleteTelemetryRuleForOrganizationResponse EndDeleteTelemetryRuleForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTelemetryRuleForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTelemetryEvaluationStatus
 
         /// <summary>
@@ -289,11 +599,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatus">REST API Reference for GetTelemetryEvaluationStatus Operation</seealso>
         public virtual GetTelemetryEvaluationStatusResponse GetTelemetryEvaluationStatus(GetTelemetryEvaluationStatusRequest request)
@@ -345,8 +658,9 @@ namespace Amazon.ObservabilityAdmin
 
         /// <summary>
         /// This returns the onboarding status of the telemetry configuration feature for the
-        /// organization. It can only be called by a Management Account of an AWS Organization
-        /// or an assigned Delegated Admin Account of AWS CloudWatch telemetry config.
+        /// organization. It can only be called by a Management Account of an Amazon Web Services
+        /// Organization or an assigned Delegated Admin Account of Amazon CloudWatch telemetry
+        /// config.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTelemetryEvaluationStatusForOrganization service method.</param>
         /// 
@@ -355,11 +669,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -410,11 +727,159 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  GetTelemetryRule
+
+        /// <summary>
+        /// Retrieves the details of a specific telemetry rule in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryRule service method.</param>
+        /// 
+        /// <returns>The response from the GetTelemetryRule service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">REST API Reference for GetTelemetryRule Operation</seealso>
+        public virtual GetTelemetryRuleResponse GetTelemetryRule(GetTelemetryRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetTelemetryRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryRule operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTelemetryRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">REST API Reference for GetTelemetryRule Operation</seealso>
+        public virtual IAsyncResult BeginGetTelemetryRule(GetTelemetryRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTelemetryRule.</param>
+        /// 
+        /// <returns>Returns a  GetTelemetryRuleResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">REST API Reference for GetTelemetryRule Operation</seealso>
+        public virtual GetTelemetryRuleResponse EndGetTelemetryRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTelemetryRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTelemetryRuleForOrganization
+
+        /// <summary>
+        /// Retrieves the details of a specific organization telemetry rule. This operation can
+        /// only be called by the organization's management account or a delegated administrator
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryRuleForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the GetTelemetryRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">REST API Reference for GetTelemetryRuleForOrganization Operation</seealso>
+        public virtual GetTelemetryRuleForOrganizationResponse GetTelemetryRuleForOrganization(GetTelemetryRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetTelemetryRuleForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryRuleForOrganization operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTelemetryRuleForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">REST API Reference for GetTelemetryRuleForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginGetTelemetryRuleForOrganization(GetTelemetryRuleForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTelemetryRuleForOrganization.</param>
+        /// 
+        /// <returns>Returns a  GetTelemetryRuleForOrganizationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">REST API Reference for GetTelemetryRuleForOrganization Operation</seealso>
+        public virtual GetTelemetryRuleForOrganizationResponse EndGetTelemetryRuleForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTelemetryRuleForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListResourceTelemetry
 
         /// <summary>
-        /// Returns a list of telemetry configurations for AWS resources supported by telemetry
-        /// config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
+        /// Returns a list of telemetry configurations for Amazon Web Services resources supported
+        /// by telemetry config. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/telemetry-config-cloudwatch.html">Auditing
         /// CloudWatch telemetry configurations</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTelemetry service method.</param>
@@ -424,11 +889,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -482,8 +950,8 @@ namespace Amazon.ObservabilityAdmin
         #region  ListResourceTelemetryForOrganization
 
         /// <summary>
-        /// Returns a list of telemetry configurations for AWS resources supported by telemetry
-        /// config in the organization.
+        /// Returns a list of telemetry configurations for Amazon Web Services resources supported
+        /// by telemetry config in the organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTelemetryForOrganization service method.</param>
         /// 
@@ -492,11 +960,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -547,10 +1018,225 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists all tags attached to the specified telemetry rule resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTelemetryRules
+
+        /// <summary>
+        /// Lists all telemetry rules in your account. You can filter the results by specifying
+        /// a rule name prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryRules service method.</param>
+        /// 
+        /// <returns>The response from the ListTelemetryRules service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">REST API Reference for ListTelemetryRules Operation</seealso>
+        public virtual ListTelemetryRulesResponse ListTelemetryRules(ListTelemetryRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTelemetryRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTelemetryRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTelemetryRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTelemetryRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryRules operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTelemetryRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">REST API Reference for ListTelemetryRules Operation</seealso>
+        public virtual IAsyncResult BeginListTelemetryRules(ListTelemetryRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTelemetryRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTelemetryRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTelemetryRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTelemetryRules.</param>
+        /// 
+        /// <returns>Returns a  ListTelemetryRulesResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">REST API Reference for ListTelemetryRules Operation</seealso>
+        public virtual ListTelemetryRulesResponse EndListTelemetryRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTelemetryRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTelemetryRulesForOrganization
+
+        /// <summary>
+        /// Lists all telemetry rules in your organization. This operation can only be called
+        /// by the organization's management account or a delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryRulesForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListTelemetryRulesForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">REST API Reference for ListTelemetryRulesForOrganization Operation</seealso>
+        public virtual ListTelemetryRulesForOrganizationResponse ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTelemetryRulesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTelemetryRulesForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListTelemetryRulesForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTelemetryRulesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryRulesForOrganization operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTelemetryRulesForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">REST API Reference for ListTelemetryRulesForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTelemetryRulesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTelemetryRulesForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTelemetryRulesForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTelemetryRulesForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListTelemetryRulesForOrganizationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">REST API Reference for ListTelemetryRulesForOrganization Operation</seealso>
+        public virtual ListTelemetryRulesForOrganizationResponse EndListTelemetryRulesForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTelemetryRulesForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartTelemetryEvaluation
 
         /// <summary>
-        /// This action begins onboarding onboarding the caller AWS account to the telemetry
+        /// This action begins onboarding the caller Amazon Web Services account to the telemetry
         /// config feature.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTelemetryEvaluation service method.</param>
@@ -560,11 +1246,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -628,11 +1317,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -686,7 +1378,8 @@ namespace Amazon.ObservabilityAdmin
         #region  StopTelemetryEvaluation
 
         /// <summary>
-        /// This action begins offboarding the caller AWS account from the telemetry config feature.
+        /// This action begins offboarding the caller Amazon Web Services account from the telemetry
+        /// config feature.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTelemetryEvaluation service method.</param>
         /// 
@@ -695,11 +1388,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -753,8 +1449,8 @@ namespace Amazon.ObservabilityAdmin
         #region  StopTelemetryEvaluationForOrganization
 
         /// <summary>
-        /// This action offboards the Organization of the caller AWS account from thef telemetry
-        /// config feature.
+        /// This action offboards the Organization of the caller Amazon Web Services account
+        /// from the telemetry config feature.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTelemetryEvaluationForOrganization service method.</param>
         /// 
@@ -763,11 +1459,14 @@ namespace Amazon.ObservabilityAdmin
         /// Indicates you don't have permissions to perform the requested operation. The user
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-        /// management for AWS resources</a> in the IAM user guide.
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
         /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
         /// Indicates input validation failed. Check your request parameters and retry the request.
@@ -814,6 +1513,312 @@ namespace Amazon.ObservabilityAdmin
         public virtual StopTelemetryEvaluationForOrganizationResponse EndStopTelemetryEvaluationForOrganization(IAsyncResult asyncResult)
         {
             return EndInvoke<StopTelemetryEvaluationForOrganizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds or updates tags for a telemetry rule resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes tags from a telemetry rule resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTelemetryRule
+
+        /// <summary>
+        /// Updates an existing telemetry rule in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTelemetryRule service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">REST API Reference for UpdateTelemetryRule Operation</seealso>
+        public virtual UpdateTelemetryRuleResponse UpdateTelemetryRule(UpdateTelemetryRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTelemetryRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTelemetryRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRule operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTelemetryRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">REST API Reference for UpdateTelemetryRule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTelemetryRule(UpdateTelemetryRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTelemetryRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTelemetryRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTelemetryRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTelemetryRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateTelemetryRuleResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">REST API Reference for UpdateTelemetryRule Operation</seealso>
+        public virtual UpdateTelemetryRuleResponse EndUpdateTelemetryRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTelemetryRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTelemetryRuleForOrganization
+
+        /// <summary>
+        /// Updates an existing telemetry rule that applies across an Amazon Web Services Organization.
+        /// This operation can only be called by the organization's management account or a delegated
+        /// administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRuleForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTelemetryRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
+        public virtual UpdateTelemetryRuleForOrganizationResponse UpdateTelemetryRuleForOrganization(UpdateTelemetryRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTelemetryRuleForOrganizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRuleForOrganization operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTelemetryRuleForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTelemetryRuleForOrganization(UpdateTelemetryRuleForOrganizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTelemetryRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTelemetryRuleForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTelemetryRuleForOrganization.</param>
+        /// 
+        /// <returns>Returns a  UpdateTelemetryRuleForOrganizationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
+        public virtual UpdateTelemetryRuleForOrganizationResponse EndUpdateTelemetryRuleForOrganization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTelemetryRuleForOrganizationResponse>(asyncResult);
         }
 
         #endregion
