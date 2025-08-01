@@ -66,7 +66,7 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = LongUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = LongUnmarshaller.Instance;
                     response.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

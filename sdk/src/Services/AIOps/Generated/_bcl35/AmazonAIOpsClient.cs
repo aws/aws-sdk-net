@@ -306,21 +306,21 @@ namespace Amazon.AIOps
         ///  
         /// <para>
         /// To create an investigation group and set up CloudWatch investigations, you must be
-        /// signed in to an IAM principal that has the either the <c>AIOpsConsoleAdminPolicy</c>
-        /// or the <c>AdministratorAccess</c> IAM policy attached, or to an account that has similar
+        /// signed in to an IAM principal that has either the <c>AIOpsConsoleAdminPolicy</c> or
+        /// the <c>AdministratorAccess</c> IAM policy attached, or to an account that has similar
         /// permissions.
         /// </para>
         ///  <important> 
         /// <para>
         /// You can configure CloudWatch alarms to start investigations and add events to investigations.
         /// If you create your investigation group with <c>CreateInvestigationGroup</c> and you
-        /// want to enable alarms to do this, you must use <a href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_PutInvestigationGroupPolicy.html">PutInvestigationGroupPolicy</a>
+        /// want to enable alarms to do this, you must use <c>PutInvestigationGroupPolicy</c>
         /// to create a resource policy that grants this permission to CloudWatch alarms. 
         /// </para>
         ///  
         /// <para>
-        /// For more information about configuring CloudWatch alarms to work with CloudWatch investigations,
-        /// see 
+        /// For more information about configuring CloudWatch alarms, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Using
+        /// Amazon CloudWatch alarms</a> 
         /// </para>
         ///  </important>
         /// </summary>
@@ -632,8 +632,8 @@ namespace Amazon.AIOps
         #region  GetInvestigationGroupPolicy
 
         /// <summary>
-        /// Returns the IAM resource policy that is associated with the specified investigation
-        /// group.
+        /// Returns the JSON of the IAM resource policy associated with the specified investigation
+        /// group in a string. For example, <c>{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"aiops.alarms.cloudwatch.amazonaws.com\"},\"Action\":[\"aiops:CreateInvestigation\",\"aiops:CreateInvestigationEvent\"],\"Resource\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:SourceAccount\":\"111122223333\"},\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:cloudwatch:us-east-1:111122223333:alarm:*\"}}}]}</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInvestigationGroupPolicy service method.</param>
         /// 
@@ -872,11 +872,11 @@ namespace Amazon.AIOps
         /// </para>
         ///  
         /// <para>
-        ///  <c>{ "Version": "2008-10-17", "Statement": [{ "Effect": "Allow", "Principal": { "Service":
-        /// "aiops.alarms.cloudwatch.amazonaws.com" }, "Action": ["aiops:CreateInvestigation",
-        /// "aiops:CreateInvestigationEvent"], "Resource": "*", "Condition": { "StringEquals":
-        /// { "aws:SourceAccount": "<i>account-id</i>" }, "ArnLike": { "aws:SourceArn": "arn:aws:cloudwatch:<i>region</i>:<i>account-id</i>:alarm:*"
-        /// } } }] }</c> 
+        ///  <c> { "Version": "2008-10-17", "Statement": [ { "Effect": "Allow", "Principal": {
+        /// "Service": "aiops.alarms.cloudwatch.amazonaws.com" }, "Action": [ "aiops:CreateInvestigation",
+        /// "aiops:CreateInvestigationEvent" ], "Resource": "*", "Condition": { "StringEquals":
+        /// { "aws:SourceAccount": "account-id" }, "ArnLike": { "aws:SourceArn": "arn:aws:cloudwatch:region:account-id:alarm:*"
+        /// } } } ] } </c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInvestigationGroupPolicy service method.</param>

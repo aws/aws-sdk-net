@@ -61,21 +61,21 @@ namespace Amazon.AIOps.Model
     ///  
     /// <para>
     /// To create an investigation group and set up CloudWatch investigations, you must be
-    /// signed in to an IAM principal that has the either the <c>AIOpsConsoleAdminPolicy</c>
-    /// or the <c>AdministratorAccess</c> IAM policy attached, or to an account that has similar
+    /// signed in to an IAM principal that has either the <c>AIOpsConsoleAdminPolicy</c> or
+    /// the <c>AdministratorAccess</c> IAM policy attached, or to an account that has similar
     /// permissions.
     /// </para>
     ///  <important> 
     /// <para>
     /// You can configure CloudWatch alarms to start investigations and add events to investigations.
     /// If you create your investigation group with <c>CreateInvestigationGroup</c> and you
-    /// want to enable alarms to do this, you must use <a href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_PutInvestigationGroupPolicy.html">PutInvestigationGroupPolicy</a>
+    /// want to enable alarms to do this, you must use <c>PutInvestigationGroupPolicy</c>
     /// to create a resource policy that grants this permission to CloudWatch alarms. 
     /// </para>
     ///  
     /// <para>
-    /// For more information about configuring CloudWatch alarms to work with CloudWatch investigations,
-    /// see 
+    /// For more information about configuring CloudWatch alarms, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Using
+    /// Amazon CloudWatch alarms</a> 
     /// </para>
     ///  </important>
     /// </summary>
@@ -94,11 +94,11 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property ChatbotNotificationChannel. 
         /// <para>
-        /// Use this structure to integrate CloudWatch investigations with Amazon Q in chat applications.
+        /// Use this structure to integrate CloudWatch investigations with chat applications.
         /// This structure is a string array. For the first string, specify the ARN of an Amazon
-        /// SNS topic. For the array of strings, specify the ARNs of one or more Amazon Q in chat
-        /// applications configurations that you want to associate with that topic. For more information
-        /// about these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
+        /// SNS topic. For the array of strings, specify the ARNs of one or more chat applications
+        /// configurations that you want to associate with that topic. For more information about
+        /// these configuration ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
         /// started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource
         /// type defined by Amazon Web Services Chatbot</a>.
         /// </para>
@@ -118,8 +118,7 @@ namespace Amazon.AIOps.Model
         /// <summary>
         /// Gets and sets the property CrossAccountConfigurations. 
         /// <para>
-        /// Number of <c>sourceAccountId</c> values that have been configured for cross-account
-        /// access.
+        /// List of <c>sourceRoleArn</c> values that have been configured for cross-account access.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -228,7 +227,7 @@ namespace Amazon.AIOps.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Investigations-Security.html#Investigations-Security-Data">How
-        /// to control what data Amazon Q has access to during investigations</a>.
+        /// to control what data CloudWatch investigations has access to during investigations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -248,18 +247,18 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property TagKeyBoundaries. 
         /// <para>
         /// Enter the existing custom tag keys for custom applications in your system. Resource
-        /// tags help Amazon Q narrow the search space when it is unable to discover definite
-        /// relationships between resources. For example, to discover that an Amazon ECS service
-        /// depends on an Amazon RDS database, Amazon Q can discover this relationship using data
-        /// sources such as X-Ray and CloudWatch Application Signals. However, if you haven't
-        /// deployed these features, Amazon Q will attempt to identify possible relationships.
-        /// Tag boundaries can be used to narrow the resources that will be discovered by Amazon
-        /// Q in these cases.
+        /// tags help CloudWatch investigations narrow the search space when it is unable to discover
+        /// definite relationships between resources. For example, to discover that an Amazon
+        /// ECS service depends on an Amazon RDS database, CloudWatch investigations can discover
+        /// this relationship using data sources such as X-Ray and CloudWatch Application Signals.
+        /// However, if you haven't deployed these features, CloudWatch investigations will attempt
+        /// to identify possible relationships. Tag boundaries can be used to narrow the resources
+        /// that will be discovered by CloudWatch investigations in these cases.
         /// </para>
         ///  
         /// <para>
         /// You don't need to enter tags created by myApplications or CloudFormation, because
-        /// Amazon Q can automatically detect those tags.
+        /// CloudWatch investigations can automatically detect those tags.
         /// </para>
         /// </summary>
         public List<string> TagKeyBoundaries

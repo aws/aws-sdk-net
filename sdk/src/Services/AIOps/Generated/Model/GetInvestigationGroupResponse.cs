@@ -36,12 +36,12 @@ namespace Amazon.AIOps.Model
     {
         private string _arn;
         private Dictionary<string, List<string>> _chatbotNotificationChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
-        private DateTime? _createdAt;
+        private long? _createdAt;
         private string _createdBy;
         private List<CrossAccountConfiguration> _crossAccountConfigurations = AWSConfigs.InitializeCollections ? new List<CrossAccountConfiguration>() : null;
         private EncryptionConfiguration _encryptionConfiguration;
         private bool? _isCloudTrailEventHistoryEnabled;
-        private DateTime? _lastModifiedAt;
+        private long? _lastModifiedAt;
         private string _lastModifiedBy;
         private string _name;
         private long? _retentionInDays;
@@ -70,9 +70,9 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property ChatbotNotificationChannel. 
         /// <para>
         /// This structure is a string array. The first string is the ARN of a Amazon SNS topic.
-        /// The array of strings display the ARNs of Amazon Q in chat applications configurations
-        /// that are associated with that topic. For more information about these configuration
-        /// ARNs, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
+        /// The array of strings display the ARNs of chat applications configurations that are
+        /// associated with that topic. For more information about these configuration ARNs, see
+        /// <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/getting-started.html">Getting
         /// started with Amazon Q in chat applications</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awschatbot.html#awschatbot-resources-for-iam-policies">Resource
         /// type defined by Amazon Web Services Chatbot</a>.
         /// </para>
@@ -95,7 +95,7 @@ namespace Amazon.AIOps.Model
         /// The date and time that the investigation group was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public long CreatedAt
         {
             get { return this._createdAt.GetValueOrDefault(); }
             set { this._createdAt = value; }
@@ -191,7 +191,7 @@ namespace Amazon.AIOps.Model
         /// The date and time that the investigation group was most recently modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAt
+        public long LastModifiedAt
         {
             get { return this._lastModifiedAt.GetValueOrDefault(); }
             set { this._lastModifiedAt = value; }
@@ -284,8 +284,9 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property TagKeyBoundaries. 
         /// <para>
         /// Displays the custom tag keys for custom applications in your system that you have
-        /// specified in the investigation group. Resource tags help Amazon Q narrow the search
-        /// space when it is unable to discover definite relationships between resources. 
+        /// specified in the investigation group. Resource tags help CloudWatch investigations
+        /// narrow the search space when it is unable to discover definite relationships between
+        /// resources. 
         /// </para>
         /// </summary>
         public List<string> TagKeyBoundaries
