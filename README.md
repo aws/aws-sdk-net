@@ -152,6 +152,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
 * [AWSSDK.AppTest](https://www.nuget.org/packages/AWSSDK.AppTest/)
 	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
+* [AWSSDK.ARCRegionswitch](https://www.nuget.org/packages/AWSSDK.ARCRegionswitch/)
+	* This is the initial SDK release for Region switch
 * [AWSSDK.ARCZonalShift](https://www.nuget.org/packages/AWSSDK.ARCZonalShift/)
 	* Amazon Route 53 Application Recovery Controller Zonal Shift is a new service that makes it easy to shift traffic away from an Availability Zone in a Region. See the developer guide for more information: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html
 * [AWSSDK.Artifact](https://www.nuget.org/packages/AWSSDK.Artifact/)
