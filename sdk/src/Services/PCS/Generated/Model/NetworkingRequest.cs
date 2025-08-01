@@ -34,8 +34,27 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class NetworkingRequest
     {
+        private NetworkType _networkType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP address version the cluster uses. The default is <c>IPV4</c>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
