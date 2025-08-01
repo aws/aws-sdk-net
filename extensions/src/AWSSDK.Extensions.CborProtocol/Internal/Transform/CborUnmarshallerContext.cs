@@ -29,7 +29,6 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
     public class CborUnmarshallerContext : UnmarshallerContext
     {
         private bool disposed = false;
-        private byte[] rentedBuffer = null;
         private readonly Stack<string> _pathStack = new Stack<string>();
 
         // There isn't a direct way to check if the reader is at the start of the document,
@@ -39,7 +38,8 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
         public override bool IsEndElement => Reader.PeekState() == CborReaderState.Finished;
         public override bool IsStartElement => Reader.PeekState() == CborReaderState.StartMap;
 
-        public CborReader Reader { get; set; }
+        public Stream Stream { get; set; }
+        public CborStreamReader Reader { get; set; }
         public override string CurrentPath => string.Join("/", _pathStack.Reverse());
         public override int CurrentDepth => Reader.CurrentDepth;
 
@@ -76,8 +76,6 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
                 responseStream = WrappingStream;
             }
 
-            long? streamSize = null;
-
             if (responseData != null)
             {
                 bool parsedContentLengthHeader = long.TryParse(
@@ -105,79 +103,14 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
                         requestContext
                     );
                 }
-                if (parsedContentLengthHeader && responseData.ContentLength == contentLength)
-                {
-                    streamSize = contentLength;
-                }
             }
 
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
             this.IsException = isException;
 
-            Reader = CreateCborReaderFromStream(
-                FlexibleChecksumStream ?? CrcStream ?? responseStream,
-                streamSize
-            );
-        }
-
-        private CborReader CreateCborReaderFromStream(Stream stream, long? streamSize = null)
-        {
-            int totalRead = 0;
-            if (streamSize.HasValue)
-            {
-                // TODO: update this method to read the stream in chunks incase the stream is larger than int.MaxValue
-                // If we know the size, we can read directly into a buffer of exact size
-                rentedBuffer = ArrayPool<byte>.Shared.Rent((int)streamSize.Value);
-
-                while (totalRead < streamSize.Value)
-                {
-                    int bytesRead = stream.Read(rentedBuffer, totalRead, (int)(streamSize.Value - totalRead));
-                    if (bytesRead == 0)
-                    {
-                        // If no bytes are read, it means we've reached the end of the stream before reading the whole streamSize.
-                        throw new EndOfStreamException($"Expected {streamSize.Value} bytes but only read {totalRead}.");
-                    }
-
-                    totalRead += bytesRead;
-                }
-            }
-            else
-            {
-                const int InitialBufferSize = 1024 * 8; // 8kb
-                rentedBuffer = ArrayPool<byte>.Shared.Rent(InitialBufferSize);
-
-                while (true)
-                {
-                    int read = stream.Read(rentedBuffer, totalRead, rentedBuffer.Length - totalRead);
-                    if (read == 0)
-                        break;
-
-                    totalRead += read;
-
-                    if (totalRead == rentedBuffer.Length)
-                    {
-                        // Expand the buffer size by doubling it
-                        var newBuffer = ArrayPool<byte>.Shared.Rent(rentedBuffer.Length * 2);
-                        try
-                        {
-                            Buffer.BlockCopy(rentedBuffer, 0, newBuffer, 0, totalRead);
-                        }
-                        catch
-                        {
-                            ArrayPool<byte>.Shared.Return(newBuffer);
-                            ArrayPool<byte>.Shared.Return(rentedBuffer);
-                            rentedBuffer = null;
-                            throw;
-                        }
-                        ArrayPool<byte>.Shared.Return(rentedBuffer);
-                        rentedBuffer = newBuffer;
-                    }
-                }
-            }
-
-            var actualBytes = new ReadOnlyMemory<byte>(rentedBuffer, 0, totalRead);
-            return new CborReader(actualBytes);
+            Stream = FlexibleChecksumStream ?? CrcStream ?? responseStream;
+            Reader = new CborStreamReader(Stream);
         }
 
         /// <summary>
@@ -204,9 +137,10 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
         {
             if (!this.disposed)
             {
-                if (disposing && rentedBuffer != null)
+                if (disposing && Reader != null)
                 {
-                    ArrayPool<byte>.Shared.Return(rentedBuffer);
+                    Reader.Dispose();
+                    Reader = null;
                 }
                 disposed = true;
             }
