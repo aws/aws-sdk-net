@@ -463,6 +463,18 @@ namespace Amazon.ACMPCA
         /// <c>DELETED</c> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// A private CA can be deleted if it is in the <c>PENDING_CERTIFICATE</c>, <c>CREATING</c>,
+        /// <c>EXPIRED</c>, <c>DISABLED</c>, or <c>FAILED</c> state. To delete a CA in the <c>ACTIVE</c>
+        /// state, you must first disable it, or else the delete request results in an exception.
+        /// If you are deleting a private CA in the <c>PENDING_CERTIFICATE</c> or <c>DISABLED</c>
+        /// state, you can set the length of its restoration period to 7-30 days. The default
+        /// is 30. During this time, the status is set to <c>DELETED</c> and the CA can be restored.
+        /// A private CA deleted in the <c>CREATING</c> or <c>FAILED</c> state has no assigned
+        /// restoration period and cannot be restored.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateAuthority service method.</param>
         /// 
@@ -520,6 +532,18 @@ namespace Amazon.ACMPCA
         /// <c>DELETED</c> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// A private CA can be deleted if it is in the <c>PENDING_CERTIFICATE</c>, <c>CREATING</c>,
+        /// <c>EXPIRED</c>, <c>DISABLED</c>, or <c>FAILED</c> state. To delete a CA in the <c>ACTIVE</c>
+        /// state, you must first disable it, or else the delete request results in an exception.
+        /// If you are deleting a private CA in the <c>PENDING_CERTIFICATE</c> or <c>DISABLED</c>
+        /// state, you can set the length of its restoration period to 7-30 days. The default
+        /// is 30. During this time, the status is set to <c>DELETED</c> and the CA can be restored.
+        /// A private CA deleted in the <c>CREATING</c> or <c>FAILED</c> state has no assigned
+        /// restoration period and cannot be restored.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateAuthority service method.</param>
         /// <param name="cancellationToken">
@@ -1029,7 +1053,8 @@ namespace Amazon.ACMPCA
         /// The ARN of the certificate is returned when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a>
         /// action. You must specify both the ARN of your private CA and the ARN of the issued
         /// certificate when calling the <b>GetCertificate</b> action. You can retrieve the certificate
-        /// if it is in the <b>ISSUED</b> state. You can call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+        /// if it is in the <b>ISSUED</b>, <b>EXPIRED</b>, or <b>REVOKED</b> state. You can call
+        /// the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
         /// action to create a report that contains information about all of the certificates
         /// issued and revoked by your private CA.
         /// </summary>
@@ -1062,7 +1087,8 @@ namespace Amazon.ACMPCA
         /// The ARN of the certificate is returned when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a>
         /// action. You must specify both the ARN of your private CA and the ARN of the issued
         /// certificate when calling the <b>GetCertificate</b> action. You can retrieve the certificate
-        /// if it is in the <b>ISSUED</b> state. You can call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
+        /// if it is in the <b>ISSUED</b>, <b>EXPIRED</b>, or <b>REVOKED</b> state. You can call
+        /// the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
         /// action to create a report that contains information about all of the certificates
         /// issued and revoked by your private CA.
         /// </summary>
