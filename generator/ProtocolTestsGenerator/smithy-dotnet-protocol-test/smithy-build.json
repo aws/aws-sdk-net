@@ -145,6 +145,24 @@
           "packageVersion": "0.0.1"
         }
       }
+    },
+    "RpcV2Protocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "smithy.protocoltests.rpcv2Cbor#RpcV2Protocol"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "smithy.protocoltests.rpcv2Cbor#RpcV2Protocol",
+          "packageVersion": "0.0.1"
+        }
+      }
     }
   }
 }
