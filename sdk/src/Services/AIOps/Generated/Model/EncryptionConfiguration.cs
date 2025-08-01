@@ -62,7 +62,7 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Displays whether investigation data is encrypted by a customer managed key or an Amazon
-        /// Web Services owned kay.
+        /// Web Services owned key.
         /// </para>
         /// </summary>
         public EncryptionConfigurationType Type

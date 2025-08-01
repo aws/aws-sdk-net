@@ -58,8 +58,8 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource that you want to apply the tags to.
-        /// You can use the <a href="https://docs.aws.amazon.com/operationalinvestigations/latest/AmazonQDeveloperOperationalInvestigationsAPIReference/API_ListInvestigationGroups.html">ListInvestigationGroups</a>
-        /// operation to find the ARNs of investigation groups.
+        /// You can use the <c>ListInvestigationGroups</c> operation to find the ARNs of investigation
+        /// groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
