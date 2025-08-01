@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.RpcV2Protocol.NetFra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetFramework", "..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetFramework.csproj", "{97F1A3EB-F3F8-CD33-75A4-DB6465F32512}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.QueryCompatibleRpcV2Protocol.NetFramework", "..\Services\QueryCompatibleRpcV2Protocol\AWSSDK.QueryCompatibleRpcV2Protocol.NetFramework.csproj", "{D060775B-0607-7F3A-4B75-A332AFAFFEAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.NonQueryCompatibleRpcV2Protocol.NetFramework", "..\Services\NonQueryCompatibleRpcV2Protocol\AWSSDK.NonQueryCompatibleRpcV2Protocol.NetFramework.csproj", "{C328C684-30E9-269A-57DC-485BCF7624B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{97F1A3EB-F3F8-CD33-75A4-DB6465F32512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97F1A3EB-F3F8-CD33-75A4-DB6465F32512}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97F1A3EB-F3F8-CD33-75A4-DB6465F32512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D060775B-0607-7F3A-4B75-A332AFAFFEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D060775B-0607-7F3A-4B75-A332AFAFFEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D060775B-0607-7F3A-4B75-A332AFAFFEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D060775B-0607-7F3A-4B75-A332AFAFFEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C328C684-30E9-269A-57DC-485BCF7624B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C328C684-30E9-269A-57DC-485BCF7624B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C328C684-30E9-269A-57DC-485BCF7624B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C328C684-30E9-269A-57DC-485BCF7624B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -55,6 +55,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #endif
 <#
 	}
+
+	if (this.Config.ServiceModel.IsAwsQueryCompatible)
+	{
+#>
+			request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
+<#
+	}
+
 	var requestStructure = this.Operation.RequestStructure;
 
 	if (this.Operation.IsEventStreamInput)
