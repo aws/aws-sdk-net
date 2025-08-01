@@ -31,10 +31,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingHistory operation.
-    /// Returns the history of a Security Hub finding for the past 90 days. The history includes
-    /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF)
-    /// except top-level timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c>
-    /// fields. 
+    /// Returns the history of a Security Hub finding. The history includes changes made
+    /// to any fields in the Amazon Web Services Security Finding Format (ASFF) except top-level
+    /// timestamp fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c> fields. 
     /// 
     ///  
     /// <para>
@@ -69,10 +68,9 @@ namespace Amazon.SecurityHub.Model
         /// to the time at which the API is called. If you provide a value for <c>EndTime</c>
         /// but not for <c>StartTime</c>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
         /// timestamp of the finding to the <c>EndTime</c>. If you provide neither <c>StartTime</c>
-        /// nor <c>EndTime</c>, Security Hub returns finding history from the CreatedAt timestamp
-        /// of the finding to the time at which the API is called. In all of these scenarios,
-        /// the response is limited to 100 results, and the maximum time period is limited to
-        /// 90 days.
+        /// nor <c>EndTime</c>, Security Hub returns finding history from the <c>CreatedAt</c>
+        /// timestamp of the finding to the time at which the API is called. In all of these scenarios,
+        /// the response is limited to 100 results.
         /// </para>
         ///  
         /// <para>
@@ -162,10 +160,9 @@ namespace Amazon.SecurityHub.Model
         /// to the time at which the API is called. If you provide a value for <c>EndTime</c>
         /// but not for <c>StartTime</c>, Security Hub returns finding history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
         /// timestamp of the finding to the <c>EndTime</c>. If you provide neither <c>StartTime</c>
-        /// nor <c>EndTime</c>, Security Hub returns finding history from the CreatedAt timestamp
-        /// of the finding to the time at which the API is called. In all of these scenarios,
-        /// the response is limited to 100 results, and the maximum time period is limited to
-        /// 90 days.
+        /// nor <c>EndTime</c>, Security Hub returns finding history from the <c>CreatedAt</c>
+        /// timestamp of the finding to the time at which the API is called. In all of these scenarios,
+        /// the response is limited to 100 results.
         /// </para>
         ///  
         /// <para>
