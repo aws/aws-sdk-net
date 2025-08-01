@@ -65,6 +65,18 @@ namespace Amazon.ACMPCA.Model
     /// <c>DELETED</c> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
     /// action.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// A private CA can be deleted if it is in the <c>PENDING_CERTIFICATE</c>, <c>CREATING</c>,
+    /// <c>EXPIRED</c>, <c>DISABLED</c>, or <c>FAILED</c> state. To delete a CA in the <c>ACTIVE</c>
+    /// state, you must first disable it, or else the delete request results in an exception.
+    /// If you are deleting a private CA in the <c>PENDING_CERTIFICATE</c> or <c>DISABLED</c>
+    /// state, you can set the length of its restoration period to 7-30 days. The default
+    /// is 30. During this time, the status is set to <c>DELETED</c> and the CA can be restored.
+    /// A private CA deleted in the <c>CREATING</c> or <c>FAILED</c> state has no assigned
+    /// restoration period and cannot be restored.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteCertificateAuthorityRequest : AmazonACMPCARequest
     {
