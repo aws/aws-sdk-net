@@ -1,3 +1,23 @@
+### 4.0.61.0 (2025-08-01 18:25 UTC)
+* ACMPCA (4.0.0.16)
+	* Doc-only update to add more information to GetCertificate action.
+* AIOps (4.0.2.0)
+	* This release includes fix for InvestigationGroup timestamp conversion issue.
+* ARCRegionswitch (4.0.0.0)
+	* This is the initial SDK release for Region switch
+* AuditManager (4.0.3.0)
+	* Added a note to Framework APIs (CreateAssessmentFramework, GetAssessmentFramework, UpdateAssessmentFramework) clarifying that the Controls object returns a partial response when called through Framework APIs. Added documentation that the Framework's controlSources parameter is no longer supported.
+* Lightsail (4.0.1.0)
+	* This release adds support for the Asia Pacific (Jakarta) (ap-southeast-3) Region.
+* ObservabilityAdmin (4.0.1.0)
+	* CloudWatch Observability Admin adds the ability to enable telemetry on AWS resources such as Amazon VPCs (Flow Logs) in customers AWS Accounts and Organizations. The release introduces new APIs to manage telemetry rules, which define telemetry settings to be applied on AWS resources.
+* PCS (4.0.5.0)
+	* Add support for IPv6 Networking for Clusters.
+* SecurityHub (4.0.2.0)
+	* Release new resource detail type CodeRepository
+* SimpleNotificationService (4.0.0.16)
+	* Amazon SNS support for Amazon SQS fair queues
+
 ### 4.0.60.0 (2025-07-31 18:26 UTC)
 * CognitoIdentity (4.0.0.16)
 	* Avoid cloning `ImmutableCredentials` objects.
