@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Grant Object
     /// </summary>  
-    public class S3GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>
+    public partial class S3GrantUnmarshaller : IXmlUnmarshaller<S3Grant, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Permission = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3Grant unmarshalledObject, int targetDepth);
+
         private static S3GrantUnmarshaller _instance = new S3GrantUnmarshaller();        
 
         /// <summary>

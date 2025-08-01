@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Bucket Object
     /// </summary>  
-    public class S3BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>
+    public partial class S3BucketUnmarshaller : IXmlUnmarshaller<S3Bucket, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3Bucket unmarshalledObject, int targetDepth);
+
         private static S3BucketUnmarshaller _instance = new S3BucketUnmarshaller();        
 
         /// <summary>

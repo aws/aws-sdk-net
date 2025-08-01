@@ -13378,7 +13378,7 @@ namespace Amazon.S3
         ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
-        /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
+        /// <param name="configuration">Container for lifecycle rules. You can add as many as 1,000 rules.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
