@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an Amazon Web Service.
+    /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -58,6 +58,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Name);
             }
 
+            if(requestObject.IsSetOutputSchemas())
+            {
+                context.Writer.WritePropertyName("OutputSchemas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlueSchemaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOutputSchemasListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetPartitionPredicate())
+            {
+                context.Writer.WritePropertyName("PartitionPredicate");
+                context.Writer.WriteStringValue(requestObject.PartitionPredicate);
+            }
+
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");

@@ -286,10 +286,11 @@ namespace ServiceClientGenerator
         /// <param name="operation">The operation object which contains info about what the request needs to contain for the operation</param>
         void GenerateRequest(Operation operation)
         {
+            var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(operation.Name + "Request");
             var requestGenerator = new StructureGenerator
             {
                 ClassName = operation.Name + "Request",
-                BaseClass = this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest",
+                BaseClass = baseClassString ?? (this.Configuration.ServiceId != "S3" ? string.Format("Amazon{0}Request", Configuration.ClassName) : "AmazonWebServiceRequest"),
                 StructureType = StructureType.Request,
                 Operation = operation
             };
@@ -459,10 +460,11 @@ namespace ServiceClientGenerator
                 }
                 else
                 {
+                    var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(operation.Name + "Response");
                     var resultGenerator = new StructureGenerator
                     {
                         ClassName = operation.Name + "Response",
-                        BaseClass = "AmazonWebServiceResponse",
+                        BaseClass = baseClassString ?? "AmazonWebServiceResponse",
                         IsWrapped = operation.IsResponseWrapped,
                         Operation = operation,
                         StructureType = StructureType.Response
@@ -1558,55 +1560,6 @@ namespace ServiceClientGenerator
                 if (!codeGeneratedServiceList.Contains(new DirectoryInfo(directoryName).Name))
                 {
                     Directory.Delete(directoryName, true);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Removes project files (*.csproj) and folders that are not needed in the next version of the SDK:
-        /// </summary>
-        public static void RemoveLegacyFiles(string sdkRootFolder)
-        {
-            // TODO: Remove this method once net35 and net45 are removed from the SDK.
-            var legacyProjectSuffixes = new HashSet<string>
-            {
-                "Net35.csproj",
-                "Net45.csproj"
-            };
-
-            var legacyFolderNames = new HashSet<string>
-            {
-                "_bcl35",
-                Utils.PathCombineAlt("Generated", "_bcl45"),
-                Utils.PathCombineAlt("Generated", "_bcl45+netstandard"),
-                Utils.PathCombineAlt("Generated", "Model", "_bcl45+netstandard"),
-                Utils.PathCombineAlt("Config", "35"),
-                Utils.PathCombineAlt("Config", "45")
-            };
-
-            var allProjectFiles = Directory.GetFiles(sdkRootFolder, "*.csproj", SearchOption.AllDirectories).OrderBy(f => f);
-            foreach (var file in allProjectFiles)
-            {
-                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
-                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
-
-                if (shouldDelete && File.Exists(file))
-                {
-                    Console.Error.WriteLine("**** Warning: Removing obsolete csproj file " + Path.GetFileName(file));
-                    File.Delete(file);
-                }
-            }
-
-            var allFolders = Directory.EnumerateDirectories(sdkRootFolder, "*", SearchOption.AllDirectories).OrderBy(d => d);
-            foreach (var folder in allFolders)
-            {
-                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
-                var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
-
-                if (shouldDelete && Directory.Exists(folder))
-                {
-                    Console.Error.WriteLine("**** Warning: Removing obsolete folder " + fullPath);
-                    Directory.Delete(folder, recursive: true);
                 }
             }
         }

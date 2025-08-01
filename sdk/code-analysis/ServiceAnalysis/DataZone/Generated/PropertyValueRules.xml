@@ -3548,7 +3548,7 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SearchRequest.SearchText</property>
     <min>1</min>
-    <max>4096</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SearchResponse.NextToken</property>
@@ -3594,6 +3594,11 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.SearchListingsRequest.SearchText</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SearchListingsResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
@@ -3615,7 +3620,7 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SearchTypesRequest.SearchText</property>
     <min>1</min>
-    <max>4096</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SearchTypesResponse.NextToken</property>
@@ -4436,6 +4441,26 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.AcceptedAssetScope.AssetId</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.AggregationListItem.Attribute</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.AggregationListItem.DisplayValue</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.AggregationOutput.Attribute</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.AggregationOutput.DisplayValue</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.AssetFilterSummary.AssetId</property>
@@ -5709,6 +5734,42 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesInput.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesInput.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesOutput.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesOutput.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesPatch.S3AccessGrantLocationId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.S3PropertiesPatch.S3Uri</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^s3://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SageMakerRunConfigurationOutput.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -6003,6 +6064,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SubscriptionTargetSummary.ProjectId</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.TextMatchItem.Attribute</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.TimeSeriesDataPointFormInput.Content</property>

@@ -56,7 +56,6 @@ namespace Amazon.DocDB.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -70,7 +69,6 @@ namespace Amazon.DocDB.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
         }
-#endif
 
         /// <summary>
         /// <para>

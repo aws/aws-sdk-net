@@ -44,6 +44,7 @@ namespace Amazon.ECR.Model
         private string _description;
         private EncryptionConfigurationForRepositoryCreationTemplate _encryptionConfiguration;
         private ImageTagMutability _imageTagMutability;
+        private List<ImageTagMutabilityExclusionFilter> _imageTagMutabilityExclusionFilters = AWSConfigs.InitializeCollections ? new List<ImageTagMutabilityExclusionFilter>() : null;
         private string _lifecyclePolicy;
         private string _prefix;
         private string _repositoryPolicy;
@@ -153,6 +154,31 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTagMutability()
         {
             return this._imageTagMutability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTagMutabilityExclusionFilters. 
+        /// <para>
+        /// Creates a repository creation template with a list of filters that define which image
+        /// tags can override the default image tag mutability setting.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<ImageTagMutabilityExclusionFilter> ImageTagMutabilityExclusionFilters
+        {
+            get { return this._imageTagMutabilityExclusionFilters; }
+            set { this._imageTagMutabilityExclusionFilters = value; }
+        }
+
+        // Check to see if ImageTagMutabilityExclusionFilters property is set
+        internal bool IsSetImageTagMutabilityExclusionFilters()
+        {
+            return this._imageTagMutabilityExclusionFilters != null && (this._imageTagMutabilityExclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

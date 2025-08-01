@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private List<VolumeStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<VolumeStatusEvent>() : null;
+        private InitializationStatusDetails _initializationStatusDetails;
         private string _outpostArn;
         private string _volumeId;
         private VolumeStatusInfo _volumeStatus;
@@ -146,6 +147,35 @@ namespace Amazon.EC2.Model
         internal bool IsSetEvents()
         {
             return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitializationStatusDetails. 
+        /// <para>
+        /// Information about the volume initialization. It can take up to 5 minutes for the volume
+        /// initialization information to be updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only available for volumes created from snapshots. Not available for empty volumes
+        /// created without a snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html">
+        /// Initialize Amazon EBS volumes</a>.
+        /// </para>
+        /// </summary>
+        public InitializationStatusDetails InitializationStatusDetails
+        {
+            get { return this._initializationStatusDetails; }
+            set { this._initializationStatusDetails = value; }
+        }
+
+        // Check to see if InitializationStatusDetails property is set
+        internal bool IsSetInitializationStatusDetails()
+        {
+            return this._initializationStatusDetails != null;
         }
 
         /// <summary>

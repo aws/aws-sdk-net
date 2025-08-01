@@ -92,6 +92,10 @@ namespace Amazon.MediaConvert
         /// Constant LC for AacCodecProfile
         /// </summary>
         public static readonly AacCodecProfile LC = new AacCodecProfile("LC");
+        /// <summary>
+        /// Constant XHE for AacCodecProfile
+        /// </summary>
+        public static readonly AacCodecProfile XHE = new AacCodecProfile("XHE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -184,6 +188,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AacCodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AacLoudnessMeasurementMode.
+    /// </summary>
+    public class AacLoudnessMeasurementMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANCHOR for AacLoudnessMeasurementMode
+        /// </summary>
+        public static readonly AacLoudnessMeasurementMode ANCHOR = new AacLoudnessMeasurementMode("ANCHOR");
+        /// <summary>
+        /// Constant PROGRAM for AacLoudnessMeasurementMode
+        /// </summary>
+        public static readonly AacLoudnessMeasurementMode PROGRAM = new AacLoudnessMeasurementMode("PROGRAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AacLoudnessMeasurementMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AacLoudnessMeasurementMode FindValue(string value)
+        {
+            return FindValue<AacLoudnessMeasurementMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AacLoudnessMeasurementMode(string value)
         {
             return FindValue(value);
         }
@@ -5519,6 +5573,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec HEVC = new Codec("HEVC");
         /// <summary>
+        /// Constant JPEG2000 for Codec
+        /// </summary>
+        public static readonly Codec JPEG2000 = new Codec("JPEG2000");
+        /// <summary>
         /// Constant MJPEG for Codec
         /// </summary>
         public static readonly Codec MJPEG = new Codec("MJPEG");
@@ -9674,6 +9732,10 @@ namespace Amazon.MediaConvert
         /// Constant Mp4 for Format
         /// </summary>
         public static readonly Format Mp4 = new Format("mp4");
+        /// <summary>
+        /// Constant Mxf for Format
+        /// </summary>
+        public static readonly Format Mxf = new Format("mxf");
         /// <summary>
         /// Constant Quicktime for Format
         /// </summary>
@@ -21644,6 +21706,60 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusUpdateInterval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TamsGapHandling.
+    /// </summary>
+    public class TamsGapHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILL_WITH_BLACK for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling FILL_WITH_BLACK = new TamsGapHandling("FILL_WITH_BLACK");
+        /// <summary>
+        /// Constant HOLD_LAST_FRAME for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling HOLD_LAST_FRAME = new TamsGapHandling("HOLD_LAST_FRAME");
+        /// <summary>
+        /// Constant SKIP_GAPS for TamsGapHandling
+        /// </summary>
+        public static readonly TamsGapHandling SKIP_GAPS = new TamsGapHandling("SKIP_GAPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TamsGapHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TamsGapHandling FindValue(string value)
+        {
+            return FindValue<TamsGapHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TamsGapHandling(string value)
         {
             return FindValue(value);
         }

@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class WhatsAppSignupCallback
     {
         private string _accessToken;
+        private string _callbackUrl;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -54,6 +55,25 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetAccessToken()
         {
             return this._accessToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CallbackUrl. 
+        /// <para>
+        /// The URL where WhatsApp will send callback notifications for this account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string CallbackUrl
+        {
+            get { return this._callbackUrl; }
+            set { this._callbackUrl = value; }
+        }
+
+        // Check to see if CallbackUrl property is set
+        internal bool IsSetCallbackUrl()
+        {
+            return this._callbackUrl != null;
         }
 
     }

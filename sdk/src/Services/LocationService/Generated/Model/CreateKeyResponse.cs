@@ -46,7 +46,7 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DateTime? CreateTime
         {
             get { return this._createTime; }
@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The key value/string of an API key. This value is used when making API calls to authorize
-        /// the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.
+        /// the call. For example, see <a href="https://docs.aws.amazon.com/location/previous/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1000)]

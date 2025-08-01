@@ -68,7 +68,6 @@ namespace Amazon.CognitoSync.Internal
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Continue the request pipeline and copy over the cognito identity id.
         /// </summary>
@@ -89,7 +88,6 @@ namespace Amazon.CognitoSync.Internal
 
             return result;
         }
-#endif
 
         private static void SetIdentity(IExecutionContext executionContext, string identityId, string identityPoolId)
         {

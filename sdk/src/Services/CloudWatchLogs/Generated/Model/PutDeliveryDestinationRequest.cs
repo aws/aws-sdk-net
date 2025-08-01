@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// Creates or updates a logical <i>delivery destination</i>. A delivery destination is
     /// an Amazon Web Services resource that represents an Amazon Web Services service that
     /// logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs
-    /// delivery destinations.
+    /// delivery destinations and X-Ray as the trace delivery destination.
     /// 
     ///  
     /// <para>
@@ -87,6 +87,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PutDeliveryDestinationRequest : AmazonCloudWatchLogsRequest
     {
         private DeliveryDestinationConfiguration _deliveryDestinationConfiguration;
+        private DeliveryDestinationType _deliveryDestinationType;
         private string _name;
         private OutputFormat _outputFormat;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -97,8 +98,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// A structure that contains the ARN of the Amazon Web Services resource that will receive
         /// the logs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>deliveryDestinationConfiguration</c> is required for CloudWatch Logs, Amazon S3,
+        /// Firehose log delivery destinations and not required for X-Ray trace delivery destinations.
+        /// <c>deliveryDestinationType</c> is needed for X-Ray trace delivery destinations but
+        /// not required for other logs delivery destinations.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DeliveryDestinationConfiguration DeliveryDestinationConfiguration
         {
             get { return this._deliveryDestinationConfiguration; }
@@ -109,6 +117,46 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDeliveryDestinationConfiguration()
         {
             return this._deliveryDestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryDestinationType. 
+        /// <para>
+        /// The type of delivery destination. This parameter specifies the target service where
+        /// log data will be delivered. Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>S3</c> - Amazon S3 for long-term storage and analytics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CWL</c> - CloudWatch Logs for centralized log management
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FH</c> - Amazon Kinesis Data Firehose for real-time data streaming
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XRAY</c> - Amazon Web Services X-Ray for distributed tracing and application monitoring
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The delivery destination type determines the format and configuration options available
+        /// for log delivery.
+        /// </para>
+        /// </summary>
+        public DeliveryDestinationType DeliveryDestinationType
+        {
+            get { return this._deliveryDestinationType; }
+            set { this._deliveryDestinationType = value; }
+        }
+
+        // Check to see if DeliveryDestinationType property is set
+        internal bool IsSetDeliveryDestinationType()
+        {
+            return this._deliveryDestinationType != null;
         }
 
         /// <summary>

@@ -43,5 +43,13 @@ namespace Amazon.FreeTier.Model
         {
             return new GetFreeTierUsagePaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListAccountActivities operation
+        ///</summary>
+        public IListAccountActivitiesPaginator ListAccountActivities(ListAccountActivitiesRequest request) 
+        {
+            return new ListAccountActivitiesPaginator(this.client, request);
+        }
     }
 }

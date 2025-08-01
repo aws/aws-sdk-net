@@ -62,6 +62,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dataLocalizationRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataLocalizationRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("displayPhoneNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -42,7 +42,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ConnectionMode. 
         /// <para>
-        /// The connection mode to filter distributions by.
+        /// This field specifies whether the connection mode is through a standard distribution
+        /// (direct) or a multi-tenant distribution with distribution tenants (tenant-only).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

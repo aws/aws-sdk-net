@@ -1046,6 +1046,30 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsInput.RolesKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsInput.SubjectKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsOutput.RolesKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IAMFederationOptionsOutput.SubjectKey</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(null|[A-Za-z][A-Za-z0-9_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptions.IamIdentityCenterApplicationArn</property>
     <min>20</min>
     <max>2048</max>

@@ -37,6 +37,8 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private int? _limit;
         private string _nextToken;
+        private PolicyScope _policyScope;
+        private string _resourceArn;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -71,6 +73,43 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyScope. 
+        /// <para>
+        /// Specifies the scope of the resource policy. Valid values are <c>ACCOUNT</c> or <c>RESOURCE</c>.
+        /// When not specified, defaults to <c>ACCOUNT</c>.
+        /// </para>
+        /// </summary>
+        public PolicyScope PolicyScope
+        {
+            get { return this._policyScope; }
+            set { this._policyScope = value; }
+        }
+
+        // Check to see if PolicyScope property is set
+        internal bool IsSetPolicyScope()
+        {
+            return this._policyScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the CloudWatch Logs resource for which to query the resource policy.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
         }
 
     }

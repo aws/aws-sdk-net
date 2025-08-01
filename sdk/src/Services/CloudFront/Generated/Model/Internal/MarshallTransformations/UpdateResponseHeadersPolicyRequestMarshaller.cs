@@ -294,6 +294,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -305,8 +306,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static UpdateResponseHeadersPolicyRequestMarshaller _instance = new UpdateResponseHeadersPolicyRequestMarshaller();        

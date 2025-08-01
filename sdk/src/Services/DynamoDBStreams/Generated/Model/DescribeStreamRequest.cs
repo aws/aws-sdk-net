@@ -52,6 +52,7 @@ namespace Amazon.DynamoDBStreams.Model
     {
         private string _exclusiveStartShardId;
         private int? _limit;
+        private ShardFilter _shardFilter;
         private string _streamArn;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.DynamoDBStreams.Model
         internal bool IsSetLimit()
         {
             return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShardFilter. 
+        /// <para>
+        /// This optional field contains the filter definition for the <c>DescribeStream</c> API.
+        /// </para>
+        /// </summary>
+        public ShardFilter ShardFilter
+        {
+            get { return this._shardFilter; }
+            set { this._shardFilter = value; }
+        }
+
+        // Check to see if ShardFilter property is set
+        internal bool IsSetShardFilter()
+        {
+            return this._shardFilter != null;
         }
 
         /// <summary>

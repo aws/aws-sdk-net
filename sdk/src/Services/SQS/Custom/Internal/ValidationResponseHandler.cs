@@ -29,7 +29,6 @@ namespace Amazon.SQS.Internal
             PostInvoke(executionContext);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls the and post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -44,7 +43,6 @@ namespace Amazon.SQS.Internal
             PostInvoke(executionContext);
             return response;
         }
-#endif
 
         /// <summary>
         /// Custom pipeline handler

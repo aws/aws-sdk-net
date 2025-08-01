@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Repostspace.Model.BatchAddChannelRoleToAccessorsRequest.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.BatchRemoveChannelRoleFromAccessorsRequest.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.CreateChannelRequest.ChannelDescription</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.CreateChannelRequest.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.CreateChannelResponse.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Repostspace.Model.CreateSpaceRequest.Description</property>
     <min>1</min>
     <max>255</max>
@@ -19,6 +44,31 @@
     <property>Amazon.Repostspace.Model.CreateSpaceRequest.Subdomain</property>
     <min>1</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.GetChannelRequest.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.GetChannelResponse.ChannelDescription</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.GetChannelResponse.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.GetChannelResponse.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.GetSpaceResponse.ApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Repostspace.Model.GetSpaceResponse.Arn</property>
@@ -44,6 +94,11 @@
     <property>Amazon.Repostspace.Model.GetSpaceResponse.Status</property>
     <min>1</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.ListChannelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Repostspace.Model.ListSpacesRequest.MaxResults</property>
@@ -76,6 +131,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Repostspace.Model.UpdateChannelRequest.ChannelDescription</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.UpdateChannelRequest.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.UpdateChannelRequest.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Repostspace.Model.UpdateSpaceRequest.Description</property>
     <min>1</min>
     <max>255</max>
@@ -84,6 +154,21 @@
     <property>Amazon.Repostspace.Model.UpdateSpaceRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.ChannelData.ChannelDescription</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.ChannelData.ChannelId</property>
+    <min>24</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Repostspace.Model.ChannelData.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Repostspace.Model.SpaceData.Arn</property>

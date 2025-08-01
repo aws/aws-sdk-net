@@ -302,11 +302,6 @@ namespace Amazon.ConfigService.Model
         /// that can trigger an evaluation for the rule. If you do not specify a scope, evaluations
         /// are triggered when any resource in the recording group changes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The scope can be empty. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public Scope Scope
         {

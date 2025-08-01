@@ -62,6 +62,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NaturalLanguageQueryGenerationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("S3VectorsEngine", targetDepth))
+                {
+                    var unmarshaller = S3VectorsEngineUnmarshaller.Instance;
+                    unmarshalledObject.S3VectorsEngine = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

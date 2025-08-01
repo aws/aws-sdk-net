@@ -121,6 +121,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// The resource affected by the recommendation, with values like <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

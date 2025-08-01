@@ -35,6 +35,7 @@ namespace Amazon.Deadline.Model
     public partial class StepSearchSummary
     {
         private DateTime? _createdAt;
+        private string _createdBy;
         private DateTime? _endedAt;
         private string _jobId;
         private StepLifecycleStatus _lifecycleStatus;
@@ -48,6 +49,8 @@ namespace Amazon.Deadline.Model
         private int? _taskFailureRetryCount;
         private TaskRunStatus _taskRunStatus;
         private Dictionary<string, int> _taskRunStatusCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private DateTime? _updatedAt;
+        private string _updatedBy;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -65,6 +68,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The user or system that created this resource.
+        /// </para>
+        /// </summary>
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
         }
 
         /// <summary>
@@ -347,6 +368,42 @@ namespace Amazon.Deadline.Model
         internal bool IsSetTaskRunStatusCounts()
         {
             return this._taskRunStatusCounts != null && (this._taskRunStatusCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the resource was updated.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The user or system that updated this resource.
+        /// </para>
+        /// </summary>
+        public string UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
         }
 
     }

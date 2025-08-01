@@ -74,6 +74,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IAMFederationOptions", targetDepth))
+                {
+                    var unmarshaller = IAMFederationOptionsOutputUnmarshaller.Instance;
+                    unmarshalledObject.IAMFederationOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

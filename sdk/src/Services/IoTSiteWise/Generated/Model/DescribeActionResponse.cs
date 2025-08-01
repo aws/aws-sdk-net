@@ -38,6 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _actionId;
         private ActionPayload _actionPayload;
         private DateTime? _executionTime;
+        private ResolveTo _resolveTo;
         private TargetResource _targetResource;
 
         /// <summary>
@@ -114,6 +115,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetExecutionTime()
         {
             return this._executionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolveTo. 
+        /// <para>
+        /// The detailed resource this action resolves to.
+        /// </para>
+        /// </summary>
+        public ResolveTo ResolveTo
+        {
+            get { return this._resolveTo; }
+            set { this._resolveTo = value; }
+        }
+
+        // Check to see if ResolveTo property is set
+        internal bool IsSetResolveTo()
+        {
+            return this._resolveTo != null;
         }
 
         /// <summary>

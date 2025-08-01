@@ -53,6 +53,7 @@ namespace Amazon.DocDB.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private bool? _rotateMasterUserPassword;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _storageType;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -532,6 +533,24 @@ namespace Amazon.DocDB.Model
         internal bool IsSetRotateMasterUserPassword()
         {
             return this._rotateMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.
+        /// </para>
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

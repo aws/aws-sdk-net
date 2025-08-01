@@ -162,8 +162,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The information in the analysis template. Currently supports <c>text</c>, the query
-        /// text for the analysis template.
+        /// The information in the analysis template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

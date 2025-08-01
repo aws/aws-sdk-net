@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
+        private List<MatchRationaleItem> _matchRationale = AWSConfigs.InitializeCollections ? new List<MatchRationaleItem>() : null;
         private List<FormOutput> _readOnlyFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
 
         /// <summary>
@@ -84,6 +85,29 @@ namespace Amazon.DataZone.Model
         internal bool IsSetLatestTimeSeriesDataPointFormsOutput()
         {
             return this._latestTimeSeriesDataPointFormsOutput != null && (this._latestTimeSeriesDataPointFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchRationale. 
+        /// <para>
+        /// List of rationales indicating why this item was matched by search.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<MatchRationaleItem> MatchRationale
+        {
+            get { return this._matchRationale; }
+            set { this._matchRationale = value; }
+        }
+
+        // Check to see if MatchRationale property is set
+        internal bool IsSetMatchRationale()
+        {
+            return this._matchRationale != null && (this._matchRationale.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

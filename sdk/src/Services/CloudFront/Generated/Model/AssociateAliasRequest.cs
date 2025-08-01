@@ -31,24 +31,38 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAlias operation.
-    /// Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront
-    /// distribution.
-    /// 
-    ///  
+    /// <note> 
     /// <para>
-    /// With this operation you can move an alias that's already in use on a CloudFront distribution
-    /// to a different distribution in one step. This prevents the downtime that could occur
-    /// if you first remove the alias from one distribution and then separately add the alias
-    /// to another distribution.
+    /// The <c>AssociateAlias</c> API operation only supports standard distributions. To move
+    /// domains between distribution tenants and/or standard distributions, we recommend that
+    /// you use the <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDomainAssociation.html">UpdateDomainAssociation</a>
+    /// API operation instead.
+    /// 
+    ///  </note> 
+    /// <para>
+    /// Associates an alias with a CloudFront standard distribution. An alias is commonly
+    /// known as a custom domain or vanity domain. It can also be called a CNAME or alternate
+    /// domain name.
     /// </para>
     ///  
     /// <para>
-    /// To use this operation to associate an alias with a distribution, you provide the alias
-    /// and the ID of the target distribution for the alias. For more information, including
-    /// how to set up the target distribution, prerequisites that you must complete, and other
-    /// restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
-    /// an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront
-    /// Developer Guide</i>.
+    /// With this operation, you can move an alias that's already used for a standard distribution
+    /// to a different standard distribution. This prevents the downtime that could occur
+    /// if you first remove the alias from one standard distribution and then separately add
+    /// the alias to another standard distribution.
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this operation, specify the alias and the ID of the target standard distribution.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, including how to set up the target standard distribution, prerequisites
+    /// that you must complete, and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move">Moving
+    /// an alternate domain name to a different standard distribution or distribution tenant</a>
+    /// in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AssociateAliasRequest : AmazonCloudFrontRequest
@@ -59,7 +73,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The alias (also known as a CNAME) to add to the target distribution.
+        /// The alias (also known as a CNAME) to add to the target standard distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +92,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TargetDistributionId. 
         /// <para>
-        /// The ID of the distribution that you're associating the alias with.
+        /// The ID of the standard distribution that you're associating the alias with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -76,6 +76,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -87,8 +88,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static FlattenedXmlMapWithXmlNameRequestMarshaller _instance = new FlattenedXmlMapWithXmlNameRequestMarshaller();        

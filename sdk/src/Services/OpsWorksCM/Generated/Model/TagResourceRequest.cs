@@ -31,8 +31,8 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise
-    /// server, or to server backups.
+    /// Applies tags to an OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server,
+    /// or to server backups.
     /// </summary>
     public partial class TagResourceRequest : AmazonOpsWorksCMRequest
     {
@@ -62,8 +62,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map that contains tag keys and tag values to attach to AWS OpsWorks-CM servers or
-        /// backups.
+        /// A map that contains tag keys and tag values to attach to OpsWorks CM servers or backups.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -86,7 +85,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server or backup.
+        /// A maximum of 50 user-applied tags is allowed for any OpsWorks CM server or backup.
         /// </para>
         ///  </li> </ul>
         /// <para />

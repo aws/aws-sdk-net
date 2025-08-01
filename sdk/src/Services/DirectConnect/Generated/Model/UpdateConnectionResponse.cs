@@ -50,6 +50,7 @@ namespace Amazon.DirectConnect.Model
         private bool? _macSecCapable;
         private List<MacSecKey> _macSecKeys = AWSConfigs.InitializeCollections ? new List<MacSecKey>() : null;
         private string _ownerAccount;
+        private bool? _partnerInterconnectMacSecCapable;
         private string _partnerName;
         private string _portEncryptionStatus;
         private string _providerName;
@@ -395,6 +396,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetOwnerAccount()
         {
             return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartnerInterconnectMacSecCapable. 
+        /// <para>
+        /// Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).
+        /// </para>
+        /// </summary>
+        public bool? PartnerInterconnectMacSecCapable
+        {
+            get { return this._partnerInterconnectMacSecCapable; }
+            set { this._partnerInterconnectMacSecCapable = value; }
+        }
+
+        // Check to see if PartnerInterconnectMacSecCapable property is set
+        internal bool IsSetPartnerInterconnectMacSecCapable()
+        {
+            return this._partnerInterconnectMacSecCapable.HasValue; 
         }
 
         /// <summary>

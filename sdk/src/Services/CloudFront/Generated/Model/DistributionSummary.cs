@@ -179,7 +179,7 @@ namespace Amazon.CloudFront.Model
         /// The comment originally specified when this distribution was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Comment
         {
             get { return this._comment; }
@@ -195,7 +195,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ConnectionMode. 
         /// <para>
-        /// The connection mode to filter distributions by.
+        /// This field specifies whether the connection mode is through a standard distribution
+        /// (direct) or a multi-tenant distribution with distribution tenants (tenant-only).
         /// </para>
         /// </summary>
         public ConnectionMode ConnectionMode
@@ -424,7 +425,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PriceClass. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// A complex type that contains information about price class for this streaming distribution.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

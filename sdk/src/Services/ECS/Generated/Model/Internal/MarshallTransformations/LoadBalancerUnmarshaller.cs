@@ -56,6 +56,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("advancedConfiguration", targetDepth))
+                {
+                    var unmarshaller = AdvancedConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("containerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

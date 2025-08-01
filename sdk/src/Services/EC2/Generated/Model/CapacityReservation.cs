@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
         private List<CapacityAllocation> _capacityAllocations = AWSConfigs.InitializeCollections ? new List<CapacityAllocation>() : null;
+        private string _capacityBlockId;
         private string _capacityReservationArn;
         private string _capacityReservationFleetId;
         private string _capacityReservationId;
@@ -138,6 +139,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCapacityAllocations()
         {
             return this._capacityAllocations != null && (this._capacityAllocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlockId. 
+        /// <para>
+        /// The ID of the Capacity Block.
+        /// </para>
+        /// </summary>
+        public string CapacityBlockId
+        {
+            get { return this._capacityBlockId; }
+            set { this._capacityBlockId = value; }
+        }
+
+        // Check to see if CapacityBlockId property is set
+        internal bool IsSetCapacityBlockId()
+        {
+            return this._capacityBlockId != null;
         }
 
         /// <summary>

@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("capacityBlockId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("groupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

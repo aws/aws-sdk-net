@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>SchemaName</c>, <c>SchemaArn</c>, <c>CreatedAt</c>, and<c>UpdatedAt</c>.
+    /// An object containing <c>schemaName</c>, <c>schemaArn</c>, <c>createdAt</c>, <c>updatedAt</c>,
+    /// and <c>hasWorkflows</c>.
     /// </summary>
     public partial class SchemaMappingSummary
     {

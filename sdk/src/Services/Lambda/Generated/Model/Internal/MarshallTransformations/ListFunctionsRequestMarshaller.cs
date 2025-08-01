@@ -74,7 +74,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
-            request.ResourcePath = "/2015-03-31/functions/";
+            request.ResourcePath = "/2015-03-31/functions";
             request.UseQueryString = true;
 
             return request;

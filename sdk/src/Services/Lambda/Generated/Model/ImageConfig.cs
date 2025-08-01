@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1500)]
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> Command
         {
             get { return this._command; }
@@ -101,7 +101,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1500)]
+        [AWSProperty(Min=0, Max=1500)]
         public List<string> EntryPoint
         {
             get { return this._entryPoint; }
@@ -145,7 +145,7 @@ namespace Amazon.Lambda.Model
         /// Specifies the working directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string WorkingDirectory
         {
             get { return this._workingDirectory; }

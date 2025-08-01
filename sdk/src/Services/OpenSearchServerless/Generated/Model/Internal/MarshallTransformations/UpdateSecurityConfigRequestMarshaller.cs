@@ -98,6 +98,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetIamFederationOptions())
+            {
+                context.Writer.WritePropertyName("iamFederationOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IamFederationConfigOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IamFederationOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIamIdentityCenterOptionsUpdates())
             {
                 context.Writer.WritePropertyName("iamIdentityCenterOptionsUpdates");

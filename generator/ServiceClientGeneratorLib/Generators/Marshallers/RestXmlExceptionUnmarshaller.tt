@@ -35,8 +35,30 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public <#=this.UnmarshallerBaseName #> Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
+<#
+    if (this.Config.ServiceId == "S3")
+    {
+#>
+            string id2 = null, amzCfId = null;
+            var s3ErrorResponse = errorResponse as S3ErrorResponse;
+            if (s3ErrorResponse != null)
+            {
+                id2 = s3ErrorResponse.Id2;
+                amzCfId = s3ErrorResponse.AmzCfId;
+            }
+            <#=this.UnmarshallerBaseName #> response = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
+
+<#
+    }
+    else
+    {
+#>
             <#=this.UnmarshallerBaseName #> response = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+    }
+#>
 
             while (context.Read())
             {

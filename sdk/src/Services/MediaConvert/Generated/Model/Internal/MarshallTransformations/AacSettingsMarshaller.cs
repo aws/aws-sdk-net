@@ -70,6 +70,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
+            if(requestObject.IsSetLoudnessMeasurementMode())
+            {
+                context.Writer.WritePropertyName("loudnessMeasurementMode");
+                context.Writer.WriteStringValue(requestObject.LoudnessMeasurementMode);
+            }
+
+            if(requestObject.IsSetRapInterval())
+            {
+                context.Writer.WritePropertyName("rapInterval");
+                context.Writer.WriteNumberValue(requestObject.RapInterval.Value);
+            }
+
             if(requestObject.IsSetRateControlMode())
             {
                 context.Writer.WritePropertyName("rateControlMode");
@@ -92,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("specification");
                 context.Writer.WriteStringValue(requestObject.Specification);
+            }
+
+            if(requestObject.IsSetTargetLoudnessRange())
+            {
+                context.Writer.WritePropertyName("targetLoudnessRange");
+                context.Writer.WriteNumberValue(requestObject.TargetLoudnessRange.Value);
             }
 
             if(requestObject.IsSetVbrQuality())

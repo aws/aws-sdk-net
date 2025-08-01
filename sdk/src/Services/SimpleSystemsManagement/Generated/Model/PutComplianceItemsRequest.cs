@@ -54,7 +54,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// ExecutionTime. The time the patch, association, or custom compliance item was applied
     /// to the managed node.
     /// </para>
-    ///  </li> <li> 
+    ///  <important> 
+    /// <para>
+    /// For State Manager associations, this represents the time when compliance status was
+    /// captured by the Systems Manager service during its internal compliance aggregation
+    /// workflow, not necessarily when the association was executed on the managed node. State
+    /// Manager updates compliance information for all associations on an instance whenever
+    /// any association executes, which may result in multiple associations showing the same
+    /// execution time.
+    /// </para>
+    ///  </important> </li> <li> 
     /// <para>
     /// Id: The patch, association, or custom compliance ID.
     /// </para>

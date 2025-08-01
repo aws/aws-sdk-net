@@ -53,7 +53,8 @@ namespace Amazon.EC2.Model
     /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
     /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
     /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
-    /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+    /// meet the criteria. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
+    /// AMIs</a>.
     /// </para>
     ///  
     /// <para>
@@ -204,6 +205,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>ena-support</c> - A Boolean that indicates whether enhanced networking with ENA
         /// is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>free-tier-eligible</c> - A Boolean that indicates whether this image can be used
+        /// under the Amazon Web Services Free Tier (<c>true</c> | <c>false</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

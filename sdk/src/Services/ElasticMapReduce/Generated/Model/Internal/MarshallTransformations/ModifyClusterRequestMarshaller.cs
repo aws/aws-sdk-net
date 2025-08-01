@@ -81,6 +81,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClusterId);
             }
 
+            if(publicRequest.IsSetExtendedSupport())
+            {
+                context.Writer.WritePropertyName("ExtendedSupport");
+                context.Writer.WriteBooleanValue(publicRequest.ExtendedSupport.Value);
+            }
+
             if(publicRequest.IsSetStepConcurrencyLevel())
             {
                 context.Writer.WritePropertyName("StepConcurrencyLevel");

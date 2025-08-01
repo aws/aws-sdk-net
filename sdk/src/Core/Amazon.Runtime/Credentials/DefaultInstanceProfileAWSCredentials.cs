@@ -18,9 +18,7 @@ using Amazon.Util;
 using System;
 using System.Globalization;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime
 {
@@ -124,7 +122,7 @@ namespace Amazon.Runtime
                             _imdsRefreshFailed = false;
                         }
 
-                        return _lastRetrievedCredentials?.Credentials.Copy();
+                        return _lastRetrievedCredentials?.Credentials;
                     }
                 }
                 finally
@@ -163,7 +161,7 @@ namespace Amazon.Runtime
                         _imdsRefreshFailed = false;
                     }
 
-                    credentials = _lastRetrievedCredentials.Credentials?.Copy();
+                    credentials = _lastRetrievedCredentials.Credentials;
                 }
                 finally
                 {
@@ -213,7 +211,7 @@ namespace Amazon.Runtime
                             _imdsRefreshFailed = false;
                         }
 
-                        return _lastRetrievedCredentials?.Credentials.Copy();
+                        return _lastRetrievedCredentials?.Credentials;
                     }
                 }
                 finally
@@ -252,7 +250,7 @@ namespace Amazon.Runtime
                         _imdsRefreshFailed = false;
                     }
 
-                    credentials = _lastRetrievedCredentials.Credentials?.Copy();
+                    credentials = _lastRetrievedCredentials.Credentials;
                 }
                 finally
                 {

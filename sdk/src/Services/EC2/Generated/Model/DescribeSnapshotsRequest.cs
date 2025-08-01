@@ -94,10 +94,6 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
     /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>

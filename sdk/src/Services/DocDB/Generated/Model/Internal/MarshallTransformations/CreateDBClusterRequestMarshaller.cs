@@ -155,6 +155,17 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
                 }
+                if(publicRequest.IsSetServerlessV2ScalingConfiguration())
+                {
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ServerlessV2ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ServerlessV2ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromDouble(publicRequest.ServerlessV2ScalingConfiguration.MinCapacity));
+                    }
+                }
                 if(publicRequest.IsSetStorageEncrypted())
                 {
                     request.Parameters.Add("StorageEncrypted", StringUtils.FromBool(publicRequest.StorageEncrypted));

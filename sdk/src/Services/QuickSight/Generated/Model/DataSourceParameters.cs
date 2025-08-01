@@ -45,6 +45,7 @@ namespace Amazon.QuickSight.Model
         private BigQueryParameters _bigQueryParameters;
         private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
+        private ImpalaParameters _impalaParameters;
         private JiraParameters _jiraParameters;
         private MariaDbParameters _mariaDbParameters;
         private MySqlParameters _mySqlParameters;
@@ -223,6 +224,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetExasolParameters()
         {
             return this._exasolParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImpalaParameters. 
+        /// <para>
+        /// The parameters for Impala.
+        /// </para>
+        /// </summary>
+        public ImpalaParameters ImpalaParameters
+        {
+            get { return this._impalaParameters; }
+            set { this._impalaParameters = value; }
+        }
+
+        // Check to see if ImpalaParameters property is set
+        internal bool IsSetImpalaParameters()
+        {
+            return this._impalaParameters != null;
         }
 
         /// <summary>

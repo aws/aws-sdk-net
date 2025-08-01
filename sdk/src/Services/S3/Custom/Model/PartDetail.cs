@@ -29,39 +29,7 @@ namespace Amazon.S3.Model
     /// A container for elements related to a particular part in a multipart operation. 
     /// A response can contain zero or more Part elements.
     /// </summary>
-    public class PartDetail : PartETag
+    public partial class PartDetail : PartETag
     {
-        private DateTime? lastModified;
-        private long? size;
-
-        /// <summary>
-        /// The date and time at which the part was uploaded.
-        /// </summary>
-        public DateTime LastModified
-        {
-            get { return this.lastModified.GetValueOrDefault(); }
-            set { this.lastModified = value; }
-        }
-
-        // Check to see if LastModified property is set
-        internal bool IsLastModified()
-        {
-            return this.lastModified.HasValue;
-        }
-
-        /// <summary>
-        /// The size of the uploaded part data.
-        /// </summary>
-        public long? Size
-        {
-            get { return this.size; }
-            set { this.size = value; }
-        }
-
-        // Check to see if Size property is set
-        internal bool IsSize()
-        {
-            return this.size.HasValue;
-        }
     }
 }

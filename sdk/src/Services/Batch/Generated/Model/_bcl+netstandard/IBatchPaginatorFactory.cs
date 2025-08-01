@@ -58,6 +58,16 @@ namespace Amazon.Batch.Model
         IDescribeJobQueuesPaginator DescribeJobQueues(DescribeJobQueuesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeServiceEnvironments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeServiceEnvironmentsPaginator DescribeServiceEnvironments(DescribeServiceEnvironmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListConsumableResources operation
         ///</summary>
         [AWSPaginator(
@@ -96,5 +106,15 @@ namespace Amazon.Batch.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListServiceJobsPaginator ListServiceJobs(ListServiceJobsRequest request);
     }
 }

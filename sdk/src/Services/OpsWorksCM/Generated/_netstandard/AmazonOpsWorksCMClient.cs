@@ -40,12 +40,20 @@ namespace Amazon.OpsWorksCM
     /// <summary>
     /// <para>Implementation for accessing OpsWorksCM</para>
     ///
-    /// AWS OpsWorks CM 
+    /// OpsWorks CM <important> 
     /// <para>
-    /// AWS OpsWorks for configuration management (CM) is a service that runs and manages
-    /// configuration management servers. You can use AWS OpsWorks CM to create and manage
-    /// AWS OpsWorks for Chef Automate and AWS OpsWorks for Puppet Enterprise servers, and
-    /// add or remove nodes for the servers to manage.
+    /// The OpsWorks services have reached end of life and have been disabled for both new
+    /// and existing customers. We strongly recommend customers migrate their workloads to
+    /// other solutions as soon as possible. If you have questions about migration, reach
+    /// out to the Amazon Web ServicesSupport Team on <a href="https://repost.aws/">Amazon
+    /// Web Services re:Post</a> or through <a href="https://aws.amazon.com/support">Amazon
+    /// Web Services Premium Support</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// OpsWorks CM is a service that runs and manages configuration management servers. You
+    /// can use OpsWorks CM to create and manage OpsWorks for Chef Automate and OpsWorks for
+    /// Puppet Enterprise servers, and add or remove nodes for the servers to manage.
     /// </para>
     ///  
     /// <para>
@@ -55,11 +63,11 @@ namespace Amazon.OpsWorksCM
     /// <para>
     ///  <b>Server</b>: A configuration management server that can be highly-available. The
     /// configuration management server runs on an Amazon Elastic Compute Cloud (EC2) instance,
-    /// and may use various other AWS services, such as Amazon Relational Database Service
-    /// (RDS) and Elastic Load Balancing. A server is a generic abstraction over the configuration
-    /// manager that you want to use, much like Amazon RDS. In AWS OpsWorks CM, you do not
-    /// start or stop servers. After you create servers, they continue to run until they are
-    /// deleted.
+    /// and may use various other Amazon Web Services services, such as Amazon Relational
+    /// Database Service (RDS) and Elastic Load Balancing. A server is a generic abstraction
+    /// over the configuration manager that you want to use, much like Amazon RDS. In OpsWorks
+    /// CM, you do not start or stop servers. After you create servers, they continue to run
+    /// until they are deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -69,8 +77,8 @@ namespace Amazon.OpsWorksCM
     ///  </li> <li> 
     /// <para>
     ///  <b>Backup</b>: This is an application-level backup of the data that the configuration
-    /// manager stores. AWS OpsWorks CM creates an S3 bucket for backups when you launch the
-    /// first server. A backup maintains a snapshot of a server's configuration-related attributes
+    /// manager stores. OpsWorks CM creates an S3 bucket for backups when you launch the first
+    /// server. A backup maintains a snapshot of a server's configuration-related attributes
     /// at the time the backup starts.
     /// </para>
     ///  </li> <li> 
@@ -82,7 +90,7 @@ namespace Amazon.OpsWorksCM
     ///  </li> <li> 
     /// <para>
     ///  <b>Account attributes</b>: Every account has attributes that are assigned in the
-    /// AWS OpsWorks CM database. These attributes store information about configuration limits
+    /// OpsWorks CM database. These attributes store information about configuration limits
     /// (servers, backups, etc.) and your customer account. 
     /// </para>
     ///  </li> </ul> 
@@ -91,9 +99,9 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one
-    /// of the following endpoints. Your servers can only be accessed or managed within the
-    /// endpoint in which they are created.
+    /// OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one of
+    /// the following endpoints. Your servers can only be accessed or managed within the endpoint
+    /// in which they are created.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -133,8 +141,8 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS
-    /// OpsWorks endpoints and quotas</a> in the AWS General Reference.
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">OpsWorks
+    /// endpoints and quotas</a> in the Amazon Web Services General Reference.
     /// </para>
     ///  
     /// <para>
@@ -392,7 +400,7 @@ namespace Amazon.OpsWorksCM
         /// <para>
         ///  Example (Chef): <c>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
         /// <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
-        /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</c> 
+        /// "Name=<i>CHEF_AUTOMATE_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</c> 
         /// </para>
         ///  
         /// <para>
@@ -411,8 +419,8 @@ namespace Amazon.OpsWorksCM
         /// Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
         /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
         /// parameters of the request are not valid. The AssociateNode API call can be integrated
-        /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
-        /// a server's instance. 
+        /// into Auto Scaling configurations, CloudFormation templates, or the user data of a
+        /// server's instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNode service method.</param>
@@ -538,18 +546,18 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         ///  If you do not specify a security group by adding the <c>SecurityGroupIds</c> parameter,
-        /// AWS OpsWorks creates a new security group. 
+        /// OpsWorks creates a new security group. 
         /// </para>
         ///  
         /// <para>
         ///  <i>Chef Automate:</i> The default security group opens the Chef server to the world
-        /// on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is
-        /// also open to the world on TCP port 22. 
+        /// on TCP port 443. If a KeyName is present, OpsWorks enables SSH access. SSH is also
+        /// open to the world on TCP port 22. 
         /// </para>
         ///  
         /// <para>
         ///  <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433,
-        /// 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access.
+        /// 8140, 8142, 8143, and 8170. If a KeyName is present, OpsWorks enables SSH access.
         /// SSH is also open to the world on TCP port 22. 
         /// </para>
         ///  
@@ -659,10 +667,10 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Deletes the server and the underlying AWS CloudFormation stacks (including the server's
+        /// Deletes the server and the underlying CloudFormation stacks (including the server's
         /// EC2 instance). When you run this command, the server state is updated to <c>DELETING</c>.
         /// After the server is deleted, it is no longer returned by <c>DescribeServer</c> requests.
-        /// If the AWS CloudFormation stack cannot be deleted, the server cannot be deleted. 
+        /// If the CloudFormation stack cannot be deleted, the server cannot be deleted. 
         /// 
         ///  
         /// <para>
@@ -719,7 +727,7 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Describes your OpsWorks-CM account attributes. 
+        /// Describes your OpsWorks CM account attributes. 
         /// 
         ///  
         /// <para>
@@ -911,8 +919,8 @@ namespace Amazon.OpsWorksCM
 
         /// <summary>
         /// Lists all configuration management servers that are identified with your account.
-        /// Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not
-        /// query other services. 
+        /// Only the stored results from Amazon DynamoDB are returned. OpsWorks CM does not query
+        /// other services. 
         /// 
         ///  
         /// <para>
@@ -964,10 +972,10 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Disassociates a node from an AWS OpsWorks CM server, and removes the node from the
-        /// server's managed nodes. After a node is disassociated, the node key pair is no longer
-        /// valid for accessing the configuration manager's API. For more information about how
-        /// to associate a node, see <a>AssociateNode</a>. 
+        /// Disassociates a node from an OpsWorks CM server, and removes the node from the server's
+        /// managed nodes. After a node is disassociated, the node key pair is no longer valid
+        /// for accessing the configuration manager's API. For more information about how to associate
+        /// a node, see <a>AssociateNode</a>. 
         /// 
         ///  
         /// <para>
@@ -1073,8 +1081,8 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate
-        /// or AWS OpsWorks for Puppet Enterprise servers or backups.
+        /// Returns a list of tags that are applied to the specified OpsWorks for Chef Automate
+        /// or OpsWorks for Puppet Enterprise servers or backups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1122,9 +1130,9 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         /// Restoring from a backup is performed by creating a new EC2 instance. If restoration
-        /// is successful, and the server is in a <c>HEALTHY</c> state, AWS OpsWorks CM switches
-        /// traffic over to the new instance. After restoration is finished, the old EC2 instance
-        /// is maintained in a <c>Running</c> or <c>Stopped</c> state, but is eventually terminated.
+        /// is successful, and the server is in a <c>HEALTHY</c> state, OpsWorks CM switches traffic
+        /// over to the new instance. After restoration is finished, the old EC2 instance is maintained
+        /// in a <c>Running</c> or <c>Stopped</c> state, but is eventually terminated.
         /// </para>
         ///  
         /// <para>
@@ -1230,8 +1238,8 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise
-        /// server, or to server backups.
+        /// Applies tags to an OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server,
+        /// or to server backups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1273,7 +1281,7 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Removes specified tags from an AWS OpsWorks-CM server or backup.
+        /// Removes specified tags from an OpsWorks CM server or backup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

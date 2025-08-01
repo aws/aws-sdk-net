@@ -425,6 +425,10 @@ namespace ServiceClientGenerator
         public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
         public const string OriginalMemberKey = "originalMember";
         public const string OverrideTreatEnumsAsStringKey = "overrideTreatEnumsAsString";
+        public const string ExcludeMembersKey = "excludeMembers";
+        public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
+        public const string InheritAlternateBaseClassKey = "inheritAlternateBaseClass";
+
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -561,6 +565,63 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Used to exclude property generation, but not at the marshaller level and only at the shape level.
+        /// To use this customization add an entry like below, where the top-level key is the name of the shape and 
+        /// the array is filled with members to exclude. To exclude members from marshalling, use ShapeModifiers.Exclude key.
+        ///     "excludeMembers":{
+        ///       "PartDetail":[
+        ///          "ChecksumCRC32",
+        ///          "ChecksumCRC32C",
+        ///          "ChecksumCRC64NVME",
+        ///          "ChecksumSHA1",
+        ///          "ChecksumSHA256",
+        ///          "ETag",
+        ///          "LastModified",
+        ///          "PartNumber"
+        ///      ]
+        /// }
+        /// </summary>
+        public List<string> ExcludeMembers(string shapeName)
+        {
+            var data = _documentRoot[ExcludeMembersKey];
+            if (data == null || data[shapeName] == null) return null;
+            if (!data[shapeName].IsArray)
+                throw new InvalidDataException("The members to exclude must be within an array.");
+
+            
+            var excludedMembers = new List<string>();
+            foreach (var member in data[shapeName])
+            {
+                excludedMembers.Add(member.ToString());
+            }
+            return excludedMembers;
+
+        }
+
+        /// <summary>
+        /// This customization is used to unwrap the response, and is only used for Xml services.
+        /// This is currently only used for GetBucketLocation
+        /// where the output is not wrapped in a top-level output xml tag and only includes the member at the root level
+        /// example usage:
+        /// "unwrapOutput:{
+        ///   "GetBucketLocationOutput": true
+        /// }
+        /// </summary>
+        /// <param name="shapeName">The shape to unwrap</param>
+        /// <returns></returns>
+        /// <exception cref="InvalidCastException"></exception>
+        public bool UnwrapXmlOutput(string shapeName)
+        {
+            var data = _documentRoot[UnwrapXmlOutputKey];
+            // if the customization doesn't exist, the default is false
+            if (data == null || data[shapeName] == null) return false;
+            if (!data[shapeName].IsBoolean)
+                throw new InvalidCastException("The value for the UnwrapOutput customization must be a boolean");
+
+            return (bool)data[shapeName];
+        }
+
+        /// <summary>
         /// A list of uri properties for the service where we should not do validation for presence.
         /// </summary>
         public List<string> SkipUriPropertyValidations
@@ -642,6 +703,27 @@ namespace ServiceClientGenerator
 
                 return _resultGenerationSuppressions;
             }
+        }
+
+        /// <summary>
+        /// Overrides the base class that structures inherit from.
+        /// Here is an example of the usage
+        ///     "inheritAlternateBaseClass":{
+        ///        "CreateBucketRequest": {
+        ///          "alternateBaseClass" : "PutWithAclRequest"
+        ///        }
+        ///    }
+        /// </summary>
+        /// <param name="shapeName"></param>
+        /// <returns></returns>
+        public string InheritAlternateBaseClass(string shapeName)
+        {
+            var data = _documentRoot[InheritAlternateBaseClassKey];
+            if (data == null || data[shapeName] == null)  return null;
+
+            if (data[shapeName]["alternateBaseClass"] == null)
+                throw new InvalidDataException("You must specify \"alternateBaseClass\" as the key for this customization");
+            return data[shapeName]["alternateBaseClass"].ToString();
         }
 
         public bool GenerateCustomUnmarshaller

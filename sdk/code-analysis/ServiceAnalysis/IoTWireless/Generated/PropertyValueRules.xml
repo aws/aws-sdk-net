@@ -1647,9 +1647,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.NbTransMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.NbTransMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TargetPer</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TxPowerIndexMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.TxPowerIndexMin</property>
+    <min>0</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANGetServiceProfileInfo.UlBucketSize</property>
@@ -1726,6 +1746,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.DrMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.NbTransMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.NbTransMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.TxPowerIndexMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.TxPowerIndexMin</property>
     <min>0</min>
     <max>15</max>
   </property-value-rule>

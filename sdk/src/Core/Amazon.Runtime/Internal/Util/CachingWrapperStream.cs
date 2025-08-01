@@ -24,10 +24,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Amazon.Runtime;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -95,14 +93,12 @@ namespace Amazon.Runtime.Internal.Util
             return numberOfBytesRead;
         }
 
-#if AWS_ASYNC_API
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             var numberOfBytesRead = await base.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
             UpdateCacheAfterReading(buffer, offset, numberOfBytesRead);
             return numberOfBytesRead;
         }
-#endif
 
         private void UpdateCacheAfterReading(byte[] buffer, int offset, int numberOfBytesRead)
         {

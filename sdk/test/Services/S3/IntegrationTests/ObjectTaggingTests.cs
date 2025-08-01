@@ -220,10 +220,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Put tagging for each version of the object
             //
 
-            Client.PutObjectTagging(new PutObjectTaggingRequest{
+            Client.PutObjectTagging(new PutObjectTaggingRequest
+            {
                 BucketName = bucketName,
                 Key = key,
-                Tagging = {
+                Tagging = new Tagging
+                {
                     TagSet = new List<Tag>{
                         new Tag{ Key = "key", Value = "Value"}
                     }
@@ -235,7 +237,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Key = key,
-                Tagging = {
+                Tagging = new Tagging
+                {
                     TagSet = new List<Tag>{
                         new Tag{ Key = "key", Value = "Value2"}
                     },

@@ -1,27 +1,25 @@
-# AWS SDK for .NET [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aws/aws-sdk-net?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services][aws] and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more.
+# AWS SDK for .NET
+The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web Services](https://aws.amazon.com/) and build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more.
 
-* [API Docs][docs-api]
-* [AWS .NET Developer Blog][dotnet-blog]
-* [SDK Homepage][sdk-website]
+* [API Docs](https://docs.aws.amazon.com/sdkfornet/v4/apidocs/)
+* [AWS .NET Developer Blog](https://aws.amazon.com/blogs/developer/category/programing-language/dot-net/)
+* [SDK Homepage](https://aws.amazon.com/sdk-for-net/)
 * [SDK Developer Guide](https://docs.aws.amazon.com/sdk-for-net)
-* [Forum][sdk-forum]
-* [GitHub Issues][sdk-issues]
+* [GitHub Issues](https://github.com/aws/aws-sdk-net/issues)
 * [SDK Samples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3)
 
 ## Getting Help
 
-Please use these community resources for getting help. We use the [GitHub issues][sdk-issues] for tracking bugs and feature requests and have limited bandwidth to address them.
+Please use these community resources for getting help. We use the [GitHub issues](https://github.com/aws/aws-sdk-net/issues) for tracking bugs and feature requests and have limited bandwidth to address them.
 * Ask a question on [StackOverflow](http://stackoverflow.com/) and tag it with aws-sdk-net
-* Come join the AWS .NET community chat on [gitter](https://gitter.im/aws/aws-sdk-net)
 * Open a support ticket with [AWS Support](https://console.aws.amazon.com/support/home)
-* If it turns out that you may have found a bug, please open an [issue][sdk-issues]
+* If it turns out that you may have found a bug, please open an [issue](https://github.com/aws/aws-sdk-net/issues)
 
 ### Opening Issues
 
 If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existing [issues](https://github.com/aws/aws-sdk-net/issues?q=is%3Aissue) and try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of AWS SDK .NET and the OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
 
-The [GitHub issues][sdk-issues] are intended for bug reports and feature requests. For help and questions with using AWS SDK for .NET please make use of the resources listed in the Getting Help section. There are limited resources available for handling issues and by keeping the list of open issues clean we can respond in a timely manner.
+The [GitHub issues](https://github.com/aws/aws-sdk-net/issues) are intended for bug reports and feature requests. For help and questions with using AWS SDK for .NET please make use of the resources listed in the Getting Help section. There are limited resources available for handling issues and by keeping the list of open issues clean we can respond in a timely manner.
 
 ## SDK Change Log
 
@@ -36,7 +34,7 @@ For information about maintenance and support for SDK major versions and their u
 
 ## Modularization
 
-With version 3 of the AWS SDK for .NET the SDK has been modularized. This means a separate NuGet package is created for each service as well as a core project. To use this branch compile the solution in the **sdk** folder that matches the desired platform and then include the assemblies for the services needed as well as the core assembly.
+The AWS SDK for .NET the SDK is modularized. This means a separate NuGet package is created for each service as well as a core project. For example an application using Amazon S3 and Amazon SQS will use the AWSSDK.S3 and AWSSDK.SQS NuGet packages. Those packages will pull in the AWSSDK.Core dependency used by the service packages.
 
 ## Versioning
 
@@ -51,7 +49,9 @@ The SDK assemblies are strongly named which requires consumers of the SDK to rec
 
 ### Internal Namespace
 
-Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
+Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. The [InternalsVisibleToAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.internalsvisibletoattribute) attribute is not used for this use case because that requires Core to know all possible services it will be used for at compile time. New service packages will be released needing access to the internal logic of core after a Core version has been released. 
+
+Classes and interfaces in these namespaces are subject to modification or removal outside of versioning scheme described above. If you find yourself relying on `Internal` functionality directly, consider [opening a Feature Request](https://github.com/aws/aws-sdk-net/issues/new/choose) for your use case if one does not already exist.
 
 ## Code Analyzers
 
@@ -88,7 +88,7 @@ Add a reference to the NuGet package [AWSSDK.Extensions.CrtIntegration](https://
 **Important:** Do not run the integration tests on a production account.
 
 Integration tests can be found in the **AWSSDK.IntegrationTests** project. These test assume that a default profile has been 
-configured for credentials. For information about setting up a default profile read the [Developer Guide][credentials-management].
+configured for credentials. For information about setting up a default profile read the [Developer Guide](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/creds-assign.html).
 
 The tests are designed to create and delete the resources needed for testing but it is important to keep your data safe. Do not run
 these tests on accounts that contain production data or resources. Since AWS resources are created and deleted during the running 
@@ -192,6 +192,10 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
 * [AWSSDK.BedrockAgent](https://www.nuget.org/packages/AWSSDK.BedrockAgent/)
 	* This release introduces Agents for Amazon Bedrock
+* [AWSSDK.BedrockAgentCore](https://www.nuget.org/packages/AWSSDK.BedrockAgentCore/)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
+* [AWSSDK.BedrockAgentCoreControl](https://www.nuget.org/packages/AWSSDK.BedrockAgentCoreControl/)
+	* Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.
 * [AWSSDK.BedrockAgentRuntime](https://www.nuget.org/packages/AWSSDK.BedrockAgentRuntime/)
 	* This release introduces Agents for Amazon Bedrock Runtime
 * [AWSSDK.BedrockDataAutomation](https://www.nuget.org/packages/AWSSDK.BedrockDataAutomation/)
@@ -782,6 +786,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
 * [AWSSDK.S3Tables](https://www.nuget.org/packages/AWSSDK.S3Tables/)
 	* Amazon S3 Tables deliver the first cloud object store with built-in open table format support, and the easiest way to store tabular data at scale.
+* [AWSSDK.S3Vectors](https://www.nuget.org/packages/AWSSDK.S3Vectors/)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
 * [AWSSDK.SageMaker](https://www.nuget.org/packages/AWSSDK.SageMaker/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
 * [AWSSDK.SagemakerEdgeManager](https://www.nuget.org/packages/AWSSDK.SagemakerEdgeManager/)

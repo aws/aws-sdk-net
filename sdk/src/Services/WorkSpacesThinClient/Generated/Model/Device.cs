@@ -44,6 +44,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         private string _kmsKeyArn;
         private DateTime? _lastConnectedAt;
         private DateTime? _lastPostureAt;
+        private string _lastUserId;
         private string _model;
         private string _name;
         private string _pendingSoftwareSetId;
@@ -236,6 +237,25 @@ namespace Amazon.WorkSpacesThinClient.Model
         internal bool IsSetLastPostureAt()
         {
             return this._lastPostureAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUserId. 
+        /// <para>
+        /// The user ID of the most recent session on the device.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string LastUserId
+        {
+            get { return this._lastUserId; }
+            set { this._lastUserId = value; }
+        }
+
+        // Check to see if LastUserId property is set
+        internal bool IsSetLastUserId()
+        {
+            return this._lastUserId != null;
         }
 
         /// <summary>

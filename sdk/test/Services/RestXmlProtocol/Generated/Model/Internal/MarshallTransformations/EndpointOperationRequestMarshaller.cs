@@ -60,9 +60,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             request.ResourcePath = "/EndpointOperation";
 
 
+            PostMarshallCustomization(request, publicRequest);
             
             request.HostPrefix = $"foo.";
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        

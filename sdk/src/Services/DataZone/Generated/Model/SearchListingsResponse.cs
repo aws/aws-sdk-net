@@ -34,9 +34,34 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SearchListingsResponse : AmazonWebServiceResponse
     {
+        private List<AggregationOutput> _aggregates = AWSConfigs.InitializeCollections ? new List<AggregationOutput>() : null;
         private List<SearchResultItem> _items = AWSConfigs.InitializeCollections ? new List<SearchResultItem>() : null;
         private string _nextToken;
         private int? _totalMatchCount;
+
+        /// <summary>
+        /// Gets and sets the property Aggregates. 
+        /// <para>
+        /// Contains computed counts grouped by field values based on the requested aggregation
+        /// attributes for the matching listings.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AggregationOutput> Aggregates
+        {
+            get { return this._aggregates; }
+            set { this._aggregates = value; }
+        }
+
+        // Check to see if Aggregates property is set
+        internal bool IsSetAggregates()
+        {
+            return this._aggregates != null && (this._aggregates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Items. 

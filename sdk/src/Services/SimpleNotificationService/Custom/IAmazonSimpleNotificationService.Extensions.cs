@@ -17,9 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SimpleNotificationService.Model;
@@ -71,7 +69,7 @@ namespace Amazon.SimpleNotificationService
         /// successfully subscribed to the topic.</returns>
         string SubscribeQueue(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
 #endif
-#if AWS_ASYNC_API
+
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to an existing Amazon SNS topic asynchronously.
         /// <para>
@@ -111,7 +109,6 @@ namespace Amazon.SimpleNotificationService
         /// <returns>A Task containing the subscription ARN as returned by Amazon SNS when the queue is 
         /// successfully subscribed to the topic.</returns>
         Task<string> SubscribeQueueAsync(string topicArn, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
 
 #if BCL
         /// <summary>
@@ -152,7 +149,7 @@ namespace Amazon.SimpleNotificationService
         /// successfully subscribed to each topic.</returns>
         IDictionary<string, string> SubscribeQueueToTopics(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
 #endif
-#if AWS_ASYNC_API
+
         /// <summary>
         /// Subscribes an existing Amazon SQS queue to existing Amazon SNS topics asynchronously.
         /// <para>
@@ -190,7 +187,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>A Task containing the mapping of topic ARNs to subscription ARNs as returned by Amazon SNS wrapped when the queue is 
         /// successfully subscribed to each topic.</returns>
         Task<IDictionary<string, string>> SubscribeQueueToTopicsAsync(IList<string> topicArns, ICoreAmazonSQS sqsClient, string sqsQueueUrl);
-#endif
+
         #endregion
 
 
@@ -207,7 +204,7 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The matched SNS topic.</returns>
         Topic FindTopic(string topicName);
 #endif
-#if AWS_ASYNC_API
+
         /// <summary>
         /// Finds an existing Amazon SNS topic by iterating all SNS topics until a match is found asynchronously.
         /// <para>
@@ -218,7 +215,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="topicName">The name of the topic find</param>
         /// <returns>A Task containing the matched SNS topic.</returns>
         Task<Topic> FindTopicAsync(string topicName);
-#endif
+
         #endregion
 
         #region AuthorizeS3ToPublish
@@ -231,7 +228,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="bucket">The bucket that will be given access to publish from.</param>
         void AuthorizeS3ToPublish(string topicArn, string bucket);
 #endif
-#if AWS_ASYNC_API
+
         /// <summary>
         /// This is a utility method which updates the policy of a topic to allow the
         /// S3 bucket to publish events to it.
@@ -240,7 +237,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="bucket">The bucket that will be given access to publish from.</param>
         /// /// <returns>A Task</returns>
         Task AuthorizeS3ToPublishAsync(string topicArn, string bucket);
-#endif
+
         #endregion
     }
 }

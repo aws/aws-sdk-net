@@ -808,11 +808,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("OriginShieldRegion", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));
                                         xmlWriter.WriteEndElement();
                                     }
+                                    if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.IsSetResponseCompletionTimeout())
+                                        xmlWriter.WriteElementString("ResponseCompletionTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.ResponseCompletionTimeout.Value));
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig != null)
                                     {
                                         xmlWriter.WriteStartElement("S3OriginConfig");
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
                                             xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginReadTimeout())
+                                            xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.S3OriginConfig.OriginReadTimeout.Value));
                                         xmlWriter.WriteEndElement();
                                     }
                                     if (publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig != null)
@@ -952,6 +956,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -963,8 +968,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateDistributionWithTagsRequestMarshaller _instance = new CreateDistributionWithTagsRequestMarshaller();        

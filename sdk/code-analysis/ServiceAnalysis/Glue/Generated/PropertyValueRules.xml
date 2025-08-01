@@ -2892,6 +2892,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobRunRequest.ExecutionRoleSessionPolicy</property>
+    <min>2</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartJobRunRequest.JobName</property>
     <min>1</min>
     <max>255</max>
@@ -3620,6 +3625,9 @@
     <pattern>^(https?):\/\/[^\s/$.?#].[^\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.AutoDataQuality.EvaluationContext</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.BasicAuthenticationCredentials.Password</property>
     <max>512</max>
     <pattern>.*</pattern>
@@ -3823,6 +3831,16 @@
     <property>Amazon.Glue.Model.CatalogHudiSource.Table</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogIcebergSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogIcebergSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogIcebergSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CatalogImportStatus.ImportedBy</property>
     <min>1</min>
     <max>255</max>
@@ -3866,6 +3884,9 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogSource.Name</property>
     <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogSource.PartitionPredicate</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CatalogSource.Table</property>
@@ -4596,6 +4617,24 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTCatalogAdditionalOptions.DynamodbExport</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTConnectionOptions.DynamodbS3Bucket</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTConnectionOptions.DynamodbS3BucketOwner</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTConnectionOptions.DynamodbS3Prefix</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTConnectionOptions.DynamodbStsRoleArn</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DDBELTConnectionOptions.DynamodbTableArn</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DecimalColumnStatisticsData.NumberOfDistinctValues</property>
     <min>0</min>
   </property-value-rule>
@@ -4707,6 +4746,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DynamoDBCatalogSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DynamoDBELTConnectorSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Edge.DestinationId</property>
@@ -4912,6 +4955,11 @@
     <min>2</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GlueStudioSchemaColumn.GlueStudioType</property>
+    <min>0</min>
+    <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GlueStudioSchemaColumn.Name</property>
     <min>0</min>
     <max>1024</max>
@@ -4978,6 +5026,10 @@
     <property>Amazon.Glue.Model.GrokClassifier.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GroupFilters.GroupName</property>
+    <pattern>[A-Za-z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IcebergInput.Version</property>
@@ -5204,6 +5256,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.ExecutionRoleSessionPolicy</property>
+    <min>2</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.GlueVersion</property>
     <min>1</min>
     <max>255</max>
@@ -5375,6 +5432,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.EndpointUrl</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.FanoutConsumerARN</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.KinesisStreamingSourceOptions.IdleTimeBetweenReadsInMs</property>
@@ -5714,17 +5774,40 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.DetectionParameters</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.DetectionSensitivity</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.MaskValue</property>
     <min>0</min>
     <max>256</max>
     <pattern>[*A-Za-z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.MatchPattern</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.Name</property>
     <pattern>([^\r\n])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.NumLeftCharsToExclude</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.NumRightCharsToExclude</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.OutputColumnName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.RedactChar</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PIIDetection.RedactText</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PIIDetection.SampleFraction</property>
@@ -5894,6 +5977,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Route.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.RunIdentifier.JobRunId</property>
     <min>1</min>
     <max>255</max>
@@ -5922,6 +6009,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogHudiSource.Table</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogIcebergSource.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogIcebergSource.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3CatalogIcebergSource.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3CatalogSource.Database</property>
@@ -6061,6 +6158,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3HyperDirectTarget.Path</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3IcebergCatalogTarget.Database</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3IcebergCatalogTarget.Name</property>
+    <pattern>([^\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3IcebergCatalogTarget.Table</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.S3IcebergDirectTarget.Name</property>

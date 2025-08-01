@@ -108,7 +108,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>outputS3Path</c>
         /// and <c>KMSArn</c>.
         /// </para>
         /// <para />

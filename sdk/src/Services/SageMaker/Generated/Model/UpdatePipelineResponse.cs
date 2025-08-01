@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdatePipelineResponse : AmazonWebServiceResponse
     {
         private string _pipelineArn;
+        private long? _pipelineVersionId;
 
         /// <summary>
         /// Gets and sets the property PipelineArn. 
@@ -53,6 +54,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineArn()
         {
             return this._pipelineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineVersionId. 
+        /// <para>
+        /// The ID of the pipeline version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? PipelineVersionId
+        {
+            get { return this._pipelineVersionId; }
+            set { this._pipelineVersionId = value; }
+        }
+
+        // Check to see if PipelineVersionId property is set
+        internal bool IsSetPipelineVersionId()
+        {
+            return this._pipelineVersionId.HasValue; 
         }
 
     }

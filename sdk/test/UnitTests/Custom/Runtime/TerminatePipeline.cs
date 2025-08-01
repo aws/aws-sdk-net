@@ -43,13 +43,11 @@ namespace AWSSDK.UnitTests
             throw new Exception("Terminating Pipeline");
         }
 
-#if AWS_ASYNC_API
         public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             CapturedContext = executionContext;
 
             throw new Exception("Terminating Pipeline");
         }
-#endif
     }
 }

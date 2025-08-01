@@ -218,9 +218,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// If you specify a string for this parameter, the operation returns only log groups
         /// that have names that match the string based on a case-sensitive substring search.
-        /// For example, if you specify <c>Foo</c>, log groups named <c>FooBar</c>, <c>aws/Foo</c>,
-        /// and <c>GroupFoo</c> would match, but <c>foo</c>, <c>F/o/o</c> and <c>Froo</c> would
-        /// not match.
+        /// For example, if you specify <c>DataLogs</c>, log groups named <c>DataLogs</c>, <c>aws/DataLogs</c>,
+        /// and <c>GroupDataLogs</c> would match, but <c>datalogs</c>, <c>Data/log/s</c> and <c>Groupdata</c>
+        /// would not match.
         /// </para>
         ///  
         /// <para>

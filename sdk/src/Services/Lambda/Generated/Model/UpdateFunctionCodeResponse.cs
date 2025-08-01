@@ -221,7 +221,7 @@ namespace Amazon.Lambda.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<FileSystemConfig> FileSystemConfigs
         {
             get { return this._fileSystemConfigs; }
@@ -277,7 +277,7 @@ namespace Amazon.Lambda.Model
         /// The function that Lambda calls to begin running your function.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Handler
         {
             get { return this._handler; }

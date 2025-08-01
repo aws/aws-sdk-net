@@ -28,6 +28,16 @@ namespace Amazon.Bedrock.Model
     {
 
         /// <summary>
+        /// Paginator for ListCustomModelDeployments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCustomModelDeploymentsPaginator ListCustomModelDeployments(ListCustomModelDeploymentsRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomModels operation
         ///</summary>
         [AWSPaginator(

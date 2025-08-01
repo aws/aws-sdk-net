@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceConnectEndpointId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

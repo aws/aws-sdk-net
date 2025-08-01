@@ -31,7 +31,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CalculateRouteMatrix operation.
-    /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
+    /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
     /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
     /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
     /// returns the travel time and travel distance from each departure position to each destination
@@ -61,7 +61,7 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/departure-time.html">
     /// Specifying a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>.
     /// This calculates routes based on predictive traffic data at the given time. 
     /// </para>
@@ -72,7 +72,7 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
+    ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/travel-mode.html">Specifying
     /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
     /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
     /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
@@ -174,13 +174,13 @@ namespace Amazon.LocationService.Model
         ///  <important> 
         /// <para>
         /// Depending on the data provider selected in the route calculator resource there may
-        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
         /// Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// For route calculators that use Esri as the data provider, if you specify a departure
-        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">
         /// moves the position to the nearest road</a>. The snapped value is available in the
         /// result in <c>SnappedDeparturePositions</c>.
         /// </para>
@@ -227,6 +227,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DateTime? DepartureTime
         {
             get { return this._departureTime; }
@@ -250,13 +251,13 @@ namespace Amazon.LocationService.Model
         ///  <important> 
         /// <para>
         /// Depending on the data provider selected in the route calculator resource there may
-        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
+        /// be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html#matrix-routing-position-limits">
         /// Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         ///  </important> <note> 
         /// <para>
         /// For route calculators that use Esri as the data provider, if you specify a destination
-        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">
+        /// that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/previous/developerguide/snap-to-nearby-road.html">
         /// moves the position to the nearest road</a>. The snapped value is available in the
         /// result in <c>SnappedDestinationPositions</c>.
         /// </para>
@@ -308,7 +309,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>
@@ -355,7 +356,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+        /// For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>
         /// in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
         ///  </note> 

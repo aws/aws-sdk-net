@@ -14,9 +14,7 @@
  */
 
 using System;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.SecurityToken.Model;
@@ -49,7 +47,6 @@ namespace Amazon.SecurityToken
             return base.RetryForException(executionContext, exception);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Returns true if the request should be retried.
         /// </summary>
@@ -62,7 +59,6 @@ namespace Amazon.SecurityToken
 
             return base.RetryForExceptionAsync(executionContext, exception);
         }
-#endif
     }
 
 
@@ -92,7 +88,6 @@ namespace Amazon.SecurityToken
             return base.RetryForException(executionContext, exception);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Returns true if the request should be retried.
         /// </summary>
@@ -105,7 +100,6 @@ namespace Amazon.SecurityToken
 
             return base.RetryForExceptionAsync(executionContext, exception);
         }
-#endif
     }
 
 
@@ -135,7 +129,6 @@ namespace Amazon.SecurityToken
             return base.RetryForException(executionContext, exception);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Returns true if the request should be retried.
         /// </summary>
@@ -148,6 +141,5 @@ namespace Amazon.SecurityToken
 
             return base.RetryForExceptionAsync(executionContext, exception);
         }
-#endif
     }
 }

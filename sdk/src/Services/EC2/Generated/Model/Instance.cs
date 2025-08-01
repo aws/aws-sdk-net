@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private ArchitectureValues _architecture;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private BootModeValues _bootMode;
+        private string _capacityBlockId;
         private string _capacityReservationId;
         private CapacityReservationSpecificationResponse _capacityReservationSpecification;
         private string _clientToken;
@@ -181,6 +182,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetBootMode()
         {
             return this._bootMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlockId. 
+        /// <para>
+        /// The ID of the Capacity Block.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For P5 instances, a Capacity Block ID refers to a group of instances. For Trn2u instances,
+        /// a capacity block ID refers to an EC2 UltraServer.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string CapacityBlockId
+        {
+            get { return this._capacityBlockId; }
+            set { this._capacityBlockId = value; }
+        }
+
+        // Check to see if CapacityBlockId property is set
+        internal bool IsSetCapacityBlockId()
+        {
+            return this._capacityBlockId != null;
         }
 
         /// <summary>

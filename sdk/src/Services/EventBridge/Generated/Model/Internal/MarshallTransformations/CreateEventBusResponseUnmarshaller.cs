@@ -76,6 +76,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     response.KmsKeyIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LogConfig", targetDepth))
+                {
+                    var unmarshaller = LogConfigUnmarshaller.Instance;
+                    response.LogConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

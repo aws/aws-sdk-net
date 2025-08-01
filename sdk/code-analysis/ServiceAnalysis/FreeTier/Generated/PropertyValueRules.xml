@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountActivityRequest.ActivityId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountActivityResponse.ActivityId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountActivityResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountActivityResponse.InstructionsUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountActivityResponse.Title</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.GetAccountPlanStateResponse.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FreeTier.Model.GetFreeTierUsageRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -9,54 +43,87 @@
     <property>Amazon.FreeTier.Model.GetFreeTierUsageRequest.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.GetFreeTierUsageResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.ListAccountActivitiesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.ListAccountActivitiesRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.ListAccountActivitiesResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.UpgradeAccountPlanResponse.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.ActivitySummary.ActivityId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FreeTier.Model.ActivitySummary.Title</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.FreeTierType</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.Operation</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.Region</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.Service</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.Unit</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FreeTier.Model.FreeTierUsage.UsageType</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[\S\s]*$</pattern>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
 </property-value-rules>

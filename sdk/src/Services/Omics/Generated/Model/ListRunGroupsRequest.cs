@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRunGroups operation.
-    /// Retrieves a list of run groups.
+    /// Retrieves a list of all run groups and returns the metadata for each run group.
     /// </summary>
     public partial class ListRunGroupsRequest : AmazonOmicsRequest
     {

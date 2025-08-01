@@ -117,6 +117,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListOriginAccessControls operation
+        ///</summary>
+        public IListOriginAccessControlsPaginator ListOriginAccessControls(ListOriginAccessControlsRequest request) 
+        {
+            return new ListOriginAccessControlsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 

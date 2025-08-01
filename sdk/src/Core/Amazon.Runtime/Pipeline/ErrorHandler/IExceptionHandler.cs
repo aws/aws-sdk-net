@@ -35,7 +35,6 @@ namespace Amazon.Runtime
         /// </returns>
         bool Handle(IExecutionContext executionContext, Exception exception);
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Handles an exception for the given execution context.
         /// </summary>
@@ -48,7 +47,6 @@ namespace Amazon.Runtime
         /// This method can also throw a new exception to replace the original exception.
         /// </returns>
         System.Threading.Tasks.Task<bool> HandleAsync(IExecutionContext executionContext, Exception exception);
-#endif
     }
 
     /// <summary>

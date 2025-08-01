@@ -59,8 +59,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version of the target distribution or distribution tenant that was associated
-        /// with the domain.
+        /// The current version of the target standard distribution or distribution tenant that
+        /// was associated with the domain.
         /// </para>
         /// </summary>
         public string ETag

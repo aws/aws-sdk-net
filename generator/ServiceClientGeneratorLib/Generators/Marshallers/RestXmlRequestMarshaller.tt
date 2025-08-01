@@ -89,15 +89,23 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	// Process any members which are marshalled as part of the request body
 	if(this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
-		ProcessRequestBodyMembers("publicRequest", this.Operation);		
+		ProcessRequestBodyMembers("publicRequest", this.Operation);
 	}
 	else if(payload != null && !payload.Shape.IsStructure)
 	{
 		ProcessNonStructurePayload(payload, 3);
+#>
+			PostMarshallCustomization(request, publicRequest);
+<#
+		GenerateRequestChecksumHandling(this.Operation, "content");
 	}
+	else
+	{
 #>
 
+			PostMarshallCustomization(request, publicRequest);
 <#
+	}
 	if (this.Operation.UnsignedPayload)
 	{
 #>
@@ -117,7 +125,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		ProcessEndpointHostPrefixMembers(3, "publicRequest", this.Operation);
 	}
 #>
-			PostMarshallCustomization(request, publicRequest);
 			return request;
 		}
 <#				
@@ -180,17 +187,41 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 #>
 				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
 				{
+<#+
+					// S3 doesn't follow the rule where if the request payload member's location name is the same as the payload member name, we marshall with the payload member's shape's marshall name instead
+					if (this.Config.ServiceId != "S3")
+					{
+#>
 					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
+					}
+					else
+					{
+#>
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName#>", "<#=operation.XmlNamespace#>");
+<#+
+					}
 				}
 				else
 				{
 #>
 				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
 				{
+<#+
+					if (this.Config.ServiceId != "S3")
+					{
+#>
 					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>");
 					xmlWriter.WriteAttributeString("xmlns","<#=operation.XmlNamespacePrefix#>",null,"<#=operation.XmlNamespace#>");
 <#+
+					}
+					else
+					{
+#>
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName#>");
+					xmlWriter.WriteAttributeString("xmlns","<#=operation.XmlNamespacePrefix#>",null,"<#=operation.XmlNamespace#>");			
+<#+
+					}
 				}
 #>
 <#+
@@ -281,6 +312,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		}
 #>
 			}
+			PostMarshallCustomization(request, publicRequest);
 			try 
 			{
 				string content = stringWriter.ToString();

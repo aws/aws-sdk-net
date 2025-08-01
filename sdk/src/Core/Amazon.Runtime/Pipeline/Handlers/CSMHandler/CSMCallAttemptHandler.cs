@@ -54,7 +54,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls the PreInvoke and PostInvoke methods before and after calling the next handler 
         /// in the pipeline.
@@ -84,7 +83,6 @@ namespace Amazon.Runtime.Internal
                 _ = CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallAttempt);
             }
         }
-#endif
 
         /// <summary>
         /// Method that gets called in the final clause that captures data for each http request

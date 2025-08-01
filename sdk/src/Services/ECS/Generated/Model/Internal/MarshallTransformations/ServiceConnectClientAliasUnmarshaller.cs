@@ -68,6 +68,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("testTrafficRules", targetDepth))
+                {
+                    var unmarshaller = ServiceConnectTestTrafficRulesUnmarshaller.Instance;
+                    unmarshalledObject.TestTrafficRules = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

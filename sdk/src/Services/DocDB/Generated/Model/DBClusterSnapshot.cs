@@ -353,7 +353,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Storage type associated with your cluster snapshot 
+        /// Storage type associated with your cluster snapshot
         /// </para>
         ///  
         /// <para>

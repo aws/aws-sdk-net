@@ -65,8 +65,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetResource())
                 throw new AmazonLambdaException("Request object does not have required field Resource set");
-            request.AddPathResource("{ARN}", StringUtils.FromString(publicRequest.Resource));
-            request.ResourcePath = "/2017-03-31/tags/{ARN}";
+            request.AddPathResource("{Resource}", StringUtils.FromString(publicRequest.Resource));
+            request.ResourcePath = "/2017-03-31/tags/{Resource}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);

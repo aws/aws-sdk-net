@@ -98,6 +98,26 @@ namespace Amazon.EC2.Model
         IDescribeCapacityBlockOfferingsPaginator DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityBlocks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeCapacityBlocksPaginator DescribeCapacityBlocks(DescribeCapacityBlocksRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeCapacityBlockStatus operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeCapacityBlockStatusPaginator DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         [AWSPaginator(

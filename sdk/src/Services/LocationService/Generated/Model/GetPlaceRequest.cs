@@ -50,7 +50,13 @@ namespace Amazon.LocationService.Model
     /// <para>
     /// Data provider specified in the place index resource
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> <note> 
+    /// <para>
+    /// If your Place index resource is configured with Grab as your geolocation provider
+    /// and Storage as Intended use, the GetPlace operation is unavailable. For more information,
+    /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetPlaceRequest : AmazonLocationServiceRequest
     {
@@ -81,7 +87,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>

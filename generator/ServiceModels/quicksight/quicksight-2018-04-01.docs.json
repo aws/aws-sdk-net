@@ -133,7 +133,7 @@
     "ListIAMPolicyAssignments": "<p>Lists the IAM policy assignments in the current Amazon QuickSight account.</p>",
     "ListIAMPolicyAssignmentsForUser": "<p>Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies assigned to the specified user and group, or groups that the user belongs to.</p>",
     "ListIdentityPropagationConfigs": "<p>Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access.</p> <p>This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.</p>",
-    "ListIngestions": "<p>Lists the history of SPICE ingestions for a dataset.</p>",
+    "ListIngestions": "<p>Lists the history of SPICE ingestions for a dataset. Limited to 5 TPS per user and 25 TPS per account.</p>",
     "ListNamespaces": "<p>Lists the namespaces for the specified Amazon Web Services account. This operation doesn't list deleted namespaces.</p>",
     "ListRefreshSchedules": "<p>Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules. </p>",
     "ListRoleMemberships": "<p>Lists all groups that are associated with a role.</p>",
@@ -3526,6 +3526,20 @@
         "CategoryFilterConfiguration$CustomFilterListConfiguration": "<p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>"
       }
     },
+    "CustomInstructions": {
+      "base": "<p>Instructions that provide additional guidance and context for response generation.</p>",
+      "refs": {
+        "CreateTopicRequest$CustomInstructions": "<p>Custom instructions for the topic.</p>",
+        "DescribeTopicResponse$CustomInstructions": "<p>Custom instructions for the topic.</p>",
+        "UpdateTopicRequest$CustomInstructions": "<p>Custom instructions for the topic.</p>"
+      }
+    },
+    "CustomInstructionsString": {
+      "base": null,
+      "refs": {
+        "CustomInstructions$CustomInstructionsString": "<p>A text field for providing additional guidance or context for response generation.</p>"
+      }
+    },
     "CustomLabel": {
       "base": null,
       "refs": {
@@ -4165,6 +4179,7 @@
       "refs": {
         "AuroraParameters$Database": "<p>Database.</p>",
         "AuroraPostgreSqlParameters$Database": "<p>The Amazon Aurora PostgreSQL database to connect to.</p>",
+        "ImpalaParameters$Database": "<p>The database of the Impala data source.</p>",
         "MariaDbParameters$Database": "<p>Database.</p>",
         "MySqlParameters$Database": "<p>Database.</p>",
         "OracleParameters$Database": "<p>The database.</p>",
@@ -7127,6 +7142,7 @@
         "AuroraPostgreSqlParameters$Host": "<p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>",
         "DatabricksParameters$Host": "<p>The host name of the Databricks data source.</p>",
         "ExasolParameters$Host": "<p>The hostname or IP address of the Exasol data source.</p>",
+        "ImpalaParameters$Host": "<p>The host name of the Impala data source.</p>",
         "MariaDbParameters$Host": "<p>Host.</p>",
         "MySqlParameters$Host": "<p>Host.</p>",
         "OracleParameters$Host": "<p>An Oracle host.</p>",
@@ -7339,6 +7355,12 @@
       "base": "<p>A static file that contains an image.</p>",
       "refs": {
         "StaticFile$ImageStaticFile": "<p>The image static file.</p>"
+      }
+    },
+    "ImpalaParameters": {
+      "base": "<p>The parameters that are required to connect to a Impala data source.</p>",
+      "refs": {
+        "DataSourceParameters$ImpalaParameters": "<p>The parameters for Impala.</p>"
       }
     },
     "IncludeFolderMembers": {
@@ -9811,6 +9833,7 @@
         "AuroraPostgreSqlParameters$Port": "<p>The port that Amazon Aurora PostgreSQL is listening on.</p>",
         "DatabricksParameters$Port": "<p>The port for the Databricks data source.</p>",
         "ExasolParameters$Port": "<p>The port for the Exasol data source.</p>",
+        "ImpalaParameters$Port": "<p>The port of the Impala data source.</p>",
         "MariaDbParameters$Port": "<p>Port.</p>",
         "MySqlParameters$Port": "<p>Port.</p>",
         "OracleParameters$Port": "<p>The port.</p>",
@@ -12063,7 +12086,8 @@
     "SqlEndpointPath": {
       "base": null,
       "refs": {
-        "DatabricksParameters$SqlEndpointPath": "<p>The HTTP path of the Databricks data source.</p>"
+        "DatabricksParameters$SqlEndpointPath": "<p>The HTTP path of the Databricks data source.</p>",
+        "ImpalaParameters$SqlEndpointPath": "<p>The HTTP path of the Impala data source.</p>"
       }
     },
     "SqlQuery": {

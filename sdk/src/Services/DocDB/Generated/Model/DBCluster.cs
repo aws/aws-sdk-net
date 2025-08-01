@@ -64,6 +64,7 @@ namespace Amazon.DocDB.Model
         private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationSourceIdentifier;
+        private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private bool? _storageEncrypted;
         private string _storageType;
@@ -662,6 +663,24 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration. 
+        /// <para>
+        /// The scaling configuration of an Amazon DocumentDB Serverless cluster.
+        /// </para>
+        /// </summary>
+        public ServerlessV2ScalingConfigurationInfo ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// Specifies the current state of this cluster.
@@ -699,10 +718,6 @@ namespace Amazon.DocDB.Model
 
         /// <summary>
         /// Gets and sets the property StorageType. 
-        /// <para>
-        /// Storage type associated with your cluster
-        /// </para>
-        ///  
         /// <para>
         /// Storage type associated with your cluster
         /// </para>

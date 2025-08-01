@@ -32,12 +32,13 @@ namespace Amazon.Omics.Model
     /// <summary>
     /// Container for the parameters to the UpdateWorkflowVersion operation.
     /// Updates information about the workflow version. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow
-    /// versioning in Amazon Web Services HealthOmics</a> in the Amazon Web Services HealthOmics
-    /// User Guide.
+    /// versioning in Amazon Web Services HealthOmics</a> in the <i>Amazon Web Services HealthOmics
+    /// User Guide</i>.
     /// </summary>
     public partial class UpdateWorkflowVersionRequest : AmazonOmicsRequest
     {
         private string _description;
+        private string _readmeMarkdown;
         private int? _storageCapacity;
         private StorageType _storageType;
         private string _versionName;
@@ -60,6 +61,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadmeMarkdown. 
+        /// <para>
+        /// The markdown content for the workflow version's README file. This provides documentation
+        /// and usage information for users of this specific workflow version.
+        /// </para>
+        /// </summary>
+        public string ReadmeMarkdown
+        {
+            get { return this._readmeMarkdown; }
+            set { this._readmeMarkdown = value; }
+        }
+
+        // Check to see if ReadmeMarkdown property is set
+        internal bool IsSetReadmeMarkdown()
+        {
+            return this._readmeMarkdown != null;
         }
 
         /// <summary>

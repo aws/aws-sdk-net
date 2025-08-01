@@ -42,11 +42,6 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can specify the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
-    /// or <a>ResetEbsDefaultKmsKeyId</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// Enabling encryption by default has no effect on the encryption status of your existing
     /// volumes.
     /// </para>

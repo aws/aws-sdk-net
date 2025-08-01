@@ -36,5 +36,15 @@ namespace Amazon.FreeTier.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetFreeTierUsagePaginator GetFreeTierUsage(GetFreeTierUsageRequest request);
+
+        /// <summary>
+        /// Paginator for ListAccountActivities operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAccountActivitiesPaginator ListAccountActivities(ListAccountActivitiesRequest request);
     }
 }

@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// to the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string Arn
         {
             get { return this._arn; }
@@ -64,7 +64,7 @@ namespace Amazon.Lambda.Model
         /// The path where the function can access the file system, starting with <c>/mnt/</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=160)]
+        [AWSProperty(Required=true, Min=0, Max=160)]
         public string LocalMountPath
         {
             get { return this._localMountPath; }

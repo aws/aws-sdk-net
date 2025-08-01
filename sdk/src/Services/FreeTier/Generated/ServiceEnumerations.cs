@@ -25,6 +25,214 @@ namespace Amazon.FreeTier
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountPlanStatus.
+    /// </summary>
+    public class AccountPlanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AccountPlanStatus
+        /// </summary>
+        public static readonly AccountPlanStatus ACTIVE = new AccountPlanStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for AccountPlanStatus
+        /// </summary>
+        public static readonly AccountPlanStatus EXPIRED = new AccountPlanStatus("EXPIRED");
+        /// <summary>
+        /// Constant NOT_STARTED for AccountPlanStatus
+        /// </summary>
+        public static readonly AccountPlanStatus NOT_STARTED = new AccountPlanStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountPlanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountPlanStatus FindValue(string value)
+        {
+            return FindValue<AccountPlanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountPlanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AccountPlanType.
+    /// </summary>
+    public class AccountPlanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FREE for AccountPlanType
+        /// </summary>
+        public static readonly AccountPlanType FREE = new AccountPlanType("FREE");
+        /// <summary>
+        /// Constant PAID for AccountPlanType
+        /// </summary>
+        public static readonly AccountPlanType PAID = new AccountPlanType("PAID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountPlanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountPlanType FindValue(string value)
+        {
+            return FindValue<AccountPlanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountPlanType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActivityStatus.
+    /// </summary>
+    public class ActivityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus COMPLETED = new ActivityStatus("COMPLETED");
+        /// <summary>
+        /// Constant EXPIRING for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus EXPIRING = new ActivityStatus("EXPIRING");
+        /// <summary>
+        /// Constant IN_PROGRESS for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus IN_PROGRESS = new ActivityStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for ActivityStatus
+        /// </summary>
+        public static readonly ActivityStatus NOT_STARTED = new ActivityStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStatus FindValue(string value)
+        {
+            return FindValue<ActivityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CurrencyCode.
+    /// </summary>
+    public class CurrencyCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USD for CurrencyCode
+        /// </summary>
+        public static readonly CurrencyCode USD = new CurrencyCode("USD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CurrencyCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CurrencyCode FindValue(string value)
+        {
+            return FindValue<CurrencyCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CurrencyCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Dimension.
     /// </summary>
     public class Dimension : ConstantClass
@@ -88,6 +296,100 @@ namespace Amazon.FreeTier
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeDE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeDE = new LanguageCode("de-DE");
+        /// <summary>
+        /// Constant EnGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnGB = new LanguageCode("en-GB");
+        /// <summary>
+        /// Constant EnUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnUS = new LanguageCode("en-US");
+        /// <summary>
+        /// Constant EsES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsES = new LanguageCode("es-ES");
+        /// <summary>
+        /// Constant FrFR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+        /// <summary>
+        /// Constant IdID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IdID = new LanguageCode("id-ID");
+        /// <summary>
+        /// Constant ItIT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
+        /// <summary>
+        /// Constant JaJP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
+        /// <summary>
+        /// Constant KoKR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+        /// <summary>
+        /// Constant PtPT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PtPT = new LanguageCode("pt-PT");
+        /// <summary>
+        /// Constant TrTR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+        /// <summary>
+        /// Constant ZhCN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhCN = new LanguageCode("zh-CN");
+        /// <summary>
+        /// Constant ZhTW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhTW = new LanguageCode("zh-TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
         {
             return FindValue(value);
         }

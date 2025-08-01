@@ -95,6 +95,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A summary for the compliance item. The summary includes an execution ID, the execution
         /// type (for example, command), and the execution time.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For State Manager associations, the <c>ExecutionTime</c> value represents when the
+        /// compliance status was captured and aggregated by the Systems Manager service, not
+        /// necessarily when the underlying association was executed on the managed node. State
+        /// Manager updates compliance status for all associations on an instance whenever any
+        /// association executes, which means multiple associations may show the same execution
+        /// time even if they were executed at different times.
+        /// </para>
+        ///  </important>
         /// </summary>
         public ComplianceExecutionSummary ExecutionSummary
         {

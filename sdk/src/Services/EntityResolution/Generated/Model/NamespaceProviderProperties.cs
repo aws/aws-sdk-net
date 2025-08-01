@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>ProviderConfiguration</c> and <c>ProviderServiceArn</c>.
+    /// An object containing <c>providerConfiguration</c> and <c>providerServiceArn</c>.
     /// </summary>
     public partial class NamespaceProviderProperties
     {

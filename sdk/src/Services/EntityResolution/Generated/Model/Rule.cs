@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>RuleName</c>, and <c>MatchingKeys</c>.
+    /// An object containing the <c>ruleName</c> and <c>matchingKeys</c>.
     /// </summary>
     public partial class Rule
     {

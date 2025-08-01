@@ -144,6 +144,13 @@
                 }
             ]
         },
+        "Initiator": {
+            "modify":[
+                {
+                    "ID": {"emitPropertyName" : "Id"}
+                }
+            ]
+        },
         "LifecycleRule": {
             "modify": [
                 {
@@ -200,6 +207,30 @@
             "modify": [
                 {
                     "ReplicationConfiguration" : {"emitPropertyName": "Configuration"}
+                }
+            ]
+        },
+        "CreateBucketRequest":{
+            "exclude":[
+                "GrantFullControl",
+                "GrantRead",
+                "GrantReadACP",
+                "GrantWrite",
+                "GrantWriteACP"
+            ],
+            "modify":[
+                {
+                    "ACL": {"emitPropertyName": "CannedACL"}
+                },
+                {
+                    "CreateBucketConfiguration" : {"emitPropertyName" : "PutBucketConfiguration"}
+                }
+            ]
+        },
+        "PutBucketConfiguration":{
+            "modify":[
+                {
+                    "BucketName" : {"emitPropertyName" : "BucketInfo"}
                 }
             ]
         },
@@ -391,10 +422,60 @@
         },
         "Payer":{
             "renameShape": "string"
+        },
+        "Part":{
+            "renameShape": "PartDetail"
+        },
+        "CreateBucketConfiguration":{
+            "renameShape":"PutBucketConfiguration"
+        },
+        "BucketCannedACL":{
+            "renameShape":"S3CannedACL"
         }
-
     },
     "overrideTreatEnumsAsString":{
         "ObjectAttributesList": false
+    },
+    "dataTypeSwap":{
+        "ListPartsRequest":{
+            "PartNumberMarker":{
+                "Type" : "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "ListPartsOutput":{
+            "StorageClass":{
+                "Type": "string",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "PutBucketConfiguration":{
+            "LocationConstraint":{
+                "Type": "BucketLocationConstraint",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        }
+    },
+    "excludeMembers":{
+        "PartDetail":[
+            "ChecksumCRC32",
+            "ChecksumCRC32C",
+            "ChecksumCRC64NVME",
+            "ChecksumSHA1",
+            "ChecksumSHA256",
+            "ETag",
+            "PartNumber"
+        ]
+    },
+    "unwrapXmlOutput":{
+        "GetBucketLocationOutput": true
+    },
+    "inheritAlternateBaseClass":{
+        "PutBucketRequest": {
+            "alternateBaseClass" : "PutWithACLRequest"
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
 
                 xmlWriter.WriteEndElement();
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -80,10 +81,8 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             
             request.HostPrefix = $"data-";
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static StaticOpRequestMarshaller _instance = new StaticOpRequestMarshaller();        

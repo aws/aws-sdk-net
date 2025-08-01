@@ -52,6 +52,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.MQCSInputSwitching.Value);
             }
 
+            if(requestObject.IsSetPreferredInput())
+            {
+                context.Writer.WritePropertyName("PreferredInput");
+                context.Writer.WriteNumberValue(requestObject.PreferredInput.Value);
+            }
+
         }
 
         /// <summary>

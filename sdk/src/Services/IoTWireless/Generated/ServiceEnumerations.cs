@@ -605,10 +605,6 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
-        /// Constant FuotaTask for EventNotificationResourceType
-        /// </summary>
-        public static readonly EventNotificationResourceType FuotaTask = new EventNotificationResourceType("FuotaTask");
-        /// <summary>
         /// Constant SidewalkAccount for EventNotificationResourceType
         /// </summary>
         public static readonly EventNotificationResourceType SidewalkAccount = new EventNotificationResourceType("SidewalkAccount");
@@ -1010,10 +1006,6 @@ namespace Amazon.IoTWireless
         /// Constant DevEui for IdentifierType
         /// </summary>
         public static readonly IdentifierType DevEui = new IdentifierType("DevEui");
-        /// <summary>
-        /// Constant FuotaTaskId for IdentifierType
-        /// </summary>
-        public static readonly IdentifierType FuotaTaskId = new IdentifierType("FuotaTaskId");
         /// <summary>
         /// Constant GatewayEui for IdentifierType
         /// </summary>

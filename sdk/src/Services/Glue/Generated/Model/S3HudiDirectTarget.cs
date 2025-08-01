@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class S3HudiDirectTarget
     {
         private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private AutoDataQuality _autoDataQuality;
         private HudiTargetCompressionType _compression;
         private TargetFormat _format;
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -66,6 +67,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetAdditionalOptions()
         {
             return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDataQuality. 
+        /// <para>
+        /// Specifies whether to automatically enable data quality evaluation for the S3 Hudi
+        /// direct target. When set to <c>true</c>, data quality checks are performed automatically
+        /// during the write operation.
+        /// </para>
+        /// </summary>
+        public AutoDataQuality AutoDataQuality
+        {
+            get { return this._autoDataQuality; }
+            set { this._autoDataQuality = value; }
+        }
+
+        // Check to see if AutoDataQuality property is set
+        internal bool IsSetAutoDataQuality()
+        {
+            return this._autoDataQuality != null;
         }
 
         /// <summary>

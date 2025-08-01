@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private HyperPodPropertiesOutput _hyperPodProperties;
         private IamPropertiesOutput _iamProperties;
         private RedshiftPropertiesOutput _redshiftProperties;
+        private S3PropertiesOutput _s3Properties;
         private SparkEmrPropertiesOutput _sparkEmrProperties;
         private SparkGluePropertiesOutput _sparkGlueProperties;
 
@@ -130,6 +131,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetRedshiftProperties()
         {
             return this._redshiftProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Properties. 
+        /// <para>
+        /// The Amazon S3 properties of a connection.
+        /// </para>
+        /// </summary>
+        public S3PropertiesOutput S3Properties
+        {
+            get { return this._s3Properties; }
+            set { this._s3Properties = value; }
+        }
+
+        // Check to see if S3Properties property is set
+        internal bool IsSetS3Properties()
+        {
+            return this._s3Properties != null;
         }
 
         /// <summary>

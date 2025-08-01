@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Data sources that are associated with an OpenSearch Application.
+    /// Data sources that are associated with an OpenSearch application.
     /// </summary>
     public partial class DataSource
     {

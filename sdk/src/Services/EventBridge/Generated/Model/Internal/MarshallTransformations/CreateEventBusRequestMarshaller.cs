@@ -104,6 +104,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
             }
 
+            if(publicRequest.IsSetLogConfig())
+            {
+                context.Writer.WritePropertyName("LogConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

@@ -1309,6 +1309,10 @@ namespace Amazon.MediaPackageV2
     {
 
         /// <summary>
+        /// Constant BATCH_GET_SECRET_VALUE_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType BATCH_GET_SECRET_VALUE_DENIED = new ValidationExceptionType("BATCH_GET_SECRET_VALUE_DENIED");
+        /// <summary>
         /// Constant CENC_IV_INCOMPATIBLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CENC_IV_INCOMPATIBLE = new ValidationExceptionType("CENC_IV_INCOMPATIBLE");
@@ -1333,6 +1337,14 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE = new ValidationExceptionType("DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE");
         /// <summary>
+        /// Constant DECRYPT_SECRET_FAILED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DECRYPT_SECRET_FAILED = new ValidationExceptionType("DECRYPT_SECRET_FAILED");
+        /// <summary>
+        /// Constant DESCRIBE_SECRET_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DESCRIBE_SECRET_DENIED = new ValidationExceptionType("DESCRIBE_SECRET_DENIED");
+        /// <summary>
         /// Constant DIRECT_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType DIRECT_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("DIRECT_MODE_WITH_TIMING_SOURCE");
@@ -1344,6 +1356,10 @@ namespace Amazon.MediaPackageV2
         /// Constant DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE = new ValidationExceptionType("DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE");
+        /// <summary>
+        /// Constant DUPLICATED_SECRET for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DUPLICATED_SECRET = new ValidationExceptionType("DUPLICATED_SECRET");
         /// <summary>
         /// Constant ENCRYPTION_CONTRACT_SHARED for ValidationExceptionType
         /// </summary>
@@ -1368,6 +1384,10 @@ namespace Amazon.MediaPackageV2
         /// Constant END_TIME_EARLIER_THAN_START_TIME for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType END_TIME_EARLIER_THAN_START_TIME = new ValidationExceptionType("END_TIME_EARLIER_THAN_START_TIME");
+        /// <summary>
+        /// Constant GET_SECRET_VALUE_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType GET_SECRET_VALUE_DENIED = new ValidationExceptionType("GET_SECRET_VALUE_DENIED");
         /// <summary>
         /// Constant HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED for ValidationExceptionType
         /// </summary>
@@ -1429,6 +1449,22 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType INVALID_ROLE_ARN = new ValidationExceptionType("INVALID_ROLE_ARN");
         /// <summary>
+        /// Constant INVALID_SECRET for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET = new ValidationExceptionType("INVALID_SECRET");
+        /// <summary>
+        /// Constant INVALID_SECRET_FORMAT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_FORMAT = new ValidationExceptionType("INVALID_SECRET_FORMAT");
+        /// <summary>
+        /// Constant INVALID_SECRET_KEY for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_KEY = new ValidationExceptionType("INVALID_SECRET_KEY");
+        /// <summary>
+        /// Constant INVALID_SECRET_VALUE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_VALUE = new ValidationExceptionType("INVALID_SECRET_VALUE");
+        /// <summary>
         /// Constant INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("INVALID_TIME_DELAY_SECONDS");
@@ -1452,6 +1488,10 @@ namespace Amazon.MediaPackageV2
         /// Constant ISM_CONTAINER_WITH_KEY_ROTATION for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ISM_CONTAINER_WITH_KEY_ROTATION = new ValidationExceptionType("ISM_CONTAINER_WITH_KEY_ROTATION");
+        /// <summary>
+        /// Constant MALFORMED_SECRET_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MALFORMED_SECRET_ARN = new ValidationExceptionType("MALFORMED_SECRET_ARN");
         /// <summary>
         /// Constant MANIFEST_DRM_SYSTEMS_INCOMPATIBLE for ValidationExceptionType
         /// </summary>
@@ -1517,6 +1557,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
         /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION");
+        /// <summary>
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
@@ -1533,6 +1577,22 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ROLE_ARN_NOT_ASSUMABLE = new ValidationExceptionType("ROLE_ARN_NOT_ASSUMABLE");
         /// <summary>
+        /// Constant SECRET_ARN_RESOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_ARN_RESOURCE_NOT_FOUND = new ValidationExceptionType("SECRET_ARN_RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant SECRET_FROM_DIFFERENT_ACCOUNT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_FROM_DIFFERENT_ACCOUNT = new ValidationExceptionType("SECRET_FROM_DIFFERENT_ACCOUNT");
+        /// <summary>
+        /// Constant SECRET_FROM_DIFFERENT_REGION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_FROM_DIFFERENT_REGION = new ValidationExceptionType("SECRET_FROM_DIFFERENT_REGION");
+        /// <summary>
+        /// Constant SECRET_IS_NOT_ONE_KEY_VALUE_PAIR for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_IS_NOT_ONE_KEY_VALUE_PAIR = new ValidationExceptionType("SECRET_IS_NOT_ONE_KEY_VALUE_PAIR");
+        /// <summary>
         /// Constant SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY = new ValidationExceptionType("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
@@ -1548,6 +1608,10 @@ namespace Amazon.MediaPackageV2
         /// Constant TOO_MANY_IN_PROGRESS_HARVEST_JOBS for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType TOO_MANY_IN_PROGRESS_HARVEST_JOBS = new ValidationExceptionType("TOO_MANY_IN_PROGRESS_HARVEST_JOBS");
+        /// <summary>
+        /// Constant TOO_MANY_SECRETS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TOO_MANY_SECRETS = new ValidationExceptionType("TOO_MANY_SECRETS");
         /// <summary>
         /// Constant TS_CONTAINER_TYPE_WITH_DASH_MANIFEST for ValidationExceptionType
         /// </summary>

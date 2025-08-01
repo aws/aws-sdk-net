@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private GluePropertiesPatch _glueProperties;
         private IamPropertiesPatch _iamProperties;
         private RedshiftPropertiesPatch _redshiftProperties;
+        private S3PropertiesPatch _s3Properties;
         private SparkEmrPropertiesPatch _sparkEmrProperties;
 
         /// <summary>
@@ -110,6 +111,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetRedshiftProperties()
         {
             return this._redshiftProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Properties. 
+        /// <para>
+        /// The Amazon S3 properties of a connection properties patch.
+        /// </para>
+        /// </summary>
+        public S3PropertiesPatch S3Properties
+        {
+            get { return this._s3Properties; }
+            set { this._s3Properties = value; }
+        }
+
+        // Check to see if S3Properties property is set
+        internal bool IsSetS3Properties()
+        {
+            return this._s3Properties != null;
         }
 
         /// <summary>

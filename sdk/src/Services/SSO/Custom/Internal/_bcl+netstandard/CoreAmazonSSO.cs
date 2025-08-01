@@ -75,7 +75,6 @@ namespace Amazon.SSO.Internal
         }
 #endif
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Create credentials from SSO access token
         /// </summary>
@@ -121,6 +120,5 @@ namespace Amazon.SSO.Internal
         {
             await client.LogoutAsync(new LogoutRequest() { AccessToken = accessToken }, cancellationToken).ConfigureAwait(false);
         }
-#endif
     }
 }

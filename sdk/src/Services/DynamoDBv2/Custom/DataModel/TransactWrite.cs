@@ -18,11 +18,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-
-#endif
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
@@ -387,13 +384,11 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateObjects();
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateObjects();
         }
-#endif
 
         internal override void PopulateObjects()
         {
@@ -425,7 +420,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private Expression CreateConditionExpressionForVersion(ItemStorage storage)
+        private DocumentModel.Expression CreateConditionExpressionForVersion(ItemStorage storage)
         {
             if (!ShouldUseVersioning()) return null;
             var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(
@@ -543,7 +538,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentTransactWrite transaction = new MultiTableDocumentTransactWrite();
@@ -574,6 +568,5 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return tracerProvider;
         }
-#endif
     }
 }

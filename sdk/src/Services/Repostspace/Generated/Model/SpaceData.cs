@@ -45,6 +45,7 @@ namespace Amazon.Repostspace.Model
         private string _spaceId;
         private string _status;
         private long? _storageLimit;
+        private SupportedEmailDomainsStatus _supportedEmailDomains;
         private TierLevel _tier;
         private int? _userCount;
         private string _userkmsKey;
@@ -257,6 +258,21 @@ namespace Amazon.Repostspace.Model
         internal bool IsSetStorageLimit()
         {
             return this._storageLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEmailDomains.
+        /// </summary>
+        public SupportedEmailDomainsStatus SupportedEmailDomains
+        {
+            get { return this._supportedEmailDomains; }
+            set { this._supportedEmailDomains = value; }
+        }
+
+        // Check to see if SupportedEmailDomains property is set
+        internal bool IsSetSupportedEmailDomains()
+        {
+            return this._supportedEmailDomains != null;
         }
 
         /// <summary>

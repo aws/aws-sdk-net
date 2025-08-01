@@ -33,7 +33,7 @@ namespace Amazon.TranscribeStreaming
     public partial class AmazonTranscribeStreamingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Transcribe Streaming", "4.0.1.7");
+            InternalSDKUtils.BuildUserAgentString("Transcribe Streaming", "4.0.1.10");
 
         private static readonly AmazonTranscribeStreamingEndpointResolver EndpointResolver =
             new AmazonTranscribeStreamingEndpointResolver();

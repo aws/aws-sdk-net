@@ -20,9 +20,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 using System.Linq;
 using System.Threading;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using System.Collections.Generic;
 using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
@@ -1241,7 +1239,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API
         internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new PutItemOperationConfig();
@@ -1286,7 +1283,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
-#endif
 
         #endregion
 
@@ -1327,7 +1323,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
-#if AWS_ASYNC_API
         internal async Task<Document> GetItemHelperAsync(Key key, GetItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new GetItemOperationConfig();
@@ -1349,7 +1344,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return null;
             return this.FromAttributeMap(attributeMap);
         }
-#endif
 
         #endregion
 
@@ -1362,13 +1356,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, key, config,null);
         }
 
-#if AWS_ASYNC_API
         internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, Expression expression, CancellationToken cancellationToken)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
             return UpdateHelperAsync(doc, key, config, expression, cancellationToken);
         }
-#endif
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
         {
@@ -1461,7 +1453,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API
         internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
@@ -1541,7 +1532,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
-#endif
 
         // Checks if key attributes have been updated
         internal bool HaveKeysChanged(Document doc)
@@ -1614,7 +1604,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API
         internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
@@ -1657,7 +1646,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
-#endif
 
         #endregion
 

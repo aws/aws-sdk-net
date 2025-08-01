@@ -38,8 +38,6 @@ namespace Amazon.Runtime.Internal.Transform
     {
         Stream OpenResponse();
 
-#if AWS_ASYNC_API
         System.Threading.Tasks.Task<Stream> OpenResponseAsync();
-#endif
     }
 }

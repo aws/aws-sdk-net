@@ -34,7 +34,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PurchaseCapacityBlockResponse : AmazonWebServiceResponse
     {
+        private List<CapacityBlock> _capacityBlocks = AWSConfigs.InitializeCollections ? new List<CapacityBlock>() : null;
         private CapacityReservation _capacityReservation;
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlocks. 
+        /// <para>
+        /// The Capacity Block.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CapacityBlock> CapacityBlocks
+        {
+            get { return this._capacityBlocks; }
+            set { this._capacityBlocks = value; }
+        }
+
+        // Check to see if CapacityBlocks property is set
+        internal bool IsSetCapacityBlocks()
+        {
+            return this._capacityBlocks != null && (this._capacityBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityReservation. 

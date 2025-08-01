@@ -80,8 +80,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accessgrantsinstance/dataaccess";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static GetDataAccessRequestMarshaller _instance = new GetDataAccessRequestMarshaller();        

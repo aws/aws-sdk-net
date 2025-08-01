@@ -461,6 +461,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType REDSHIFT = new ConnectionType("REDSHIFT");
         /// <summary>
+        /// Constant S3 for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType S3 = new ConnectionType("S3");
+        /// <summary>
         /// Constant SAPHANA for ConnectionType
         /// </summary>
         public static readonly ConnectionType SAPHANA = new ConnectionType("SAPHANA");
@@ -3540,6 +3544,10 @@ namespace Amazon.DataZone
         /// Constant FORMS for SearchOutputAdditionalAttribute
         /// </summary>
         public static readonly SearchOutputAdditionalAttribute FORMS = new SearchOutputAdditionalAttribute("FORMS");
+        /// <summary>
+        /// Constant TEXT_MATCH_RATIONALE for SearchOutputAdditionalAttribute
+        /// </summary>
+        public static readonly SearchOutputAdditionalAttribute TEXT_MATCH_RATIONALE = new SearchOutputAdditionalAttribute("TEXT_MATCH_RATIONALE");
         /// <summary>
         /// Constant TIME_SERIES_DATA_POINT_FORMS for SearchOutputAdditionalAttribute
         /// </summary>

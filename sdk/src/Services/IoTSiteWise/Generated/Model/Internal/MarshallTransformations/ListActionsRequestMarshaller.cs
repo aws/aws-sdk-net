@@ -69,6 +69,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetResolveToResourceId())
+                request.Parameters.Add("resolveToResourceId", StringUtils.FromString(publicRequest.ResolveToResourceId));
+            
+            if (publicRequest.IsSetResolveToResourceType())
+                request.Parameters.Add("resolveToResourceType", StringUtils.FromString(publicRequest.ResolveToResourceType));
+            
             if (publicRequest.IsSetTargetResourceId())
                 request.Parameters.Add("targetResourceId", StringUtils.FromString(publicRequest.TargetResourceId));
             

@@ -62,6 +62,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginAccessIdentity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OriginReadTimeout", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

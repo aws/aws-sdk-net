@@ -30,8 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines an incremental run type and has only <c>incrementalRunType</c>
-    /// as a field.
+    /// Optional. An object that defines the incremental run type. This object contains only
+    /// the <c>incrementalRunType</c> field, which appears as "Automatic" in the console.
+    /// 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c>, incremental processing
+    /// is not supported. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class IncrementalRunConfig
     {
@@ -40,8 +48,15 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IncrementalRunType. 
         /// <para>
-        /// The type of incremental run. It takes only one value: <c>IMMEDIATE</c>.
+        /// The type of incremental run. The only valid value is <c>IMMEDIATE</c>. This appears
+        /// as "Automatic" in the console.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c>, incremental processing
+        /// is not supported. 
+        /// </para>
+        ///  </important>
         /// </summary>
         public IncrementalRunType IncrementalRunType
         {

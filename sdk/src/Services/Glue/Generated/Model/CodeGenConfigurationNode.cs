@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private AthenaConnectorSource _athenaConnectorSource;
         private CatalogDeltaSource _catalogDeltaSource;
         private CatalogHudiSource _catalogHudiSource;
+        private CatalogIcebergSource _catalogIcebergSource;
         private CatalogKafkaSource _catalogKafkaSource;
         private CatalogKinesisSource _catalogKinesisSource;
         private CatalogSource _catalogSource;
@@ -57,6 +58,7 @@ namespace Amazon.Glue.Model
         private DropNullFields _dropNullFields;
         private DynamicTransform _dynamicTransform;
         private DynamoDBCatalogSource _dynamoDBCatalogSource;
+        private DynamoDBELTConnectorSource _dynamoDBELTConnectorSource;
         private EvaluateDataQuality _evaluateDataQuality;
         private EvaluateDataQualityMultiFrame _evaluateDataQualityMultiFrame;
         private FillMissingValues _fillMissingValues;
@@ -81,8 +83,10 @@ namespace Amazon.Glue.Model
         private RedshiftTarget _redshiftTarget;
         private RelationalCatalogSource _relationalCatalogSource;
         private RenameField _renameField;
+        private Route _route;
         private S3CatalogDeltaSource _s3CatalogDeltaSource;
         private S3CatalogHudiSource _s3CatalogHudiSource;
+        private S3CatalogIcebergSource _s3CatalogIcebergSource;
         private S3CatalogSource _s3CatalogSource;
         private S3CatalogTarget _s3CatalogTarget;
         private S3CsvSource _s3CsvSource;
@@ -96,6 +100,7 @@ namespace Amazon.Glue.Model
         private S3HudiDirectTarget _s3HudiDirectTarget;
         private S3HudiSource _s3HudiSource;
         private S3HyperDirectTarget _s3HyperDirectTarget;
+        private S3IcebergCatalogTarget _s3IcebergCatalogTarget;
         private S3IcebergDirectTarget _s3IcebergDirectTarget;
         private S3JsonSource _s3JsonSource;
         private S3ParquetSource _s3ParquetSource;
@@ -237,6 +242,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCatalogHudiSource()
         {
             return this._catalogHudiSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogIcebergSource. 
+        /// <para>
+        /// Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public CatalogIcebergSource CatalogIcebergSource
+        {
+            get { return this._catalogIcebergSource; }
+            set { this._catalogIcebergSource = value; }
+        }
+
+        // Check to see if CatalogIcebergSource property is set
+        internal bool IsSetCatalogIcebergSource()
+        {
+            return this._catalogIcebergSource != null;
         }
 
         /// <summary>
@@ -508,6 +531,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDynamoDBCatalogSource()
         {
             return this._dynamoDBCatalogSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDBELTConnectorSource. 
+        /// <para>
+        /// Specifies a DynamoDB ELT connector source for extracting data from DynamoDB tables.
+        /// </para>
+        /// </summary>
+        public DynamoDBELTConnectorSource DynamoDBELTConnectorSource
+        {
+            get { return this._dynamoDBELTConnectorSource; }
+            set { this._dynamoDBELTConnectorSource = value; }
+        }
+
+        // Check to see if DynamoDBELTConnectorSource property is set
+        internal bool IsSetDynamoDBELTConnectorSource()
+        {
+            return this._dynamoDBELTConnectorSource != null;
         }
 
         /// <summary>
@@ -951,6 +992,25 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Route. 
+        /// <para>
+        /// Specifies a route node that directs data to different output paths based on defined
+        /// filtering conditions.
+        /// </para>
+        /// </summary>
+        public Route Route
+        {
+            get { return this._route; }
+            set { this._route = value; }
+        }
+
+        // Check to see if Route property is set
+        internal bool IsSetRoute()
+        {
+            return this._route != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3CatalogDeltaSource. 
         /// <para>
         /// Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The
@@ -986,6 +1046,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetS3CatalogHudiSource()
         {
             return this._s3CatalogHudiSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3CatalogIcebergSource. 
+        /// <para>
+        /// Specifies an Apache Iceberg data source that is registered in the Glue Data Catalog.
+        /// The Iceberg data source must be stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3CatalogIcebergSource S3CatalogIcebergSource
+        {
+            get { return this._s3CatalogIcebergSource; }
+            set { this._s3CatalogIcebergSource = value; }
+        }
+
+        // Check to see if S3CatalogIcebergSource property is set
+        internal bool IsSetS3CatalogIcebergSource()
+        {
+            return this._s3CatalogIcebergSource != null;
         }
 
         /// <summary>
@@ -1220,6 +1299,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetS3HyperDirectTarget()
         {
             return this._s3HyperDirectTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3IcebergCatalogTarget. 
+        /// <para>
+        /// Specifies an Apache Iceberg catalog target that writes data to Amazon S3 and registers
+        /// the table in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public S3IcebergCatalogTarget S3IcebergCatalogTarget
+        {
+            get { return this._s3IcebergCatalogTarget; }
+            set { this._s3IcebergCatalogTarget = value; }
+        }
+
+        // Check to see if S3IcebergCatalogTarget property is set
+        internal bool IsSetS3IcebergCatalogTarget()
+        {
+            return this._s3IcebergCatalogTarget != null;
         }
 
         /// <summary>

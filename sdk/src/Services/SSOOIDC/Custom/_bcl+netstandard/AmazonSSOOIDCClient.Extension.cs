@@ -30,7 +30,6 @@ namespace Amazon.SSOOIDC
         }
 #endif
 
-#if AWS_ASYNC_API
         async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC.GetSsoTokenAsync(GetSsoTokenRequest request)
         {
             return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request).ConfigureAwait(false);
@@ -40,7 +39,6 @@ namespace Amazon.SSOOIDC
         {
             return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request, cancellationToken).ConfigureAwait(false);
         }
-#endif
 
 #if BCL
         GetSsoTokenResponse ICoreAmazonSSOOIDC.RefreshToken(
@@ -50,12 +48,10 @@ namespace Amazon.SSOOIDC
         }
 #endif
 
-#if AWS_ASYNC_API
         async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC.RefreshTokenAsync(
             GetSsoTokenResponse previousResponse)
         {
             return await CoreAmazonSSOOIDC.RefreshTokenAsync(this, previousResponse).ConfigureAwait(false);
         }
-#endif
     }
 }

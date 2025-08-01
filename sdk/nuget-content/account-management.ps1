@@ -1,7 +1,7 @@
 
 function RegisterProfile()
 {
-	$dllpath = "..\lib\net35\AWSSDK.Core.dll"
+	$dllpath = "..\lib\net472\AWSSDK.Core.dll"
 	$sdkassembly = [System.Reflection.Assembly]::LoadFrom($dllpath)
 
 	$completed = $FALSE

@@ -104,7 +104,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property NextState. 
         /// <para>
         /// The name of the next state to transition to. If you haven't defined a next state in
-        /// your definition or if the execution of the state fails, this ﬁeld doesn't contain
+        /// your definition or if the execution of the state fails, this field doesn't contain
         /// a value.
         /// </para>
         /// </summary>

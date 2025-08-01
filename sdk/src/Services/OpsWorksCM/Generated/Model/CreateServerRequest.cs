@@ -50,18 +50,18 @@ namespace Amazon.OpsWorksCM.Model
     ///  
     /// <para>
     ///  If you do not specify a security group by adding the <c>SecurityGroupIds</c> parameter,
-    /// AWS OpsWorks creates a new security group. 
+    /// OpsWorks creates a new security group. 
     /// </para>
     ///  
     /// <para>
     ///  <i>Chef Automate:</i> The default security group opens the Chef server to the world
-    /// on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is
-    /// also open to the world on TCP port 22. 
+    /// on TCP port 443. If a KeyName is present, OpsWorks enables SSH access. SSH is also
+    /// open to the world on TCP port 22. 
     /// </para>
     ///  
     /// <para>
     ///  <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433,
-    /// 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access.
+    /// 8140, 8142, 8143, and 8170. If a KeyName is present, OpsWorks enables SSH access.
     /// SSH is also open to the world on TCP port 22. 
     /// </para>
     ///  
@@ -124,8 +124,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property BackupId. 
         /// <para>
-        ///  If you specify this field, AWS OpsWorks CM creates the server by using the backup
-        /// represented by BackupId. 
+        ///  If you specify this field, OpsWorks CM creates the server by using the backup represented
+        /// by BackupId. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=79)]
@@ -145,8 +145,8 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property BackupRetentionCount. 
         /// <para>
         ///  The number of automated backups that you want to keep. Whenever a new backup is created,
-        /// AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default
-        /// value is <c>1</c>. 
+        /// OpsWorks CM deletes the oldest backups if this number is exceeded. The default value
+        /// is <c>1</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -402,12 +402,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property InstanceProfileArn. 
         /// <para>
-        ///  The ARN of the instance profile that your Amazon EC2 instances use. Although the
-        /// AWS OpsWorks console typically creates the instance profile for you, if you are using
-        /// API commands instead, run the service-role-creation.yaml AWS CloudFormation template,
-        /// located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the instance profile you
-        /// need. 
+        ///  The ARN of the instance profile that your Amazon EC2 instances use. The OpsWorks
+        /// console typically creates the instance profile for you
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]
@@ -465,7 +461,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The start time for a one-hour period during which AWS OpsWorks CM backs up application-level
+        ///  The start time for a one-hour period during which OpsWorks CM backs up application-level
         /// data on your server if automated backups are enabled. Valid values must be specified
         /// in one of the following formats: 
         /// </para>
@@ -508,7 +504,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The start time for a one-hour period each week during which AWS OpsWorks CM performs
+        ///  The start time for a one-hour period each week during which OpsWorks CM performs
         /// maintenance on the instance. Valid values must be specified in the following format:
         /// <c>DDD:HH:MM</c>. <c>MM</c> must be specified as <c>00</c>. The specified time is
         /// in coordinated universal time (UTC). The default value is a random one-hour period
@@ -543,7 +539,7 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you do not specify this parameter, AWS OpsWorks CM creates one new security group
+        ///  If you do not specify this parameter, OpsWorks CM creates one new security group
         /// that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). 
         /// </para>
         /// <para />
@@ -567,9 +563,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        ///  The name of the server. The server name must be unique within your AWS account, within
-        /// each region. Server names must start with a letter; then letters, numbers, or hyphens
-        /// (-) are allowed, up to a maximum of 40 characters. 
+        ///  The name of the server. The server name must be unique within your Amazon Web Services
+        /// account, within each region. Server names must start with a letter; then letters,
+        /// numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]
@@ -588,12 +584,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        ///  The service role that the AWS OpsWorks CM service backend uses to work with your
-        /// account. Although the AWS OpsWorks management console typically creates the service
-        /// role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml
-        /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
-        /// This template creates a CloudFormation stack that includes the service role and instance
-        /// profile that you need. 
+        ///  The service role that the OpsWorks CM service backend uses to work with your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]
@@ -651,8 +642,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef
-        /// Automate or AWS OpsWorks for Puppet Enterprise server.
+        /// A map that contains tag keys and tag values to attach to an OpsWorks for Chef Automate
+        /// or OpsWorks for Puppet Enterprise server.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -671,11 +662,11 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Leading and trailing white spaces are trimmed from both the key and value.
+        /// Leading and trailing spaces are trimmed from both the key and value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
+        /// A maximum of 50 user-applied tags is allowed for any OpsWorks CM server.
         /// </para>
         ///  </li> </ul>
         /// <para />

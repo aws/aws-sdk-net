@@ -34,14 +34,14 @@ namespace Amazon.LocationService.Model
     /// 
     ///  
     /// <para>
-    /// A geofence geometry is made up of either a polygon or a circle. Can be a polygon,
-    /// a circle or a polygon encoded in Geobuf format. Including multiple selections will
-    /// return a validation error.
+    /// A geofence geometry can be a circle, a polygon, or a multipolygon. <c>Polygon</c>
+    /// and <c>MultiPolygon</c> geometries can be defined using their respective parameters,
+    /// or encoded in Geobuf format using the <c>Geobuf</c> parameter. Including multiple
+    /// geometry types in the same request will return a validation error.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Amazon Location doesn't currently support polygons with holes, multipolygons, polygons
-    /// that are wound clockwise, or that cross the antimeridian. 
+    /// Amazon Location doesn't currently support polygons that cross the antimeridian.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,6 +49,7 @@ namespace Amazon.LocationService.Model
     {
         private Circle _circle;
         private MemoryStream _geobuf;
+        private List<List<List<List<double>>>> _multiPolygon = AWSConfigs.InitializeCollections ? new List<List<List<List<double>>>>() : null;
         private List<List<List<double>>> _polygon = AWSConfigs.InitializeCollections ? new List<List<List<double>>>() : null;
 
         /// <summary>
@@ -78,10 +79,30 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// A polygon in Geobuf format can have up to 100,000 vertices.
+        /// This parameter can contain a Geobuf-encoded GeoJSON geometry object of type <c>Polygon</c>
+        /// <i>OR</i> <c>MultiPolygon</c>. For more information and specific configuration requirements
+        /// for these object types, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GeofenceGeometry.html#location-Type-WaypointGeofencing_GeofenceGeometry-Polygon">Polygon</a>
+        /// and <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GeofenceGeometry.html#location-Type-WaypointGeofencing_GeofenceGeometry-MultiPolygon">MultiPolygon</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The following limitations apply specifically to geometries defined using the <c>Geobuf</c>
+        /// parameter, and supercede the corresponding limitations of the <c>Polygon</c> and <c>MultiPolygon</c>
+        /// parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A <c>Polygon</c> in <c>Geobuf</c> format can have up to 25,000 rings and up to 100,000
+        /// total vertices, including all vertices from all component rings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <c>MultiPolygon</c> in <c>Geobuf</c> format can contain up to 10,000 <c>Polygons</c>
+        /// and up to 100,000 total vertices, including all vertices from all component <c>Polygons</c>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=600000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=700000)]
         public MemoryStream Geobuf
         {
             get { return this._geobuf; }
@@ -95,39 +116,124 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Polygon. 
+        /// Gets and sets the property MultiPolygon. 
         /// <para>
-        /// A polygon is a list of linear rings which are each made up of a list of vertices.
+        /// A <c>MultiPolygon</c> is a list of up to 250 <c>Polygon</c> elements which represent
+        /// the shape of a geofence. The <c>Polygon</c> components of a <c>MultiPolygon</c> geometry
+        /// can define separate geographical areas that are considered part of the same geofence,
+        /// perimeters of larger exterior areas with smaller interior spaces that are excluded
+        /// from the geofence, or some combination of these use cases to form complex geofence
+        /// boundaries.
         /// </para>
         ///  
         /// <para>
-        /// Each vertex is a 2-dimensional point of the form: <c>[longitude, latitude]</c>. This
-        /// is represented as an array of doubles of length 2 (so <c>[double, double]</c>).
+        /// For more information and specific configuration requirements for the <c>Polygon</c>
+        /// components that form a <c>MultiPolygon</c>, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_WaypointGeofencing_GeofenceGeometry.html#location-Type-WaypointGeofencing_GeofenceGeometry-Polygon">Polygon</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// An array of 4 or more vertices, where the first and last vertex are the same (to form
-        /// a closed boundary), is called a linear ring. The linear ring vertices must be listed
-        /// in counter-clockwise order around the ring’s interior. The linear ring is represented
-        /// as an array of vertices, or an array of arrays of doubles (<c>[[double, double], ...]</c>).
+        /// The following additional requirements and limitations apply to geometries defined
+        /// using the <c>MultiPolygon</c> parameter:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// A geofence consists of a single linear ring. To allow for future expansion, the Polygon
-        /// parameter takes an array of linear rings, which is represented as an array of arrays
-        /// of arrays of doubles (<c>[[[double, double], ...], ...]</c>).
+        /// The entire <c>MultiPolygon</c> must consist of no more than 1,000 vertices, including
+        /// all vertices from all component <c>Polygons</c>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
+        /// Each edge of a component <c>Polygon</c> must intersect no more than 5 edges from other
+        /// <c>Polygons</c>. Parallel edges that are shared but do not cross are not counted toward
+        /// this limit.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The total number of intersecting edges of component <c>Polygons</c> must be no more
+        /// than 100,000. Parallel edges that are shared but do not cross are not counted toward
+        /// this limit.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=250)]
+        public List<List<List<List<double>>>> MultiPolygon
+        {
+            get { return this._multiPolygon; }
+            set { this._multiPolygon = value; }
+        }
+
+        // Check to see if MultiPolygon property is set
+        internal bool IsSetMultiPolygon()
+        {
+            return this._multiPolygon != null && (this._multiPolygon.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Polygon. 
+        /// <para>
+        /// A <c>Polygon</c> is a list of up to 250 linear rings which represent the shape of
+        /// a geofence. This list <i>must</i> include 1 exterior ring (representing the outer
+        /// perimeter of the geofence), and can optionally include up to 249 interior rings (representing
+        /// polygonal spaces within the perimeter, which are excluded from the geofence area).
+        /// </para>
+        ///  
+        /// <para>
+        /// A linear ring is an array of 4 or more vertices, where the first and last vertex are
+        /// the same (to form a closed boundary). Each vertex is a 2-dimensional point represented
+        /// as an array of doubles of length 2: <c>[longitude, latitude]</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each linear ring is represented as an array of arrays of doubles (<c>[[longitude,
+        /// latitude], [longitude, latitude], ...]</c>). The vertices for the exterior ring must
+        /// be listed in <i>counter-clockwise</i> sequence. Vertices for all interior rings must
+        /// be listed in <i>clockwise</i> sequence.
+        /// </para>
+        ///  
+        /// <para>
+        /// The list of linear rings that describe the entire <c>Polygon</c> is represented as
+        /// an array of arrays of arrays of doubles (<c>[[[longitude, latitude], [longitude, latitude],
+        /// ...], [[longitude, latitude], [longitude, latitude], ...], ...]</c>). The exterior
+        /// ring must be listed first, before any interior rings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The following additional requirements and limitations apply to geometries defined
+        /// using the <c>Polygon</c> parameter:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The entire <c>Polygon</c> must consist of no more than 1,000 vertices, including all
+        /// vertices from the exterior ring and all interior rings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rings must not touch or cross each other.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All interior rings must be fully contained within the exterior ring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Interior rings must not contain other interior rings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No ring is permitted to intersect itself.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=250)]
         public List<List<List<double>>> Polygon
         {
             get { return this._polygon; }

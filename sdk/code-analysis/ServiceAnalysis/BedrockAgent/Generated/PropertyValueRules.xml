@@ -2916,6 +2916,11 @@
     <pattern>^s3://.{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.S3VectorsConfiguration.IndexName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.SalesforceSourceConfiguration.CredentialsSecretArn</property>
     <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
   </property-value-rule>

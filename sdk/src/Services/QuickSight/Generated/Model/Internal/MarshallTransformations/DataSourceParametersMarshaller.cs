@@ -145,6 +145,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetImpalaParameters())
+            {
+                context.Writer.WritePropertyName("ImpalaParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImpalaParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImpalaParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetJiraParameters())
             {
                 context.Writer.WritePropertyName("JiraParameters");

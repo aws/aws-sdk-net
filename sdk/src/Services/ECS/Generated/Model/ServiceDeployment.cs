@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private ServiceDeploymentCircuitBreaker _deploymentCircuitBreaker;
         private DeploymentConfiguration _deploymentConfiguration;
         private DateTime? _finishedAt;
+        private ServiceDeploymentLifecycleStage _lifecycleStage;
         private Rollback _rollback;
         private string _serviceArn;
         private string _serviceDeploymentArn;
@@ -162,6 +163,115 @@ namespace Amazon.ECS.Model
         internal bool IsSetFinishedAt()
         {
             return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleStage. 
+        /// <para>
+        /// The current lifecycle stage of the deployment. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// RECONCILE_SERVICE
+        /// </para>
+        ///  
+        /// <para>
+        /// The reconciliation stage that only happens when you start a new service deployment
+        /// with more than 1 service revision in an ACTIVE state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRE_SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The green service revision has not started. The blue service revision is handling
+        /// 100% of the production traffic. There is no test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when the green service revision scales up to 100% and launches new tasks.
+        /// The green service revision is not serving any traffic at this point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POST_SCALE_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The green service revision has started. The blue service revision is handling 100%
+        /// of the production traffic. There is no test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TEST_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The blue and green service revisions are running. The blue service revision handles
+        /// 100% of the production traffic. The green service revision is migrating from 0% to
+        /// 100% of test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POST_TEST_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The test traffic shift is complete. The green service revision handles 100% of the
+        /// test traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// Production traffic is shifting to the green service revision. The green service revision
+        /// is migrating from 0% to 100% of production traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POST_PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// The production traffic shift is complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BAKE_TIME
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when both blue and green service revisions are running simultaneously after
+        /// the production traffic has shifted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLEAN_UP
+        /// </para>
+        ///  
+        /// <para>
+        /// The stage when the blue service revision has completely scaled down to 0 running tasks.
+        /// The green service revision is now the production service revision after this stage.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ServiceDeploymentLifecycleStage LifecycleStage
+        {
+            get { return this._lifecycleStage; }
+            set { this._lifecycleStage = value; }
+        }
+
+        // Check to see if LifecycleStage property is set
+        internal bool IsSetLifecycleStage()
+        {
+            return this._lifecycleStage != null;
         }
 
         /// <summary>

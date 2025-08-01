@@ -238,6 +238,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IAMCertificateId. 
         /// <para>
+        /// <note> 
+        /// <para>
+        /// This field only supports standard distributions. You can't specify this field for
+        /// multi-tenant distributions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-config-options.html#unsupported-saas">Unsupported
+        /// features for SaaS Manager for Amazon CloudFront</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs) and the
         /// SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
         /// and Access Management (IAM)</a>, provide the ID of the IAM certificate.
@@ -247,7 +256,10 @@ namespace Amazon.CloudFront.Model
         /// If you specify an IAM certificate ID, you must also specify values for <c>MinimumProtocolVersion</c>
         /// and <c>SSLSupportMethod</c>. 
         /// </para>
+        /// 
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32)]
         public string IAMCertificateId
         {
             get { return this._iamCertificateId; }

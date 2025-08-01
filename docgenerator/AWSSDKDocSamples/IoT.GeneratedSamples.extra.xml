@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoT.IAmazonIoT.DescribeEncryptionConfiguration(Amazon.IoT.Model.DescribeEncryptionConfigurationRequest)" />
+            <member name="M:Amazon.IoT.AmazonIoTClient.DescribeEncryptionConfiguration(Amazon.IoT.Model.DescribeEncryptionConfigurationRequest)" />
+            <member name="T:Amazon.IoT.Model.DescribeEncryptionConfigurationRequest" />
+            <member name="T:Amazon.IoT.Model.DescribeEncryptionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    DescribeEncryptionConfiguration API operation example
+                </para>
+                <code
+                    title="DescribeEncryptionConfiguration"
+                    source=".\AWSSDKDocSamples\IoT\IoT.GeneratedSamples.cs"
+                    region="describeencryptionconfiguration-1752775629029" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IoT.IAmazonIoT.UpdateEncryptionConfiguration(Amazon.IoT.Model.UpdateEncryptionConfigurationRequest)" />
+            <member name="M:Amazon.IoT.AmazonIoTClient.UpdateEncryptionConfiguration(Amazon.IoT.Model.UpdateEncryptionConfigurationRequest)" />
+            <member name="T:Amazon.IoT.Model.UpdateEncryptionConfigurationRequest" />
+            <member name="T:Amazon.IoT.Model.UpdateEncryptionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates the encryption configuration. 
+                </para>
+                <code
+                    title="UpdateEncryptionConfiguration example"
+                    source=".\AWSSDKDocSamples\IoT\IoT.GeneratedSamples.cs"
+                    region="updateencryptionconfiguration-example-1749856813098" />
+            </example>
+        </value>
+    </doc>
+</docs>

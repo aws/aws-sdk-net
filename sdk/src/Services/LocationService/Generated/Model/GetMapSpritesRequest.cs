@@ -84,7 +84,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
         /// key</a> to authorize the request.
         /// </para>
         /// </summary>

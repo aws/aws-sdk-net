@@ -62,10 +62,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("bakeTimeInMinutes", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.BakeTimeInMinutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
                 {
                     var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
                     unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("lifecycleHooks", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DeploymentLifecycleHook, DeploymentLifecycleHookUnmarshaller>(DeploymentLifecycleHookUnmarshaller.Instance);
+                    unmarshalledObject.LifecycleHooks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maximumPercent", targetDepth))
@@ -78,6 +90,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("strategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Strategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

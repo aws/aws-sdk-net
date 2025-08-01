@@ -3656,19 +3656,253 @@ namespace Amazon.S3
 
         #endregion
         
-        #region  CreateBucketMetadataTableConfiguration
+        #region  CreateBucketMetadataConfiguration
 
 
         /// <summary>
-        /// Creates a metadata table configuration for a general purpose bucket. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
-        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// Creates an S3 Metadata V2 metadata configuration for a general purpose bucket. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the following permissions. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
         /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your metadata tables with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions in your KMS key policy.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To query your metadata tables, you need additional permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-bucket-query-permissions.html">
+        /// Permissions for querying metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTableBucket</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:DescribeKey</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
+        CreateBucketMetadataConfigurationResponse CreateBucketMetadataConfiguration(CreateBucketMetadataConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an S3 Metadata V2 metadata configuration for a general purpose bucket. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your metadata tables with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions in your KMS key policy.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To query your metadata tables, you need additional permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-bucket-query-permissions.html">
+        /// Permissions for querying metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTableBucket</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:DescribeKey</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
+        Task<CreateBucketMetadataConfigurationResponse> CreateBucketMetadataConfigurationAsync(CreateBucketMetadataConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateBucketMetadataTableConfiguration
+
+
+        /// <summary>
+        /// <important> 
+        /// <para>
+        ///  We recommend that you create your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>CreateBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a V1 S3 Metadata configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your metadata tables with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3723,15 +3957,37 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a metadata table configuration for a general purpose bucket. For more information,
+        /// <important> 
+        /// <para>
+        ///  We recommend that you create your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>CreateBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Creates a V1 S3 Metadata configuration for a general purpose bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
-        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
-        /// 
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         ///  <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the following permissions. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
         /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your metadata tables with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4751,7 +5007,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+        /// Deletes an S3 Inventory configuration (identified by the inventory ID) from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -4802,7 +5058,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+        /// Deletes an S3 Inventory configuration (identified by the inventory ID) from the bucket.
         /// </para>
         ///  
         /// <para>
@@ -4849,15 +5105,162 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketMetadataConfiguration
+
+
+        /// <summary>
+        /// Deletes an S3 Metadata configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>DeleteBucketMetadataConfiguration</c> API operation with V1
+        /// or V2 metadata configurations. However, if you try to use the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
+        DeleteBucketMetadataConfigurationResponse DeleteBucketMetadataConfiguration(DeleteBucketMetadataConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an S3 Metadata configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>DeleteBucketMetadataConfiguration</c> API operation with V1
+        /// or V2 metadata configurations. However, if you try to use the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
+        Task<DeleteBucketMetadataConfigurationResponse> DeleteBucketMetadataConfigurationAsync(DeleteBucketMetadataConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBucketMetadataTableConfiguration
 
 
         /// <summary>
-        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// <important> 
+        /// <para>
+        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Deletes a V1 S3 Metadata configuration from a general purpose bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
         /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
-        /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>DeleteBucketMetadataConfiguration</c> API operation with V1
+        /// or V2 metadata table configurations. However, if you try to use the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that you update your processes to use the new V2 API operations (<c>CreateBucketMetadataConfiguration</c>,
+        /// <c>GetBucketMetadataConfiguration</c>, and <c>DeleteBucketMetadataConfiguration</c>)
+        /// instead of the V1 API operations. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
         /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
@@ -4889,11 +5292,38 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// <important> 
+        /// <para>
+        ///  We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Deletes a V1 S3 Metadata configuration from a general purpose bucket. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
         /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
-        /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>DeleteBucketMetadataConfiguration</c> API operation with V1
+        /// or V2 metadata table configurations. However, if you try to use the V1 <c>DeleteBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that you update your processes to use the new V2 API operations (<c>CreateBucketMetadataConfiguration</c>,
+        /// <c>GetBucketMetadataConfiguration</c>, and <c>DeleteBucketMetadataConfiguration</c>)
+        /// instead of the V1 API operations. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
         /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
@@ -8467,7 +8897,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns an inventory configuration (identified by the inventory configuration ID)
+        /// Returns an S3 Inventory configuration (identified by the inventory configuration ID)
         /// from the bucket.
         /// </para>
         ///  
@@ -8519,7 +8949,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns an inventory configuration (identified by the inventory configuration ID)
+        /// Returns an S3 Inventory configuration (identified by the inventory configuration ID)
         /// from the bucket.
         /// </para>
         ///  
@@ -8985,15 +9415,163 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketMetadataConfiguration
+
+
+        /// <summary>
+        /// Retrieves the S3 Metadata configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>GetBucketMetadataConfiguration</c> API operation with V1 or
+        /// V2 metadata configurations. However, if you try to use the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
+        GetBucketMetadataConfigurationResponse GetBucketMetadataConfiguration(GetBucketMetadataConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the S3 Metadata configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>GetBucketMetadataConfiguration</c> API operation with V1 or
+        /// V2 metadata configurations. However, if you try to use the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The IAM policy action name is the same for the V1 and V2 API operations.
+        /// </para>
+        ///  </note> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
+        Task<GetBucketMetadataConfigurationResponse> GetBucketMetadataConfigurationAsync(GetBucketMetadataConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBucketMetadataTableConfiguration
 
 
         /// <summary>
-        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// <important> 
+        /// <para>
+        ///  We recommend that you retrieve your S3 Metadata configurations by using the V2 <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Retrieves the V1 S3 Metadata configuration for a general purpose bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
         /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
-        /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>GetBucketMetadataConfiguration</c> API operation with V1 or
+        /// V2 metadata table configurations. However, if you try to use the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that you update your processes to use the new V2 API operations (<c>CreateBucketMetadataConfiguration</c>,
+        /// <c>GetBucketMetadataConfiguration</c>, and <c>DeleteBucketMetadataConfiguration</c>)
+        /// instead of the V1 API operations. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
         /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
@@ -9025,11 +9603,39 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// <important> 
+        /// <para>
+        ///  We recommend that you retrieve your S3 Metadata configurations by using the V2 <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// API operation. We no longer recommend using the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your S3 Metadata configuration before July 15, 2025, we recommend that
+        /// you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// so that you can expire journal table records and create a live inventory table.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Retrieves the V1 S3 Metadata configuration for a general purpose bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
         /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
-        /// 
-        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use the V2 <c>GetBucketMetadataConfiguration</c> API operation with V1 or
+        /// V2 metadata table configurations. However, if you try to use the V1 <c>GetBucketMetadataTableConfiguration</c>
+        /// API operation with V2 configurations, you will receive an HTTP <c>405 Method Not Allowed</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Make sure that you update your processes to use the new V2 API operations (<c>CreateBucketMetadataConfiguration</c>,
+        /// <c>GetBucketMetadataConfiguration</c>, and <c>DeleteBucketMetadataConfiguration</c>)
+        /// instead of the V1 API operations. 
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
         /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
         /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
@@ -16446,7 +17052,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns a list of inventory configurations for the bucket. You can have up to 1,000
+        /// Returns a list of S3 Inventory configurations for the bucket. You can have up to 1,000
         /// analytics configurations per bucket.
         /// </para>
         ///  
@@ -16508,7 +17114,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Returns a list of inventory configurations for the bucket. You can have up to 1,000
+        /// Returns a list of S3 Inventory configurations for the bucket. You can have up to 1,000
         /// analytics configurations per bucket.
         /// </para>
         ///  
@@ -21693,7 +22299,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// This implementation of the <c>PUT</c> action adds an inventory configuration (identified
+        /// This implementation of the <c>PUT</c> action adds an S3 Inventory configuration (identified
         /// by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations
         /// per bucket. 
         /// </para>
@@ -21809,7 +22415,7 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// This implementation of the <c>PUT</c> action adds an inventory configuration (identified
+        /// This implementation of the <c>PUT</c> action adds an S3 Inventory configuration (identified
         /// by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations
         /// per bucket. 
         /// </para>
@@ -29539,6 +30145,280 @@ namespace Amazon.S3
         /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         Task<SelectObjectContentResponse> SelectObjectContentAsync(SelectObjectContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateBucketMetadataInventoryTableConfiguration
+
+
+        /// <summary>
+        /// Enables or disables a live inventory table for an S3 Metadata configuration on a general
+        /// purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your inventory table with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions in your KMS key policy.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:UpdateBucketMetadataInventoryTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTableBucket</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:DescribeKey</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>UpdateBucketMetadataInventoryTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataInventoryTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBucketMetadataInventoryTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
+        UpdateBucketMetadataInventoryTableConfigurationResponse UpdateBucketMetadataInventoryTableConfiguration(UpdateBucketMetadataInventoryTableConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Enables or disables a live inventory table for an S3 Metadata configuration on a general
+        /// purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to encrypt your inventory table with server-side encryption with Key Management
+        /// Service (KMS) keys (SSE-KMS), you need additional permissions in your KMS key policy.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">
+        /// Setting up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+        /// Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:UpdateBucketMetadataInventoryTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTableBucket</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTableEncryption</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kms:DescribeKey</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>UpdateBucketMetadataInventoryTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataInventoryTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBucketMetadataInventoryTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
+        Task<UpdateBucketMetadataInventoryTableConfigurationResponse> UpdateBucketMetadataInventoryTableConfigurationAsync(UpdateBucketMetadataInventoryTableConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateBucketMetadataJournalTableConfiguration
+
+
+        /// <summary>
+        /// Enables or disables journal table record expiration for an S3 Metadata configuration
+        /// on a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:UpdateBucketMetadataJournalTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>UpdateBucketMetadataJournalTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataJournalTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBucketMetadataJournalTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
+        UpdateBucketMetadataJournalTableConfigurationResponse UpdateBucketMetadataJournalTableConfiguration(UpdateBucketMetadataJournalTableConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Enables or disables journal table record expiration for an S3 Metadata configuration
+        /// on a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:UpdateBucketMetadataJournalTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>UpdateBucketMetadataJournalTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataInventoryTableConfiguration.html">UpdateBucketMetadataInventoryTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBucketMetadataJournalTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBucketMetadataJournalTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
+        Task<UpdateBucketMetadataJournalTableConfigurationResponse> UpdateBucketMetadataJournalTableConfigurationAsync(UpdateBucketMetadataJournalTableConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

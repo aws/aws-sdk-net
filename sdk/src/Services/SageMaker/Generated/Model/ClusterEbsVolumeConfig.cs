@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// to <c>/opt/sagemaker</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16384)]
+        [AWSProperty(Min=1, Max=16384)]
         public int? VolumeSizeInGB
         {
             get { return this._volumeSizeInGB; }

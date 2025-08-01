@@ -38,9 +38,7 @@ using System.Threading;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 #if NETSTANDARD
 using System.Net.Http;
 using System.Runtime.InteropServices;
@@ -948,6 +946,21 @@ namespace Amazon.Util
 #endif
         }
 
+        /// <summary>
+        /// This method returns true if the variant of the SDK being used is the .NET Framework target. This allows
+        /// libraries using .NET Standard 2.0 like AWSSDK.Extensions.NETCore.Setup to know at runtime if they are
+        /// using the .NET Framework version and if so make decisions on what APIs it should call.
+        /// </summary>
+        /// <returns>True if the version of the SDK is .NET Framework variant.</returns>
+        public static bool IsNETFramework()
+        {
+#if NETFRAMEWORK
+            return true;
+#else
+            return false;
+#endif
+        }
+
         #region The code in this region has been minimally adapted from Microsoft's PathInternal.Windows.cs class as of 11/19/2019.  The logic remains the same.
         /// <summary>
         /// Returns true if the path specified is relative to the current drive or working directory.
@@ -1020,7 +1033,7 @@ namespace Amazon.Util
         /// URL encodes a string per the specified RFC. If the path property is specified,
         /// the accepted path characters {/+:} are not encoded.
         /// </summary>
-        /// <param name="rfcNumber">RFC number determing safe characters</param>
+        /// <param name="rfcNumber">RFC number determining safe characters</param>
         /// <param name="data">The string to encode</param>
         /// <param name="path">Whether the string is a URL path or not</param>
         /// <returns>The encoded string</returns>
@@ -1683,7 +1696,7 @@ namespace Amazon.Util
                 };    
             }
         }
-#if AWS_ASYNC_API
+
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         public static async Task<ProcessExecutionResult> RunProcessAsync(ProcessStartInfo processStartInfo)
         {
@@ -1715,7 +1728,6 @@ namespace Amazon.Util
             }
 
         }
-#endif
 
         /// <summary>
         /// This method allows to check whether a property of an object returned by a service call

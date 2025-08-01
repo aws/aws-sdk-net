@@ -166,6 +166,10 @@ namespace Amazon.CloudWatchLogs
         /// Constant S3 for DeliveryDestinationType
         /// </summary>
         public static readonly DeliveryDestinationType S3 = new DeliveryDestinationType("S3");
+        /// <summary>
+        /// Constant XRAY for DeliveryDestinationType
+        /// </summary>
+        public static readonly DeliveryDestinationType XRAY = new DeliveryDestinationType("XRAY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1029,6 +1033,56 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type PolicyScope.
+    /// </summary>
+    public class PolicyScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for PolicyScope
+        /// </summary>
+        public static readonly PolicyScope ACCOUNT = new PolicyScope("ACCOUNT");
+        /// <summary>
+        /// Constant RESOURCE for PolicyScope
+        /// </summary>
+        public static readonly PolicyScope RESOURCE = new PolicyScope("RESOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyScope FindValue(string value)
+        {
+            return FindValue<PolicyScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyType.
     /// </summary>
     public class PolicyType : ConstantClass
@@ -1042,6 +1096,10 @@ namespace Amazon.CloudWatchLogs
         /// Constant FIELD_INDEX_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType FIELD_INDEX_POLICY = new PolicyType("FIELD_INDEX_POLICY");
+        /// <summary>
+        /// Constant METRIC_EXTRACTION_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType METRIC_EXTRACTION_POLICY = new PolicyType("METRIC_EXTRACTION_POLICY");
         /// <summary>
         /// Constant SUBSCRIPTION_FILTER_POLICY for PolicyType
         /// </summary>

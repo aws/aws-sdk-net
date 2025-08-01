@@ -181,6 +181,30 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListComputationModelDataBindingUsages operation
+        ///</summary>
+        public IListComputationModelDataBindingUsagesPaginator ListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request) 
+        {
+            return new ListComputationModelDataBindingUsagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComputationModelResolveToResources operation
+        ///</summary>
+        public IListComputationModelResolveToResourcesPaginator ListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request) 
+        {
+            return new ListComputationModelResolveToResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListComputationModels operation
+        ///</summary>
+        public IListComputationModelsPaginator ListComputationModels(ListComputationModelsRequest request) 
+        {
+            return new ListComputationModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
@@ -194,6 +218,14 @@ namespace Amazon.IoTSiteWise.Model
         public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
         {
             return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExecutions operation
+        ///</summary>
+        public IListExecutionsPaginator ListExecutions(ListExecutionsRequest request) 
+        {
+            return new ListExecutionsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -66,8 +66,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2013-04-01/cidrcollection";
 
 
-            request.UseQueryString = true;
             PostMarshallCustomization(request, publicRequest);
+            request.UseQueryString = true;
             return request;
         }
         private static ListCidrCollectionsRequestMarshaller _instance = new ListCidrCollectionsRequestMarshaller();        

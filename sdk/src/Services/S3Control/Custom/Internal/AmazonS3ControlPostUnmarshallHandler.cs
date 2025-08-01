@@ -43,7 +43,6 @@ namespace Amazon.S3Control.Internal
             PostInvoke(executionContext);
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Calls the and post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -58,7 +57,6 @@ namespace Amazon.S3Control.Internal
             PostInvoke(executionContext);
             return response;
         }
-#endif
 
         protected virtual void PostInvoke(IExecutionContext executionContext)
         {

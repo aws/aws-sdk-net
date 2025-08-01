@@ -44,7 +44,7 @@ namespace Amazon.Lambda.Model
         /// The The Amazon Resource Name (ARN) of the code signing configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string CodeSigningConfigArn
         {
             get { return this._codeSigningConfigArn; }

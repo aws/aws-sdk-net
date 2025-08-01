@@ -251,27 +251,47 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageGroupId. 
         /// <para>
-        /// This parameter applies only to FIFO (first-in-first-out) queues.
-        /// </para>
-        ///  
-        /// <para>
-        /// The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however, messages
-        /// in different message groups might be processed out of order). To interleave multiple
-        /// ordered streams within a single queue, use <c>MessageGroupId</c> values (for example,
-        /// session data for multiple users). In this scenario, multiple consumers can process
-        /// the queue, but the session data of each user is processed in a FIFO fashion.
+        ///  <c>MessageGroupId</c> is an attribute used in Amazon SQS FIFO (First-In-First-Out)
+        /// and standard queues. In FIFO queues, <c>MessageGroupId</c> organizes messages into
+        /// distinct groups. Messages within the same message group are always processed one at
+        /// a time, in strict order, ensuring that no two messages from the same group are processed
+        /// simultaneously. In standard queues, using <c>MessageGroupId</c> enables fair queues.
+        /// It is used to identify the tenant a message belongs to, helping maintain consistent
+        /// message dwell time across all tenants during noisy neighbor events. Unlike FIFO queues,
+        /// messages with the same <c>MessageGroupId</c> can be processed in parallel, maintaining
+        /// the high throughput of standard queues.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must associate a non-empty <c>MessageGroupId</c> with a message. If you don't
-        /// provide a <c>MessageGroupId</c>, the action fails.
+        ///  <b>FIFO queues:</b> <c>MessageGroupId</c> acts as the tag that specifies that a message
+        /// belongs to a specific message group. Messages that belong to the same message group
+        /// are processed in a FIFO manner (however, messages in different message groups might
+        /// be processed out of order). To interleave multiple ordered streams within a single
+        /// queue, use <c>MessageGroupId</c> values (for example, session data for multiple users).
+        /// In this scenario, multiple consumers can process the queue, but the session data of
+        /// each user is processed in a FIFO fashion.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a <c>MessageGroupId</c> when sending a message to a FIFO queue,
+        /// the action fails.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>ReceiveMessage</c> might return messages with multiple <c>MessageGroupId</c> values.
+        /// For each <c>MessageGroupId</c>, the messages are sorted by time sent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ReceiveMessage</c> might return messages with multiple <c>MessageGroupId</c> values.
-        /// For each <c>MessageGroupId</c>, the messages are sorted by time sent. The caller can't
-        /// specify a <c>MessageGroupId</c>.
+        ///  <b>Standard queues:</b>Use <c>MessageGroupId</c> in standard queues to enable fair
+        /// queues. The <c>MessageGroupId</c> identifies the tenant a message belongs to. A tenant
+        /// can be any entity that shares a queue with others, such as your customer, a client
+        /// application, or a request type. When one tenant sends a disproportionately large volume
+        /// of messages or has messages that require longer processing time, fair queues ensure
+        /// other tenants' messages maintain low dwell time. This preserves quality of service
+        /// for all tenants while maintaining the scalability and throughput of standard queues.
+        /// We recommend that you include a <c>MessageGroupId</c> in all messages when using fair
+        /// queues.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -283,12 +303,6 @@ namespace Amazon.SQS.Model
         /// For best practices of using <c>MessageGroupId</c>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
         /// the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
-        ///  <important> 
-        /// <para>
-        ///  <c>MessageGroupId</c> is required for FIFO queues. You can't use it for Standard
-        /// queues.
-        /// </para>
-        ///  </important>
         /// </summary>
         public string MessageGroupId
         {

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.AssociateSessionLogger(Amazon.WorkSpacesWeb.Model.AssociateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.AssociateSessionLogger(Amazon.WorkSpacesWeb.Model.AssociateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.AssociateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.AssociateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Associates a session logger with a portal
+                </para>
+                <code
+                    title="Associate Session Logger with Portal"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.CreateSessionLogger(Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.CreateSessionLogger(Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.CreateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a session logger that captures all events and stores them in S3 with JSON format and flat folder structure
+                </para>
+                <code
+                    title="Create Session Logger with All Events"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.CreateSessionLogger(Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.CreateSessionLogger(Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.CreateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.CreateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a session logger that captures only specific events with JSONLines format and nested folder structure
+                </para>
+                <code
+                    title="Create Session Logger with Specific Events"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.DeleteSessionLogger(Amazon.WorkSpacesWeb.Model.DeleteSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.DeleteSessionLogger(Amazon.WorkSpacesWeb.Model.DeleteSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.DeleteSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.DeleteSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a session logger resource
+                </para>
+                <code
+                    title="Delete Session Logger"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.DisassociateSessionLogger(Amazon.WorkSpacesWeb.Model.DisassociateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.DisassociateSessionLogger(Amazon.WorkSpacesWeb.Model.DisassociateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.DisassociateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.DisassociateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes the association between a session logger and a portal
+                </para>
+                <code
+                    title="Disassociate Session Logger from Portal"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.GetSessionLogger(Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.GetSessionLogger(Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.GetSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves a session logger configured for all events
+                </para>
+                <code
+                    title="Get Session Logger with All Events"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.GetSessionLogger(Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.GetSessionLogger(Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.GetSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.GetSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves a session logger configured for specific events
+                </para>
+                <code
+                    title="Get Session Logger with Specific Events"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.ListSessionLoggers(Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.ListSessionLoggers(Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.ListSessionLoggersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all session loggers in the account without pagination
+                </para>
+                <code
+                    title="List All Session Loggers"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.ListSessionLoggers(Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.ListSessionLoggers(Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.ListSessionLoggersRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.ListSessionLoggersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists session loggers with pagination parameters
+                </para>
+                <code
+                    title="List Session Loggers with Pagination"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.UpdateSessionLogger(Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.UpdateSessionLogger(Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates a session logger to capture specific events instead of all events
+                </para>
+                <code
+                    title="Update Session Logger Event Filter"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.WorkSpacesWeb.IAmazonWorkSpacesWeb.UpdateSessionLogger(Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest)" />
+            <member name="M:Amazon.WorkSpacesWeb.AmazonWorkSpacesWebClient.UpdateSessionLogger(Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest)" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerRequest" />
+            <member name="T:Amazon.WorkSpacesWeb.Model.UpdateSessionLoggerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the log configuration of a session logger
+                </para>
+                <code
+                    title="Update Session Logger Configuration"
+                    source=".\AWSSDKDocSamples\WorkSpacesWeb\WorkSpacesWeb.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

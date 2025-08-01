@@ -19,12 +19,8 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
 using System.Diagnostics.CodeAnalysis;
 using ThirdParty.RuntimeBackports;
-
-
-#if AWS_ASYNC_API
-using System.Threading.Tasks;
-#endif
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -184,14 +180,12 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateResults(DocumentBatch.Results);
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             CreateDocumentBatch();
             await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults(DocumentBatch.Results);
         }
-#endif
 
         internal override void CreateDocumentBatch()
         {
@@ -308,7 +302,6 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if AWS_ASYNC_API
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
@@ -328,7 +321,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 abstractBatch.PopulateResults(abstractBatch.DocumentBatch.Results);
             }
         }
-#endif
 
         private TracerProvider GetTracerProvider(List<IBatchGet> allBatches)
         {

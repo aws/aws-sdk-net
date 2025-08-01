@@ -221,7 +221,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property OutputSchemas. 
         /// <para>
-        /// The AWS Glue schemas to apply to the processed data.
+        /// The Glue schemas to apply to the processed data.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -61,7 +61,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
 
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Payload));
             request.Headers["Content-Type"] = "text/plain";
-
             PostMarshallCustomization(request, publicRequest);
             return request;
         }

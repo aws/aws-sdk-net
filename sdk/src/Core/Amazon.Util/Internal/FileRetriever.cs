@@ -15,10 +15,8 @@
 
 using System;
 using System.IO;
-#if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
-#endif
 
 namespace Amazon.Util.Internal
 {
@@ -39,14 +37,10 @@ namespace Amazon.Util.Internal
         /// <inheritdoc cref="File.Delete(string)"/>
         void Delete(string path);
 
-
-
-#if AWS_ASYNC_API
         /// <inheritdoc cref="File.ReadAllText(string)"/>
         Task<string> ReadAllTextAsync(string path, CancellationToken token = default);
         /// <inheritdoc cref="File.WriteAllText(string, string)"/>
         Task WriteAllTextAsync(string path, string contents, CancellationToken token = default);
-#endif
     }
 
     /// <inheritdoc cref="IFile"/>
@@ -58,7 +52,6 @@ namespace Amazon.Util.Internal
         public void WriteAllText(string path, string contents) => File.WriteAllText(path, contents);
         public void Delete(string path) => File.Delete(path);
 
-#if AWS_ASYNC_API
         public async Task<string> ReadAllTextAsync(string path, CancellationToken token = default)
         {
             using (var fs = File.OpenRead(path))
@@ -75,7 +68,6 @@ namespace Amazon.Util.Internal
                 await writer.WriteAsync(contents).ConfigureAwait(false);
 
         }
-#endif
     }
 }
 

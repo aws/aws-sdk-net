@@ -7555,7 +7555,8 @@
         "TopicId":{"shape":"TopicId"},
         "Topic":{"shape":"TopicDetails"},
         "Tags":{"shape":"TagList"},
-        "FolderArns":{"shape":"FolderArnList"}
+        "FolderArns":{"shape":"FolderArnList"},
+        "CustomInstructions":{"shape":"CustomInstructions"}
       }
     },
     "CreateTopicResponse":{
@@ -7789,6 +7790,18 @@
         "SelectAllOptions":{"shape":"CategoryFilterSelectAllOptions"},
         "NullOption":{"shape":"FilterNullOption"}
       }
+    },
+    "CustomInstructions":{
+      "type":"structure",
+      "required":["CustomInstructionsString"],
+      "members":{
+        "CustomInstructionsString":{"shape":"CustomInstructionsString"}
+      }
+    },
+    "CustomInstructionsString":{
+      "type":"string",
+      "max":5000,
+      "sensitive":true
     },
     "CustomLabel":{
       "type":"string",
@@ -8545,7 +8558,8 @@
         "DatabricksParameters":{"shape":"DatabricksParameters"},
         "StarburstParameters":{"shape":"StarburstParameters"},
         "TrinoParameters":{"shape":"TrinoParameters"},
-        "BigQueryParameters":{"shape":"BigQueryParameters"}
+        "BigQueryParameters":{"shape":"BigQueryParameters"},
+        "ImpalaParameters":{"shape":"ImpalaParameters"}
       }
     },
     "DataSourceParametersList":{
@@ -11804,7 +11818,8 @@
         "Status":{
           "shape":"StatusCode",
           "location":"statusCode"
-        }
+        },
+        "CustomInstructions":{"shape":"CustomInstructions"}
       }
     },
     "DescribeUserRequest":{
@@ -14323,6 +14338,20 @@
       "members":{
         "StaticFileId":{"shape":"ShortRestrictiveResourceId"},
         "Source":{"shape":"StaticFileSource"}
+      }
+    },
+    "ImpalaParameters":{
+      "type":"structure",
+      "required":[
+        "Host",
+        "Port",
+        "SqlEndpointPath"
+      ],
+      "members":{
+        "Host":{"shape":"Host"},
+        "Port":{"shape":"Port"},
+        "Database":{"shape":"Database"},
+        "SqlEndpointPath":{"shape":"SqlEndpointPath"}
       }
     },
     "IncludeFolderMembers":{
@@ -24109,7 +24138,8 @@
           "location":"uri",
           "locationName":"TopicId"
         },
-        "Topic":{"shape":"TopicDetails"}
+        "Topic":{"shape":"TopicDetails"},
+        "CustomInstructions":{"shape":"CustomInstructions"}
       }
     },
     "UpdateTopicResponse":{

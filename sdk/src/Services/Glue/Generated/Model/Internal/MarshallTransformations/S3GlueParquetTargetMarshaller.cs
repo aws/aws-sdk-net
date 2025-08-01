@@ -46,6 +46,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoDataQuality())
+            {
+                context.Writer.WritePropertyName("AutoDataQuality");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoDataQualityMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoDataQuality, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");

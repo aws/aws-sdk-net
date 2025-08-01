@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <c>Standard</c> access type is the default for Session Manager sessions. <c>JustInTime</c>
         /// is the access type for <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-just-in-time-node-access.html">Just-in-time
-        /// node access</a>. 
+        /// node access</a>.
         /// </para>
         /// </summary>
         public AccessType AccessType

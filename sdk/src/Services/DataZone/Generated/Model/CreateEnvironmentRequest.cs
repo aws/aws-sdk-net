@@ -182,7 +182,6 @@ namespace Amazon.DataZone.Model
         /// environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentProfileIdentifier
         {
             get { return this._environmentProfileIdentifier; }

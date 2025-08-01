@@ -172,7 +172,12 @@ namespace <#=this.Config.Namespace#>.Model
                     // If the shape is a response then skip adding ContentLength because the property comes from the base class.
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
-
+                    if (this.Config.ServiceModel.Customizations.ExcludeMembers(this.Structure.Name) != null)
+                    {
+                        List<string> excludeMembersList = this.Config.ServiceModel.Customizations.ExcludeMembers(this.Structure.Name);
+                        if (excludeMembersList.Contains(member.ModeledName))
+                            continue;
+                    }
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#                  
@@ -198,6 +203,12 @@ namespace <#=this.Config.Namespace#>.Model
 <#@ include file=".\Exceptions\ExceptionConstructors.t4" once="true" #>
 <#@ include file=".\Exceptions\ExceptionSerialization.t4" once="true" #>
 <#
+                    if (this.BaseClass == "AmazonS3Exception")
+                    {
+#>
+<#@include file=".\Exceptions\S3ExceptionConstructors.t4" once="true"#>
+<#
+                    }
                 }
 
                 foreach(var member in this.Structure.Members)
@@ -212,7 +223,12 @@ namespace <#=this.Config.Namespace#>.Model
                     // If the shape is a response then skip adding ContentLength because the property comes from the base class.
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
-
+                    if (this.Config.ServiceModel.Customizations.ExcludeMembers(this.Structure.Name) != null)
+                    {
+                        List<string> excludeMembersList = this.Config.ServiceModel.Customizations.ExcludeMembers(this.Structure.Name);
+                        if (excludeMembersList.Contains(member.ModeledName))
+                            continue;
+                    }
                     string eventPublisherDocumentation = null;
                     if (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
                     {

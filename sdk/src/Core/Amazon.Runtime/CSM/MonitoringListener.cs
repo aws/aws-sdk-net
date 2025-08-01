@@ -17,9 +17,7 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 
@@ -82,7 +80,6 @@ namespace Amazon.Runtime
         /// <summary>
         /// Method to post UDP datagram for async calls
         /// </summary>
-#if AWS_ASYNC_API
         public async Task PostMessagesOverUDPAsync(string response)
         {
             try
@@ -97,42 +94,6 @@ namespace Amazon.Runtime
             }
         }
 
-        /// <summary>
-        /// Method to post UDP datagram for bcl35 async calls
-        /// </summary>
-#else
-        public void BeginPostMessagesOverUDPInvoke(string response)
-        {
-            try
-            {
-                _udpClient.BeginSend(Encoding.UTF8.GetBytes(response),
-                        Encoding.UTF8.GetBytes(response).Length, _host, _port, new AsyncCallback(EndSendMessagesOverUDPInvoke), _udpClient);
-            }
-            catch (Exception e)
-            {
-                // If UDP post fails, the errors is logged and is returned without rethrowing the exception
-                logger.InfoFormat("Error when posting UDP datagrams. " + e.Message);
-            }
-        }
-
-        private void EndSendMessagesOverUDPInvoke(IAsyncResult ar)
-        {
-            try
-            {
-                var udpClient = (UdpClient)ar.AsyncState;
-                if (!ar.IsCompleted)
-                {
-                    ar.AsyncWaitHandle.WaitOne();
-                }
-                udpClient.EndSend(ar);
-            }
-            catch (Exception e)
-            {
-                // If UDP post fails, the errors is logged and is returned without rethrowing the exception
-                logger.InfoFormat("Error when posting UDP datagrams. " + e.Message);
-            }
-        }
-#endif
         private bool _disposed;
         public void Dispose()
         {

@@ -813,11 +813,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("OriginShieldRegion", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestDistributionConfigOriginsItemsValue.IsSetResponseCompletionTimeout())
+                                    xmlWriter.WriteElementString("ResponseCompletionTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ResponseCompletionTimeout.Value));
                                 if (publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig != null)
                                 {
                                     xmlWriter.WriteStartElement("S3OriginConfig");
                                     if(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginAccessIdentity())
                                         xmlWriter.WriteElementString("OriginAccessIdentity", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.OriginAccessIdentity));
+                                    if(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.IsSetOriginReadTimeout())
+                                        xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.S3OriginConfig.OriginReadTimeout.Value));
                                     xmlWriter.WriteEndElement();
                                 }
                                 if (publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig != null)
@@ -935,6 +939,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
@@ -946,8 +951,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
-            PostMarshallCustomization(request, publicRequest);
             return request;
         }
         private static CreateDistributionRequestMarshaller _instance = new CreateDistributionRequestMarshaller();        

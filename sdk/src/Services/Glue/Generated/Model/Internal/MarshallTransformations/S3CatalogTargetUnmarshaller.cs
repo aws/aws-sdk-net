@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AutoDataQuality", targetDepth))
+                {
+                    var unmarshaller = AutoDataQualityUnmarshaller.Instance;
+                    unmarshalledObject.AutoDataQuality = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Database", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

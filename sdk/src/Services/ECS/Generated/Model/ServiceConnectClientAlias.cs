@@ -51,6 +51,7 @@ namespace Amazon.ECS.Model
     {
         private string _dnsName;
         private int? _port;
+        private ServiceConnectTestTrafficRules _testTrafficRules;
 
         /// <summary>
         /// Gets and sets the property DnsName. 
@@ -113,6 +114,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestTrafficRules. 
+        /// <para>
+        /// The configuration for test traffic routing rules used during blue/green deployments
+        /// with Amazon ECS Service Connect. This allows you to route a portion of traffic to
+        /// the new service revision of your service for testing before shifting all production
+        /// traffic.
+        /// </para>
+        /// </summary>
+        public ServiceConnectTestTrafficRules TestTrafficRules
+        {
+            get { return this._testTrafficRules; }
+            set { this._testTrafficRules = value; }
+        }
+
+        // Check to see if TestTrafficRules property is set
+        internal bool IsSetTestTrafficRules()
+        {
+            return this._testTrafficRules != null;
         }
 
     }

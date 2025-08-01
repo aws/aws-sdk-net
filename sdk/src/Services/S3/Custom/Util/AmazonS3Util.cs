@@ -607,8 +607,6 @@ namespace Amazon.S3.Util
                 || request.PathResources.Any(pr => IsOutpostResource(pr.Value.Trim().Trim(separators)));
         }
 
-
-#if AWS_ASYNC_API
         /// <summary>
         /// Determines whether an S3 bucket exists or not.
         /// </summary>
@@ -640,6 +638,5 @@ namespace Amazon.S3.Util
             }
             return true;
         }
-#endif
     }
 }

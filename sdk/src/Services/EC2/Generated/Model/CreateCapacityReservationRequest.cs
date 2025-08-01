@@ -344,9 +344,8 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// You can request future-dated Capacity Reservations for an instance count with a minimum
-        /// of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for
-        /// <c>m5.xlarge</c> instances, you must request at least 25 instances (<i>25 * m5.xlarge
-        /// = 100 vCPUs</i>).
+        /// of 64 vCPUs. For example, if you request a future-dated Capacity Reservation for <c>m5.xlarge</c>
+        /// instances, you must request at least 25 instances (<i>16 * m5.xlarge = 64 vCPUs</i>).
         /// </para>
         ///  </note> 
         /// <para>
@@ -434,7 +433,7 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// You can request future-dated Capacity Reservations for instance types in the C, M,
-        /// R, I, and T instance families only.
+        /// R, I, T, and G instance families only.
         /// </para>
         ///  </note> 
         /// <para>

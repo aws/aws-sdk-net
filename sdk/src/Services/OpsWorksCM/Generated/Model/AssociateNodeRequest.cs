@@ -42,7 +42,7 @@ namespace Amazon.OpsWorksCM.Model
     /// <para>
     ///  Example (Chef): <c>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
     /// <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
-    /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</c> 
+    /// "Name=<i>CHEF_AUTOMATE_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</c> 
     /// </para>
     ///  
     /// <para>
@@ -61,8 +61,8 @@ namespace Amazon.OpsWorksCM.Model
     /// Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
     /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
     /// parameters of the request are not valid. The AssociateNode API call can be integrated
-    /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
-    /// a server's instance. 
+    /// into Auto Scaling configurations, CloudFormation templates, or the user data of a
+    /// server's instance. 
     /// </para>
     /// </summary>
     public partial class AssociateNodeRequest : AmazonOpsWorksCMRequest
@@ -87,8 +87,8 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CHEF_NODE_PUBLIC_KEY</c>: A PEM-formatted public key. This key is required for
-        /// the <c>chef-client</c> agent to access the Chef API. 
+        ///  <c>CHEF_AUTOMATE_NODE_PUBLIC_KEY</c>: A PEM-formatted public key. This key is required
+        /// for the <c>chef-client</c> agent to access the Chef API. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

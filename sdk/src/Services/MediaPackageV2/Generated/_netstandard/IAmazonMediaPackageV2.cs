@@ -88,10 +88,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the CancelHarvestJob service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -133,10 +135,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the CreateChannel service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -179,10 +183,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the CreateChannelGroup service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -222,10 +228,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the CreateHarvestJob service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -268,10 +276,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the CreateOriginEndpoint service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -311,10 +321,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the DeleteChannel service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -350,10 +362,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the DeleteChannelGroup service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -386,10 +400,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the DeleteChannelPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -424,10 +440,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the DeleteOriginEndpoint service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -457,10 +475,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the DeleteOriginEndpointPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -484,8 +504,7 @@ namespace Amazon.MediaPackageV2
 
 
         /// <summary>
-        /// Retrieves the specified channel that's configured in AWS Elemental MediaPackage, including
-        /// the origin endpoints that are associated with it.
+        /// Retrieves the specified channel that's configured in AWS Elemental MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// <param name="cancellationToken">
@@ -494,10 +513,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetChannel service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -521,8 +542,7 @@ namespace Amazon.MediaPackageV2
 
 
         /// <summary>
-        /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage,
-        /// including the channels and origin endpoints that are associated with it.
+        /// Retrieves the specified channel group that's configured in AWS Elemental MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannelGroup service method.</param>
         /// <param name="cancellationToken">
@@ -531,10 +551,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetChannelGroup service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -569,10 +591,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetChannelPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -605,10 +629,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetHarvestJob service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -643,10 +669,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetOriginEndpoint service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -680,10 +708,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the GetOriginEndpointPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -716,10 +746,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ListChannelGroups service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -741,7 +773,7 @@ namespace Amazon.MediaPackageV2
 
         /// <summary>
         /// Retrieves all channels in a specific channel group that are configured in AWS Elemental
-        /// MediaPackage, including the origin endpoints that are associated with it.
+        /// MediaPackage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -750,10 +782,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ListChannels service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -786,10 +820,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ListHarvestJobs service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -823,10 +859,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ListOriginEndpoints service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
         /// Indicates that an error from the service occurred while trying to process a request.
@@ -882,10 +920,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the PutChannelPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -922,10 +962,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the PutOriginEndpointPolicy service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -968,10 +1010,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ResetChannelState service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -1017,10 +1061,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the ResetOriginEndpointState service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -1117,10 +1163,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the UpdateChannel service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -1163,10 +1211,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the UpdateChannelGroup service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.
@@ -1208,10 +1258,12 @@ namespace Amazon.MediaPackageV2
         /// 
         /// <returns>The response from the UpdateOriginEndpoint service method, as returned by MediaPackageV2.</returns>
         /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
-        /// You don't have permissions to perform the requested operation. The user or role that
-        /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see Access Management in the
-        /// IAM User Guide.
+        /// Access is denied because either you don't have permissions to perform the requested
+        /// operation or MediaPackage is getting throttling errors with CDN authorization. The
+        /// user or role that is making the request must have at least one IAM permissions policy
+        /// attached that grants the required permissions. For more information, see Access Management
+        /// in the IAM User Guide. Or, if you're using CDN authorization, you will receive this
+        /// exception if MediaPackage receives a throttling error from Secrets Manager.
         /// </exception>
         /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
         /// Updating or deleting this resource can cause an inconsistent state.

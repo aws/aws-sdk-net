@@ -151,6 +151,10 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         public static readonly DbInstanceType DbInflux16xlarge = new DbInstanceType("db.influx.16xlarge");
         /// <summary>
+        /// Constant DbInflux24xlarge for DbInstanceType
+        /// </summary>
+        public static readonly DbInstanceType DbInflux24xlarge = new DbInstanceType("db.influx.24xlarge");
+        /// <summary>
         /// Constant DbInflux2xlarge for DbInstanceType
         /// </summary>
         public static readonly DbInstanceType DbInflux2xlarge = new DbInstanceType("db.influx.2xlarge");

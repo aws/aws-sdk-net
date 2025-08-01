@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Credentials;
+using Amazon.Runtime.CredentialManagement;
 
 namespace Amazon
 {
@@ -81,6 +82,7 @@ namespace Amazon
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
         internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
+        internal static bool _disableLegacyPersistenceStore = GetConfigBool(DisableLegacyPersistenceStoreKey, defaultValue: false);
         private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
 
 #if NET8_0_OR_GREATER
@@ -214,6 +216,7 @@ namespace Amazon
         }
 
         #endregion
+        
         #region StreamingUtf8JsonReaderBufferSize
 
         /// <summary>
@@ -296,7 +299,7 @@ namespace Amazon
 #if NET8_0_OR_GREATER
         /// <summary>
         /// Key for the DisableDangerousDisablePathAndQueryCanonicalization property.
-        /// <seealso cref="Amazon.AWSConfigs.InitializeCollections"/>
+        /// <seealso cref="Amazon.AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization"/>
         /// </summary>
         public const string DisableDangerousDisablePathAndQueryCanonicalizationKey = "AWSDisableDangerousDisablePathAndQueryCanonicalization";
 
@@ -340,7 +343,35 @@ namespace Amazon
             get { return _rootConfig.AWSCredentialsGenerators; }
             set { _rootConfig.AWSCredentialsGenerators = value; }
         }
-        
+
+        #endregion
+
+        #region DisableLegacyPersistenceStore
+
+        /// <summary>
+        /// Key for the <seealso cref="Amazon.AWSConfigs.DisableLegacyPersistenceStore"/> property.
+        /// </summary>
+        public const string DisableLegacyPersistenceStoreKey = "AWSDisableLegacyPersistenceStore";
+
+        /// <summary>
+        /// When attempting to retrieve configuration options for a given profile, the AWS SDK for .NET will look at both 
+        /// the shared config file and the SDK Store by default - via the <see cref="CredentialProfileStoreChain"/>.
+        /// <para />
+        /// The SDK Store has a few limitations, such as only being available on Windows and being specific to a particular user on a particular host. 
+        /// <para />
+        /// Setting this property to <c>true</c> will instruct the SDK not to check the legacy persistence store when interacting with
+        /// profiles (this setting is only applicable to the <see cref="CredentialProfileStoreChain"/> and it's not considered when 
+        /// interacting with the <see cref="NetSDKCredentialsFile"/> class directly).
+        /// </summary>
+        /// <remarks>
+        /// The default value is <c>false</c>.
+        /// </remarks>
+        public static bool DisableLegacyPersistenceStore
+        {
+            get { return _rootConfig.DisableLegacyPersistenceStore; }
+            set { _rootConfig.DisableLegacyPersistenceStore = value; }
+        }
+
         #endregion
 
         #region AWS Config Sections

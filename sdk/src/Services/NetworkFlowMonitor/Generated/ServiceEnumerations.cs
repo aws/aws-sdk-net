@@ -541,6 +541,14 @@ namespace Amazon.NetworkFlowMonitor
     {
 
         /// <summary>
+        /// Constant DEACTIVATED for ScopeStatus
+        /// </summary>
+        public static readonly ScopeStatus DEACTIVATED = new ScopeStatus("DEACTIVATED");
+        /// <summary>
+        /// Constant DEACTIVATING for ScopeStatus
+        /// </summary>
+        public static readonly ScopeStatus DEACTIVATING = new ScopeStatus("DEACTIVATING");
+        /// <summary>
         /// Constant FAILED for ScopeStatus
         /// </summary>
         public static readonly ScopeStatus FAILED = new ScopeStatus("FAILED");

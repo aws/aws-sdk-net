@@ -2350,6 +2350,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ContactPreference.KeyName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ContactPreference.KeyValue</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ContactPreference.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.DestinationSummary.Uri</property>
     <min>1</min>
     <max>255</max>
@@ -2440,6 +2455,10 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.EngagementPreferences</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.FirstName</property>
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
@@ -2477,6 +2496,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.PhoneNumber</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.ProfileType</property>
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>

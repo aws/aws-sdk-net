@@ -30,7 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains a gateway's platform information.
+    /// The gateway's platform configuration. You can only specify one platform type in a
+    /// gateway.
+    /// 
+    ///  
+    /// <para>
+    /// (Legacy only) For Greengrass V1 gateways, specify the <c>greengrass</c> parameter
+    /// with a valid Greengrass group ARN.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Greengrass V2 gateways, specify the <c>greengrassV2</c> parameter with a valid
+    /// core device thing name. If creating a V3 gateway (<c>gatewayVersion=3</c>), you must
+    /// also specify the <c>coreDeviceOperatingSystem</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Siemens Industrial Edge gateways, specify the <c>siemensIE</c> parameter with
+    /// a valid IoT Core thing name.
+    /// </para>
     /// </summary>
     public partial class GatewayPlatform
     {

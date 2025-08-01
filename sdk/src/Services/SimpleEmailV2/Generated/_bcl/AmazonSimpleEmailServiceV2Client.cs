@@ -1555,6 +1555,178 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateTenant
+
+
+        /// <summary>
+        /// Create a tenant.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Tenants</i> are logical containers that group related SES resources together.
+        /// Each tenant can have its own set of resources like email identities, configuration
+        /// sets, and templates, along with reputation metrics and sending status. This helps
+        /// isolate and manage email sending for different customers or business units within
+        /// your Amazon SES API v2 account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenant service method.</param>
+        /// 
+        /// <returns>The response from the CreateTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenant">REST API Reference for CreateTenant Operation</seealso>
+        public virtual CreateTenantResponse CreateTenant(CreateTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTenantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a tenant.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Tenants</i> are logical containers that group related SES resources together.
+        /// Each tenant can have its own set of resources like email identities, configuration
+        /// sets, and templates, along with reputation metrics and sending status. This helps
+        /// isolate and manage email sending for different customers or business units within
+        /// your Amazon SES API v2 account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenant">REST API Reference for CreateTenant Operation</seealso>
+        public virtual Task<CreateTenantResponse> CreateTenantAsync(CreateTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTenantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTenantResourceAssociation
+
+
+        /// <summary>
+        /// Associate a resource with a tenant.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Resources</i> can be email identities, configuration sets, or email templates.
+        /// When you associate a resource with a tenant, you can use that resource when sending
+        /// emails on behalf of that tenant.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single resource can be associated with multiple tenants, allowing for resource sharing
+        /// across different tenants while maintaining isolation in email sending operations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateTenantResourceAssociation service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenantResourceAssociation">REST API Reference for CreateTenantResourceAssociation Operation</seealso>
+        public virtual CreateTenantResourceAssociationResponse CreateTenantResourceAssociation(CreateTenantResourceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantResourceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTenantResourceAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associate a resource with a tenant.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Resources</i> can be email identities, configuration sets, or email templates.
+        /// When you associate a resource with a tenant, you can use that resource when sending
+        /// emails on behalf of that tenant.
+        /// </para>
+        ///  
+        /// <para>
+        /// A single resource can be associated with multiple tenants, allowing for resource sharing
+        /// across different tenants while maintaining isolation in email sending operations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTenantResourceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTenantResourceAssociation service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateTenantResourceAssociation">REST API Reference for CreateTenantResourceAssociation Operation</seealso>
+        public virtual Task<CreateTenantResourceAssociationResponse> CreateTenantResourceAssociationAsync(CreateTenantResourceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTenantResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTenantResourceAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTenantResourceAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
 
@@ -2344,6 +2516,150 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = DeleteSuppressedDestinationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteSuppressedDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTenant
+
+
+        /// <summary>
+        /// Delete an existing tenant.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a tenant, its associations with resources are removed, but the resources
+        /// themselves are not deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenant">REST API Reference for DeleteTenant Operation</seealso>
+        public virtual DeleteTenantResponse DeleteTenant(DeleteTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTenantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an existing tenant.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a tenant, its associations with resources are removed, but the resources
+        /// themselves are not deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenant">REST API Reference for DeleteTenant Operation</seealso>
+        public virtual Task<DeleteTenantResponse> DeleteTenantAsync(DeleteTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTenantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTenantResourceAssociation
+
+
+        /// <summary>
+        /// Delete an association between a tenant and a resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a tenant-resource association, the resource itself is not deleted,
+        /// only its association with the specific tenant is removed. After removal, the resource
+        /// will no longer be available for use with that tenant's email sending operations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantResourceAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTenantResourceAssociation service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenantResourceAssociation">REST API Reference for DeleteTenantResourceAssociation Operation</seealso>
+        public virtual DeleteTenantResourceAssociationResponse DeleteTenantResourceAssociation(DeleteTenantResourceAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantResourceAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTenantResourceAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an association between a tenant and a resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a tenant-resource association, the resource itself is not deleted,
+        /// only its association with the specific tenant is removed. After removal, the resource
+        /// will no longer be available for use with that tenant's email sending operations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTenantResourceAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTenantResourceAssociation service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteTenantResourceAssociation">REST API Reference for DeleteTenantResourceAssociation Operation</seealso>
+        public virtual Task<DeleteTenantResourceAssociationResponse> DeleteTenantResourceAssociationAsync(DeleteTenantResourceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTenantResourceAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTenantResourceAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTenantResourceAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3753,6 +4069,85 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetReputationEntity
+
+
+        /// <summary>
+        /// Retrieve information about a specific reputation entity, including its reputation
+        /// management policy, customer-managed status, Amazon Web Services Amazon SES-managed
+        /// status, and aggregate sending status.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Reputation entities</i> represent resources in your Amazon SES account that have
+        /// reputation tracking and management capabilities. The reputation impact reflects the
+        /// highest impact reputation finding for the entity. Reputation findings can be retrieved
+        /// using the <c>ListRecommendations</c> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReputationEntity service method.</param>
+        /// 
+        /// <returns>The response from the GetReputationEntity service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetReputationEntity">REST API Reference for GetReputationEntity Operation</seealso>
+        public virtual GetReputationEntityResponse GetReputationEntity(GetReputationEntityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReputationEntityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReputationEntityResponseUnmarshaller.Instance;
+
+            return Invoke<GetReputationEntityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieve information about a specific reputation entity, including its reputation
+        /// management policy, customer-managed status, Amazon Web Services Amazon SES-managed
+        /// status, and aggregate sending status.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Reputation entities</i> represent resources in your Amazon SES account that have
+        /// reputation tracking and management capabilities. The reputation impact reflects the
+        /// highest impact reputation finding for the entity. Reputation findings can be retrieved
+        /// using the <c>ListRecommendations</c> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReputationEntity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReputationEntity service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetReputationEntity">REST API Reference for GetReputationEntity Operation</seealso>
+        public virtual Task<GetReputationEntityResponse> GetReputationEntityAsync(GetReputationEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReputationEntityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReputationEntityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReputationEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSuppressedDestination
 
 
@@ -3810,6 +4205,67 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = GetSuppressedDestinationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetSuppressedDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTenant
+
+
+        /// <summary>
+        /// Get information about a specific tenant, including the tenant's name, ID, ARN, creation
+        /// timestamp, tags, and sending status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTenant service method.</param>
+        /// 
+        /// <returns>The response from the GetTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetTenant">REST API Reference for GetTenant Operation</seealso>
+        public virtual GetTenantResponse GetTenant(GetTenantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTenantResponseUnmarshaller.Instance;
+
+            return Invoke<GetTenantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get information about a specific tenant, including the tenant's name, ID, ARN, creation
+        /// timestamp, tags, and sending status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTenant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTenant service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetTenant">REST API Reference for GetTenant Operation</seealso>
+        public virtual Task<GetTenantResponse> GetTenantAsync(GetTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTenantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTenantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTenantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4631,6 +5087,150 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListReputationEntities
+
+
+        /// <summary>
+        /// List reputation entities in your Amazon SES account in the current Amazon Web Services
+        /// Region. You can filter the results by entity type, reputation impact, sending status,
+        /// or entity reference prefix.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Reputation entities</i> represent resources in your account that have reputation
+        /// tracking and management capabilities. Use this operation to get an overview of all
+        /// entities and their current reputation status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReputationEntities service method.</param>
+        /// 
+        /// <returns>The response from the ListReputationEntities service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListReputationEntities">REST API Reference for ListReputationEntities Operation</seealso>
+        public virtual ListReputationEntitiesResponse ListReputationEntities(ListReputationEntitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReputationEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReputationEntitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListReputationEntitiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List reputation entities in your Amazon SES account in the current Amazon Web Services
+        /// Region. You can filter the results by entity type, reputation impact, sending status,
+        /// or entity reference prefix.
+        /// 
+        ///  
+        /// <para>
+        ///  <i>Reputation entities</i> represent resources in your account that have reputation
+        /// tracking and management capabilities. Use this operation to get an overview of all
+        /// entities and their current reputation status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReputationEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReputationEntities service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListReputationEntities">REST API Reference for ListReputationEntities Operation</seealso>
+        public virtual Task<ListReputationEntitiesResponse> ListReputationEntitiesAsync(ListReputationEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReputationEntitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReputationEntitiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReputationEntitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceTenants
+
+
+        /// <summary>
+        /// List all tenants associated with a specific resource.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a list of tenants that are associated with the specified resource.
+        /// This is useful for understanding which tenants are currently using a particular resource
+        /// such as an email identity, configuration set, or email template.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceTenants service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceTenants service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListResourceTenants">REST API Reference for ListResourceTenants Operation</seealso>
+        public virtual ListResourceTenantsResponse ListResourceTenants(ListResourceTenantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceTenantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceTenantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all tenants associated with a specific resource.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a list of tenants that are associated with the specified resource.
+        /// This is useful for understanding which tenants are currently using a particular resource
+        /// such as an email identity, configuration set, or email template.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceTenants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceTenants service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListResourceTenants">REST API Reference for ListResourceTenants Operation</seealso>
+        public virtual Task<ListResourceTenantsResponse> ListResourceTenantsAsync(ListResourceTenantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceTenantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResourceTenantsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSuppressedDestinations
 
 
@@ -4753,6 +5353,144 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTenantResources
+
+
+        /// <summary>
+        /// List all resources associated with a specific tenant.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a list of resources (email identities, configuration sets,
+        /// or email templates) that are associated with the specified tenant. You can optionally
+        /// filter the results by resource type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTenantResources service method.</param>
+        /// 
+        /// <returns>The response from the ListTenantResources service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenantResources">REST API Reference for ListTenantResources Operation</seealso>
+        public virtual ListTenantResourcesResponse ListTenantResources(ListTenantResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTenantResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTenantResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTenantResourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all resources associated with a specific tenant.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a list of resources (email identities, configuration sets,
+        /// or email templates) that are associated with the specified tenant. You can optionally
+        /// filter the results by resource type.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTenantResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTenantResources service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenantResources">REST API Reference for ListTenantResources Operation</seealso>
+        public virtual Task<ListTenantResourcesResponse> ListTenantResourcesAsync(ListTenantResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTenantResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTenantResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTenantResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTenants
+
+
+        /// <summary>
+        /// List all tenants associated with your account in the current Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns basic information about each tenant, such as tenant name, ID,
+        /// ARN, and creation timestamp.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTenants service method.</param>
+        /// 
+        /// <returns>The response from the ListTenants service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenants">REST API Reference for ListTenants Operation</seealso>
+        public virtual ListTenantsResponse ListTenants(ListTenantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTenantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTenantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all tenants associated with your account in the current Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns basic information about each tenant, such as tenant name, ID,
+        /// ARN, and creation timestamp.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTenants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTenants service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListTenants">REST API Reference for ListTenants Operation</seealso>
+        public virtual Task<ListTenantsResponse> ListTenantsAsync(ListTenantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTenantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTenantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTenantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7253,6 +7991,168 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = UpdateEmailTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEmailTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReputationEntityCustomerManagedStatus
+
+
+        /// <summary>
+        /// Update the customer-managed sending status for a reputation entity. This allows you
+        /// to enable, disable, or reinstate sending for the entity.
+        /// 
+        ///  
+        /// <para>
+        /// The customer-managed status works in conjunction with the Amazon Web Services Amazon
+        /// SES-managed status to determine the overall sending capability. When you update the
+        /// customer-managed status, the Amazon Web Services Amazon SES-managed status remains
+        /// unchanged. If Amazon Web Services Amazon SES has disabled the entity, it will not
+        /// be allowed to send regardless of the customer-managed status setting. When you reinstate
+        /// an entity through the customer-managed status, it can continue sending only if the
+        /// Amazon Web Services Amazon SES-managed status also permits sending, even if there
+        /// are active reputation findings, until the findings are resolved or new violations
+        /// occur.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReputationEntityCustomerManagedStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReputationEntityCustomerManagedStatus service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityCustomerManagedStatus">REST API Reference for UpdateReputationEntityCustomerManagedStatus Operation</seealso>
+        public virtual UpdateReputationEntityCustomerManagedStatusResponse UpdateReputationEntityCustomerManagedStatus(UpdateReputationEntityCustomerManagedStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReputationEntityCustomerManagedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReputationEntityCustomerManagedStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReputationEntityCustomerManagedStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update the customer-managed sending status for a reputation entity. This allows you
+        /// to enable, disable, or reinstate sending for the entity.
+        /// 
+        ///  
+        /// <para>
+        /// The customer-managed status works in conjunction with the Amazon Web Services Amazon
+        /// SES-managed status to determine the overall sending capability. When you update the
+        /// customer-managed status, the Amazon Web Services Amazon SES-managed status remains
+        /// unchanged. If Amazon Web Services Amazon SES has disabled the entity, it will not
+        /// be allowed to send regardless of the customer-managed status setting. When you reinstate
+        /// an entity through the customer-managed status, it can continue sending only if the
+        /// Amazon Web Services Amazon SES-managed status also permits sending, even if there
+        /// are active reputation findings, until the findings are resolved or new violations
+        /// occur.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReputationEntityCustomerManagedStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReputationEntityCustomerManagedStatus service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityCustomerManagedStatus">REST API Reference for UpdateReputationEntityCustomerManagedStatus Operation</seealso>
+        public virtual Task<UpdateReputationEntityCustomerManagedStatusResponse> UpdateReputationEntityCustomerManagedStatusAsync(UpdateReputationEntityCustomerManagedStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReputationEntityCustomerManagedStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReputationEntityCustomerManagedStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateReputationEntityCustomerManagedStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateReputationEntityPolicy
+
+
+        /// <summary>
+        /// Update the reputation management policy for a reputation entity. The policy determines
+        /// how the entity responds to reputation findings, such as automatically pausing sending
+        /// when certain thresholds are exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// Reputation management policies are Amazon Web Services Amazon SES-managed (predefined
+        /// policies). You can select from none, standard, and strict policies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReputationEntityPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateReputationEntityPolicy service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityPolicy">REST API Reference for UpdateReputationEntityPolicy Operation</seealso>
+        public virtual UpdateReputationEntityPolicyResponse UpdateReputationEntityPolicy(UpdateReputationEntityPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReputationEntityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReputationEntityPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateReputationEntityPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update the reputation management policy for a reputation entity. The policy determines
+        /// how the entity responds to reputation findings, such as automatically pausing sending
+        /// when certain thresholds are exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// Reputation management policies are Amazon Web Services Amazon SES-managed (predefined
+        /// policies). You can select from none, standard, and strict policies.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateReputationEntityPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateReputationEntityPolicy service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateReputationEntityPolicy">REST API Reference for UpdateReputationEntityPolicy Operation</seealso>
+        public virtual Task<UpdateReputationEntityPolicyResponse> UpdateReputationEntityPolicyAsync(UpdateReputationEntityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateReputationEntityPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateReputationEntityPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateReputationEntityPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion

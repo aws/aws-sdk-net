@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetForce())
+                {
+                    request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
+                }
                 if(publicRequest.IsSetInstanceIds())
                 {
                     if (publicRequest.InstanceIds.Count == 0)
@@ -76,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                              publicRequestlistValueIndex++;
                          }
                     }
+                }
+                if(publicRequest.IsSetSkipOsShutdown())
+                {
+                    request.Parameters.Add("SkipOsShutdown", StringUtils.FromBool(publicRequest.SkipOsShutdown));
                 }
             }
             return request;

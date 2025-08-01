@@ -34,8 +34,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GlueStudioSchemaColumn
     {
+        private string _glueStudioType;
         private string _name;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property GlueStudioType. 
+        /// <para>
+        /// The data type of the column as defined in Glue Studio.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=131072)]
+        public string GlueStudioType
+        {
+            get { return this._glueStudioType; }
+            set { this._glueStudioType = value; }
+        }
+
+        // Check to see if GlueStudioType property is set
+        internal bool IsSetGlueStudioType()
+        {
+            return this._glueStudioType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

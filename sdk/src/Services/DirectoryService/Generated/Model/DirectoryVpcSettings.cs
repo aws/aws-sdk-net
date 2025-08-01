@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a>
-    /// operation.
+    /// Contains VPC information for the <a>CreateDirectory</a>, <a>CreateMicrosoftAD</a>,
+    /// or <a>CreateHybridAD</a> operation.
     /// </summary>
     public partial class DirectoryVpcSettings
     {

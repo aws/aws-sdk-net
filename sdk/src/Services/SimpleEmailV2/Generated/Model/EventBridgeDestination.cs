@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// to. Only the default bus is supported. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string EventBusArn
         {
             get { return this._eventBusArn; }

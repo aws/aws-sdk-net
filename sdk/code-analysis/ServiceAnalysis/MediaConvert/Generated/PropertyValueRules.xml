@@ -51,9 +51,19 @@
     <max>1024000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AacSettings.RapInterval</property>
+    <min>2000</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.SampleRate</property>
     <min>8000</min>
     <max>96000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AacSettings.TargetLoudnessRange</property>
+    <min>6</min>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Ac3Settings.Bitrate</property>
@@ -714,7 +724,7 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FlacSettings.SampleRate</property>
     <min>22050</min>
-    <max>48000</max>
+    <max>192000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.ForceIncludeRenditionSize.Height</property>
@@ -1135,6 +1145,14 @@
     <min>9</min>
     <max>19</max>
     <pattern>^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputTamsSettings.AuthConnectionArn</property>
+    <pattern>^arn:aws[a-z0-9-]*:events:[a-z0-9-]+:[0-9]{12}:connection/[a-zA-Z0-9-]+/[a-f0-9-]{36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputTamsSettings.Timerange</property>
+    <pattern>^(\[|\()?(-?(0|[1-9][0-9]*):(0|[1-9][0-9]{0,8}))?(_(-?(0|[1-9][0-9]*):(0|[1-9][0-9]{0,8}))?)?(\]|\))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputTemplate.DolbyVisionMetadataXml</property>

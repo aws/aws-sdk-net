@@ -47,6 +47,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The body of the certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
         public MemoryStream Body
         {
             get { return this._body; }

@@ -118,6 +118,16 @@ namespace Amazon.DirectoryService.Model
         IDescribeUpdateDirectoryPaginator DescribeUpdateDirectory(DescribeUpdateDirectoryRequest request);
 
         /// <summary>
+        /// Paginator for ListADAssessments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "Limit",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListADAssessmentsPaginator ListADAssessments(ListADAssessmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         [AWSPaginator(

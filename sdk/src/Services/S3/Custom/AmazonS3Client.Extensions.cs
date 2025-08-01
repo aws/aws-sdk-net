@@ -13,13 +13,18 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
+
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
 #endif
 
 using Amazon.Runtime;
@@ -142,8 +147,6 @@ namespace Amazon.S3
             return signingResult.Result;
         }
 
-
-#if AWS_ASYNC_API
         /// <summary>
         /// Asynchronously create a signed URL allowing access to a resource that would 
         /// usually require authentication.
@@ -206,7 +209,7 @@ namespace Amazon.S3
             var signingResult = ReturnSigningResult(signatureVersionToUse, irequest, Config, metrics, immutableCredentials, arn);
             return signingResult.Result;
         }
-#endif
+
         /// <summary>
         /// Marshalls the parameters for a presigned url for a preferred signing protocol.
         /// </summary>
@@ -539,7 +542,7 @@ namespace Amazon.S3
         {
             return GetPreSignedURLInternal(request);
         }
-#if AWS_ASYNC_API
+
         /// <summary>
         /// Asynchronously create a signed URL allowing access to a resource that would 
         /// usually require authentication.
@@ -566,9 +569,293 @@ namespace Amazon.S3
             return await GetPreSignedURLInternalAsync(request).ConfigureAwait(false);
             
         }
-
-#endif
 #endregion
+
+        #region CreatePresignedPost
+
+        /// <summary>
+        /// Create a presigned POST request that can be used to upload a file directly to S3 from a web browser.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        public CreatePresignedPostResponse CreatePresignedPost(CreatePresignedPostRequest request)
+        {
+            return CreatePresignedPostInternal(request);
+        }
+
+        /// <summary>
+        /// Asynchronously create a presigned POST request that can be used to upload a file directly to S3 from a web browser.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        public async Task<CreatePresignedPostResponse> CreatePresignedPostAsync(CreatePresignedPostRequest request)
+        {
+            return await CreatePresignedPostInternalAsync(request).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Validates the CreatePresignedPostRequest parameters.
+        /// </summary>
+        /// <param name="request">The request to validate.</param>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        private static void ValidateCreatePresignedPostRequest(CreatePresignedPostRequest request)
+        {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request), "The CreatePresignedPostRequest specified is null!");
+
+            if (string.IsNullOrEmpty(request.BucketName))
+                throw new ArgumentException("BucketName is required", nameof(request));
+
+            if (!request.Expires.HasValue)
+                throw new ArgumentException("Expires is required", nameof(request));
+                
+            // Check for expiration > 7 days
+            var secondsUntilExpiration = Convert.ToInt64((request.Expires.Value.ToUniversalTime() - 
+                AWSSDKUtils.CorrectedUtcNow).TotalSeconds);
+            if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+            {
+                var msg = string.Format(CultureInfo.InvariantCulture, 
+                                       "The maximum expiry period for a presigned url using AWS4 signing is {0} seconds",
+                                       AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry);
+                throw new ArgumentException(msg);
+            }
+
+            // Check for access point ARNs and reject them - S3 presigned POST doesn't support access points
+            if (Arn.TryParse(request.BucketName, out var arn))
+            {
+                throw new AmazonS3Exception("S3 presigned POST does not support access points or multi-region access points. " +
+                    "Use the underlying bucket name instead, or consider using presigned PUT URLs as an alternative.");
+            }
+        }
+
+        /// <summary>
+        /// Creates and processes the internal request for endpoint resolution.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest.</param>
+        /// <returns>The processed IRequest object.</returns>
+        private IRequest CreateAndProcessRequest(CreatePresignedPostRequest request)
+        {
+            // Marshall the request to create a proper IRequest object
+            var irequest = MarshallCreatePresignedPost(request);
+
+            // Use the same endpoint resolution pipeline as GetPreSignedURL
+            var context = new Amazon.Runtime.Internal.ExecutionContext(
+                new RequestContext(true, new NullSigner())
+                {
+                    Request = irequest,
+                    ClientConfig = this.Config,
+                    OriginalRequest = request,
+                },
+                null
+            );
+            new AmazonS3EndpointResolver().ProcessRequestHandlers(context);
+
+            return irequest;
+        }
+
+        /// <summary>
+        /// Builds the CreatePresignedPostResponse with URL and form fields.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest.</param>
+        /// <param name="irequest">The processed IRequest object.</param>
+        /// <param name="credentials">The immutable AWS credentials.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        private CreatePresignedPostResponse BuildPresignedPostResponse(CreatePresignedPostRequest request, IRequest irequest, ImmutableCredentials credentials)
+        {
+            // Build the policy document
+            var policyDocument = BuildPolicyDocument(request);
+
+            // Use S3PostUploadSignedPolicy to sign the policy
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyDocument, credentials, Config.RegionEndpoint);
+
+            // Build the response
+            var response = new CreatePresignedPostResponse();
+            
+            // Use ComposeUrl to build the proper URL (same approach as GetPreSignedURL)
+            response.Url = ComposeUrl(irequest).AbsoluteUri;
+
+            // Add all the required form fields
+            response.Fields = new Dictionary<string, string>(request.Fields);
+            
+            // Add the AWS signature fields
+            response.Fields[S3Constants.PostFormDataObjectKey] = request.Key ?? "";
+            response.Fields[S3Constants.PostFormDataPolicy] = signedPolicy.Policy;
+            response.Fields[S3Constants.PostFormDataXAmzCredential] = signedPolicy.Credential;
+            response.Fields[S3Constants.PostFormDataXAmzAlgorithm] = signedPolicy.Algorithm;
+            response.Fields[S3Constants.PostFormDataXAmzDate] = signedPolicy.Date;
+            response.Fields[S3Constants.PostFormDataXAmzSignature] = signedPolicy.Signature;
+            
+            if (!string.IsNullOrEmpty(signedPolicy.SecurityToken))
+            {
+                response.Fields[S3Constants.PostFormDataSecurityToken] = signedPolicy.SecurityToken;
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Internal implementation for creating presigned POST requests.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        internal CreatePresignedPostResponse CreatePresignedPostInternal(CreatePresignedPostRequest request)
+        {
+            ValidateCreatePresignedPostRequest(request);
+
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            if (credentials == null)
+                throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
+
+            var immutableCredentials = credentials.GetCredentials();
+            var irequest = CreateAndProcessRequest(request);
+            return BuildPresignedPostResponse(request, irequest, immutableCredentials);
+        }
+
+        /// <summary>
+        /// Internal implementation for creating presigned POST requests.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest that defines the parameters of the operation.</param>
+        /// <returns>A CreatePresignedPostResponse containing the URL and form fields for the POST request.</returns>
+        /// <exception cref="T:System.ArgumentException" />
+        /// <exception cref="T:System.ArgumentNullException" />
+        [SuppressMessage("AWSSDKRules", "CR1004")]
+        internal async Task<CreatePresignedPostResponse> CreatePresignedPostInternalAsync(CreatePresignedPostRequest request)
+        {
+            ValidateCreatePresignedPostRequest(request);
+
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            if (credentials == null)
+                throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
+
+            // Resolve credentials asynchronously
+            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+
+            var irequest = CreateAndProcessRequest(request);
+            return BuildPresignedPostResponse(request, irequest, immutableCredentials);
+        }
+
+        /// <summary>
+        /// Marshalls the parameters for a presigned POST request to create a proper IRequest object.
+        /// </summary>
+        /// <param name="createPresignedPostRequest">The presigned POST request</param>
+        /// <returns>Internal request object</returns>
+        private static IRequest MarshallCreatePresignedPost(CreatePresignedPostRequest createPresignedPostRequest)
+        {
+            IRequest request = new DefaultRequest(createPresignedPostRequest, "AmazonS3");
+            request.HttpMethod = "POST";
+
+            // Post uses root resource path
+            request.ResourcePath = "/";
+            request.UseQueryString = false; // POST uses form data, not query string
+
+            return request;
+        }
+
+        /// <summary>
+        /// Builds the policy document JSON string from the request using Utf8JsonWriter.
+        /// </summary>
+        /// <param name="request">The CreatePresignedPostRequest containing the policy conditions.</param>
+        /// <returns>A JSON string representing the policy document.</returns>
+        private string BuildPolicyDocument(CreatePresignedPostRequest request)
+        {
+#if !NETFRAMEWORK
+            using var arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using var writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            
+            writer.WriteStartObject();
+            writer.WriteString("expiration", request.Expires.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));
+            writer.WriteStartArray("conditions");
+            
+            // Add bucket condition (required)
+            writer.WriteStartObject();
+            writer.WriteString("bucket", request.BucketName);
+            writer.WriteEndObject();
+            
+            // Add key condition if specified
+            if (!string.IsNullOrEmpty(request.Key))
+            {
+                // Check if key ends with ${filename} and add special handling
+                if (request.Key.EndsWith("${filename}", StringComparison.Ordinal))
+                {
+                    // Extract the prefix before ${filename}
+                    // https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-HTTPPOSTForms.html#sigv4-HTTPPOSTFormFields
+                    /*
+                    The variable ${filename} is automatically replaced with the name of the file provided by the user and is recognized by all form fields.
+                    If the browser or client provides a full or partial path to the file,
+                    only the text following the last slash (/) or backslash (\) is used (for example, C:\Program Files\directory1\file.txt is interpreted as file.txt). 
+                    If no file or file name is provided, the variable is replaced with an empty string.
+                    */
+                    string keyPrefix = request.Key.Substring(0, request.Key.LastIndexOf("${filename}", StringComparison.Ordinal));
+                    
+                    // Add a starts-with condition instead of exact match
+                    writer.WriteStartArray();
+                    writer.WriteStringValue("starts-with");
+                    writer.WriteStringValue("$key");
+                    writer.WriteStringValue(keyPrefix);
+                    writer.WriteEndArray();
+                }
+                else
+                {
+                    // Regular exact match condition for keys without ${filename}
+                    writer.WriteStartObject();
+                    writer.WriteString("key", request.Key);
+                    writer.WriteEndObject();
+                }
+            }
+            
+            // Track field conditions to avoid duplicates
+            var fieldConditions = new HashSet<string>();
+            
+            // Add field conditions
+            foreach (var field in request.Fields)
+            {
+                writer.WriteStartObject();
+                writer.WriteString(field.Key, field.Value);
+                writer.WriteEndObject();
+                
+                // Track this field+value combination
+                fieldConditions.Add($"{field.Key}:{field.Value}");
+            }
+            
+            // Add custom conditions, skipping duplicates of field conditions
+            foreach (var condition in request.Conditions)
+            {
+                // Skip ExactMatch conditions that duplicate field conditions
+                if (condition is ExactMatchCondition exactMatch)
+                {
+                    var conditionKey = $"{exactMatch.FieldName}:{exactMatch.ExpectedValue}";
+                    if (fieldConditions.Contains(conditionKey))
+                    {
+                        continue; // Skip duplicate
+                    }
+                }
+                
+                condition.WriteToJsonWriter(writer);
+            }
+            
+            writer.WriteEndArray();
+            writer.WriteEndObject();
+            writer.Flush();
+            
+#if !NETFRAMEWORK
+            return Encoding.UTF8.GetString(arrayPoolBufferWriter.WrittenMemory.ToArray());
+#else
+            return Encoding.UTF8.GetString(memoryStream.ToArray());
+#endif
+        }
+
+        #endregion
 
         #region ICoreAmazonS3 Implementation
 

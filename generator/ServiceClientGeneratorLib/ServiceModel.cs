@@ -503,25 +503,48 @@ namespace ServiceClientGenerator
                         new Operation(this, "GetObjectRetention", DocumentRoot[OperationsKey]["GetObjectRetention"]),
                         new Operation(this, "GetObjectTagging", DocumentRoot[OperationsKey]["GetObjectTagging"]),
                         new Operation(this, "GetPublicAccessBlock", DocumentRoot[OperationsKey]["GetPublicAccessBlock"]),
-                        //new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
+                        new Operation(this, "HeadBucket", DocumentRoot[OperationsKey]["HeadBucket"]),
                         //new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         //new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
                         //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         //new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
                         new Operation(this, "ListBuckets", DocumentRoot[OperationsKey]["ListBuckets"]),
                         new Operation(this, "ListDirectoryBuckets", DocumentRoot[OperationsKey]["ListDirectoryBuckets"]),
-                        //new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
+                        new Operation(this, "ListParts", DocumentRoot[OperationsKey]["ListParts"]),
                         //new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
                         new Operation(this, "PutBucketEncryption", DocumentRoot[OperationsKey]["PutBucketEncryption"]),
                         new Operation(this, "PutBucketReplication", DocumentRoot[OperationsKey]["PutBucketReplication"]),
-                        //new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
-                        //new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
-                        //new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
-                        //new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
-                        //new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
-                        //new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
+                        new Operation(this, "PutBucketPolicy", DocumentRoot[OperationsKey]["PutBucketPolicy"]),
+                        new Operation(this, "PutObjectLegalHold", DocumentRoot[OperationsKey]["PutObjectLegalHold"]),
+                        new Operation(this, "PutObjectLockConfiguration", DocumentRoot[OperationsKey]["PutObjectLockConfiguration"]),
+                        new Operation(this, "PutObjectRetention", DocumentRoot[OperationsKey]["PutObjectRetention"]),
+                        new Operation(this, "PutObjectTagging", DocumentRoot[OperationsKey]["PutObjectTagging"]),
+                        new Operation(this, "PutPublicAccessBlock", DocumentRoot[OperationsKey]["PutPublicAccessBlock"]),
                         //new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
-                        //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"])
+                        //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
+                        
+                        // PHASE 2
+                        new Operation(this, "CreateBucket", DocumentRoot[OperationsKey]["CreateBucket"]),
+                        //new Operation(this, "CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
+                        //new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
+                        //new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
+                        //new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
+                        //new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
+                        //new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
+                        //new Operation(this, "GetBucketLifecycle", DocumentRoot[OperationsKey]["GetBucketLifecycle"]),
+                        //new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
+                        //new Operation(this, "GetBucketNotificationConfiguration", DocumentRoot[OperationsKey]["GetBucketNotificationConfiguration"]),
+                        //new Operation(this, "GetObjectAcl", DocumentRoot[OperationsKey]["GetObjectAcl"]),
+                        //new Operation(this, "HeadObject", DocumentRoot[OperationsKey]["HeadObject"]),
+                        //new Operation(this, "ListObjectVersions", DocumentRoot[OperationsKey]["ListObjectVersions"]),
+                        //new Operation(this, "PutBucketAcl", DocumentRoot[OperationsKey]["PutBucketAcl"]),
+                        //new Operation(this, "PutBucketCors", DocumentRoot[OperationsKey]["PutBucketCors"]),
+                        //new Operation(this, "PutBucketLifecycle", DocumentRoot[OperationsKey]["PutBucketLifecycle"]),
+                        //new Operation(this, "PutBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["PutBucketLifecycleConfiguration"]),
+                        //new Operation(this, "PutBucketNotificationConfiguration", DocumentRoot[OperationsKey]["PutBucketNotificationConfiguration"]),
+                        //new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
+                        //new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
+
                     };
                 }
                 return _s3AllowListOperations;
@@ -544,7 +567,8 @@ namespace ServiceClientGenerator
                         "ListBuckets",
                         "ListDirectoryBuckets",
                         "GetObjectLegalHold",
-                        "GetObjectRetention"
+                        "GetObjectRetention",
+                        "PutObjectRetention"
                     };
                 }
                 return _s3AddParametersList;

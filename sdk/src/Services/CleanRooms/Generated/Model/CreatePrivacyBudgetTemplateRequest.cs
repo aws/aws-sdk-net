@@ -31,10 +31,9 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrivacyBudgetTemplate operation.
-    /// Creates a privacy budget template for a specified membership. Each membership can
-    /// have only one privacy budget template, but it can be deleted and recreated. If you
-    /// need to change the privacy budget template for a membership, use the <a>UpdatePrivacyBudgetTemplate</a>
-    /// operation.
+    /// Creates a privacy budget template for a specified collaboration. Each collaboration
+    /// can have only one privacy budget template. If you need to change the privacy budget
+    /// template, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
     /// </summary>
     public partial class CreatePrivacyBudgetTemplateRequest : AmazonCleanRoomsRequest
     {

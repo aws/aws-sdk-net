@@ -136,7 +136,6 @@ namespace Amazon.Runtime.Internal
             return executionContext.ResponseContext;
         }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Invokes the pipeline asynchronously.
         /// </summary>
@@ -149,7 +148,6 @@ namespace Amazon.Runtime.Internal
 
             return _handler.InvokeAsync<T>(executionContext);
         }
-#endif
 
         #endregion
 

@@ -189,7 +189,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationNfsRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationNfsRequest.Subdirectory</property>
@@ -226,7 +226,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerPort</property>
@@ -285,7 +285,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationSmbRequest.Subdirectory</property>
@@ -914,7 +914,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationNfsRequest.Subdirectory</property>
@@ -945,7 +945,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerPort</property>
@@ -999,7 +999,7 @@
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.ServerHostname</property>
     <max>255</max>
-    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
+    <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-:]*[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationSmbRequest.Subdirectory</property>

@@ -47,12 +47,9 @@ namespace Amazon.Runtime.Internal
             throw new AmazonServiceException(message, exception);
         }
 
-
-#if AWS_ASYNC_API
         public override System.Threading.Tasks.Task<bool> HandleExceptionAsync(IExecutionContext executionContext, WebException exception)
         {
             return System.Threading.Tasks.Task.FromResult(this.HandleException(executionContext, exception));
         }
-#endif
     }
 }

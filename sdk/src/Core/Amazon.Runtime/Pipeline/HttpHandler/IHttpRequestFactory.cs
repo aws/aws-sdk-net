@@ -122,7 +122,6 @@ namespace Amazon.Runtime
         /// </summary>
         Version HttpProtocolVersion { get; set; }
 
-#if AWS_ASYNC_API
         /// <summary>
         /// Gets a handle to the request content.
         /// </summary>
@@ -142,8 +141,5 @@ namespace Amazon.Runtime
 
         System.Threading.Tasks.Task WriteToRequestBodyAsync(TRequestContent requestContent, byte[] requestData, IDictionary<string, string> headers, System.Threading.CancellationToken cancellationToken);
 #endif
-
-#endif
-
     }
 }

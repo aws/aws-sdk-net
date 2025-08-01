@@ -21,9 +21,7 @@ using Amazon.DynamoDBv2.Model;
 using System.Globalization;
 using Amazon.Runtime.Telemetry.Tracing;
 
-#if AWS_ASYNC_API
 using System.Threading.Tasks;
-#endif
 using System.Threading;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -436,7 +434,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API 
         internal async Task<List<Document>> GetNextSetHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
@@ -552,7 +549,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return ret;
         }
-#endif
 
         internal List<Document> GetRemainingHelper()
         {
@@ -571,7 +567,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API 
         internal async Task<List<Document>> GetRemainingHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
@@ -588,7 +583,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return ret;
         }
-#endif
 
         private int count;
 

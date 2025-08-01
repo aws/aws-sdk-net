@@ -45,7 +45,6 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API 
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             try
@@ -58,7 +57,6 @@ namespace Amazon.Runtime.Internal
                 throw;
             }
         }
-#endif
 
         /// <summary>
         /// Executes the OnError action if an exception occurs during the 

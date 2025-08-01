@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The number of instances to add to the instance group of a SageMaker HyperPod cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=0, Max=10000000)]
         public int? Count
         {
             get { return this._count; }
