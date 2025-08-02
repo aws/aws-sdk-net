@@ -671,7 +671,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "Unable to convert DynamoDB entry [{0}] of type {1} to property {2} of type {3}",
-                        entry, entry.GetType().FullName, propertyStorage.PropertyName, targetType.FullName);
+                        entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName);
                 }
 
                 throw new InvalidOperationException(errorMessage);
