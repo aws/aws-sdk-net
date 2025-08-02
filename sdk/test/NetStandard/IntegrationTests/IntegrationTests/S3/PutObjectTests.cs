@@ -187,6 +187,54 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         }
 
         /// <summary>
+        /// Reported in https://github.com/aws/aws-sdk-net/issues/3941
+        /// </summary>
+        [Fact]
+        public async Task HandlesFileStreamWithoutAutoReset()
+        {
+            using (var writeFs = new FileStream("sample.bin", FileMode.Create, FileAccess.Write))
+            {
+                var data = new byte[]
+                {
+                    0x01, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00, 0x01, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                };
+
+                await writeFs.WriteAsync(data, 0, data.Length);
+            }
+
+            using var fileStream = File.Open("sample.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
+            using var reader = new BinaryReader(fileStream);
+
+            fileStream.Position = 10;
+            var compression = reader.ReadInt16();
+            
+            fileStream.Seek(8, SeekOrigin.Current);
+            var bIsLast = reader.ReadBoolean();
+            
+            fileStream.Seek(4, SeekOrigin.Current);
+
+            var putRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = "test_upload.bin",
+                ContentType = "application/octet-stream",
+                InputStream = fileStream,
+                AutoResetStreamPosition = false,
+            };
+            putRequest.Metadata.Add("compression", compression.ToString());
+            putRequest.Metadata.Add("islast", bIsLast ? "T" : "F");
+
+            var putResponse = await Client.PutObjectAsync(putRequest);
+            Assert.NotNull(putResponse.ETag);
+
+            var getResponse = await Client.GetObjectMetadataAsync(bucketName, putRequest.Key);
+            Assert.NotNull(getResponse.Metadata);
+            Assert.True(getResponse.Metadata.Count > 0);
+        }
+
+        /// <summary>
         /// Reported in https://github.com/aws/aws-sdk-net/issues/3629
         /// </summary>
         [Theory]
