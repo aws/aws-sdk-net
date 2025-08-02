@@ -93,10 +93,6 @@ namespace Amazon.Runtime.Internal.Util
             {
                 throw new AmazonClientException($"{nameof(ChunkedUploadWrapperStream)} was initialized without a SigV4 or SigV4a signing result.");
             }
-            else if (headerSigningResult is AWS4aSigningResult)
-            {
-                Sigv4aSigner = new AWS4aSignerCRTWrapper();
-            }
 
             HeaderSigningResult = headerSigningResult;
             PreviousChunkSignature = headerSigningResult?.Signature;
@@ -287,11 +283,6 @@ namespace Amazon.Runtime.Internal.Util
         private AWSSigningResultBase HeaderSigningResult { get; set; }
 
         /// <summary>
-        /// SigV4a signer
-        /// </summary>
-        private AWS4aSignerCRTWrapper Sigv4aSigner { get; set; }
-
-        /// <summary>
         /// Computed signature of the chunk prior to the one in-flight in hex,
         /// for either SigV4 or SigV4a
         /// </summary>
@@ -321,23 +312,16 @@ namespace Amazon.Runtime.Internal.Util
             // variable-length size of the embedded chunk data in hex
             chunkHeader.Append(dataLen.ToString("X", CultureInfo.InvariantCulture));
 
+            var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, HeaderSigningResult.ISO8601DateTime,
+                                                                HeaderSigningResult.Scope, PreviousChunkSignature, dataLen, _inputBuffer);
+
             string chunkSignature = "";
             if (HeaderSigningResult is AWS4aSigningResult v4aHeaderSigningResult)
             {
-                if (isFinalDataChunk)  // _inputBuffer still contains previous chunk, but this is the final 0 content chunk so sign null
-                {
-                    chunkSignature = Sigv4aSigner.SignChunk(null, PreviousChunkSignature, v4aHeaderSigningResult);
-                }
-                else
-                {
-                    chunkSignature = Sigv4aSigner.SignChunk(new MemoryStream(_inputBuffer), PreviousChunkSignature, v4aHeaderSigningResult);
-                }
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(v4aHeaderSigningResult.Credentials, chunkStringToSign), true);
             }
             else if (HeaderSigningResult is AWS4SigningResult v4HeaderSingingResult) // SigV4
             {
-                var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, v4HeaderSingingResult.ISO8601DateTime,
-                                                                    v4HeaderSingingResult.Scope, PreviousChunkSignature, dataLen, _inputBuffer);
-
                 chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(v4HeaderSingingResult.GetSigningKey(), chunkStringToSign), true);
             }
 
@@ -408,24 +392,25 @@ namespace Amazon.Runtime.Internal.Util
                 _trailingHeaders[ChecksumUtils.GetChecksumHeaderKey(_trailingChecksum)] = Convert.ToBase64String(_hashAlgorithm.Hash);
             }
 
+            var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
+            var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
+
+            var chunkStringToSign =
+                TRAILING_HEADER_STRING_TO_SIGN_PREFIX + "\n" +
+                HeaderSigningResult.ISO8601DateTime + "\n" +
+                HeaderSigningResult.Scope + "\n" +
+                PreviousChunkSignature + "\n" +
+                AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
+
             string chunkSignature;
-            if (HeaderSigningResult is AWS4SigningResult)
+            if (HeaderSigningResult is AWS4SigningResult aws4Result)
             {
-                var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
-                var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
-
-                var chunkStringToSign =
-                    TRAILING_HEADER_STRING_TO_SIGN_PREFIX + "\n" +
-                    HeaderSigningResult.ISO8601DateTime + "\n" +
-                    HeaderSigningResult.Scope + "\n" +
-                    PreviousChunkSignature + "\n" +
-                    AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(canonicalizedTrailingHeaders), true);
-
-                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(((AWS4SigningResult)HeaderSigningResult).GetSigningKey(), chunkStringToSign), true);
+                chunkSignature = AWSSDKUtils.ToHex(AWS4Signer.SignBlob(aws4Result.GetSigningKey(), chunkStringToSign), true);
             }
             else // SigV4a
             {
-                chunkSignature = Sigv4aSigner.SignTrailingHeaderChunk(_trailingHeaders, PreviousChunkSignature, (AWS4aSigningResult)HeaderSigningResult).PadRight(V4A_SIGNATURE_LENGTH, '*');
+                var aws4aResult = (AWS4aSigningResult)HeaderSigningResult;
+                chunkSignature = AWSSDKUtils.ToHex(AWS4aSigner.SignBlob(aws4aResult.Credentials, chunkStringToSign), true).PadRight(V4A_SIGNATURE_LENGTH, '*');
             }
 
             var chunk = new StringBuilder();
