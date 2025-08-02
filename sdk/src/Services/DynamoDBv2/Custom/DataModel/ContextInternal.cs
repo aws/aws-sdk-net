@@ -656,9 +656,25 @@ namespace Amazon.DynamoDBv2.DataModel
                     return output;
                 }
 
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Unable to convert DynamoDB entry [{0}] of type {1} to property {2} of type {3}",
-                    entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
+                bool isAotRuntime = InternalSDKUtils.IsRunningNativeAot();
+                string errorMessage;
+                
+                if (isAotRuntime)
+                {
+                    errorMessage = $"Unable to convert DynamoDB entry [{entry}] of type {entry.GetType().FullName} to property {propertyStorage.PropertyName} of type {targetType.FullName}. " +
+                        "Since the application is running in Native AOT mode the type could possibly be trimmed. " +
+                        "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
+                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
+                        " If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
+                }
+                else
+                {
+                    errorMessage = string.Format(CultureInfo.InvariantCulture,
+                        "Unable to convert DynamoDB entry [{0}] of type {1} to property {2} of type {3}",
+                        entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName);
+                }
+
+                throw new InvalidOperationException(errorMessage);
             }
         }
         private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,
