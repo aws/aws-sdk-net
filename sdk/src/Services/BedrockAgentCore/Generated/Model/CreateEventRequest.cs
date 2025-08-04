@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEvent operation.
-    /// Creates an event in a memory store. Events represent interactions or activities that
-    /// occur within a session and are associated with specific actors.
+    /// Creates an event in an AgentCore Memory resource. Events represent interactions or
+    /// activities that occur within a session and are associated with specific actors.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:CreateEvent</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:CreateEvent</c> permission.
     /// </para>
     ///  
     /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store in which to create the event.
+        /// The identifier of the AgentCore Memory resource in which to create the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

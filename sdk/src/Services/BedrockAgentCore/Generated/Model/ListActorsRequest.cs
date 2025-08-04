@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListActors operation.
-    /// Lists all actors in a memory store. We recommend using pagination to ensure that the
-    /// operation returns quickly and successfully.
+    /// Lists all actors in an AgentCore Memory resource. We recommend using pagination to
+    /// ensure that the operation returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:ListActors</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListActors</c> permission.
     /// </para>
     /// </summary>
     public partial class ListActorsRequest : AmazonBedrockAgentCoreRequest
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store for which to list actors.
+        /// The identifier of the AgentCore Memory resource for which to list actors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

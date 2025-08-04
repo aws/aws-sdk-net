@@ -31,11 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMemoryRecord operation.
-    /// Retrieves a specific memory record from a memory store.
+    /// Retrieves a specific memory record from an AgentCore Memory resource.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:GetMemoryRecord</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:GetMemoryRecord</c>
+    /// permission.
     /// </para>
     /// </summary>
     public partial class GetMemoryRecordRequest : AmazonBedrockAgentCoreRequest
@@ -46,7 +47,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store containing the memory record.
+        /// The identifier of the AgentCore Memory resource containing the memory record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

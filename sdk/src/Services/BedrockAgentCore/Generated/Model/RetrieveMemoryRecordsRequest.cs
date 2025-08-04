@@ -31,13 +31,13 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveMemoryRecords operation.
-    /// Searches for and retrieves memory records from a memory store based on specified search
-    /// criteria. We recommend using pagination to ensure that the operation returns quickly
-    /// and successfully.
+    /// Searches for and retrieves memory records from an AgentCore Memory resource based
+    /// on specified search criteria. We recommend using pagination to ensure that the operation
+    /// returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:RetrieveMemoryRecords</c>
+    /// To use this operation, you must have the <c>bedrock-agentcore:RetrieveMemoryRecords</c>
     /// permission.
     /// </para>
     /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store from which to retrieve memory records.
+        /// The identifier of the AgentCore Memory resource from which to retrieve memory records.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
