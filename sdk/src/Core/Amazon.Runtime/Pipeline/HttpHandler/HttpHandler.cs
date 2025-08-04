@@ -445,7 +445,17 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
-                    originalStream = wrappedRequest.ContentStream;
+                    // If the current position for the ContentStream is not at the beginning, we need to handle it
+                    // before wrapping it during GetInputStream.
+                    if (wrappedRequest.ContentStream.CanSeek && wrappedRequest.ContentStream.Position != 0)
+                    {
+                        var size = wrappedRequest.ContentStream.Length - wrappedRequest.ContentStream.Position;
+                        originalStream = new PartialReadOnlyWrapperStream(wrappedRequest.ContentStream, size);
+                    }
+                    else
+                    {
+                        originalStream = wrappedRequest.ContentStream;
+                    }
                 }
 
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
@@ -492,7 +502,17 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
-                    originalStream = wrappedRequest.ContentStream;
+                    // If the current position for the ContentStream is not at the beginning, we need to handle it
+                    // before wrapping it during GetInputStream.
+                    if (wrappedRequest.ContentStream.CanSeek && wrappedRequest.ContentStream.Position != 0)
+                    {
+                        var size = wrappedRequest.ContentStream.Length - wrappedRequest.ContentStream.Position;
+                        originalStream = new PartialReadOnlyWrapperStream(wrappedRequest.ContentStream, size);
+                    }
+                    else
+                    {
+                        originalStream = wrappedRequest.ContentStream;
+                    }
                 }
 
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
