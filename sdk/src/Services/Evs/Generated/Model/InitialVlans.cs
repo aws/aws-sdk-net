@@ -30,8 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR
-    /// block for each VLAN subnet.
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
+    /// The initial VLAN subnets for the environment. Amazon EVS VLAN subnets have a minimum
+    /// CIDR block size of /28 and a maximum size of /24. Amazon EVS VLAN subnet CIDR blocks
+    /// must not overlap with other subnets in the VPC.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class InitialVlans
     {
@@ -153,7 +163,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VmkManagement. 
         /// <para>
-        ///  The VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing
+        ///  The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing
         /// ESXi hosts and communicating with VMware vCenter Server.
         /// </para>
         /// </summary>

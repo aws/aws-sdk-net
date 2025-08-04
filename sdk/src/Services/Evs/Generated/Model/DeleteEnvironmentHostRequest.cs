@@ -31,8 +31,14 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironmentHost operation.
-    /// Deletes a host from an Amazon EVS environment.
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
     /// 
+    ///  </note> 
+    /// <para>
+    /// Deletes a host from an Amazon EVS environment.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Before deleting a host, you must unassign and decommission the host from within the
@@ -40,6 +46,7 @@ namespace Amazon.Evs.Model
     /// machines or result in data loss.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class DeleteEnvironmentHostRequest : AmazonEvsRequest
     {

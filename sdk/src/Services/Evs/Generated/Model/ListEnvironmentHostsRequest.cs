@@ -31,7 +31,16 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironmentHosts operation.
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// List the hosts within an environment.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class ListEnvironmentHostsRequest : AmazonEvsRequest
     {

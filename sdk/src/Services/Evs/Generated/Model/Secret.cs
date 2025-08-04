@@ -30,12 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// A managed secret that contains the credentials for installing vCenter Server, NSX,
     /// and SDDC Manager. During environment creation, the Amazon EVS control plane uses Amazon
     /// Web Services Secrets Manager to create, encrypt, validate, and store secrets. If you
     /// choose to delete your environment, Amazon EVS also deletes the secrets that are associated
     /// with your environment. Amazon EVS does not provide managed rotation of secrets. We
     /// recommend that you rotate secrets regularly to ensure that secrets are not long-lived.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class Secret
     {
