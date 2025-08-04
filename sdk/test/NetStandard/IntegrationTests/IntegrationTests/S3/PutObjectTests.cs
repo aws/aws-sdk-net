@@ -187,6 +187,66 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         }
 
         /// <summary>
+        /// Reported in https://github.com/aws/aws-sdk-net/issues/3941
+        /// </summary>
+        [Fact]
+        public async Task HandlesFileStreamWithoutAutoReset()
+        {
+            var tempFilePath = Path.GetTempFileName();
+            try
+            {
+                using (var writeFs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                {
+                    var data = new byte[]
+                    {
+                        0x01, 0x00, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x01, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                    };
+
+                    await writeFs.WriteAsync(data, 0, data.Length);
+                }
+
+                using var fileStream = File.Open(tempFilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                using var reader = new BinaryReader(fileStream);
+
+                fileStream.Position = 10;
+                var compression = reader.ReadInt16();
+                
+                fileStream.Seek(8, SeekOrigin.Current);
+                var bIsLast = reader.ReadBoolean();
+                
+                fileStream.Seek(4, SeekOrigin.Current);
+
+                var putRequest = new PutObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = "upload-test/0D-0",
+                    ContentType = "application/octet-stream",
+                    InputStream = fileStream,
+                    AutoResetStreamPosition = false,
+                };
+                putRequest.Metadata.Add("compression", compression.ToString());
+                putRequest.Metadata.Add("islast", bIsLast ? "T" : "F");
+
+                var putResponse = await Client.PutObjectAsync(putRequest);
+                Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
+
+                var getResponse = await Client.GetObjectMetadataAsync(bucketName, putRequest.Key);
+                Assert.Equal(HttpStatusCode.OK, getResponse.HttpStatusCode);
+                Assert.NotNull(getResponse.Metadata);
+                Assert.True(getResponse.Metadata.Count > 0);
+            }
+            finally
+            {
+                if (File.Exists(tempFilePath))
+                {
+                    File.Delete(tempFilePath);
+                }
+            }
+        }
+
+        /// <summary>
         /// Reported in https://github.com/aws/aws-sdk-net/issues/3629
         /// </summary>
         [Theory]
