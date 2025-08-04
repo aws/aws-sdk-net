@@ -32,7 +32,7 @@ namespace Amazon.LicenseManager
     public partial class AmazonLicenseManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("License Manager", "3.7.500.1");
+            InternalSDKUtils.BuildUserAgentString("License Manager", "3.7.500.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>
