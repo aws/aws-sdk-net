@@ -233,6 +233,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  AttachClusterNodeVolume
+
+
+        /// <summary>
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
+        /// HyperPod cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeVolume service method.</param>
+        /// 
+        /// <returns>The response from the AttachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        AttachClusterNodeVolumeResponse AttachClusterNodeVolume(AttachClusterNodeVolumeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachClusterNodeVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeVolume operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachClusterNodeVolume
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        IAsyncResult BeginAttachClusterNodeVolume(AttachClusterNodeVolumeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachClusterNodeVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachClusterNodeVolume.</param>
+        /// 
+        /// <returns>Returns a  AttachClusterNodeVolumeResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        AttachClusterNodeVolumeResponse EndAttachClusterNodeVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchDeleteClusterNodes
 
 
@@ -9900,6 +9951,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DetachClusterNodeVolume
+
+
+        /// <summary>
+        /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
+        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachClusterNodeVolume service method.</param>
+        /// 
+        /// <returns>The response from the DetachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        DetachClusterNodeVolumeResponse DetachClusterNodeVolume(DetachClusterNodeVolumeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachClusterNodeVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachClusterNodeVolume operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachClusterNodeVolume
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        IAsyncResult BeginDetachClusterNodeVolume(DetachClusterNodeVolumeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachClusterNodeVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachClusterNodeVolume.</param>
+        /// 
+        /// <returns>Returns a  DetachClusterNodeVolumeResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        DetachClusterNodeVolumeResponse EndDetachClusterNodeVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableSagemakerServicecatalogPortfolio
 
 
@@ -17453,8 +17555,12 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// To restrict access to all the workers in public internet, add the <c>SourceIpConfig</c>
-        /// CIDR value as "10.0.0.0/16".
+        /// To restrict public internet access for all workers, configure the <c>SourceIpConfig</c>
+        /// CIDR value. For example, when using <c>SourceIpConfig</c> with an <c>IpAddressType</c>
+        /// of <c>IPv4</c>, you can restrict access to the IPv4 CIDR block "10.0.0.0/16". When
+        /// using an <c>IpAddressType</c> of <c>dualstack</c>, you can specify both the IPv4 and
+        /// IPv6 CIDR blocks, such as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for
+        /// IPv6 only, or "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.
         /// </para>
         ///  <important> 
         /// <para>

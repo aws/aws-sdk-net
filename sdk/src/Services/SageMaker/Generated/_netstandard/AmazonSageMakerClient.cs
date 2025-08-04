@@ -438,6 +438,51 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  AttachClusterNodeVolume
+
+        internal virtual AttachClusterNodeVolumeResponse AttachClusterNodeVolume(AttachClusterNodeVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachClusterNodeVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachClusterNodeVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<AttachClusterNodeVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
+        /// HyperPod cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeVolume">REST API Reference for AttachClusterNodeVolume Operation</seealso>
+        public virtual Task<AttachClusterNodeVolumeResponse> AttachClusterNodeVolumeAsync(AttachClusterNodeVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachClusterNodeVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachClusterNodeVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachClusterNodeVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteClusterNodes
 
         internal virtual BatchDeleteClusterNodesResponse BatchDeleteClusterNodes(BatchDeleteClusterNodesRequest request)
@@ -8959,6 +9004,51 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DetachClusterNodeVolume
+
+        internal virtual DetachClusterNodeVolumeResponse DetachClusterNodeVolume(DetachClusterNodeVolumeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachClusterNodeVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachClusterNodeVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DetachClusterNodeVolumeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
+        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// 
+        ///  
+        /// <para>
+        ///  This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage
+        /// Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod
+        /// EKS clusters. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachClusterNodeVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachClusterNodeVolume service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DetachClusterNodeVolume">REST API Reference for DetachClusterNodeVolume Operation</seealso>
+        public virtual Task<DetachClusterNodeVolumeResponse> DetachClusterNodeVolumeAsync(DetachClusterNodeVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachClusterNodeVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachClusterNodeVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachClusterNodeVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableSagemakerServicecatalogPortfolio
 
         internal virtual DisableSagemakerServicecatalogPortfolioResponse DisableSagemakerServicecatalogPortfolio(DisableSagemakerServicecatalogPortfolioRequest request)
@@ -15526,8 +15616,12 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// To restrict access to all the workers in public internet, add the <c>SourceIpConfig</c>
-        /// CIDR value as "10.0.0.0/16".
+        /// To restrict public internet access for all workers, configure the <c>SourceIpConfig</c>
+        /// CIDR value. For example, when using <c>SourceIpConfig</c> with an <c>IpAddressType</c>
+        /// of <c>IPv4</c>, you can restrict access to the IPv4 CIDR block "10.0.0.0/16". When
+        /// using an <c>IpAddressType</c> of <c>dualstack</c>, you can specify both the IPv4 and
+        /// IPv6 CIDR blocks, such as "10.0.0.0/16" for IPv4 only, "2001:db8:1234:1a00::/56" for
+        /// IPv6 only, or "10.0.0.0/16" and "2001:db8:1234:1a00::/56" for dual stack.
         /// </para>
         ///  <important> 
         /// <para>
