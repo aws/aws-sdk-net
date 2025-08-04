@@ -181,6 +181,10 @@ namespace Amazon.CodeConnections
     {
 
         /// <summary>
+        /// Constant AzureDevOps for ProviderType
+        /// </summary>
+        public static readonly ProviderType AzureDevOps = new ProviderType("AzureDevOps");
+        /// <summary>
         /// Constant Bitbucket for ProviderType
         /// </summary>
         public static readonly ProviderType Bitbucket = new ProviderType("Bitbucket");
