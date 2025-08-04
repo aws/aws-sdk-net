@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAssetModel operation
+    /// Response Unmarshaller for PutAssetModelInterfaceRelationship operation
     /// </summary>  
-    public class DescribeAssetModelResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutAssetModelInterfaceRelationshipResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAssetModelResponse response = new DescribeAssetModelResponse();
+            PutAssetModelInterfaceRelationshipResponse response = new PutAssetModelInterfaceRelationshipResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -58,64 +58,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModels", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModel, AssetModelCompositeModelUnmarshaller>(AssetModelCompositeModelUnmarshaller.Instance);
-                    response.AssetModelCompositeModels = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
-                    response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelCreationDate", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.AssetModelCreationDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelExternalId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelExternalId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelHierarchies", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AssetModelHierarchy, AssetModelHierarchyUnmarshaller>(AssetModelHierarchyUnmarshaller.Instance);
-                    response.AssetModelHierarchies = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("assetModelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelLastUpdateDate", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.AssetModelLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelProperties", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
-                    response.AssetModelProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelStatus", targetDepth))
@@ -124,27 +70,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelType", targetDepth))
+                if (context.TestExpression("interfaceAssetModelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("assetModelVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("interfaceDetails", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<InterfaceRelationship, InterfaceRelationshipUnmarshaller>(InterfaceRelationshipUnmarshaller.Instance);
-                    response.InterfaceDetails = unmarshaller.Unmarshall(context, ref reader);
+                    response.InterfaceAssetModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
-            if (context.ResponseData.IsHeaderPresent("ETag"))
-                response.ETag = context.ResponseData.GetHeaderValue("ETag");
 
             return response;
         }
@@ -169,6 +101,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictingOperationException"))
+                {
+                    return ConflictingOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -176,6 +112,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -189,9 +129,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeAssetModelResponseUnmarshaller _instance = new DescribeAssetModelResponseUnmarshaller();        
+        private static PutAssetModelInterfaceRelationshipResponseUnmarshaller _instance = new PutAssetModelInterfaceRelationshipResponseUnmarshaller();        
 
-        internal static DescribeAssetModelResponseUnmarshaller GetInstance()
+        internal static PutAssetModelInterfaceRelationshipResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -199,7 +139,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAssetModelResponseUnmarshaller Instance
+        public static PutAssetModelInterfaceRelationshipResponseUnmarshaller Instance
         {
             get
             {

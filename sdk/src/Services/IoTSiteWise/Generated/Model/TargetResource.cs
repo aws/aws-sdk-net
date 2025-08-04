@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// The resource the action will be taken on.
+    /// The resource the action will be taken on. This can include asset-based resources and
+    /// computation model resources.
     /// </summary>
     public partial class TargetResource
     {
