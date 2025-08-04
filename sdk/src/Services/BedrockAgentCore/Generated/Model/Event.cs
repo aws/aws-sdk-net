@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains information about an event in a memory store.
+    /// Contains information about an event in an AgentCore Memory resource.
     /// </summary>
     public partial class Event
     {
@@ -120,7 +120,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store containing the event.
+        /// The identifier of the AgentCore Memory resource containing the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

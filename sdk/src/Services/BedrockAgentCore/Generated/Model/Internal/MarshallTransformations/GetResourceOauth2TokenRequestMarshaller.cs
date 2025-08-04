@@ -122,12 +122,6 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetUserId())
-            {
-                context.Writer.WritePropertyName("userId");
-                context.Writer.WriteStringValue(publicRequest.UserId);
-            }
-
             if(publicRequest.IsSetWorkloadIdentityToken())
             {
                 context.Writer.WritePropertyName("workloadIdentityToken");

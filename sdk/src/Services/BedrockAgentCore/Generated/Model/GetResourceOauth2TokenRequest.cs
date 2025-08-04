@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceOauth2Token operation.
-    /// Reaturns the Oauth2Token of the provided resource
+    /// Returns the OAuth 2.0 token of the provided resource
     /// </summary>
     public partial class GetResourceOauth2TokenRequest : AmazonBedrockAgentCoreRequest
     {
@@ -41,7 +41,6 @@ namespace Amazon.BedrockAgentCore.Model
         private string _resourceCredentialProviderName;
         private string _resourceOauth2ReturnUrl;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _userId;
         private string _workloadIdentityToken;
 
         /// <summary>
@@ -166,25 +165,6 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetScopes()
         {
             return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserId. 
-        /// <para>
-        /// The user ID of the user you're retrieving the token on behalf of.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string UserId
-        {
-            get { return this._userId; }
-            set { this._userId = value; }
-        }
-
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
-        {
-            return this._userId != null;
         }
 
         /// <summary>

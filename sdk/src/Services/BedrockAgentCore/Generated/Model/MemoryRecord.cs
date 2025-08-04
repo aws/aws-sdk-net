@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains information about a memory record in a memory store.
+    /// Contains information about a memory record in an AgentCore Memory resource.
     /// </summary>
     public partial class MemoryRecord
     {

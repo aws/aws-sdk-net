@@ -31,12 +31,13 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemoryRecords operation.
-    /// Lists memory records in a memory store based on specified criteria. We recommend using
-    /// pagination to ensure that the operation returns quickly and successfully.
+    /// Lists memory records in an AgentCore Memory resource based on specified criteria.
+    /// We recommend using pagination to ensure that the operation returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:ListMemoryRecords</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryRecords</c>
+    /// permission.
     /// </para>
     /// </summary>
     public partial class ListMemoryRecordsRequest : AmazonBedrockAgentCoreRequest
@@ -70,7 +71,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store for which to list memory records.
+        /// The identifier of the AgentCore Memory resource for which to list memory records.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
