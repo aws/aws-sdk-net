@@ -30,10 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// An ESXi host that runs on an Amazon EC2 bare metal instance. Four hosts are created
     /// in an Amazon EVS environment during environment creation. You can add hosts to an
     /// environment using the <c>CreateEnvironmentHost</c> operation. Amazon EVS supports
     /// 4-16 hosts per environment.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class Host
     {

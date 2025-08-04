@@ -30,8 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// An object that represents a host.
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
     /// 
+    ///  </note> 
+    /// <para>
+    /// An object that represents a host.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You cannot use <c>dedicatedHostId</c> and <c>placementGroupId</c> together in the
@@ -39,6 +45,7 @@ namespace Amazon.Evs.Model
     /// response.
     /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class HostInfoForCreate
     {

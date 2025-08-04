@@ -30,8 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// A check on the environment to identify environment health and validate VMware VCF
     /// licensing compliance.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class Check
     {

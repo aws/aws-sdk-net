@@ -30,9 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// The connectivity configuration for the environment. Amazon EVS requires that you specify
     /// two route server peer IDs. During environment creation, the route server endpoints
     /// peer with the NSX uplink VLAN for connectivity to the NSX overlay network.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class ConnectivityInfo
     {

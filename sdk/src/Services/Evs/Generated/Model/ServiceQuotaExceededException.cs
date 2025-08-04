@@ -30,52 +30,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
-    /// <c>ValidationException</c> </a> instead.
-    /// 
-    ///  </note> 
-    /// <para>
-    /// The request doesn't comply with IAM tag policy. Correct your request and then retry
-    /// it.
-    /// </para>
-    /// 
-    /// </para>
+    /// The number of one or more Amazon EVS resources exceeds the maximum allowed. For a
+    /// list of Amazon EVS quotas, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/service-quotas-evs.html">Amazon
+    /// EVS endpoints and quotas</a> in the <i>Amazon EVS User Guide</i>. Delete some resources
+    /// or request an increase in your service quota. To request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+    /// Web Services Service Quotas</a> in the <i>Amazon Web Services General Reference Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class TagPolicyException : AmazonEvsException
+    public partial class ServiceQuotaExceededException : AmazonEvsException
     {
 
         /// <summary>
-        /// Constructs a new TagPolicyException with the specified error
+        /// Constructs a new ServiceQuotaExceededException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public TagPolicyException(string message) 
+        public ServiceQuotaExceededException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of TagPolicyException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public TagPolicyException(string message, Exception innerException) 
+        public ServiceQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of TagPolicyException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="innerException"></param>
-        public TagPolicyException(Exception innerException) 
+        public ServiceQuotaExceededException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of TagPolicyException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -83,30 +76,30 @@ namespace Amazon.Evs.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public TagPolicyException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of TagPolicyException
+        /// Construct instance of ServiceQuotaExceededException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public TagPolicyException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ServiceQuotaExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the TagPolicyException class with serialized data.
+        /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected TagPolicyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

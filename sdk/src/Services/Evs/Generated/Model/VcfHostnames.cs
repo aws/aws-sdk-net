@@ -30,14 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// The DNS hostnames that Amazon EVS uses to install VMware vCenter Server, NSX, SDDC
     /// Manager, and Cloud Builder. Each hostname must be unique, and resolve to a domain
     /// name that you've registered in your DNS service of choice. Hostnames cannot be changed.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// VMware VCF requires the deployment of two NSX Edge nodes, and three NSX Manager virtual
     /// machines.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class VcfHostnames

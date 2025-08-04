@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// The VLANs that Amazon EVS creates during environment creation.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class Vlan
     {
@@ -65,7 +74,8 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        ///  The CIDR block of the VLAN.
+        /// The CIDR block of the VLAN. Amazon EVS VLAN subnets have a minimum CIDR block size
+        /// of /28 and a maximum size of /24.
         /// </para>
         /// </summary>
         public string Cidr

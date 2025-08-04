@@ -31,9 +31,15 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
     /// Manager, and vCenter Server.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
@@ -42,7 +48,7 @@ namespace Amazon.Evs.Model
     ///  
     /// <para>
     /// It can take several hours to create an environment. After the deployment completes,
-    /// you can configure VCF according to your unique requirements.
+    /// you can configure VCF in the vSphere user interface according to your needs.
     /// </para>
     ///  <note> 
     /// <para>
@@ -50,12 +56,8 @@ namespace Amazon.Evs.Model
     /// in the same <c>CreateEnvironment</c> action. This results in a <c>ValidationException</c>
     /// response.
     /// </para>
-    ///  </note> <note> 
-    /// <para>
-    /// EC2 instances created through Amazon EVS do not support associating an IAM instance
-    /// profile.
-    /// </para>
     ///  </note>
+    /// </para>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonEvsRequest
     {
@@ -110,7 +112,8 @@ namespace Amazon.Evs.Model
         /// <para>
         ///  The connectivity configuration for the environment. Amazon EVS requires that you
         /// specify two route server peer IDs. During environment creation, the route server endpoints
-        /// peer with the NSX edges over the NSX, providing BGP dynamic routing for overlay networks.
+        /// peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing
+        /// for overlay networks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,9 +160,9 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  
         /// <para>
-        /// For each host, you must provide the desired hostname, EC2 SSH key, and EC2 instance
-        /// type. Optionally, you can also provide a partition or cluster placement group to use,
-        /// or use Amazon EC2 Dedicated Hosts.
+        /// For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2
+        /// instance type. Optionally, you can also provide a partition or cluster placement group
+        /// to use, or use Amazon EC2 Dedicated Hosts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=4)]
@@ -178,9 +181,14 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property InitialVlans. 
         /// <para>
-        /// The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR
-        /// block for each VLAN subnet.
+        /// The initial VLAN subnets for the Amazon EVS environment.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon
+        /// EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public InitialVlans InitialVlans
@@ -219,9 +227,9 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property LicenseInfo. 
         /// <para>
         /// The license information that Amazon EVS requires to create an environment. Amazon
-        /// EVS requires two license keys: a VCF solution key and a vSAN license key. VCF licenses
-        /// must have sufficient core entitlements to cover vCPU core and vSAN storage capacity
-        /// needs.
+        /// EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF
+        /// solution key must cover a minimum of 256 cores. The vSAN license key must provide
+        /// at least 110 TiB of vSAN capacity.
         /// </para>
         ///  
         /// <para>
@@ -355,9 +363,11 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property TermsAccepted. 
         /// <para>
-        /// Customer confirmation that the customer has purchased and maintains sufficient VCF
-        /// software licenses to cover all physical processor cores in the environment, in compliance
-        /// with VMware's licensing requirements and terms of use.
+        /// Customer confirmation that the customer has purchased and will continue to maintain
+        /// the required number of VCF software licenses to cover all physical processor cores
+        /// in the Amazon EVS environment. Information about your VCF software in Amazon EVS will
+        /// be shared with Broadcom to verify license compliance. Amazon EVS does not validate
+        /// license keys. To validate license keys, visit the Broadcom support portal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -417,8 +427,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// A unique ID for the VPC that connects to the environment control plane for service
-        /// access.
+        /// A unique ID for the VPC that the environment is deployed inside.
         /// </para>
         ///  
         /// <para>
@@ -427,15 +436,10 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  
         /// <para>
-        /// The VPC that you select must have a valid DHCP option set with domain name, at least
+        /// The VPC that you specify must have a valid DHCP option set with domain name, at least
         /// two DNS servers, and an NTP server. These settings are used to configure your VCF
-        /// appliances and hosts.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you plan to use HCX over the internet, choose a VPC that has a primary CIDR block
-        /// and a /28 secondary CIDR block from an IPAM pool. Make sure that your VPC also has
-        /// an attached internet gateway.
+        /// appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment.
+        /// Amazon EVS does not provide multi-VPC support for environments at this time.
         /// </para>
         ///  
         /// <para>
@@ -443,6 +447,11 @@ namespace Amazon.Evs.Model
         /// NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or
         /// Amazon Web Services Direct Connect virtual private gateway associations.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=21)]
         public string VpcId

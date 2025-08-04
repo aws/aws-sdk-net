@@ -36,15 +36,23 @@ namespace Amazon.Evs
     /// <summary>
     /// <para>Implementation for accessing Evs</para>
     ///
+    /// <note> 
+    /// <para>
+    /// Amazon EVS is in public preview release and is subject to change.
+    /// 
+    ///  </note> 
+    /// <para>
     /// Amazon Elastic VMware Service (Amazon EVS) is a service that you can use to deploy
     /// a VMware Cloud Foundation (VCF) software environment directly on EC2 bare metal instances
     /// within an Amazon Virtual Private Cloud (VPC).
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Workloads running on Amazon EVS are fully compatible with workloads running on any
     /// standard VMware vSphere environment. This means that you can migrate any VMware-based
     /// workload to Amazon EVS without workload modification.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonEvsClient : AmazonServiceClient, IAmazonEvs
@@ -276,9 +284,15 @@ namespace Amazon.Evs
         #region  CreateEnvironment
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
         /// Manager, and vCenter Server.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
@@ -287,7 +301,7 @@ namespace Amazon.Evs
         ///  
         /// <para>
         /// It can take several hours to create an environment. After the deployment completes,
-        /// you can configure VCF according to your unique requirements.
+        /// you can configure VCF in the vSphere user interface according to your needs.
         /// </para>
         ///  <note> 
         /// <para>
@@ -295,12 +309,8 @@ namespace Amazon.Evs
         /// in the same <c>CreateEnvironment</c> action. This results in a <c>ValidationException</c>
         /// response.
         /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// EC2 instances created through Amazon EVS do not support associating an IAM instance
-        /// profile.
-        /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -359,14 +369,21 @@ namespace Amazon.Evs
         #region  CreateEnvironmentHost
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
         /// 4-16 hosts per environment.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This action can only be used after the Amazon EVS environment is deployed. All Amazon
         /// EVS hosts are created with the latest AMI release version for the respective VCF version
-        /// of the environment.
+        /// of the environment. Amazon EVS hosts are commissioned in the SDDC Manager inventory
+        /// as unassigned hosts.
         /// </para>
         ///  
         /// <para>
@@ -384,12 +401,8 @@ namespace Amazon.Evs
         /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
         /// response.
         /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// EC2 instances created through Amazon EVS do not support associating an IAM instance
-        /// profile.
-        /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentHost service method.</param>
         /// 
@@ -453,8 +466,14 @@ namespace Amazon.Evs
         #region  DeleteEnvironment
 
         /// <summary>
-        /// Deletes an Amazon EVS environment.
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
         /// 
+        ///  </note> 
+        /// <para>
+        /// Deletes an Amazon EVS environment.
+        /// </para>
         ///  
         /// <para>
         /// Amazon EVS environments will only be enabled for deletion once the hosts are deleted.
@@ -465,6 +484,8 @@ namespace Amazon.Evs
         /// Environment deletion also deletes the associated Amazon EVS VLAN subnets. Other associated
         /// Amazon Web Services resources are not deleted. These resources may continue to incur
         /// costs.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -528,8 +549,14 @@ namespace Amazon.Evs
         #region  DeleteEnvironmentHost
 
         /// <summary>
-        /// Deletes a host from an Amazon EVS environment.
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
         /// 
+        ///  </note> 
+        /// <para>
+        /// Deletes a host from an Amazon EVS environment.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Before deleting a host, you must unassign and decommission the host from within the
@@ -537,6 +564,7 @@ namespace Amazon.Evs
         /// machines or result in data loss.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentHost service method.</param>
         /// 
@@ -599,7 +627,16 @@ namespace Amazon.Evs
         #region  GetEnvironment
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Returns a description of the specified environment.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -662,7 +699,16 @@ namespace Amazon.Evs
         #region  ListEnvironmentHosts
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// List the hosts within an environment.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentHosts service method.</param>
         /// 
@@ -725,8 +771,17 @@ namespace Amazon.Evs
         #region  ListEnvironments
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Lists the Amazon EVS environments in your Amazon Web Services account in the specified
         /// Amazon Web Services Region.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// 
@@ -785,7 +840,16 @@ namespace Amazon.Evs
         #region  ListEnvironmentVlans
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Lists environment VLANs that are associated with the specified environment.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentVlans service method.</param>
         /// 
@@ -848,7 +912,16 @@ namespace Amazon.Evs
         #region  ListTagsForResource
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Lists the tags for an Amazon EVS resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -906,6 +979,12 @@ namespace Amazon.Evs
         #region  TagResource
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Associates the specified tags to an Amazon EVS resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource are not specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags associated with that resource are also
@@ -913,6 +992,9 @@ namespace Amazon.Evs
         /// resources associated with the environment. For example, if you tag an environment
         /// with this operation, that tag doesn't automatically propagate to the VLAN subnets
         /// and hosts associated with the environment.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -921,12 +1003,39 @@ namespace Amazon.Evs
         /// A service resource associated with the request could not be found. The resource might
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ServiceQuotaExceededException">
+        /// The number of one or more Amazon EVS resources exceeds the maximum allowed. For a
+        /// list of Amazon EVS quotas, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/service-quotas-evs.html">Amazon
+        /// EVS endpoints and quotas</a> in the <i>Amazon EVS User Guide</i>. Delete some resources
+        /// or request an increase in your service quota. To request an increase, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+        /// Web Services Service Quotas</a> in the <i>Amazon Web Services General Reference Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Evs.Model.TagPolicyException">
+        /// <note> 
+        /// <para>
+        ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
+        /// <c>ValidationException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// The request doesn't comply with IAM tag policy. Correct your request and then retry
         /// it.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.TooManyTagsException">
+        /// <note> 
+        /// <para>
+        ///  <c>TooManyTagsException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ServiceQuotaExceededException.html">
+        /// <c>ServiceQuotaExceededException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// A service resource associated with the request has more than 200 tags.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -977,7 +1086,16 @@ namespace Amazon.Evs
         #region  UntagResource
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon EVS is in public preview release and is subject to change.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Deletes specified tags from an Amazon EVS resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -987,8 +1105,18 @@ namespace Amazon.Evs
         /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.TagPolicyException">
+        /// <note> 
+        /// <para>
+        ///  <c>TagPolicyException</c> is deprecated. See <a href="https://docs.aws.amazon.com/evs/latest/APIReference/API_ValidationException.html">
+        /// <c>ValidationException</c> </a> instead.
+        /// 
+        ///  </note> 
+        /// <para>
         /// The request doesn't comply with IAM tag policy. Correct your request and then retry
         /// it.
+        /// </para>
+        /// 
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
