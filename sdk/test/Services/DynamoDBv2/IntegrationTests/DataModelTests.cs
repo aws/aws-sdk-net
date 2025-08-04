@@ -912,6 +912,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual("Sam", upcomingEnumResult[0].Name);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_SaveItem_WithTTL()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            // Create context and table if needed
+            CreateContext(DynamoDBEntryConversion.V2, true);
+
+            // Define TTL to be 2 minutes in the future
+            var ttlEpoch = DateTimeOffset.UtcNow.AddMinutes(2).ToUnixTimeSeconds();
+
+            var item = new TtlTestItem
+            {
+                Id = 1,
+                Data = "Test with TTL",
+                Ttl = ttlEpoch
+            };
+
+            Context.Save(item);
+
+            // Load immediately, should exist
+            var loaded = Context.Load<TtlTestItem>(item.Id);
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(item.Id, loaded.Id);
+            Assert.AreEqual(item.Data, loaded.Data);
+            Assert.AreEqual(item.Ttl, loaded.Ttl);
+
+            item.Ttl = DateTimeOffset.UtcNow.AddMinutes(3).ToUnixTimeSeconds();
+            Context.Save(item);
+            var loaded2 = Context.Load<TtlTestItem>(item.Id);
+            Assert.IsNotNull(loaded2);
+            Assert.AreEqual(item.Id, loaded2.Id);
+            Assert.AreEqual(item.Data, loaded2.Data);
+            Assert.AreEqual(item.Ttl, loaded2.Ttl);
+        }
+
+        // Example model for TTL
+        [DynamoDBTable("HashTable")]
+        public class TtlTestItem
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public string Data { get; set; }
+
+            [DynamoDBProperty("TTL")]
+            public long Ttl { get; set; }
+        }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]

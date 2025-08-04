@@ -127,6 +127,41 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        internal void ApplyConditionalExpression(UpdateItemRequest request, Table table)
+        {
+            request.ConditionExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        internal void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        {
+            request.UpdateExpression = this.ExpressionStatement;
+            MergeAttributes(request, table);
+        }
+
+        private void MergeAttributes(UpdateItemRequest request, Table table)
+        {
+            var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+            request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+            foreach (var kvp in convertToAttributeValues)
+            {
+                request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+            }
+
+
+            if (this.ExpressionAttributeNames?.Count > 0)
+            {
+                request.ExpressionAttributeNames ??= new Dictionary<string, string>(StringComparer.Ordinal);
+                foreach (var kvp in this.ExpressionAttributeNames)
+                {
+                    if (!request.ExpressionAttributeNames.ContainsKey(kvp.Key))
+                    {
+                        request.ExpressionAttributeNames[kvp.Key] = kvp.Value;
+                    }
+                }
+            }
+        }
+
         internal void ApplyExpression(Get request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;

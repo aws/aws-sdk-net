@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem"/>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem(Document)"/>
         /// </summary>
         /// <param name="doc">Document to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
@@ -45,13 +45,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem"/>
+        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.Table.PutItem(Document, PutItemOperationConfig)"/>
         /// </summary>
         /// <param name="doc">Document to save.</param>
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task<Document> PutItemAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutItem operation.
+        /// <seealso cref="Table.PutItem(Amazon.DynamoDBv2.DocumentModel.Document,Amazon.DynamoDBv2.DocumentModel.PutItemOperationConfig)"/>
+        /// </summary>
+        /// <param name="request">The PutItemDocumentOperationRequest object containing all parameters for the PutItem operation.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> PutItemAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+
 
         #endregion
 
@@ -274,6 +285,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="request">The DeleteItemDocumentOperationRequest object containing all parameters for the delete operation.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
         #endregion
     }
 
@@ -299,6 +318,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 return await PutItemHelperAsync(doc, config, cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<Document> PutItemAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(PutItemAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await PutItemHelperAsync(request, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -457,7 +486,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItemAsync));
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                throw new NotImplementedException();
+                return await UpdateHelperAsync(request, cancellationToken).ConfigureAwait(false);
+
             }
         }
 
@@ -535,15 +565,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        /// <inheritdoc/>
-        public async Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItemAsync));
-            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            /// <inheritdoc/>
+            public async Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
             {
-                return await DeleteHelperAsync(MakeKey(key), config, cancellationToken).ConfigureAwait(false);
+                var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItemAsync));
+                using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+                {
+                    return await DeleteHelperAsync(MakeKey(key), config, cancellationToken).ConfigureAwait(false);
+                }
             }
-        }
+            /// <inheritdoc/>
+            public async Task<Document> DeleteItemAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItemAsync));
+                using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+                {
+                    return await DeleteHelperAsync(request, cancellationToken).ConfigureAwait(false);
+                }
+            }
 
         #endregion
 

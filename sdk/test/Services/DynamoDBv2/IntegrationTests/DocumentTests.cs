@@ -83,6 +83,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test Count on Query
                 TestSelectCountOnQuery(hashTable);
+
+                TestExpressionPutWithDocumentOperationRequest(hashTable);
+                TestExpressionUpdateWithDocumentOperationRequest(hashTable);
+                TestExpressionsOnDeleteWithDocumentOperationRequest(hashTable);
+
             }
         }
 
@@ -163,6 +168,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test that attributes stored as Datetimes can be retrieved in UTC.
                 TestAsDateTimeUtc(numericHashRangeTable);
+
+                TestExpressionPutWithDocumentOperationRequest(hashTable);
+                TestExpressionUpdateWithDocumentOperationRequest(hashTable);
+                TestExpressionsOnDeleteWithDocumentOperationRequest(hashTable);
+
             }
         }
 
@@ -1850,6 +1860,148 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var docs = search.GetRemaining();
             Assert.AreEqual(1, search.Count);
             Assert.AreEqual(0, docs.Count);
+        }
+
+        private void TestExpressionPutWithDocumentOperationRequest(ITable table)
+        {
+            var doc = new Document
+            {
+                ["Id"] = DateTime.UtcNow.Ticks,
+                ["name"] = "docop-conditional-form"
+            };
+
+            table.PutItem(doc);
+
+            var conditionalExpression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(referencecounter) OR referencecounter = :zero",
+                ExpressionAttributeValues = { [":zero"] = 0 }
+            };
+
+            var putRequest = new PutItemDocumentOperationRequest
+            {
+                Document = doc,
+                ConditionalExpression = conditionalExpression
+            };
+
+            doc["update-test"] = 1;
+            Assert.IsTrue(table.TryPutItem(putRequest));
+
+            doc["referencecounter"] = 0;
+            table.UpdateItem(doc); 
+
+            doc["update-test"] = null;
+            Assert.IsTrue(table.TryPutItem(new PutItemDocumentOperationRequest { Document = doc, ConditionalExpression = conditionalExpression }));
+
+            var reloaded = table.GetItem(doc);
+            Assert.IsFalse(reloaded.Contains("update-test"));
+
+            doc["referencecounter"] = 1;
+            table.UpdateItem(doc);
+
+            doc["update-test"] = 3;
+            Assert.IsFalse(table.TryPutItem(new PutItemDocumentOperationRequest { Document = doc, ConditionalExpression = conditionalExpression }));
+
+            table.DeleteItem(doc);
+        }
+
+        private void TestExpressionUpdateWithDocumentOperationRequest(ITable table)
+        {
+            var doc = new Document
+            {
+                ["Id"] = DateTime.UtcNow.Ticks,
+                ["name"] = "docop-update-conditional"
+            };
+            table.PutItem(doc);
+
+            var conditionalExpression = new Expression
+            {
+                ExpressionStatement = "attribute_not_exists(referencecounter) OR referencecounter = :zero",
+                ExpressionAttributeValues = { [":zero"] = 0 }
+            };
+
+            var config = new UpdateItemOperationConfig
+            {
+                ConditionalExpression = conditionalExpression
+            };
+
+            doc["update-test"] = 1;
+            Assert.IsTrue(table.TryUpdateItem(new UpdateItemDocumentOperationRequest
+            {
+                Document = doc,
+                ConditionalExpression = conditionalExpression
+            }));
+
+            doc["referencecounter"] = 0;
+            table.UpdateItem(doc);
+
+            doc["update-test"] = null;
+            Assert.IsTrue(table.TryUpdateItem(new UpdateItemDocumentOperationRequest
+            {
+                Document = doc,
+                ConditionalExpression = conditionalExpression
+            }));
+
+            var reloaded = table.GetItem(doc);
+            Assert.IsFalse(reloaded.Contains("update-test"));
+
+            doc["referencecounter"] = 1;
+            table.UpdateItem(doc);
+
+            doc["update-test"] = 3;
+            Assert.IsFalse(table.TryUpdateItem(new UpdateItemDocumentOperationRequest
+            {
+                Document = doc,
+                ConditionalExpression = conditionalExpression
+            }));
+
+            table.DeleteItem(doc);
+        }
+
+        private void TestExpressionsOnDeleteWithDocumentOperationRequest(ITable table)
+        {
+            var doc = new Document
+            {
+                ["Id"] = 9001,
+                ["Price"] = 6
+            };
+            table.PutItem(doc);
+
+            var key = new Dictionary<string, DynamoDBEntry>
+            {
+                { "Id", doc["Id"] }
+            };
+
+            var expression = new Expression
+            {
+                ExpressionStatement = "Price > :price",
+                ExpressionAttributeValues = { [":price"] = 7 }
+            };
+
+            var failingRequest = new DeleteItemDocumentOperationRequest
+            {
+                Key = key,
+                ConditionalExpression = expression,
+                ReturnValues = ReturnValues.AllOldAttributes
+            };
+
+            Assert.IsFalse(table.TryDeleteItem(failingRequest));
+            Assert.IsNotNull(table.GetItem(doc));
+
+            expression.ExpressionAttributeValues[":price"] = 4;
+
+            var succeedingRequest = new DeleteItemDocumentOperationRequest
+            {
+                Key = key,
+                ConditionalExpression = expression,
+                ReturnValues = ReturnValues.AllOldAttributes
+            };
+
+            var oldAttributes = table.DeleteItem(succeedingRequest);
+            Assert.IsNotNull(oldAttributes);
+            Assert.AreEqual(6, oldAttributes["Price"].AsInt());
+
+            Assert.IsNull(table.GetItem(doc));
         }
 
         private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)
