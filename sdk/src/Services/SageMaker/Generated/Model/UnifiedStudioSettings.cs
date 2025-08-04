@@ -164,8 +164,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SingleSignOnApplicationArn. 
         /// <para>
-        /// The ARN of the application managed by SageMaker AI and SageMaker Unified Studio in
-        /// the Amazon Web Services IAM Identity Center.
+        /// The ARN of the Amazon DataZone application managed by Amazon SageMaker Unified Studio
+        /// in the Amazon Web Services IAM Identity Center.
         /// </para>
         /// </summary>
         public string SingleSignOnApplicationArn

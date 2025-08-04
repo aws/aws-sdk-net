@@ -21805,6 +21805,68 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type VolumeAttachmentStatus.
+    /// </summary>
+    public class VolumeAttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Attached for VolumeAttachmentStatus
+        /// </summary>
+        public static readonly VolumeAttachmentStatus Attached = new VolumeAttachmentStatus("attached");
+        /// <summary>
+        /// Constant Attaching for VolumeAttachmentStatus
+        /// </summary>
+        public static readonly VolumeAttachmentStatus Attaching = new VolumeAttachmentStatus("attaching");
+        /// <summary>
+        /// Constant Busy for VolumeAttachmentStatus
+        /// </summary>
+        public static readonly VolumeAttachmentStatus Busy = new VolumeAttachmentStatus("busy");
+        /// <summary>
+        /// Constant Detached for VolumeAttachmentStatus
+        /// </summary>
+        public static readonly VolumeAttachmentStatus Detached = new VolumeAttachmentStatus("detached");
+        /// <summary>
+        /// Constant Detaching for VolumeAttachmentStatus
+        /// </summary>
+        public static readonly VolumeAttachmentStatus Detaching = new VolumeAttachmentStatus("detaching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeAttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeAttachmentStatus FindValue(string value)
+        {
+            return FindValue<VolumeAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WarmPoolResourceStatus.
     /// </summary>
     public class WarmPoolResourceStatus : ConstantClass
