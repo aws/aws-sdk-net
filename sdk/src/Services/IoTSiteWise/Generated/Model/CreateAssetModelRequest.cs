@@ -40,7 +40,8 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  
     /// <para>
-    /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
+    /// You can create three types of asset models, <c>ASSET_MODEL</c>, <c>COMPONENT_MODEL</c>,
+    /// or an <c>INTERFACE</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -52,6 +53,11 @@ namespace Amazon.IoTSiteWise.Model
     ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
     /// models of other asset models. You can't create assets directly from this type of asset
     /// model. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>INTERFACE</b> – An interface is a type of model that defines a standard structure
+    /// that can be applied to different asset models.
     /// </para>
     ///  </li> </ul>
     /// </summary>

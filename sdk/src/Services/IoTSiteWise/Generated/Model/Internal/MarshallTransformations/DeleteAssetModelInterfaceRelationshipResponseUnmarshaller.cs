@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAssetModel operation
+    /// Response Unmarshaller for DeleteAssetModelInterfaceRelationship operation
     /// </summary>  
-    public class DescribeAssetModelResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteAssetModelInterfaceRelationshipResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAssetModelResponse response = new DescribeAssetModelResponse();
+            DeleteAssetModelInterfaceRelationshipResponse response = new DeleteAssetModelInterfaceRelationshipResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -58,64 +58,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModels", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetModelCompositeModel, AssetModelCompositeModelUnmarshaller>(AssetModelCompositeModelUnmarshaller.Instance);
-                    response.AssetModelCompositeModels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
-                    response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelCreationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.AssetModelCreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelExternalId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelExternalId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelHierarchies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetModelHierarchy, AssetModelHierarchyUnmarshaller>(AssetModelHierarchyUnmarshaller.Instance);
-                    response.AssetModelHierarchies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("assetModelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelLastUpdateDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.AssetModelLastUpdateDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelProperties", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
-                    response.AssetModelProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("assetModelStatus", targetDepth))
@@ -124,27 +70,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("assetModelType", targetDepth))
+                if (context.TestExpression("interfaceAssetModelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assetModelVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("interfaceDetails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InterfaceRelationship, InterfaceRelationshipUnmarshaller>(InterfaceRelationshipUnmarshaller.Instance);
-                    response.InterfaceDetails = unmarshaller.Unmarshall(context);
+                    response.InterfaceAssetModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-            if (context.ResponseData.IsHeaderPresent("ETag"))
-                response.ETag = context.ResponseData.GetHeaderValue("ETag");
 
             return response;
         }
@@ -167,6 +99,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictingOperationException"))
+                {
+                    return ConflictingOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -187,9 +123,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeAssetModelResponseUnmarshaller _instance = new DescribeAssetModelResponseUnmarshaller();        
+        private static DeleteAssetModelInterfaceRelationshipResponseUnmarshaller _instance = new DeleteAssetModelInterfaceRelationshipResponseUnmarshaller();        
 
-        internal static DescribeAssetModelResponseUnmarshaller GetInstance()
+        internal static DeleteAssetModelInterfaceRelationshipResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -197,7 +133,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAssetModelResponseUnmarshaller Instance
+        public static DeleteAssetModelInterfaceRelationshipResponseUnmarshaller Instance
         {
             get
             {

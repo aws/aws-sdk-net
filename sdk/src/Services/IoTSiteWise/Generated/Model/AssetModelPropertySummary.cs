@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains a summary of a property associated with a model.
+    /// Contains a summary of a property associated with a model. This includes information
+    /// about which interfaces the property belongs to, if any.
     /// </summary>
     public partial class AssetModelPropertySummary
     {
@@ -39,6 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _dataTypeSpec;
         private string _externalId;
         private string _id;
+        private List<InterfaceSummary> _interfaceSummaries = AWSConfigs.InitializeCollections ? new List<InterfaceSummary>() : null;
         private string _name;
         private List<AssetModelPropertyPathSegment> _path = AWSConfigs.InitializeCollections ? new List<AssetModelPropertyPathSegment>() : null;
         private PropertyType _type;
@@ -139,6 +141,26 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceSummaries. 
+        /// <para>
+        /// A list of interface summaries that describe which interfaces this property belongs
+        /// to, including the interface asset model ID and the corresponding property ID in the
+        /// interface.
+        /// </para>
+        /// </summary>
+        public List<InterfaceSummary> InterfaceSummaries
+        {
+            get { return this._interfaceSummaries; }
+            set { this._interfaceSummaries = value; }
+        }
+
+        // Check to see if InterfaceSummaries property is set
+        internal bool IsSetInterfaceSummaries()
+        {
+            return this._interfaceSummaries != null && (this._interfaceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

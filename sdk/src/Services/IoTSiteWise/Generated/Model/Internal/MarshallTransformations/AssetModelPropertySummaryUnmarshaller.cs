@@ -96,6 +96,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("interfaceSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InterfaceSummary, InterfaceSummaryUnmarshaller>(InterfaceSummaryUnmarshaller.Instance);
+                    unmarshalledObject.InterfaceSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

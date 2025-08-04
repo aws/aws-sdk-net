@@ -578,7 +578,8 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  
         /// <para>
-        /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
+        /// You can create three types of asset models, <c>ASSET_MODEL</c>, <c>COMPONENT_MODEL</c>,
+        /// or an <c>INTERFACE</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -590,6 +591,11 @@ namespace Amazon.IoTSiteWise
         ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
         /// models of other asset models. You can't create assets directly from this type of asset
         /// model. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>INTERFACE</b> – An interface is a type of model that defines a standard structure
+        /// that can be applied to different asset models.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1339,6 +1345,49 @@ namespace Amazon.IoTSiteWise
 
         #endregion
                 
+        #region  DeleteAssetModelInterfaceRelationship
+
+
+
+        /// <summary>
+        /// Deletes an interface relationship between an asset model and an interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">REST API Reference for DeleteAssetModelInterfaceRelationship Operation</seealso>
+        Task<DeleteAssetModelInterfaceRelationshipResponse> DeleteAssetModelInterfaceRelationshipAsync(DeleteAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteComputationModel
 
 
@@ -1823,7 +1872,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves information about an asset model.
+        /// Retrieves information about an asset model. This includes details about the asset
+        /// model's properties, hierarchies, composite models, and any interface relationships
+        /// if the asset model implements interfaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModel service method.</param>
         /// <param name="cancellationToken">
@@ -1895,6 +1946,46 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
         Task<DescribeAssetModelCompositeModelResponse> DescribeAssetModelCompositeModelAsync(DescribeAssetModelCompositeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeAssetModelInterfaceRelationship
+
+
+
+        /// <summary>
+        /// Retrieves information about an interface relationship between an asset model and an
+        /// interface asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">REST API Reference for DescribeAssetModelInterfaceRelationship Operation</seealso>
+        Task<DescribeAssetModelInterfaceRelationshipResponse> DescribeAssetModelInterfaceRelationshipAsync(DescribeAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3780,6 +3871,46 @@ namespace Amazon.IoTSiteWise
 
         #endregion
                 
+        #region  ListInterfaceRelationships
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset models that have a specific interface asset model
+        /// applied to them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInterfaceRelationships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInterfaceRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">REST API Reference for ListInterfaceRelationships Operation</seealso>
+        Task<ListInterfaceRelationshipsResponse> ListInterfaceRelationshipsAsync(ListInterfaceRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPortals
 
 
@@ -3981,6 +4112,61 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
         Task<ListTimeSeriesResponse> ListTimeSeriesAsync(ListTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutAssetModelInterfaceRelationship
+
+
+
+        /// <summary>
+        /// Creates or updates an interface relationship between an asset model and an interface
+        /// asset model. This operation applies an interface to an asset model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAssetModelInterfaceRelationship service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAssetModelInterfaceRelationship service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the quota for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">REST API Reference for PutAssetModelInterfaceRelationship Operation</seealso>
+        Task<PutAssetModelInterfaceRelationshipResponse> PutAssetModelInterfaceRelationshipAsync(PutAssetModelInterfaceRelationshipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

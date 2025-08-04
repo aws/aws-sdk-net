@@ -49,6 +49,7 @@ namespace Amazon.IoTSiteWise.Model
         private AssetModelType _assetModelType;
         private string _assetModelVersion;
         private string _eTag;
+        private List<InterfaceRelationship> _interfaceDetails = AWSConfigs.InitializeCollections ? new List<InterfaceRelationship>() : null;
 
         /// <summary>
         /// Gets and sets the property AssetModelArn. 
@@ -363,6 +364,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetETag()
         {
             return !string.IsNullOrEmpty(this._eTag);
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceDetails. 
+        /// <para>
+        /// A list of interface details that describe the interfaces implemented by this asset
+        /// model, including interface asset model IDs and property mappings.
+        /// </para>
+        /// </summary>
+        public List<InterfaceRelationship> InterfaceDetails
+        {
+            get { return this._interfaceDetails; }
+            set { this._interfaceDetails = value; }
+        }
+
+        // Check to see if InterfaceDetails property is set
+        internal bool IsSetInterfaceDetails()
+        {
+            return this._interfaceDetails != null && (this._interfaceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

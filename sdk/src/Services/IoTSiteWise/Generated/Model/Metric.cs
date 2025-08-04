@@ -67,7 +67,7 @@ namespace Amazon.IoTSiteWise.Model
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string Expression
         {
             get { return this._expression; }
@@ -106,7 +106,6 @@ namespace Amazon.IoTSiteWise.Model
         /// The list of variables used in the expression.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<ExpressionVariable> Variables
         {
             get { return this._variables; }

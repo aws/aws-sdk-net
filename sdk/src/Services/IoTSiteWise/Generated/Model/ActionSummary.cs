@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains the summary of the actions.
+    /// Contains the summary of the actions, including information about where the action
+    /// resolves to.
     /// </summary>
     public partial class ActionSummary
     {

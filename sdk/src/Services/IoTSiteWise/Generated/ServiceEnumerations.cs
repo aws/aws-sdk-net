@@ -216,6 +216,10 @@ namespace Amazon.IoTSiteWise
         /// Constant COMPONENT_MODEL for AssetModelType
         /// </summary>
         public static readonly AssetModelType COMPONENT_MODEL = new AssetModelType("COMPONENT_MODEL");
+        /// <summary>
+        /// Constant INTERFACE for AssetModelType
+        /// </summary>
+        public static readonly AssetModelType INTERFACE = new AssetModelType("INTERFACE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
