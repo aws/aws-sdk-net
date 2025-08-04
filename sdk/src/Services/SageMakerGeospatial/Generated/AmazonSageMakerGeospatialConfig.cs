@@ -33,7 +33,7 @@ namespace Amazon.SageMakerGeospatial
     public partial class AmazonSageMakerGeospatialConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker Geospatial", "4.0.0.15");
+            InternalSDKUtils.BuildUserAgentString("SageMaker Geospatial", "4.0.0.16");
 
         private static readonly AmazonSageMakerGeospatialEndpointResolver EndpointResolver =
             new AmazonSageMakerGeospatialEndpointResolver();

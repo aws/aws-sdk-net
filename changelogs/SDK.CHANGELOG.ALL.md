@@ -1,3 +1,18 @@
+### 4.0.62.0 (2025-08-04 21:40 UTC)
+* BedrockAgentCore (4.0.1.0)
+	* Remove superfluous field from API
+* CodeConnections (4.0.1.0)
+	* New integration with Azure DevOps provider type.
+* Evs (4.0.1.0)
+	* TagResource API now throws ServiceQuotaExceededException when the number of tags on the Amazon EVS resource exceeds the maximum allowed. TooManyTagsException is deprecated.
+* IoTSiteWise (4.0.2.0)
+	* Support Interface for IoT SiteWise Asset Modeling
+* SageMaker (4.0.15.0)
+	* This release adds the ability for customers to attach and detach their EBS volumes to EKS-orchestrated HyperPod cluster nodes.
+* Core 4.0.0.20
+	* Update HTTP handler to handle scenario where content stream position is not zero (https://github.com/aws/aws-sdk-net/issues/3941)
+	* All services packages updated to require new Core
+
 ### 4.0.61.0 (2025-08-01 18:25 UTC)
 * ACMPCA (4.0.0.16)
 	* Doc-only update to add more information to GetCertificate action.
