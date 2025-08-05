@@ -1,3 +1,17 @@
+### 4.0.63.0 (2025-08-05 18:40 UTC)
+* Bedrock (4.0.9.0)
+	* This release introduces Automated Reasoning checks for Amazon Bedrock Guardrails. The feature adds new APIs for policy building, refinement, version management, and testing. Guardrail APIs now support Automated Reasoning policy configuration and validation output.
+* BedrockRuntime (4.0.3.0)
+	* This release adds support for Automated Reasoning checks output models for the Amazon Bedrock Guardrails ApplyGuardrail API.
+* DynamoDBv2 (4.0.3.3)
+	* Update exception message for native aot error handling for dynamodb deserialization.
+* EKS (4.0.3.0)
+	* Add support for deletion protection on EKS clusters
+* RDS (4.0.5.0)
+	* Adds a new Aurora Serverless v2 attribute to the DBCluster resource to expose the platform version. Also updates the attribute to be part of both the engine version and platform version descriptions.
+* SageMaker (4.0.16.0)
+	* Add support for SageMaker Hyperpod continuous scaling and custom AMI; Introduce new APIs: ListClusterEvents, DescribeClusterEvent, BatchAddClusterNodes
+
 ### 4.0.62.0 (2025-08-04 21:40 UTC)
 * BedrockAgentCore (4.0.1.0)
 	* Remove superfluous field from API
