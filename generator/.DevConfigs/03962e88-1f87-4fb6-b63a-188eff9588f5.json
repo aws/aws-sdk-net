@@ -7,5 +7,12 @@
         "Generate Get and PutLifecycleConfiguration. Generate Put and GetBucketConfiguration"
       ]
     }
-  ]
+  ],
+    "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add XmlStructureUnmarshallCustomization hook for all xml structures"
+    ]
+  }
 }

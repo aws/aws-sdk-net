@@ -239,8 +239,10 @@ namespace ServiceClientGenerator
 
             foreach (var operation in operations)
             {
-                GenerateRequest(operation);
-                GenerateResponse(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                    GenerateRequest(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    GenerateResponse(operation);
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
                 GenerateEndpointDiscoveryMarshaller(operation);
@@ -446,9 +448,6 @@ namespace ServiceClientGenerator
                 suppressResultGeneration =
                     operation.ResponseStructure == null ||
                     this.Configuration.ServiceModel.Customizations.ResultGenerationSuppressions.Contains(operation.Name);
-
-                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
-                    return;
 
                 if (suppressResultGeneration)
                 {
