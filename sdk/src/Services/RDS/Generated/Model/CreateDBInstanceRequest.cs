@@ -2116,9 +2116,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones
-        /// (AZs) are managed by the DB cluster.
+        /// This setting doesn't apply to the following DB instances:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RDS Custom
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool MultiAZ
         {

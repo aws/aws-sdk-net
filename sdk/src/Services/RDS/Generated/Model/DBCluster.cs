@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.
+    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. 
     /// 
     ///  
     /// <para>
@@ -136,6 +136,7 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationSourceIdentifier;
         private ScalingConfigurationInfo _scalingConfigurationInfo;
+        private string _serverlessV2PlatformVersion;
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private List<DBClusterStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBClusterStatusInfo>() : null;
@@ -1703,6 +1704,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetScalingConfigurationInfo()
         {
             return this._scalingConfigurationInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2PlatformVersion. 
+        /// <para>
+        /// The version of the Aurora Serverless V2 platform used by the DB cluster. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using
+        /// Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ServerlessV2PlatformVersion
+        {
+            get { return this._serverlessV2PlatformVersion; }
+            set { this._serverlessV2PlatformVersion = value; }
+        }
+
+        // Check to see if ServerlessV2PlatformVersion property is set
+        internal bool IsSetServerlessV2PlatformVersion()
+        {
+            return this._serverlessV2PlatformVersion != null;
         }
 
         /// <summary>
