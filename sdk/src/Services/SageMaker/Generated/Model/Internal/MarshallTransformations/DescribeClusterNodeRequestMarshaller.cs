@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NodeId);
             }
 
+            if(publicRequest.IsSetNodeLogicalId())
+            {
+                context.Writer.WritePropertyName("NodeLogicalId");
+                context.Writer.WriteStringValue(publicRequest.NodeLogicalId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _failureMessage;
         private List<ClusterInstanceGroupDetails> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupDetails>() : null;
+        private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupDetails> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupDetails>() : null;
@@ -160,6 +161,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeProvisioningMode. 
+        /// <para>
+        /// The mode used for provisioning nodes in the cluster.
+        /// </para>
+        /// </summary>
+        public ClusterNodeProvisioningMode NodeProvisioningMode
+        {
+            get { return this._nodeProvisioningMode; }
+            set { this._nodeProvisioningMode = value; }
+        }
+
+        // Check to see if NodeProvisioningMode property is set
+        internal bool IsSetNodeProvisioningMode()
+        {
+            return this._nodeProvisioningMode != null;
         }
 
         /// <summary>

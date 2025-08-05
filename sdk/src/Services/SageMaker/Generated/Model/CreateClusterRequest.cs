@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
+        private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
@@ -88,6 +89,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeProvisioningMode. 
+        /// <para>
+        /// The mode for provisioning nodes in the cluster. You can specify the following modes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Continuous</b>: Scaling behavior that enables 1) concurrent operation execution
+        /// within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced
+        /// customer visibility into cluster events through detailed event streams, 4) partial
+        /// provisioning capabilities. Your clusters and instance groups remain <c>InService</c>
+        /// while scaling. This mode is only supported for EKS orchestrated clusters.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ClusterNodeProvisioningMode NodeProvisioningMode
+        {
+            get { return this._nodeProvisioningMode; }
+            set { this._nodeProvisioningMode = value; }
+        }
+
+        // Check to see if NodeProvisioningMode property is set
+        internal bool IsSetNodeProvisioningMode()
+        {
+            return this._nodeProvisioningMode != null;
         }
 
         /// <summary>

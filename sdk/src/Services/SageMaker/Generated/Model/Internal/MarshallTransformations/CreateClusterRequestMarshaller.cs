@@ -97,6 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetNodeProvisioningMode())
+            {
+                context.Writer.WritePropertyName("NodeProvisioningMode");
+                context.Writer.WriteStringValue(publicRequest.NodeProvisioningMode);
+            }
+
             if(publicRequest.IsSetNodeRecovery())
             {
                 context.Writer.WritePropertyName("NodeRecovery");

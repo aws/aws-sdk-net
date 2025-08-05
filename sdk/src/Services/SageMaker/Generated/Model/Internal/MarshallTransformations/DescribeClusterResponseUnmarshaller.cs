@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.InstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NodeProvisioningMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NodeProvisioningMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NodeRecovery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
