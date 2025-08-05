@@ -108,6 +108,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deletionProtection", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("encryptionConfig", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EncryptionConfig, EncryptionConfigUnmarshaller>(EncryptionConfigUnmarshaller.Instance);

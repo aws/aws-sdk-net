@@ -1218,6 +1218,10 @@ namespace Amazon.EKS
         /// principal</a> that doesn't have permissions to use the action or resource or specifying
         /// an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>

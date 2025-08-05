@@ -41,6 +41,7 @@ namespace Amazon.EKS.Model
         private ComputeConfigResponse _computeConfig;
         private ConnectorConfigResponse _connectorConfig;
         private DateTime? _createdAt;
+        private bool? _deletionProtection;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private string _endpoint;
         private ClusterHealth _health;
@@ -190,6 +191,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// The current deletion protection setting for the cluster. When <c>true</c>, deletion
+        /// protection is enabled and the cluster cannot be deleted until protection is disabled.
+        /// When <c>false</c>, the cluster can be deleted normally. This setting only applies
+        /// to clusters in an active state.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>

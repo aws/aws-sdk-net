@@ -1925,6 +1925,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
         /// <summary>
+        /// Constant DeletionProtection for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType DeletionProtection = new UpdateParamType("DeletionProtection");
+        /// <summary>
         /// Constant DesiredSize for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType DesiredSize = new UpdateParamType("DesiredSize");
@@ -2172,6 +2176,10 @@ namespace Amazon.EKS
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
+        /// <summary>
+        /// Constant DeletionProtectionUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType DeletionProtectionUpdate = new UpdateType("DeletionProtectionUpdate");
         /// <summary>
         /// Constant DisassociateIdentityProviderConfig for UpdateType
         /// </summary>

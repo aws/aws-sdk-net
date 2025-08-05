@@ -103,6 +103,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("deletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
+                }
+
                 if(publicRequest.IsSetKubernetesNetworkConfig())
                 {
                     context.Writer.WritePropertyName("kubernetesNetworkConfig");

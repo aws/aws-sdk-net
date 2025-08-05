@@ -85,6 +85,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+                {
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
                 {
                     return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
