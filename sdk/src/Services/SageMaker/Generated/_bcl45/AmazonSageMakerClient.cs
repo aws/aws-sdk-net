@@ -570,6 +570,81 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchAddClusterNodes
+
+
+        /// <summary>
+        /// Adds nodes to a HyperPod cluster by incrementing the target count for one or more
+        /// instance groups. This operation returns a unique <c>NodeLogicalId</c> for each node
+        /// being added, which can be used to track the provisioning status of the node. This
+        /// API provides a safer alternative to <c>UpdateCluster</c> for scaling operations by
+        /// avoiding unintended configuration changes.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchAddClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        public virtual BatchAddClusterNodesResponse BatchAddClusterNodes(BatchAddClusterNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddClusterNodesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAddClusterNodesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds nodes to a HyperPod cluster by incrementing the target count for one or more
+        /// instance groups. This operation returns a unique <c>NodeLogicalId</c> for each node
+        /// being added, which can be used to track the provisioning status of the node. This
+        /// API provides a safer alternative to <c>UpdateCluster</c> for scaling operations by
+        /// avoiding unintended configuration changes.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAddClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        public virtual Task<BatchAddClusterNodesResponse> BatchAddClusterNodesAsync(BatchAddClusterNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddClusterNodesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchAddClusterNodesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteClusterNodes
 
 
@@ -9636,6 +9711,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeClusterEvent
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific event for a given HyperPod cluster.
+        /// This functionality is only supported when the <c>NodeProvisioningMode</c> is set to
+        /// <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterEvent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        public virtual DescribeClusterEventResponse DescribeClusterEvent(DescribeClusterEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterEventResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific event for a given HyperPod cluster.
+        /// This functionality is only supported when the <c>NodeProvisioningMode</c> is set to
+        /// <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterEvent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        public virtual Task<DescribeClusterEventResponse> DescribeClusterEventAsync(DescribeClusterEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeClusterEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeClusterNode
 
 
@@ -13405,6 +13531,57 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListCandidatesForAutoMLJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCandidatesForAutoMLJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClusterEvents
+
+
+        /// <summary>
+        /// Retrieves a list of event summaries for a specified HyperPod cluster. The operation
+        /// supports filtering, sorting, and pagination of results. This functionality is only
+        /// supported when the <c>NodeProvisioningMode</c> is set to <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterEvents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        public virtual ListClusterEventsResponse ListClusterEvents(ListClusterEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of event summaries for a specified HyperPod cluster. The operation
+        /// supports filtering, sorting, and pagination of results. This functionality is only
+        /// supported when the <c>NodeProvisioningMode</c> is set to <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusterEvents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        public virtual Task<ListClusterEventsResponse> ListClusterEventsAsync(ListClusterEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListClusterEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion

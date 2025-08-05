@@ -35,6 +35,8 @@ namespace Amazon.SageMaker.Model
     public partial class ClusterInstanceGroupDetails
     {
         private int? _currentCount;
+        private string _currentImageId;
+        private string _desiredImageId;
         private string _executionRole;
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
@@ -67,6 +69,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCurrentCount()
         {
             return this._currentCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) currently in use by the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string CurrentImageId
+        {
+            get { return this._currentImageId; }
+            set { this._currentImageId = value; }
+        }
+
+        // Check to see if CurrentImageId property is set
+        internal bool IsSetCurrentImageId()
+        {
+            return this._currentImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) desired for the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string DesiredImageId
+        {
+            get { return this._desiredImageId; }
+            set { this._desiredImageId = value; }
+        }
+
+        // Check to see if DesiredImageId property is set
+        internal bool IsSetDesiredImageId()
+        {
+            return this._desiredImageId != null;
         }
 
         /// <summary>

@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private List<string> _nodeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _nodeLogicalIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -103,6 +104,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeIds()
         {
             return this._nodeIds != null && (this._nodeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLogicalIds. 
+        /// <para>
+        /// A list of <c>NodeLogicalIds</c> identifying the nodes to be deleted. You can specify
+        /// up to 50 <c>NodeLogicalIds</c>. You must specify either <c>NodeLogicalIds</c>, <c>InstanceIds</c>,
+        /// or both, with a combined maximum of 50 identifiers.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=99)]
+        public List<string> NodeLogicalIds
+        {
+            get { return this._nodeLogicalIds; }
+            set { this._nodeLogicalIds = value; }
+        }
+
+        // Check to see if NodeLogicalIds property is set
+        internal bool IsSetNodeLogicalIds()
+        {
+            return this._nodeLogicalIds != null && (this._nodeLogicalIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

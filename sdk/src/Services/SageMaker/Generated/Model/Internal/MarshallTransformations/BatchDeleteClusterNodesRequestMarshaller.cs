@@ -86,6 +86,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetNodeLogicalIds())
+                {
+                    context.Writer.WritePropertyName("NodeLogicalIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNodeLogicalIdsListValue in publicRequest.NodeLogicalIds)
+                    {
+                            context.Writer.Write(publicRequestNodeLogicalIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

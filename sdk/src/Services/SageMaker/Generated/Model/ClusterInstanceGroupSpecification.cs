@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ClusterInstanceGroupSpecification
     {
         private string _executionRole;
+        private string _imageId;
         private int? _instanceCount;
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
@@ -63,6 +64,63 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// When configuring your HyperPod cluster, you can specify an image ID using one of the
+        /// following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>HyperPodPublicAmiId</c>: Use a HyperPod public AMI
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CustomAmiId</c>: Use your custom AMI
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>default</c>: Use the default latest system image
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// f you choose to use a custom AMI (<c>CustomAmiId</c>), ensure it meets the following
+        /// requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Encryption: The custom AMI must be unencrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ownership: The custom AMI must be owned by the same Amazon Web Services account that
+        /// is creating the HyperPod cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Volume support: Only the primary AMI snapshot volume is supported; additional AMI
+        /// volumes are not supported.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When updating the instance group's AMI through the <c>UpdateClusterSoftware</c> operation,
+        /// if an instance group uses a custom AMI, you must provide an <c>ImageId</c> or use
+        /// the default as input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

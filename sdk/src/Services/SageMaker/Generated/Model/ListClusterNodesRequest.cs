@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _clusterName;
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
+        private bool? _includeNodeLogicalIds;
         private string _instanceGroupNameContains;
         private int? _maxResults;
         private string _nextToken;
@@ -132,6 +133,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTimeBefore()
         {
             return this._creationTimeBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeNodeLogicalIds. 
+        /// <para>
+        /// Specifies whether to include nodes that are still being provisioned in the response.
+        /// When set to true, the response includes all nodes regardless of their provisioning
+        /// status. When set to <c>False</c> (default), only nodes with assigned <c>InstanceIds</c>
+        /// are returned.
+        /// </para>
+        /// </summary>
+        public bool IncludeNodeLogicalIds
+        {
+            get { return this._includeNodeLogicalIds.GetValueOrDefault(); }
+            set { this._includeNodeLogicalIds = value; }
+        }
+
+        // Check to see if IncludeNodeLogicalIds property is set
+        internal bool IsSetIncludeNodeLogicalIds()
+        {
+            return this._includeNodeLogicalIds.HasValue; 
         }
 
         /// <summary>

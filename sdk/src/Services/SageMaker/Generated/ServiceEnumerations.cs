@@ -2893,6 +2893,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type BatchAddClusterNodesErrorCode.
+    /// </summary>
+    public class BatchAddClusterNodesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceGroupNotFound for BatchAddClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchAddClusterNodesErrorCode InstanceGroupNotFound = new BatchAddClusterNodesErrorCode("InstanceGroupNotFound");
+        /// <summary>
+        /// Constant InvalidInstanceGroupStatus for BatchAddClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchAddClusterNodesErrorCode InvalidInstanceGroupStatus = new BatchAddClusterNodesErrorCode("InvalidInstanceGroupStatus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchAddClusterNodesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchAddClusterNodesErrorCode FindValue(string value)
+        {
+            return FindValue<BatchAddClusterNodesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchAddClusterNodesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatchDeleteClusterNodesErrorCode.
     /// </summary>
     public class BatchDeleteClusterNodesErrorCode : ConstantClass
@@ -3256,6 +3306,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationType.
+    /// </summary>
+    public class CapacityReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRG for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType CRG = new CapacityReservationType("CRG");
+        /// <summary>
+        /// Constant ODCR for CapacityReservationType
+        /// </summary>
+        public static readonly CapacityReservationType ODCR = new CapacityReservationType("ODCR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationType FindValue(string value)
+        {
+            return FindValue<CapacityReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationType(string value)
         {
             return FindValue(value);
         }
@@ -3807,6 +3907,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterEventResourceType.
+    /// </summary>
+    public class ClusterEventResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cluster for ClusterEventResourceType
+        /// </summary>
+        public static readonly ClusterEventResourceType Cluster = new ClusterEventResourceType("Cluster");
+        /// <summary>
+        /// Constant Instance for ClusterEventResourceType
+        /// </summary>
+        public static readonly ClusterEventResourceType Instance = new ClusterEventResourceType("Instance");
+        /// <summary>
+        /// Constant InstanceGroup for ClusterEventResourceType
+        /// </summary>
+        public static readonly ClusterEventResourceType InstanceGroup = new ClusterEventResourceType("InstanceGroup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterEventResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterEventResourceType FindValue(string value)
+        {
+            return FindValue<ClusterEventResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterEventResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterInstanceStatus.
     /// </summary>
     public class ClusterInstanceStatus : ConstantClass
@@ -3820,6 +3974,10 @@ namespace Amazon.SageMaker
         /// Constant Failure for ClusterInstanceStatus
         /// </summary>
         public static readonly ClusterInstanceStatus Failure = new ClusterInstanceStatus("Failure");
+        /// <summary>
+        /// Constant NotFound for ClusterInstanceStatus
+        /// </summary>
+        public static readonly ClusterInstanceStatus NotFound = new ClusterInstanceStatus("NotFound");
         /// <summary>
         /// Constant Pending for ClusterInstanceStatus
         /// </summary>
@@ -4356,6 +4514,52 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterNodeProvisioningMode.
+    /// </summary>
+    public class ClusterNodeProvisioningMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Continuous for ClusterNodeProvisioningMode
+        /// </summary>
+        public static readonly ClusterNodeProvisioningMode Continuous = new ClusterNodeProvisioningMode("Continuous");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterNodeProvisioningMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterNodeProvisioningMode FindValue(string value)
+        {
+            return FindValue<ClusterNodeProvisioningMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterNodeProvisioningMode(string value)
         {
             return FindValue(value);
         }
@@ -6004,6 +6208,52 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventSortBy.
+    /// </summary>
+    public class EventSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EventTime for EventSortBy
+        /// </summary>
+        public static readonly EventSortBy EventTime = new EventSortBy("EventTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSortBy FindValue(string value)
+        {
+            return FindValue<EventSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSortBy(string value)
         {
             return FindValue(value);
         }

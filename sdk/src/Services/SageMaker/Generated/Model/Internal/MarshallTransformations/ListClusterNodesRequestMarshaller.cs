@@ -87,6 +87,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CreationTimeBefore);
                 }
 
+                if(publicRequest.IsSetIncludeNodeLogicalIds())
+                {
+                    context.Writer.WritePropertyName("IncludeNodeLogicalIds");
+                    context.Writer.Write(publicRequest.IncludeNodeLogicalIds);
+                }
+
                 if(publicRequest.IsSetInstanceGroupNameContains())
                 {
                     context.Writer.WritePropertyName("InstanceGroupNameContains");

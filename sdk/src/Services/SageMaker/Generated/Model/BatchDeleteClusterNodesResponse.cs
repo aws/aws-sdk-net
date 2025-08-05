@@ -35,7 +35,9 @@ namespace Amazon.SageMaker.Model
     public partial class BatchDeleteClusterNodesResponse : AmazonWebServiceResponse
     {
         private List<BatchDeleteClusterNodesError> _failed = AWSConfigs.InitializeCollections ? new List<BatchDeleteClusterNodesError>() : null;
+        private List<BatchDeleteClusterNodeLogicalIdsError> _failedNodeLogicalIds = AWSConfigs.InitializeCollections ? new List<BatchDeleteClusterNodeLogicalIdsError>() : null;
         private List<string> _successful = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _successfulNodeLogicalIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -57,6 +59,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailedNodeLogicalIds. 
+        /// <para>
+        /// A list of <c>NodeLogicalIds</c> that could not be deleted, along with error information
+        /// explaining why the deletion failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=99)]
+        public List<BatchDeleteClusterNodeLogicalIdsError> FailedNodeLogicalIds
+        {
+            get { return this._failedNodeLogicalIds; }
+            set { this._failedNodeLogicalIds = value; }
+        }
+
+        // Check to see if FailedNodeLogicalIds property is set
+        internal bool IsSetFailedNodeLogicalIds()
+        {
+            return this._failedNodeLogicalIds != null && (this._failedNodeLogicalIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
         /// A list of node IDs that were successfully deleted from the specified cluster.
@@ -73,6 +95,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSuccessful()
         {
             return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuccessfulNodeLogicalIds. 
+        /// <para>
+        /// A list of <c>NodeLogicalIds</c> that were successfully deleted from the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=99)]
+        public List<string> SuccessfulNodeLogicalIds
+        {
+            get { return this._successfulNodeLogicalIds; }
+            set { this._successfulNodeLogicalIds = value; }
+        }
+
+        // Check to see if SuccessfulNodeLogicalIds property is set
+        internal bool IsSetSuccessfulNodeLogicalIds()
+        {
+            return this._successfulNodeLogicalIds != null && (this._successfulNodeLogicalIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

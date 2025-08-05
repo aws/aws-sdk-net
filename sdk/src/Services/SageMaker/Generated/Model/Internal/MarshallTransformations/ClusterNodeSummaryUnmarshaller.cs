@@ -102,6 +102,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NodeLogicalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeLogicalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

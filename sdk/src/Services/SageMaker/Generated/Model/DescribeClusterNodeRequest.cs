@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _clusterName;
         private string _nodeId;
+        private string _nodeLogicalId;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -76,6 +77,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeId()
         {
             return this._nodeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLogicalId. 
+        /// <para>
+        /// The logical identifier of the node to describe. You can specify either <c>NodeLogicalId</c>
+        /// or <c>InstanceId</c>, but not both. <c>NodeLogicalId</c> can be used to describe nodes
+        /// that are still being provisioned and don't yet have an <c>InstanceId</c> assigned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string NodeLogicalId
+        {
+            get { return this._nodeLogicalId; }
+            set { this._nodeLogicalId = value; }
+        }
+
+        // Check to see if NodeLogicalId property is set
+        internal bool IsSetNodeLogicalId()
+        {
+            return this._nodeLogicalId != null;
         }
 
     }

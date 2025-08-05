@@ -559,6 +559,77 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchAddClusterNodes
+
+        /// <summary>
+        /// Adds nodes to a HyperPod cluster by incrementing the target count for one or more
+        /// instance groups. This operation returns a unique <c>NodeLogicalId</c> for each node
+        /// being added, which can be used to track the provisioning status of the node. This
+        /// API provides a safer alternative to <c>UpdateCluster</c> for scaling operations by
+        /// avoiding unintended configuration changes.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchAddClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        public virtual BatchAddClusterNodesResponse BatchAddClusterNodes(BatchAddClusterNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddClusterNodesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAddClusterNodesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAddClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddClusterNodes operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAddClusterNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        public virtual IAsyncResult BeginBatchAddClusterNodes(BatchAddClusterNodesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddClusterNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddClusterNodesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAddClusterNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAddClusterNodes.</param>
+        /// 
+        /// <returns>Returns a  BatchAddClusterNodesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchAddClusterNodes">REST API Reference for BatchAddClusterNodes Operation</seealso>
+        public virtual BatchAddClusterNodesResponse EndBatchAddClusterNodes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAddClusterNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDeleteClusterNodes
 
         /// <summary>
@@ -9514,6 +9585,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeClusterEvent
+
+        /// <summary>
+        /// Retrieves detailed information about a specific event for a given HyperPod cluster.
+        /// This functionality is only supported when the <c>NodeProvisioningMode</c> is set to
+        /// <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterEvent service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        public virtual DescribeClusterEventResponse DescribeClusterEvent(DescribeClusterEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterEventResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterEventResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterEvent operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClusterEvent(DescribeClusterEventRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterEventResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterEvent.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterEventResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterEvent">REST API Reference for DescribeClusterEvent Operation</seealso>
+        public virtual DescribeClusterEventResponse EndDescribeClusterEvent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClusterEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeClusterNode
 
         /// <summary>
@@ -14043,6 +14173,65 @@ namespace Amazon.SageMaker
         public virtual ListCandidatesForAutoMLJobResponse EndListCandidatesForAutoMLJob(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCandidatesForAutoMLJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClusterEvents
+
+        /// <summary>
+        /// Retrieves a list of event summaries for a specified HyperPod cluster. The operation
+        /// supports filtering, sorting, and pagination of results. This functionality is only
+        /// supported when the <c>NodeProvisioningMode</c> is set to <c>Continuous</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterEvents service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        public virtual ListClusterEventsResponse ListClusterEvents(ListClusterEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterEvents operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        public virtual IAsyncResult BeginListClusterEvents(ListClusterEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterEvents.</param>
+        /// 
+        /// <returns>Returns a  ListClusterEventsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterEvents">REST API Reference for ListClusterEvents Operation</seealso>
+        public virtual ListClusterEventsResponse EndListClusterEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClusterEventsResponse>(asyncResult);
         }
 
         #endregion

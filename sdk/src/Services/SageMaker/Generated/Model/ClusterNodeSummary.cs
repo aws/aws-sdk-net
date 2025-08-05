@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
+        private string _nodeLogicalId;
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 
@@ -153,6 +154,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLaunchTime()
         {
             return this._launchTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLogicalId. 
+        /// <para>
+        /// A unique identifier for the node that persists throughout its lifecycle, from provisioning
+        /// request to termination. This identifier can be used to track the node even before
+        /// it has an assigned <c>InstanceId</c>. This field is only included when <c>IncludeNodeLogicalIds</c>
+        /// is set to <c>True</c> in the <c>ListClusterNodes</c> request.
+        /// </para>
+        /// </summary>
+        public string NodeLogicalId
+        {
+            get { return this._nodeLogicalId; }
+            set { this._nodeLogicalId = value; }
+        }
+
+        // Check to see if NodeLogicalId property is set
+        internal bool IsSetNodeLogicalId()
+        {
+            return this._nodeLogicalId != null;
         }
 
     }
