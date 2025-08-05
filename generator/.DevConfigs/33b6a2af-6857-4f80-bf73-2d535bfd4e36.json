@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update exception message for native aot error handling for dynamodb deserialization."
+      ]
+    }
+  ]
+}
