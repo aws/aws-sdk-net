@@ -98,6 +98,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("deletionProtection", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("encryptionConfig", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EncryptionConfig, EncryptionConfigUnmarshaller>(EncryptionConfigUnmarshaller.Instance);
