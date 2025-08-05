@@ -303,6 +303,56 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailAutomatedReasoningLogicWarningType.
+    /// </summary>
+    public class GuardrailAutomatedReasoningLogicWarningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_FALSE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_FALSE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_FALSE");
+        /// <summary>
+        /// Constant ALWAYS_TRUE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_TRUE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAutomatedReasoningLogicWarningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAutomatedReasoningLogicWarningType FindValue(string value)
+        {
+            return FindValue<GuardrailAutomatedReasoningLogicWarningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAutomatedReasoningLogicWarningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterConfidence.
     /// </summary>
     public class GuardrailContentFilterConfidence : ConstantClass

@@ -66,6 +66,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("automatedReasoningPolicy", targetDepth))
+                {
+                    var unmarshaller = GuardrailAutomatedReasoningPolicyAssessmentUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedReasoningPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contentPolicy", targetDepth))
                 {
                     var unmarshaller = GuardrailContentPolicyAssessmentUnmarshaller.Instance;

@@ -34,6 +34,8 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailUsage
     {
+        private int? _automatedReasoningPolicies;
+        private int? _automatedReasoningPolicyUnits;
         private int? _contentPolicyImageUnits;
         private int? _contentPolicyUnits;
         private int? _contextualGroundingPolicyUnits;
@@ -41,6 +43,43 @@ namespace Amazon.BedrockRuntime.Model
         private int? _sensitiveInformationPolicyUnits;
         private int? _topicPolicyUnits;
         private int? _wordPolicyUnits;
+
+        /// <summary>
+        /// Gets and sets the property AutomatedReasoningPolicies. 
+        /// <para>
+        /// The number of automated reasoning policies that were processed during the guardrail
+        /// evaluation.
+        /// </para>
+        /// </summary>
+        public int AutomatedReasoningPolicies
+        {
+            get { return this._automatedReasoningPolicies.GetValueOrDefault(); }
+            set { this._automatedReasoningPolicies = value; }
+        }
+
+        // Check to see if AutomatedReasoningPolicies property is set
+        internal bool IsSetAutomatedReasoningPolicies()
+        {
+            return this._automatedReasoningPolicies.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedReasoningPolicyUnits. 
+        /// <para>
+        /// The number of text units processed by the automated reasoning policy.
+        /// </para>
+        /// </summary>
+        public int AutomatedReasoningPolicyUnits
+        {
+            get { return this._automatedReasoningPolicyUnits.GetValueOrDefault(); }
+            set { this._automatedReasoningPolicyUnits = value; }
+        }
+
+        // Check to see if AutomatedReasoningPolicyUnits property is set
+        internal bool IsSetAutomatedReasoningPolicyUnits()
+        {
+            return this._automatedReasoningPolicyUnits.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ContentPolicyImageUnits. 
