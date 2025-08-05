@@ -32,7 +32,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
     public partial class AmazonSageMakerFeatureStoreRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "3.7.500.2");
+            InternalSDKUtils.BuildUserAgentString("SageMaker FeatureStore Runtime", "3.7.500.3");
 
         private string _userAgent = UserAgentString;
         ///<summary>

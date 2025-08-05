@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentCore
     public partial class AmazonBedrockAgentCoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock AgentCore", "3.7.501.0");
+            InternalSDKUtils.BuildUserAgentString("Bedrock AgentCore", "3.7.501.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>
