@@ -1,0 +1,96 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the bedrock-2023-04-20.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.Bedrock.Model
+{
+    /// <summary>
+    /// Contains the various assets generated during a policy build workflow, including logs,
+    /// quality reports, and the final policy definition.
+    /// </summary>
+    public partial class AutomatedReasoningPolicyBuildResultAssets
+    {
+        private AutomatedReasoningPolicyBuildLog _buildLog;
+        private AutomatedReasoningPolicyDefinition _policyDefinition;
+        private AutomatedReasoningPolicyDefinitionQualityReport _qualityReport;
+
+        /// <summary>
+        /// Gets and sets the property BuildLog. 
+        /// <para>
+        /// The complete build log containing detailed information about each step in the policy
+        /// generation process.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyBuildLog BuildLog
+        {
+            get { return this._buildLog; }
+            set { this._buildLog = value; }
+        }
+
+        // Check to see if BuildLog property is set
+        internal bool IsSetBuildLog()
+        {
+            return this._buildLog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyDefinition.
+        /// </summary>
+        public AutomatedReasoningPolicyDefinition PolicyDefinition
+        {
+            get { return this._policyDefinition; }
+            set { this._policyDefinition = value; }
+        }
+
+        // Check to see if PolicyDefinition property is set
+        internal bool IsSetPolicyDefinition()
+        {
+            return this._policyDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QualityReport. 
+        /// <para>
+        /// A comprehensive report analyzing the quality of the generated policy, including metrics
+        /// about rule coverage, potential conflicts, and unused elements.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyDefinitionQualityReport QualityReport
+        {
+            get { return this._qualityReport; }
+            set { this._qualityReport = value; }
+        }
+
+        // Check to see if QualityReport property is set
+        internal bool IsSetQualityReport()
+        {
+            return this._qualityReport != null;
+        }
+
+    }
+}

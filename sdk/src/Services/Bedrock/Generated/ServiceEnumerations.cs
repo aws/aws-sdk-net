@@ -241,6 +241,574 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type AutomatedReasoningCheckLogicWarningType.
+    /// </summary>
+    public class AutomatedReasoningCheckLogicWarningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_FALSE for AutomatedReasoningCheckLogicWarningType
+        /// </summary>
+        public static readonly AutomatedReasoningCheckLogicWarningType ALWAYS_FALSE = new AutomatedReasoningCheckLogicWarningType("ALWAYS_FALSE");
+        /// <summary>
+        /// Constant ALWAYS_TRUE for AutomatedReasoningCheckLogicWarningType
+        /// </summary>
+        public static readonly AutomatedReasoningCheckLogicWarningType ALWAYS_TRUE = new AutomatedReasoningCheckLogicWarningType("ALWAYS_TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningCheckLogicWarningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningCheckLogicWarningType FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningCheckLogicWarningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningCheckLogicWarningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningCheckResult.
+    /// </summary>
+    public class AutomatedReasoningCheckResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPOSSIBLE for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult IMPOSSIBLE = new AutomatedReasoningCheckResult("IMPOSSIBLE");
+        /// <summary>
+        /// Constant INVALID for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult INVALID = new AutomatedReasoningCheckResult("INVALID");
+        /// <summary>
+        /// Constant NO_TRANSLATION for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult NO_TRANSLATION = new AutomatedReasoningCheckResult("NO_TRANSLATION");
+        /// <summary>
+        /// Constant SATISFIABLE for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult SATISFIABLE = new AutomatedReasoningCheckResult("SATISFIABLE");
+        /// <summary>
+        /// Constant TOO_COMPLEX for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult TOO_COMPLEX = new AutomatedReasoningCheckResult("TOO_COMPLEX");
+        /// <summary>
+        /// Constant TRANSLATION_AMBIGUOUS for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult TRANSLATION_AMBIGUOUS = new AutomatedReasoningCheckResult("TRANSLATION_AMBIGUOUS");
+        /// <summary>
+        /// Constant VALID for AutomatedReasoningCheckResult
+        /// </summary>
+        public static readonly AutomatedReasoningCheckResult VALID = new AutomatedReasoningCheckResult("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningCheckResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningCheckResult FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningCheckResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningCheckResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyAnnotationStatus.
+    /// </summary>
+    public class AutomatedReasoningPolicyAnnotationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLIED for AutomatedReasoningPolicyAnnotationStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyAnnotationStatus APPLIED = new AutomatedReasoningPolicyAnnotationStatus("APPLIED");
+        /// <summary>
+        /// Constant FAILED for AutomatedReasoningPolicyAnnotationStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyAnnotationStatus FAILED = new AutomatedReasoningPolicyAnnotationStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyAnnotationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyAnnotationStatus FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyAnnotationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyAnnotationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyBuildDocumentContentType.
+    /// </summary>
+    public class AutomatedReasoningPolicyBuildDocumentContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pdf for AutomatedReasoningPolicyBuildDocumentContentType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildDocumentContentType Pdf = new AutomatedReasoningPolicyBuildDocumentContentType("pdf");
+        /// <summary>
+        /// Constant Txt for AutomatedReasoningPolicyBuildDocumentContentType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildDocumentContentType Txt = new AutomatedReasoningPolicyBuildDocumentContentType("txt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyBuildDocumentContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyBuildDocumentContentType FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyBuildDocumentContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyBuildDocumentContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyBuildMessageType.
+    /// </summary>
+    public class AutomatedReasoningPolicyBuildMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for AutomatedReasoningPolicyBuildMessageType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildMessageType ERROR = new AutomatedReasoningPolicyBuildMessageType("ERROR");
+        /// <summary>
+        /// Constant INFO for AutomatedReasoningPolicyBuildMessageType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildMessageType INFO = new AutomatedReasoningPolicyBuildMessageType("INFO");
+        /// <summary>
+        /// Constant WARNING for AutomatedReasoningPolicyBuildMessageType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildMessageType WARNING = new AutomatedReasoningPolicyBuildMessageType("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyBuildMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyBuildMessageType FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyBuildMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyBuildMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyBuildResultAssetType.
+    /// </summary>
+    public class AutomatedReasoningPolicyBuildResultAssetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUILD_LOG for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType BUILD_LOG = new AutomatedReasoningPolicyBuildResultAssetType("BUILD_LOG");
+        /// <summary>
+        /// Constant POLICY_DEFINITION for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType POLICY_DEFINITION = new AutomatedReasoningPolicyBuildResultAssetType("POLICY_DEFINITION");
+        /// <summary>
+        /// Constant QUALITY_REPORT for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType QUALITY_REPORT = new AutomatedReasoningPolicyBuildResultAssetType("QUALITY_REPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyBuildResultAssetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyBuildResultAssetType FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyBuildResultAssetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyBuildResultAssetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyBuildWorkflowStatus.
+    /// </summary>
+    public class AutomatedReasoningPolicyBuildWorkflowStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUILDING for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus BUILDING = new AutomatedReasoningPolicyBuildWorkflowStatus("BUILDING");
+        /// <summary>
+        /// Constant CANCEL_REQUESTED for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus CANCEL_REQUESTED = new AutomatedReasoningPolicyBuildWorkflowStatus("CANCEL_REQUESTED");
+        /// <summary>
+        /// Constant CANCELLED for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus CANCELLED = new AutomatedReasoningPolicyBuildWorkflowStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus COMPLETED = new AutomatedReasoningPolicyBuildWorkflowStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus FAILED = new AutomatedReasoningPolicyBuildWorkflowStatus("FAILED");
+        /// <summary>
+        /// Constant PREPROCESSING for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus PREPROCESSING = new AutomatedReasoningPolicyBuildWorkflowStatus("PREPROCESSING");
+        /// <summary>
+        /// Constant SCHEDULED for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus SCHEDULED = new AutomatedReasoningPolicyBuildWorkflowStatus("SCHEDULED");
+        /// <summary>
+        /// Constant TESTING for AutomatedReasoningPolicyBuildWorkflowStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowStatus TESTING = new AutomatedReasoningPolicyBuildWorkflowStatus("TESTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyBuildWorkflowStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyBuildWorkflowStatus FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyBuildWorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyBuildWorkflowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyBuildWorkflowType.
+    /// </summary>
+    public class AutomatedReasoningPolicyBuildWorkflowType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT_POLICY for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType IMPORT_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("IMPORT_POLICY");
+        /// <summary>
+        /// Constant INGEST_CONTENT for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType INGEST_CONTENT = new AutomatedReasoningPolicyBuildWorkflowType("INGEST_CONTENT");
+        /// <summary>
+        /// Constant REFINE_POLICY for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType REFINE_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("REFINE_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyBuildWorkflowType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyBuildWorkflowType FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyBuildWorkflowType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyBuildWorkflowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyTestRunResult.
+    /// </summary>
+    public class AutomatedReasoningPolicyTestRunResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AutomatedReasoningPolicyTestRunResult
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunResult FAILED = new AutomatedReasoningPolicyTestRunResult("FAILED");
+        /// <summary>
+        /// Constant PASSED for AutomatedReasoningPolicyTestRunResult
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunResult PASSED = new AutomatedReasoningPolicyTestRunResult("PASSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyTestRunResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyTestRunResult FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyTestRunResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyTestRunResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomatedReasoningPolicyTestRunStatus.
+    /// </summary>
+    public class AutomatedReasoningPolicyTestRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for AutomatedReasoningPolicyTestRunStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunStatus COMPLETED = new AutomatedReasoningPolicyTestRunStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for AutomatedReasoningPolicyTestRunStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunStatus FAILED = new AutomatedReasoningPolicyTestRunStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for AutomatedReasoningPolicyTestRunStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunStatus IN_PROGRESS = new AutomatedReasoningPolicyTestRunStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for AutomatedReasoningPolicyTestRunStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunStatus NOT_STARTED = new AutomatedReasoningPolicyTestRunStatus("NOT_STARTED");
+        /// <summary>
+        /// Constant SCHEDULED for AutomatedReasoningPolicyTestRunStatus
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyTestRunStatus SCHEDULED = new AutomatedReasoningPolicyTestRunStatus("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedReasoningPolicyTestRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedReasoningPolicyTestRunStatus FindValue(string value)
+        {
+            return FindValue<AutomatedReasoningPolicyTestRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedReasoningPolicyTestRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CommitmentDuration.
     /// </summary>
     public class CommitmentDuration : ConstantClass

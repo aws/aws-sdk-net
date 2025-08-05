@@ -107,6 +107,267 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CancelAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Cancels a running Automated Reasoning policy build workflow. This stops the policy
+        /// generation process and prevents further processing of the source documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the CancelAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">REST API Reference for CancelAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        CancelAutomatedReasoningPolicyBuildWorkflowResponse CancelAutomatedReasoningPolicyBuildWorkflow(CancelAutomatedReasoningPolicyBuildWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelAutomatedReasoningPolicyBuildWorkflow operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelAutomatedReasoningPolicyBuildWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">REST API Reference for CancelAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        IAsyncResult BeginCancelAutomatedReasoningPolicyBuildWorkflow(CancelAutomatedReasoningPolicyBuildWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelAutomatedReasoningPolicyBuildWorkflow.</param>
+        /// 
+        /// <returns>Returns a  CancelAutomatedReasoningPolicyBuildWorkflowResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">REST API Reference for CancelAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        CancelAutomatedReasoningPolicyBuildWorkflowResponse EndCancelAutomatedReasoningPolicyBuildWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Creates an Automated Reasoning policy for Amazon Bedrock Guardrails. Automated Reasoning
+        /// policies use mathematical techniques to detect hallucinations, suggest corrections,
+        /// and highlight unstated assumptions in the responses of your GenAI application.
+        /// 
+        ///  
+        /// <para>
+        /// To create a policy, you upload a source document that describes the rules that you're
+        /// encoding. Automated Reasoning extracts important concepts from the source document
+        /// that will become variables in the policy and infers policy rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">REST API Reference for CreateAutomatedReasoningPolicy Operation</seealso>
+        CreateAutomatedReasoningPolicyResponse CreateAutomatedReasoningPolicy(CreateAutomatedReasoningPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicy operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomatedReasoningPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">REST API Reference for CreateAutomatedReasoningPolicy Operation</seealso>
+        IAsyncResult BeginCreateAutomatedReasoningPolicy(CreateAutomatedReasoningPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomatedReasoningPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomatedReasoningPolicyResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">REST API Reference for CreateAutomatedReasoningPolicy Operation</seealso>
+        CreateAutomatedReasoningPolicyResponse EndCreateAutomatedReasoningPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Creates a test for an Automated Reasoning policy. Tests validate that your policy
+        /// works as expected by providing sample inputs and expected outcomes. Use tests to verify
+        /// policy behavior before deploying to production.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">REST API Reference for CreateAutomatedReasoningPolicyTestCase Operation</seealso>
+        CreateAutomatedReasoningPolicyTestCaseResponse CreateAutomatedReasoningPolicyTestCase(CreateAutomatedReasoningPolicyTestCaseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyTestCase operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomatedReasoningPolicyTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">REST API Reference for CreateAutomatedReasoningPolicyTestCase Operation</seealso>
+        IAsyncResult BeginCreateAutomatedReasoningPolicyTestCase(CreateAutomatedReasoningPolicyTestCaseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomatedReasoningPolicyTestCase.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomatedReasoningPolicyTestCaseResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">REST API Reference for CreateAutomatedReasoningPolicyTestCase Operation</seealso>
+        CreateAutomatedReasoningPolicyTestCaseResponse EndCreateAutomatedReasoningPolicyTestCase(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicyVersion
+
+
+        /// <summary>
+        /// Creates a new version of an existing Automated Reasoning policy. This allows you to
+        /// iterate on your policy rules while maintaining previous versions for rollback or comparison
+        /// purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">REST API Reference for CreateAutomatedReasoningPolicyVersion Operation</seealso>
+        CreateAutomatedReasoningPolicyVersionResponse CreateAutomatedReasoningPolicyVersion(CreateAutomatedReasoningPolicyVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomatedReasoningPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyVersion operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomatedReasoningPolicyVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">REST API Reference for CreateAutomatedReasoningPolicyVersion Operation</seealso>
+        IAsyncResult BeginCreateAutomatedReasoningPolicyVersion(CreateAutomatedReasoningPolicyVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomatedReasoningPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomatedReasoningPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomatedReasoningPolicyVersionResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">REST API Reference for CreateAutomatedReasoningPolicyVersion Operation</seealso>
+        CreateAutomatedReasoningPolicyVersionResponse EndCreateAutomatedReasoningPolicyVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCustomModel
 
 
@@ -1171,6 +1432,189 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy or policy version. This operation is idempotent.
+        /// If you delete a policy more than once, each call succeeds. Deleting a policy removes
+        /// it permanently and cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">REST API Reference for DeleteAutomatedReasoningPolicy Operation</seealso>
+        DeleteAutomatedReasoningPolicyResponse DeleteAutomatedReasoningPolicy(DeleteAutomatedReasoningPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicy operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAutomatedReasoningPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">REST API Reference for DeleteAutomatedReasoningPolicy Operation</seealso>
+        IAsyncResult BeginDeleteAutomatedReasoningPolicy(DeleteAutomatedReasoningPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAutomatedReasoningPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteAutomatedReasoningPolicyResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">REST API Reference for DeleteAutomatedReasoningPolicy Operation</seealso>
+        DeleteAutomatedReasoningPolicyResponse EndDeleteAutomatedReasoningPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy build workflow and its associated artifacts.
+        /// This permanently removes the workflow history and any generated assets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">REST API Reference for DeleteAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        DeleteAutomatedReasoningPolicyBuildWorkflowResponse DeleteAutomatedReasoningPolicyBuildWorkflow(DeleteAutomatedReasoningPolicyBuildWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyBuildWorkflow operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAutomatedReasoningPolicyBuildWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">REST API Reference for DeleteAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        IAsyncResult BeginDeleteAutomatedReasoningPolicyBuildWorkflow(DeleteAutomatedReasoningPolicyBuildWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAutomatedReasoningPolicyBuildWorkflow.</param>
+        /// 
+        /// <returns>Returns a  DeleteAutomatedReasoningPolicyBuildWorkflowResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">REST API Reference for DeleteAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        DeleteAutomatedReasoningPolicyBuildWorkflowResponse EndDeleteAutomatedReasoningPolicyBuildWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy test. This operation is idempotent; if you delete
+        /// a test more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">REST API Reference for DeleteAutomatedReasoningPolicyTestCase Operation</seealso>
+        DeleteAutomatedReasoningPolicyTestCaseResponse DeleteAutomatedReasoningPolicyTestCase(DeleteAutomatedReasoningPolicyTestCaseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyTestCase operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAutomatedReasoningPolicyTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">REST API Reference for DeleteAutomatedReasoningPolicyTestCase Operation</seealso>
+        IAsyncResult BeginDeleteAutomatedReasoningPolicyTestCase(DeleteAutomatedReasoningPolicyTestCaseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAutomatedReasoningPolicyTestCase.</param>
+        /// 
+        /// <returns>Returns a  DeleteAutomatedReasoningPolicyTestCaseResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">REST API Reference for DeleteAutomatedReasoningPolicyTestCase Operation</seealso>
+        DeleteAutomatedReasoningPolicyTestCaseResponse EndDeleteAutomatedReasoningPolicyTestCase(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCustomModel
 
 
@@ -1847,6 +2291,463 @@ namespace Amazon.Bedrock
         /// <returns>Returns a  DeregisterMarketplaceModelEndpointResult from Bedrock.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">REST API Reference for DeregisterMarketplaceModelEndpoint Operation</seealso>
         DeregisterMarketplaceModelEndpointResponse EndDeregisterMarketplaceModelEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExportAutomatedReasoningPolicyVersion
+
+
+        /// <summary>
+        /// Exports the policy definition for an Automated Reasoning policy version. Returns the
+        /// complete policy definition including rules, variables, and custom variable types in
+        /// a structured format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutomatedReasoningPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the ExportAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">REST API Reference for ExportAutomatedReasoningPolicyVersion Operation</seealso>
+        ExportAutomatedReasoningPolicyVersionResponse ExportAutomatedReasoningPolicyVersion(ExportAutomatedReasoningPolicyVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportAutomatedReasoningPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutomatedReasoningPolicyVersion operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportAutomatedReasoningPolicyVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">REST API Reference for ExportAutomatedReasoningPolicyVersion Operation</seealso>
+        IAsyncResult BeginExportAutomatedReasoningPolicyVersion(ExportAutomatedReasoningPolicyVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportAutomatedReasoningPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportAutomatedReasoningPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  ExportAutomatedReasoningPolicyVersionResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">REST API Reference for ExportAutomatedReasoningPolicyVersion Operation</seealso>
+        ExportAutomatedReasoningPolicyVersionResponse EndExportAutomatedReasoningPolicyVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Retrieves details about an Automated Reasoning policy or policy version. Returns information
+        /// including the policy definition, metadata, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">REST API Reference for GetAutomatedReasoningPolicy Operation</seealso>
+        GetAutomatedReasoningPolicyResponse GetAutomatedReasoningPolicy(GetAutomatedReasoningPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicy operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">REST API Reference for GetAutomatedReasoningPolicy Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicy(GetAutomatedReasoningPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">REST API Reference for GetAutomatedReasoningPolicy Operation</seealso>
+        GetAutomatedReasoningPolicyResponse EndGetAutomatedReasoningPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyAnnotations
+
+
+        /// <summary>
+        /// Retrieves the current annotations for an Automated Reasoning policy build workflow.
+        /// Annotations contain corrections to the rules, variables and types to be applied to
+        /// the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyAnnotations service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">REST API Reference for GetAutomatedReasoningPolicyAnnotations Operation</seealso>
+        GetAutomatedReasoningPolicyAnnotationsResponse GetAutomatedReasoningPolicyAnnotations(GetAutomatedReasoningPolicyAnnotationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyAnnotations operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyAnnotations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">REST API Reference for GetAutomatedReasoningPolicyAnnotations Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyAnnotations(GetAutomatedReasoningPolicyAnnotationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyAnnotations.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyAnnotationsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">REST API Reference for GetAutomatedReasoningPolicyAnnotations Operation</seealso>
+        GetAutomatedReasoningPolicyAnnotationsResponse EndGetAutomatedReasoningPolicyAnnotations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Automated Reasoning policy build workflow,
+        /// including its status, configuration, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        GetAutomatedReasoningPolicyBuildWorkflowResponse GetAutomatedReasoningPolicyBuildWorkflow(GetAutomatedReasoningPolicyBuildWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflow operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyBuildWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyBuildWorkflow(GetAutomatedReasoningPolicyBuildWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyBuildWorkflow.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyBuildWorkflowResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        GetAutomatedReasoningPolicyBuildWorkflowResponse EndGetAutomatedReasoningPolicyBuildWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyBuildWorkflowResultAssets
+
+
+        /// <summary>
+        /// Retrieves the resulting assets from a completed Automated Reasoning policy build workflow,
+        /// including build logs, quality reports, and generated policy artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflowResultAssets Operation</seealso>
+        GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse GetAutomatedReasoningPolicyBuildWorkflowResultAssets(GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyBuildWorkflowResultAssets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflowResultAssets operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyBuildWorkflowResultAssets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflowResultAssets Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyBuildWorkflowResultAssets(GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyBuildWorkflowResultAssets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyBuildWorkflowResultAssets.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflowResultAssets Operation</seealso>
+        GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse EndGetAutomatedReasoningPolicyBuildWorkflowResultAssets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyNextScenario
+
+
+        /// <summary>
+        /// Retrieves the next test scenario for validating an Automated Reasoning policy. This
+        /// is used during the interactive policy refinement process to test policy behavior.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyNextScenario service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyNextScenario service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">REST API Reference for GetAutomatedReasoningPolicyNextScenario Operation</seealso>
+        GetAutomatedReasoningPolicyNextScenarioResponse GetAutomatedReasoningPolicyNextScenario(GetAutomatedReasoningPolicyNextScenarioRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyNextScenario operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyNextScenario operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyNextScenario
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">REST API Reference for GetAutomatedReasoningPolicyNextScenario Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyNextScenario(GetAutomatedReasoningPolicyNextScenarioRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyNextScenario operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyNextScenario.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyNextScenarioResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">REST API Reference for GetAutomatedReasoningPolicyNextScenario Operation</seealso>
+        GetAutomatedReasoningPolicyNextScenarioResponse EndGetAutomatedReasoningPolicyNextScenario(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Retrieves details about a specific Automated Reasoning policy test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">REST API Reference for GetAutomatedReasoningPolicyTestCase Operation</seealso>
+        GetAutomatedReasoningPolicyTestCaseResponse GetAutomatedReasoningPolicyTestCase(GetAutomatedReasoningPolicyTestCaseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestCase operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">REST API Reference for GetAutomatedReasoningPolicyTestCase Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyTestCase(GetAutomatedReasoningPolicyTestCaseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyTestCase.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyTestCaseResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">REST API Reference for GetAutomatedReasoningPolicyTestCase Operation</seealso>
+        GetAutomatedReasoningPolicyTestCaseResponse EndGetAutomatedReasoningPolicyTestCase(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyTestResult
+
+
+        /// <summary>
+        /// Retrieves the test result for a specific Automated Reasoning policy test. Returns
+        /// detailed validation findings and execution status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestResult service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestResult service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">REST API Reference for GetAutomatedReasoningPolicyTestResult Operation</seealso>
+        GetAutomatedReasoningPolicyTestResultResponse GetAutomatedReasoningPolicyTestResult(GetAutomatedReasoningPolicyTestResultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomatedReasoningPolicyTestResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestResult operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomatedReasoningPolicyTestResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">REST API Reference for GetAutomatedReasoningPolicyTestResult Operation</seealso>
+        IAsyncResult BeginGetAutomatedReasoningPolicyTestResult(GetAutomatedReasoningPolicyTestResultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAutomatedReasoningPolicyTestResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomatedReasoningPolicyTestResult.</param>
+        /// 
+        /// <returns>Returns a  GetAutomatedReasoningPolicyTestResultResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">REST API Reference for GetAutomatedReasoningPolicyTestResult Operation</seealso>
+        GetAutomatedReasoningPolicyTestResultResponse EndGetAutomatedReasoningPolicyTestResult(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2829,6 +3730,237 @@ namespace Amazon.Bedrock
         /// <returns>Returns a  GetUseCaseForModelAccessResult from Bedrock.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
         GetUseCaseForModelAccessResponse EndGetUseCaseForModelAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicies
+
+
+        /// <summary>
+        /// Lists all Automated Reasoning policies in your account, with optional filtering by
+        /// policy ARN. This helps you manage and discover existing policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicies service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">REST API Reference for ListAutomatedReasoningPolicies Operation</seealso>
+        ListAutomatedReasoningPoliciesResponse ListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomatedReasoningPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicies operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomatedReasoningPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">REST API Reference for ListAutomatedReasoningPolicies Operation</seealso>
+        IAsyncResult BeginListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomatedReasoningPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomatedReasoningPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListAutomatedReasoningPoliciesResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">REST API Reference for ListAutomatedReasoningPolicies Operation</seealso>
+        ListAutomatedReasoningPoliciesResponse EndListAutomatedReasoningPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyBuildWorkflows
+
+
+        /// <summary>
+        /// Lists all build workflows for an Automated Reasoning policy, showing the history of
+        /// policy creation and modification attempts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyBuildWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyBuildWorkflows service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">REST API Reference for ListAutomatedReasoningPolicyBuildWorkflows Operation</seealso>
+        ListAutomatedReasoningPolicyBuildWorkflowsResponse ListAutomatedReasoningPolicyBuildWorkflows(ListAutomatedReasoningPolicyBuildWorkflowsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomatedReasoningPolicyBuildWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyBuildWorkflows operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomatedReasoningPolicyBuildWorkflows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">REST API Reference for ListAutomatedReasoningPolicyBuildWorkflows Operation</seealso>
+        IAsyncResult BeginListAutomatedReasoningPolicyBuildWorkflows(ListAutomatedReasoningPolicyBuildWorkflowsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomatedReasoningPolicyBuildWorkflows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomatedReasoningPolicyBuildWorkflows.</param>
+        /// 
+        /// <returns>Returns a  ListAutomatedReasoningPolicyBuildWorkflowsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">REST API Reference for ListAutomatedReasoningPolicyBuildWorkflows Operation</seealso>
+        ListAutomatedReasoningPolicyBuildWorkflowsResponse EndListAutomatedReasoningPolicyBuildWorkflows(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyTestCases
+
+
+        /// <summary>
+        /// Lists tests for an Automated Reasoning policy. We recommend using pagination to ensure
+        /// that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestCases service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestCases service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">REST API Reference for ListAutomatedReasoningPolicyTestCases Operation</seealso>
+        ListAutomatedReasoningPolicyTestCasesResponse ListAutomatedReasoningPolicyTestCases(ListAutomatedReasoningPolicyTestCasesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomatedReasoningPolicyTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestCases operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomatedReasoningPolicyTestCases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">REST API Reference for ListAutomatedReasoningPolicyTestCases Operation</seealso>
+        IAsyncResult BeginListAutomatedReasoningPolicyTestCases(ListAutomatedReasoningPolicyTestCasesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomatedReasoningPolicyTestCases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomatedReasoningPolicyTestCases.</param>
+        /// 
+        /// <returns>Returns a  ListAutomatedReasoningPolicyTestCasesResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">REST API Reference for ListAutomatedReasoningPolicyTestCases Operation</seealso>
+        ListAutomatedReasoningPolicyTestCasesResponse EndListAutomatedReasoningPolicyTestCases(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyTestResults
+
+
+        /// <summary>
+        /// Lists test results for an Automated Reasoning policy, showing how the policy performed
+        /// against various test scenarios and validation checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestResults service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestResults service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">REST API Reference for ListAutomatedReasoningPolicyTestResults Operation</seealso>
+        ListAutomatedReasoningPolicyTestResultsResponse ListAutomatedReasoningPolicyTestResults(ListAutomatedReasoningPolicyTestResultsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomatedReasoningPolicyTestResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestResults operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomatedReasoningPolicyTestResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">REST API Reference for ListAutomatedReasoningPolicyTestResults Operation</seealso>
+        IAsyncResult BeginListAutomatedReasoningPolicyTestResults(ListAutomatedReasoningPolicyTestResultsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomatedReasoningPolicyTestResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomatedReasoningPolicyTestResults.</param>
+        /// 
+        /// <returns>Returns a  ListAutomatedReasoningPolicyTestResultsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">REST API Reference for ListAutomatedReasoningPolicyTestResults Operation</seealso>
+        ListAutomatedReasoningPolicyTestResultsResponse EndListAutomatedReasoningPolicyTestResults(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3928,6 +5060,137 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  StartAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Starts a new build workflow for an Automated Reasoning policy. This initiates the
+        /// process of analyzing source documents and generating policy rules, variables, and
+        /// types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">REST API Reference for StartAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        StartAutomatedReasoningPolicyBuildWorkflowResponse StartAutomatedReasoningPolicyBuildWorkflow(StartAutomatedReasoningPolicyBuildWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyBuildWorkflow operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAutomatedReasoningPolicyBuildWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">REST API Reference for StartAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        IAsyncResult BeginStartAutomatedReasoningPolicyBuildWorkflow(StartAutomatedReasoningPolicyBuildWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAutomatedReasoningPolicyBuildWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAutomatedReasoningPolicyBuildWorkflow.</param>
+        /// 
+        /// <returns>Returns a  StartAutomatedReasoningPolicyBuildWorkflowResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">REST API Reference for StartAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        StartAutomatedReasoningPolicyBuildWorkflowResponse EndStartAutomatedReasoningPolicyBuildWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartAutomatedReasoningPolicyTestWorkflow
+
+
+        /// <summary>
+        /// Initiates a test workflow to validate Automated Reasoning policy tests. The workflow
+        /// executes the specified tests against the policy and generates validation results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyTestWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyTestWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
+        StartAutomatedReasoningPolicyTestWorkflowResponse StartAutomatedReasoningPolicyTestWorkflow(StartAutomatedReasoningPolicyTestWorkflowRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAutomatedReasoningPolicyTestWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyTestWorkflow operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAutomatedReasoningPolicyTestWorkflow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
+        IAsyncResult BeginStartAutomatedReasoningPolicyTestWorkflow(StartAutomatedReasoningPolicyTestWorkflowRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAutomatedReasoningPolicyTestWorkflow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAutomatedReasoningPolicyTestWorkflow.</param>
+        /// 
+        /// <returns>Returns a  StartAutomatedReasoningPolicyTestWorkflowResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
+        StartAutomatedReasoningPolicyTestWorkflowResponse EndStartAutomatedReasoningPolicyTestWorkflow(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopEvaluationJob
 
 
@@ -4227,6 +5490,196 @@ namespace Amazon.Bedrock
         /// <returns>Returns a  UntagResourceResult from Bedrock.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy with new rules, variables, or configuration.
+        /// This creates a new version of the policy while preserving the previous version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">REST API Reference for UpdateAutomatedReasoningPolicy Operation</seealso>
+        UpdateAutomatedReasoningPolicyResponse UpdateAutomatedReasoningPolicy(UpdateAutomatedReasoningPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicy operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutomatedReasoningPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">REST API Reference for UpdateAutomatedReasoningPolicy Operation</seealso>
+        IAsyncResult BeginUpdateAutomatedReasoningPolicy(UpdateAutomatedReasoningPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutomatedReasoningPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutomatedReasoningPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutomatedReasoningPolicyResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">REST API Reference for UpdateAutomatedReasoningPolicy Operation</seealso>
+        UpdateAutomatedReasoningPolicyResponse EndUpdateAutomatedReasoningPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicyAnnotations
+
+
+        /// <summary>
+        /// Updates the annotations for an Automated Reasoning policy build workflow. This allows
+        /// you to modify extracted rules, variables, and types before finalizing the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyAnnotations service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">REST API Reference for UpdateAutomatedReasoningPolicyAnnotations Operation</seealso>
+        UpdateAutomatedReasoningPolicyAnnotationsResponse UpdateAutomatedReasoningPolicyAnnotations(UpdateAutomatedReasoningPolicyAnnotationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutomatedReasoningPolicyAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyAnnotations operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutomatedReasoningPolicyAnnotations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">REST API Reference for UpdateAutomatedReasoningPolicyAnnotations Operation</seealso>
+        IAsyncResult BeginUpdateAutomatedReasoningPolicyAnnotations(UpdateAutomatedReasoningPolicyAnnotationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutomatedReasoningPolicyAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutomatedReasoningPolicyAnnotations.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutomatedReasoningPolicyAnnotationsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">REST API Reference for UpdateAutomatedReasoningPolicyAnnotations Operation</seealso>
+        UpdateAutomatedReasoningPolicyAnnotationsResponse EndUpdateAutomatedReasoningPolicyAnnotations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy test. You can modify the content, query,
+        /// expected result, and confidence threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">REST API Reference for UpdateAutomatedReasoningPolicyTestCase Operation</seealso>
+        UpdateAutomatedReasoningPolicyTestCaseResponse UpdateAutomatedReasoningPolicyTestCase(UpdateAutomatedReasoningPolicyTestCaseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyTestCase operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAutomatedReasoningPolicyTestCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">REST API Reference for UpdateAutomatedReasoningPolicyTestCase Operation</seealso>
+        IAsyncResult BeginUpdateAutomatedReasoningPolicyTestCase(UpdateAutomatedReasoningPolicyTestCaseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAutomatedReasoningPolicyTestCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAutomatedReasoningPolicyTestCase.</param>
+        /// 
+        /// <returns>Returns a  UpdateAutomatedReasoningPolicyTestCaseResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">REST API Reference for UpdateAutomatedReasoningPolicyTestCase Operation</seealso>
+        UpdateAutomatedReasoningPolicyTestCaseResponse EndUpdateAutomatedReasoningPolicyTestCase(IAsyncResult asyncResult);
 
         #endregion
         

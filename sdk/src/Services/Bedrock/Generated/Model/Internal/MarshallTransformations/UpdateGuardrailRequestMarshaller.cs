@@ -70,6 +70,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutomatedReasoningPolicyConfig())
+                {
+                    context.Writer.WritePropertyName("automatedReasoningPolicyConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailAutomatedReasoningPolicyConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutomatedReasoningPolicyConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBlockedInputMessaging())
                 {
                     context.Writer.WritePropertyName("blockedInputMessaging");
