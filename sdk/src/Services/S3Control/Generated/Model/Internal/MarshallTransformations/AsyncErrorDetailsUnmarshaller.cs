@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AsyncErrorDetails Object
     /// </summary>  
-    public class AsyncErrorDetailsUnmarshaller : IXmlUnmarshaller<AsyncErrorDetails, XmlUnmarshallerContext>
+    public partial class AsyncErrorDetailsUnmarshaller : IXmlUnmarshaller<AsyncErrorDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AsyncErrorDetails unmarshalledObject, int targetDepth);
+
         private static AsyncErrorDetailsUnmarshaller _instance = new AsyncErrorDetailsUnmarshaller();        
 
         /// <summary>

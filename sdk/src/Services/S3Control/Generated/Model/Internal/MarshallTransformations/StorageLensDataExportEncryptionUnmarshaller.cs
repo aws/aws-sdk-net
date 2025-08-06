@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensDataExportEncryption Object
     /// </summary>  
-    public class StorageLensDataExportEncryptionUnmarshaller : IXmlUnmarshaller<StorageLensDataExportEncryption, XmlUnmarshallerContext>
+    public partial class StorageLensDataExportEncryptionUnmarshaller : IXmlUnmarshaller<StorageLensDataExportEncryption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.SSES3 = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensDataExportEncryption unmarshalledObject, int targetDepth);
+
         private static StorageLensDataExportEncryptionUnmarshaller _instance = new StorageLensDataExportEncryptionUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KinesisStreamConfig Object
     /// </summary>  
-    public class KinesisStreamConfigUnmarshaller : IXmlUnmarshaller<KinesisStreamConfig, XmlUnmarshallerContext>
+    public partial class KinesisStreamConfigUnmarshaller : IXmlUnmarshaller<KinesisStreamConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.StreamARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KinesisStreamConfig unmarshalledObject, int targetDepth);
+
         private static KinesisStreamConfigUnmarshaller _instance = new KinesisStreamConfigUnmarshaller();        
 
         /// <summary>

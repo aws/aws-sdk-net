@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyValueStore Object
     /// </summary>  
-    public class KeyValueStoreUnmarshaller : IXmlUnmarshaller<KeyValueStore, XmlUnmarshallerContext>
+    public partial class KeyValueStoreUnmarshaller : IXmlUnmarshaller<KeyValueStore, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +92,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +102,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KeyValueStore unmarshalledObject, int targetDepth);
+
         private static KeyValueStoreUnmarshaller _instance = new KeyValueStoreUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessPoint Object
     /// </summary>  
-    public class AccessPointUnmarshaller : IXmlUnmarshaller<AccessPoint, XmlUnmarshallerContext>
+    public partial class AccessPointUnmarshaller : IXmlUnmarshaller<AccessPoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -110,6 +110,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -118,6 +120,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AccessPoint unmarshalledObject, int targetDepth);
+
         private static AccessPointUnmarshaller _instance = new AccessPointUnmarshaller();        
 
         /// <summary>

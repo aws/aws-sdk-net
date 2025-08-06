@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginAccessControl Object
     /// </summary>  
-    public class OriginAccessControlUnmarshaller : IXmlUnmarshaller<OriginAccessControl, XmlUnmarshallerContext>
+    public partial class OriginAccessControlUnmarshaller : IXmlUnmarshaller<OriginAccessControl, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginAccessControlConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, OriginAccessControl unmarshalledObject, int targetDepth);
+
         private static OriginAccessControlUnmarshaller _instance = new OriginAccessControlUnmarshaller();        
 
         /// <summary>

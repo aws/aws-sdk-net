@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndPoint Object
     /// </summary>  
-    public class EndPointUnmarshaller : IXmlUnmarshaller<EndPoint, XmlUnmarshallerContext>
+    public partial class EndPointUnmarshaller : IXmlUnmarshaller<EndPoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.StreamType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, EndPoint unmarshalledObject, int targetDepth);
+
         private static EndPointUnmarshaller _instance = new EndPointUnmarshaller();        
 
         /// <summary>

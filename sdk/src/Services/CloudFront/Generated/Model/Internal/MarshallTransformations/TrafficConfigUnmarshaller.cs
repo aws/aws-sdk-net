@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficConfig Object
     /// </summary>  
-    public class TrafficConfigUnmarshaller : IXmlUnmarshaller<TrafficConfig, XmlUnmarshallerContext>
+    public partial class TrafficConfigUnmarshaller : IXmlUnmarshaller<TrafficConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, TrafficConfig unmarshalledObject, int targetDepth);
+
         private static TrafficConfigUnmarshaller _instance = new TrafficConfigUnmarshaller();        
 
         /// <summary>

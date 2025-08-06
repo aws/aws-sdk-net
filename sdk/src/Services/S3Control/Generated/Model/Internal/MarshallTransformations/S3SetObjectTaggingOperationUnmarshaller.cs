@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3SetObjectTaggingOperation Object
     /// </summary>  
-    public class S3SetObjectTaggingOperationUnmarshaller : IXmlUnmarshaller<S3SetObjectTaggingOperation, XmlUnmarshallerContext>
+    public partial class S3SetObjectTaggingOperationUnmarshaller : IXmlUnmarshaller<S3SetObjectTaggingOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.TagSet.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -74,6 +76,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3SetObjectTaggingOperation unmarshalledObject, int targetDepth);
+
         private static S3SetObjectTaggingOperationUnmarshaller _instance = new S3SetObjectTaggingOperationUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NestedPayload Object
     /// </summary>  
-    public class NestedPayloadUnmarshaller : IXmlUnmarshaller<NestedPayload, XmlUnmarshallerContext>
+    public partial class NestedPayloadUnmarshaller : IXmlUnmarshaller<NestedPayload, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, NestedPayload unmarshalledObject, int targetDepth);
+
         private static NestedPayloadUnmarshaller _instance = new NestedPayloadUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidationBatch Object
     /// </summary>  
-    public class InvalidationBatchUnmarshaller : IXmlUnmarshaller<InvalidationBatch, XmlUnmarshallerContext>
+    public partial class InvalidationBatchUnmarshaller : IXmlUnmarshaller<InvalidationBatch, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Paths = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, InvalidationBatch unmarshalledObject, int targetDepth);
+
         private static InvalidationBatchUnmarshaller _instance = new InvalidationBatchUnmarshaller();        
 
         /// <summary>

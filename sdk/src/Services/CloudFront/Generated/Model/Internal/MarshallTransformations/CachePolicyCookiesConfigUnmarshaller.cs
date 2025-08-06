@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachePolicyCookiesConfig Object
     /// </summary>  
-    public class CachePolicyCookiesConfigUnmarshaller : IXmlUnmarshaller<CachePolicyCookiesConfig, XmlUnmarshallerContext>
+    public partial class CachePolicyCookiesConfigUnmarshaller : IXmlUnmarshaller<CachePolicyCookiesConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Cookies = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CachePolicyCookiesConfig unmarshalledObject, int targetDepth);
+
         private static CachePolicyCookiesConfigUnmarshaller _instance = new CachePolicyCookiesConfigUnmarshaller();        
 
         /// <summary>

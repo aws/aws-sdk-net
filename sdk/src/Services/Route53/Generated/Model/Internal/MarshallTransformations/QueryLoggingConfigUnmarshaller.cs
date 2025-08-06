@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryLoggingConfig Object
     /// </summary>  
-    public class QueryLoggingConfigUnmarshaller : IXmlUnmarshaller<QueryLoggingConfig, XmlUnmarshallerContext>
+    public partial class QueryLoggingConfigUnmarshaller : IXmlUnmarshaller<QueryLoggingConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.CloudWatchLogsLogGroupArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, QueryLoggingConfig unmarshalledObject, int targetDepth);
+
         private static QueryLoggingConfigUnmarshaller _instance = new QueryLoggingConfigUnmarshaller();        
 
         /// <summary>

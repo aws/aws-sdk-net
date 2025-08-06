@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KeyNameConstraint Object
     /// </summary>  
-    public class KeyNameConstraintUnmarshaller : IXmlUnmarshaller<KeyNameConstraint, XmlUnmarshallerContext>
+    public partial class KeyNameConstraintUnmarshaller : IXmlUnmarshaller<KeyNameConstraint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.MatchAnySuffix.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, KeyNameConstraint unmarshalledObject, int targetDepth);
+
         private static KeyNameConstraintUnmarshaller _instance = new KeyNameConstraintUnmarshaller();        
 
         /// <summary>

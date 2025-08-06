@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LambdaInvokeOperation Object
     /// </summary>  
-    public class LambdaInvokeOperationUnmarshaller : IXmlUnmarshaller<LambdaInvokeOperation, XmlUnmarshallerContext>
+    public partial class LambdaInvokeOperationUnmarshaller : IXmlUnmarshaller<LambdaInvokeOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.UserArguments = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LambdaInvokeOperation unmarshalledObject, int targetDepth);
+
         private static LambdaInvokeOperationUnmarshaller _instance = new LambdaInvokeOperationUnmarshaller();        
 
         /// <summary>

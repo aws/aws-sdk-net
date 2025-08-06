@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicaModifications Object
     /// </summary>  
-    public class ReplicaModificationsUnmarshaller : IXmlUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>
+    public partial class ReplicaModificationsUnmarshaller : IXmlUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ReplicaModifications unmarshalledObject, int targetDepth);
+
         private static ReplicaModificationsUnmarshaller _instance = new ReplicaModificationsUnmarshaller();        
 
         /// <summary>

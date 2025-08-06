@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ActivityMetrics Object
     /// </summary>  
-    public class ActivityMetricsUnmarshaller : IXmlUnmarshaller<ActivityMetrics, XmlUnmarshallerContext>
+    public partial class ActivityMetricsUnmarshaller : IXmlUnmarshaller<ActivityMetrics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ActivityMetrics unmarshalledObject, int targetDepth);
+
         private static ActivityMetricsUnmarshaller _instance = new ActivityMetricsUnmarshaller();        
 
         /// <summary>

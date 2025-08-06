@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CollectionSummary Object
     /// </summary>  
-    public class CollectionSummaryUnmarshaller : IXmlUnmarshaller<CollectionSummary, XmlUnmarshallerContext>
+    public partial class CollectionSummaryUnmarshaller : IXmlUnmarshaller<CollectionSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CollectionSummary unmarshalledObject, int targetDepth);
+
         private static CollectionSummaryUnmarshaller _instance = new CollectionSummaryUnmarshaller();        
 
         /// <summary>

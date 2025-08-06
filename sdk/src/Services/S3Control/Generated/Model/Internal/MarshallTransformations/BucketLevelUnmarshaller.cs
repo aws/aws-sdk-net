@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketLevel Object
     /// </summary>  
-    public class BucketLevelUnmarshaller : IXmlUnmarshaller<BucketLevel, XmlUnmarshallerContext>
+    public partial class BucketLevelUnmarshaller : IXmlUnmarshaller<BucketLevel, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrefixLevel = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, BucketLevel unmarshalledObject, int targetDepth);
+
         private static BucketLevelUnmarshaller _instance = new BucketLevelUnmarshaller();        
 
         /// <summary>

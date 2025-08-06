@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReusableDelegationSetLimit Object
     /// </summary>  
-    public class ReusableDelegationSetLimitUnmarshaller : IXmlUnmarshaller<ReusableDelegationSetLimit, XmlUnmarshallerContext>
+    public partial class ReusableDelegationSetLimitUnmarshaller : IXmlUnmarshaller<ReusableDelegationSetLimit, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ReusableDelegationSetLimit unmarshalledObject, int targetDepth);
+
         private static ReusableDelegationSetLimitUnmarshaller _instance = new ReusableDelegationSetLimitUnmarshaller();        
 
         /// <summary>

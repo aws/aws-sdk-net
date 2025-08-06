@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StringSchemaConfig Object
     /// </summary>  
-    public class StringSchemaConfigUnmarshaller : IXmlUnmarshaller<StringSchemaConfig, XmlUnmarshallerContext>
+    public partial class StringSchemaConfigUnmarshaller : IXmlUnmarshaller<StringSchemaConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Required = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StringSchemaConfig unmarshalledObject, int targetDepth);
+
         private static StringSchemaConfigUnmarshaller _instance = new StringSchemaConfigUnmarshaller();        
 
         /// <summary>

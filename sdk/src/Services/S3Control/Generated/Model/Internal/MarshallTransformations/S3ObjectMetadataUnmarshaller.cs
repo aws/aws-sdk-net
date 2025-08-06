@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ObjectMetadata Object
     /// </summary>  
-    public class S3ObjectMetadataUnmarshaller : IXmlUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>
+    public partial class S3ObjectMetadataUnmarshaller : IXmlUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -122,6 +122,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.UserMetadata = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -130,6 +132,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3ObjectMetadata unmarshalledObject, int targetDepth);
+
         private static S3ObjectMetadataUnmarshaller _instance = new S3ObjectMetadataUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3InitiateRestoreObjectOperation Object
     /// </summary>  
-    public class S3InitiateRestoreObjectOperationUnmarshaller : IXmlUnmarshaller<S3InitiateRestoreObjectOperation, XmlUnmarshallerContext>
+    public partial class S3InitiateRestoreObjectOperationUnmarshaller : IXmlUnmarshaller<S3InitiateRestoreObjectOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.GlacierJobTier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3InitiateRestoreObjectOperation unmarshalledObject, int targetDepth);
+
         private static S3InitiateRestoreObjectOperationUnmarshaller _instance = new S3InitiateRestoreObjectOperationUnmarshaller();        
 
         /// <summary>

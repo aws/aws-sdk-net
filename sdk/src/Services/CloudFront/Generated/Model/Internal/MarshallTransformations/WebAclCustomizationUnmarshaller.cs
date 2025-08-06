@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WebAclCustomization Object
     /// </summary>  
-    public class WebAclCustomizationUnmarshaller : IXmlUnmarshaller<WebAclCustomization, XmlUnmarshallerContext>
+    public partial class WebAclCustomizationUnmarshaller : IXmlUnmarshaller<WebAclCustomization, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, WebAclCustomization unmarshalledObject, int targetDepth);
+
         private static WebAclCustomizationUnmarshaller _instance = new WebAclCustomizationUnmarshaller();        
 
         /// <summary>

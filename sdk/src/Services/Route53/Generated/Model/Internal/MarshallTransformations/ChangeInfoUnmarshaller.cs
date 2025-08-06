@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ChangeInfo Object
     /// </summary>  
-    public class ChangeInfoUnmarshaller : IXmlUnmarshaller<ChangeInfo, XmlUnmarshallerContext>
+    public partial class ChangeInfoUnmarshaller : IXmlUnmarshaller<ChangeInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ChangeInfo unmarshalledObject, int targetDepth);
+
         private static ChangeInfoUnmarshaller _instance = new ChangeInfoUnmarshaller();        
 
         /// <summary>

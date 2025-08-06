@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfig Object
     /// </summary>  
-    public class RealtimeLogConfigUnmarshaller : IXmlUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>
+    public partial class RealtimeLogConfigUnmarshaller : IXmlUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,6 +94,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.SamplingRate = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -102,6 +104,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RealtimeLogConfig unmarshalledObject, int targetDepth);
+
         private static RealtimeLogConfigUnmarshaller _instance = new RealtimeLogConfigUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AdvancedCostOptimizationMetrics Object
     /// </summary>  
-    public class AdvancedCostOptimizationMetricsUnmarshaller : IXmlUnmarshaller<AdvancedCostOptimizationMetrics, XmlUnmarshallerContext>
+    public partial class AdvancedCostOptimizationMetricsUnmarshaller : IXmlUnmarshaller<AdvancedCostOptimizationMetrics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AdvancedCostOptimizationMetrics unmarshalledObject, int targetDepth);
+
         private static AdvancedCostOptimizationMetricsUnmarshaller _instance = new AdvancedCostOptimizationMetricsUnmarshaller();        
 
         /// <summary>

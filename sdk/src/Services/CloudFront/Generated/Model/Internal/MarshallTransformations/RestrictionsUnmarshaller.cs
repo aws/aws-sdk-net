@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Restrictions Object
     /// </summary>  
-    public class RestrictionsUnmarshaller : IXmlUnmarshaller<Restrictions, XmlUnmarshallerContext>
+    public partial class RestrictionsUnmarshaller : IXmlUnmarshaller<Restrictions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.GeoRestriction = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, Restrictions unmarshalledObject, int targetDepth);
+
         private static RestrictionsUnmarshaller _instance = new RestrictionsUnmarshaller();        
 
         /// <summary>

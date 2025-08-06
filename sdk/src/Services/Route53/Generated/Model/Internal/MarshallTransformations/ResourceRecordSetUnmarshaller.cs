@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceRecordSet Object
     /// </summary>  
-    public class ResourceRecordSetUnmarshaller : IXmlUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>
+    public partial class ResourceRecordSetUnmarshaller : IXmlUnmarshaller<ResourceRecordSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -150,6 +150,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.GeoProximityLocation = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -158,6 +160,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ResourceRecordSet unmarshalledObject, int targetDepth);
+
         private static ResourceRecordSetUnmarshaller _instance = new ResourceRecordSetUnmarshaller();        
 
         /// <summary>

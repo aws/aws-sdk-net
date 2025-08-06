@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginRequestPolicyConfig Object
     /// </summary>  
-    public class OriginRequestPolicyConfigUnmarshaller : IXmlUnmarshaller<OriginRequestPolicyConfig, XmlUnmarshallerContext>
+    public partial class OriginRequestPolicyConfigUnmarshaller : IXmlUnmarshaller<OriginRequestPolicyConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.QueryStringsConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, OriginRequestPolicyConfig unmarshalledObject, int targetDepth);
+
         private static OriginRequestPolicyConfigUnmarshaller _instance = new OriginRequestPolicyConfigUnmarshaller();        
 
         /// <summary>

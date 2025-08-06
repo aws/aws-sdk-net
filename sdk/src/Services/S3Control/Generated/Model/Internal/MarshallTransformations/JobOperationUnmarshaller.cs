@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobOperation Object
     /// </summary>  
-    public class JobOperationUnmarshaller : IXmlUnmarshaller<JobOperation, XmlUnmarshallerContext>
+    public partial class JobOperationUnmarshaller : IXmlUnmarshaller<JobOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -110,6 +110,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3ReplicateObject = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -118,6 +120,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JobOperation unmarshalledObject, int targetDepth);
+
         private static JobOperationUnmarshaller _instance = new JobOperationUnmarshaller();        
 
         /// <summary>

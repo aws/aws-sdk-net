@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficPolicySummary Object
     /// </summary>  
-    public class TrafficPolicySummaryUnmarshaller : IXmlUnmarshaller<TrafficPolicySummary, XmlUnmarshallerContext>
+    public partial class TrafficPolicySummaryUnmarshaller : IXmlUnmarshaller<TrafficPolicySummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.TrafficPolicyCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, TrafficPolicySummary unmarshalledObject, int targetDepth);
+
         private static TrafficPolicySummaryUnmarshaller _instance = new TrafficPolicySummaryUnmarshaller();        
 
         /// <summary>

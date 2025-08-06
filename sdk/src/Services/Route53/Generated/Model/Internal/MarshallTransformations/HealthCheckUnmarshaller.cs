@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HealthCheck Object
     /// </summary>  
-    public class HealthCheckUnmarshaller : IXmlUnmarshaller<HealthCheck, XmlUnmarshallerContext>
+    public partial class HealthCheckUnmarshaller : IXmlUnmarshaller<HealthCheck, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +92,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.CloudWatchAlarmConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +102,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, HealthCheck unmarshalledObject, int targetDepth);
+
         private static HealthCheckUnmarshaller _instance = new HealthCheckUnmarshaller();        
 
         /// <summary>

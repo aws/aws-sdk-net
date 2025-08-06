@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AsyncOperation Object
     /// </summary>  
-    public class AsyncOperationUnmarshaller : IXmlUnmarshaller<AsyncOperation, XmlUnmarshallerContext>
+    public partial class AsyncOperationUnmarshaller : IXmlUnmarshaller<AsyncOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,6 +92,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ResponseDetails = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +102,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AsyncOperation unmarshalledObject, int targetDepth);
+
         private static AsyncOperationUnmarshaller _instance = new AsyncOperationUnmarshaller();        
 
         /// <summary>

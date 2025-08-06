@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SSES3 Object
     /// </summary>  
-    public class SSES3Unmarshaller : IXmlUnmarshaller<SSES3, XmlUnmarshallerContext>
+    public partial class SSES3Unmarshaller : IXmlUnmarshaller<SSES3, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,6 +56,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -64,6 +66,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SSES3 unmarshalledObject, int targetDepth);
+
         private static SSES3Unmarshaller _instance = new SSES3Unmarshaller();        
 
         /// <summary>

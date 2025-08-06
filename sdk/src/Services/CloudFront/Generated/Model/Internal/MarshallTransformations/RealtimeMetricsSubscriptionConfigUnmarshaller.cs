@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeMetricsSubscriptionConfig Object
     /// </summary>  
-    public class RealtimeMetricsSubscriptionConfigUnmarshaller : IXmlUnmarshaller<RealtimeMetricsSubscriptionConfig, XmlUnmarshallerContext>
+    public partial class RealtimeMetricsSubscriptionConfigUnmarshaller : IXmlUnmarshaller<RealtimeMetricsSubscriptionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.RealtimeMetricsSubscriptionStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RealtimeMetricsSubscriptionConfig unmarshalledObject, int targetDepth);
+
         private static RealtimeMetricsSubscriptionConfigUnmarshaller _instance = new RealtimeMetricsSubscriptionConfigUnmarshaller();        
 
         /// <summary>

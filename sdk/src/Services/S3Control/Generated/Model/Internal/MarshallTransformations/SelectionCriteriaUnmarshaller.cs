@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SelectionCriteria Object
     /// </summary>  
-    public class SelectionCriteriaUnmarshaller : IXmlUnmarshaller<SelectionCriteria, XmlUnmarshallerContext>
+    public partial class SelectionCriteriaUnmarshaller : IXmlUnmarshaller<SelectionCriteria, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinStorageBytesPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SelectionCriteria unmarshalledObject, int targetDepth);
+
         private static SelectionCriteriaUnmarshaller _instance = new SelectionCriteriaUnmarshaller();        
 
         /// <summary>

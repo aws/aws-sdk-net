@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnycastIpList Object
     /// </summary>  
-    public class AnycastIpListUnmarshaller : IXmlUnmarshaller<AnycastIpList, XmlUnmarshallerContext>
+    public partial class AnycastIpListUnmarshaller : IXmlUnmarshaller<AnycastIpList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -102,6 +102,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -110,6 +112,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AnycastIpList unmarshalledObject, int targetDepth);
+
         private static AnycastIpListUnmarshaller _instance = new AnycastIpListUnmarshaller();        
 
         /// <summary>
