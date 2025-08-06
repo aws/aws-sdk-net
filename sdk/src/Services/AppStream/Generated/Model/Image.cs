@@ -209,7 +209,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property ImageBuilderName. 
         /// <para>
         /// The name of the image builder that was used to create the private image. If the image
-        /// is shared, this value is null.
+        /// is shared, copied, or updated by using Managed Image Updates, this value is null.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
