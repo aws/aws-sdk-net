@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RpcV2Protocol
@@ -38,5 +39,74 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
     [TestClass]
     public class GreetingWithErrors
     {
+        /// <summary>
+        /// Parses simple RpcV2 Cbor errors
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborInvalidGreetingErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2ZfX3R5cGV4LnNtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNJbnZhbGlkR3JlZXRpbmdnTWVzc2FnZWJIaf8=");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+        }
+
+        /// <summary>
+        /// Parses a complex error with no message member
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborComplexErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2ZfX3R5cGV4K3NtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNDb21wbGV4RXJyb3JoVG9wTGV2ZWxpVG9wIGxldmVsZk5lc3RlZL9jRm9vY2Jhcv//");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+        }
+
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RpcV2Protocol")]
+        public void RpcV2CborEmptyComplexErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("v2ZfX3R5cGV4K3NtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNDb21wbGV4RXJyb3L/");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+        }
+
     }
 }

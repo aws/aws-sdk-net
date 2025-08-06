@@ -106,8 +106,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         for (StructureShape error : index.getErrors(operation, service)) {
             error.getTrait(HttpResponseTestsTrait.class).ifPresent(trait -> {
                 for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                    if(!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId())&& 
-                        !trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName().toLowerCase().contains("cbor")) // Skip CBOR response tests until the unmarshallers are ready
+                    if(!ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()))
                         generateErrorResponseTest(operation, error, httpResponseTestCase);
                 }
             });
