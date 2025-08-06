@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IXmlUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
+    public partial class <#=this.UnmarshallerBaseName #>Unmarshaller : IXmlUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 <#
         }
+#>
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
+<#
     }
 #>
 				}
@@ -84,6 +88,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, <#=this.UnmarshallerBaseName #> unmarshalledObject, int targetDepth);
+
 <#
     this.AddStructureSingletonMethod();
 #>

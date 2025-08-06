@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CORSRule Object
     /// </summary>  
-    public class CORSRuleUnmarshaller : IXmlUnmarshaller<CORSRule, XmlUnmarshallerContext>
+    public partial class CORSRuleUnmarshaller : IXmlUnmarshaller<CORSRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -108,6 +108,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxAgeSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -116,6 +118,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CORSRule unmarshalledObject, int targetDepth);
+
         private static CORSRuleUnmarshaller _instance = new CORSRuleUnmarshaller();        
 
         /// <summary>

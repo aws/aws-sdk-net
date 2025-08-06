@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerSideEncryptionConfiguration Object
     /// </summary>  
-    public class ServerSideEncryptionConfigurationUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionConfiguration, XmlUnmarshallerContext>
+    public partial class ServerSideEncryptionConfigurationUnmarshaller : IXmlUnmarshaller<ServerSideEncryptionConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.ServerSideEncryptionRules.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -74,6 +76,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ServerSideEncryptionConfiguration unmarshalledObject, int targetDepth);
+
         private static ServerSideEncryptionConfigurationUnmarshaller _instance = new ServerSideEncryptionConfigurationUnmarshaller();        
 
         /// <summary>

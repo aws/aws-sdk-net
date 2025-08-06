@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CORSConfiguration Object
     /// </summary>  
-    public class CORSConfigurationUnmarshaller : IXmlUnmarshaller<CORSConfiguration, XmlUnmarshallerContext>
+    public partial class CORSConfigurationUnmarshaller : IXmlUnmarshaller<CORSConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Rules.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -74,6 +76,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CORSConfiguration unmarshalledObject, int targetDepth);
+
         private static CORSConfigurationUnmarshaller _instance = new CORSConfigurationUnmarshaller();        
 
         /// <summary>

@@ -138,6 +138,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 
 	void ProcessRequestBodyMembers(string variableName, Operation operation)
 	{
+		bool requestPayloadMemberIsFlattened = false;
+		if (operation.RequestPayloadMember != null)
+			requestPayloadMemberIsFlattened = this.Config.ServiceModel.Customizations.FlattenShapes(operation.RequestStructure.Name).Contains(operation.RequestPayloadMember.ModeledName);
 		var level = 0;
 #>
 			var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
@@ -172,11 +175,16 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 		}
 		else
 		{
-			if(string.IsNullOrEmpty(operation.XmlNamespace))
+			if (!requestPayloadMemberIsFlattened)
 			{
 #>
 				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
 				{
+<#+
+			}
+			if(string.IsNullOrEmpty(operation.XmlNamespace))
+			{
+#>
 					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName != operation.RequestStructure.PayloadMemberName ? operation.RequestPayloadMember.LocationName : operation.RequestPayloadMember.Shape.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
 			}
@@ -184,10 +192,6 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 			{
 				if(string.IsNullOrEmpty(operation.XmlNamespacePrefix))
 				{
-#>
-				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
-				{
-<#+
 					// S3 doesn't follow the rule where if the request payload member's location name is the same as the payload member name, we marshall with the payload member's shape's marshall name instead
 					if (this.Config.ServiceId != "S3")
 					{
@@ -204,10 +208,6 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 				}
 				else
 				{
-#>
-				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
-				{
-<#+
 					if (this.Config.ServiceId != "S3")
 					{
 #>
@@ -239,7 +239,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			level++;
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers.Where(x => !x.IsXmlAttribute) : operation.RequestPayloadMember.Shape.Members.Where(x => !x.IsXmlAttribute);
-		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
+		variableName = (operation.RequestPayloadMember == null || requestPayloadMemberIsFlattened) ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
 		foreach(var member in childmembers)
 		{			
 			if(member.IsStructure)
@@ -303,7 +303,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 
 <#=new string(' ', level * 4)#>				xmlWriter.WriteEndElement();
 <#+
-		if(operation.RequestPayloadMember!=null)
+		if(operation.RequestPayloadMember != null && !requestPayloadMemberIsFlattened)
 		{
 #>
 <#=new string(' ', level * 4)#>			}
@@ -334,7 +334,11 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	{
 		foreach(var member in members)
 		{
-			if(member.IsStructure)
+			if (this.Config.ServiceModel.Customizations.TryGetVisitorPattern(member.Shape.Name, out var visitorPattern) && !visitorPattern.Visited)
+			{
+				WriteVisitorPattern(level, variableName, member);
+			}
+			else if(member.IsStructure)
 			{
 				ProcessStructure(level, variableName, member);
 			}
@@ -492,7 +496,15 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 			}
 			else
 			{
-				var listMarshallName = member.Shape.ListMarshallName ?? "member";
+				string listMarshallName = null;
+				if (this.Config.ServiceModel.Customizations.OverrideDataType(member.OwningShape.Name, member.ModeledName) != null)
+				{
+					var overrideDataType = this.Config.ServiceModel.Customizations.OverrideDataType(member.OwningShape.Name, member.ModeledName);
+					if (overrideDataType.DataType.Contains("List<") && overrideDataType.AlternateLocationName != null)
+						listMarshallName = overrideDataType.AlternateLocationName;
+				}
+				else
+					listMarshallName = member.Shape.ListMarshallName ?? "member";
 				// see https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait
 				if(member.IsFlattened)
 					listMarshallName = member.LocationName ?? member.ModeledName;
@@ -851,5 +863,30 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>", "<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 		}
+	}
+#>
+<#+
+	protected void WriteVisitorPattern(int level, string variableName, Member member)
+	{
+		var visitorPattern = this.Config.ServiceModel.Customizations.GetVisitorPattern(member.Shape.Name);
+		visitorPattern.Visited = true;
+#>
+<#=new string(' ', level * 4)#>				if (<#=variableName#>.<#=member.ModeledName#> != null)
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					if (<#=variableName#>.<#=member.ModeledName#>.<#=visitorPattern.PredicateName#> != null)
+<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>						<#=variableName#>.<#=member.ModeledName#>.<#=visitorPattern.PredicateName#>.Accept(new <#=visitorPattern.VisitorName#>(<#=visitorPattern.VisitorParam#>));
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>					}
+<#=new string(' ', level * 4)#>					else
+<#=new string(' ', level * 4)#>					{
+<#+
+												ProcessStructure(level+=2, variableName, member);
+#>
+<#=new string(' ' , level * 4)#>					}
+
+<#=new string(' ', level * 4)#>				}
+<#+
 	}
 #>

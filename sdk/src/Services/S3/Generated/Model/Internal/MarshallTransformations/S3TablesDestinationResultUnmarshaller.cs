@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3TablesDestinationResult Object
     /// </summary>  
-    public class S3TablesDestinationResultUnmarshaller : IXmlUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>
+    public partial class S3TablesDestinationResultUnmarshaller : IXmlUnmarshaller<S3TablesDestinationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3TablesDestinationResult unmarshalledObject, int targetDepth);
+
         private static S3TablesDestinationResultUnmarshaller _instance = new S3TablesDestinationResultUnmarshaller();        
 
         /// <summary>

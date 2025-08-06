@@ -4,7 +4,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-
 <#+
 	protected void GenerateAWSQueryCompatibleBlock()
 	{
@@ -429,16 +428,25 @@ using Amazon.Runtime.Internal.Util;
 /// Only to be used by rest-xml response unmarshallers
 	protected void ProcessResponseBodyOrStructureMembers(Member member, bool isStructure, Shape topLevelShape)
 	{
-		bool skipXmlTestExpression = false;
+		bool skipXmlTestExpression = false, isDataTypeSwapList = false, dataTypeSwapIsFlattened = false;
+
 		if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(topLevelShape.Name, out var modifier) && modifier.SkipXmlTestExpressionProperties.Contains(member.ModeledName))
 			skipXmlTestExpression = true;
 
+
+		if (this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName) != null)
+		{
+			var dataTypeOverride = this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName);
+			if (dataTypeOverride.DataType.Contains("List<"))
+				isDataTypeSwapList = true;
+			if (dataTypeOverride.IsFlattened)
+				dataTypeSwapIsFlattened = true;
+		}
 		string unmarshalledVariable = isStructure ? "unmarshalledObject" : "response";
-		if (member.Shape.IsList)
+		if (member.Shape.IsList || isDataTypeSwapList)
 		{
 			var listMarshallName = member.Shape.ListMarshallName ?? "member";
-
-			if (member.IsFlattened || member.Shape.IsFlattened)
+			if (member.IsFlattened || member.Shape.IsFlattened || dataTypeSwapIsFlattened)
 			{
 				if (!skipXmlTestExpression)
 				{
@@ -557,11 +565,26 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 			}
+			if (!member.HasPredicateListUnmarshaller)
+			{
 #>
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
 						continue;
 <#+
+			}
+			if (member.HasPredicateListUnmarshaller)
+			{
+				var predicateData = this.Config.ServiceModel.Customizations.GetShapeModifier(member.OwningShape.Name).PredicateListUnmarshallers[member.ModeledName];
+				var predicateListUnmarshallerName = (string)predicateData["predicateListUnmarshallerName"];
+				var filterPredicateName = (string)predicateData["filterPredicateName"];
+#>
+						var predicateList = <#=predicateListUnmarshallerName#>.Instance.Unmarshall(context);
+						<#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+						<#=unmarshalledVariable#>.<#=member.PropertyName#>.<#=filterPredicateName#> = predicateList[0];
+						continue;
+<#+
+			}
 				if (!skipXmlTestExpression)
 				{
 #>
