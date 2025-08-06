@@ -34,12 +34,36 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class BudgetPerformanceHistory
     {
+        private string _billingViewArn;
         private List<BudgetedAndActualAmounts> _budgetedAndActualAmountsList = AWSConfigs.InitializeCollections ? new List<BudgetedAndActualAmounts>() : null;
         private string _budgetName;
         private BudgetType _budgetType;
         private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
         private TimeUnit _timeUnit;
+
+        /// <summary>
+        /// Gets and sets the property BillingViewArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The
+        /// ARN is used to specify which particular billing view you want to interact with or
+        /// retrieve information from when making API calls related to Amazon Web Services Billing
+        /// and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews
+        /// API.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string BillingViewArn
+        {
+            get { return this._billingViewArn; }
+            set { this._billingViewArn = value; }
+        }
+
+        // Check to see if BillingViewArn property is set
+        internal bool IsSetBillingViewArn()
+        {
+            return this._billingViewArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BudgetedAndActualAmountsList. 
