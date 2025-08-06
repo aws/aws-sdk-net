@@ -416,6 +416,70 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// stream.graphics-pro.16xlarge
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.16xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g5.24xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.16xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.12xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.g6.24xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.gr6.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.graphics.gr6.8xlarge
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
