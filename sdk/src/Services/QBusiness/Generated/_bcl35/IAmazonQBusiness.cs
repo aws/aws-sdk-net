@@ -1111,6 +1111,12 @@ namespace Amazon.QBusiness
         /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
         /// Q Business pricing</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For an example IAM role policy for assigning subscriptions, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set
+        /// up required permissions</a> in the Amazon Q Business User Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
         /// 
@@ -2518,6 +2524,69 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  GetDataSourceResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         GetDataSourceResponse EndGetDataSource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDocumentContent
+
+
+        /// <summary>
+        /// Retrieves the content of a document that was ingested into Amazon Q Business. This
+        /// API validates user authorization against document ACLs before returning a pre-signed
+        /// URL for secure document access. You can download or view source documents referenced
+        /// in chat responses through the URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        GetDocumentContentResponse GetDocumentContent(GetDocumentContentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        IAsyncResult BeginGetDocumentContent(GetDocumentContentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentContent.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentContentResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        GetDocumentContentResponse EndGetDocumentContent(IAsyncResult asyncResult);
 
         #endregion
         

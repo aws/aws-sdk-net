@@ -72,6 +72,24 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.CitationNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("datasourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("documentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("indexId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("snippet", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

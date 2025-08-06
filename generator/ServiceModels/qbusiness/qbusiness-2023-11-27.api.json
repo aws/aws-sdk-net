@@ -709,6 +709,23 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "GetDocumentContent":{
+      "name":"GetDocumentContent",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/index/{indexId}/documents/{documentId}/content",
+        "responseCode":200
+      },
+      "input":{"shape":"GetDocumentContentRequest"},
+      "output":{"shape":"GetDocumentContentResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "GetGroup":{
       "name":"GetGroup",
       "http":{
@@ -4051,6 +4068,52 @@
         "mediaExtractionConfiguration":{"shape":"MediaExtractionConfiguration"}
       }
     },
+    "GetDocumentContentRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "indexId",
+        "documentId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "indexId":{
+          "shape":"IndexId",
+          "location":"uri",
+          "locationName":"indexId"
+        },
+        "dataSourceId":{
+          "shape":"DataSourceId",
+          "location":"querystring",
+          "locationName":"dataSourceId"
+        },
+        "documentId":{
+          "shape":"DocumentId",
+          "location":"uri",
+          "locationName":"documentId"
+        },
+        "outputFormat":{
+          "shape":"OutputFormat",
+          "location":"querystring",
+          "locationName":"outputFormat"
+        }
+      }
+    },
+    "GetDocumentContentResponse":{
+      "type":"structure",
+      "required":[
+        "presignedUrl",
+        "mimeType"
+      ],
+      "members":{
+        "presignedUrl":{"shape":"String"},
+        "mimeType":{"shape":"String"}
+      }
+    },
     "GetGroupRequest":{
       "type":"structure",
       "required":[
@@ -5610,6 +5673,10 @@
       "min":1,
       "pattern":"(http://|https://)[a-zA-Z0-9-_.]+(?::[0-9]{1,5})?"
     },
+    "OutputFormat":{
+      "type":"string",
+      "enum":["RAW"]
+    },
     "Payload":{
       "type":"string",
       "sensitive":true
@@ -6243,7 +6310,10 @@
         "url":{"shape":"String"},
         "citationNumber":{"shape":"Integer"},
         "updatedAt":{"shape":"Timestamp"},
-        "textMessageSegments":{"shape":"TextSegmentList"}
+        "textMessageSegments":{"shape":"TextSegmentList"},
+        "documentId":{"shape":"String"},
+        "indexId":{"shape":"String"},
+        "datasourceId":{"shape":"String"}
       }
     },
     "SourceAttributionMediaId":{

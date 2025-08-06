@@ -1260,6 +1260,12 @@ namespace Amazon.QBusiness
         /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
         /// Q Business pricing</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For an example IAM role policy for assigning subscriptions, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/setting-up.html#permissions">Set
+        /// up required permissions</a> in the Amazon Q Business User Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -2524,6 +2530,63 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentContent
+
+        internal virtual GetDocumentContentResponse GetDocumentContent(GetDocumentContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the content of a document that was ingested into Amazon Q Business. This
+        /// API validates user authorization against document ACLs before returning a pre-signed
+        /// URL for secure document access. You can download or view source documents referenced
+        /// in chat responses through the URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDocumentContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDocumentContent">REST API Reference for GetDocumentContent Operation</seealso>
+        public virtual Task<GetDocumentContentResponse> GetDocumentContentAsync(GetDocumentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDocumentContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDocumentContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentContentResponse>(request, options, cancellationToken);
         }
 
         #endregion
