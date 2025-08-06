@@ -382,6 +382,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.")]
         public List<ElasticGpuSpecification> ElasticGpuSpecification
         {
             get { return this._elasticGpuSpecification; }
@@ -405,6 +406,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.")]
         public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
         {
             get { return this._elasticInferenceAccelerators; }
