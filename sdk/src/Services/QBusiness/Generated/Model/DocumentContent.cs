@@ -31,6 +31,15 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// The contents of a document.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Documents have size limitations. The maximum file size for a document is 50 MB. The
+    /// maximum amount of text that can be extracted from a single document is 5 MB. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/doc-types.html">Supported
+    /// document formats in Amazon Q Business</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DocumentContent
     {

@@ -979,6 +979,40 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentRequest.ApplicationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentRequest.DataSourceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentRequest.DocumentId</property>
+    <min>1</min>
+    <max>1825</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentResponse.MimeType</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.GetDocumentContentResponse.PresignedUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.GetGroupRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>
@@ -2926,6 +2960,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QBusiness.Model.ServiceQuotaExceededException.ResourceType</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.SourceAttribution.DatasourceId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.SourceAttribution.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QBusiness.Model.SourceAttribution.IndexId</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
