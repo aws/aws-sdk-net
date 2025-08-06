@@ -30,28 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSecurityConfig operation.
+    /// This is the response object from the GetIndex operation.
     /// </summary>
-    public partial class UpdateSecurityConfigResponse : AmazonWebServiceResponse
+    public partial class GetIndexResponse : AmazonWebServiceResponse
     {
-        private SecurityConfigDetail _securityConfigDetail;
+        private Amazon.Runtime.Documents.Document _indexSchema;
 
         /// <summary>
-        /// Gets and sets the property SecurityConfigDetail. 
+        /// Gets and sets the property IndexSchema. 
         /// <para>
-        /// Details about the updated security configuration. 
+        /// The JSON schema definition for the index, including field mappings and settings.
         /// </para>
         /// </summary>
-        public SecurityConfigDetail SecurityConfigDetail
+        public Amazon.Runtime.Documents.Document IndexSchema
         {
-            get { return this._securityConfigDetail; }
-            set { this._securityConfigDetail = value; }
+            get { return this._indexSchema; }
+            set { this._indexSchema = value; }
         }
 
-        // Check to see if SecurityConfigDetail property is set
-        internal bool IsSetSecurityConfigDetail()
+        // Check to see if IndexSchema property is set
+        internal bool IsSetIndexSchema()
         {
-            return this._securityConfigDetail != null;
+            return !this._indexSchema.IsNull();
         }
 
     }
