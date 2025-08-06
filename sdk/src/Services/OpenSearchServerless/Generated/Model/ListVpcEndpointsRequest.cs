@@ -66,7 +66,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <para>
         /// If your initial <c>ListVpcEndpoints</c> operation returns a <c>nextToken</c>, you
         /// can include the returned <c>nextToken</c> in subsequent <c>ListVpcEndpoints</c> operations,
-        /// which returns results in the next page.
+        /// which returns results in the next page. 
         /// </para>
         /// </summary>
         public string NextToken

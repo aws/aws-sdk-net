@@ -371,6 +371,63 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
         
+        #region  CreateIndex
+
+
+        /// <summary>
+        /// Creates an index within an OpenSearch Serverless collection. Unlike other OpenSearch
+        /// indexes, indexes created by this API are automatically configured to conduct automatic
+        /// semantic enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a> in the <i>OpenSearch User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        CreateIndexResponse CreateIndex(CreateIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIndex.</param>
+        /// 
+        /// <returns>Returns a  CreateIndexResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        CreateIndexResponse EndCreateIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLifecyclePolicy
 
 
@@ -713,6 +770,58 @@ namespace Amazon.OpenSearchServerless
 
         #endregion
         
+        #region  DeleteIndex
+
+
+        /// <summary>
+        /// Deletes an index from an OpenSearch Serverless collection. Be aware that the index
+        /// might be configured to conduct automatic semantic enrichment ingestion and search.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        DeleteIndexResponse DeleteIndex(DeleteIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        IAsyncResult BeginDeleteIndex(DeleteIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIndex.</param>
+        /// 
+        /// <returns>Returns a  DeleteIndexResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        DeleteIndexResponse EndDeleteIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteLifecyclePolicy
 
 
@@ -1027,6 +1136,58 @@ namespace Amazon.OpenSearchServerless
         /// <returns>Returns a  GetAccountSettingsResult from OpenSearchServerless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIndex
+
+
+        /// <summary>
+        /// Retrieves information about an index in an OpenSearch Serverless collection, including
+        /// its schema definition. The index might be configured to conduct automatic semantic
+        /// enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        GetIndexResponse GetIndex(GetIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        IAsyncResult BeginGetIndex(GetIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIndex.</param>
+        /// 
+        /// <returns>Returns a  GetIndexResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        GetIndexResponse EndGetIndex(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1785,6 +1946,59 @@ namespace Amazon.OpenSearchServerless
         /// <returns>Returns a  UpdateCollectionResult from OpenSearchServerless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollection">REST API Reference for UpdateCollection Operation</seealso>
         UpdateCollectionResponse EndUpdateCollection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateIndex
+
+
+        /// <summary>
+        /// Updates an existing index in an OpenSearch Serverless collection. This operation allows
+        /// you to modify the index schema, including adding new fields or changing field mappings.
+        /// You can also enable automatic semantic enrichment ingestion and search. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        UpdateIndexResponse UpdateIndex(UpdateIndexRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex operation on AmazonOpenSearchServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        IAsyncResult BeginUpdateIndex(UpdateIndexRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIndex.</param>
+        /// 
+        /// <returns>Returns a  UpdateIndexResult from OpenSearchServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        UpdateIndexResponse EndUpdateIndex(IAsyncResult asyncResult);
 
         #endregion
         

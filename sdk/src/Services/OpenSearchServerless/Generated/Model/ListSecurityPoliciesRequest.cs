@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// Resource filters (can be collection or indexes) that policies can apply to.
+        /// Resource filters (can be collection or indexes) that policies can apply to. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

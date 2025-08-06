@@ -141,7 +141,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of lifecycle policy.
+        ///  The type of lifecycle policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

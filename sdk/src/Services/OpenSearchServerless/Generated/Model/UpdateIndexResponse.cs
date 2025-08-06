@@ -30,29 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateSecurityConfig operation.
+    /// This is the response object from the UpdateIndex operation.
     /// </summary>
-    public partial class UpdateSecurityConfigResponse : AmazonWebServiceResponse
+    public partial class UpdateIndexResponse : AmazonWebServiceResponse
     {
-        private SecurityConfigDetail _securityConfigDetail;
-
-        /// <summary>
-        /// Gets and sets the property SecurityConfigDetail. 
-        /// <para>
-        /// Details about the updated security configuration. 
-        /// </para>
-        /// </summary>
-        public SecurityConfigDetail SecurityConfigDetail
-        {
-            get { return this._securityConfigDetail; }
-            set { this._securityConfigDetail = value; }
-        }
-
-        // Check to see if SecurityConfigDetail property is set
-        internal bool IsSetSecurityConfigDetail()
-        {
-            return this._securityConfigDetail != null;
-        }
 
     }
 }
