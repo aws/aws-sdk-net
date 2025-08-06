@@ -32,7 +32,7 @@ namespace Amazon.IoTSecureTunneling
     public partial class AmazonIoTSecureTunnelingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTSecureTunneling", "3.7.500.3");
+            InternalSDKUtils.BuildUserAgentString("IoTSecureTunneling", "3.7.500.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>

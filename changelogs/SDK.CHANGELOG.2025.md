@@ -1,3 +1,18 @@
+### 3.7.1096.0 (2025-08-06 18:31 UTC)
+* AppStream (3.7.500.4)
+	* Added support for G6 instances
+* Budgets (3.7.501.0)
+	* Adds support for billing views. Billing views let you control access to cost and usage data through an AWS resource, streamlining the process of sharing cost and usage data across account boundaries. With this release, you can now create and view budgets based on billing views.
+* EC2 (3.7.501.0)
+	* Mark Elastic Inference Accelerators and Elastic Graphics Processor parameters as deprecated on the RunInstances and LaunchTemplate APIs.
+* OpenSearchServerless (3.7.501.0)
+	* Features: add Index APIs in OpenSearchServerless to support managed semantic enrichment
+* QBusiness (3.7.501.0)
+	* Amazon Q Business now supports the GetDocumentContent() API that enables customers to securely access the source documents through clickable citation links at query time
+* Core 3.7.500.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1095.0 (2025-08-05 18:29 UTC)
 * Bedrock (3.7.501.0)
 	* This release introduces Automated Reasoning checks for Amazon Bedrock Guardrails. The feature adds new APIs for policy building, refinement, version management, and testing. Guardrail APIs now support Automated Reasoning policy configuration and validation output.

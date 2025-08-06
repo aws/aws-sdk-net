@@ -32,7 +32,7 @@ namespace Amazon.ResourceExplorer2
     public partial class AmazonResourceExplorer2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "3.7.500.3");
+            InternalSDKUtils.BuildUserAgentString("Resource Explorer 2", "3.7.500.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>
