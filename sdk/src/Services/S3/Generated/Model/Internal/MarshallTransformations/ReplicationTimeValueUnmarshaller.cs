@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationTimeValue Object
     /// </summary>  
-    public class ReplicationTimeValueUnmarshaller : IXmlUnmarshaller<ReplicationTimeValue, XmlUnmarshallerContext>
+    public partial class ReplicationTimeValueUnmarshaller : IXmlUnmarshaller<ReplicationTimeValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Minutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ReplicationTimeValue unmarshalledObject, int targetDepth);
+
         private static ReplicationTimeValueUnmarshaller _instance = new ReplicationTimeValueUnmarshaller();        
 
         /// <summary>

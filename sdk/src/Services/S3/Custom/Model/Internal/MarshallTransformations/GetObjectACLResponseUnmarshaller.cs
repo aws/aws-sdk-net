@@ -81,7 +81,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             response.Grants = new List<S3Grant>();
                         }
-                        var unmarshaller = GrantUnmarshaller.Instance;
+                        var unmarshaller = S3GrantUnmarshaller.Instance;
                         response.Grants.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }

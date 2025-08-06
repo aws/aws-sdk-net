@@ -239,8 +239,10 @@ namespace ServiceClientGenerator
 
             foreach (var operation in operations)
             {
-                GenerateRequest(operation);
-                GenerateResponse(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                    GenerateRequest(operation);
+                if (!this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    GenerateResponse(operation);
                 GenerateRequestMarshaller(operation);
                 GenerateResponseUnmarshaller(operation);
                 GenerateEndpointDiscoveryMarshaller(operation);
@@ -561,6 +563,9 @@ namespace ServiceClientGenerator
             bool hasRequest = operation.RequestStructure != null;
             bool normalizeMarshallers;
 
+            if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Request"))
+                return;
+
             BaseRequestMarshaller generator;
             GetRequestMarshaller(out generator, out normalizeMarshallers);
             generator.Operation = operation;
@@ -582,6 +587,7 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    S3NeedsCustomUpdate(nestedStructure);
                     // Skip structure marshallers that have already been generated for the parent model
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
@@ -627,6 +633,8 @@ namespace ServiceClientGenerator
         void GenerateResponseUnmarshaller(Operation operation)
         {
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(operation.Name + "Response"))
+                    return;
                 var baseException = string.Format("Amazon{0}Exception",
                         this.Configuration.IsChildConfig ?
                         this.Configuration.ParentConfig.ClassName : this.Configuration.ClassName);
@@ -667,6 +675,9 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
+                    S3NeedsCustomUpdate(nestedStructure);
+                    if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                        continue;
                     // Skip structure unmarshallers that have already been generated for the parent model
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
@@ -707,6 +718,9 @@ namespace ServiceClientGenerator
             lookup.SearchForNestedStructures(shape);
             foreach (var nestedStructure in lookup.NestedStructures)
             {
+                S3NeedsCustomUpdate(nestedStructure);
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
+                    continue;
                 // Skip structure unmarshallers that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                     continue;
@@ -741,6 +755,8 @@ namespace ServiceClientGenerator
         {
             foreach (var structure in structures)
             {
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(structure))
+                    continue;
                 var shape = this.Configuration.ServiceModel.FindShape(structure);
                 GenerateUnmarshaller(shape);
             }
@@ -1012,6 +1028,10 @@ namespace ServiceClientGenerator
 
             foreach (var definition in this._structuresToProcess)
             {
+                S3NeedsCustomUpdate(definition);
+                if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(definition.Name))
+                    continue;
+
                 // Skip structures that have already been generated for the parent model
                 if (IsShapePresentInParentModel(this.Configuration, definition.Name))
                     continue;
@@ -1029,6 +1049,7 @@ namespace ServiceClientGenerator
                 }
                 if (!this._processedStructures.Contains(definition.Name))
                 {
+                    var baseClassString = this.Configuration.ServiceModel.Customizations.InheritAlternateBaseClass(definition.Name);
                     // if the shape had a substitution, we can skip generation
                     if (this.Configuration.ServiceModel.Customizations.IsSubstitutedShape(definition.Name))
                         continue;
@@ -1045,6 +1066,7 @@ namespace ServiceClientGenerator
                         Structure = definition,
                         Config = this.Configuration,
                         Operation = operation,
+                        BaseClass = baseClassString ?? ""
                     };
                     //since eventstream operations can attach exceptions to the request or response objects instead of the "error"
                     //list on the operation, we must account for the case where an exception is included as a member of the response
@@ -1675,5 +1697,26 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }
+
+        // in some cases we have deviated too far from the S3 model. For example for "Filter" shapes where we implement
+        // the visitor pattern for the different predicate types. This method will check to see if additional members
+        // are being added to these shapes so that we know to make the appropriate customization
+        private void S3NeedsCustomUpdate(Shape shape)
+        {
+            // a dictionary of shape name to number of members that shape has
+            var customUpdateShapes = new Dictionary<string, int>
+            {
+                {"LifecycleFilter", 5 }
+            };
+            if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
+            {
+                if (membersCount != shape.Members.Count)
+                {
+                    throw new InvalidOperationException(String.Format("A member was added to {0} that the .NET SDK has a custom unmarshaller or marshaller for. Please check and make sure" +
+                        "to add the member to the custom unmarshaller and all related code.", shape.Name));
+                }
+            }
+        }
+
     }
 }

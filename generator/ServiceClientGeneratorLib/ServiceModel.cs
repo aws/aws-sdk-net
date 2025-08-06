@@ -523,27 +523,30 @@ namespace ServiceClientGenerator
                         //new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         
-                        // PHASE 2
+                        ////// PHASE 2
                         new Operation(this, "CreateBucket", DocumentRoot[OperationsKey]["CreateBucket"]),
-                        //new Operation(this, "CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
-                        //new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
-                        //new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
-                        //new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
-                        //new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
-                        //new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
-                        //new Operation(this, "GetBucketLifecycle", DocumentRoot[OperationsKey]["GetBucketLifecycle"]),
-                        //new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
-                        //new Operation(this, "GetBucketNotificationConfiguration", DocumentRoot[OperationsKey]["GetBucketNotificationConfiguration"]),
-                        //new Operation(this, "GetObjectAcl", DocumentRoot[OperationsKey]["GetObjectAcl"]),
-                        //new Operation(this, "HeadObject", DocumentRoot[OperationsKey]["HeadObject"]),
-                        //new Operation(this, "ListObjectVersions", DocumentRoot[OperationsKey]["ListObjectVersions"]),
-                        //new Operation(this, "PutBucketAcl", DocumentRoot[OperationsKey]["PutBucketAcl"]),
-                        //new Operation(this, "PutBucketCors", DocumentRoot[OperationsKey]["PutBucketCors"]),
-                        //new Operation(this, "PutBucketLifecycle", DocumentRoot[OperationsKey]["PutBucketLifecycle"]),
-                        //new Operation(this, "PutBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["PutBucketLifecycleConfiguration"]),
-                        //new Operation(this, "PutBucketNotificationConfiguration", DocumentRoot[OperationsKey]["PutBucketNotificationConfiguration"]),
-                        //new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
-                        //new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
+                        new Operation(this, "CreateMultipartUpload", DocumentRoot[OperationsKey]["CreateMultipartUpload"]),
+                        new Operation(this, "DeleteBucketCors", DocumentRoot[OperationsKey]["DeleteBucketCors"]),
+                        new Operation(this, "DeleteBucketLifecycle", DocumentRoot[OperationsKey]["DeleteBucketLifecycle"]),
+                        new Operation(this, "GetBucketAcl", DocumentRoot[OperationsKey]["GetBucketAcl"]),
+                        new Operation(this, "GetBucketCors", DocumentRoot[OperationsKey]["GetBucketCors"]),
+                        ////// ***** this operation is deprecated and won't be generated
+                        ////// new Operation(this, "GetBucketLifecycle", DocumentRoot[OperationsKey]["GetBucketLifecycle"]),
+                        ////// *****
+                        new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
+                        new Operation(this, "GetBucketNotificationConfiguration", DocumentRoot[OperationsKey]["GetBucketNotificationConfiguration"]),
+                        //////new Operation(this, "GetObjectAcl", DocumentRoot[OperationsKey]["GetObjectAcl"]),
+                        //////new Operation(this, "HeadObject", DocumentRoot[OperationsKey]["HeadObject"]),
+                        //////new Operation(this, "ListObjectVersions", DocumentRoot[OperationsKey]["ListObjectVersions"]),
+                        //////new Operation(this, "PutBucketAcl", DocumentRoot[OperationsKey]["PutBucketAcl"]),
+                        //////new Operation(this, "PutBucketCors", DocumentRoot[OperationsKey]["PutBucketCors"]),
+                        ////// **** deprecated
+                        //////new Operation(this, "PutBucketLifecycle", DocumentRoot[OperationsKey]["PutBucketLifecycle"]),
+                        ////// **** deprecated
+                        new Operation(this, "PutBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["PutBucketLifecycleConfiguration"]),
+                        new Operation(this, "PutBucketNotificationConfiguration", DocumentRoot[OperationsKey]["PutBucketNotificationConfiguration"]),
+                        //////new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
+                        //////new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
 
                     };
                 }
@@ -594,7 +597,8 @@ namespace ServiceClientGenerator
                     _s3RequestMarshallerThrowAmazonS3ExceptionList = new List<string>()
                     {
                         "CreateSession",
-                        "GetObjectAttributes"
+                        "GetObjectAttributes",
+                        "GetBucketAcl"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

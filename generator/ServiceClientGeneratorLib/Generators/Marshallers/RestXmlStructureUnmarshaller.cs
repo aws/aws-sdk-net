@@ -53,7 +53,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write(" Object\r\n    /// </summary>  \r\n    public class ");
+            this.Write(" Object\r\n    /// </summary>  \r\n    public partial class ");
             
             #line 18 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
@@ -177,7 +177,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
         {
-            ProcessResponseBodyOrStructureMembers(member, true);
+            ProcessResponseBodyOrStructureMembers(member, true, this.Structure);
 
             
             #line default
@@ -186,6 +186,15 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line 75 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
         }
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n                    XmlStructureUnmarshallCustomization(context, unmarshalledOb" +
+                    "ject, targetDepth);\r\n");
+            
+            #line 80 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+
     }
 
             
@@ -199,9 +208,17 @@ namespace ServiceClientGenerator.Generators.Marshallers
             }          
             return unmarshalledObject;
         }
-");
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ");
             
-            #line 87 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            #line 92 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.UnmarshallerBaseName));
+            
+            #line default
+            #line hidden
+            this.Write(" unmarshalledObject, int targetDepth);\r\n\r\n");
+            
+            #line 94 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlStructureUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 
