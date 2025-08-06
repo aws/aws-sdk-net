@@ -156,6 +156,9 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// We can’t locate the resource that you specified.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.ServiceQuotaExceededException">
         /// You've reached the limit on the number of tags you can associate with a resource.
         /// </exception>

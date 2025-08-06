@@ -541,6 +541,12 @@
     <max>15000000000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.Budget.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_+=.\-@]{0,75}[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
     <min>1</min>
     <max>100</max>
@@ -551,6 +557,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>^(?![^:\\]*/action/|(?i).*&lt;script&gt;.*&lt;/script&gt;.*)[^:\\]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.BudgetPerformanceHistory.BillingViewArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_+=.\-@]{0,75}[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.BudgetPerformanceHistory.BudgetName</property>

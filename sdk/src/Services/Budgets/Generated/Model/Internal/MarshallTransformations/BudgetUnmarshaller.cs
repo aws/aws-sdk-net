@@ -72,6 +72,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoAdjustData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingViewArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingViewArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BudgetLimit", targetDepth))
                 {
                     var unmarshaller = SpendUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
                     unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthStatus", targetDepth))
+                {
+                    var unmarshaller = HealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedTime", targetDepth))
