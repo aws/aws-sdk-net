@@ -34,9 +34,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutBucketNotification operation
+    /// Response Unmarshaller for PutCORSConfiguration operation
     /// </summary>  
-    public partial class PutBucketNotificationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class PutCORSConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            PutBucketNotificationResponse response = new PutBucketNotificationResponse();
+            PutCORSConfigurationResponse response = new PutCORSConfigurationResponse();
             
             PostUnmarshallCustomization(context, response);
             return response;
@@ -74,11 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutBucketNotificationResponse response);
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutCORSConfigurationResponse response);
 
-        private static PutBucketNotificationResponseUnmarshaller _instance = new PutBucketNotificationResponseUnmarshaller();        
+        private static PutCORSConfigurationResponseUnmarshaller _instance = new PutCORSConfigurationResponseUnmarshaller();        
 
-        internal static PutBucketNotificationResponseUnmarshaller GetInstance()
+        internal static PutCORSConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutBucketNotificationResponseUnmarshaller Instance
+        public static PutCORSConfigurationResponseUnmarshaller Instance
         {
             get
             {

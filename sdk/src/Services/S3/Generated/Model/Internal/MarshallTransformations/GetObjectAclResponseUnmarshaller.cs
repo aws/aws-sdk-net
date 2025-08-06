@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectAcl operation
     /// </summary>  
-    public class GetObjectAclResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetObjectAclResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,27 +46,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetObjectAclResponse response = new GetObjectAclResponse();
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {
-                    UnmarshallResult(context, response);
-                    continue;
-                }
-            }
-
+            UnmarshallResult(context,response);
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
-
+            
+            PostUnmarshallCustomization(context, response);
             return response;
-        }
+        }        
 
         private static void UnmarshallResult(XmlUnmarshallerContext context, GetObjectAclResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument)
-                targetDepth += 1;
+            if (context.IsStartOfDocument) 
+                   targetDepth += 1;
             if (context.IsEmptyResponse)
             {
                 return;
@@ -97,12 +90,39 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-
             return;
         }
+  
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
-        private static GetObjectAclResponseUnmarshaller _instance = new GetObjectAclResponseUnmarshaller();
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchKey"))
+                {
+                    return NoSuchKeyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
+        }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetObjectAclResponse response);
+
+        private static GetObjectAclResponseUnmarshaller _instance = new GetObjectAclResponseUnmarshaller();        
 
         internal static GetObjectAclResponseUnmarshaller GetInstance()
         {

@@ -148,6 +148,8 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach (var member in this.Operation.ResponseHeaderMembers)
 			{
+				if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(member.OwningShape.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
+					continue;
 				if (member.Shape.IsMap)
 				{
 #>

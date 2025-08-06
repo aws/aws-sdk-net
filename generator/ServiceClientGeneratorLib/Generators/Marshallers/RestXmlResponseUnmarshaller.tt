@@ -19,13 +19,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
      if (this.Config.ServiceId == "S3")
      {
 #>
-    public class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
 <#
      }
      else
      {
 #>
-    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
 <#
      }
 #>
@@ -96,6 +96,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	UnmarshallHeaders();
 	ProcessStatusCode();
 #>            
+            PostUnmarshallCustomization(context, response);
             return response;
 		}		
 <#
@@ -160,7 +161,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
 <#
@@ -225,6 +225,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response);
 
 <#
     this.AddResponseSingletonMethod();

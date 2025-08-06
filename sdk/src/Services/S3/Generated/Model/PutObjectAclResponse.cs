@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -45,7 +48,7 @@ namespace Amazon.S3.Model
         // Check to see if RequestCharged property is set
         internal bool IsSetRequestCharged()
         {
-            return !string.IsNullOrEmpty(this._requestCharged);
+            return this._requestCharged != null;
         }
 
     }

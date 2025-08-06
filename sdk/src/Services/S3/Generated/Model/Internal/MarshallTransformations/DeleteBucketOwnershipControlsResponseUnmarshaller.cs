@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteBucketOwnershipControls operation
     /// </summary>  
-    public class DeleteBucketOwnershipControlsResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class DeleteBucketOwnershipControlsResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketOwnershipControlsResponse response = new DeleteBucketOwnershipControlsResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteBucketOwnershipControlsResponse response);
 
         private static DeleteBucketOwnershipControlsResponseUnmarshaller _instance = new DeleteBucketOwnershipControlsResponseUnmarshaller();        
 

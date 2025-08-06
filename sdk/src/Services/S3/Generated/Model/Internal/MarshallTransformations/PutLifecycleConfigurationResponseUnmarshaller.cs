@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutLifecycleConfiguration operation
     /// </summary>  
-    public class PutLifecycleConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class PutLifecycleConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -49,6 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-transition-default-minimum-object-size"))
                 response.TransitionDefaultMinimumObjectSize = context.ResponseData.GetHeaderValue("x-amz-transition-default-minimum-object-size");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -74,6 +75,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutLifecycleConfigurationResponse response);
 
         private static PutLifecycleConfigurationResponseUnmarshaller _instance = new PutLifecycleConfigurationResponseUnmarshaller();        
 

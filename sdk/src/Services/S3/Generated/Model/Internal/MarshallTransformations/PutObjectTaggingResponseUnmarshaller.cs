@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutObjectTagging operation
     /// </summary>  
-    public class PutObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class PutObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -49,6 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
                 response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -74,6 +75,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutObjectTaggingResponse response);
 
         private static PutObjectTaggingResponseUnmarshaller _instance = new PutObjectTaggingResponseUnmarshaller();        
 

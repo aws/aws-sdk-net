@@ -1020,6 +1020,7 @@ namespace ServiceClientGenerator
             public const string ShapeModifierXmlNamespaceKey = "xmlNamespace";
             public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
             public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
+            public const string ExcludeFromUnmarshallingKey = "excludeFromUnmarshalling";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
@@ -1030,6 +1031,7 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _shapeDocumentation;
             private readonly string _shapeModifierXmlNamespace;
             private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
+            private readonly HashSet<string> _excludedUnmarshallingProperties;
 
             public string DeprecationMessage { get; private set; }
 
@@ -1049,6 +1051,7 @@ namespace ServiceClientGenerator
                 _shapeDocumentation = ParseShapeDocumentation(data);
                 _shapeModifierXmlNamespace = ParseXmlNamespace(data);
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
+                _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
                 Validate(data);
             }
 
@@ -1317,6 +1320,7 @@ namespace ServiceClientGenerator
                     ?? new Dictionary<string, JsonData>();
 
             }
+
             /// <summary>
             /// This customization tells the generator that the member's shape is a filter type that has predicates
             /// and operators and that it should be unmarshalled with the PredicateListUnmarshaller type that each
@@ -1326,6 +1330,19 @@ namespace ServiceClientGenerator
             /// </summary>
             public Dictionary<string, JsonData> PredicateListUnmarshallers { get { return _predicateListUnmarshallers; } }
 
+            #endregion
+
+            #region ExcludedUnmarshallingProperties
+
+            private static HashSet<string> ParseExcludedUnmarshallingProperties(JsonData data)
+            {
+                var excludedUnmarshallingProperties = data[ShapeModifier.ExcludeFromUnmarshallingKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(excludedUnmarshallingProperties ?? new string[0]);
+            }
+
+            public HashSet<string> ExcludedUnmarshallingProperties { get { return _excludedUnmarshallingProperties; } }
             #endregion
         }
 

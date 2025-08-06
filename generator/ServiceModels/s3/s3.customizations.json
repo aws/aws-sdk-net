@@ -431,7 +431,7 @@
                     "ID": {"emitPropertyName": "CanonicalUser"}
                 }
             ],
-            "exclude":[
+            "excludeFromUnmarshalling":[
                 "Type"
             ]
         },
@@ -522,6 +522,67 @@
                 {
                     "Key" : { "emitPropertyName" : "S3KeyFilter"}
                 }
+            ]
+        },
+        "HeadObjectRequest" : {
+            "modify" :[
+                {
+                    "IfModifiedSince" : {"emitPropertyName" : "ModifiedSinceDate"}
+                },
+                {
+                    "IfUnmodifiedSince" : {"emitPropertyName" : "UnmodifiedSinceDate"}
+                },
+                {
+                    "IfMatch" : {"emitPropertyName" : "EtagToMatch"}
+                },
+                {
+                    "IfNoneMatch" : {"emitPropertyName" : "EtagToNotMatch"}
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                }
+            ],
+            "excludeFromMarshalling":[
+                "ServerSideEncryptionCustomerProvidedKey",
+                "ServerSideEncryptionCustomerProvidedKeyMD5"
+            ]
+        },
+        "HeadObjectOutput":{
+            "modify":[
+                {
+                    "TagCount" : {"emitPropertyName": "TagsCount"}
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
+                },
+                {
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
+                }
+            ],
+            "exclude":[
+                "Metadata",
+                "DeleteMarker",
+                "SSECustomerAlgorithm",
+                "ServerSideEncryption"
+            ],
+            "excludeFromUnmarshalling":[
+                "Restore",
+                "Expiration",
+                "CacheControl",
+                "ContentDisposition",
+                "ContentEncoding",
+                "ContentLength",
+                "ContentType",
+                "Expires"
             ]
         }
     },
@@ -644,6 +705,12 @@
         },
         "Rule" :{
             "renameShape" : "LifecycleRule"
+        },
+        "AccessControlPolicy":{
+            "renameShape" : "S3AccessControlList"
+        },
+        "ObjectCannedACL":{
+            "renameShape" : "S3CannedACL"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -714,7 +781,7 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": "true",
+                "isFlattened": true,
                 "alternateLocationName": "Event"
             }
         },
@@ -723,7 +790,7 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": "true",
+                "isFlattened": true,
                 "alternateLocationName" : "Event"
             }
         },
@@ -732,8 +799,27 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": "true",
+                "isFlattened": true,
                 "alternateLocationName" : "Event"
+            }
+        },
+        "HeadObjectRequest":{
+            "ServerSideEncryptionCustomerMethod" : {
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "HeadObjectOutput":{
+            "Expiration":{
+                "Type" : "Expiration",
+                "Marshaller" :"StringUtils.FromString",
+                "Unmarshaller":"StringUnmarshaller"
+            },
+            "DeleteMarker":{
+                "Type":"string",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
             }
         }
     },
@@ -761,6 +847,13 @@
         "LambdaFunctionConfiguration":[
             "Events",
             "Filter"
+        ],
+        "S3Grantee":[
+            "Type"
+        ],
+        "HeadObjectRequest":[
+            "UnmodifiedSinceDate",
+            "ModifiedSinceDate"
         ]
     },
     "unwrapXmlOutput":{

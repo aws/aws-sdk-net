@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -33,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// GetObjectAcl Request Marshaller
     /// </summary>       
-    public class GetObjectAclRequestMarshaller : IMarshaller<IRequest, GetObjectAclRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class GetObjectAclRequestMarshaller : IMarshaller<IRequest, GetObjectAclRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -55,13 +58,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
             request.AddSubResource("acl");
-
-            if (publicRequest.IsSetExpectedBucketOwner())
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-
-            if (publicRequest.IsSetRequestPayer())
+        
+            if (publicRequest.IsSetRequestPayer()) 
             {
                 request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
             }
@@ -69,17 +72,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new AmazonS3Exception("Request object does not have required field BucketName set");
             if (!publicRequest.IsSetKey())
                 throw new AmazonS3Exception("Request object does not have required field Key set");
-            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key.TrimStart('/')));
-
+            request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
+            
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
 
-
+            PostMarshallCustomization(request, publicRequest);
             request.UseQueryString = true;
             return request;
         }
-        private static GetObjectAclRequestMarshaller _instance = new GetObjectAclRequestMarshaller();
+        private static GetObjectAclRequestMarshaller _instance = new GetObjectAclRequestMarshaller();        
 
         internal static GetObjectAclRequestMarshaller GetInstance()
         {
@@ -97,5 +100,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-    }
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectAclRequest publicRequest);
+    }    
 }
