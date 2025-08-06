@@ -93,6 +93,11 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
             return response;
         }
 
+        /// <summary>
+        /// Extracts the error type from a Smithy shape identifier string.
+        /// The input is expected to be in the format "namespace#ErrorType[:additionalInfo]".
+        /// Returns the error type portion (e.g., "ErrorType").
+        /// </summary>
         private string SanitizeErrorType(string type)
         {
             int start = type.IndexOf('#');
