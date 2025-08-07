@@ -70,6 +70,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         // For every member, generate code to add the unmarshalled member to the response object
         foreach (var member in this.Structure.Members)
         {
+            if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Structure.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
+                continue;
             ProcessResponseBodyOrStructureMembers(member, true, this.Structure);
 #>
 <#

@@ -1,0 +1,18 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates"
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Generate PutBucketAcl PutBucketCors,PutObjectAcl, GetObjectAcl, ListObjectsV2, ListVersions, HeadObject"
+      ]
+    }
+  ]
+}
