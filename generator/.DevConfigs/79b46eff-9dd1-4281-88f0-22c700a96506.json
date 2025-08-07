@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates"
+      "Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates. Update all rest-xml service response unmarshallers to generate partial method PostUnmarshallCustomization. Generator updates."
     ]
   },
   "services": [
