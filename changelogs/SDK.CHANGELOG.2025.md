@@ -1,3 +1,17 @@
+### 3.7.1097.0 (2025-08-07 18:31 UTC)
+* Batch (3.7.500.5)
+	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture with Fargate Spot compute support.
+* CloudFront (3.7.501.0)
+	* Added new viewer security policy, TLSv1.3_2025, for CloudFront.
+* CodeBuild (3.7.501.0)
+	* AWS CodeBuild now supports comment-based pull request control.
+* GameLiftStreams (3.7.500.5)
+	* Adds Proton 9.0-2 to the list of runtime environment options available when creating an Amazon GameLift Streams application
+* Glue (3.7.501.0)
+	* AWS Glue Data Catalog now supports Iceberg Optimization settings at the Catalog level, and supports new options to control the optimization job run rate.
+* GuardDuty (3.7.501.0)
+	* Added support for VPC owner account ID associated with DNS request in the GuardDuty finding.
+
 ### 3.7.1096.0 (2025-08-06 18:31 UTC)
 * AppStream (3.7.500.4)
 	* Added support for G6 instances
