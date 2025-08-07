@@ -678,6 +678,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DnsRequestAction.VpcOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.EbsVolumesResult.Status</property>
     <min>1</min>
     <max>300</max>

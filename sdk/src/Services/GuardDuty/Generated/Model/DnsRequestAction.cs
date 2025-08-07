@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private string _domain;
         private string _domainWithSuffix;
         private string _protocol;
+        private string _vpcOwnerAccountId;
 
         /// <summary>
         /// Gets and sets the property Blocked. 
@@ -112,6 +113,26 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcOwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID that owns the VPC through which the DNS request
+        /// was made.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string VpcOwnerAccountId
+        {
+            get { return this._vpcOwnerAccountId; }
+            set { this._vpcOwnerAccountId = value; }
+        }
+
+        // Check to see if VpcOwnerAccountId property is set
+        internal bool IsSetVpcOwnerAccountId()
+        {
+            return this._vpcOwnerAccountId != null;
         }
 
     }
