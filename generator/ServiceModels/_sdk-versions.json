@@ -6,6 +6,75 @@
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : false,
     "PreviewLabel"        : "",
+    "ExtensionVersions"     : {
+        "Bedrock.MEAI" : {
+            "Version" : "4.0.1.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.4",
+                "BedrockRuntime" : "4.0.0.3"
+            },
+            "InPreview"               : false
+        },
+        "CborProtocol" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "CloudFront.Signers" : {
+            "Version" : "4.0.0.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0",
+                "CloudFront" : "4.0.0.0"
+            },
+            "InPreview"               : false
+        },
+        "CrtIntegration" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "EC2.DecryptPassword" : {
+            "Version" : "4.0.0.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0",
+                "EC2" : "4.0.0.0"
+            },
+            "InPreview"               : false
+        },        
+        "Logging.ILoggerAdaptor" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "Logging.Log4NetAdaptor" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "NETCore.Setup" : {
+            "Version" : "4.0.2.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.12"                
+            },
+            "InPreview"               : false
+        }
+    },
     "ServiceVersions"     : {
         "CloudHSM" : {
             "Version" : "4.0.0.12",

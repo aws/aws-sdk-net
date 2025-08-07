@@ -52,7 +52,10 @@ namespace ServiceClientGenerator
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
 
-        //public IDictionary<string, string> ServiceVersions { get; private set; }
+        /// <summary>
+        /// The set of extensions declared in the manifest as supporting generation. 
+        /// </summary>
+        public IEnumerable<ExtensionConfiguration> ExtensionConfigurations { get; private set; }
 
         /// <summary>
         /// The set of per-platform project metadata needed to generate a platform
@@ -117,6 +120,7 @@ namespace ServiceClientGenerator
 
             generationManifest.LoadDefaultConfiguration(options.ModelsFolder);
             generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], options);
+            generationManifest.LoadExtensionConfigurations(versionsManifest["ExtensionVersions"], options);
             generationManifest.LoadProjectConfigurations(manifest);
             generationManifest.LoadUnitTestProjectConfigurations(manifest);
 
@@ -215,6 +219,38 @@ namespace ServiceClientGenerator
 
             ServiceConfigurations = serviceConfigurations
                 .OrderBy(sc => sc.ServiceDependencies.Count)
+                .ToList();
+        }
+
+        /// <summary>
+        /// Load ExtensionConfiguration objects.
+        /// </summary>        
+        /// <param name="serviceVersions">loaded _sdk-versions.json file</param>
+        /// <param name="options">generator options</param>
+        void LoadExtensionConfigurations(JsonData extensionVersions, GeneratorOptions options)
+        {
+            var extensionConfigurations = new List<ExtensionConfiguration>();
+
+            var extensionDirectories = Utils.GetExtensionDirectories(options);
+
+            foreach (var extensionDirectory in extensionDirectories)
+            {
+                var altExtensionDirectory = Utils.ConvertPathAlt(extensionDirectory);
+                var extensionId = altExtensionDirectory.Substring(altExtensionDirectory.LastIndexOf(Path.AltDirectorySeparatorChar) + 1);
+
+                string nuspecFile = Utils.PathCombineAlt(altExtensionDirectory, extensionId + ".nuspec");
+                if (!File.Exists(nuspecFile))
+                {
+                    // Not an active extension so skip it.
+                    continue;
+                }
+
+                var config = CreateExtensionConfiguration(extensionVersions, altExtensionDirectory, extensionId);
+                extensionConfigurations.Add(config);
+            }
+
+            ExtensionConfigurations = extensionConfigurations
+                .OrderBy(sc => sc.Id)
                 .ToList();
         }
 
@@ -416,6 +452,44 @@ namespace ServiceClientGenerator
                 {
                     throw new NotImplementedException($"{nameof(DefaultAssemblyVersion)} '{DefaultAssemblyVersion}' should be updated to match the AWSSDK.Core minor version number '{versionTokens[0]}.{versionTokens[1]}'.");
                 }
+            }
+
+            return config;
+        }
+
+        private ExtensionConfiguration CreateExtensionConfiguration(JsonData extensionVersions, string extensionDirectoryPath, string extensionId)
+        {
+            var config = new ExtensionConfiguration
+            {
+                Id = extensionId,
+                Name = extensionId.Substring("AWSSDK.Extensions.".Length),
+                Path = extensionDirectoryPath,
+                ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal)
+            };
+                        
+            var versionInfoJson = extensionVersions[config.Name];
+            if (versionInfoJson != null)
+            {
+                var dependencies = versionInfoJson["Dependencies"];
+                foreach (var name in dependencies.PropertyNames)
+                {
+                    var version = dependencies[name].ToString();
+                    config.ServiceDependencies[name] = version;
+                }
+
+                var versionText = versionInfoJson["Version"].ToString();
+                config.FileVersion = versionText;
+
+                var assemblyVersionOverride = versionInfoJson["AssemblyVersionOverride"];
+                if (assemblyVersionOverride != null)
+                {
+                    config.AssemblyVersionOverride = assemblyVersionOverride.ToString();
+                }
+
+                if (versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
+                    config.InPreview = true;
+                else
+                    config.InPreview = this.DefaultToPreview;
             }
 
             return config;
