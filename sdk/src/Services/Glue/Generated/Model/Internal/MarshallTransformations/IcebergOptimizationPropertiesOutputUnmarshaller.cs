@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogPropertiesOutput Object
+    /// Response Unmarshaller for IcebergOptimizationPropertiesOutput Object
     /// </summary>  
-    public class CatalogPropertiesOutputUnmarshaller : IJsonUnmarshaller<CatalogPropertiesOutput, JsonUnmarshallerContext>
+    public class IcebergOptimizationPropertiesOutputUnmarshaller : IJsonUnmarshaller<IcebergOptimizationPropertiesOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CatalogPropertiesOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IcebergOptimizationPropertiesOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CatalogPropertiesOutput unmarshalledObject = new CatalogPropertiesOutput();
+            IcebergOptimizationPropertiesOutput unmarshalledObject = new IcebergOptimizationPropertiesOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomProperties", targetDepth))
+                if (context.TestExpression("Compaction", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.CustomProperties = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Compaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLakeAccessProperties", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth))
                 {
-                    var unmarshaller = DataLakeAccessPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.DataLakeAccessProperties = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IcebergOptimizationProperties", targetDepth))
+                if (context.TestExpression("OrphanFileDeletion", targetDepth))
                 {
-                    var unmarshaller = IcebergOptimizationPropertiesOutputUnmarshaller.Instance;
-                    unmarshalledObject.IcebergOptimizationProperties = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.OrphanFileDeletion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Retention", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Retention = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogPropertiesOutputUnmarshaller _instance = new CatalogPropertiesOutputUnmarshaller();        
+        private static IcebergOptimizationPropertiesOutputUnmarshaller _instance = new IcebergOptimizationPropertiesOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogPropertiesOutputUnmarshaller Instance
+        public static IcebergOptimizationPropertiesOutputUnmarshaller Instance
         {
             get
             {

@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private bool? _cleanExpiredFiles;
         private int? _numberOfSnapshotsToRetain;
+        private int? _runRateInHours;
         private int? _snapshotRetentionPeriodInDays;
 
         /// <summary>
@@ -75,6 +76,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetNumberOfSnapshotsToRetain()
         {
             return this._numberOfSnapshotsToRetain.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunRateInHours. 
+        /// <para>
+        /// The interval in hours between retention job runs. This parameter controls how frequently
+        /// the retention optimizer will run to clean up expired snapshots. The value must be
+        /// between 3 and 168 hours (7 days). If an input is not provided, the default value 24
+        /// will be used.
+        /// </para>
+        /// </summary>
+        public int? RunRateInHours
+        {
+            get { return this._runRateInHours; }
+            set { this._runRateInHours = value; }
+        }
+
+        // Check to see if RunRateInHours property is set
+        internal bool IsSetRunRateInHours()
+        {
+            return this._runRateInHours.HasValue; 
         }
 
         /// <summary>
