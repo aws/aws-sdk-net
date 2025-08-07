@@ -108,6 +108,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectName);
                 }
 
+                if(publicRequest.IsSetPullRequestBuildPolicy())
+                {
+                    context.Writer.WritePropertyName("pullRequestBuildPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PullRequestBuildPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PullRequestBuildPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRotateSecret())
                 {
                     context.Writer.WritePropertyName("rotateSecret");

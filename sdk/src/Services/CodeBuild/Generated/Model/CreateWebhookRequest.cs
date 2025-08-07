@@ -54,6 +54,7 @@ namespace Amazon.CodeBuild.Model
         private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
         private bool? _manualCreation;
         private string _projectName;
+        private PullRequestBuildPolicy _pullRequestBuildPolicy;
         private ScopeConfiguration _scopeConfiguration;
 
         /// <summary>
@@ -176,6 +177,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestBuildPolicy. 
+        /// <para>
+        /// A PullRequestBuildPolicy object that defines comment-based approval requirements for
+        /// triggering builds on pull requests. This policy helps control when automated builds
+        /// are executed based on contributor permissions and approval workflows.
+        /// </para>
+        /// </summary>
+        public PullRequestBuildPolicy PullRequestBuildPolicy
+        {
+            get { return this._pullRequestBuildPolicy; }
+            set { this._pullRequestBuildPolicy = value; }
+        }
+
+        // Check to see if PullRequestBuildPolicy property is set
+        internal bool IsSetPullRequestBuildPolicy()
+        {
+            return this._pullRequestBuildPolicy != null;
         }
 
         /// <summary>
