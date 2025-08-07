@@ -78,6 +78,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfSnapshotsToRetain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runRateInHours", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RunRateInHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("snapshotRetentionPeriodInDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _location;
         private int? _orphanFileRetentionPeriodInDays;
+        private int? _runRateInHours;
 
         /// <summary>
         /// Gets and sets the property Location. 
@@ -73,6 +74,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetOrphanFileRetentionPeriodInDays()
         {
             return this._orphanFileRetentionPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunRateInHours. 
+        /// <para>
+        /// The interval in hours between orphan file deletion job runs. This parameter controls
+        /// how frequently the orphan file deletion optimizer will run to clean up orphan files.
+        /// The value must be between 3 and 168 hours (7 days). If an input is not provided, the
+        /// default value 24 will be used.
+        /// </para>
+        /// </summary>
+        public int RunRateInHours
+        {
+            get { return this._runRateInHours.GetValueOrDefault(); }
+            set { this._runRateInHours = value; }
+        }
+
+        // Check to see if RunRateInHours property is set
+        internal bool IsSetRunRateInHours()
+        {
+            return this._runRateInHours.HasValue; 
         }
 
     }

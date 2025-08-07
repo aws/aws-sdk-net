@@ -66,6 +66,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("deleteFileThreshold", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DeleteFileThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("minInputFiles", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinInputFiles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("strategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

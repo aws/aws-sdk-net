@@ -73,6 +73,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIcebergOptimizationProperties())
+            {
+                context.Writer.WritePropertyName("IcebergOptimizationProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IcebergOptimizationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.IcebergOptimizationProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

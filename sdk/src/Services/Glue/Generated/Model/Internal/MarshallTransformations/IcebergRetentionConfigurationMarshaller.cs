@@ -60,6 +60,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NumberOfSnapshotsToRetain);
             }
 
+            if(requestObject.IsSetRunRateInHours())
+            {
+                context.Writer.WritePropertyName("runRateInHours");
+                context.Writer.Write(requestObject.RunRateInHours);
+            }
+
             if(requestObject.IsSetSnapshotRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("snapshotRetentionPeriodInDays");
