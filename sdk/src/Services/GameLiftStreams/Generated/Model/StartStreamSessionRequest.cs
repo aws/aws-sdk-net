@@ -199,9 +199,10 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property ConnectionTimeoutSeconds. 
         /// <para>
         /// Length of time (in seconds) that Amazon GameLift Streams should wait for a client
-        /// to connect to the stream session. This time span starts when the stream session reaches
-        /// <c>ACTIVE</c> status. If no client connects before the timeout, Amazon GameLift Streams
-        /// stops the stream session with status of <c>TERMINATED</c>. Default value is 120.
+        /// to connect or reconnect to the stream session. This time span starts when the stream
+        /// session reaches <c>ACTIVE</c> status. If no client connects before the timeout, Amazon
+        /// GameLift Streams stops the stream session with status of <c>TERMINATED</c>. Default
+        /// value is 120.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]

@@ -4,31 +4,31 @@
     <property>Amazon.GameLiftStreams.Model.AddStreamGroupLocationsRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.AddStreamGroupLocationsResponse.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.AssociateApplicationsRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.AssociateApplicationsResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationRequest.ApplicationLogOutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?$</pattern>
+    <pattern>$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationRequest.ApplicationSourceUri</property>
@@ -39,13 +39,13 @@
     <property>Amazon.GameLiftStreams.Model.CreateApplicationRequest.ClientToken</property>
     <min>32</min>
     <max>128</max>
-    <pattern>^[\x21-\x7E]+$</pattern>
+    <pattern>[\x21-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationRequest.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationRequest.ExecutablePath</property>
@@ -56,7 +56,7 @@
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.ApplicationLogOutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?$</pattern>
+    <pattern>$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.ApplicationSourceUri</property>
@@ -67,13 +67,13 @@
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.ExecutablePath</property>
@@ -84,55 +84,55 @@
     <property>Amazon.GameLiftStreams.Model.CreateApplicationResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupRequest.ClientToken</property>
     <min>32</min>
     <max>128</max>
-    <pattern>^[\x21-\x7E]+$</pattern>
+    <pattern>[\x21-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupRequest.DefaultApplicationIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupRequest.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamGroupResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamSessionConnectionRequest.ClientToken</property>
     <min>32</min>
     <max>128</max>
-    <pattern>^[\x21-\x7E]+$</pattern>
+    <pattern>[\x21-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamSessionConnectionRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.CreateStreamSessionConnectionRequest.SignalRequest</property>
@@ -142,61 +142,61 @@
     <property>Amazon.GameLiftStreams.Model.CreateStreamSessionConnectionRequest.StreamSessionIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DeleteApplicationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DeleteStreamGroupRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DisassociateApplicationsRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DisassociateApplicationsResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ExportStreamSessionFilesRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ExportStreamSessionFilesRequest.OutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^s3://.*(/|\.zip|\.ZIP)$</pattern>
+    <pattern>s3://.*(/|\.zip|\.ZIP)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ExportStreamSessionFilesRequest.StreamSessionIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetApplicationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.ApplicationLogOutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?$</pattern>
+    <pattern>$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.ApplicationSourceUri</property>
@@ -207,13 +207,13 @@
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.ExecutablePath</property>
@@ -224,55 +224,55 @@
     <property>Amazon.GameLiftStreams.Model.GetApplicationResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamGroupRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamGroupResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamGroupResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamGroupResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionRequest.StreamSessionIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.ApplicationArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.ConnectionTimeoutSeconds</property>
@@ -283,13 +283,13 @@
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.Location</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.SessionLengthSeconds</property>
@@ -304,13 +304,13 @@
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.StreamGroupId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.GetStreamSessionResponse.UserId</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[-_a-zA-Z0-9/=+]*$</pattern>
+    <pattern>[-_a-zA-Z0-9/=+]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ListApplicationsRequest.MaxResults</property>
@@ -326,7 +326,7 @@
     <property>Amazon.GameLiftStreams.Model.ListStreamSessionsRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ListStreamSessionsRequest.MaxResults</property>
@@ -342,25 +342,25 @@
     <property>Amazon.GameLiftStreams.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.RemoveStreamGroupLocationsRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.ApplicationIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.ClientToken</property>
     <min>32</min>
     <max>128</max>
-    <pattern>^[\x21-\x7E]+$</pattern>
+    <pattern>[\x21-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.ConnectionTimeoutSeconds</property>
@@ -371,13 +371,13 @@
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.SessionLengthSeconds</property>
@@ -392,19 +392,19 @@
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionRequest.UserId</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[-_a-zA-Z0-9/=+]*$</pattern>
+    <pattern>[-_a-zA-Z0-9/=+]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.ApplicationArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.ConnectionTimeoutSeconds</property>
@@ -415,13 +415,13 @@
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.Location</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.SessionLengthSeconds</property>
@@ -436,61 +436,61 @@
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.StreamGroupId</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StartStreamSessionResponse.UserId</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[-_a-zA-Z0-9/=+]*$</pattern>
+    <pattern>[-_a-zA-Z0-9/=+]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.TerminateStreamSessionRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.TerminateStreamSessionRequest.StreamSessionIdentifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationRequest.ApplicationLogOutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?$</pattern>
+    <pattern>$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationRequest.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.ApplicationLogOutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?$</pattern>
+    <pattern>$|^s3://([a-zA-Z0-9][a-zA-Z0-9._-]{1,61}[a-zA-Z0-9])(/[a-zA-Z0-9._-]+)*/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.ApplicationSourceUri</property>
@@ -501,13 +501,13 @@
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.ExecutablePath</property>
@@ -518,73 +518,73 @@
     <property>Amazon.GameLiftStreams.Model.UpdateApplicationResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupRequest.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupRequest.Identifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupResponse.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupResponse.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ApplicationSummary.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ApplicationSummary.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ApplicationSummary.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DefaultApplication.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.DefaultApplication.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ExportFilesMetadata.OutputUri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^s3://.*(/|\.zip|\.ZIP)$</pattern>
+    <pattern>s3://.*(/|\.zip|\.ZIP)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.ExportFilesMetadata.StatusReason</property>
@@ -599,7 +599,7 @@
     <property>Amazon.GameLiftStreams.Model.LocationConfiguration.LocationName</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.LocationConfiguration.OnDemandCapacity</property>
@@ -621,7 +621,7 @@
     <property>Amazon.GameLiftStreams.Model.LocationState.LocationName</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.LocationState.OnDemandCapacity</property>
@@ -635,7 +635,7 @@
     <property>Amazon.GameLiftStreams.Model.ReplicationStatus.Location</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.RuntimeEnvironment.Version</property>
@@ -646,42 +646,42 @@
     <property>Amazon.GameLiftStreams.Model.StreamGroupSummary.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)$</pattern>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamGroupSummary.Description</property>
     <min>1</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*$</pattern>
+    <pattern>[a-zA-Z0-9-_.!+@/][a-zA-Z0-9-_.!+@/ ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamGroupSummary.Id</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.ApplicationArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.Location</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[a-zA-Z0-9-]+$</pattern>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.StreamSessionSummary.UserId</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[-_a-zA-Z0-9/=+]*$</pattern>
+    <pattern>[-_a-zA-Z0-9/=+]*</pattern>
   </property-value-rule>
 </property-value-rules>

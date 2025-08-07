@@ -290,16 +290,15 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>internalError</c>: The request can't process right now bcause of an issue with
-        /// the server. Try again later. Reach out to the Amazon GameLift Streams team for more
-        /// help. 
+        ///  <c>internalError</c>: The request can't process right now because of an issue with
+        /// the server. Try again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>noAvailableInstances</c>: Amazon GameLift Streams does not currently have enough
-        /// available On-Demand capacity to fulfill your request. Wait a few minutes and retry
+        /// available on-demand capacity to fulfill your request. Wait a few minutes and retry
         /// the request as capacity can shift frequently. You can also try to make the request
-        /// using a different stream class or in another region. 
+        /// using a different stream class or in another region.
         /// </para>
         ///  </li> </ul>
         /// </summary>
