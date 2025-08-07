@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutObjectLockConfiguration operation
     /// </summary>  
-    public class PutObjectLockConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class PutObjectLockConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -49,6 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -74,6 +75,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutObjectLockConfigurationResponse response);
 
         private static PutObjectLockConfigurationResponseUnmarshaller _instance = new PutObjectLockConfigurationResponseUnmarshaller();        
 
