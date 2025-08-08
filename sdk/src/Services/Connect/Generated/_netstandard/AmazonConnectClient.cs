@@ -886,12 +886,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a set of quick connects with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -1561,12 +1556,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates an agent status for the specified Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2020,12 +2010,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Creates hours of operation. 
-        /// </para>
+        /// Creates hours of operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -2080,7 +2065,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -3022,9 +3007,9 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-        /// parameters are required in some situations. For example, <c>Email</c> is required
-        /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
-        /// are required if you are using Amazon Connect or SAML for identity management.
+        /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
+        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3178,7 +3163,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3247,7 +3235,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3768,12 +3759,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes an hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -3822,7 +3808,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -3993,7 +3979,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4143,7 +4132,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4266,7 +4258,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4370,7 +4365,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4478,7 +4476,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -4651,7 +4652,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4707,7 +4711,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4762,7 +4769,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4814,7 +4824,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4848,12 +4861,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes an agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -5305,12 +5313,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -5736,12 +5739,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
         /// <param name="cancellationToken">
@@ -6754,12 +6752,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Disassociates a set of quick connects from a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -7149,6 +7142,76 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetContactMetrics
+
+        internal virtual GetContactMetricsResponse GetContactMetrics(GetContactMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the real-time metrics of the specified contact.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can use this API to retrieve the position of the contact in the queue.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">REST API Reference for GetContactMetrics Operation</seealso>
+        public virtual Task<GetContactMetricsResponse> GetContactMetricsAsync(GetContactMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContactMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCurrentMetricData
 
         internal virtual GetCurrentMetricDataResponse GetCurrentMetricData(GetCurrentMetricDataRequest request)
@@ -7170,6 +7233,50 @@ namespace Amazon.Connect
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Narrow the time range of your request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
         /// <param name="cancellationToken">
@@ -7522,6 +7629,50 @@ namespace Amazon.Connect
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Narrow the time range of your request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
         /// <param name="cancellationToken">
@@ -7800,12 +7951,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists agent statuses.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentStatuses service method.</param>
         /// <param name="cancellationToken">
@@ -9288,12 +9434,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the quick connects associated with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -10633,7 +10774,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -13347,12 +13491,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -14173,12 +14312,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -14578,7 +14712,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -14644,7 +14781,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -14780,12 +14920,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation for the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -14834,13 +14969,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the maximum number of contacts allowed in a queue before it is considered
         /// full.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts service method.</param>
         /// <param name="cancellationToken">
@@ -14889,13 +15019,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
         /// must be provided.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName service method.</param>
         /// <param name="cancellationToken">
@@ -14947,13 +15072,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -15082,12 +15203,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the status of the queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus service method.</param>
         /// <param name="cancellationToken">
@@ -15848,7 +15964,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -16168,7 +16287,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -16227,7 +16349,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.

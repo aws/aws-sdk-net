@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQueueQuickConnects operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Lists the quick connects associated with a queue.
-    /// </para>
     /// </summary>
     public partial class ListQueueQuickConnectsRequest : AmazonConnectRequest
     {

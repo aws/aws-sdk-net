@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQueueHoursOfOperation operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates the hours of operation for the specified queue.
-    /// </para>
     /// </summary>
     public partial class UpdateQueueHoursOfOperationRequest : AmazonConnectRequest
     {

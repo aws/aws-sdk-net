@@ -34,7 +34,23 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CommonAttributeAndCondition
     {
+        private HierarchyGroupCondition _hierarchyGroupCondition;
         private List<TagCondition> _tagConditions = AWSConfigs.InitializeCollections ? new List<TagCondition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property HierarchyGroupCondition.
+        /// </summary>
+        public HierarchyGroupCondition HierarchyGroupCondition
+        {
+            get { return this._hierarchyGroupCondition; }
+            set { this._hierarchyGroupCondition = value; }
+        }
+
+        // Check to see if HierarchyGroupCondition property is set
+        internal bool IsSetHierarchyGroupCondition()
+        {
+            return this._hierarchyGroupCondition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TagConditions. 

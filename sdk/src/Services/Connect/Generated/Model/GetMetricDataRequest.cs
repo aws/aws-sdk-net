@@ -169,6 +169,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: AVG
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average
+        /// queue abandon time</a> 
+        /// </para>
         ///  </dd> <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
@@ -176,6 +181,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: AVG
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time">After
+        /// contact work time</a> 
         /// </para>
         ///  </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> 
         /// <para>
@@ -185,6 +195,24 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API
+        /// contacts handled</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_HOLD_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: SECONDS
+        /// </para>
+        ///  
+        /// <para>
+        /// Statistic: AVG
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time">Average
+        /// customer hold time</a> 
+        /// </para>
         ///  </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -192,6 +220,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-contacts-handled">Callback
+        /// contacts handled</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
@@ -201,6 +234,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned">Contacts
+        /// abandoned</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -208,6 +246,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-agent-hung-up-first">Contacts
+        /// agent hung up first</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_CONSULTED</dt> <dd> 
         /// <para>
@@ -217,6 +260,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-consulted">Contacts
+        /// consulted</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_HANDLED</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -224,6 +272,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts
+        /// handled</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> 
         /// <para>
@@ -233,6 +286,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-incoming">Contacts
+        /// handled incoming</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -240,6 +298,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-outbound">Contacts
+        /// handled outbound</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
         /// <para>
@@ -249,6 +312,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect">Contacts
+        /// hold disconnect</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_MISSED</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -256,6 +324,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response">AGENT_NON_RESPONSE</a>
+        /// 
         /// </para>
         ///  </dd> <dt>CONTACTS_QUEUED</dt> <dd> 
         /// <para>
@@ -265,6 +338,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued">Contacts
+        /// queued</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -272,6 +350,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-in">Contacts
+        /// transferred in</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> 
         /// <para>
@@ -281,6 +364,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts
+        /// transferred out queue</a> 
+        /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> 
         /// <para>
         /// Unit: COUNT
@@ -288,6 +376,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: SUM
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out">Contacts
+        /// transferred out</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd> 
         /// <para>
@@ -297,6 +390,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: SUM
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue">Contacts
+        /// transferred out queue</a> 
+        /// </para>
         ///  </dd> <dt>HANDLE_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
@@ -305,13 +403,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: AVG
         /// </para>
-        ///  </dd> <dt>HOLD_TIME</dt> <dd> 
-        /// <para>
-        /// Unit: SECONDS
-        /// </para>
         ///  
         /// <para>
-        /// Statistic: AVG
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time">Average
+        /// handle time</a> 
         /// </para>
         ///  </dd> <dt>INTERACTION_AND_HOLD_TIME</dt> <dd> 
         /// <para>
@@ -321,6 +416,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: AVG
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time">Average
+        /// agent interaction and customer hold time</a> 
+        /// </para>
         ///  </dd> <dt>INTERACTION_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
@@ -328,6 +428,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: AVG
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aaverage-agent-interaction-time">Average
+        /// agent interaction time</a> 
         /// </para>
         ///  </dd> <dt>OCCUPANCY</dt> <dd> 
         /// <para>
@@ -337,6 +442,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: AVG
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy">Occupancy</a>
+        /// 
+        /// </para>
         ///  </dd> <dt>QUEUE_ANSWER_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
@@ -345,6 +455,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Statistic: AVG
         /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html##average-queue-answer-time">Average
+        /// queue answer time</a> 
+        /// </para>
         ///  </dd> <dt>QUEUED_TIME</dt> <dd> 
         /// <para>
         /// Unit: SECONDS
@@ -352,6 +467,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Statistic: MAX
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time">Minimum
+        /// flow time</a> 
         /// </para>
         ///  </dd> <dt>SERVICE_LEVEL</dt> <dd> 
         /// <para>
@@ -369,6 +489,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
         /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average
+        /// queue abandon time</a> 
         /// </para>
         ///  </dd> </dl>
         /// </summary>

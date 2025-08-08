@@ -31,13 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQueueMaxContacts operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates the maximum number of contacts allowed in a queue before it is considered
     /// full.
-    /// </para>
     /// </summary>
     public partial class UpdateQueueMaxContactsRequest : AmazonConnectRequest
     {

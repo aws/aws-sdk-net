@@ -54,7 +54,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AdditionalRecipients. 
         /// <para>
-        /// The addtional recipients address of the email.
+        /// The additional recipients address of the email.
         /// </para>
         /// </summary>
         public InboundAdditionalRecipients AdditionalRecipients

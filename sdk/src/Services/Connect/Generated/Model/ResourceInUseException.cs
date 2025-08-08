@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// That resource is already in use. Please try another.
+    /// That resource is already in use (for example, you're trying to add a record with the
+    /// same name as an existing record). If you are trying to delete a resource (for example,
+    /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+    /// resources and then try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

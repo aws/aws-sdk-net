@@ -30,16 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAssociatedContacts operation.
-    /// Provides information about contact tree, a list of associated contacts with a unique
-    /// identifier.
+    /// Container for the parameters to the GetContactMetrics operation.
+    /// Gets the real-time metrics of the specified contact.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Use cases</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Following are common uses cases for this API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You can use this API to retrieve the position of the contact in the queue.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// Connect endpoints and quotas</a>.
+    /// </para>
     /// </summary>
-    public partial class ListAssociatedContactsRequest : AmazonConnectRequest
+    public partial class GetContactMetricsRequest : AmazonConnectRequest
     {
         private string _contactId;
         private string _instanceId;
-        private int? _maxResults;
-        private string _nextToken;
+        private List<ContactMetricInfo> _metrics = AWSConfigs.InitializeCollections ? new List<ContactMetricInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -47,7 +63,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the contact in this instance of Amazon Connect. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=250)]
         public string ContactId
         {
             get { return this._contactId; }
@@ -67,7 +83,7 @@ namespace Amazon.Connect.Model
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=250)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -81,41 +97,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property Metrics. 
         /// <para>
-        /// The maximum number of results to return per page. 
+        /// A list of contact-level metrics to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        [AWSProperty(Required=true, Min=1)]
+        public List<ContactMetricInfo> Metrics
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._metrics; }
+            set { this._metrics = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
         {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EffectiveHoursOfOperationList. 
         /// <para>
-        /// Information about the effective hours of operations
+        /// Information about the effective hours of operations.
         /// </para>
         /// </summary>
         public List<EffectiveHoursOfOperations> EffectiveHoursOfOperationList

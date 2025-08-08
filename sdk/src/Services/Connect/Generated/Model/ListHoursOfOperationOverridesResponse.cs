@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
         /// <para>
-        /// The AWS Region where this resource was last modified.
+        /// The Amazon Web Services Region where this resource was last modified.
         /// </para>
         /// </summary>
         public string LastModifiedRegion
