@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHoursOfOperationOverride operation.
-    /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+    /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
     /// </summary>
     public partial class CreateHoursOfOperationOverrideRequest : AmazonConnectRequest
     {
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EffectiveFrom. 
         /// <para>
-        /// The date from when the hours of operation override would be effective.
+        /// The date from when the hours of operation override is effective.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EffectiveTill. 
         /// <para>
-        /// The date until when the hours of operation override would be effective.
+        /// The date until when the hours of operation override is effective.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

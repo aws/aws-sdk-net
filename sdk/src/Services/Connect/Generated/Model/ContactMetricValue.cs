@@ -30,49 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the email recipient
+    /// Object which contains the number.
     /// </summary>
-    public partial class EmailRecipient
+    public partial class ContactMetricValue
     {
-        private string _address;
-        private string _displayName;
+        private double? _number;
 
         /// <summary>
-        /// Gets and sets the property Address. 
+        /// Gets and sets the property Number. 
         /// <para>
-        /// Address of the email recipient.
+        /// The number of type Double. This number is the contact's position in queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Address
+        public double? Number
         {
-            get { return this._address; }
-            set { this._address = value; }
+            get { return this._number; }
+            set { this._number = value; }
         }
 
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
         {
-            return this._address != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DisplayName. 
-        /// <para>
-        /// Display name of the email recipient.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string DisplayName
-        {
-            get { return this._displayName; }
-            set { this._displayName = value; }
-        }
-
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
-        {
-            return this._displayName != null;
+            return this._number.HasValue; 
         }
 
     }

@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAgentStatus operation.
-    /// Describes an agent status.
+    /// Object containing information about metric requested for the contact.
     /// </summary>
-    public partial class DescribeAgentStatusRequest : AmazonConnectRequest
+    public partial class ContactMetricResult
     {
-        private string _agentStatusId;
-        private string _instanceId;
+        private ContactMetricName _name;
+        private ContactMetricValue _value;
 
         /// <summary>
-        /// Gets and sets the property AgentStatusId. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the agent status.
+        /// The name of the metric being retrieved in type String.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string AgentStatusId
+        public ContactMetricName Name
         {
-            get { return this._agentStatusId; }
-            set { this._agentStatusId = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if AgentStatusId property is set
-        internal bool IsSetAgentStatusId()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._agentStatusId != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// Object result associated with the metric received.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string InstanceId
+        [AWSProperty(Required=true)]
+        public ContactMetricValue Value
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._instanceId != null;
+            return this._value != null;
         }
 
     }

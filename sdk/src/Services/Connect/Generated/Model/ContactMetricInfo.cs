@@ -30,49 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the email recipient
+    /// The object that contains information about metric being requested.
     /// </summary>
-    public partial class EmailRecipient
+    public partial class ContactMetricInfo
     {
-        private string _address;
-        private string _displayName;
+        private ContactMetricName _name;
 
         /// <summary>
-        /// Gets and sets the property Address. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Address of the email recipient.
+        /// The name of the metric being retrieved in type String.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Address
+        [AWSProperty(Required=true)]
+        public ContactMetricName Name
         {
-            get { return this._address; }
-            set { this._address = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._address != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DisplayName. 
-        /// <para>
-        /// Display name of the email recipient.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string DisplayName
-        {
-            get { return this._displayName; }
-            set { this._displayName = value; }
-        }
-
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
-        {
-            return this._displayName != null;
+            return this._name != null;
         }
 
     }

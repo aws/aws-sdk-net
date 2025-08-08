@@ -62,6 +62,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetHierarchyGroupCondition())
+            {
+                context.Writer.WritePropertyName("HierarchyGroupCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HierarchyGroupConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOrConditions())
             {
                 context.Writer.WritePropertyName("OrConditions");

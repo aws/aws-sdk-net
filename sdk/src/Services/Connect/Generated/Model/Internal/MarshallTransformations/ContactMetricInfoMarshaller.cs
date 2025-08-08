@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CommonAttributeAndCondition Marshaller
+    /// ContactMetricInfo Marshaller
     /// </summary>
-    public class CommonAttributeAndConditionMarshaller : IRequestMarshaller<CommonAttributeAndCondition, JsonMarshallerContext> 
+    public class ContactMetricInfoMarshaller : IRequestMarshaller<ContactMetricInfo, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,35 +42,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CommonAttributeAndCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ContactMetricInfo requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHierarchyGroupCondition())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("HierarchyGroupCondition");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HierarchyGroupConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTagConditions())
-            {
-                context.Writer.WritePropertyName("TagConditions");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectTagConditionsListValue in requestObject.TagConditions)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagConditionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTagConditionsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }
@@ -78,7 +57,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CommonAttributeAndConditionMarshaller Instance = new CommonAttributeAndConditionMarshaller();
+        public readonly static ContactMetricInfoMarshaller Instance = new ContactMetricInfoMarshaller();
 
     }
 }

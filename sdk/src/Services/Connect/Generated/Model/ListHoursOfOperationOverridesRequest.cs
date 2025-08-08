@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property HoursOfOperationId. 
         /// <para>
-        /// The identifier for the hours of operation
+        /// The identifier for the hours of operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +81,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page. The default MaxResult size is 100.
-        /// Valid Range: Minimum value of 1. Maximum value of 1000.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

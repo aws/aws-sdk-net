@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class UserHierarchyGroupSearchCriteria
     {
         private List<UserHierarchyGroupSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<UserHierarchyGroupSearchCriteria>() : null;
+        private HierarchyGroupCondition _hierarchyGroupCondition;
         private List<UserHierarchyGroupSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<UserHierarchyGroupSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
@@ -59,6 +60,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetAndConditions()
         {
             return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchyGroupCondition.
+        /// </summary>
+        public HierarchyGroupCondition HierarchyGroupCondition
+        {
+            get { return this._hierarchyGroupCondition; }
+            set { this._hierarchyGroupCondition = value; }
+        }
+
+        // Check to see if HierarchyGroupCondition property is set
+        internal bool IsSetHierarchyGroupCondition()
+        {
+            return this._hierarchyGroupCondition != null;
         }
 
         /// <summary>

@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentStatus operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Updates agent status.
-    /// </para>
     /// </summary>
     public partial class UpdateAgentStatusRequest : AmazonConnectRequest
     {
