@@ -64,7 +64,7 @@ namespace Amazon.Inspector2.Model
         /// The resource scan types you want to disable.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> ResourceTypes
         {
             get { return this._resourceTypes; }
