@@ -1,3 +1,52 @@
+### 3.7.1098.0 (2025-08-08 18:50 UTC)
+* ApplicationSignals (3.7.501.0)
+	* Removed incorrect endpoint tests
+* BackupSearch (3.7.501.0)
+	* Removed incorrect endpoint tests
+* BCMPricingCalculator (3.7.501.0)
+	* Removed incorrect endpoint tests
+* Billing (3.7.501.0)
+	* Removed incorrect endpoint tests
+* Connect (3.7.501.0)
+	* This release adds a new API GetContactMetrics for Amazon Connect.
+* DSQL (3.7.501.0)
+	* Removed incorrect endpoint tests
+* GameLiftStreams (3.7.501.0)
+	* Removed incorrect endpoint tests
+* Inspector2 (3.7.501.0)
+	* Add CVSSV4 to Vulnerability Search API and update enable/disable account id list length to 5
+* Invoicing (3.7.501.0)
+	* Removed incorrect endpoint tests
+* IotData (3.7.501.0)
+	* Adding DeleteConnection API to IoT Data Plane
+* IoTManagedIntegrations (3.7.501.0)
+	* Removed incorrect endpoint tests
+* KeyspacesStreams (3.7.501.0)
+	* Removed incorrect endpoint tests
+* MPA (3.7.501.0)
+	* Removed incorrect endpoint tests
+* NetworkFlowMonitor (3.7.501.0)
+	* Removed incorrect endpoint tests
+* Notifications (3.7.501.0)
+	* Removed incorrect endpoint tests
+* NotificationsContacts (3.7.501.0)
+	* Removed incorrect endpoint tests
+* PartnerCentralSelling (3.7.501.0)
+	* Removed incorrect endpoint tests
+* S3Vectors (3.7.501.0)
+	* Removed incorrect endpoint tests
+* SageMaker (3.7.503.0)
+	* Adds support for GB200 UltraServers in Amazon SageMaker training jobs, training plans, and HyperPod clusters
+* SecurityIR (3.7.501.0)
+	* Removed incorrect endpoint tests
+* TranscribeService (3.7.500.5)
+	* Update documentation to use key ARN only in OutputEncryptionKMSKeyId request parameter
+* WorkspacesInstances (3.7.501.0)
+	* Removed incorrect endpoint tests
+* Core 3.7.500.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1097.0 (2025-08-07 18:31 UTC)
 * Batch (3.7.500.5)
 	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture with Fargate Spot compute support.

@@ -32,7 +32,7 @@ namespace Amazon.Mgn
     public partial class AmazonMgnConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("mgn", "3.7.500.4");
+            InternalSDKUtils.BuildUserAgentString("mgn", "3.7.500.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

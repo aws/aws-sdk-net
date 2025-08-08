@@ -32,7 +32,7 @@ namespace Amazon.Scheduler
     public partial class AmazonSchedulerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Scheduler", "3.7.500.4");
+            InternalSDKUtils.BuildUserAgentString("Scheduler", "3.7.500.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>
