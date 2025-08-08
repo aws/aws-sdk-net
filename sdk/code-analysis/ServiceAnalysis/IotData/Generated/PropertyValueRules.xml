@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.IotData.Model.DeleteConnectionRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[^$].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IotData.Model.DeleteThingShadowRequest.ShadowName</property>
     <min>1</min>
     <max>64</max>

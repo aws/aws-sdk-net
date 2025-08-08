@@ -128,6 +128,77 @@ namespace Amazon.IotData
         #endregion
 
 
+        #region  DeleteConnection
+
+        /// <summary>
+        /// Disconnects a connected MQTT client from Amazon Web Services IoT Core. When you disconnect
+        /// a client, Amazon Web Services IoT Core closes the client's network connection and
+        /// optionally cleans the session state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection operation on AmazonIotDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionResult from IotData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteThingShadow
 
         /// <summary>
@@ -229,7 +300,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">GetRetainedMessage</a>
         /// action.
         /// </para>
         ///  
@@ -496,7 +567,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">ListRetainedMessages</a>
         /// action.
         /// </para>
         ///  
