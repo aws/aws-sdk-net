@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A summary of an event in a SageMaker HyperPod cluster.
+    /// A summary of an event in a HyperPod cluster.
     /// </summary>
     public partial class ClusterEventSummary
     {
@@ -46,8 +46,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster associated with the
-        /// event.
+        /// The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -66,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the SageMaker HyperPod cluster associated with the event.
+        /// The name of the HyperPod cluster associated with the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -160,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The EC2 instance ID associated with the event, if applicable.
+        /// The Amazon Elastic Compute Cloud (EC2) instance ID associated with the event, if applicable.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -178,8 +177,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource associated with the event. Valid values are "Cluster", "InstanceGroup",
-        /// or "Instance".
+        /// The type of resource associated with the event. Valid values are <c>Cluster</c>, <c>InstanceGroup</c>,
+        /// or <c>Instance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

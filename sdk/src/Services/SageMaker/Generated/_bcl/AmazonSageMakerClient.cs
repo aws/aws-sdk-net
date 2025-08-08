@@ -506,8 +506,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
-        /// HyperPod cluster. 
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
         /// 
         ///  
         /// <para>
@@ -534,8 +534,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
-        /// HyperPod cluster. 
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
         /// 
         ///  
         /// <para>
@@ -12027,6 +12027,53 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeReservedCapacity
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        public virtual DescribeReservedCapacityResponse DescribeReservedCapacity(DescribeReservedCapacityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedCapacityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        public virtual Task<DescribeReservedCapacityResponse> DescribeReservedCapacityAsync(DescribeReservedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReservedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReservedCapacityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeReservedCapacityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSpace
 
 
@@ -12581,7 +12628,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
-        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// EKS orchestrated SageMaker HyperPod cluster.
         /// 
         ///  
         /// <para>
@@ -12609,7 +12656,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
-        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// EKS orchestrated SageMaker HyperPod cluster.
         /// 
         ///  
         /// <para>
@@ -16719,6 +16766,53 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListTrialsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTrialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUltraServersByReservedCapacity
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        public virtual ListUltraServersByReservedCapacityResponse ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUltraServersByReservedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUltraServersByReservedCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<ListUltraServersByReservedCapacityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        public virtual Task<ListUltraServersByReservedCapacityResponse> ListUltraServersByReservedCapacityAsync(ListUltraServersByReservedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUltraServersByReservedCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUltraServersByReservedCapacityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUltraServersByReservedCapacityResponse>(request, options, cancellationToken);
         }
 
         #endregion

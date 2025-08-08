@@ -128,6 +128,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TotalUltraServerCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalUltraServerCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrainingPlanArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

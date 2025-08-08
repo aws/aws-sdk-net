@@ -1496,6 +1496,10 @@
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTrainingPlanRequest.SpareInstanceCountPerUltraServer</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrainingPlanRequest.TrainingPlanName</property>
     <min>1</min>
     <max>64</max>
@@ -4185,6 +4189,46 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,31}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityRequest.ReservedCapacityArn</property>
+    <min>50</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:reserved-capacity/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.AvailabilityZone</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-z]+\-[0-9a-z\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.AvailableInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.DurationHours</property>
+    <min>0</min>
+    <max>87600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.DurationMinutes</property>
+    <min>0</min>
+    <max>59</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.InUseInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.ReservedCapacityArn</property>
+    <min>50</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:reserved-capacity/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeReservedCapacityResponse.TotalInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeSpaceRequest.DomainId</property>
     <min>0</min>
     <max>63</max>
@@ -4332,6 +4376,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.AvailableSpareInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.DurationHours</property>
     <min>0</min>
     <max>87600</max>
@@ -4355,6 +4403,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.TotalUltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.TrainingPlanArn</property>
     <min>50</min>
     <max>2048</max>
@@ -4365,6 +4417,10 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.UnhealthyInstanceCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.UpfrontFee</property>
@@ -6823,6 +6879,29 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListUltraServersByReservedCapacityRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListUltraServersByReservedCapacityRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListUltraServersByReservedCapacityRequest.ReservedCapacityArn</property>
+    <min>50</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:reserved-capacity/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListUltraServersByReservedCapacityResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ListUserProfilesRequest.DomainIdEquals</property>
     <min>0</min>
     <max>63</max>
@@ -7000,6 +7079,16 @@
     <property>Amazon.SageMaker.Model.SearchTrainingPlanOfferingsRequest.InstanceCount</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SearchTrainingPlanOfferingsRequest.UltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.SearchTrainingPlanOfferingsRequest.UltraServerType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ml.[a-z0-9\-.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SendPipelineExecutionStepFailureRequest.CallbackToken</property>
@@ -12830,6 +12919,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.PlacementSpecification.InstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PlacementSpecification.UltraServerId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.PresignedUrlAccessConfig.ExpectedS3Url</property>
     <min>0</min>
     <max>1024</max>
@@ -13435,6 +13533,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ReservedCapacityOffering.UltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ReservedCapacityOffering.UltraServerType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ml.[a-z0-9\-.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ReservedCapacitySummary.AvailabilityZone</property>
     <min>1</min>
     <max>32</max>
@@ -13459,6 +13567,16 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ReservedCapacitySummary.TotalInstanceCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ReservedCapacitySummary.UltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ReservedCapacitySummary.UltraServerType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ml.[a-z0-9\-.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceCatalog.Description</property>
@@ -14106,6 +14224,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanSummary.TotalUltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TrainingPlanSummary.TrainingPlanArn</property>
     <min>50</min>
     <max>2048</max>
@@ -14462,6 +14584,66 @@
     <property>Amazon.SageMaker.Model.UiTemplateInfo.Url</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.AvailabilityZone</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-z]+\-[0-9a-z\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.AvailableInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.AvailableSpareInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.ConfiguredSpareInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.InUseInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.TotalInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.UltraServerId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.UltraServerType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ml.[a-z0-9\-.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServer.UnhealthyInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServerSummary.AvailableSpareInstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServerSummary.UltraServerCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServerSummary.UltraServerType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>ml.[a-z0-9\-.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UltraServerSummary.UnhealthyInstanceCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UnifiedStudioSettings.DomainAccountId</property>

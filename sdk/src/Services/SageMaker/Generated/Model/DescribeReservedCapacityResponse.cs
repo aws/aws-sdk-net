@@ -30,32 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Details about a reserved capacity offering for a training plan offering.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
-    /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
-    /// </c>.
-    /// </para>
+    /// This is the response object from the DescribeReservedCapacity operation.
     /// </summary>
-    public partial class ReservedCapacityOffering
+    public partial class DescribeReservedCapacityResponse : AmazonWebServiceResponse
     {
         private string _availabilityZone;
+        private int? _availableInstanceCount;
         private long? _durationHours;
         private long? _durationMinutes;
         private DateTime? _endTime;
-        private int? _instanceCount;
         private ReservedCapacityInstanceType _instanceType;
+        private int? _inUseInstanceCount;
+        private string _reservedCapacityArn;
         private ReservedCapacityType _reservedCapacityType;
         private DateTime? _startTime;
-        private int? _ultraServerCount;
-        private string _ultraServerType;
+        private ReservedCapacityStatus _status;
+        private int? _totalInstanceCount;
+        private UltraServerSummary _ultraServerSummary;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The availability zone for the reserved capacity offering.
+        /// The Availability Zone where the reserved capacity is provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -72,9 +68,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailableInstanceCount. 
+        /// <para>
+        /// The number of instances currently available for use in this reserved capacity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? AvailableInstanceCount
+        {
+            get { return this._availableInstanceCount; }
+            set { this._availableInstanceCount = value; }
+        }
+
+        // Check to see if AvailableInstanceCount property is set
+        internal bool IsSetAvailableInstanceCount()
+        {
+            return this._availableInstanceCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DurationHours. 
         /// <para>
-        /// The number of whole hours in the total duration for this reserved capacity offering.
+        /// The total duration of the reserved capacity in hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=87600)]
@@ -93,8 +108,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DurationMinutes. 
         /// <para>
-        /// The additional minutes beyond whole hours in the total duration for this reserved
-        /// capacity offering.
+        /// The number of minutes for the duration of the reserved capacity. For example, if a
+        /// reserved capacity starts at 08:55 and ends at 11:30, the minutes field would be 35.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
@@ -113,7 +128,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time of the reserved capacity offering.
+        /// The timestamp when the reserved capacity expires.
         /// </para>
         /// </summary>
         public DateTime? EndTime
@@ -129,28 +144,9 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceCount. 
-        /// <para>
-        /// The number of instances in the reserved capacity offering.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
-        public int? InstanceCount
-        {
-            get { return this._instanceCount; }
-            set { this._instanceCount = value; }
-        }
-
-        // Check to see if InstanceCount property is set
-        internal bool IsSetInstanceCount()
-        {
-            return this._instanceCount.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for the reserved capacity offering.
+        /// The Amazon EC2 instance type used in the reserved capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,9 +163,47 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InUseInstanceCount. 
+        /// <para>
+        /// The number of instances currently in use from this reserved capacity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? InUseInstanceCount
+        {
+            get { return this._inUseInstanceCount; }
+            set { this._inUseInstanceCount = value; }
+        }
+
+        // Check to see if InUseInstanceCount property is set
+        internal bool IsSetInUseInstanceCount()
+        {
+            return this._inUseInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedCapacityArn. 
+        /// <para>
+        /// ARN of the reserved capacity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=50, Max=2048)]
+        public string ReservedCapacityArn
+        {
+            get { return this._reservedCapacityArn; }
+            set { this._reservedCapacityArn = value; }
+        }
+
+        // Check to see if ReservedCapacityArn property is set
+        internal bool IsSetReservedCapacityArn()
+        {
+            return this._reservedCapacityArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReservedCapacityType. 
         /// <para>
-        /// The type of reserved capacity offering.
+        /// The type of reserved capacity.
         /// </para>
         /// </summary>
         public ReservedCapacityType ReservedCapacityType
@@ -187,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time of the reserved capacity offering.
+        /// The timestamp when the reserved capacity becomes active.
         /// </para>
         /// </summary>
         public DateTime? StartTime
@@ -203,41 +237,58 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UltraServerCount. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The number of UltraServers included in this reserved capacity offering.
+        /// The current status of the reserved capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public int? UltraServerCount
+        public ReservedCapacityStatus Status
         {
-            get { return this._ultraServerCount; }
-            set { this._ultraServerCount = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if UltraServerCount property is set
-        internal bool IsSetUltraServerCount()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._ultraServerCount.HasValue; 
+            return this._status != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UltraServerType. 
+        /// Gets and sets the property TotalInstanceCount. 
         /// <para>
-        /// The type of UltraServer included in this reserved capacity offering, such as ml.u-p6e-gb200x72.
+        /// The total number of instances allocated to this reserved capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string UltraServerType
+        [AWSProperty(Required=true, Min=0)]
+        public int? TotalInstanceCount
         {
-            get { return this._ultraServerType; }
-            set { this._ultraServerType = value; }
+            get { return this._totalInstanceCount; }
+            set { this._totalInstanceCount = value; }
         }
 
-        // Check to see if UltraServerType property is set
-        internal bool IsSetUltraServerType()
+        // Check to see if TotalInstanceCount property is set
+        internal bool IsSetTotalInstanceCount()
         {
-            return this._ultraServerType != null;
+            return this._totalInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerSummary. 
+        /// <para>
+        /// A summary of the UltraServer associated with this reserved capacity.
+        /// </para>
+        /// </summary>
+        public UltraServerSummary UltraServerSummary
+        {
+            get { return this._ultraServerSummary; }
+            set { this._ultraServerSummary = value; }
+        }
+
+        // Check to see if UltraServerSummary property is set
+        internal bool IsSetUltraServerSummary()
+        {
+            return this._ultraServerSummary != null;
         }
 
     }

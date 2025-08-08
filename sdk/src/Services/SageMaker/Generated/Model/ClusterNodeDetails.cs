@@ -52,6 +52,7 @@ namespace Amazon.SageMaker.Model
         private string _privatePrimaryIp;
         private string _privatePrimaryIpv6;
         private int? _threadsPerCore;
+        private UltraServerInfo _ultraServerInfo;
 
         /// <summary>
         /// Gets and sets the property CurrentImageId. 
@@ -374,6 +375,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerInfo. 
+        /// <para>
+        /// Contains information about the UltraServer.
+        /// </para>
+        /// </summary>
+        public UltraServerInfo UltraServerInfo
+        {
+            get { return this._ultraServerInfo; }
+            set { this._ultraServerInfo = value; }
+        }
+
+        // Check to see if UltraServerInfo property is set
+        internal bool IsSetUltraServerInfo()
+        {
+            return this._ultraServerInfo != null;
         }
 
     }

@@ -158,6 +158,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ThreadsPerCore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UltraServerInfo", targetDepth))
+                {
+                    var unmarshaller = UltraServerInfoUnmarshaller.Instance;
+                    unmarshalledObject.UltraServerInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

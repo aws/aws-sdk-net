@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstancePlacementConfig", targetDepth))
+                {
+                    var unmarshaller = InstancePlacementConfigUnmarshaller.Instance;
+                    unmarshalledObject.InstancePlacementConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

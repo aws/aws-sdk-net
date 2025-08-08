@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the
         /// only supported value is <c>"eks"</c>, which is to use an Amazon Elastic Kubernetes
-        /// Service (EKS) cluster as the orchestrator.
+        /// Service cluster as the orchestrator.
         /// </para>
         /// </summary>
         public ClusterOrchestrator Orchestrator

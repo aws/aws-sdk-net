@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeTrainingPlan operation
+    /// Response Unmarshaller for DescribeReservedCapacity operation
     /// </summary>  
-    public class DescribeTrainingPlanResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeReservedCapacityResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrainingPlanResponse response = new DescribeTrainingPlanResponse();
+            DescribeReservedCapacityResponse response = new DescribeReservedCapacityResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AvailableInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AvailableInstanceCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AvailableSpareInstanceCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.AvailableSpareInstanceCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CurrencyCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DurationHours", targetDepth))
@@ -88,16 +82,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InUseInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InUseInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservedCapacitySummaries", targetDepth))
+                if (context.TestExpression("ReservedCapacityArn", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<ReservedCapacitySummary, ReservedCapacitySummaryUnmarshaller>(ReservedCapacitySummaryUnmarshaller.Instance);
-                    response.ReservedCapacitySummaries = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReservedCapacityArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ReservedCapacityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReservedCapacityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
@@ -112,52 +118,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TargetResources", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.TargetResources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("TotalInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalUltraServerCount", targetDepth))
+                if (context.TestExpression("UltraServerSummary", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.TotalUltraServerCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingPlanArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TrainingPlanArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingPlanName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TrainingPlanName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UnhealthyInstanceCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.UnhealthyInstanceCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UpfrontFee", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpfrontFee = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = UltraServerSummaryUnmarshaller.Instance;
+                    response.UltraServerSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -193,9 +163,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeTrainingPlanResponseUnmarshaller _instance = new DescribeTrainingPlanResponseUnmarshaller();        
+        private static DescribeReservedCapacityResponseUnmarshaller _instance = new DescribeReservedCapacityResponseUnmarshaller();        
 
-        internal static DescribeTrainingPlanResponseUnmarshaller GetInstance()
+        internal static DescribeReservedCapacityResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -203,7 +173,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeTrainingPlanResponseUnmarshaller Instance
+        public static DescribeReservedCapacityResponseUnmarshaller Instance
         {
             get
             {

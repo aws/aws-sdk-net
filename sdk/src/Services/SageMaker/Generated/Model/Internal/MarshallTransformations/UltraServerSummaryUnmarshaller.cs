@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReservedCapacityOffering Object
+    /// Response Unmarshaller for UltraServerSummary Object
     /// </summary>  
-    public class ReservedCapacityOfferingUnmarshaller : IJsonUnmarshaller<ReservedCapacityOffering, JsonUnmarshallerContext>
+    public class UltraServerSummaryUnmarshaller : IJsonUnmarshaller<UltraServerSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReservedCapacityOffering Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UltraServerSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ReservedCapacityOffering unmarshalledObject = new ReservedCapacityOffering();
+            UltraServerSummary unmarshalledObject = new UltraServerSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DurationHours", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DurationHours = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DurationMinutes", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DurationMinutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceCount", targetDepth))
+                if (context.TestExpression("AvailableSpareInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AvailableSpareInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReservedCapacityType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservedCapacityType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UltraServerCount", targetDepth))
@@ -116,17 +80,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.UltraServerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UnhealthyInstanceCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.UnhealthyInstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
 
 
-        private static ReservedCapacityOfferingUnmarshaller _instance = new ReservedCapacityOfferingUnmarshaller();        
+        private static UltraServerSummaryUnmarshaller _instance = new UltraServerSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReservedCapacityOfferingUnmarshaller Instance
+        public static UltraServerSummaryUnmarshaller Instance
         {
             get
             {

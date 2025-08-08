@@ -661,6 +661,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListUltraServersByReservedCapacity operation
+        ///</summary>
+        public IListUltraServersByReservedCapacityPaginator ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request) 
+        {
+            return new ListUltraServersByReservedCapacityPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUserProfiles operation
         ///</summary>
         public IListUserProfilesPaginator ListUserProfiles(ListUserProfilesRequest request) 

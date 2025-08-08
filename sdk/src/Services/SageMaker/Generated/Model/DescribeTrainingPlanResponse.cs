@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeTrainingPlanResponse : AmazonWebServiceResponse
     {
         private int? _availableInstanceCount;
+        private int? _availableSpareInstanceCount;
         private string _currencyCode;
         private long? _durationHours;
         private long? _durationMinutes;
@@ -46,8 +47,10 @@ namespace Amazon.SageMaker.Model
         private string _statusMessage;
         private List<string> _targetResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _totalInstanceCount;
+        private int? _totalUltraServerCount;
         private string _trainingPlanArn;
         private string _trainingPlanName;
+        private int? _unhealthyInstanceCount;
         private string _upfrontFee;
 
         /// <summary>
@@ -67,6 +70,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAvailableInstanceCount()
         {
             return this._availableInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableSpareInstanceCount. 
+        /// <para>
+        /// The number of available spare instances in the training plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? AvailableSpareInstanceCount
+        {
+            get { return this._availableSpareInstanceCount; }
+            set { this._availableSpareInstanceCount = value; }
+        }
+
+        // Check to see if AvailableSpareInstanceCount property is set
+        internal bool IsSetAvailableSpareInstanceCount()
+        {
+            return this._availableSpareInstanceCount.HasValue; 
         }
 
         /// <summary>
@@ -308,6 +330,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TotalUltraServerCount. 
+        /// <para>
+        /// The total number of UltraServers reserved to this training plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? TotalUltraServerCount
+        {
+            get { return this._totalUltraServerCount; }
+            set { this._totalUltraServerCount = value; }
+        }
+
+        // Check to see if TotalUltraServerCount property is set
+        internal bool IsSetTotalUltraServerCount()
+        {
+            return this._totalUltraServerCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TrainingPlanArn. 
         /// <para>
         /// The Amazon Resource Name (ARN); of the training plan.
@@ -343,6 +384,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingPlanName()
         {
             return this._trainingPlanName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnhealthyInstanceCount. 
+        /// <para>
+        /// The number of instances in the training plan that are currently in an unhealthy state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? UnhealthyInstanceCount
+        {
+            get { return this._unhealthyInstanceCount; }
+            set { this._unhealthyInstanceCount = value; }
+        }
+
+        // Check to see if UnhealthyInstanceCount property is set
+        internal bool IsSetUnhealthyInstanceCount()
+        {
+            return this._unhealthyInstanceCount.HasValue; 
         }
 
         /// <summary>

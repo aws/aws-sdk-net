@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _instanceCount;
         private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
+        private InstancePlacementConfig _instancePlacementConfig;
         private TrainingInstanceType _instanceType;
         private int? _keepAlivePeriodInSeconds;
         private string _trainingPlanArn;
@@ -85,6 +86,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroups()
         {
             return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancePlacementConfig. 
+        /// <para>
+        /// Configuration for how training job instances are placed and allocated within UltraServers.
+        /// Only applicable for UltraServer capacity.
+        /// </para>
+        /// </summary>
+        public InstancePlacementConfig InstancePlacementConfig
+        {
+            get { return this._instancePlacementConfig; }
+            set { this._instancePlacementConfig = value; }
+        }
+
+        // Check to see if InstancePlacementConfig property is set
+        internal bool IsSetInstancePlacementConfig()
+        {
+            return this._instancePlacementConfig != null;
         }
 
         /// <summary>

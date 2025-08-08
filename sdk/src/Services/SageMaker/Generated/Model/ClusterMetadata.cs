@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Metadata information about a SageMaker HyperPod cluster showing information about
-    /// the cluster level operations, such as creating, updating, and deleting.
+    /// Metadata information about a HyperPod cluster showing information about the cluster
+    /// level operations, such as creating, updating, and deleting.
     /// </summary>
     public partial class ClusterMetadata
     {
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EksRoleAccessEntries. 
         /// <para>
         /// A list of Amazon EKS IAM role ARNs associated with the cluster. This is created by
-        /// SageMaker HyperPod on your behalf and only applies for EKS-orchestrated clusters.
+        /// HyperPod on your behalf and only applies for EKS orchestrated clusters.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -85,8 +85,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SlrAccessEntry. 
         /// <para>
-        /// The Service-Linked Role (SLR) associated with the cluster. This is created by SageMaker
-        /// HyperPod on your behalf and only applies for EKS-orchestrated clusters.
+        /// The Service-Linked Role (SLR) associated with the cluster. This is created by HyperPod
+        /// on your behalf and only applies for EKS orchestrated clusters.
         /// </para>
         /// </summary>
         public string SlrAccessEntry
