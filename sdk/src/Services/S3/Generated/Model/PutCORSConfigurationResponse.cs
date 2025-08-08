@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -27,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This is the response object from the PutBucketAcl operation.
+    /// This is the response object from the PutCORSConfiguration operation.
     /// </summary>
-    public partial class PutBucketAclResponse : AmazonWebServiceResponse
+    public partial class PutCORSConfigurationResponse : AmazonWebServiceResponse
     {
 
     }

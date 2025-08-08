@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketLocation operation
     /// </summary>  
-    public class GetBucketLocationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetBucketLocationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetBucketLocationResponse response = new GetBucketLocationResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -101,6 +101,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketLocationResponse response);
 
         private static GetBucketLocationResponseUnmarshaller _instance = new GetBucketLocationResponseUnmarshaller();        
 

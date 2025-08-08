@@ -26,162 +26,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListObjects operation
     /// </summary>
-    public class ListObjectsV2ResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class ListObjectsV2ResponseUnmarshaller : S3ReponseUnmarshaller
     {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {
-            ListObjectsV2Response response = new ListObjectsV2Response();
-            
-            while (context.Read())
+        //https://github.com/aws/aws-sdk-net/blob/79cbc392fc3f1c74fcdf34efd77ad681da8af328/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/ListObjectsV2ResponseUnmarshaller.cs#L75-L87
+        private static void CustomContentsUnmarshall(XmlUnmarshallerContext context, ListObjectsV2Response response)
+        {           
+            // adding the bucket name into the S3Object instance enables
+            // a better pipelining experience in PowerShell
+            if (response.S3Objects == null)
             {
-                if (context.IsStartElement)
-                {                    
-                    UnmarshallResult(context,response);                        
-                    continue;
-                }
+                response.S3Objects = new List<S3Object>();
             }
+            var s3Object = S3ObjectUnmarshaller.Instance.Unmarshall(context);
+            s3Object.BucketName = response.Name;
+            response.S3Objects.Add(s3Object);
 
-            IWebResponseData responseData = context.ResponseData;
-            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
-                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));     
-
-            return response;
-        }
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ListObjectsV2Response response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("IsTruncated", targetDepth))
-                    {
-                        response.IsTruncated = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("Contents", targetDepth))
-                    {
-                        if (response.S3Objects == null)
-                        {
-                            response.S3Objects = new List<S3Object>();
-                        }
-
-                        // adding the bucket name into the S3Object instance enables
-                        // a better pipelining experience in PowerShell
-                        var s3Object = ContentsItemUnmarshaller.Instance.Unmarshall(context);
-                        s3Object.BucketName = response.Name;
-                        response.S3Objects.Add(s3Object);
-                        continue;
-                    }
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        response.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("Prefix", targetDepth))
-                    {
-                        response.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("Delimiter", targetDepth))
-                    {
-                        response.Delimiter = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("MaxKeys", targetDepth))
-                    {
-                        response.MaxKeys = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("CommonPrefixes", targetDepth))
-                    {
-                        var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
-
-                        if(prefix != null)
-                        {
-                            if (response.CommonPrefixes == null)
-                            {
-                                response.CommonPrefixes = new List<string>();
-                            }
-                            response.CommonPrefixes.Add(prefix);
-                        }
-
-                        continue;
-                    }
-                    if (context.TestExpression("EncodingType", targetDepth))
-                    {
-                        response.Encoding = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("KeyCount", targetDepth))
-                    {
-                        response.KeyCount = IntUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("ContinuationToken", targetDepth))
-                    {
-                        response.ContinuationToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("NextContinuationToken", targetDepth))
-                    {
-                        response.NextContinuationToken = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                    if (context.TestExpression("StartAfter", targetDepth))
-                    {
-                        response.StartAfter = StringUnmarshaller.GetInstance().Unmarshall(context);
-
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
-
-            return;
-        }
-
-        private static ListObjectsV2ResponseUnmarshaller _instance;
-
-        /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
-        public static ListObjectsV2ResponseUnmarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new ListObjectsV2ResponseUnmarshaller();
-                }
-                return _instance;
-            }
         }
     }
 }

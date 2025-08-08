@@ -1,9 +1,32 @@
-﻿using System;
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
@@ -14,12 +37,14 @@ namespace Amazon.S3.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This functionality is not supported for directory buckets. Only the S3 Express One
-    /// Zone storage class is supported by directory buckets to store objects.
+    /// This functionality is not supported for directory buckets. Directory buckets only
+    /// support <c>EXPRESS_ONEZONE</c> (the S3 Express One Zone storage class) in Availability
+    /// Zones and <c>ONEZONE_IA</c> (the S3 One Zone-Infrequent Access storage class) in Dedicated
+    /// Local Zones.
     /// </para>
     ///  </note>
     /// </summary>
-    public class RestoreStatus
+    public partial class RestoreStatus
     {
         private bool? _isRestoreInProgress;
         private DateTime? _restoreExpiryDate;
@@ -28,20 +53,20 @@ namespace Amazon.S3.Model
         /// Gets and sets the property IsRestoreInProgress. 
         /// <para>
         /// Specifies whether the object is currently being restored. If the object restoration
-        /// is in progress, the header returns the value <code>TRUE</code>. For example:
+        /// is in progress, the header returns the value <c>TRUE</c>. For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-optional-object-attributes: IsRestoreInProgress="true"</code> 
+        ///  <c>x-amz-optional-object-attributes: IsRestoreInProgress="true"</c> 
         /// </para>
         ///  
         /// <para>
-        /// If the object restoration has completed, the header returns the value <code>FALSE</code>.
+        /// If the object restoration has completed, the header returns the value <c>FALSE</c>.
         /// For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code>
+        ///  <c>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</c>
         /// 
         /// </para>
         ///  
@@ -58,7 +83,7 @@ namespace Amazon.S3.Model
         // Check to see if IsRestoreInProgress property is set
         internal bool IsSetIsRestoreInProgress()
         {
-            return this._isRestoreInProgress.HasValue;
+            return this._isRestoreInProgress.HasValue; 
         }
 
         /// <summary>
@@ -69,7 +94,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code>
+        ///  <c>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</c>
         /// 
         /// </para>
         /// </summary>
@@ -82,7 +107,7 @@ namespace Amazon.S3.Model
         // Check to see if RestoreExpiryDate property is set
         internal bool IsSetRestoreExpiryDate()
         {
-            return this._restoreExpiryDate.HasValue;
+            return this._restoreExpiryDate.HasValue; 
         }
 
     }

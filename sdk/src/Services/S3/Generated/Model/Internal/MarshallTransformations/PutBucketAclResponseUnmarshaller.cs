@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutBucketAcl operation
     /// </summary>  
-    public class PutBucketAclResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class PutBucketAclResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,11 +46,37 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketAclResponse response = new PutBucketAclResponse();
-
+            
+            PostUnmarshallCustomization(context, response);
             return response;
+        }        
+  
+
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+            }
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
-        private static PutBucketAclResponseUnmarshaller _instance = new PutBucketAclResponseUnmarshaller();
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutBucketAclResponse response);
+
+        private static PutBucketAclResponseUnmarshaller _instance = new PutBucketAclResponseUnmarshaller();        
 
         internal static PutBucketAclResponseUnmarshaller GetInstance()
         {
