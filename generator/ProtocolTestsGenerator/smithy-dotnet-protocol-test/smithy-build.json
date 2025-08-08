@@ -145,6 +145,60 @@
           "packageVersion": "0.0.1"
         }
       }
+    },
+    "RpcV2Protocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "smithy.protocoltests.rpcv2Cbor#RpcV2Protocol"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "smithy.protocoltests.rpcv2Cbor#RpcV2Protocol",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "NonQueryCompatibleRpcV2Protocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.rpcv2cbor#NonQueryCompatibleRpcV2Protocol"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.rpcv2cbor#NonQueryCompatibleRpcV2Protocol",
+          "packageVersion": "0.0.1"
+        }
+      }
+    },
+    "QueryCompatibleRpcV2Protocol": {
+      "transforms": [
+        {
+          "name": "includeServices",
+          "args": {
+            "services": [
+              "aws.protocoltests.rpcv2cbor#QueryCompatibleRpcV2Protocol"
+            ]
+          }
+        }
+      ],
+      "plugins": {
+        "dotnet-protocol-test-codegen": {
+          "service": "aws.protocoltests.rpcv2cbor#QueryCompatibleRpcV2Protocol",
+          "packageVersion": "0.0.1"
+        }
+      }
     }
   }
 }
