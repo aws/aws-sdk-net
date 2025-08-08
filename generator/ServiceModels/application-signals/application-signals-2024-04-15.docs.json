@@ -298,50 +298,6 @@
         "RecurrenceRule$Expression": "<p>A cron or rate expression that specifies the schedule for the exclusion window.</p>"
       }
     },
-    "ExclusionDuration": {
-      "base": null,
-      "refs": {
-        "Window$Duration": "<p>The number of time units for the exclusion window length.</p>"
-      }
-    },
-    "ExclusionReason": {
-      "base": null,
-      "refs": {
-        "ExclusionWindow$Reason": "<p>A description explaining why this time period should be excluded from SLO calculations.</p>"
-      }
-    },
-    "ExclusionWindow": {
-      "base": "<p>The core SLO time window exclusion object that includes Window, StartTime, RecurrenceRule, and Reason.</p>",
-      "refs": {
-        "ExclusionWindows$member": null
-      }
-    },
-    "ExclusionWindowErrorCode": {
-      "base": null,
-      "refs": {
-        "BatchUpdateExclusionWindowsError$ErrorCode": "<p>The error code.</p>"
-      }
-    },
-    "ExclusionWindowErrorMessage": {
-      "base": null,
-      "refs": {
-        "BatchUpdateExclusionWindowsError$ErrorMessage": "<p>The error message.</p>"
-      }
-    },
-    "ExclusionWindows": {
-      "base": null,
-      "refs": {
-        "BatchUpdateExclusionWindowsInput$AddExclusionWindows": "<p>A list of exclusion windows to add to the specified SLOs. You can add up to 10 exclusion windows per SLO.</p>",
-        "BatchUpdateExclusionWindowsInput$RemoveExclusionWindows": "<p>A list of exclusion windows to remove from the specified SLOs. The window configuration must match an existing exclusion window.</p>",
-        "ListServiceLevelObjectiveExclusionWindowsOutput$ExclusionWindows": "<p>A list of exclusion windows configured for the SLO.</p>"
-      }
-    },
-    "Expression": {
-      "base": null,
-      "refs": {
-        "RecurrenceRule$Expression": "<p>A cron or rate expression that specifies the schedule for the exclusion window.</p>"
-      }
-    },
     "FaultDescription": {
       "base": null,
       "refs": {
