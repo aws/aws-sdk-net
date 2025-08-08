@@ -108,9 +108,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateTrainingPlanRequest : AmazonSageMakerRequest
     {
+        private int? _spareInstanceCountPerUltraServer;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trainingPlanName;
         private string _trainingPlanOfferingId;
+
+        /// <summary>
+        /// Gets and sets the property SpareInstanceCountPerUltraServer. 
+        /// <para>
+        /// Number of spare instances to reserve per UltraServer for enhanced resiliency. Default
+        /// is 1.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int SpareInstanceCountPerUltraServer
+        {
+            get { return this._spareInstanceCountPerUltraServer.GetValueOrDefault(); }
+            set { this._spareInstanceCountPerUltraServer = value; }
+        }
+
+        // Check to see if SpareInstanceCountPerUltraServer property is set
+        internal bool IsSetSpareInstanceCountPerUltraServer()
+        {
+            return this._spareInstanceCountPerUltraServer.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Tags. 

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTrainingPlan Request Marshaller
+    /// DescribeReservedCapacity Request Marshaller
     /// </summary>       
-    public class CreateTrainingPlanRequestMarshaller : IMarshaller<IRequest, CreateTrainingPlanRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeReservedCapacityRequestMarshaller : IMarshaller<IRequest, DescribeReservedCapacityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTrainingPlanRequest)input);
+            return this.Marshall((DescribeReservedCapacityRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTrainingPlanRequest publicRequest)
+        public IRequest Marshall(DescribeReservedCapacityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.CreateTrainingPlan";
+            string target = "SageMaker.DescribeReservedCapacity";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -69,38 +69,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSpareInstanceCountPerUltraServer())
+                if(publicRequest.IsSetReservedCapacityArn())
                 {
-                    context.Writer.WritePropertyName("SpareInstanceCountPerUltraServer");
-                    context.Writer.Write(publicRequest.SpareInstanceCountPerUltraServer);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTrainingPlanName())
-                {
-                    context.Writer.WritePropertyName("TrainingPlanName");
-                    context.Writer.Write(publicRequest.TrainingPlanName);
-                }
-
-                if(publicRequest.IsSetTrainingPlanOfferingId())
-                {
-                    context.Writer.WritePropertyName("TrainingPlanOfferingId");
-                    context.Writer.Write(publicRequest.TrainingPlanOfferingId);
+                    context.Writer.WritePropertyName("ReservedCapacityArn");
+                    context.Writer.Write(publicRequest.ReservedCapacityArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -111,9 +83,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTrainingPlanRequestMarshaller _instance = new CreateTrainingPlanRequestMarshaller();        
+        private static DescribeReservedCapacityRequestMarshaller _instance = new DescribeReservedCapacityRequestMarshaller();        
 
-        internal static CreateTrainingPlanRequestMarshaller GetInstance()
+        internal static DescribeReservedCapacityRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -121,7 +93,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTrainingPlanRequestMarshaller Instance
+        public static DescribeReservedCapacityRequestMarshaller Instance
         {
             get
             {

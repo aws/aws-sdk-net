@@ -102,6 +102,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReservedCapacityArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReservedCapacityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReservedCapacityType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -118,6 +124,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UltraServerCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.UltraServerCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UltraServerType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UltraServerType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -110,6 +110,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUltraServerCount())
+                {
+                    context.Writer.WritePropertyName("UltraServerCount");
+                    context.Writer.Write(publicRequest.UltraServerCount);
+                }
+
+                if(publicRequest.IsSetUltraServerType())
+                {
+                    context.Writer.WritePropertyName("UltraServerType");
+                    context.Writer.Write(publicRequest.UltraServerType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

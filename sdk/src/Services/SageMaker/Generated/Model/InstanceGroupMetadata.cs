@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Metadata information about an instance group in a SageMaker HyperPod cluster.
+    /// Metadata information about an instance group in a HyperPod cluster.
     /// </summary>
     public partial class InstanceGroupMetadata
     {

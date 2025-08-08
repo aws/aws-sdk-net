@@ -16403,6 +16403,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP6B20048xlarge = new ReservedCapacityInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6eGb20036xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP6eGb20036xlarge = new ReservedCapacityInstanceType("ml.p6e-gb200.36xlarge");
+        /// <summary>
         /// Constant MlTrn132xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlTrn132xlarge = new ReservedCapacityInstanceType("ml.trn1.32xlarge");
@@ -16502,6 +16506,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservedCapacityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservedCapacityType.
+    /// </summary>
+    public class ReservedCapacityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Instance for ReservedCapacityType
+        /// </summary>
+        public static readonly ReservedCapacityType Instance = new ReservedCapacityType("Instance");
+        /// <summary>
+        /// Constant UltraServer for ReservedCapacityType
+        /// </summary>
+        public static readonly ReservedCapacityType UltraServer = new ReservedCapacityType("UltraServer");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservedCapacityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservedCapacityType FindValue(string value)
+        {
+            return FindValue<ReservedCapacityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservedCapacityType(string value)
         {
             return FindValue(value);
         }
@@ -20533,6 +20587,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlP6B20048xlarge = new TrainingInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6eGb20036xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP6eGb20036xlarge = new TrainingInstanceType("ml.p6e-gb200.36xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlR512xlarge = new TrainingInstanceType("ml.r5.12xlarge");
@@ -21754,6 +21812,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TtlDurationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UltraServerHealthStatus.
+    /// </summary>
+    public class UltraServerHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Impaired for UltraServerHealthStatus
+        /// </summary>
+        public static readonly UltraServerHealthStatus Impaired = new UltraServerHealthStatus("Impaired");
+        /// <summary>
+        /// Constant InsufficientData for UltraServerHealthStatus
+        /// </summary>
+        public static readonly UltraServerHealthStatus InsufficientData = new UltraServerHealthStatus("Insufficient-Data");
+        /// <summary>
+        /// Constant OK for UltraServerHealthStatus
+        /// </summary>
+        public static readonly UltraServerHealthStatus OK = new UltraServerHealthStatus("OK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UltraServerHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UltraServerHealthStatus FindValue(string value)
+        {
+            return FindValue<UltraServerHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UltraServerHealthStatus(string value)
         {
             return FindValue(value);
         }

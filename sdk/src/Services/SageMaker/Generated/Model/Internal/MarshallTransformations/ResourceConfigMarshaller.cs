@@ -70,6 +70,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInstancePlacementConfig())
+            {
+                context.Writer.WritePropertyName("InstancePlacementConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InstancePlacementConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InstancePlacementConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");

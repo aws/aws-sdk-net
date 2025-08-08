@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterNodeSummary Object
+    /// Response Unmarshaller for UltraServer Object
     /// </summary>  
-    public class ClusterNodeSummaryUnmarshaller : IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>, IUnmarshaller<ClusterNodeSummary, JsonUnmarshallerContext>
+    public class UltraServerUnmarshaller : IUnmarshaller<UltraServer, XmlUnmarshallerContext>, IUnmarshaller<UltraServer, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterNodeSummary IUnmarshaller<ClusterNodeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UltraServer IUnmarshaller<UltraServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterNodeSummary Unmarshall(JsonUnmarshallerContext context)
+        public UltraServer Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterNodeSummary unmarshalledObject = new ClusterNodeSummary();
+            UltraServer unmarshalledObject = new UltraServer();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceGroupName", targetDepth))
+                if (context.TestExpression("AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceId", targetDepth))
+                if (context.TestExpression("AvailableInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AvailableSpareInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AvailableSpareInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConfiguredSpareInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConfiguredSpareInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceStatus", targetDepth))
-                {
-                    var unmarshaller = ClusterInstanceStatusDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
@@ -90,28 +102,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastSoftwareUpdateTime", targetDepth))
+                if (context.TestExpression("InUseInstanceCount", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSoftwareUpdateTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InUseInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LaunchTime", targetDepth))
+                if (context.TestExpression("TotalInstanceCount", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NodeLogicalId", targetDepth))
+                if (context.TestExpression("UltraServerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeLogicalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UltraServerId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UltraServerInfo", targetDepth))
+                if (context.TestExpression("UltraServerType", targetDepth))
                 {
-                    var unmarshaller = UltraServerInfoUnmarshaller.Instance;
-                    unmarshalledObject.UltraServerInfo = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UltraServerType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UnhealthyInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.UnhealthyInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,12 +137,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterNodeSummaryUnmarshaller _instance = new ClusterNodeSummaryUnmarshaller();        
+        private static UltraServerUnmarshaller _instance = new UltraServerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterNodeSummaryUnmarshaller Instance
+        public static UltraServerUnmarshaller Instance
         {
             get
             {

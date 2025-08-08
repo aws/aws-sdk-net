@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private string _nodeLogicalId;
+        private UltraServerInfo _ultraServerInfo;
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 
@@ -175,6 +176,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeLogicalId()
         {
             return this._nodeLogicalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerInfo. 
+        /// <para>
+        /// Contains information about the UltraServer.
+        /// </para>
+        /// </summary>
+        public UltraServerInfo UltraServerInfo
+        {
+            get { return this._ultraServerInfo; }
+            set { this._ultraServerInfo = value; }
+        }
+
+        // Check to see if UltraServerInfo property is set
+        internal bool IsSetUltraServerInfo()
+        {
+            return this._ultraServerInfo != null;
         }
 
     }

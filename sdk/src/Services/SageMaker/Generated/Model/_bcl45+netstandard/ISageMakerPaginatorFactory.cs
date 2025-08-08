@@ -808,6 +808,16 @@ namespace Amazon.SageMaker.Model
         IListTrialsPaginator ListTrials(ListTrialsRequest request);
 
         /// <summary>
+        /// Paginator for ListUltraServersByReservedCapacity operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListUltraServersByReservedCapacityPaginator ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request);
+
+        /// <summary>
         /// Paginator for ListUserProfiles operation
         ///</summary>
         [AWSPaginator(

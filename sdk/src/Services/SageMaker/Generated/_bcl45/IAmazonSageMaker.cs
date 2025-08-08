@@ -251,8 +251,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
-        /// HyperPod cluster. 
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
         /// 
         ///  
         /// <para>
@@ -273,8 +273,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
-        /// HyperPod cluster. 
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
         /// 
         ///  
         /// <para>
@@ -9393,6 +9393,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeReservedCapacity
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        DescribeReservedCapacityResponse DescribeReservedCapacity(DescribeReservedCapacityRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        Task<DescribeReservedCapacityResponse> DescribeReservedCapacityAsync(DescribeReservedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSpace
 
 
@@ -9804,7 +9838,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
-        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// EKS orchestrated SageMaker HyperPod cluster.
         /// 
         ///  
         /// <para>
@@ -9826,7 +9860,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
-        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// EKS orchestrated SageMaker HyperPod cluster.
         /// 
         ///  
         /// <para>
@@ -12760,6 +12794,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         Task<ListTrialsResponse> ListTrialsAsync(ListTrialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListUltraServersByReservedCapacity
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        ListUltraServersByReservedCapacityResponse ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request);
+
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        Task<ListUltraServersByReservedCapacityResponse> ListUltraServersByReservedCapacityAsync(ListUltraServersByReservedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

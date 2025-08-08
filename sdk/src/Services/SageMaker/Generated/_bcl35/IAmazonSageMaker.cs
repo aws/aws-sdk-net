@@ -237,8 +237,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS-orchestrated
-        /// HyperPod cluster. 
+        /// Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS
+        /// orchestrated HyperPod cluster. 
         /// 
         ///  
         /// <para>
@@ -9564,6 +9564,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeReservedCapacity
+
+
+        /// <summary>
+        /// Retrieves details about a reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        DescribeReservedCapacityResponse DescribeReservedCapacity(DescribeReservedCapacityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedCapacity operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedCapacity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        IAsyncResult BeginDescribeReservedCapacity(DescribeReservedCapacityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReservedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedCapacity.</param>
+        /// 
+        /// <returns>Returns a  DescribeReservedCapacityResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeReservedCapacity">REST API Reference for DescribeReservedCapacity Operation</seealso>
+        DescribeReservedCapacityResponse EndDescribeReservedCapacity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeSpace
 
 
@@ -10058,7 +10101,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your
-        /// EKS-orchestrated SageMaker HyperPod cluster.
+        /// EKS orchestrated SageMaker HyperPod cluster.
         /// 
         ///  
         /// <para>
@@ -13898,6 +13941,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  ListTrialsResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">REST API Reference for ListTrials Operation</seealso>
         ListTrialsResponse EndListTrials(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListUltraServersByReservedCapacity
+
+
+        /// <summary>
+        /// Lists all UltraServers that are part of a specified reserved capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListUltraServersByReservedCapacity service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        ListUltraServersByReservedCapacityResponse ListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUltraServersByReservedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUltraServersByReservedCapacity operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUltraServersByReservedCapacity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        IAsyncResult BeginListUltraServersByReservedCapacity(ListUltraServersByReservedCapacityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUltraServersByReservedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUltraServersByReservedCapacity.</param>
+        /// 
+        /// <returns>Returns a  ListUltraServersByReservedCapacityResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUltraServersByReservedCapacity">REST API Reference for ListUltraServersByReservedCapacity Operation</seealso>
+        ListUltraServersByReservedCapacityResponse EndListUltraServersByReservedCapacity(IAsyncResult asyncResult);
 
         #endregion
         
