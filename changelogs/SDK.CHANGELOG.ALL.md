@@ -1,3 +1,49 @@
+### 4.0.66.0 (2025-08-08 18:44 UTC)
+* ApplicationSignals (4.0.1.0)
+	* Removed incorrect endpoint tests
+* BackupSearch (4.0.1.0)
+	* Removed incorrect endpoint tests
+* BCMPricingCalculator (4.0.3.0)
+	* Removed incorrect endpoint tests
+* Billing (4.0.1.0)
+	* Removed incorrect endpoint tests
+* Connect (4.0.5.0)
+	* This release adds a new API GetContactMetrics for Amazon Connect.
+* DSQL (4.0.4.0)
+	* Removed incorrect endpoint tests
+* GameLiftStreams (4.0.1.0)
+	* Removed incorrect endpoint tests
+* Inspector2 (4.0.4.0)
+	* Add CVSSV4 to Vulnerability Search API and update enable/disable account id list length to 5
+* Invoicing (4.0.2.0)
+	* Removed incorrect endpoint tests
+* IotData (4.0.1.0)
+	* Adding DeleteConnection API to IoT Data Plane
+* IoTManagedIntegrations (4.0.2.0)
+	* Removed incorrect endpoint tests
+* KeyspacesStreams (4.0.1.0)
+	* Removed incorrect endpoint tests
+* MPA (4.0.1.0)
+	* Removed incorrect endpoint tests
+* NetworkFlowMonitor (4.0.3.0)
+	* Removed incorrect endpoint tests
+* Notifications (4.0.1.0)
+	* Removed incorrect endpoint tests
+* NotificationsContacts (4.0.1.0)
+	* Removed incorrect endpoint tests
+* PartnerCentralSelling (4.0.2.0)
+	* Removed incorrect endpoint tests
+* S3Vectors (4.0.1.0)
+	* Removed incorrect endpoint tests
+* SageMaker (4.0.17.0)
+	* Adds support for GB200 UltraServers in Amazon SageMaker training jobs, training plans, and HyperPod clusters
+* SecurityIR (4.0.2.0)
+	* Removed incorrect endpoint tests
+* TranscribeService (4.0.2.7)
+	* Update documentation to use key ARN only in OutputEncryptionKMSKeyId request parameter
+* WorkspacesInstances (4.0.1.0)
+	* Removed incorrect endpoint tests
+
 ### 4.0.65.0 (2025-08-07 18:32 UTC)
 * Batch (4.0.2.3)
 	* This feature allows customers to use AWS Batch with Linux with ARM64 CPU Architecture with Fargate Spot compute support.
