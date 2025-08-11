@@ -44,6 +44,7 @@ namespace Amazon.Deadline.Model
         private int? _maxWorkerCount;
         private int? _minWorkerCount;
         private FleetStatus _status;
+        private string _statusMessage;
         private int? _targetWorkerCount;
         private DateTime? _updatedAt;
         private string _updatedBy;
@@ -242,6 +243,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A message that communicates a suspended status of the fleet.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

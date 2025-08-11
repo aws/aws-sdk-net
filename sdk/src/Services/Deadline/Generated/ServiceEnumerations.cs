@@ -840,6 +840,10 @@ namespace Amazon.Deadline
         /// Constant Spot for Ec2MarketType
         /// </summary>
         public static readonly Ec2MarketType Spot = new Ec2MarketType("spot");
+        /// <summary>
+        /// Constant WaitAndSave for Ec2MarketType
+        /// </summary>
+        public static readonly Ec2MarketType WaitAndSave = new Ec2MarketType("wait-and-save");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -994,6 +998,10 @@ namespace Amazon.Deadline
         /// Constant CREATE_IN_PROGRESS for FleetStatus
         /// </summary>
         public static readonly FleetStatus CREATE_IN_PROGRESS = new FleetStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant SUSPENDED for FleetStatus
+        /// </summary>
+        public static readonly FleetStatus SUSPENDED = new FleetStatus("SUSPENDED");
         /// <summary>
         /// Constant UPDATE_FAILED for FleetStatus
         /// </summary>
