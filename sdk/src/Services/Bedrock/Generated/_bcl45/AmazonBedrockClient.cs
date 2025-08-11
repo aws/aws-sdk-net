@@ -655,6 +655,11 @@ namespace Amazon.Bedrock
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.
         /// </exception>
@@ -698,6 +703,11 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
         /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
         /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.

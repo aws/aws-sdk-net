@@ -39,7 +39,11 @@ namespace Amazon.Bedrock.Model
         private AutomatedReasoningPolicyWorkflowTypeContent _workflowContent;
 
         /// <summary>
-        /// Gets and sets the property PolicyDefinition.
+        /// Gets and sets the property PolicyDefinition. 
+        /// <para>
+        /// An existing policy definition that serves as the starting point for the build workflow,
+        /// typically used in policy repair or update scenarios.
+        /// </para>
         /// </summary>
         public AutomatedReasoningPolicyDefinition PolicyDefinition
         {

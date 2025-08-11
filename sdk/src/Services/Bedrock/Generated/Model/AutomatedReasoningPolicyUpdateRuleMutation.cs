@@ -38,7 +38,11 @@ namespace Amazon.Bedrock.Model
         private AutomatedReasoningPolicyDefinitionRule _rule;
 
         /// <summary>
-        /// Gets and sets the property Rule.
+        /// Gets and sets the property Rule. 
+        /// <para>
+        /// The updated rule definition containing the modified formal logical expression and
+        /// any changed metadata for the existing rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutomatedReasoningPolicyDefinitionRule Rule
