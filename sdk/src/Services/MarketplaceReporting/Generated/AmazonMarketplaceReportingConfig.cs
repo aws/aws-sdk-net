@@ -32,7 +32,7 @@ namespace Amazon.MarketplaceReporting
     public partial class AmazonMarketplaceReportingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "3.7.500.5");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Reporting", "3.7.500.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>

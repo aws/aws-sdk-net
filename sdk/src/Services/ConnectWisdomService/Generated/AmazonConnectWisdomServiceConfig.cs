@@ -32,7 +32,7 @@ namespace Amazon.ConnectWisdomService
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Wisdom", "3.7.500.5");
+            InternalSDKUtils.BuildUserAgentString("Wisdom", "3.7.500.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>
