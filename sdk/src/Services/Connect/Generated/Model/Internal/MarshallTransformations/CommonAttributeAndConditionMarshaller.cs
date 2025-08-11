@@ -48,17 +48,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHierarchyGroupCondition())
-            {
-                context.Writer.WritePropertyName("HierarchyGroupCondition");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = HierarchyGroupConditionMarshaller.Instance;
-                marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetTagConditions())
             {
                 context.Writer.WritePropertyName("TagConditions");
