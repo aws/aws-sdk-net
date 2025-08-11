@@ -3196,6 +3196,84 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  GetApplicationSessionConfiguration
+
+        /// <summary>
+        /// Retrieves the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationSessionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
+        public virtual GetApplicationSessionConfigurationResponse GetApplicationSessionConfiguration(GetApplicationSessionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetApplicationSessionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApplicationSessionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationSessionConfiguration operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationSessionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetApplicationSessionConfiguration(GetApplicationSessionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetApplicationSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetApplicationSessionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApplicationSessionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationSessionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetApplicationSessionConfigurationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
+        public virtual GetApplicationSessionConfigurationResponse EndGetApplicationSessionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetApplicationSessionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetInlinePolicyForPermissionSet
 
         /// <summary>
@@ -5200,6 +5278,90 @@ namespace Amazon.SSOAdmin
         public virtual PutApplicationGrantResponse EndPutApplicationGrant(IAsyncResult asyncResult)
         {
             return EndInvoke<PutApplicationGrantResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutApplicationSessionConfiguration
+
+        /// <summary>
+        /// Updates the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationSessionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
+        public virtual PutApplicationSessionConfigurationResponse PutApplicationSessionConfiguration(PutApplicationSessionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationSessionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutApplicationSessionConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutApplicationSessionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationSessionConfiguration operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApplicationSessionConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutApplicationSessionConfiguration(PutApplicationSessionConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutApplicationSessionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutApplicationSessionConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutApplicationSessionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApplicationSessionConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutApplicationSessionConfigurationResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
+        public virtual PutApplicationSessionConfigurationResponse EndPutApplicationSessionConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutApplicationSessionConfigurationResponse>(asyncResult);
         }
 
         #endregion

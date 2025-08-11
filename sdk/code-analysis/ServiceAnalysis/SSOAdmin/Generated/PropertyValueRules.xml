@@ -358,9 +358,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeApplicationResponse.Name</property>
-    <min>0</min>
-    <max>255</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeApplicationAssignmentRequest.ApplicationArn</property>
@@ -534,6 +534,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetApplicationGrantRequest.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.GetApplicationSessionConfigurationRequest.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>
     <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
@@ -1102,6 +1108,12 @@
     <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.PutApplicationSessionConfigurationRequest.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutInlinePolicyToPermissionSetRequest.InlinePolicy</property>
     <min>1</min>
     <max>32768</max>
@@ -1339,9 +1351,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.Application.Name</property>
-    <min>0</min>
-    <max>255</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ApplicationAssignment.ApplicationArn</property>
