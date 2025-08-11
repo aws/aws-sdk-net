@@ -139,8 +139,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <c>RESPONSE_STREAM</c> – Your function streams payload results as they become available.
         /// Lambda invokes your function using the <c>InvokeWithResponseStream</c> API operation.
-        /// The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
-        /// a quota increase</a>.
+        /// The maximum response payload size is 200 MB.
         /// </para>
         ///  </li> </ul>
         /// </summary>
