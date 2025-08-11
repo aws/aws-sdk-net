@@ -31,15 +31,9 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
     /// Manager, and vCenter Server.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
@@ -57,7 +51,6 @@ namespace Amazon.Evs.Model
     /// response.
     /// </para>
     ///  </note>
-    /// </para>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonEvsRequest
     {

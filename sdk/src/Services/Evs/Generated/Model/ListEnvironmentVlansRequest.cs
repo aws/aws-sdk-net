@@ -31,16 +31,7 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironmentVlans operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Lists environment VLANs that are associated with the specified environment.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class ListEnvironmentVlansRequest : AmazonEvsRequest
     {

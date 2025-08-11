@@ -31,14 +31,8 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironment operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Deletes an Amazon EVS environment.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Amazon EVS environments will only be enabled for deletion once the hosts are deleted.
@@ -46,11 +40,9 @@ namespace Amazon.Evs.Model
     /// </para>
     ///  
     /// <para>
-    /// Environment deletion also deletes the associated Amazon EVS VLAN subnets. Other associated
-    /// Amazon Web Services resources are not deleted. These resources may continue to incur
-    /// costs.
-    /// </para>
-    /// 
+    /// Environment deletion also deletes the associated Amazon EVS VLAN subnets and Amazon
+    /// Web Services Secrets Manager secrets that Amazon EVS created. Amazon Web Services
+    /// resources that you create are not deleted. These resources may continue to incur costs.
     /// </para>
     /// </summary>
     public partial class DeleteEnvironmentRequest : AmazonEvsRequest

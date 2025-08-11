@@ -31,12 +31,6 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Associates the specified tags to an Amazon EVS resource with the specified <c>resourceArn</c>.
     /// If existing tags on a resource are not specified in the request parameters, they aren't
     /// changed. When a resource is deleted, the tags associated with that resource are also
@@ -44,9 +38,6 @@ namespace Amazon.Evs.Model
     /// resources associated with the environment. For example, if you tag an environment
     /// with this operation, that tag doesn't automatically propagate to the VLAN subnets
     /// and hosts associated with the environment.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonEvsRequest
     {

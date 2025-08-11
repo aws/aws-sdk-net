@@ -31,16 +31,7 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironment operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Returns a description of the specified environment.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class GetEnvironmentRequest : AmazonEvsRequest
     {

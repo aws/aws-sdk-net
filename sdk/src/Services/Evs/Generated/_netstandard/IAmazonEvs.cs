@@ -32,23 +32,15 @@ namespace Amazon.Evs
     /// <summary>
     /// <para>Interface for accessing Evs</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Amazon Elastic VMware Service (Amazon EVS) is a service that you can use to deploy
     /// a VMware Cloud Foundation (VCF) software environment directly on EC2 bare metal instances
     /// within an Amazon Virtual Private Cloud (VPC).
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Workloads running on Amazon EVS are fully compatible with workloads running on any
     /// standard VMware vSphere environment. This means that you can migrate any VMware-based
     /// workload to Amazon EVS without workload modification.
-    /// </para>
-    /// 
     /// </para>
     /// </summary>
     public partial interface IAmazonEvs : IAmazonService, IDisposable
@@ -65,15 +57,9 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
         /// Manager, and vCenter Server.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
@@ -91,7 +77,6 @@ namespace Amazon.Evs
         /// response.
         /// </para>
         ///  </note>
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -114,21 +99,12 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
         /// 4-16 hosts per environment.
-        /// </para>
+        /// 
         ///  
         /// <para>
-        /// This action can only be used after the Amazon EVS environment is deployed. All Amazon
-        /// EVS hosts are created with the latest AMI release version for the respective VCF version
-        /// of the environment. Amazon EVS hosts are commissioned in the SDDC Manager inventory
-        /// as unassigned hosts.
+        /// This action can only be used after the Amazon EVS environment is deployed.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +123,6 @@ namespace Amazon.Evs
         /// response.
         /// </para>
         ///  </note>
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentHost service method.</param>
         /// <param name="cancellationToken">
@@ -175,14 +150,8 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Deletes an Amazon EVS environment.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// Amazon EVS environments will only be enabled for deletion once the hosts are deleted.
@@ -190,11 +159,9 @@ namespace Amazon.Evs
         /// </para>
         ///  
         /// <para>
-        /// Environment deletion also deletes the associated Amazon EVS VLAN subnets. Other associated
-        /// Amazon Web Services resources are not deleted. These resources may continue to incur
-        /// costs.
-        /// </para>
-        /// 
+        /// Environment deletion also deletes the associated Amazon EVS VLAN subnets and Amazon
+        /// Web Services Secrets Manager secrets that Amazon EVS created. Amazon Web Services
+        /// resources that you create are not deleted. These resources may continue to incur costs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -222,14 +189,8 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Deletes a host from an Amazon EVS environment.
-        /// </para>
+        /// 
         ///  <note> 
         /// <para>
         /// Before deleting a host, you must unassign and decommission the host from within the
@@ -237,7 +198,6 @@ namespace Amazon.Evs
         /// machines or result in data loss.
         /// </para>
         ///  </note>
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentHost service method.</param>
         /// <param name="cancellationToken">
@@ -264,16 +224,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Returns a description of the specified environment.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -300,16 +251,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// List the hosts within an environment.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentHosts service method.</param>
         /// <param name="cancellationToken">
@@ -336,17 +278,8 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Lists the Amazon EVS environments in your Amazon Web Services account in the specified
         /// Amazon Web Services Region.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -369,16 +302,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Lists environment VLANs that are associated with the specified environment.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentVlans service method.</param>
         /// <param name="cancellationToken">
@@ -405,16 +329,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Lists the tags for an Amazon EVS resource.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -436,12 +351,6 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Associates the specified tags to an Amazon EVS resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource are not specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags associated with that resource are also
@@ -449,9 +358,6 @@ namespace Amazon.Evs
         /// resources associated with the environment. For example, if you tag an environment
         /// with this operation, that tag doesn't automatically propagate to the VLAN subnets
         /// and hosts associated with the environment.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -507,16 +413,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// Amazon EVS is in public preview release and is subject to change.
-        /// 
-        ///  </note> 
-        /// <para>
         /// Deletes specified tags from an Amazon EVS resource.
-        /// </para>
-        /// 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

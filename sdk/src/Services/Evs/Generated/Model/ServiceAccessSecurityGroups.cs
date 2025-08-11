@@ -30,18 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// The security groups that allow traffic between the Amazon EVS control plane and your
     /// VPC for Amazon EVS service access. If a security group is not specified, Amazon EVS
     /// uses the default security group in your account for service access.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class ServiceAccessSecurityGroups
     {

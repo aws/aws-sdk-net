@@ -30,19 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// An elastic network interface (ENI) that connects hosts to the VLAN subnets. Amazon
     /// EVS provisions two identically configured ENIs in the VMkernel management subnet during
     /// host creation. One ENI is active, and the other is in standby mode for automatic switchover
     /// during a failure scenario.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class NetworkInterface
     {
