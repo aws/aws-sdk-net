@@ -59,6 +59,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetColumnAxisDisplayOptions())
+            {
+                context.Writer.WritePropertyName("ColumnAxisDisplayOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AxisDisplayOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColumnAxisDisplayOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetColumnLabelOptions())
             {
                 context.Writer.WritePropertyName("ColumnLabelOptions");
@@ -110,6 +121,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = LegendOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Legend, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRowAxisDisplayOptions())
+            {
+                context.Writer.WritePropertyName("RowAxisDisplayOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AxisDisplayOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RowAxisDisplayOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }

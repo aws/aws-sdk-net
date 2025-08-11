@@ -35,12 +35,32 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PluginVisual
     {
+        private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private PluginVisualConfiguration _chartConfiguration;
         private string _pluginArn;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
         private string _visualContentAltText;
         private string _visualId;
+
+        /// <summary>
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// The list of custom actions that are configured for a visual.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<VisualCustomAction> Actions
+        {
+            get { return this._actions; }
+            set { this._actions = value; }
+        }
+
+        // Check to see if Actions property is set
+        internal bool IsSetActions()
+        {
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ChartConfiguration. 

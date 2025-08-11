@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model
         /// An array of calculated field definitions for the dashboard.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Max=2000)]
         public List<CalculatedField> CalculatedFields
         {
             get { return this._calculatedFields; }

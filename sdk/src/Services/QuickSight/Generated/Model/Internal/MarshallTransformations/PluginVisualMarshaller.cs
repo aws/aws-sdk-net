@@ -48,6 +48,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActions())
+            {
+                context.Writer.WritePropertyName("Actions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectActionsListValue in requestObject.Actions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VisualCustomActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectActionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetChartConfiguration())
             {
                 context.Writer.WritePropertyName("ChartConfiguration");
