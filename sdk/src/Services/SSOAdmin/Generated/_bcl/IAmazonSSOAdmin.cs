@@ -2906,6 +2906,82 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  GetApplicationSessionConfiguration
+
+
+        /// <summary>
+        /// Retrieves the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationSessionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
+        GetApplicationSessionConfigurationResponse GetApplicationSessionConfiguration(GetApplicationSessionConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApplicationSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
+        Task<GetApplicationSessionConfigurationResponse> GetApplicationSessionConfigurationAsync(GetApplicationSessionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetInlinePolicyForPermissionSet
 
 
@@ -4759,6 +4835,94 @@ namespace Amazon.SSOAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
         Task<PutApplicationGrantResponse> PutApplicationGrantAsync(PutApplicationGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutApplicationSessionConfiguration
+
+
+        /// <summary>
+        /// Updates the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationSessionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
+        PutApplicationSessionConfigurationResponse PutApplicationSessionConfiguration(PutApplicationSessionConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the session configuration for an application in IAM Identity Center.
+        /// 
+        ///  
+        /// <para>
+        /// The session configuration determines how users can access an application. This includes
+        /// whether user background sessions are enabled. User background sessions allow users
+        /// to start a job on a supported Amazon Web Services managed application without having
+        /// to remain signed in to an active session while the job runs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutApplicationSessionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutApplicationSessionConfiguration service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
+        Task<PutApplicationSessionConfigurationResponse> PutApplicationSessionConfigurationAsync(PutApplicationSessionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
