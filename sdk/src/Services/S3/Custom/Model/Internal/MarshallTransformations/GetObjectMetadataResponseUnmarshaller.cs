@@ -55,16 +55,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Expiration = new Expiration(responseData.GetHeaderValue("x-amz-expiration"));
             if (responseData.IsHeaderPresent("x-amz-delete-marker"))
                 response.DeleteMarker = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-delete-marker"));
-            if (responseData.IsHeaderPresent("Cache-Control"))
-                response.Headers.CacheControl = S3Transforms.ToString(responseData.GetHeaderValue("Cache-Control"));
-            if (responseData.IsHeaderPresent("Content-Disposition"))
-                response.Headers.ContentDisposition = S3Transforms.ToString(responseData.GetHeaderValue("Content-Disposition"));
-            if (responseData.IsHeaderPresent("Content-Encoding"))
-                response.Headers.ContentEncoding = S3Transforms.ToString(responseData.GetHeaderValue("Content-Encoding"));
-            if (responseData.IsHeaderPresent("Content-Length"))
-                response.Headers.ContentLength = long.Parse(responseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
-            if (responseData.IsHeaderPresent("Content-Type"))
-                response.Headers.ContentType = S3Transforms.ToString(responseData.GetHeaderValue("Content-Type"));
             if (responseData.IsHeaderPresent("Expires"))
                 response.ExpiresString = S3Transforms.ToString(responseData.GetHeaderValue("Expires"));
             if (responseData.IsHeaderPresent("x-amz-server-side-encryption-customer-algorithm"))
