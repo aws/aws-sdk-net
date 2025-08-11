@@ -176,8 +176,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     foreach (var exception in this.Operation.Exceptions)
     {
 #>
-                if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.Code #>"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.ShapeOriginalName #>"))
                 {
+<#
+    if  (exception.ShapeOriginalName != exception.Code)
+    {
+#>
+                    errorResponse.Code = "<#=exception.Code#>";
+<#
+    }
+#>
                     return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
 <#
