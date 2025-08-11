@@ -1,3 +1,23 @@
+### 4.0.67.0 (2025-08-11 18:26 UTC)
+* Bedrock (4.0.10.0)
+	* This release includes model updates and enhanced SDK documentation for union fields in automated reasoning policy components. Added docs cover policy definitions, mutations (add/update for rules/types/variables), build assets, workflow sources, test results, and tag exception handling.
+* CognitoIdentityProvider (4.0.2.0)
+	* Remove SigV4 auth requirement for GetTokensFromRefreshToken
+* Connect (4.0.6.0)
+	* Updating SearchUserHierarchyGroups API
+* Deadline (4.0.8.0)
+	* Adds support for Wait and Save feature in service-managed fleets
+* EC2 (4.0.28.0)
+	* This release adds AvailabilityZoneId support for CreateVolume, DescribeVolume, LaunchTemplates, RunInstances, DescribeInstances, CreateDefaultSubnet, SpotInstances, and CreateDefaultSubnet APIs.
+* Evs (4.0.1.2)
+	* Update for general availability of Amazon Elastic VMware Service (EVS).
+* Lambda (4.0.2.4)
+	* Doc-only update for Lambda that updates the maximum payload size for response streaming invocations to 200 MB.
+* QuickSight (4.0.4.0)
+	* Add RowAxisDisplayOptions and ColumnAxisDisplayOptions to HeatMapConfiguration, add Actions to PluginVisual, increase limit for CalculatedFields list
+* SSOAdmin (4.0.2.0)
+	* Added support for managing user background session for applications
+
 ### 4.0.66.0 (2025-08-08 18:44 UTC)
 * ApplicationSignals (4.0.1.0)
 	* Removed incorrect endpoint tests

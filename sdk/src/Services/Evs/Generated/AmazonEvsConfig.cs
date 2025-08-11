@@ -33,7 +33,7 @@ namespace Amazon.Evs
     public partial class AmazonEvsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("evs", "4.0.1.1");
+            InternalSDKUtils.BuildUserAgentString("evs", "4.0.1.2");
 
         private static readonly AmazonEvsEndpointResolver EndpointResolver =
             new AmazonEvsEndpointResolver();
