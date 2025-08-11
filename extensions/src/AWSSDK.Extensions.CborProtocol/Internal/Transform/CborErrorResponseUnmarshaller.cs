@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Formats.Cbor;
 using System.IO;
+using System.Net;
 
 namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
@@ -37,8 +38,75 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
         /// <returns>An <c>ErrorResponse</c> object.</returns>
         public ErrorResponse Unmarshall(CborUnmarshallerContext context)
         {
-            // Placeholder until CBOR exception implementation.
-            return null;
+            var errorType = ErrorType.Unknown;
+
+            if (context.ResponseData.StatusCode == HttpStatusCode.BadRequest)
+            {
+                errorType = ErrorType.Sender;
+            }
+            else if (context.ResponseData.StatusCode == HttpStatusCode.InternalServerError)
+            {
+                errorType = ErrorType.Receiver;
+            }
+
+            var response = new ErrorResponse
+            {
+                Type = errorType,
+                StatusCode = context.ResponseData.StatusCode,
+            };
+
+            var reader = context.Reader;
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString().ToLowerInvariant();
+                switch (propertyName)
+                {
+                    case "__type":
+                        {
+                            context.AddPathSegment("__type");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            var type = unmarshaller.Unmarshall(context);
+                            response.Code = SanitizeErrorType(type);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "message":
+                        {
+                            context.AddPathSegment("message");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.Message = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+
+            if (context.ResponseData.IsHeaderPresent(HeaderKeys.RequestIdHeader))
+            {
+                response.RequestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Extracts the error type from a Smithy shape identifier string.
+        /// The input is expected to be in the format "namespace#ErrorType[:additionalInfo]".
+        /// Returns the error type portion (e.g., "ErrorType").
+        /// </summary>
+        private string SanitizeErrorType(string type)
+        {
+            int start = type.IndexOf('#');
+            start = start == -1 ? 0 : start + 1;
+
+            int end = type.IndexOf(':', start);
+            end = end == -1 ? type.Length : end;
+
+            return type.Substring(start, end - start).Trim();
         }
 
         private static CborErrorResponseUnmarshaller instance;
