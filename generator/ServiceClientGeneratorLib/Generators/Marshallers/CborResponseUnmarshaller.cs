@@ -398,13 +398,39 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
             #line 179 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(exception.ShapeOriginalName));
+            
+            #line default
+            #line hidden
+            this.Write("\"))\r\n                {\r\n");
+            
+            #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+
+    if  (exception.ShapeOriginalName != exception.Code)
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    errorResponse.Code = \"");
+            
+            #line 185 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
-            this.Write("\"))\r\n                {\r\n                    return ");
+            this.Write("\";\r\n");
             
-            #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("                    return ");
+            
+            #line 189 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -412,7 +438,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
                     "\n");
             
-            #line 183 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
     }
 
@@ -421,7 +447,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 187 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 195 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
@@ -432,7 +458,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            return new ");
             
-            #line 192 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 200 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -440,7 +466,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, error" +
                     "Response.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 193 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 201 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
             }
             else
@@ -451,7 +477,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            return new ");
             
-            #line 198 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 206 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -459,7 +485,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorRe" +
                     "sponse.Code, errorResponse.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 199 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 207 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
             }
 
@@ -468,7 +494,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 204 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 212 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
     if (payload != null && payload.Shape.IsStreaming)
     {
@@ -489,7 +515,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
 ");
             
-            #line 219 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 227 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
 	}
     this.AddResponseSingletonMethod();
@@ -498,7 +524,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             
-            #line 223 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
     if(isEventStreamOutput)
     {
@@ -522,7 +548,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override bool HasStreamingProperty => true;
 ");
             
-            #line 241 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
+            #line 249 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborResponseUnmarshaller.tt"
 
     }
 
