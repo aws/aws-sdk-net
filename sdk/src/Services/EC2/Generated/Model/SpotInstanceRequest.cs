@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private string _launchedAvailabilityZone;
+        private string _launchedAvailabilityZoneId;
         private string _launchGroup;
         private LaunchSpecification _launchSpecification;
         private RIProductDescription _productDescription;
@@ -187,6 +188,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Availability Zone in which the request is launched.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>launchedAvailabilityZone</c> or <c>launchedAvailabilityZoneId</c> can be
+        /// specified, but not both
+        /// </para>
         /// </summary>
         public string LaunchedAvailabilityZone
         {
@@ -198,6 +204,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchedAvailabilityZone()
         {
             return this._launchedAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchedAvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which the request is launched.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>launchedAvailabilityZone</c> or <c>launchedAvailabilityZoneId</c> can be
+        /// specified, but not both
+        /// </para>
+        /// </summary>
+        public string LaunchedAvailabilityZoneId
+        {
+            get { return this._launchedAvailabilityZoneId; }
+            set { this._launchedAvailabilityZoneId = value; }
+        }
+
+        // Check to see if LaunchedAvailabilityZoneId property is set
+        internal bool IsSetLaunchedAvailabilityZoneId()
+        {
+            return this._launchedAvailabilityZoneId != null;
         }
 
         /// <summary>

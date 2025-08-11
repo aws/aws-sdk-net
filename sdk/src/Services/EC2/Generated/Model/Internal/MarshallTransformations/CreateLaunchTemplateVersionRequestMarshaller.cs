@@ -837,6 +837,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZone));
                         }
+                        if(publicRequest.LaunchTemplateData.Placement.IsSetAvailabilityZoneId())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZoneId));
+                        }
                         if(publicRequest.LaunchTemplateData.Placement.IsSetGroupId())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.GroupId));

@@ -127,6 +127,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>block-device-mapping.attach-time</c> - The attach time for an EBS volume mapped
         /// to the instance, for example, <c>2022-09-15T17:15:20.000Z</c>.
         /// </para>

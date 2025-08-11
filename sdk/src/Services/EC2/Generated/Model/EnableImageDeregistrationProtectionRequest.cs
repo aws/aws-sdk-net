@@ -36,7 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// To allow the AMI to be deregistered, you must first disable deregistration protection.
+    /// To allow the AMI to be deregistered, you must first disable deregistration protection
+    /// using <a>DisableImageDeregistrationProtection</a>.
     /// </para>
     ///  
     /// <para>
