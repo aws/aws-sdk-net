@@ -31,21 +31,12 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentHost operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Creates an ESXi host and adds it to an Amazon EVS environment. Amazon EVS supports
     /// 4-16 hosts per environment.
-    /// </para>
+    /// 
     ///  
     /// <para>
-    /// This action can only be used after the Amazon EVS environment is deployed. All Amazon
-    /// EVS hosts are created with the latest AMI release version for the respective VCF version
-    /// of the environment. Amazon EVS hosts are commissioned in the SDDC Manager inventory
-    /// as unassigned hosts.
+    /// This action can only be used after the Amazon EVS environment is deployed.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +55,6 @@ namespace Amazon.Evs.Model
     /// response.
     /// </para>
     ///  </note>
-    /// </para>
     /// </summary>
     public partial class CreateEnvironmentHostRequest : AmazonEvsRequest
     {

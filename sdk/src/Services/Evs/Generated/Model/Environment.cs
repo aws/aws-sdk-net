@@ -30,16 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// An object that represents an Amazon EVS environment.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class Environment
     {

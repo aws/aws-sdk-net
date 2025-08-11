@@ -31,16 +31,7 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Lists the tags for an Amazon EVS resource.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonEvsRequest
     {

@@ -31,17 +31,8 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironments operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Lists the Amazon EVS environments in your Amazon Web Services account in the specified
     /// Amazon Web Services Region.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class ListEnvironmentsRequest : AmazonEvsRequest
     {

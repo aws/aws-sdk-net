@@ -30,17 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
-    ///  The license information that Amazon EVS requires to create an environment. Amazon
+    /// The license information that Amazon EVS requires to create an environment. Amazon
     /// EVS requires two license keys: a VCF solution key and a vSAN license key.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class LicenseInfo
     {

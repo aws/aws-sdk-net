@@ -31,16 +31,7 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Deletes specified tags from an Amazon EVS resource.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonEvsRequest
     {

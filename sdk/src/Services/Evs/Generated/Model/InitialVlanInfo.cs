@@ -30,25 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon EVS is in public preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// An object that represents an initial VLAN subnet for the Amazon EVS environment. Amazon
     /// EVS creates initial VLAN subnets when you first create the environment. Amazon EVS
     /// creates the following 10 VLAN subnets: host management VLAN, vMotion VLAN, vSAN VLAN,
     /// VTEP VLAN, Edge VTEP VLAN, Management VM VLAN, HCX uplink VLAN, NSX uplink VLAN, expansion
     /// VLAN 1, expansion VLAN 2.
-    /// </para>
+    /// 
     ///  <note> 
     /// <para>
     /// For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon
     /// EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.
     /// </para>
     ///  </note>
-    /// </para>
     /// </summary>
     public partial class InitialVlanInfo
     {
