@@ -580,6 +580,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.Placement.AvailabilityZone));
                     }
+                    if(publicRequest.Placement.IsSetAvailabilityZoneId())
+                    {
+                        request.Parameters.Add("Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.Placement.AvailabilityZoneId));
+                    }
                     if(publicRequest.Placement.IsSetGroupId())
                     {
                         request.Parameters.Add("Placement" + "." + "GroupId", StringUtils.FromString(publicRequest.Placement.GroupId));

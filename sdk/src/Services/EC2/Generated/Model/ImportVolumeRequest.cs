@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
     public partial class ImportVolumeRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _description;
         private DiskImageDetail _image;
         private VolumeDetail _volume;
@@ -62,8 +63,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Availability Zone for the resulting EBS volume.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but
+        /// not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -74,6 +79,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone for the resulting EBS volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but
+        /// not both.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

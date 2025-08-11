@@ -60,6 +60,7 @@ namespace Amazon.EC2.Model
     public partial class CreateVolumeRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _clientToken;
         private bool? _encrypted;
         private int? _iops;
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.</param>
+        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>. Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but not both.</param>
         /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
@@ -93,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.</param>
+        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>. Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but not both.</param>
         /// <param name="snapshotId">The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.</param>
         public CreateVolumeRequest(string availabilityZone, string snapshotId)
         {
@@ -106,8 +107,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but
+        /// not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -118,6 +123,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which to create the volume. For example, <c>use1-az1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but
+        /// not both.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// Before you can release an address range, you must stop advertising it and you must
-    /// not have any IP addresses allocated from its address range.
+    /// Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a>
+    /// and you must not have any IP addresses allocated from its address range.
     /// </para>
     /// </summary>
     public partial class DeprovisionByoipCidrRequest : AmazonEC2Request

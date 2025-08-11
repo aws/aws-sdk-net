@@ -32,6 +32,11 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeManagedPrefixLists operation.
     /// Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
+    /// 
+    ///  
+    /// <para>
+    /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeManagedPrefixListsRequest : AmazonEC2Request
     {

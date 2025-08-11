@@ -61,6 +61,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AcceptanceRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZoneIdSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZoneIds == null)
+                        {
+                            unmarshalledObject.AvailabilityZoneIds = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZoneIds.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("availabilityZoneSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

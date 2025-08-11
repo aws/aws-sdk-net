@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _affinity;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _groupId;
         private string _groupName;
         private string _hostId;
@@ -67,6 +68,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Availability Zone for the instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -78,6 +84,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

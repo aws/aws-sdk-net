@@ -31,8 +31,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeByoipCidrs operation.
-    /// Describes the IP address ranges that were provisioned for use with Amazon Web Services
-    /// resources through through bring your own IP addresses (BYOIP).
+    /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+    /// 
+    ///  
+    /// <para>
+    /// To describe the address pools that were created when you provisioned the address ranges,
+    /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeByoipCidrsRequest : AmazonEC2Request
     {

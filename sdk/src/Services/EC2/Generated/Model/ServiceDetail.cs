@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class ServiceDetail
     {
         private bool? _acceptanceRequired;
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _baseEndpointDnsNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _managesVpcEndpoints;
@@ -71,9 +72,37 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZoneIds. 
+        /// <para>
+        /// The IDs of the Availability Zones in which the service is available.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZoneIds
+        {
+            get { return this._availabilityZoneIds; }
+            set { this._availabilityZoneIds = value; }
+        }
+
+        // Check to see if AvailabilityZoneIds property is set
+        internal bool IsSetAvailabilityZoneIds()
+        {
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// The Availability Zones in which the service is available.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones

@@ -679,6 +679,10 @@ namespace Amazon.EC2
         /// It can take a few minutes before traffic to the specified addresses starts routing
         /// to Amazon Web Services because of BGP propagation delays.
         /// </para>
+        ///  
+        /// <para>
+        /// To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr service method.</param>
         /// 
@@ -715,6 +719,10 @@ namespace Amazon.EC2
         /// <para>
         /// It can take a few minutes before traffic to the specified addresses starts routing
         /// to Amazon Web Services because of BGP propagation delays.
+        /// </para>
+        ///  
+        /// <para>
+        /// To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr service method.</param>
@@ -14299,8 +14307,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Before you can release an address range, you must stop advertising it and you must
-        /// not have any IP addresses allocated from its address range.
+        /// Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a>
+        /// and you must not have any IP addresses allocated from its address range.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr service method.</param>
@@ -14324,8 +14332,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Before you can release an address range, you must stop advertising it and you must
-        /// not have any IP addresses allocated from its address range.
+        /// Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a>
+        /// and you must not have any IP addresses allocated from its address range.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr service method.</param>
@@ -15497,8 +15505,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the IP address ranges that were provisioned for use with Amazon Web Services
-        /// resources through through bring your own IP addresses (BYOIP).
+        /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To describe the address pools that were created when you provisioned the address ranges,
+        /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeByoipCidrs service method.</param>
         /// 
@@ -15515,8 +15528,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the IP address ranges that were provisioned for use with Amazon Web Services
-        /// resources through through bring your own IP addresses (BYOIP).
+        /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To describe the address pools that were created when you provisioned the address ranges,
+        /// use <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeByoipCidrs service method.</param>
         /// <param name="cancellationToken">
@@ -17695,8 +17713,7 @@ namespace Amazon.EC2
         /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
-        /// meet the criteria. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
-        /// AMIs</a>.
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
         ///  
         /// <para>
@@ -17750,8 +17767,7 @@ namespace Amazon.EC2
         /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
-        /// meet the criteria. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
-        /// AMIs</a>.
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
         ///  
         /// <para>
@@ -17810,8 +17826,7 @@ namespace Amazon.EC2
         /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
-        /// meet the criteria. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
-        /// AMIs</a>.
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
         ///  
         /// <para>
@@ -17867,8 +17882,7 @@ namespace Amazon.EC2
         /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
         /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
         /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
-        /// meet the criteria. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Allowed
-        /// AMIs</a>.
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
         ///  
         /// <para>
@@ -20055,6 +20069,11 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
         /// 
@@ -20072,6 +20091,11 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
+        /// 
+        ///  
+        /// <para>
+        /// To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeManagedPrefixLists service method.</param>
         /// <param name="cancellationToken">
@@ -20838,6 +20862,11 @@ namespace Amazon.EC2
         /// Describes available Amazon Web Services services in a prefix list format, which includes
         /// the prefix list name and prefix list ID of the service and the IP address range for
         /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
@@ -20857,6 +20886,11 @@ namespace Amazon.EC2
         /// Describes available Amazon Web Services services in a prefix list format, which includes
         /// the prefix list name and prefix list ID of the service and the IP address range for
         /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// <param name="cancellationToken">
@@ -29144,7 +29178,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// To allow the AMI to be deregistered, you must first disable deregistration protection.
+        /// To allow the AMI to be deregistered, you must first disable deregistration protection
+        /// using <a>DisableImageDeregistrationProtection</a>.
         /// </para>
         ///  
         /// <para>
@@ -29172,7 +29207,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// To allow the AMI to be deregistered, you must first disable deregistration protection.
+        /// To allow the AMI to be deregistered, you must first disable deregistration protection
+        /// using <a>DisableImageDeregistrationProtection</a>.
         /// </para>
         ///  
         /// <para>
@@ -37937,9 +37973,10 @@ namespace Amazon.EC2
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
         /// The Elastic IP address must be allocated to your account for more than 24 hours, and
         /// it must not be associated with an instance. After the Elastic IP address is moved,
-        /// it is no longer available for use in the EC2-Classic platform. You cannot move an
-        /// Elastic IP address that was originally allocated for use in the EC2-VPC platform to
-        /// the EC2-Classic platform.
+        /// it is no longer available for use in the EC2-Classic platform, unless you move it
+        /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
+        /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
+        /// platform.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
@@ -37966,9 +38003,10 @@ namespace Amazon.EC2
         /// Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform.
         /// The Elastic IP address must be allocated to your account for more than 24 hours, and
         /// it must not be associated with an instance. After the Elastic IP address is moved,
-        /// it is no longer available for use in the EC2-Classic platform. You cannot move an
-        /// Elastic IP address that was originally allocated for use in the EC2-VPC platform to
-        /// the EC2-Classic platform.
+        /// it is no longer available for use in the EC2-Classic platform, unless you move it
+        /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
+        /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
+        /// platform.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
@@ -38153,7 +38191,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources
         /// through bring your own IP addresses (BYOIP) and creates a corresponding address pool.
-        /// After the address range is provisioned, it is ready to be advertised.
+        /// After the address range is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
         /// 
         ///  
         /// <para>
@@ -38167,8 +38205,9 @@ namespace Amazon.EC2
         /// <para>
         /// Provisioning an address range is an asynchronous operation, so the call returns immediately,
         /// but the address range is not ready to use until its status changes from <c>pending-provision</c>
-        /// to <c>provisioned</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/byoip-onboard.html">Onboard
-        /// your address range</a>.
+        /// to <c>provisioned</c>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
+        /// To allocate an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a>
+        /// with either the specific address from the address pool or the ID of the address pool.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr service method.</param>
@@ -38188,7 +38227,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources
         /// through bring your own IP addresses (BYOIP) and creates a corresponding address pool.
-        /// After the address range is provisioned, it is ready to be advertised.
+        /// After the address range is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
         /// 
         ///  
         /// <para>
@@ -38202,8 +38241,9 @@ namespace Amazon.EC2
         /// <para>
         /// Provisioning an address range is an asynchronous operation, so the call returns immediately,
         /// but the address range is not ready to use until its status changes from <c>pending-provision</c>
-        /// to <c>provisioned</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/byoip-onboard.html">Onboard
-        /// your address range</a>.
+        /// to <c>provisioned</c>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
+        /// To allocate an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a>
+        /// with either the specific address from the address pool or the ID of the address pool.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr service method.</param>
@@ -38753,7 +38793,13 @@ namespace Amazon.EC2
         /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html">Create
         /// an instance-store backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI
+        /// in a single request, so you don't have to register the AMI yourself. We recommend
+        /// that you always use <a>CreateImage</a> unless you have a specific reason to use RegisterImage.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If needed, you can deregister an AMI at any time. Any modifications you make to an
         /// AMI backed by an instance store volume invalidates its registration. If you make changes
@@ -38797,7 +38843,7 @@ namespace Amazon.EC2
         /// <c>PlatformDetails</c> field on the new AMI. If the field is empty or doesn't match
         /// the expected operating system code (for example, Windows, RedHat, SUSE, or SQL), the
         /// AMI creation was unsuccessful, and you should discard the AMI and instead create the
-        /// AMI from an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#how-to-create-ebs-ami">Create
+        /// AMI from an instance using <a>CreateImage</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#how-to-create-ebs-ami">Create
         /// an AMI from an instance </a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -38805,7 +38851,7 @@ namespace Amazon.EC2
         /// If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched
         /// from an AMI with a billing product code, make sure that the Reserved Instance has
         /// the matching billing product code. If you purchase a Reserved Instance without the
-        /// matching billing product code, the Reserved Instance is not applied to the On-Demand
+        /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
         /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
         /// AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.
@@ -38832,7 +38878,13 @@ namespace Amazon.EC2
         /// an AMI from a snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-instance-store.html">Create
         /// an instance-store backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI
+        /// in a single request, so you don't have to register the AMI yourself. We recommend
+        /// that you always use <a>CreateImage</a> unless you have a specific reason to use RegisterImage.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If needed, you can deregister an AMI at any time. Any modifications you make to an
         /// AMI backed by an instance store volume invalidates its registration. If you make changes
@@ -38876,7 +38928,7 @@ namespace Amazon.EC2
         /// <c>PlatformDetails</c> field on the new AMI. If the field is empty or doesn't match
         /// the expected operating system code (for example, Windows, RedHat, SUSE, or SQL), the
         /// AMI creation was unsuccessful, and you should discard the AMI and instead create the
-        /// AMI from an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#how-to-create-ebs-ami">Create
+        /// AMI from an instance using <a>CreateImage</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#how-to-create-ebs-ami">Create
         /// an AMI from an instance </a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -38884,7 +38936,7 @@ namespace Amazon.EC2
         /// If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched
         /// from an AMI with a billing product code, make sure that the Reserved Instance has
         /// the matching billing product code. If you purchase a Reserved Instance without the
-        /// matching billing product code, the Reserved Instance is not applied to the On-Demand
+        /// matching billing product code, the Reserved Instance will not be applied to the On-Demand
         /// Instance. For information about how to obtain the platform details and billing information
         /// of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
         /// AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.
@@ -39370,13 +39422,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// [Default VPC] Releasing an Elastic IP address automatically disassociates it from
-        /// any instance that it's associated with. Alternatively, you can disassociate an Elastic
-        /// IP address without releasing it.
+        /// any instance that it's associated with. To disassociate an Elastic IP address without
+        /// releasing it, use <a>DisassociateAddress</a>.
         /// </para>
         ///  
         /// <para>
-        /// [Nondefault VPC] You must disassociate the Elastic IP address before you can release
-        /// it. Otherwise, Amazon EC2 returns an error (<c>InvalidIPAddress.InUse</c>).
+        /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
+        /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<c>InvalidIPAddress.InUse</c>).
         /// </para>
         ///  
         /// <para>
@@ -39389,8 +39441,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After you release an Elastic IP address, you might be able to recover it. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing-eips-releasing.html">Release
-        /// an Elastic IP address</a>.
+        /// information, see <a>AllocateAddress</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method.</param>
@@ -39413,13 +39464,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// [Default VPC] Releasing an Elastic IP address automatically disassociates it from
-        /// any instance that it's associated with. Alternatively, you can disassociate an Elastic
-        /// IP address without releasing it.
+        /// any instance that it's associated with. To disassociate an Elastic IP address without
+        /// releasing it, use <a>DisassociateAddress</a>.
         /// </para>
         ///  
         /// <para>
-        /// [Nondefault VPC] You must disassociate the Elastic IP address before you can release
-        /// it. Otherwise, Amazon EC2 returns an error (<c>InvalidIPAddress.InUse</c>).
+        /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
+        /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<c>InvalidIPAddress.InUse</c>).
         /// </para>
         ///  
         /// <para>
@@ -39432,8 +39483,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After you release an Elastic IP address, you might be able to recover it. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing-eips-releasing.html">Release
-        /// an Elastic IP address</a>.
+        /// information, see <a>AllocateAddress</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method.</param>
@@ -41596,11 +41646,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The report is saved to your specified S3 bucket, using the following path structure
-        /// (with the capitalized placeholders representing your specific values):
+        /// (with the <i>italicized placeholders</i> representing your specific values):
         /// </para>
         ///  
         /// <para>
-        ///  <c>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</c>
+        ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
         /// 
         /// </para>
         ///  
@@ -41672,11 +41722,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The report is saved to your specified S3 bucket, using the following path structure
-        /// (with the capitalized placeholders representing your specific values):
+        /// (with the <i>italicized placeholders</i> representing your specific values):
         /// </para>
         ///  
         /// <para>
-        ///  <c>s3://AMZN-S3-DEMO-BUCKET/YOUR-OPTIONAL-S3-PREFIX/ec2_TARGETID_REPORTID_YYYYMMDDTHHMMZ.csv</c>
+        ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
         /// 
         /// </para>
         ///  
