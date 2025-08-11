@@ -38,7 +38,11 @@ namespace Amazon.Bedrock.Model
         private AutomatedReasoningPolicyDefinitionVariable _variable;
 
         /// <summary>
-        /// Gets and sets the property Variable.
+        /// Gets and sets the property Variable. 
+        /// <para>
+        /// The variable definition that specifies the name, type, and description for the new
+        /// variable being added to the policy.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutomatedReasoningPolicyDefinitionVariable Variable

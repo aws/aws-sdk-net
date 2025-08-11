@@ -40,7 +40,11 @@ namespace Amazon.Bedrock.Model
         private AutomatedReasoningPolicyDefinitionVariable _policyDefinitionVariable;
 
         /// <summary>
-        /// Gets and sets the property PolicyDefinitionRule.
+        /// Gets and sets the property PolicyDefinitionRule. 
+        /// <para>
+        /// A rule element within the policy definition that contains a formal logical expression
+        /// used for validation.
+        /// </para>
         /// </summary>
         public AutomatedReasoningPolicyDefinitionRule PolicyDefinitionRule
         {
@@ -55,7 +59,11 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyDefinitionType.
+        /// Gets and sets the property PolicyDefinitionType. 
+        /// <para>
+        /// A custom type element within the policy definition that defines a set of possible
+        /// values for variables.
+        /// </para>
         /// </summary>
         public AutomatedReasoningPolicyDefinitionType PolicyDefinitionType
         {
@@ -70,7 +78,11 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyDefinitionVariable.
+        /// Gets and sets the property PolicyDefinitionVariable. 
+        /// <para>
+        /// A variable element within the policy definition that represents a concept used in
+        /// logical expressions and rules.
+        /// </para>
         /// </summary>
         public AutomatedReasoningPolicyDefinitionVariable PolicyDefinitionVariable
         {

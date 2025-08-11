@@ -82,7 +82,11 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TestCase.
+        /// Gets and sets the property TestCase. 
+        /// <para>
+        /// The test case that was executed, including the input content, expected results, and
+        /// configuration parameters used during validation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutomatedReasoningPolicyTestCase TestCase

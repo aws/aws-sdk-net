@@ -38,7 +38,11 @@ namespace Amazon.Bedrock.Model
         private AutomatedReasoningPolicyDefinitionType _type;
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type definition that specifies the name, description, and possible values for
+        /// the new custom type being added to the policy.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutomatedReasoningPolicyDefinitionType Type
