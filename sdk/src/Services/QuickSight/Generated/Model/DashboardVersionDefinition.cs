@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Max=2000)]
         public List<CalculatedField> CalculatedFields
         {
             get { return this._calculatedFields; }
