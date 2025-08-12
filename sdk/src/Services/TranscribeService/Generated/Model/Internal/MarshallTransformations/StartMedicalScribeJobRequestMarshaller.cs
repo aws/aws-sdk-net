@@ -116,6 +116,17 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMedicalScribeContext())
+                {
+                    context.Writer.WritePropertyName("MedicalScribeContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MedicalScribeContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MedicalScribeContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMedicalScribeJobName())
                 {
                     context.Writer.WritePropertyName("MedicalScribeJobName");

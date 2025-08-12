@@ -3045,8 +3045,8 @@ namespace Amazon.TranscribeService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Settings</c>: A <c>MedicalScribeSettings</c> obect that must set exactly one of
-        /// <c>ShowSpeakerLabels</c> or <c>ChannelIdentification</c> to true. If <c>ShowSpeakerLabels</c>
+        ///  <c>Settings</c>: A <c>MedicalScribeSettings</c> object that must set exactly one
+        /// of <c>ShowSpeakerLabels</c> or <c>ChannelIdentification</c> to true. If <c>ShowSpeakerLabels</c>
         /// is true, <c>MaxSpeakerLabels</c> must also be set. 
         /// </para>
         ///  </li> <li> 

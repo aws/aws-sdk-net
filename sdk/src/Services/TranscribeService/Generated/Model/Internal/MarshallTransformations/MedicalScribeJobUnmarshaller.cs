@@ -108,6 +108,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Media = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MedicalScribeContextProvided", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MedicalScribeContextProvided = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MedicalScribeJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -50,6 +50,7 @@ namespace Amazon.TranscribeService.Model
         private string _failureReason;
         private MedicalScribeLanguageCode _languageCode;
         private Media _media;
+        private bool? _medicalScribeContextProvided;
         private string _medicalScribeJobName;
         private MedicalScribeJobStatus _medicalScribeJobStatus;
         private MedicalScribeOutput _medicalScribeOutput;
@@ -217,6 +218,25 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MedicalScribeContextProvided. 
+        /// <para>
+        /// Indicates whether the <c>MedicalScribeContext</c> object was provided when the Medical
+        /// Scribe job was started.
+        /// </para>
+        /// </summary>
+        public bool MedicalScribeContextProvided
+        {
+            get { return this._medicalScribeContextProvided.GetValueOrDefault(); }
+            set { this._medicalScribeContextProvided = value; }
+        }
+
+        // Check to see if MedicalScribeContextProvided property is set
+        internal bool IsSetMedicalScribeContextProvided()
+        {
+            return this._medicalScribeContextProvided.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MedicalScribeJobName. 
         /// <para>
         /// The name of the Medical Scribe job. Job names are case sensitive and must be unique
@@ -332,7 +352,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Adds one or more custom tags, each in the form of a key:value pair, to the Medica
+        /// Adds one or more custom tags, each in the form of a key:value pair, to the Medical
         /// Scribe job.
         /// </para>
         ///  
