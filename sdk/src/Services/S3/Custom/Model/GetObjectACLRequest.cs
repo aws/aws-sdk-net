@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,9 +13,7 @@
  * permissions and limitations under the License.
  */
 
-/*
- * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
- */
+
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -33,7 +31,7 @@ namespace Amazon.S3.Model
     /// Container for the parameters to the GetObjectAcl operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported for directory buckets.
+    /// This operation is not supported by directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -101,11 +99,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Access points</b> - When you use this action with an access point for general
-        /// purpose buckets, you must provide the alias of the access point in place of the bucket
-        /// name or specify the access point ARN. When you use this action with an access point
-        /// for directory buckets, you must provide the access point name in place of the bucket
-        /// name. When using the access point ARN, you must direct requests to the access point
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
         /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
@@ -142,7 +138,7 @@ namespace Amazon.S3.Model
         // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return this._expectedBucketOwner != null;
+            return !string.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>
@@ -151,7 +147,7 @@ namespace Amazon.S3.Model
         /// The key of the object for which to get the ACL information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required = true, Min = 1)]
         public string Key
         {
             get { return this._key; }
@@ -176,7 +172,7 @@ namespace Amazon.S3.Model
         // Check to see if RequestPayer property is set
         internal bool IsSetRequestPayer()
         {
-            return this._requestPayer != null;
+            return !string.IsNullOrEmpty(this._requestPayer);
         }
 
         /// <summary>

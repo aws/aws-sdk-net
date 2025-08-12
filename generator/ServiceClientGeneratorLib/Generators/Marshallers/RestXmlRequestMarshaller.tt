@@ -429,7 +429,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', level * 4)#>				}
 <#+		
 	}
-
+// Only namespaces at the top level Shape matter for a structure, so there is no logic for namespaces here.
 	void ProcessStructure(int level, string variableName, Member member)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
@@ -442,28 +442,10 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 #>
 <#=new string(' ', level * 4)#>				if (<#=variableName#> != null)
 <#=new string(' ', level * 4)#>				{
-<#+
-			if (!string.IsNullOrEmpty(member.Shape.XmlNamespace))
-			{
-				if (!string.IsNullOrEmpty(member.Shape.XmlNamespacePrefix))
-				{
-#>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=member.Shape.XmlNamespacePrefix#>","<#=marshallName#>","<#=member.Shape.XmlNamespace#>");
-<#+
-				}
-				else
-				{
-#>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>","<#=member.Shape.XmlNamespace#>");
-<#+
-				}
-			}
-			else
-			{
-#>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>");
 <#+
-			}
+#>
+<#+
 			ProcessMembers(level + 1, variableName, shape.Members);
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
@@ -524,7 +506,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				else
 					listMarshallName = member.Shape.ListMarshallName ?? "member";
 				// see https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait
-				if(member.IsFlattened || member.Shape.IsFlattened)
+				if(member.IsFlattened)
 					listMarshallName = member.LocationName ?? member.ModeledName;
 				if(member.Shape.ListShape.IsTimeStamp)
 				{
@@ -855,11 +837,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	{
 		var prefix = "";
 		var localName = "";
-		string ns = string.IsNullOrEmpty(member.XmlNamespace) ? member.Shape.XmlNamespace : member.XmlNamespace;
-		// in the rare case like "Type" on "Grantee" in s3, the member or the member's shape doesn't have an xmlNamespace attached
-		// but instead it uses the xmlNamespace on the owning shape. If ns is still null at this point, we use the owning shape's xml namespace
-		if (string.IsNullOrEmpty(ns))
-			ns = member.OwningShape.XmlNamespace;
+		string ns = member.XmlNamespace;
 		if (member.MarshallName.Contains(":"))
 		{
 			var colonIndex = member.MarshallName.IndexOf(":");
@@ -876,13 +854,13 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		if(isPayload)
 		{
 #>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>","<#=ns#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>","<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=operation.RequestPayloadMember.PropertyName#>.<#=member.PropertyName#>));
 <#+
 		}
 		else
 		{
 #>
-<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>", "<#=ns#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>					xmlWriter.WriteAttributeString("<#=prefix#>","<#=localName#>", "<#=member.XmlNamespace#>",<#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 		}
 	}

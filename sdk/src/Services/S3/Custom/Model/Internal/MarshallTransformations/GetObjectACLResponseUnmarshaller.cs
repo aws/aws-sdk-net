@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,64 +34,91 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RestoreStatus Object
+    /// Response Unmarshaller for GetObjectAcl operation
     /// </summary>  
-    public partial class RestoreStatusUnmarshaller : IXmlUnmarshaller<RestoreStatus, XmlUnmarshallerContext>
+    public class GetObjectAclResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RestoreStatus Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            RestoreStatus unmarshalledObject = new RestoreStatus();
+            GetObjectAclResponse response = new GetObjectAclResponse();
+            while (context.Read())
+            {
+                if (context.IsStartElement)
+                {
+                    UnmarshallResult(context, response);
+                    continue;
+                }
+            }
+
+            if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
+                response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
+
+            return response;
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetObjectAclResponse response)
+        {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+            if (context.IsStartOfDocument)
+                targetDepth += 1;
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("IsRestoreInProgress", targetDepth))
+                    if (context.TestExpression("AccessControlList/Grant", targetDepth))
                     {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.IsRestoreInProgress = unmarshaller.Unmarshall(context);
+                        if (response.Grants == null)
+                        {
+                            response.Grants = new List<S3Grant>();
+                        }
+                        var unmarshaller = S3GrantUnmarshaller.Instance;
+                        response.Grants.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("RestoreExpiryDate", targetDepth))
+                    if (context.TestExpression("Owner", targetDepth))
                     {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.RestoreExpiryDate = unmarshaller.Unmarshall(context);
+                        var unmarshaller = OwnerUnmarshaller.Instance;
+                        response.Owner = unmarshaller.Unmarshall(context);
                         continue;
                     }
-
-                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return unmarshalledObject;
+                    return;
                 }
-            }          
-            return unmarshalledObject;
+            }
+
+            return;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, RestoreStatus unmarshalledObject, int targetDepth);
 
-        private static RestoreStatusUnmarshaller _instance = new RestoreStatusUnmarshaller();        
+        private static GetObjectAclResponseUnmarshaller _instance = new GetObjectAclResponseUnmarshaller();
+
+        internal static GetObjectAclResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RestoreStatusUnmarshaller Instance
+        public static GetObjectAclResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

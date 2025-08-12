@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteBucketPolicy operation
     /// </summary>  
-    public partial class DeleteBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
+    public class DeleteBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,7 +47,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketPolicyResponse response = new DeleteBucketPolicyResponse();
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -73,8 +72,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteBucketPolicyResponse response);
 
         private static DeleteBucketPolicyResponseUnmarshaller _instance = new DeleteBucketPolicyResponseUnmarshaller();        
 

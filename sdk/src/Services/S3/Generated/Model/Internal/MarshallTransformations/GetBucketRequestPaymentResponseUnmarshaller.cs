@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketRequestPayment operation
     /// </summary>  
-    public partial class GetBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,7 +48,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetBucketRequestPaymentResponse response = new GetBucketRequestPaymentResponse();
             UnmarshallResult(context,response);
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -78,6 +77,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -103,8 +103,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketRequestPaymentResponse response);
 
         private static GetBucketRequestPaymentResponseUnmarshaller _instance = new GetBucketRequestPaymentResponseUnmarshaller();        
 

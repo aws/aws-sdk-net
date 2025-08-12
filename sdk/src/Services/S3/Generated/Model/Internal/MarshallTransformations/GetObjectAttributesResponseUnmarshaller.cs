@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectAttributes operation
     /// </summary>  
-    public partial class GetObjectAttributesResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectAttributesResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,7 +56,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
                 response.VersionId = context.ResponseData.GetHeaderValue("x-amz-version-id");
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -110,6 +109,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -139,8 +139,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetObjectAttributesResponse response);
 
         private static GetObjectAttributesResponseUnmarshaller _instance = new GetObjectAttributesResponseUnmarshaller();        
 

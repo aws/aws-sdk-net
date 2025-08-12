@@ -431,7 +431,7 @@
                     "ID": {"emitPropertyName": "CanonicalUser"}
                 }
             ],
-            "excludeFromUnmarshalling":[
+            "exclude":[
                 "Type"
             ]
         },
@@ -521,119 +521,6 @@
             "modify":[
                 {
                     "Key" : { "emitPropertyName" : "S3KeyFilter"}
-                }
-            ]
-        },
-        "HeadObjectRequest" : {
-            "modify" :[
-                {
-                    "IfModifiedSince" : {"emitPropertyName" : "ModifiedSinceDate"}
-                },
-                {
-                    "IfUnmodifiedSince" : {"emitPropertyName" : "UnmodifiedSinceDate"}
-                },
-                {
-                    "IfMatch" : {"emitPropertyName" : "EtagToMatch"}
-                },
-                {
-                    "IfNoneMatch" : {"emitPropertyName" : "EtagToNotMatch"}
-                },
-                {
-                    "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
-                },
-                {
-                    "SSECustomerKey" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey"}
-                },
-                {
-                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
-                }
-            ],
-            "excludeFromMarshalling":[
-                "ServerSideEncryptionCustomerProvidedKey",
-                "ServerSideEncryptionCustomerProvidedKeyMD5"
-            ]
-        },
-        "HeadObjectOutput":{
-            "modify":[
-                {
-                    "TagCount" : {"emitPropertyName": "TagsCount"}
-                },
-                {
-                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
-                },
-                {
-                    "SSEKMSEncryptionContext" : {"emitPropertyName":"ServerSideEncryptionKeyManagementServiceEncryptionContext"}
-                },
-                {
-                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
-                }
-            ],
-            "exclude":[
-                "Metadata",
-                "DeleteMarker",
-                "SSECustomerAlgorithm",
-                "ServerSideEncryption",
-                "Expires",
-                "Restore"
-            ],
-            "excludeFromUnmarshalling" : [
-                "Expiration"
-            ]
-        },
-        "ListObjectVersionsRequest":{
-            "modify" :[
-                {
-                    "EncodingType" : {"emitPropertyName" : "Encoding"}
-                }
-            ]
-        },
-        "ListObjectVersionsOutput":{
-            "modify" : [
-                {
-                    "EncodingType" : {"emitPropertyName" : "Encoding"}
-                },
-                {
-                    "DeleteMarkers" : {
-                        "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode" :[
-                            "DeleteItemCustomUnmarshall(context, response);"
-                        ]
-                    }
-                },
-                {
-                    "Versions":{
-                        "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode" :[
-                            "VersionsItemCustomUnmarshall(context, response);"
-                        ]
-                    }
-                }      
-            ]
-        },
-        "ListObjectsV2Output" : {
-            "modify" : [
-                {
-                    "Contents" : {
-                        "emitPropertyName" : "S3Objects"
-                    }
-                },
-                {
-                    "EncodingType" : {"emitPropertyName" : "Encoding"}
-                },
-                {
-                    "S3Objects": {
-                        "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode":[
-                            "CustomContentsUnmarshall(context, response);"
-                        ]
-                    }
-                }
-            ]
-        },
-        "ListObjectsV2Request":{
-            "modify" : [
-                {
-                    "EncodingType" : {"emitPropertyName" : "Encoding"}
                 }
             ]
         }
@@ -757,21 +644,6 @@
         },
         "Rule" :{
             "renameShape" : "LifecycleRule"
-        },
-        "AccessControlPolicy":{
-            "renameShape" : "S3AccessControlList"
-        },
-        "ObjectCannedACL":{
-            "renameShape" : "S3CannedACL"
-        },
-        "ObjectVersion" : {
-            "renameShape" : "S3ObjectVersion"
-        },
-        "Object":{
-            "renameShape": "S3Object"
-        },
-        "ObjectStorageClass": {
-             "renameShape": "S3StorageClass"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -842,7 +714,7 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": true,
+                "isFlattened": "true",
                 "alternateLocationName": "Event"
             }
         },
@@ -851,7 +723,7 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": true,
+                "isFlattened": "true",
                 "alternateLocationName" : "Event"
             }
         },
@@ -860,41 +732,8 @@
                 "Type" : "List<EventType>",
                 "Marshaller" : "StringUtils.FromString",
                 "Unmarshaller" : "StringUnmarshaller",
-                "isFlattened": true,
+                "isFlattened": "true",
                 "alternateLocationName" : "Event"
-            }
-        },
-        "HeadObjectRequest":{
-            "ServerSideEncryptionCustomerMethod" : {
-                "Type": "ServerSideEncryptionCustomerMethod",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller": "StringUnmarshaller"
-            }
-        },
-        "HeadObjectOutput":{
-            "Expiration":{
-                "Type" : "Expiration",
-                "Marshaller" :"StringUtils.FromString",
-                "Unmarshaller":"StringUnmarshaller"
-            },
-            "DeleteMarker":{
-                "Type":"string",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller": "StringUnmarshaller"
-            }
-        },
-        "ListObjectsV2Output": {
-            "CommonPrefixes" : {
-                "Type": "List<string>",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
-            }
-        },
-        "ListObjectVersionsOutput" : {
-            "CommonPrefixes" : {
-                "Type": "List<string>",
-                "Marshaller": "StringUtils.FromString",
-                "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             }
         }
     },
@@ -922,27 +761,6 @@
         "LambdaFunctionConfiguration":[
             "Events",
             "Filter"
-        ],
-        "S3Grantee":[
-            "Type"
-        ],
-        "HeadObjectRequest":[
-            "UnmodifiedSinceDate",
-            "ModifiedSinceDate"
-        ],
-        "S3ObjectVersion":[
-            "ChecksumAlgorithm",
-            "ChecksumType",
-            "ETag",
-            "Size",
-            "StorageClass",
-            "Key",
-            "LastModified",
-            "Owner",
-            "RestoreStatus"
-        ],
-        "ListObjectVersionsOutput":[
-            "DeleteMarkers"
         ]
     },
     "unwrapXmlOutput":{
@@ -963,9 +781,6 @@
         },
         "TopicConfiguration": {
             "alternateBaseClass" : "NotificationConfiguration"
-        },
-        "S3ObjectVersion" :{
-            "alternateBaseClass" : "S3Object"
         }
     },
     "flattenShapes" : {

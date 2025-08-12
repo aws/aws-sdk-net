@@ -148,8 +148,6 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach (var member in this.Operation.ResponseHeaderMembers)
 			{
-				if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(member.OwningShape.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
-					continue;
 				if (member.Shape.IsMap)
 				{
 #>
@@ -430,13 +428,12 @@ using Amazon.Runtime.Internal.Util;
 /// Only to be used by rest-xml response unmarshallers
 	protected void ProcessResponseBodyOrStructureMembers(Member member, bool isStructure, Shape topLevelShape)
 	{
-		bool skipXmlTestExpression = false, isDataTypeSwapList = false, dataTypeSwapIsFlattened = false, skipXmlTestExpressionInnerLogic = false;
+		bool skipXmlTestExpression = false, isDataTypeSwapList = false, dataTypeSwapIsFlattened = false;
 
 		if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(topLevelShape.Name, out var modifier) && modifier.SkipXmlTestExpressionProperties.Contains(member.ModeledName))
 			skipXmlTestExpression = true;
 
-		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipContextTestExpressionUnmarshallingLogic)
-			skipXmlTestExpressionInnerLogic = true;
+
 		if (this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName) != null)
 		{
 			var dataTypeOverride = this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName);
@@ -458,8 +455,6 @@ using Amazon.Runtime.Internal.Util;
 					{
 <#+
 				}
-				if (!skipXmlTestExpressionInnerLogic)
-				{
 #>
                         if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
                         {
@@ -467,10 +462,6 @@ using Amazon.Runtime.Internal.Util;
                         }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -489,8 +480,6 @@ using Amazon.Runtime.Internal.Util;
 				    {
 <#+
 				}
-				if (!skipXmlTestExpressionInnerLogic)
-				{				
 #>
                         if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
                         {
@@ -498,10 +487,6 @@ using Amazon.Runtime.Internal.Util;
                         }
 					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 					    <#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 					    continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -523,8 +508,6 @@ using Amazon.Runtime.Internal.Util;
 					{
 <#+
 				}
-				if (!skipXmlTestExpressionInnerLogic)
-				{
 #>
                         if (response.<#=member.PropertyName#> == null)
                         {
@@ -532,10 +515,6 @@ using Amazon.Runtime.Internal.Util;
                         }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -554,15 +533,9 @@ using Amazon.Runtime.Internal.Util;
 					{
 <#+
 				}
-				if (!skipXmlTestExpressionInnerLogic)
-				{
 #>
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -594,15 +567,9 @@ using Amazon.Runtime.Internal.Util;
 			}
 			if (!member.HasPredicateListUnmarshaller)
 			{
-				if (!skipXmlTestExpressionInnerLogic)
-				{
 #>
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 						continue;
 <#+
 			}
@@ -611,16 +578,10 @@ using Amazon.Runtime.Internal.Util;
 				var predicateData = this.Config.ServiceModel.Customizations.GetShapeModifier(member.OwningShape.Name).PredicateListUnmarshallers[member.ModeledName];
 				var predicateListUnmarshallerName = (string)predicateData["predicateListUnmarshallerName"];
 				var filterPredicateName = (string)predicateData["filterPredicateName"];
-				if (!skipXmlTestExpressionInnerLogic)
-				{
 #>
 						var predicateList = <#=predicateListUnmarshallerName#>.Instance.Unmarshall(context);
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
 						<#=unmarshalledVariable#>.<#=member.PropertyName#>.<#=filterPredicateName#> = predicateList[0];
-<#+
-				}
-#>
-<#+WriteInjectXmlUnmarshallCode(member);#>
 						continue;
 <#+
 			}
@@ -630,20 +591,6 @@ using Amazon.Runtime.Internal.Util;
 					}
 <#+
 				}
-		}
-	}
-#>
-<#+
-	protected void WriteInjectXmlUnmarshallCode(Member member)
-	{
-		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
-		{
-			foreach (var code in modifier.InjectXmlUnmarshallCode)
-			{
-#>
-                        <#=code#>
-<#+
-			}
 		}
 	}
 #>

@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutBucket operation
     /// </summary>  
-    public partial class PutBucketResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -51,7 +51,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -85,8 +84,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutBucketResponse response);
 
         private static PutBucketResponseUnmarshaller _instance = new PutBucketResponseUnmarshaller();        
 
