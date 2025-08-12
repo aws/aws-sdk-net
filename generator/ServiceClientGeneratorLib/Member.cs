@@ -611,7 +611,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (this.ModelShape.IsEventStream && this.model.Operations.FirstOrDefault(x => string.Equals(this.OwningShape.Name, x.RequestStructure.Name)) != null)
+                if (this.ModelShape.IsEventStream && this.model.Operations.FirstOrDefault(x => string.Equals(this.OwningShape.Name, x.RequestStructure?.Name)) != null)
                 {
                     return true;
                 }
@@ -756,11 +756,6 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, string parentTypeNode, bool useNullable = true)
         {
-            // Check to see if customizations is overriding.
-            var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
-            if (overrideType != null && !string.IsNullOrEmpty(overrideType.Unmarshaller))
-                return overrideType.Unmarshaller + ".Instance";
-
             var extendsNode = extendedData[ServiceModel.ShapeKey];
             if (extendsNode == null)
                 throw new Exception("Missing extends for member " + this._name);
@@ -783,8 +778,18 @@ namespace ServiceClientGenerator
             var nullable = useNullable || UseNullable ? "Nullable" : "";
 
             var primitiveUnmarshallerPrefix = "";
-            if (this.model.Type == ServiceType.Cbor)
-                primitiveUnmarshallerPrefix = "Cbor";
+            if (typeNode.ToString() != "structure" && typeNode.ToString() != "map" && typeNode.ToString() != "list")
+            {
+                if (this.model.Type == ServiceType.Cbor)
+                    primitiveUnmarshallerPrefix = "Cbor";
+            }
+
+            // Check to see if customizations is overriding.
+            var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
+            if (overrideType != null && !string.IsNullOrEmpty(overrideType.Unmarshaller))
+            {
+                return $"{primitiveUnmarshallerPrefix}{overrideType.Unmarshaller}.Instance";
+            }
 
             switch (typeNode.ToString())
             {

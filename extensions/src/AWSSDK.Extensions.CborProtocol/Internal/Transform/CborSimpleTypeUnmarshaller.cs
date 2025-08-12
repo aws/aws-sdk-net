@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Formats.Cbor;
+using System.Globalization;
 using System.IO;
 using Amazon;
 using Amazon.Runtime;
@@ -375,6 +376,33 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
                 return null;
             }
             return CborDateTimeUnmarshaller.Instance.Unmarshall(context);
+        }
+    }
+
+    public class CborNullableDateTimeEpochLongMillisecondsUnmarshaller
+        : ICborUnmarshaller<DateTime?, CborUnmarshallerContext>
+    {
+
+        private CborNullableDateTimeEpochLongMillisecondsUnmarshaller() { }
+
+        private static CborNullableDateTimeEpochLongMillisecondsUnmarshaller _instance =
+            new CborNullableDateTimeEpochLongMillisecondsUnmarshaller();
+
+        public static CborNullableDateTimeEpochLongMillisecondsUnmarshaller Instance
+        {
+            get { return _instance; }
+        }
+
+        public DateTime? Unmarshall(CborUnmarshallerContext context)
+        {
+            if (context.Reader.PeekState() == CborReaderState.Null)
+            {
+                context.Reader.ReadNull();
+                return null;
+            }
+            var millseconds =  CborLongUnmarshaller.Instance.Unmarshall(context);
+            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(millseconds);
+            return ret;
         }
     }
 

@@ -98,7 +98,7 @@ namespace Amazon.Runtime.EventStreams
             return new JsonMarshallerContext(request, writer);
         }
 
-        private class EventStreamRequest : AmazonWebServiceRequest
+        protected class EventStreamRequest : AmazonWebServiceRequest
         { }
     }
 }
