@@ -86,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TrustedIdentityPropagationSettings", targetDepth))
+                {
+                    var unmarshaller = TrustedIdentityPropagationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.TrustedIdentityPropagationSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("UnifiedStudioSettings", targetDepth))
                 {
                     var unmarshaller = UnifiedStudioSettingsUnmarshaller.Instance;

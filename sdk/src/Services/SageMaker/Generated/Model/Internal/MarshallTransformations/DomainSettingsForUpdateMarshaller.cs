@@ -96,6 +96,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTrustedIdentityPropagationSettings())
+            {
+                context.Writer.WritePropertyName("TrustedIdentityPropagationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrustedIdentityPropagationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrustedIdentityPropagationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetUnifiedStudioSettings())
             {
                 context.Writer.WritePropertyName("UnifiedStudioSettings");
