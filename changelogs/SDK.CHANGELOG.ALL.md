@@ -1,3 +1,19 @@
+### 4.0.68.0 (2025-08-12 19:48 UTC)
+* BackupSearch (4.0.2.0)
+	* Using recommended smithy trait to generate regional endpoints for Backup Search
+* CodeBuild (4.0.3.0)
+	* AWS CodeBuild now supports PullRequestBuildPolicy in webhook object.
+* EC2 (4.0.29.0)
+	* Release to allow route table association with a PublicIpv4Pool.
+* Organizations (4.0.2.0)
+	* This release introduces 2 new APIs in Organizations: 1. ListAccountsWithInvalidEffectivePolicy 2. ListEffectivePolicyValidationErrors
+* SageMaker (4.0.18.0)
+	* IAM Identity Center trusted identity propagation is now supported in SageMaker Studio.
+* TranscribeService (4.0.3.0)
+	* AWS HealthScribe now supports specifying preferred patient pronouns through the MedicalScribeContext parameter for use in the generated clinical notes.
+* TranscribeStreaming (4.0.2.0)
+	* AWS HealthScribe now supports specifying preferred patient pronouns through the MedicalScribeContext parameter for use in the generated clinical notes.
+
 ### 4.0.67.0 (2025-08-11 18:26 UTC)
 * Bedrock (4.0.10.0)
 	* This release includes model updates and enhanced SDK documentation for union fields in automated reasoning policy components. Added docs cover policy definitions, mutations (add/update for rules/types/variables), build assets, workflow sources, test results, and tag exception handling.
