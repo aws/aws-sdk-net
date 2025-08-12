@@ -101,10 +101,10 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 32 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
 
-    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
-    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers())
-    {
     Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers() && eventPayloadMember != null)
+    {
         if(eventPayloadMember.ModelShape.IsString)
         {
 
@@ -185,16 +185,6 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 71 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
 
-    }
-
-            
-            #line default
-            #line hidden
-            
-            #line 74 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
-
-    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
-    {
         foreach (var member in this.Structure.Members)
         {
 
@@ -203,7 +193,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                    case \"");
             
-            #line 80 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 75 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
             
             #line default
@@ -211,21 +201,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\":\r\n                        {\r\n                            context.AddPathSegment" +
                     "(\"");
             
-            #line 82 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 77 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\");\r\n                            var unmarshaller = ");
             
-            #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 78 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));
             
             #line default
             #line hidden
             this.Write(";\r\n                            unmarshalledObject.");
             
-            #line 84 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 79 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -233,38 +223,27 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write(" = unmarshaller.Unmarshall(context);\r\n                            context.PopPath" +
                     "Segment();\r\n                            break;\r\n                        }\r\n");
             
-            #line 88 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 83 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
 
         }
-    }
 
             
             #line default
             #line hidden
             this.Write("                    default:\r\n                        reader.SkipValue();\r\n      " +
-                    "                  break;\r\n                }\r\n");
+                    "                  break;\r\n                }\r\n            }\r\n            reader.R" +
+                    "eadEndMap();\r\n");
             
-            #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
-
-    if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("            }\r\n");
-            
-            #line 101 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 92 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("            reader.ReadEndMap();\r\n            return unmarshalledObject;\r\n       " +
-                    " }\r\n\r\n\r\n");
+            this.Write("            return unmarshalledObject;\r\n        }\r\n\r\n\r\n");
             
-            #line 109 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
+            #line 99 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborStructureUnmarshaller.tt"
 
     this.AddStructureSingletonMethod();
 

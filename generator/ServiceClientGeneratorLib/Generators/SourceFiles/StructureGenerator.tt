@@ -25,6 +25,12 @@ bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
 <#
 if(structureIsEvent || structureIsEventStream)
 {
+if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+{
+#>
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
+<#
+}
 #>
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
@@ -128,9 +134,18 @@ namespace <#=this.Config.Namespace#>.Model
 <#
             if(structureIsEvent)
             {
+             if(this.StructureType == StructureType.Response)
+             {
+#>
+        , IEventStreamEvent
+<#
+             }
+             else 
+             {
 #>
         : IEventStreamEvent
 <#
+             }
             }
 #>
     {
