@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteBucketMetadataTableConfiguration operation
     /// </summary>  
-    public class DeleteBucketMetadataTableConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class DeleteBucketMetadataTableConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketMetadataTableConfigurationResponse response = new DeleteBucketMetadataTableConfigurationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteBucketMetadataTableConfigurationResponse response);
 
         private static DeleteBucketMetadataTableConfigurationResponseUnmarshaller _instance = new DeleteBucketMetadataTableConfigurationResponseUnmarshaller();        
 

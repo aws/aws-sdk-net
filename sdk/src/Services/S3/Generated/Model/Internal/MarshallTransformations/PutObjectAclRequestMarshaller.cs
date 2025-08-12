@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,7 +29,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
-using Amazon.S3.Util;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -37,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// PutObjectAcl Request Marshaller
     /// </summary>       
-    public class PutObjectAclRequestMarshaller : IMarshaller<IRequest, PutObjectAclRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class PutObjectAclRequestMarshaller : IMarshaller<IRequest, PutObjectAclRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -59,53 +58,53 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "PUT";
             request.AddSubResource("acl");
-
-            if (publicRequest.IsSetACL())
+        
+            if (publicRequest.IsSetACL()) 
             {
                 request.Headers["x-amz-acl"] = publicRequest.ACL;
             }
-
-            if (publicRequest.IsSetChecksumAlgorithm())
+        
+            if (publicRequest.IsSetChecksumAlgorithm()) 
             {
                 request.Headers["x-amz-sdk-checksum-algorithm"] = publicRequest.ChecksumAlgorithm;
             }
-
-            if (publicRequest.IsSetContentMD5())
+        
+            if (publicRequest.IsSetContentMD5()) 
             {
                 request.Headers["Content-MD5"] = publicRequest.ContentMD5;
             }
-
-            if (publicRequest.IsSetExpectedBucketOwner())
+        
+            if (publicRequest.IsSetExpectedBucketOwner()) 
             {
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
-
-            if (publicRequest.IsSetGrantFullControl())
+        
+            if (publicRequest.IsSetGrantFullControl()) 
             {
                 request.Headers["x-amz-grant-full-control"] = publicRequest.GrantFullControl;
             }
-
-            if (publicRequest.IsSetGrantRead())
+        
+            if (publicRequest.IsSetGrantRead()) 
             {
                 request.Headers["x-amz-grant-read"] = publicRequest.GrantRead;
             }
-
-            if (publicRequest.IsSetGrantReadACP())
+        
+            if (publicRequest.IsSetGrantReadACP()) 
             {
                 request.Headers["x-amz-grant-read-acp"] = publicRequest.GrantReadACP;
             }
-
-            if (publicRequest.IsSetGrantWrite())
+        
+            if (publicRequest.IsSetGrantWrite()) 
             {
                 request.Headers["x-amz-grant-write"] = publicRequest.GrantWrite;
             }
-
-            if (publicRequest.IsSetGrantWriteACP())
+        
+            if (publicRequest.IsSetGrantWriteACP()) 
             {
                 request.Headers["x-amz-grant-write-acp"] = publicRequest.GrantWriteACP;
             }
-
-            if (publicRequest.IsSetRequestPayer())
+        
+            if (publicRequest.IsSetRequestPayer()) 
             {
                 request.Headers["x-amz-request-payer"] = publicRequest.RequestPayer;
             }
@@ -114,87 +113,83 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetKey())
                 throw new AmazonS3Exception("Request object does not have required field Key set");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-
+            
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
-
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {
+            {   
                 if (publicRequest.IsSetAccessControlPolicy())
                 {
-                    xmlWriter.WriteStartElement("AccessControlPolicy", S3Constants.S3RequestXmlNamespace);
+                    xmlWriter.WriteStartElement("AccessControlPolicy", "http://s3.amazonaws.com/doc/2006-03-01/");
                     var publicRequestAccessControlPolicyGrants = publicRequest.AccessControlPolicy.Grants;
-                    if (publicRequestAccessControlPolicyGrants != null && (publicRequestAccessControlPolicyGrants.Count > 0 || !AWSConfigs.InitializeCollections))
+                    if (publicRequestAccessControlPolicyGrants != null && (publicRequestAccessControlPolicyGrants.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {
                         xmlWriter.WriteStartElement("AccessControlList");
-                        foreach (var publicRequestAccessControlPolicyGrantsValue in publicRequestAccessControlPolicyGrants)
+                        foreach (var publicRequestAccessControlPolicyGrantsValue in publicRequestAccessControlPolicyGrants) 
                         {
-                            if (publicRequestAccessControlPolicyGrantsValue != null)
+                        if (publicRequestAccessControlPolicyGrantsValue != null)
+                        {
+                            xmlWriter.WriteStartElement("Grant");
+                            if (publicRequestAccessControlPolicyGrantsValue.Grantee != null)
                             {
-                                xmlWriter.WriteStartElement("Grant");
-                                if (publicRequestAccessControlPolicyGrantsValue.Grantee != null)
-                                {
-                                    xmlWriter.WriteStartElement("xsi","Grantee", "http://www.w3.org/2001/XMLSchema-instance");
-                                    if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
-                                        xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.Type));
-                                    if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetDisplayName())
-                                        xmlWriter.WriteElementString("DisplayName", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.DisplayName));
-                                    if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetEmailAddress())
-                                        xmlWriter.WriteElementString("EmailAddress", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.EmailAddress));
-                                    if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetCanonicalUser())
-                                        xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.CanonicalUser));
-                                    if (publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetURI())
-                                        xmlWriter.WriteElementString("URI", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Grantee.URI));
-                                    xmlWriter.WriteEndElement();
-                                }
-                                if (publicRequestAccessControlPolicyGrantsValue.IsSetPermission())
-                                    xmlWriter.WriteElementString("Permission", S3Transforms.ToXmlStringValue(publicRequestAccessControlPolicyGrantsValue.Permission));
-
+                                xmlWriter.WriteStartElement("xsi","Grantee","http://www.w3.org/2001/XMLSchema-instance");
+                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetCanonicalUser())
+                                    xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.CanonicalUser));
+                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetDisplayName())
+                                    xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.DisplayName));
+                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetEmailAddress())
+                                    xmlWriter.WriteElementString("EmailAddress", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.EmailAddress));
+                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetType())
+                                    xmlWriter.WriteAttributeString("xsi","type", "http://www.w3.org/2001/XMLSchema-instance",StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.Type));
+                                if(publicRequestAccessControlPolicyGrantsValue.Grantee.IsSetURI())
+                                    xmlWriter.WriteElementString("URI", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Grantee.URI));
                                 xmlWriter.WriteEndElement();
                             }
+                            if(publicRequestAccessControlPolicyGrantsValue.IsSetPermission())
+                                xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestAccessControlPolicyGrantsValue.Permission));
+                            xmlWriter.WriteEndElement();
                         }
-                        xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
                     }
                     if (publicRequest.AccessControlPolicy.Owner != null)
                     {
                         xmlWriter.WriteStartElement("Owner");
-                        if (publicRequest.AccessControlPolicy.Owner.IsSetDisplayName())
+                        if(publicRequest.AccessControlPolicy.Owner.IsSetDisplayName())
                             xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequest.AccessControlPolicy.Owner.DisplayName));
-
-                        if (publicRequest.AccessControlPolicy.Owner.IsSetId())
+                        if(publicRequest.AccessControlPolicy.Owner.IsSetId())
                             xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequest.AccessControlPolicy.Owner.Id));
-
                         xmlWriter.WriteEndElement();
                     }
 
                     xmlWriter.WriteEndElement();
                 }
             }
-            try
+            PostMarshallCustomization(request, publicRequest);
+            try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
                     fallbackToMD5: false,
                     isRequestChecksumRequired: true,
-                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                    headerName: "x-amz-sdk-checksum-algorithm"
                 );
-            }
-            catch (EncoderFallbackException e)
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";            
+            } 
+            catch (EncoderFallbackException e) 
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             request.UseQueryString = true;
             return request;
         }
-        private static PutObjectAclRequestMarshaller _instance = new PutObjectAclRequestMarshaller();
+        private static PutObjectAclRequestMarshaller _instance = new PutObjectAclRequestMarshaller();        
 
         internal static PutObjectAclRequestMarshaller GetInstance()
         {
@@ -212,5 +207,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
-    }
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectAclRequest publicRequest);
+    }    
 }
