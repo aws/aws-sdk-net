@@ -215,6 +215,21 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest.NextToken</property>
+    <max>100000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyResponse.NextToken</property>
+    <max>100000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.ListAWSServiceAccessForOrganizationRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -304,6 +319,35 @@
     <property>Amazon.Organizations.Model.ListDelegatedServicesForAccountResponse.NextToken</property>
     <max>100000</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest.AccountId</property>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest.NextToken</property>
+    <max>100000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.AccountId</property>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.NextToken</property>
+    <max>100000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse.Path</property>
+    <pattern>^(o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}(\/ou\-[0-9a-z]{4,32}-[a-z0-9]{8,32})*(\/\d{12})*)\/</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.ListHandshakesForAccountRequest.MaxResults</property>

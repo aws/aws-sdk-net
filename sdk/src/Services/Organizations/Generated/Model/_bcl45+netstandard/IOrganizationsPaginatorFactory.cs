@@ -48,6 +48,16 @@ namespace Amazon.Organizations.Model
         IListAccountsForParentPaginator ListAccountsForParent(ListAccountsForParentRequest request);
 
         /// <summary>
+        /// Paginator for ListAccountsWithInvalidEffectivePolicy operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAccountsWithInvalidEffectivePolicyPaginator ListAccountsWithInvalidEffectivePolicy(ListAccountsWithInvalidEffectivePolicyRequest request);
+
+        /// <summary>
         /// Paginator for ListAWSServiceAccessForOrganization operation
         ///</summary>
         [AWSPaginator(
@@ -96,6 +106,16 @@ namespace Amazon.Organizations.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDelegatedServicesForAccountPaginator ListDelegatedServicesForAccount(ListDelegatedServicesForAccountRequest request);
+
+        /// <summary>
+        /// Paginator for ListEffectivePolicyValidationErrors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEffectivePolicyValidationErrorsPaginator ListEffectivePolicyValidationErrors(ListEffectivePolicyValidationErrorsRequest request);
 
         /// <summary>
         /// Paginator for ListHandshakesForAccount operation
