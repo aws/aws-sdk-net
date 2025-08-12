@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettings _rStudioServerProDomainSettings;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private TrustedIdentityPropagationSettings _trustedIdentityPropagationSettings;
         private UnifiedStudioSettings _unifiedStudioSettings;
 
         /// <summary>
@@ -135,6 +136,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedIdentityPropagationSettings. 
+        /// <para>
+        /// The Trusted Identity Propagation (TIP) settings for the SageMaker domain. These settings
+        /// determine how user identities from IAM Identity Center are propagated through the
+        /// domain to TIP enabled Amazon Web Services services.
+        /// </para>
+        /// </summary>
+        public TrustedIdentityPropagationSettings TrustedIdentityPropagationSettings
+        {
+            get { return this._trustedIdentityPropagationSettings; }
+            set { this._trustedIdentityPropagationSettings = value; }
+        }
+
+        // Check to see if TrustedIdentityPropagationSettings property is set
+        internal bool IsSetTrustedIdentityPropagationSettings()
+        {
+            return this._trustedIdentityPropagationSettings != null;
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _builtInLifecycleConfigArn;
         private DateTime? _creationTime;
         private string _domainId;
+        private FeatureStatus _effectiveTrustedIdentityPropagationStatus;
         private string _failureReason;
         private DateTime? _lastHealthCheckTimestamp;
         private DateTime? _lastUserActivityTimestamp;
@@ -168,6 +169,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveTrustedIdentityPropagationStatus. 
+        /// <para>
+        /// The effective status of Trusted Identity Propagation (TIP) for this application. When
+        /// enabled, user identities from IAM Identity Center are being propagated through the
+        /// application to TIP enabled Amazon Web Services services. When disabled, standard IAM
+        /// role-based access is used. 
+        /// </para>
+        /// </summary>
+        public FeatureStatus EffectiveTrustedIdentityPropagationStatus
+        {
+            get { return this._effectiveTrustedIdentityPropagationStatus; }
+            set { this._effectiveTrustedIdentityPropagationStatus = value; }
+        }
+
+        // Check to see if EffectiveTrustedIdentityPropagationStatus property is set
+        internal bool IsSetEffectiveTrustedIdentityPropagationStatus()
+        {
+            return this._effectiveTrustedIdentityPropagationStatus != null;
         }
 
         /// <summary>

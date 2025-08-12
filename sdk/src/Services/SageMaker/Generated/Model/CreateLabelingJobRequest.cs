@@ -185,9 +185,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Image semantic segmentation (<c>SemanticSegmentation)</c>, and adjustment (<c>AdjustmentSemanticSegmentation</c>)
-        /// and verification (<c>VerificationSemanticSegmentation</c>) labeling jobs for this
-        /// task type.
+        /// Verification (<c>VerificationSemanticSegmentation</c>) labeling jobs for this task
+        /// type.
         /// </para>
         ///  </li> <li> 
         /// <para>
