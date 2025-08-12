@@ -230,7 +230,7 @@ namespace ServiceClientGenerator
             
             var postamble =
                 includePostamble 
-                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis : ServiceId) }"
+                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis.Replace("\"", "\\\"") : ServiceId) }"
                     : "";
             return $"{preamble}{body}{postamble}";
         }
