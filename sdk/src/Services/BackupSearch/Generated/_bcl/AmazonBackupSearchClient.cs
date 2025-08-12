@@ -932,6 +932,15 @@ namespace Amazon.BackupSearch
         /// <exception cref="Amazon.BackupSearch.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.BackupSearch.Model.ResourceNotFoundException">
+        /// The resource was not found for this request.
+        /// 
+        ///  
+        /// <para>
+        /// Confirm the resource information, such as the ARN or type is correct and exists, then
+        /// retry the request.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.BackupSearch.Model.ServiceQuotaExceededException">
         /// The request denied due to exceeding the quota limits permitted.
         /// </exception>
@@ -982,6 +991,15 @@ namespace Amazon.BackupSearch
         /// </exception>
         /// <exception cref="Amazon.BackupSearch.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BackupSearch.Model.ResourceNotFoundException">
+        /// The resource was not found for this request.
+        /// 
+        ///  
+        /// <para>
+        /// Confirm the resource information, such as the ARN or type is correct and exists, then
+        /// retry the request.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.BackupSearch.Model.ServiceQuotaExceededException">
         /// The request denied due to exceeding the quota limits permitted.
