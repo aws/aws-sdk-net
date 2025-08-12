@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketNotification operation
     /// </summary>  
-    public partial class GetBucketNotificationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketNotificationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,7 +48,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetBucketNotificationResponse response = new GetBucketNotificationResponse();
             UnmarshallResult(context,response);
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -108,6 +107,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -133,8 +133,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketNotificationResponse response);
 
         private static GetBucketNotificationResponseUnmarshaller _instance = new GetBucketNotificationResponseUnmarshaller();        
 

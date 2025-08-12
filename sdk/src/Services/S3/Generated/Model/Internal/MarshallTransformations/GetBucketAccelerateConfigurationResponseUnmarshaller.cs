@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketAccelerateConfiguration operation
     /// </summary>  
-    public partial class GetBucketAccelerateConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketAccelerateConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,7 +50,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -80,6 +79,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -105,8 +105,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketAccelerateConfigurationResponse response);
 
         private static GetBucketAccelerateConfigurationResponseUnmarshaller _instance = new GetBucketAccelerateConfigurationResponseUnmarshaller();        
 

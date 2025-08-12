@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteBucketEncryption operation
     /// </summary>  
-    public partial class DeleteBucketEncryptionResponseUnmarshaller : S3ReponseUnmarshaller
+    public class DeleteBucketEncryptionResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,7 +47,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketEncryptionResponse response = new DeleteBucketEncryptionResponse();
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -73,8 +72,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteBucketEncryptionResponse response);
 
         private static DeleteBucketEncryptionResponseUnmarshaller _instance = new DeleteBucketEncryptionResponseUnmarshaller();        
 

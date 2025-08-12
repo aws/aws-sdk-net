@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketPolicy operation
     /// </summary>  
-    public partial class GetBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -51,7 +51,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             response.Policy = sr.ReadToEnd();
         }
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -77,8 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketPolicyResponse response);
 
         private static GetBucketPolicyResponseUnmarshaller _instance = new GetBucketPolicyResponseUnmarshaller();        
 

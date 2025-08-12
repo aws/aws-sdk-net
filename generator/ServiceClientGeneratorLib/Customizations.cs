@@ -810,20 +810,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Gets the property modifier for a property if it exists. Otherwise returns false.
-        /// </summary>
-        /// <param name="shapeName"></param>
-        /// <param name="propertyName"></param>
-        /// <param name="propertyModifier"></param>
-        /// <returns></returns>
-        public bool TryGetPropertyModifier(string shapeName, string propertyName, out PropertyModifier propertyModifier)
-        {
-            propertyModifier = null;
-            propertyModifier = GetPropertyModifier(shapeName, propertyName) ?? null;
-            return propertyModifier != null ? true : false;
-        }
-
-        /// <summary>
         /// Determines if the property has a customization to be set to nullable
         /// </summary>
         /// <param name="shapeName">The name of the shape the property is in</param>
@@ -1034,7 +1020,6 @@ namespace ServiceClientGenerator
             public const string ShapeModifierXmlNamespaceKey = "xmlNamespace";
             public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
             public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
-            public const string ExcludeFromUnmarshallingKey = "excludeFromUnmarshalling";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
@@ -1045,7 +1030,6 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _shapeDocumentation;
             private readonly string _shapeModifierXmlNamespace;
             private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
-            private readonly HashSet<string> _excludedUnmarshallingProperties;
 
             public string DeprecationMessage { get; private set; }
 
@@ -1065,7 +1049,6 @@ namespace ServiceClientGenerator
                 _shapeDocumentation = ParseShapeDocumentation(data);
                 _shapeModifierXmlNamespace = ParseXmlNamespace(data);
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
-                _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
                 Validate(data);
             }
 
@@ -1334,7 +1317,6 @@ namespace ServiceClientGenerator
                     ?? new Dictionary<string, JsonData>();
 
             }
-
             /// <summary>
             /// This customization tells the generator that the member's shape is a filter type that has predicates
             /// and operators and that it should be unmarshalled with the PredicateListUnmarshaller type that each
@@ -1344,35 +1326,6 @@ namespace ServiceClientGenerator
             /// </summary>
             public Dictionary<string, JsonData> PredicateListUnmarshallers { get { return _predicateListUnmarshallers; } }
 
-            #endregion
-
-            #region ExcludedUnmarshallingProperties
-
-            private static HashSet<string> ParseExcludedUnmarshallingProperties(JsonData data)
-            {
-                var excludedUnmarshallingProperties = data[ShapeModifier.ExcludeFromUnmarshallingKey]?.Cast<object>()
-                    .Select(x => x.ToString());
-
-                return new HashSet<string>(excludedUnmarshallingProperties ?? new string[0]);
-            }
-
-            /// <summary>
-            /// Properties that should be excluded from unmarshalling. Example usage:
-            /// 
-            /// The members that should be excluded are in the array.
-            /// "S3Grantee":{
-            /// "modify": [
-            ///     {
-            ///        "ID": {"emitPropertyName": "CanonicalUser"}
-            ///     }
-            /// ],
-            /// "excludeFromUnmarshalling":
-            ///   [
-            ///    "Type"
-            ///   ]
-            /// },
-            /// </summary>
-            public HashSet<string> ExcludedUnmarshallingProperties { get { return _excludedUnmarshallingProperties; } }
             #endregion
         }
 
@@ -1440,17 +1393,14 @@ namespace ServiceClientGenerator
             public const string EmitPropertyNameKey = "emitPropertyName";
             public const string LocationNameKey = "locationName";
             public const string AccessModifierKey = "accessModifier";
-            public const string InjectXmlUnmarshallCodeKey = "injectXmlUnmarshallCode";
-            public const string SkipContextTestExpressionUnmarshallingLogicKey = "skipContextTestExpressionUnmarshallingLogic";
 
             private readonly string _modelPropertyName; // for debug inspection assist
             private readonly JsonData _modifierData;
-            private readonly HashSet<string> _injectXmlUnmarshallCode;
+
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
                 this._modelPropertyName = modelPropertyName;
                 this._modifierData = modifierData;
-                _injectXmlUnmarshallCode = ParseInjectXmlUnmarshallCode();
             }
 
             // The access modifier for the property. Defaults to public if not set in the customization.
@@ -1523,55 +1473,13 @@ namespace ServiceClientGenerator
             }
 
             public string DeprecationMessage
-            {
+        {
                 get
-                {
+            {
                     return _modifierData[ShapeModifier.DeprecatedMessageKey].CastToString();
-                }
             }
-
-            private HashSet<string> ParseInjectXmlUnmarshallCode()
-            {
-                var data = _modifierData[InjectXmlUnmarshallCodeKey]?.Cast<object>()
-                    .Select(x => x.ToString());
-
-                return new HashSet<string>(data ?? new string[0]);
-            }
-
-            /// <summary>
-            /// Use this customization for rest-xml services when you want to inject some code into the "Context.TestExpression" portion 
-            /// of the member.
-            /// 
-            /// A prime example of this is here https://github.com/aws/aws-sdk-net/blob/79cbc392fc3f1c74fcdf34efd77ad681da8af328/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/ListObjectsV2ResponseUnmarshaller.cs#L85
-            /// How to use this customization (within the modify array of a property) :
-            /// Within the "Contents" member while this member is being unmarshalled the code in the "injectXmlUnmarshallCode" will be added line by line
-            /// right before the "continue" statement within each "context.TestExpression" call.
-            /// {
-            ///        "Contents" : {
-            ///            "emitPropertyName" : "S3Objects",
-            ///            "injectXmlUnmarshallCode":[
-            ///                "response.S3Objects[response.S3Objects.Count - 1].BucketName = response.Name;"
-            ///            ]
-            ///     }
-            /// },
-            /// </summary>
-            public HashSet<string> InjectXmlUnmarshallCode
-            {
-                get { return _injectXmlUnmarshallCode; }
-            }
-
-            /// <summary>
-            /// If this is set, all the logic inside of the "context.testExpression" code block for that member won't be generated. this is meant 
-            /// to be used in conjunction with InjectXmlUnmarshallCode, but can be used separately as well. For example:
-            /// "Versions":{
-            ///   "skipContextTestExpressionUnmarshallingLogic" : true,
-            ///   "injectXmlUnmarshallCode" :[
-            ///      "VersionsItemCustomUnmarshall(context, response);"
-            ///   ]
-            /// }
-            /// </summary>
-        public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
         }
+            }
 
         #endregion
         // Injection modifier is an array of objects, each object being the

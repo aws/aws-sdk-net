@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectRetention operation
     /// </summary>  
-    public partial class GetObjectRetentionResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectRetentionResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,7 +48,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetObjectRetentionResponse response = new GetObjectRetentionResponse();
             UnmarshallResult(context,response);
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -76,6 +75,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -101,8 +101,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetObjectRetentionResponse response);
 
         private static GetObjectRetentionResponseUnmarshaller _instance = new GetObjectRetentionResponseUnmarshaller();        
 

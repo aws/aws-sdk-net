@@ -84,6 +84,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Policy));
             request.Headers["Content-Type"] = "text/plain";
             PostMarshallCustomization(request, publicRequest);
+                if (publicRequest.IsSetContentMD5())
+                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,

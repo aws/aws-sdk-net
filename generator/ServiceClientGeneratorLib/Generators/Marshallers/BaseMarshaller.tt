@@ -495,6 +495,20 @@ using Amazon.Runtime.Internal.Util;
 
 	protected void GenerateRequestChecksumHandling(Operation operation, string requestContent) 
     {
+        // If the request has a Content-MD5 property and it's set by the user, copy the value to the header.
+        // Otherwise the checksum handling in Core will calculate and set MD5 later.
+        if (operation.HttpChecksumRequired) 
+        {
+            var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+            if (member != default(Member)) 
+            {
+#>
+                if (publicRequest.IsSet<#=member.PropertyName#>())
+                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.<#=member.PropertyName#>;
+<#+
+            }
+        }
+        
         if (operation.RequiresChecksumDuringMarshalling)
         {
             if (operation.ChecksumConfiguration != null && !string.IsNullOrEmpty(operation.ChecksumConfiguration.RequestAlgorithmMember))
@@ -514,6 +528,9 @@ using Amazon.Runtime.Internal.Util;
                     var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.PropertyName, operation.ChecksumConfiguration.RequestAlgorithmMember));
                     headerName = member.MarshallLocation == MarshallLocation.Header ? member.MarshallLocationName : string.Empty;
                 }
+
+
+
 #>
                 ChecksumUtils.SetChecksumData(
                     request,

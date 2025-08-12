@@ -3335,6 +3335,59 @@ this.Write("\";\r\n");
 
 	protected void GenerateRequestChecksumHandling(Operation operation, string requestContent) 
     {
+        // If the request has a Content-MD5 property and it's set by the user, copy the value to the header.
+        // Otherwise the checksum handling in Core will calculate and set MD5 later.
+        if (operation.HttpChecksumRequired) 
+        {
+            var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+            if (member != default(Member)) 
+            {
+
+        
+        #line default
+        #line hidden
+        
+        #line 505 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("                if (publicRequest.IsSet");
+
+        
+        #line default
+        #line hidden
+        
+        #line 506 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 506 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("())\r\n                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header]" +
+        " = publicRequest.");
+
+        
+        #line default
+        #line hidden
+        
+        #line 507 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 507 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(";\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 508 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+            }
+        }
+        
         if (operation.RequiresChecksumDuringMarshalling)
         {
             if (operation.ChecksumConfiguration != null && !string.IsNullOrEmpty(operation.ChecksumConfiguration.RequestAlgorithmMember))
@@ -3355,11 +3408,14 @@ this.Write("\";\r\n");
                     headerName = member.MarshallLocation == MarshallLocation.Header ? member.MarshallLocationName : string.Empty;
                 }
 
+
+
+
         
         #line default
         #line hidden
         
-        #line 517 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 534 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(\r\n                    request,\r\n   " +
         "                 publicRequest.");
 
@@ -3367,14 +3423,14 @@ this.Write("                ChecksumUtils.SetChecksumData(\r\n                  
         #line default
         #line hidden
         
-        #line 520 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 537 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestAlgorithmMember));
 
         
         #line default
         #line hidden
         
-        #line 520 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 537 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(",\r\n                    fallbackToMD5: false,\r\n                    isRequestChecks" +
         "umRequired: ");
 
@@ -3382,35 +3438,35 @@ this.Write(",\r\n                    fallbackToMD5: false,\r\n                  
         #line default
         #line hidden
         
-        #line 522 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 539 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestChecksumRequired.ToString().ToLower()));
 
         
         #line default
         #line hidden
         
-        #line 522 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 539 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(",\r\n                    headerName: \"");
 
         
         #line default
         #line hidden
         
-        #line 523 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 540 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(headerName));
 
         
         #line default
         #line hidden
         
-        #line 523 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 540 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"\r\n                );\r\n");
 
         
         #line default
         #line hidden
         
-        #line 525 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 542 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             // When checksum is configured without an algorithm member, let the SDK pick the best available option (without falling back to MD5).
@@ -3421,7 +3477,7 @@ this.Write("\"\r\n                );\r\n");
         #line default
         #line hidden
         
-        #line 530 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 547 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(request, checksumAlgorithm: null, f" +
         "allbackToMD5: false, isRequestChecksumRequired: ");
 
@@ -3429,21 +3485,21 @@ this.Write("                ChecksumUtils.SetChecksumData(request, checksumAlgor
         #line default
         #line hidden
         
-        #line 531 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 548 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.ChecksumConfiguration.RequestChecksumRequired.ToString().ToLower()));
 
         
         #line default
         #line hidden
         
-        #line 531 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 548 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 532 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 549 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             // This is the legacy trait ("httpChecksumRequired"), which does not use flexible checksums (just MD5).
@@ -3455,14 +3511,14 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 538 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 555 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                ChecksumUtils.SetChecksumData(request);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 540 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 557 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }
@@ -3485,7 +3541,7 @@ this.Write("                ChecksumUtils.SetChecksumData(request);\r\n");
         #line default
         #line hidden
         
-        #line 557 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 574 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            CompressionAlgorithmUtils.SetCompressionAlgorithm(request, Compressio" +
         "nEncodingAlgorithm.");
 
@@ -3493,21 +3549,21 @@ this.Write("            CompressionAlgorithmUtils.SetCompressionAlgorithm(reques
         #line default
         #line hidden
         
-        #line 558 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 575 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(encoding.ToString()));
 
         
         #line default
         #line hidden
         
-        #line 558 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 575 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 559 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 576 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
         }

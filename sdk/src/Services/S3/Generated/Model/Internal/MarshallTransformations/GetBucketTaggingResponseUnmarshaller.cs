@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketTagging operation
     /// </summary>  
-    public partial class GetBucketTaggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,7 +48,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetBucketTaggingResponse response = new GetBucketTaggingResponse();
             UnmarshallResult(context,response);
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -82,6 +81,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
+          
             return;
         }
   
@@ -107,8 +107,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketTaggingResponse response);
 
         private static GetBucketTaggingResponseUnmarshaller _instance = new GetBucketTaggingResponseUnmarshaller();        
 

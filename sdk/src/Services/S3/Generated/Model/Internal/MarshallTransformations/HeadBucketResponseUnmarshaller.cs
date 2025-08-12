@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HeadBucket operation
     /// </summary>  
-    public partial class HeadBucketResponseUnmarshaller : S3ReponseUnmarshaller
+    public class HeadBucketResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("x-amz-bucket-region"))
                 response.BucketRegion = context.ResponseData.GetHeaderValue("x-amz-bucket-region");
             
-            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -87,8 +86,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
-
-        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HeadBucketResponse response);
 
         private static HeadBucketResponseUnmarshaller _instance = new HeadBucketResponseUnmarshaller();        
 

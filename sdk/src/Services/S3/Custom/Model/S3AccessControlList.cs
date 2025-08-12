@@ -39,8 +39,10 @@ namespace Amazon.S3.Model
     /// buckets as you will have no control over the objects others can store and their associated charges.
     /// For more information, see Grantees and Permissions</para>
     /// </remarks>
-    public partial class S3AccessControlList
+    public class S3AccessControlList
     {
+        private List<S3Grant> grantList = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
+
         /// <summary>
         /// Creates a S3Grant and adds it to the list of grants.
         /// </summary>
@@ -128,12 +130,59 @@ namespace Amazon.S3.Model
         //    this.Grants.Sort(new ComparatorGrant());
         //}
 
+        /// <summary>
+        /// The owner of the bucket or object.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Every bucket and object in Amazon S3 has an owner, the user that
+        /// created the bucket or object. The owner of a bucket or object cannot
+        /// be changed. However, if the object is overwritten by another user
+        /// (deleted and rewritten), the new object will have a new owner.
+        /// </para>
+        /// <para>
+        /// Note: Even the owner is subject to the ACL. For example, if an owner
+        /// does not have Permission.READ access to an object, the owner cannot read
+        /// that object. However, the owner of an object always has write access to the
+        /// access control policy (Permission.WriteAcp) and can change the ACL to
+        /// read the object.
+        /// </para>
+        /// </remarks>
+        public Owner Owner { get; set; }
+
+        /// <summary>
+        /// Checks if Owner property is set.
+        /// </summary>
+        /// <returns>true if Owner property is set.</returns>
+        internal bool IsSetOwner()
+        {
+            return this.Owner != null;
+        }
+
+        /// <summary>
+        /// A collection of grants.
+        /// </summary>
+        public List<S3Grant> Grants
+        {
+            get {  return this.grantList; }
+            set { this.grantList = value; }
+        }
+
+        /// <summary>
+        /// Checks if Grants property is set.
+        /// </summary>
+        /// <returns>true if Grants property is set.</returns>
+        internal bool IsSetGrants()
+        {
+            return this.grantList != null && (this.grantList.Count > 0 || !AWSConfigs.InitializeCollections);
+        }
+
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
-            if (_grants != null)
+            if (grantList != null)
             {
-                foreach (var grant in _grants)
+                foreach (var grant in grantList)
                 {
                     if (grant != null)
                     {

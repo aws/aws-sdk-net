@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,9 +13,6 @@
  * permissions and limitations under the License.
  */
 
-/*
- * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
- */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -30,23 +27,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Contains the elements that set the ACL permissions for an object per grantee.
+    /// This is the response object from the GetObjectAcl operation.
     /// </summary>
-    public partial class S3AccessControlList
+    public partial class GetObjectAclResponse : AmazonWebServiceResponse
     {
         private List<S3Grant> _grants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
         private Owner _owner;
+        private RequestCharged _requestCharged;
 
         /// <summary>
         /// Gets and sets the property Grants. 
         /// <para>
         /// A list of grants.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public List<S3Grant> Grants
         {
@@ -57,13 +50,13 @@ namespace Amazon.S3.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Container for the bucket owner's display name and ID.
+        ///  Container for the bucket owner's display name and ID.
         /// </para>
         /// </summary>
         public Owner Owner
@@ -76,6 +69,21 @@ namespace Amazon.S3.Model
         internal bool IsSetOwner()
         {
             return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return !string.IsNullOrEmpty(this._requestCharged);
         }
 
     }
