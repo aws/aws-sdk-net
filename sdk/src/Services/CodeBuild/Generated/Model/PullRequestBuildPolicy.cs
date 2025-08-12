@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Configuration policy that defines comment-based approval requirements for triggering
-    /// builds on pull requests. This policy helps control when automated builds are executed
-    /// based on contributor permissions and approval workflows.
+    /// A PullRequestBuildPolicy object that defines comment-based approval requirements for
+    /// triggering builds on pull requests. This policy helps control when automated builds
+    /// are executed based on contributor permissions and approval workflows.
     /// </summary>
     public partial class PullRequestBuildPolicy
     {
