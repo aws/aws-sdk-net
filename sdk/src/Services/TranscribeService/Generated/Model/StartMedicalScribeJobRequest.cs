@@ -74,8 +74,8 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>Settings</c>: A <c>MedicalScribeSettings</c> obect that must set exactly one of
-    /// <c>ShowSpeakerLabels</c> or <c>ChannelIdentification</c> to true. If <c>ShowSpeakerLabels</c>
+    ///  <c>Settings</c>: A <c>MedicalScribeSettings</c> object that must set exactly one
+    /// of <c>ShowSpeakerLabels</c> or <c>ChannelIdentification</c> to true. If <c>ShowSpeakerLabels</c>
     /// is true, <c>MaxSpeakerLabels</c> must also be set. 
     /// </para>
     ///  </li> <li> 
@@ -92,6 +92,7 @@ namespace Amazon.TranscribeService.Model
         private string _dataAccessRoleArn;
         private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Media _media;
+        private MedicalScribeContext _medicalScribeContext;
         private string _medicalScribeJobName;
         private string _outputBucketName;
         private string _outputEncryptionKMSKeyId;
@@ -205,6 +206,25 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MedicalScribeContext. 
+        /// <para>
+        /// The <c>MedicalScribeContext</c> object that contains contextual information which
+        /// is used during clinical note generation to add relevant context to the note.
+        /// </para>
+        /// </summary>
+        public MedicalScribeContext MedicalScribeContext
+        {
+            get { return this._medicalScribeContext; }
+            set { this._medicalScribeContext = value; }
+        }
+
+        // Check to see if MedicalScribeContext property is set
+        internal bool IsSetMedicalScribeContext()
+        {
+            return this._medicalScribeContext != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MedicalScribeJobName. 
         /// <para>
         /// A unique name, chosen by you, for your Medical Scribe job.
@@ -260,25 +280,51 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputEncryptionKMSKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical
-        /// Scribe output.
+        /// The KMS key you want to use to encrypt your Medical Scribe output.
         /// </para>
         ///  
         /// <para>
-        /// KMS key ARNs have the format <c>arn:partition:kms:region:account:key/key-id</c>. For
-        /// example: <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">
-        /// KMS key ARNs</a>.
+        /// If using a key located in the <b>current</b> Amazon Web Services account, you can
+        /// specify your KMS key in one of four ways:
         /// </para>
-        ///  
+        ///  <ol> <li> 
+        /// <para>
+        /// Use the KMS key ID itself. For example, <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use an alias for the KMS key ID. For example, <c>alias/ExampleAlias</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// If using a key located in a <b>different</b> Amazon Web Services account than the
+        /// current Amazon Web Services account, you can specify your KMS key in one of two ways:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// If you do not specify an encryption key, your output is encrypted with the default
         /// Amazon S3 key (SSE-S3).
         /// </para>
         ///  
         /// <para>
-        /// Note that the role making the request and the role specified in the <c>DataAccessRoleArn</c>
-        /// request parameter (if present) must have permission to use the specified KMS key.
+        /// Note that the role specified in the <c>DataAccessRoleArn</c> request parameter must
+        /// have permission to use the specified KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -323,7 +369,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Adds one or more custom tags, each in the form of a key:value pair, to the Medica
+        /// Adds one or more custom tags, each in the form of a key:value pair, to the Medical
         /// Scribe job.
         /// </para>
         ///  
