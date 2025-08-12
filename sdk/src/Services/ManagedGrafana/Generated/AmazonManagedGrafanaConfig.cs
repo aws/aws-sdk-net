@@ -32,7 +32,7 @@ namespace Amazon.ManagedGrafana
     public partial class AmazonManagedGrafanaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("grafana", "3.7.500.6");
+            InternalSDKUtils.BuildUserAgentString("grafana", "3.7.500.7");
 
         private string _userAgent = UserAgentString;
         ///<summary>
