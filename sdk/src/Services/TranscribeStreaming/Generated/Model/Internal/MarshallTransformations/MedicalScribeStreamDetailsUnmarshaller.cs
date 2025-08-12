@@ -86,6 +86,12 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaSampleRateHertz = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MedicalScribeContextProvided", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.MedicalScribeContextProvided = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PostStreamAnalyticsResult", targetDepth))
                 {
                     var unmarshaller = MedicalScribePostStreamAnalyticsResultUnmarshaller.Instance;

@@ -37,11 +37,11 @@ namespace Amazon.TranscribeStreaming.Model
     ///  
     /// <para>
     /// When you start a stream, you first specify the stream configuration in a <c>MedicalScribeConfigurationEvent</c>.
-    /// This event includes channel definitions, encryption settings, and post-stream analytics
-    /// settings, such as the output configuration for aggregated transcript and clinical
-    /// note generation. These are additional streaming session configurations beyond those
-    /// provided in your initial start request headers. Whether you are starting a new session
-    /// or resuming an existing session, your first event must be a <c>MedicalScribeConfigurationEvent</c>.
+    /// This event includes channel definitions, encryption settings, medical scribe context,
+    /// and post-stream analytics settings, such as the output configuration for aggregated
+    /// transcript and clinical note generation. These are additional streaming session configurations
+    /// beyond those provided in your initial start request headers. Whether you are starting
+    /// a new session or resuming an existing session, your first event must be a <c>MedicalScribeConfigurationEvent</c>.
     /// 
     /// </para>
     ///  
