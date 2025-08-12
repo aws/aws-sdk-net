@@ -404,6 +404,21 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             #endregion
         }
 
+        public void OrganizationsListAccountsWithInvalidEffectivePolicy()
+        {
+            #region to-list-all-accounts-in-an-organization-with-invalid-effective-policy
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.ListAccountsWithInvalidEffectivePolicy(new ListAccountsWithInvalidEffectivePolicyRequest 
+            {
+                PolicyType = "BACKUP_POLICY"
+            });
+
+            List<Account> accounts = response.Accounts;
+
+            #endregion
+        }
+
         public void OrganizationsListChildren()
         {
             #region to-retrieve-a-list-of-all-of-the-child-accounts-and-OUs-in-a-parent-container
@@ -450,6 +465,26 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             });
 
             List<CreateAccountStatus> createAccountStatuses = response.CreateAccountStatuses;
+
+            #endregion
+        }
+
+        public void OrganizationsListEffectivePolicyValidationErrors()
+        {
+            #region to-list-all-effective-policy-validation-errors-for-an-account-policy-type
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.ListEffectivePolicyValidationErrors(new ListEffectivePolicyValidationErrorsRequest 
+            {
+                AccountId = "111111111111",
+                PolicyType = "BACKUP_POLICY"
+            });
+
+            string accountId = response.AccountId;
+            List<EffectivePolicyValidationError> effectivePolicyValidationErrors = response.EffectivePolicyValidationErrors;
+            DateTime evaluationTimestamp = response.EvaluationTimestamp;
+            string path = response.Path;
+            string policyType = response.PolicyType;
 
             #endregion
         }

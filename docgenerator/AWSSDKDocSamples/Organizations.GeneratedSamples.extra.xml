@@ -513,6 +513,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListAccountsWithInvalidEffectivePolicy(Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListAccountsWithInvalidEffectivePolicy(Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsWithInvalidEffectivePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request a list of the accounts in an organization having invalid effective policy for a policy type:
+                </para>
+                <code
+                    title="To list all accounts in an organization with invalid effective policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-list-all-accounts-in-an-organization-with-invalid-effective-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Organizations.IAmazonOrganizations.ListChildren(Amazon.Organizations.Model.ListChildrenRequest)" />
             <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListChildren(Amazon.Organizations.Model.ListChildrenRequest)" />
             <member name="T:Amazon.Organizations.Model.ListChildrenRequest" />
@@ -565,6 +584,25 @@
                     title="To get a list of all account creation requests made in the organization"
                     source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
                     region="to-get-a-list-of-all-account-creation-requests-made-in-the-organization-1472509174532" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListEffectivePolicyValidationErrors(Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListEffectivePolicyValidationErrors(Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsRequest" />
+            <member name="T:Amazon.Organizations.Model.ListEffectivePolicyValidationErrorsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request a list of effective policy validation errors for an account and policy type:
+                </para>
+                <code
+                    title="To list all effective policy validation errors for an account policy type"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-list-all-effective-policy-validation-errors-for-an-account-policy-type" />
             </example>
         </value>
     </doc>
