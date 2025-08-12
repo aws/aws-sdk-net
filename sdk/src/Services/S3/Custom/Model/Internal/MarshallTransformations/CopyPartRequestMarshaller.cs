@@ -27,92 +27,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Upload Part Copy Request Marshaller
     /// </summary>       
-    public class CopyPartRequestMarshaller : IMarshaller<IRequest, CopyPartRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
+    public partial class CopyPartRequestMarshaller : IMarshaller<IRequest, CopyPartRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
-		{
-			return this.Marshall((CopyPartRequest)input);
-		}
-
-        public IRequest Marshall(CopyPartRequest copyPartRequest)
-        {
-            IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");
-
-            var sourceKey = copyPartRequest.SourceKey;
-
-            var destinationKey = copyPartRequest.DestinationKey;
-
-            request.HttpMethod = "PUT";
-
-            if (copyPartRequest.IsSetSourceBucket())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(copyPartRequest.SourceBucket, sourceKey, copyPartRequest.SourceVersionId));
-
-            if (copyPartRequest.IsSetETagToMatch())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, AWSSDKUtils.Join(copyPartRequest.ETagToMatch));
-
-            if (copyPartRequest.IsSetETagToNotMatch())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfNoneMatchHeader, AWSSDKUtils.Join(copyPartRequest.ETagsToNotMatch));
-
-            if (copyPartRequest.IsSetModifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, copyPartRequest.ModifiedSinceDate.Value.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
-
-            if (copyPartRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, copyPartRequest.UnmodifiedSinceDate.Value.ToUniversalTime().ToString(AWSSDKUtils.GMTDateFormat, CultureInfo.InvariantCulture));
-
-            if (copyPartRequest.IsSetServerSideEncryptionCustomerMethod())
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, copyPartRequest.ServerSideEncryptionCustomerMethod);
-
-            if (copyPartRequest.IsSetServerSideEncryptionCustomerProvidedKey())
-            {
-                request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, copyPartRequest.ServerSideEncryptionCustomerProvidedKey);
-                if (copyPartRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, copyPartRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
-                else
-                    request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.ServerSideEncryptionCustomerProvidedKey));
-            }
-
-            if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerMethod())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerAlgorithmHeader, copyPartRequest.CopySourceServerSideEncryptionCustomerMethod);
-
-            if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
-            {
-                request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyHeader, copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
-                if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())
-                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
-                else
-                    request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
-            }
-
-            if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
-            	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte.Value, copyPartRequest.LastByte.Value));
-
-            if (copyPartRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedBucketOwner));
-
-            if (copyPartRequest.IsSetRequestPayer())
-                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(copyPartRequest.RequestPayer));
-
-            if (copyPartRequest.IsSetExpectedSourceBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedSourceBucketOwner));
-
-            if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
-                throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
-
-            if (string.IsNullOrEmpty(destinationKey))
-                throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
-            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
-
-
-            request.ResourcePath = "/{Key+}";
-
-            request.AddSubResource("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber.Value));
-            request.AddSubResource("uploadId", S3Transforms.ToStringValue(copyPartRequest.UploadId));
-
-            request.UseQueryString = true;
-
-            return request;
-        }
-
         static string ConstructCopySourceHeaderValue(string bucket, string key, string version)
         {
             string source;
@@ -139,22 +55,38 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", firstByte, lastByte);
         }
 
-        private static CopyPartRequestMarshaller _instance;
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CopyPartRequest publicRequest)
+        {
+            var sourceKey = publicRequest.SourceKey;
+            var destinationKey = publicRequest.DestinationKey;
+            if (string.IsNullOrEmpty(destinationKey))
+                throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
+            // since Key is excluded via customization.json entry we set the path resource here.
+            defaultRequest.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
 
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static CopyPartRequestMarshaller Instance
-	    {
-	        get
-	        {
-	            if (_instance == null)
-	            {
-	                _instance = new CopyPartRequestMarshaller();
-	            }
-	            return _instance;
-	        }
-	    }
+            if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
+            {
+                defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, publicRequest.ServerSideEncryptionCustomerProvidedKey);
+                if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKeyMD5())
+                    defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, publicRequest.ServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.ServerSideEncryptionCustomerProvidedKey));
+            }
+
+            if (publicRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
+            {
+                defaultRequest.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyHeader, publicRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
+                if (publicRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5())
+                    defaultRequest.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, publicRequest.CopySourceServerSideEncryptionCustomerProvidedKeyMD5);
+                else
+                    defaultRequest.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(publicRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
+            }
+
+            if (publicRequest.IsSetFirstByte() && publicRequest.IsSetLastByte())
+                defaultRequest.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(publicRequest.FirstByte.Value, publicRequest.LastByte.Value));
+            if (publicRequest.IsSetSourceBucket())
+                defaultRequest.Headers.Add(HeaderKeys.XAmzCopySourceHeader, ConstructCopySourceHeaderValue(publicRequest.SourceBucket, sourceKey, publicRequest.SourceVersionId));
+        }
     }
 }
 

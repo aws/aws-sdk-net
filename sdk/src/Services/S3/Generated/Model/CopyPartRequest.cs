@@ -292,7 +292,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public ServerSideEncryptionCustomerMethod CopySourceServerSideEncryptionCustomerMethod
         {
             get { return this._copySourceServerSideEncryptionCustomerMethod; }
@@ -318,7 +321,11 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Sensitive=true)]
+=======
+        [AWSProperty(Sensitive=true)]
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string CopySourceServerSideEncryptionCustomerProvidedKey
         {
             get { return this._copySourceServerSideEncryptionCustomerProvidedKey; }
@@ -344,7 +351,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string CopySourceServerSideEncryptionCustomerProvidedKeyMD5
         {
             get { return this._copySourceServerSideEncryptionCustomerProvidedKeyMD5; }
@@ -407,7 +417,10 @@ namespace Amazon.S3.Model
         /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string DestinationBucket
         {
             get { return this._destinationBucket; }
@@ -423,7 +436,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property DestinationKey.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=1)]
+=======
+        [AWSProperty(Min=1)]
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string DestinationKey
         {
             get { return this._destinationKey; }
@@ -464,7 +481,10 @@ namespace Amazon.S3.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public List<string> ETagsToNotMatch
         {
             get { return this._eTagsToNotMatch; }
@@ -505,7 +525,10 @@ namespace Amazon.S3.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public List<string> ETagToMatch
         {
             get { return this._eTagToMatch; }
@@ -526,7 +549,10 @@ namespace Amazon.S3.Model
         /// with the HTTP status code <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string ExpectedBucketOwner
         {
             get { return this._expectedBucketOwner; }
@@ -547,7 +573,10 @@ namespace Amazon.S3.Model
         /// status code <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string ExpectedSourceBucketOwner
         {
             get { return this._expectedSourceBucketOwner; }
@@ -583,7 +612,10 @@ namespace Amazon.S3.Model
         /// Amazon S3 returns <c>412 Precondition Failed</c> response code. 
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public DateTime? ModifiedSinceDate
         {
             get { return this._modifiedSinceDate; }
@@ -618,7 +650,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property RequestPayer.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public RequestPayer RequestPayer
         {
             get { return this._requestPayer; }
@@ -642,7 +677,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public ServerSideEncryptionCustomerMethod ServerSideEncryptionCustomerMethod
         {
             get { return this._serverSideEncryptionCustomerMethod; }
@@ -670,7 +708,11 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Sensitive=true)]
+=======
+        [AWSProperty(Sensitive=true)]
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this._serverSideEncryptionCustomerProvidedKey; }
@@ -696,7 +738,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string ServerSideEncryptionCustomerProvidedKeyMD5
         {
             get { return this._serverSideEncryptionCustomerProvidedKeyMD5; }
@@ -712,7 +757,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SourceBucket.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string SourceBucket
         {
             get { return this._sourceBucket; }
@@ -728,7 +776,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SourceKey.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=1)]
+=======
+        [AWSProperty(Min=1)]
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string SourceKey
         {
             get { return this._sourceKey; }
@@ -744,7 +796,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property SourceVersionId.
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public string SourceVersionId
         {
             get { return this._sourceVersionId; }
@@ -780,7 +835,10 @@ namespace Amazon.S3.Model
         /// Amazon S3 returns <c>200 OK</c> and copies the data. 
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
+=======
+>>>>>>> 8d5ef47ddc87 (Generate copy part)
         public DateTime? UnmodifiedSinceDate
         {
             get { return this._unmodifiedSinceDate; }
