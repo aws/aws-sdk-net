@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SuppressionPeriod Marshaller
     /// </summary>
-    public class SuppressionPeriodMarshaller : IRequestMarshaller<SuppressionPeriod, JsonMarshallerContext> 
+    public class SuppressionPeriodMarshaller : IRequestMarshaller<SuppressionPeriod, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SuppressionPeriod requestObject, JsonMarshallerContext context)
+        public void Marshall(SuppressionPeriod requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSuppressionUnit())
-            {
-                context.Writer.WritePropertyName("suppressionUnit");
-                context.Writer.WriteStringValue(requestObject.SuppressionUnit);
-            }
 
-            if(requestObject.IsSetValue())
+            if (requestObject.IsSetSuppressionUnit())
             {
-                context.Writer.WritePropertyName("value");
-                context.Writer.WriteNumberValue(requestObject.Value.Value);
+                context.Writer.WriteTextString("suppressionUnit");
+                context.Writer.WriteTextString(requestObject.SuppressionUnit);
             }
-
+            if (requestObject.IsSetValue())
+            {
+                context.Writer.WriteTextString("value");
+                context.Writer.WriteInt32(requestObject.Value.Value);
+            }
         }
 
         /// <summary>

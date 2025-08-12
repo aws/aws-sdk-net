@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DeliveryConfiguration Marshaller
     /// </summary>
-    public class S3DeliveryConfigurationMarshaller : IRequestMarshaller<S3DeliveryConfiguration, JsonMarshallerContext> 
+    public class S3DeliveryConfigurationMarshaller : IRequestMarshaller<S3DeliveryConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DeliveryConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(S3DeliveryConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEnableHiveCompatiblePath())
-            {
-                context.Writer.WritePropertyName("enableHiveCompatiblePath");
-                context.Writer.WriteBooleanValue(requestObject.EnableHiveCompatiblePath.Value);
-            }
 
-            if(requestObject.IsSetSuffixPath())
+            if (requestObject.IsSetEnableHiveCompatiblePath())
             {
-                context.Writer.WritePropertyName("suffixPath");
-                context.Writer.WriteStringValue(requestObject.SuffixPath);
+                context.Writer.WriteTextString("enableHiveCompatiblePath");
+                context.Writer.WriteBoolean(requestObject.EnableHiveCompatiblePath.Value);
             }
-
+            if (requestObject.IsSetSuffixPath())
+            {
+                context.Writer.WriteTextString("suffixPath");
+                context.Writer.WriteTextString(requestObject.SuffixPath);
+            }
         }
 
         /// <summary>

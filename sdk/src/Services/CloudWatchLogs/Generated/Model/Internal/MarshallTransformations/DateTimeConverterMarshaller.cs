@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DateTimeConverter Marshaller
     /// </summary>
-    public class DateTimeConverterMarshaller : IRequestMarshaller<DateTimeConverter, JsonMarshallerContext> 
+    public class DateTimeConverterMarshaller : IRequestMarshaller<DateTimeConverter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,57 +45,51 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DateTimeConverter requestObject, JsonMarshallerContext context)
+        public void Marshall(DateTimeConverter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLocale())
-            {
-                context.Writer.WritePropertyName("locale");
-                context.Writer.WriteStringValue(requestObject.Locale);
-            }
 
-            if(requestObject.IsSetMatchPatterns())
+            if (requestObject.IsSetLocale())
             {
-                context.Writer.WritePropertyName("matchPatterns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("locale");
+                context.Writer.WriteTextString(requestObject.Locale);
+            }
+            if (requestObject.IsSetMatchPatterns())
+            {
+                context.Writer.WriteTextString("matchPatterns");
+                context.Writer.WriteStartArray(requestObject.MatchPatterns.Count);
                 foreach(var requestObjectMatchPatternsListValue in requestObject.MatchPatterns)
                 {
-                        context.Writer.WriteStringValue(requestObjectMatchPatternsListValue);
+                        context.Writer.WriteTextString(requestObjectMatchPatternsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
-
-            if(requestObject.IsSetSourceTimezone())
+            if (requestObject.IsSetSourceTimezone())
             {
-                context.Writer.WritePropertyName("sourceTimezone");
-                context.Writer.WriteStringValue(requestObject.SourceTimezone);
+                context.Writer.WriteTextString("sourceTimezone");
+                context.Writer.WriteTextString(requestObject.SourceTimezone);
             }
-
-            if(requestObject.IsSetTarget())
+            if (requestObject.IsSetTarget())
             {
-                context.Writer.WritePropertyName("target");
-                context.Writer.WriteStringValue(requestObject.Target);
+                context.Writer.WriteTextString("target");
+                context.Writer.WriteTextString(requestObject.Target);
             }
-
-            if(requestObject.IsSetTargetFormat())
+            if (requestObject.IsSetTargetFormat())
             {
-                context.Writer.WritePropertyName("targetFormat");
-                context.Writer.WriteStringValue(requestObject.TargetFormat);
+                context.Writer.WriteTextString("targetFormat");
+                context.Writer.WriteTextString(requestObject.TargetFormat);
             }
-
-            if(requestObject.IsSetTargetTimezone())
+            if (requestObject.IsSetTargetTimezone())
             {
-                context.Writer.WritePropertyName("targetTimezone");
-                context.Writer.WriteStringValue(requestObject.TargetTimezone);
+                context.Writer.WriteTextString("targetTimezone");
+                context.Writer.WriteTextString(requestObject.TargetTimezone);
             }
-
         }
 
         /// <summary>

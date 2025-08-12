@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ChannelDefinition Marshaller
     /// </summary>
-    public class ChannelDefinitionMarshaller : IRequestMarshaller<ChannelDefinition, JsonMarshallerContext> 
+    public class ChannelDefinitionMarshaller : IRequestMarshaller<ChannelDefinition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ChannelDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(ChannelDefinition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetChannelId())
-            {
-                context.Writer.WritePropertyName("ChannelId");
-                context.Writer.WriteNumberValue(requestObject.ChannelId.Value);
-            }
 
-            if(requestObject.IsSetParticipantRole())
+            if (requestObject.IsSetChannelId())
             {
-                context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.WriteStringValue(requestObject.ParticipantRole);
+                context.Writer.WriteTextString("ChannelId");
+                context.Writer.WriteInt32(requestObject.ChannelId.Value);
             }
-
+            if (requestObject.IsSetParticipantRole())
+            {
+                context.Writer.WriteTextString("ParticipantRole");
+                context.Writer.WriteTextString(requestObject.ParticipantRole);
+            }
         }
 
         /// <summary>

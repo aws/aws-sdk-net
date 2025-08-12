@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -59,79 +58,66 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutQueryDefinitionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.PutQueryDefinition";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/Logs_20140328/operation/PutQueryDefinition";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetLogGroupNames())
-            {
-                context.Writer.WritePropertyName("logGroupNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientToken())
                 {
-                        context.Writer.WriteStringValue(publicRequestLogGroupNamesListValue);
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
                 }
-                context.Writer.WriteEndArray();
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetLogGroupNames())
+                {
+                    context.Writer.WriteTextString("logGroupNames");
+                    context.Writer.WriteStartArray(publicRequest.LogGroupNames.Count);
+                    foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestLogGroupNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetQueryDefinitionId())
+                {
+                    context.Writer.WriteTextString("queryDefinitionId");
+                    context.Writer.WriteTextString(publicRequest.QueryDefinitionId);
+                }
+                if (publicRequest.IsSetQueryLanguage())
+                {
+                    context.Writer.WriteTextString("queryLanguage");
+                    context.Writer.WriteTextString(publicRequest.QueryLanguage);
+                }
+                if (publicRequest.IsSetQueryString())
+                {
+                    context.Writer.WriteTextString("queryString");
+                    context.Writer.WriteTextString(publicRequest.QueryString);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetName())
+            finally
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetQueryDefinitionId())
-            {
-                context.Writer.WritePropertyName("queryDefinitionId");
-                context.Writer.WriteStringValue(publicRequest.QueryDefinitionId);
-            }
-
-            if(publicRequest.IsSetQueryLanguage())
-            {
-                context.Writer.WritePropertyName("queryLanguage");
-                context.Writer.WriteStringValue(publicRequest.QueryLanguage);
-            }
-
-            if(publicRequest.IsSetQueryString())
-            {
-                context.Writer.WritePropertyName("queryString");
-                context.Writer.WriteStringValue(publicRequest.QueryString);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static PutQueryDefinitionRequestMarshaller _instance = new PutQueryDefinitionRequestMarshaller();        

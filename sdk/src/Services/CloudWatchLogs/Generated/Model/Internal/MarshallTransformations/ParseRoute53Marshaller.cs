@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParseRoute53 Marshaller
     /// </summary>
-    public class ParseRoute53Marshaller : IRequestMarshaller<ParseRoute53, JsonMarshallerContext> 
+    public class ParseRoute53Marshaller : IRequestMarshaller<ParseRoute53, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ParseRoute53 requestObject, JsonMarshallerContext context)
+        public void Marshall(ParseRoute53 requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSource())
-            {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
-            }
 
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
+            }
         }
 
         /// <summary>

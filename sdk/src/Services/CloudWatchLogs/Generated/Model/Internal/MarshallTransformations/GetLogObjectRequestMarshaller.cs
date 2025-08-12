@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -59,47 +58,38 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetLogObjectRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.GetLogObject";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/Logs_20140328/operation/GetLogObject";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/vnd.amazon.eventstream";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetLogObjectPointer())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("logObjectPointer");
-                context.Writer.WriteStringValue(publicRequest.LogObjectPointer);
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetLogObjectPointer())
+                {
+                    context.Writer.WriteTextString("logObjectPointer");
+                    context.Writer.WriteTextString(publicRequest.LogObjectPointer);
+                }
+                if (publicRequest.IsSetUnmask())
+                {
+                    context.Writer.WriteTextString("unmask");
+                    context.Writer.WriteBoolean(publicRequest.Unmask.Value);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetUnmask())
+            finally
             {
-                context.Writer.WritePropertyName("unmask");
-                context.Writer.WriteBooleanValue(publicRequest.Unmask.Value);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
             
             request.HostPrefix = $"streaming-";
-
             return request;
         }
         private static GetLogObjectRequestMarshaller _instance = new GetLogObjectRequestMarshaller();        

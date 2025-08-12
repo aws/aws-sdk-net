@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SubstituteStringEntry Marshaller
     /// </summary>
-    public class SubstituteStringEntryMarshaller : IRequestMarshaller<SubstituteStringEntry, JsonMarshallerContext> 
+    public class SubstituteStringEntryMarshaller : IRequestMarshaller<SubstituteStringEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SubstituteStringEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(SubstituteStringEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFrom())
-            {
-                context.Writer.WritePropertyName("from");
-                context.Writer.WriteStringValue(requestObject.From);
-            }
 
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetFrom())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("from");
+                context.Writer.WriteTextString(requestObject.From);
             }
-
-            if(requestObject.IsSetTo())
+            if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("to");
-                context.Writer.WriteStringValue(requestObject.To);
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
-
+            if (requestObject.IsSetTo())
+            {
+                context.Writer.WriteTextString("to");
+                context.Writer.WriteTextString(requestObject.To);
+            }
         }
 
         /// <summary>

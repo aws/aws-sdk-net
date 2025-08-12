@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
@@ -59,38 +58,30 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartMedicalScribeStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeStreaming");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/TranscribeStreaming_20140328/operation/StartMedicalScribeStream";
 #if NET8_0_OR_GREATER
             request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
 #endif
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new MedicalScribeInputStreamPublisherMarshaller(publicRequest.InputStreamPublisher);
-
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Accept"] = "application/vnd.amazon.eventstream";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/medical-scribe-stream";
-        
-            if (publicRequest.IsSetLanguageCode()) 
+            var writer = CborWriterPool.Rent();
+            try
             {
-                request.Headers["x-amzn-transcribe-language-code"] = publicRequest.LanguageCode;
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-        
-            if (publicRequest.IsSetMediaEncoding()) 
+            finally
             {
-                request.Headers["x-amzn-transcribe-media-encoding"] = publicRequest.MediaEncoding;
+                CborWriterPool.Return(writer);
             }
-        
-            if (publicRequest.IsSetMediaSampleRateHertz()) 
-            {
-                request.Headers["x-amzn-transcribe-sample-rate"] = StringUtils.FromInt(publicRequest.MediaSampleRateHertz);
-            }
-        
-            if (publicRequest.IsSetSessionId()) 
-            {
-                request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
-            }
-
+            
             return request;
         }
         private static StartMedicalScribeStreamRequestMarshaller _instance = new StartMedicalScribeStreamRequestMarshaller();        

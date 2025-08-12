@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenSearchIntegrationDetails Object
     /// </summary>  
-    public class OpenSearchIntegrationDetailsUnmarshaller : IJsonUnmarshaller<OpenSearchIntegrationDetails, JsonUnmarshallerContext>
+    public class OpenSearchIntegrationDetailsUnmarshaller : ICborUnmarshaller<OpenSearchIntegrationDetails, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenSearchIntegrationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OpenSearchIntegrationDetails Unmarshall(CborUnmarshallerContext context)
         {
             OpenSearchIntegrationDetails unmarshalledObject = new OpenSearchIntegrationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accessPolicy", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = OpenSearchDataAccessPolicyUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("application", targetDepth))
-                {
-                    var unmarshaller = OpenSearchApplicationUnmarshaller.Instance;
-                    unmarshalledObject.Application = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("collection", targetDepth))
-                {
-                    var unmarshaller = OpenSearchCollectionUnmarshaller.Instance;
-                    unmarshalledObject.Collection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dataSource", targetDepth))
-                {
-                    var unmarshaller = OpenSearchDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("encryptionPolicy", targetDepth))
-                {
-                    var unmarshaller = OpenSearchEncryptionPolicyUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lifecyclePolicy", targetDepth))
-                {
-                    var unmarshaller = OpenSearchLifecyclePolicyUnmarshaller.Instance;
-                    unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("networkPolicy", targetDepth))
-                {
-                    var unmarshaller = OpenSearchNetworkPolicyUnmarshaller.Instance;
-                    unmarshalledObject.NetworkPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("workspace", targetDepth))
-                {
-                    var unmarshaller = OpenSearchWorkspaceUnmarshaller.Instance;
-                    unmarshalledObject.Workspace = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accessPolicy":
+                        {
+                            context.AddPathSegment("AccessPolicy");
+                            var unmarshaller = OpenSearchDataAccessPolicyUnmarshaller.Instance;
+                            unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "application":
+                        {
+                            context.AddPathSegment("Application");
+                            var unmarshaller = OpenSearchApplicationUnmarshaller.Instance;
+                            unmarshalledObject.Application = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "collection":
+                        {
+                            context.AddPathSegment("Collection");
+                            var unmarshaller = OpenSearchCollectionUnmarshaller.Instance;
+                            unmarshalledObject.Collection = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "dataSource":
+                        {
+                            context.AddPathSegment("DataSource");
+                            var unmarshaller = OpenSearchDataSourceUnmarshaller.Instance;
+                            unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "encryptionPolicy":
+                        {
+                            context.AddPathSegment("EncryptionPolicy");
+                            var unmarshaller = OpenSearchEncryptionPolicyUnmarshaller.Instance;
+                            unmarshalledObject.EncryptionPolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lifecyclePolicy":
+                        {
+                            context.AddPathSegment("LifecyclePolicy");
+                            var unmarshaller = OpenSearchLifecyclePolicyUnmarshaller.Instance;
+                            unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "networkPolicy":
+                        {
+                            context.AddPathSegment("NetworkPolicy");
+                            var unmarshaller = OpenSearchNetworkPolicyUnmarshaller.Instance;
+                            unmarshalledObject.NetworkPolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "workspace":
+                        {
+                            context.AddPathSegment("Workspace");
+                            var unmarshaller = OpenSearchWorkspaceUnmarshaller.Instance;
+                            unmarshalledObject.Workspace = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

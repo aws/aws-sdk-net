@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParseToOCSF Marshaller
     /// </summary>
-    public class ParseToOCSFMarshaller : IRequestMarshaller<ParseToOCSF, JsonMarshallerContext> 
+    public class ParseToOCSFMarshaller : IRequestMarshaller<ParseToOCSF, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ParseToOCSF requestObject, JsonMarshallerContext context)
+        public void Marshall(ParseToOCSF requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEventSource())
-            {
-                context.Writer.WritePropertyName("eventSource");
-                context.Writer.WriteStringValue(requestObject.EventSource);
-            }
 
-            if(requestObject.IsSetOcsfVersion())
+            if (requestObject.IsSetEventSource())
             {
-                context.Writer.WritePropertyName("ocsfVersion");
-                context.Writer.WriteStringValue(requestObject.OcsfVersion);
+                context.Writer.WriteTextString("eventSource");
+                context.Writer.WriteTextString(requestObject.EventSource);
             }
-
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetOcsfVersion())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("ocsfVersion");
+                context.Writer.WriteTextString(requestObject.OcsfVersion);
             }
-
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
+            }
         }
 
         /// <summary>

@@ -29,130 +29,173 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MedicalScribeStreamDetails Object
     /// </summary>  
-    public class MedicalScribeStreamDetailsUnmarshaller : IJsonUnmarshaller<MedicalScribeStreamDetails, JsonUnmarshallerContext>
+    public class MedicalScribeStreamDetailsUnmarshaller : ICborUnmarshaller<MedicalScribeStreamDetails, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MedicalScribeStreamDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MedicalScribeStreamDetails Unmarshall(CborUnmarshallerContext context)
         {
             MedicalScribeStreamDetails unmarshalledObject = new MedicalScribeStreamDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ChannelDefinitions", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<MedicalScribeChannelDefinition, MedicalScribeChannelDefinitionUnmarshaller>(MedicalScribeChannelDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.ChannelDefinitions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EncryptionSettings", targetDepth))
-                {
-                    var unmarshaller = MedicalScribeEncryptionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LanguageCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MediaEncoding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaEncoding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MediaSampleRateHertz", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MediaSampleRateHertz = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MedicalScribeContextProvided", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MedicalScribeContextProvided = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PostStreamAnalyticsResult", targetDepth))
-                {
-                    var unmarshaller = MedicalScribePostStreamAnalyticsResultUnmarshaller.Instance;
-                    unmarshalledObject.PostStreamAnalyticsResult = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PostStreamAnalyticsSettings", targetDepth))
-                {
-                    var unmarshaller = MedicalScribePostStreamAnalyticsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PostStreamAnalyticsSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResourceAccessRoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SessionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StreamCreatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StreamCreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StreamEndedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StreamEndedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StreamStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VocabularyFilterName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VocabularyName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ChannelDefinitions":
+                        {
+                            context.AddPathSegment("ChannelDefinitions");
+                            var unmarshaller = new CborListUnmarshaller<MedicalScribeChannelDefinition, MedicalScribeChannelDefinitionUnmarshaller>(MedicalScribeChannelDefinitionUnmarshaller.Instance);
+                            unmarshalledObject.ChannelDefinitions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EncryptionSettings":
+                        {
+                            context.AddPathSegment("EncryptionSettings");
+                            var unmarshaller = MedicalScribeEncryptionSettingsUnmarshaller.Instance;
+                            unmarshalledObject.EncryptionSettings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LanguageCode":
+                        {
+                            context.AddPathSegment("LanguageCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MediaEncoding":
+                        {
+                            context.AddPathSegment("MediaEncoding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MediaEncoding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MediaSampleRateHertz":
+                        {
+                            context.AddPathSegment("MediaSampleRateHertz");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.MediaSampleRateHertz = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MedicalScribeContextProvided":
+                        {
+                            context.AddPathSegment("MedicalScribeContextProvided");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.MedicalScribeContextProvided = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PostStreamAnalyticsResult":
+                        {
+                            context.AddPathSegment("PostStreamAnalyticsResult");
+                            var unmarshaller = MedicalScribePostStreamAnalyticsResultUnmarshaller.Instance;
+                            unmarshalledObject.PostStreamAnalyticsResult = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PostStreamAnalyticsSettings":
+                        {
+                            context.AddPathSegment("PostStreamAnalyticsSettings");
+                            var unmarshaller = MedicalScribePostStreamAnalyticsSettingsUnmarshaller.Instance;
+                            unmarshalledObject.PostStreamAnalyticsSettings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ResourceAccessRoleArn":
+                        {
+                            context.AddPathSegment("ResourceAccessRoleArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceAccessRoleArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SessionId":
+                        {
+                            context.AddPathSegment("SessionId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StreamCreatedAt":
+                        {
+                            context.AddPathSegment("StreamCreatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StreamCreatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StreamEndedAt":
+                        {
+                            context.AddPathSegment("StreamEndedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StreamEndedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StreamStatus":
+                        {
+                            context.AddPathSegment("StreamStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StreamStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VocabularyFilterMethod":
+                        {
+                            context.AddPathSegment("VocabularyFilterMethod");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VocabularyFilterName":
+                        {
+                            context.AddPathSegment("VocabularyFilterName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VocabularyName":
+                        {
+                            context.AddPathSegment("VocabularyName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

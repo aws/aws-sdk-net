@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListToMap Marshaller
     /// </summary>
-    public class ListToMapMarshaller : IRequestMarshaller<ListToMap, JsonMarshallerContext> 
+    public class ListToMapMarshaller : IRequestMarshaller<ListToMap, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,46 +45,41 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ListToMap requestObject, JsonMarshallerContext context)
+        public void Marshall(ListToMap requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFlatten())
-            {
-                context.Writer.WritePropertyName("flatten");
-                context.Writer.WriteBooleanValue(requestObject.Flatten.Value);
-            }
 
-            if(requestObject.IsSetFlattenedElement())
+            if (requestObject.IsSetFlatten())
             {
-                context.Writer.WritePropertyName("flattenedElement");
-                context.Writer.WriteStringValue(requestObject.FlattenedElement);
+                context.Writer.WriteTextString("flatten");
+                context.Writer.WriteBoolean(requestObject.Flatten.Value);
             }
-
-            if(requestObject.IsSetKey())
+            if (requestObject.IsSetFlattenedElement())
             {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("flattenedElement");
+                context.Writer.WriteTextString(requestObject.FlattenedElement);
             }
-
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
-            if(requestObject.IsSetTarget())
+            if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("target");
-                context.Writer.WriteStringValue(requestObject.Target);
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
-
-            if(requestObject.IsSetValueKey())
+            if (requestObject.IsSetTarget())
             {
-                context.Writer.WritePropertyName("valueKey");
-                context.Writer.WriteStringValue(requestObject.ValueKey);
+                context.Writer.WriteTextString("target");
+                context.Writer.WriteTextString(requestObject.Target);
             }
-
+            if (requestObject.IsSetValueKey())
+            {
+                context.Writer.WriteTextString("valueKey");
+                context.Writer.WriteTextString(requestObject.ValueKey);
+            }
         }
 
         /// <summary>

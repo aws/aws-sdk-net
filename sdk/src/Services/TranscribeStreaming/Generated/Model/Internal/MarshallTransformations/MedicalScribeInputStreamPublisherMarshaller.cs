@@ -20,13 +20,15 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.EventStreams;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
     /// </summary>
-    public partial class MedicalScribeInputStreamPublisherMarshaller : EventStreamPublisher
+    public partial class MedicalScribeInputStreamPublisherMarshaller : CborEventStreamPublisher
     {
         Func< Task<IMedicalScribeInputStreamEvent>> _publisher;
 
@@ -55,42 +57,60 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             string eventType;
             if (evnt is MedicalScribeAudioEvent)
             {
-                var memoryStream = new MemoryStream();
-                var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
-                MedicalScribeAudioEventMarshaller.Instance.Marshall((MedicalScribeAudioEvent)evnt, context);
-                context.Writer.WriteEndObject();
-                context.Writer.Flush();
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    MedicalScribeAudioEventMarshaller.Instance.Marshall((MedicalScribeAudioEvent)evnt, context);
+                    context.Writer.WriteEndMap();
 
                 eventType = "AudioEvent";
                 contentType = "application/octet-stream";
                 eventPayload = context.Request.Content;
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
             }
             else if (evnt is MedicalScribeConfigurationEvent)
             {
-                var memoryStream = new MemoryStream();
-                var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
-                MedicalScribeConfigurationEventMarshaller.Instance.Marshall((MedicalScribeConfigurationEvent)evnt, context);
-                context.Writer.WriteEndObject();
-                context.Writer.Flush();
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    MedicalScribeConfigurationEventMarshaller.Instance.Marshall((MedicalScribeConfigurationEvent)evnt, context);
+                    context.Writer.WriteEndMap();
 
                 eventType = "ConfigurationEvent";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                    contentType = "application/cbor";
+                    eventPayload = writer.Encode();
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
             }
             else if (evnt is MedicalScribeSessionControlEvent)
             {
-                var memoryStream = new MemoryStream();
-                var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
-                MedicalScribeSessionControlEventMarshaller.Instance.Marshall((MedicalScribeSessionControlEvent)evnt, context);
-                context.Writer.WriteEndObject();
-                context.Writer.Flush();
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    MedicalScribeSessionControlEventMarshaller.Instance.Marshall((MedicalScribeSessionControlEvent)evnt, context);
+                    context.Writer.WriteEndMap();
 
                 eventType = "SessionControlEvent";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                    contentType = "application/cbor";
+                    eventPayload = writer.Encode();
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
             }
             else
             {

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
@@ -59,128 +58,30 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartStreamTranscriptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeStreaming");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/TranscribeStreaming_20140328/operation/StartStreamTranscription";
 #if NET8_0_OR_GREATER
             request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
 #endif
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new AudioStreamPublisherMarshaller(publicRequest.AudioStreamPublisher);
-
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Accept"] = "application/vnd.amazon.eventstream";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/stream-transcription";
-        
-            if (publicRequest.IsSetContentIdentificationType()) 
+            var writer = CborWriterPool.Rent();
+            try
             {
-                request.Headers["x-amzn-transcribe-content-identification-type"] = publicRequest.ContentIdentificationType;
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-        
-            if (publicRequest.IsSetContentRedactionType()) 
+            finally
             {
-                request.Headers["x-amzn-transcribe-content-redaction-type"] = publicRequest.ContentRedactionType;
+                CborWriterPool.Return(writer);
             }
-        
-            if (publicRequest.IsSetEnableChannelIdentification()) 
-            {
-                request.Headers["x-amzn-transcribe-enable-channel-identification"] = StringUtils.FromBool(publicRequest.EnableChannelIdentification);
-            }
-        
-            if (publicRequest.IsSetEnablePartialResultsStabilization()) 
-            {
-                request.Headers["x-amzn-transcribe-enable-partial-results-stabilization"] = StringUtils.FromBool(publicRequest.EnablePartialResultsStabilization);
-            }
-        
-            if (publicRequest.IsSetIdentifyLanguage()) 
-            {
-                request.Headers["x-amzn-transcribe-identify-language"] = StringUtils.FromBool(publicRequest.IdentifyLanguage);
-            }
-        
-            if (publicRequest.IsSetIdentifyMultipleLanguages()) 
-            {
-                request.Headers["x-amzn-transcribe-identify-multiple-languages"] = StringUtils.FromBool(publicRequest.IdentifyMultipleLanguages);
-            }
-        
-            if (publicRequest.IsSetLanguageCode()) 
-            {
-                request.Headers["x-amzn-transcribe-language-code"] = publicRequest.LanguageCode;
-            }
-        
-            if (publicRequest.IsSetLanguageModelName()) 
-            {
-                request.Headers["x-amzn-transcribe-language-model-name"] = publicRequest.LanguageModelName;
-            }
-        
-            if (publicRequest.IsSetLanguageOptions()) 
-            {
-                request.Headers["x-amzn-transcribe-language-options"] = publicRequest.LanguageOptions;
-            }
-        
-            if (publicRequest.IsSetMediaEncoding()) 
-            {
-                request.Headers["x-amzn-transcribe-media-encoding"] = publicRequest.MediaEncoding;
-            }
-        
-            if (publicRequest.IsSetMediaSampleRateHertz()) 
-            {
-                request.Headers["x-amzn-transcribe-sample-rate"] = StringUtils.FromInt(publicRequest.MediaSampleRateHertz);
-            }
-        
-            if (publicRequest.IsSetNumberOfChannels()) 
-            {
-                request.Headers["x-amzn-transcribe-number-of-channels"] = StringUtils.FromInt(publicRequest.NumberOfChannels);
-            }
-        
-            if (publicRequest.IsSetPartialResultsStability()) 
-            {
-                request.Headers["x-amzn-transcribe-partial-results-stability"] = publicRequest.PartialResultsStability;
-            }
-        
-            if (publicRequest.IsSetPiiEntityTypes()) 
-            {
-                request.Headers["x-amzn-transcribe-pii-entity-types"] = publicRequest.PiiEntityTypes;
-            }
-        
-            if (publicRequest.IsSetPreferredLanguage()) 
-            {
-                request.Headers["x-amzn-transcribe-preferred-language"] = publicRequest.PreferredLanguage;
-            }
-        
-            if (publicRequest.IsSetSessionId()) 
-            {
-                request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
-            }
-        
-            if (publicRequest.IsSetShowSpeakerLabel()) 
-            {
-                request.Headers["x-amzn-transcribe-show-speaker-label"] = StringUtils.FromBool(publicRequest.ShowSpeakerLabel);
-            }
-        
-            if (publicRequest.IsSetVocabularyFilterMethod()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-filter-method"] = publicRequest.VocabularyFilterMethod;
-            }
-        
-            if (publicRequest.IsSetVocabularyFilterName()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-filter-name"] = publicRequest.VocabularyFilterName;
-            }
-        
-            if (publicRequest.IsSetVocabularyFilterNames()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-filter-names"] = publicRequest.VocabularyFilterNames;
-            }
-        
-            if (publicRequest.IsSetVocabularyName()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-name"] = publicRequest.VocabularyName;
-            }
-        
-            if (publicRequest.IsSetVocabularyNames()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-names"] = publicRequest.VocabularyNames;
-            }
-
+            
             return request;
         }
         private static StartStreamTranscriptionRequestMarshaller _instance = new StartStreamTranscriptionRequestMarshaller();        

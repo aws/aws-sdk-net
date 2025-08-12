@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LogStream Object
     /// </summary>  
-    public class LogStreamUnmarshaller : IJsonUnmarshaller<LogStream, JsonUnmarshallerContext>
+    public class LogStreamUnmarshaller : ICborUnmarshaller<LogStream, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogStream Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LogStream Unmarshall(CborUnmarshallerContext context)
         {
             LogStream unmarshalledObject = new LogStream();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("arn", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("firstEventTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
-                    unmarshalledObject.FirstEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastEventTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
-                    unmarshalledObject.LastEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastIngestionTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
-                    unmarshalledObject.LastIngestionTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("logStreamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storedBytes", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("uploadSequenceToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UploadSequenceToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "arn":
+                        {
+                            context.AddPathSegment("Arn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "creationTime":
+                        {
+                            context.AddPathSegment("CreationTime");
+                            var unmarshaller = CborNullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                            unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "firstEventTimestamp":
+                        {
+                            context.AddPathSegment("FirstEventTimestamp");
+                            var unmarshaller = CborNullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                            unmarshalledObject.FirstEventTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastEventTimestamp":
+                        {
+                            context.AddPathSegment("LastEventTimestamp");
+                            var unmarshaller = CborNullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                            unmarshalledObject.LastEventTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastIngestionTime":
+                        {
+                            context.AddPathSegment("LastIngestionTime");
+                            var unmarshaller = CborNullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                            unmarshalledObject.LastIngestionTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "logStreamName":
+                        {
+                            context.AddPathSegment("LogStreamName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "storedBytes":
+                        {
+                            context.AddPathSegment("StoredBytes");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "uploadSequenceToken":
+                        {
+                            context.AddPathSegment("UploadSequenceToken");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UploadSequenceToken = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

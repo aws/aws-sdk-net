@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TypeConverterEntry Marshaller
     /// </summary>
-    public class TypeConverterEntryMarshaller : IRequestMarshaller<TypeConverterEntry, JsonMarshallerContext> 
+    public class TypeConverterEntryMarshaller : IRequestMarshaller<TypeConverterEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TypeConverterEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(TypeConverterEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKey())
-            {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
-            }
 
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>

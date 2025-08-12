@@ -29,94 +29,125 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationTemplate Object
     /// </summary>  
-    public class ConfigurationTemplateUnmarshaller : IJsonUnmarshaller<ConfigurationTemplate, JsonUnmarshallerContext>
+    public class ConfigurationTemplateUnmarshaller : ICborUnmarshaller<ConfigurationTemplate, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationTemplate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConfigurationTemplate Unmarshall(CborUnmarshallerContext context)
         {
             ConfigurationTemplate unmarshalledObject = new ConfigurationTemplate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("allowedActionForAllowVendedLogsDeliveryForResource", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllowedActionForAllowVendedLogsDeliveryForResource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("allowedFieldDelimiters", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedFieldDelimiters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("allowedFields", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RecordField, RecordFieldUnmarshaller>(RecordFieldUnmarshaller.Instance);
-                    unmarshalledObject.AllowedFields = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("allowedOutputFormats", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedOutputFormats = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("allowedSuffixPathFields", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedSuffixPathFields = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("defaultDeliveryConfigValues", targetDepth))
-                {
-                    var unmarshaller = ConfigurationTemplateDeliveryConfigValuesUnmarshaller.Instance;
-                    unmarshalledObject.DefaultDeliveryConfigValues = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("deliveryDestinationType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("logType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("service", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "allowedActionForAllowVendedLogsDeliveryForResource":
+                        {
+                            context.AddPathSegment("AllowedActionForAllowVendedLogsDeliveryForResource");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AllowedActionForAllowVendedLogsDeliveryForResource = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "allowedFieldDelimiters":
+                        {
+                            context.AddPathSegment("AllowedFieldDelimiters");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.AllowedFieldDelimiters = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "allowedFields":
+                        {
+                            context.AddPathSegment("AllowedFields");
+                            var unmarshaller = new CborListUnmarshaller<RecordField, RecordFieldUnmarshaller>(RecordFieldUnmarshaller.Instance);
+                            unmarshalledObject.AllowedFields = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "allowedOutputFormats":
+                        {
+                            context.AddPathSegment("AllowedOutputFormats");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.AllowedOutputFormats = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "allowedSuffixPathFields":
+                        {
+                            context.AddPathSegment("AllowedSuffixPathFields");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.AllowedSuffixPathFields = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "defaultDeliveryConfigValues":
+                        {
+                            context.AddPathSegment("DefaultDeliveryConfigValues");
+                            var unmarshaller = ConfigurationTemplateDeliveryConfigValuesUnmarshaller.Instance;
+                            unmarshalledObject.DefaultDeliveryConfigValues = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "deliveryDestinationType":
+                        {
+                            context.AddPathSegment("DeliveryDestinationType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "logType":
+                        {
+                            context.AddPathSegment("LogType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceType":
+                        {
+                            context.AddPathSegment("ResourceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "service":
+                        {
+                            context.AddPathSegment("Service");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

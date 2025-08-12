@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RenameKeyEntry Marshaller
     /// </summary>
-    public class RenameKeyEntryMarshaller : IRequestMarshaller<RenameKeyEntry, JsonMarshallerContext> 
+    public class RenameKeyEntryMarshaller : IRequestMarshaller<RenameKeyEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RenameKeyEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(RenameKeyEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKey())
-            {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
-            }
 
-            if(requestObject.IsSetOverwriteIfExists())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("overwriteIfExists");
-                context.Writer.WriteBooleanValue(requestObject.OverwriteIfExists.Value);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
-            if(requestObject.IsSetRenameTo())
+            if (requestObject.IsSetOverwriteIfExists())
             {
-                context.Writer.WritePropertyName("renameTo");
-                context.Writer.WriteStringValue(requestObject.RenameTo);
+                context.Writer.WriteTextString("overwriteIfExists");
+                context.Writer.WriteBoolean(requestObject.OverwriteIfExists.Value);
             }
-
+            if (requestObject.IsSetRenameTo())
+            {
+                context.Writer.WriteTextString("renameTo");
+                context.Writer.WriteTextString(requestObject.RenameTo);
+            }
         }
 
         /// <summary>

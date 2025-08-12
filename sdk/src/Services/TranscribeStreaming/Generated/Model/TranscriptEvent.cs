@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations;

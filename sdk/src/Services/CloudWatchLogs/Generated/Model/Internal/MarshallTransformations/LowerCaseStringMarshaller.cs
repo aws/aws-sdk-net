@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LowerCaseString Marshaller
     /// </summary>
-    public class LowerCaseStringMarshaller : IRequestMarshaller<LowerCaseString, JsonMarshallerContext> 
+    public class LowerCaseStringMarshaller : IRequestMarshaller<LowerCaseString, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LowerCaseString requestObject, JsonMarshallerContext context)
+        public void Marshall(LowerCaseString requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetWithKeys())
+
+            if (requestObject.IsSetWithKeys())
             {
-                context.Writer.WritePropertyName("withKeys");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("withKeys");
+                context.Writer.WriteStartArray(requestObject.WithKeys.Count);
                 foreach(var requestObjectWithKeysListValue in requestObject.WithKeys)
                 {
-                        context.Writer.WriteStringValue(requestObjectWithKeysListValue);
+                        context.Writer.WriteTextString(requestObjectWithKeysListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

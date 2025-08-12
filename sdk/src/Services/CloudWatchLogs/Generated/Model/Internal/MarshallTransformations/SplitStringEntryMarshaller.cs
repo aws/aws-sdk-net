@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SplitStringEntry Marshaller
     /// </summary>
-    public class SplitStringEntryMarshaller : IRequestMarshaller<SplitStringEntry, JsonMarshallerContext> 
+    public class SplitStringEntryMarshaller : IRequestMarshaller<SplitStringEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SplitStringEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(SplitStringEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDelimiter())
-            {
-                context.Writer.WritePropertyName("delimiter");
-                context.Writer.WriteStringValue(requestObject.Delimiter);
-            }
 
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetDelimiter())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("delimiter");
+                context.Writer.WriteTextString(requestObject.Delimiter);
             }
-
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
+            }
         }
 
         /// <summary>

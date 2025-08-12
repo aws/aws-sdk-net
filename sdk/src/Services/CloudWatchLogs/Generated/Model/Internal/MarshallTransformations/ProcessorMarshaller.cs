@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Processor Marshaller
     /// </summary>
-    public class ProcessorMarshaller : IRequestMarshaller<Processor, JsonMarshallerContext> 
+    public class ProcessorMarshaller : IRequestMarshaller<Processor, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,263 +45,241 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Processor requestObject, JsonMarshallerContext context)
+        public void Marshall(Processor requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAddKeys())
+
+            if (requestObject.IsSetAddKeys())
             {
-                context.Writer.WritePropertyName("addKeys");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("addKeys");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddKeysMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddKeys, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetCopyValue())
+            if (requestObject.IsSetCopyValue())
             {
-                context.Writer.WritePropertyName("copyValue");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("copyValue");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CopyValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.CopyValue, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetCsv())
+            if (requestObject.IsSetCsv())
             {
-                context.Writer.WritePropertyName("csv");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("csv");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CSVMarshaller.Instance;
                 marshaller.Marshall(requestObject.Csv, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDateTimeConverter())
+            if (requestObject.IsSetDateTimeConverter())
             {
-                context.Writer.WritePropertyName("dateTimeConverter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("dateTimeConverter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DateTimeConverterMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateTimeConverter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDeleteKeys())
+            if (requestObject.IsSetDeleteKeys())
             {
-                context.Writer.WritePropertyName("deleteKeys");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("deleteKeys");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DeleteKeysMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeleteKeys, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetGrok())
+            if (requestObject.IsSetGrok())
             {
-                context.Writer.WritePropertyName("grok");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("grok");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = GrokMarshaller.Instance;
                 marshaller.Marshall(requestObject.Grok, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetListToMap())
+            if (requestObject.IsSetListToMap())
             {
-                context.Writer.WritePropertyName("listToMap");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("listToMap");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ListToMapMarshaller.Instance;
                 marshaller.Marshall(requestObject.ListToMap, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetLowerCaseString())
+            if (requestObject.IsSetLowerCaseString())
             {
-                context.Writer.WritePropertyName("lowerCaseString");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("lowerCaseString");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = LowerCaseStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.LowerCaseString, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetMoveKeys())
+            if (requestObject.IsSetMoveKeys())
             {
-                context.Writer.WritePropertyName("moveKeys");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("moveKeys");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MoveKeysMarshaller.Instance;
                 marshaller.Marshall(requestObject.MoveKeys, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseCloudfront())
+            if (requestObject.IsSetParseCloudfront())
             {
-                context.Writer.WritePropertyName("parseCloudfront");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseCloudfront");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseCloudfrontMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseCloudfront, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseJSON())
+            if (requestObject.IsSetParseJSON())
             {
-                context.Writer.WritePropertyName("parseJSON");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseJSON");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseJSONMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseJSON, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseKeyValue())
+            if (requestObject.IsSetParseKeyValue())
             {
-                context.Writer.WritePropertyName("parseKeyValue");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseKeyValue");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseKeyValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseKeyValue, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParsePostgres())
+            if (requestObject.IsSetParsePostgres())
             {
-                context.Writer.WritePropertyName("parsePostgres");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parsePostgres");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParsePostgresMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParsePostgres, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseRoute53())
+            if (requestObject.IsSetParseRoute53())
             {
-                context.Writer.WritePropertyName("parseRoute53");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseRoute53");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseRoute53Marshaller.Instance;
                 marshaller.Marshall(requestObject.ParseRoute53, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseToOCSF())
+            if (requestObject.IsSetParseToOCSF())
             {
-                context.Writer.WritePropertyName("parseToOCSF");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseToOCSF");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseToOCSFMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseToOCSF, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseVPC())
+            if (requestObject.IsSetParseVPC())
             {
-                context.Writer.WritePropertyName("parseVPC");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseVPC");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseVPCMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseVPC, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetParseWAF())
+            if (requestObject.IsSetParseWAF())
             {
-                context.Writer.WritePropertyName("parseWAF");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("parseWAF");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ParseWAFMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParseWAF, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetRenameKeys())
+            if (requestObject.IsSetRenameKeys())
             {
-                context.Writer.WritePropertyName("renameKeys");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("renameKeys");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RenameKeysMarshaller.Instance;
                 marshaller.Marshall(requestObject.RenameKeys, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSplitString())
+            if (requestObject.IsSetSplitString())
             {
-                context.Writer.WritePropertyName("splitString");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("splitString");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SplitStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.SplitString, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSubstituteString())
+            if (requestObject.IsSetSubstituteString())
             {
-                context.Writer.WritePropertyName("substituteString");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("substituteString");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SubstituteStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.SubstituteString, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTrimString())
+            if (requestObject.IsSetTrimString())
             {
-                context.Writer.WritePropertyName("trimString");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("trimString");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TrimStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrimString, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTypeConverter())
+            if (requestObject.IsSetTypeConverter())
             {
-                context.Writer.WritePropertyName("typeConverter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("typeConverter");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TypeConverterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TypeConverter, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetUpperCaseString())
+            if (requestObject.IsSetUpperCaseString())
             {
-                context.Writer.WritePropertyName("upperCaseString");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("upperCaseString");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = UpperCaseStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpperCaseString, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
@@ -51,16 +52,16 @@ namespace Amazon.CloudWatchLogs.Model
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"SessionStart", payload => 
                 {
-                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
-                    return new LiveTailSessionStartUnmarshaller().Unmarshall(context, ref reader);
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new LiveTailSessionStartUnmarshaller().Unmarshall(context);
                 }
             },
             {"SessionUpdate", payload => 
                 {
-                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
-                    return new LiveTailSessionUpdateUnmarshaller().Unmarshall(context, ref reader);
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new LiveTailSessionUpdateUnmarshaller().Unmarshall(context);
                 }
             },
         };
@@ -70,20 +71,20 @@ namespace Amazon.CloudWatchLogs.Model
         protected override IDictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-                    {"SessionStreamingException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionStreamingExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
-                    {"SessionTimeoutException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionTimeoutExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
+            {"SessionStreamingException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionStreamingExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
+            {"SessionTimeoutException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionTimeoutExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

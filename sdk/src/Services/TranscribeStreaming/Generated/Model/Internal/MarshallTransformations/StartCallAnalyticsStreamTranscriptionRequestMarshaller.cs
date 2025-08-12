@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
@@ -59,83 +58,30 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartCallAnalyticsStreamTranscriptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeStreaming");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/TranscribeStreaming_20140328/operation/StartCallAnalyticsStreamTranscription";
 #if NET8_0_OR_GREATER
             request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
 #endif
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new AudioStreamPublisherMarshaller(publicRequest.AudioStreamPublisher);
-
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Accept"] = "application/vnd.amazon.eventstream";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/call-analytics-stream-transcription";
-        
-            if (publicRequest.IsSetContentIdentificationType()) 
+            var writer = CborWriterPool.Rent();
+            try
             {
-                request.Headers["x-amzn-transcribe-content-identification-type"] = publicRequest.ContentIdentificationType;
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-        
-            if (publicRequest.IsSetContentRedactionType()) 
+            finally
             {
-                request.Headers["x-amzn-transcribe-content-redaction-type"] = publicRequest.ContentRedactionType;
+                CborWriterPool.Return(writer);
             }
-        
-            if (publicRequest.IsSetEnablePartialResultsStabilization()) 
-            {
-                request.Headers["x-amzn-transcribe-enable-partial-results-stabilization"] = StringUtils.FromBool(publicRequest.EnablePartialResultsStabilization);
-            }
-        
-            if (publicRequest.IsSetLanguageCode()) 
-            {
-                request.Headers["x-amzn-transcribe-language-code"] = publicRequest.LanguageCode;
-            }
-        
-            if (publicRequest.IsSetLanguageModelName()) 
-            {
-                request.Headers["x-amzn-transcribe-language-model-name"] = publicRequest.LanguageModelName;
-            }
-        
-            if (publicRequest.IsSetMediaEncoding()) 
-            {
-                request.Headers["x-amzn-transcribe-media-encoding"] = publicRequest.MediaEncoding;
-            }
-        
-            if (publicRequest.IsSetMediaSampleRateHertz()) 
-            {
-                request.Headers["x-amzn-transcribe-sample-rate"] = StringUtils.FromInt(publicRequest.MediaSampleRateHertz);
-            }
-        
-            if (publicRequest.IsSetPartialResultsStability()) 
-            {
-                request.Headers["x-amzn-transcribe-partial-results-stability"] = publicRequest.PartialResultsStability;
-            }
-        
-            if (publicRequest.IsSetPiiEntityTypes()) 
-            {
-                request.Headers["x-amzn-transcribe-pii-entity-types"] = publicRequest.PiiEntityTypes;
-            }
-        
-            if (publicRequest.IsSetSessionId()) 
-            {
-                request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
-            }
-        
-            if (publicRequest.IsSetVocabularyFilterMethod()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-filter-method"] = publicRequest.VocabularyFilterMethod;
-            }
-        
-            if (publicRequest.IsSetVocabularyFilterName()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-filter-name"] = publicRequest.VocabularyFilterName;
-            }
-        
-            if (publicRequest.IsSetVocabularyName()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-name"] = publicRequest.VocabularyName;
-            }
-
+            
             return request;
         }
         private static StartCallAnalyticsStreamTranscriptionRequestMarshaller _instance = new StartCallAnalyticsStreamTranscriptionRequestMarshaller();        

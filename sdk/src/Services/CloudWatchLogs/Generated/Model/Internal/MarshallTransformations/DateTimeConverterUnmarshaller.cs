@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DateTimeConverter Object
     /// </summary>  
-    public class DateTimeConverterUnmarshaller : IJsonUnmarshaller<DateTimeConverter, JsonUnmarshallerContext>
+    public class DateTimeConverterUnmarshaller : ICborUnmarshaller<DateTimeConverter, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DateTimeConverter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DateTimeConverter Unmarshall(CborUnmarshallerContext context)
         {
             DateTimeConverter unmarshalledObject = new DateTimeConverter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("locale", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("matchPatterns", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.MatchPatterns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("source", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sourceTimezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceTimezone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("target", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetFormat", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetFormat = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetTimezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetTimezone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "locale":
+                        {
+                            context.AddPathSegment("Locale");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Locale = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "matchPatterns":
+                        {
+                            context.AddPathSegment("MatchPatterns");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.MatchPatterns = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "source":
+                        {
+                            context.AddPathSegment("Source");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "sourceTimezone":
+                        {
+                            context.AddPathSegment("SourceTimezone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SourceTimezone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "target":
+                        {
+                            context.AddPathSegment("Target");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "targetFormat":
+                        {
+                            context.AddPathSegment("TargetFormat");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TargetFormat = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "targetTimezone":
+                        {
+                            context.AddPathSegment("TargetTimezone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TargetTimezone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

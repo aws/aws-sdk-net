@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeliveryDestinationConfiguration Marshaller
     /// </summary>
-    public class DeliveryDestinationConfigurationMarshaller : IRequestMarshaller<DeliveryDestinationConfiguration, JsonMarshallerContext> 
+    public class DeliveryDestinationConfigurationMarshaller : IRequestMarshaller<DeliveryDestinationConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeliveryDestinationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeliveryDestinationConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDestinationResourceArn())
-            {
-                context.Writer.WritePropertyName("destinationResourceArn");
-                context.Writer.WriteStringValue(requestObject.DestinationResourceArn);
-            }
 
+            if (requestObject.IsSetDestinationResourceArn())
+            {
+                context.Writer.WriteTextString("destinationResourceArn");
+                context.Writer.WriteTextString(requestObject.DestinationResourceArn);
+            }
         }
 
         /// <summary>

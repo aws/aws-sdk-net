@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OpenSearchResourceConfig Marshaller
     /// </summary>
-    public class OpenSearchResourceConfigMarshaller : IRequestMarshaller<OpenSearchResourceConfig, JsonMarshallerContext> 
+    public class OpenSearchResourceConfigMarshaller : IRequestMarshaller<OpenSearchResourceConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,45 +45,41 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OpenSearchResourceConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(OpenSearchResourceConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetApplicationArn())
-            {
-                context.Writer.WritePropertyName("applicationArn");
-                context.Writer.WriteStringValue(requestObject.ApplicationArn);
-            }
 
-            if(requestObject.IsSetDashboardViewerPrincipals())
+            if (requestObject.IsSetApplicationArn())
             {
-                context.Writer.WritePropertyName("dashboardViewerPrincipals");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("applicationArn");
+                context.Writer.WriteTextString(requestObject.ApplicationArn);
+            }
+            if (requestObject.IsSetDashboardViewerPrincipals())
+            {
+                context.Writer.WriteTextString("dashboardViewerPrincipals");
+                context.Writer.WriteStartArray(requestObject.DashboardViewerPrincipals.Count);
                 foreach(var requestObjectDashboardViewerPrincipalsListValue in requestObject.DashboardViewerPrincipals)
                 {
-                        context.Writer.WriteStringValue(requestObjectDashboardViewerPrincipalsListValue);
+                        context.Writer.WriteTextString(requestObjectDashboardViewerPrincipalsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetDataSourceRoleArn())
+            if (requestObject.IsSetDataSourceRoleArn())
             {
-                context.Writer.WritePropertyName("dataSourceRoleArn");
-                context.Writer.WriteStringValue(requestObject.DataSourceRoleArn);
+                context.Writer.WriteTextString("dataSourceRoleArn");
+                context.Writer.WriteTextString(requestObject.DataSourceRoleArn);
             }
-
-            if(requestObject.IsSetKmsKeyArn())
+            if (requestObject.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
+                context.Writer.WriteTextString("kmsKeyArn");
+                context.Writer.WriteTextString(requestObject.KmsKeyArn);
             }
-
-            if(requestObject.IsSetRetentionDays())
+            if (requestObject.IsSetRetentionDays())
             {
-                context.Writer.WritePropertyName("retentionDays");
-                context.Writer.WriteNumberValue(requestObject.RetentionDays.Value);
+                context.Writer.WriteTextString("retentionDays");
+                context.Writer.WriteInt32(requestObject.RetentionDays.Value);
             }
-
         }
 
         /// <summary>

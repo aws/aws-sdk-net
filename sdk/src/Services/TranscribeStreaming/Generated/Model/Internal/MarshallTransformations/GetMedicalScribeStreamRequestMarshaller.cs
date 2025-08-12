@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
@@ -59,14 +58,26 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetMedicalScribeStreamRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeStreaming");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/TranscribeStreaming_20140328/operation/GetMedicalScribeStream";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetSessionId())
-                throw new AmazonTranscribeStreamingException("Request object does not have required field SessionId set");
-            request.AddPathResource("{SessionId}", StringUtils.FromString(publicRequest.SessionId));
-            request.ResourcePath = "/medical-scribe-stream/{SessionId}";
-
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
+            
             return request;
         }
         private static GetMedicalScribeStreamRequestMarshaller _instance = new GetMedicalScribeStreamRequestMarshaller();        

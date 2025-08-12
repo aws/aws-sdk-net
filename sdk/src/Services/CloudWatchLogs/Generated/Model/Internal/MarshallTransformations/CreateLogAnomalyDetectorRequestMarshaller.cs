@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -59,88 +58,74 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateLogAnomalyDetectorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateLogAnomalyDetector";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/Logs_20140328/operation/CreateLogAnomalyDetector";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAnomalyVisibilityTime())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("anomalyVisibilityTime");
-                context.Writer.WriteNumberValue(publicRequest.AnomalyVisibilityTime.Value);
-            }
-
-            if(publicRequest.IsSetDetectorName())
-            {
-                context.Writer.WritePropertyName("detectorName");
-                context.Writer.WriteStringValue(publicRequest.DetectorName);
-            }
-
-            if(publicRequest.IsSetEvaluationFrequency())
-            {
-                context.Writer.WritePropertyName("evaluationFrequency");
-                context.Writer.WriteStringValue(publicRequest.EvaluationFrequency);
-            }
-
-            if(publicRequest.IsSetFilterPattern())
-            {
-                context.Writer.WritePropertyName("filterPattern");
-                context.Writer.WriteStringValue(publicRequest.FilterPattern);
-            }
-
-            if(publicRequest.IsSetKmsKeyId())
-            {
-                context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetLogGroupArnList())
-            {
-                context.Writer.WritePropertyName("logGroupArnList");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogGroupArnListListValue in publicRequest.LogGroupArnList)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAnomalyVisibilityTime())
                 {
-                        context.Writer.WriteStringValue(publicRequestLogGroupArnListListValue);
+                    context.Writer.WriteTextString("anomalyVisibilityTime");
+                    context.Writer.WriteInt64(publicRequest.AnomalyVisibilityTime.Value);
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                if (publicRequest.IsSetDetectorName())
                 {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                    context.Writer.WriteTextString("detectorName");
+                    context.Writer.WriteTextString(publicRequest.DetectorName);
                 }
-                context.Writer.WriteEndObject();
-            }
+                if (publicRequest.IsSetEvaluationFrequency())
+                {
+                    context.Writer.WriteTextString("evaluationFrequency");
+                    context.Writer.WriteTextString(publicRequest.EvaluationFrequency);
+                }
+                if (publicRequest.IsSetFilterPattern())
+                {
+                    context.Writer.WriteTextString("filterPattern");
+                    context.Writer.WriteTextString(publicRequest.FilterPattern);
+                }
+                if (publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WriteTextString("kmsKeyId");
+                    context.Writer.WriteTextString(publicRequest.KmsKeyId);
+                }
+                if (publicRequest.IsSetLogGroupArnList())
+                {
+                    context.Writer.WriteTextString("logGroupArnList");
+                    context.Writer.WriteStartArray(publicRequest.LogGroupArnList.Count);
+                    foreach(var publicRequestLogGroupArnListListValue in publicRequest.LogGroupArnList)
+                    {
+                            context.Writer.WriteTextString(publicRequestLogGroupArnListListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("tags");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WriteTextString(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
+                            context.Writer.WriteTextString(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateLogAnomalyDetectorRequestMarshaller _instance = new CreateLogAnomalyDetectorRequestMarshaller();        

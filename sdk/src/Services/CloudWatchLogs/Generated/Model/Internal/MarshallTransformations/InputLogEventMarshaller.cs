@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InputLogEvent Marshaller
     /// </summary>
-    public class InputLogEventMarshaller : IRequestMarshaller<InputLogEvent, JsonMarshallerContext> 
+    public class InputLogEventMarshaller : IRequestMarshaller<InputLogEvent, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InputLogEvent requestObject, JsonMarshallerContext context)
+        public void Marshall(InputLogEvent requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetMessage())
-            {
-                context.Writer.WritePropertyName("message");
-                context.Writer.WriteStringValue(requestObject.Message);
-            }
 
-            if(requestObject.IsSetTimestamp())
+            if (requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("timestamp");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(requestObject.Timestamp.Value));
+                context.Writer.WriteTextString("message");
+                context.Writer.WriteTextString(requestObject.Message);
             }
-
+            if (requestObject.IsSetTimestamp())
+            {
+                context.Writer.WriteTextString("timestamp");
+                context.Writer.WriteDateTime(requestObject.Timestamp.Value);
+            }
         }
 
         /// <summary>

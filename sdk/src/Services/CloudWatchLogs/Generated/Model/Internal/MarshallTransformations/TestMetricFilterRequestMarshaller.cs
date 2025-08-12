@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -59,50 +58,41 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public IRequest Marshall(TestMetricFilterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.TestMetricFilter";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/Logs_20140328/operation/TestMetricFilter";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetFilterPattern())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("filterPattern");
-                context.Writer.WriteStringValue(publicRequest.FilterPattern);
-            }
-
-            if(publicRequest.IsSetLogEventMessages())
-            {
-                context.Writer.WritePropertyName("logEventMessages");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetFilterPattern())
                 {
-                        context.Writer.WriteStringValue(publicRequestLogEventMessagesListValue);
+                    context.Writer.WriteTextString("filterPattern");
+                    context.Writer.WriteTextString(publicRequest.FilterPattern);
                 }
-                context.Writer.WriteEndArray();
+                if (publicRequest.IsSetLogEventMessages())
+                {
+                    context.Writer.WriteTextString("logEventMessages");
+                    context.Writer.WriteStartArray(publicRequest.LogEventMessages.Count);
+                    foreach(var publicRequestLogEventMessagesListValue in publicRequest.LogEventMessages)
+                    {
+                            context.Writer.WriteTextString(publicRequestLogEventMessagesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static TestMetricFilterRequestMarshaller _instance = new TestMetricFilterRequestMarshaller();        

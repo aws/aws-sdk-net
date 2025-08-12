@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -59,91 +58,76 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartQueryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.StartQuery";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/Logs_20140328/operation/StartQuery";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetEndTime())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("endTime");
-                context.Writer.WriteNumberValue(publicRequest.EndTime.Value);
-            }
-
-            if(publicRequest.IsSetLimit())
-            {
-                context.Writer.WritePropertyName("limit");
-                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
-            }
-
-            if(publicRequest.IsSetLogGroupIdentifiers())
-            {
-                context.Writer.WritePropertyName("logGroupIdentifiers");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
                 {
-                        context.Writer.WriteStringValue(publicRequestLogGroupIdentifiersListValue);
+                    context.Writer.WriteTextString("endTime");
+                    context.Writer.WriteInt64(publicRequest.EndTime.Value);
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetLogGroupName())
-            {
-                context.Writer.WritePropertyName("logGroupName");
-                context.Writer.WriteStringValue(publicRequest.LogGroupName);
-            }
-
-            if(publicRequest.IsSetLogGroupNames())
-            {
-                context.Writer.WritePropertyName("logGroupNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                if (publicRequest.IsSetLimit())
                 {
-                        context.Writer.WriteStringValue(publicRequestLogGroupNamesListValue);
+                    context.Writer.WriteTextString("limit");
+                    context.Writer.WriteInt32(publicRequest.Limit.Value);
                 }
-                context.Writer.WriteEndArray();
+                if (publicRequest.IsSetLogGroupIdentifiers())
+                {
+                    context.Writer.WriteTextString("logGroupIdentifiers");
+                    context.Writer.WriteStartArray(publicRequest.LogGroupIdentifiers.Count);
+                    foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
+                    {
+                            context.Writer.WriteTextString(publicRequestLogGroupIdentifiersListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetLogGroupName())
+                {
+                    context.Writer.WriteTextString("logGroupName");
+                    context.Writer.WriteTextString(publicRequest.LogGroupName);
+                }
+                if (publicRequest.IsSetLogGroupNames())
+                {
+                    context.Writer.WriteTextString("logGroupNames");
+                    context.Writer.WriteStartArray(publicRequest.LogGroupNames.Count);
+                    foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestLogGroupNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetQueryLanguage())
+                {
+                    context.Writer.WriteTextString("queryLanguage");
+                    context.Writer.WriteTextString(publicRequest.QueryLanguage);
+                }
+                if (publicRequest.IsSetQueryString())
+                {
+                    context.Writer.WriteTextString("queryString");
+                    context.Writer.WriteTextString(publicRequest.QueryString);
+                }
+                if (publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WriteTextString("startTime");
+                    context.Writer.WriteInt64(publicRequest.StartTime.Value);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetQueryLanguage())
+            finally
             {
-                context.Writer.WritePropertyName("queryLanguage");
-                context.Writer.WriteStringValue(publicRequest.QueryLanguage);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetQueryString())
-            {
-                context.Writer.WritePropertyName("queryString");
-                context.Writer.WriteStringValue(publicRequest.QueryString);
-            }
-
-            if(publicRequest.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("startTime");
-                context.Writer.WriteNumberValue(publicRequest.StartTime.Value);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartQueryRequestMarshaller _instance = new StartQueryRequestMarshaller();        

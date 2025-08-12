@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
@@ -59,73 +58,30 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartMedicalStreamTranscriptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeStreaming");
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/TranscribeStreaming_20140328/operation/StartMedicalStreamTranscription";
 #if NET8_0_OR_GREATER
             request.HttpProtocolVersion = System.Net.HttpVersion.Version20;
 #endif
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new AudioStreamPublisherMarshaller(publicRequest.AudioStreamPublisher);
-
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Accept"] = "application/vnd.amazon.eventstream";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/medical-stream-transcription";
-        
-            if (publicRequest.IsSetContentIdentificationType()) 
+            var writer = CborWriterPool.Rent();
+            try
             {
-                request.Headers["x-amzn-transcribe-content-identification-type"] = publicRequest.ContentIdentificationType;
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-        
-            if (publicRequest.IsSetEnableChannelIdentification()) 
+            finally
             {
-                request.Headers["x-amzn-transcribe-enable-channel-identification"] = StringUtils.FromBool(publicRequest.EnableChannelIdentification);
+                CborWriterPool.Return(writer);
             }
-        
-            if (publicRequest.IsSetLanguageCode()) 
-            {
-                request.Headers["x-amzn-transcribe-language-code"] = publicRequest.LanguageCode;
-            }
-        
-            if (publicRequest.IsSetMediaEncoding()) 
-            {
-                request.Headers["x-amzn-transcribe-media-encoding"] = publicRequest.MediaEncoding;
-            }
-        
-            if (publicRequest.IsSetMediaSampleRateHertz()) 
-            {
-                request.Headers["x-amzn-transcribe-sample-rate"] = StringUtils.FromInt(publicRequest.MediaSampleRateHertz);
-            }
-        
-            if (publicRequest.IsSetNumberOfChannels()) 
-            {
-                request.Headers["x-amzn-transcribe-number-of-channels"] = StringUtils.FromInt(publicRequest.NumberOfChannels);
-            }
-        
-            if (publicRequest.IsSetSessionId()) 
-            {
-                request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
-            }
-        
-            if (publicRequest.IsSetShowSpeakerLabel()) 
-            {
-                request.Headers["x-amzn-transcribe-show-speaker-label"] = StringUtils.FromBool(publicRequest.ShowSpeakerLabel);
-            }
-        
-            if (publicRequest.IsSetSpecialty()) 
-            {
-                request.Headers["x-amzn-transcribe-specialty"] = publicRequest.Specialty;
-            }
-        
-            if (publicRequest.IsSetType()) 
-            {
-                request.Headers["x-amzn-transcribe-type"] = publicRequest.Type;
-            }
-        
-            if (publicRequest.IsSetVocabularyName()) 
-            {
-                request.Headers["x-amzn-transcribe-vocabulary-name"] = publicRequest.VocabularyName;
-            }
-
+            
             return request;
         }
         private static StartMedicalStreamTranscriptionRequestMarshaller _instance = new StartMedicalStreamTranscriptionRequestMarshaller();        

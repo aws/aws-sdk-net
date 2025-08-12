@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
@@ -51,9 +52,9 @@ namespace Amazon.CloudWatchLogs.Model
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"Fields", payload => 
                 {
-                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
-                    return new FieldsDataUnmarshaller().Unmarshall(context, ref reader);
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new FieldsDataUnmarshaller().Unmarshall(context);
                 }
             },
         };
@@ -63,13 +64,13 @@ namespace Amazon.CloudWatchLogs.Model
         protected override IDictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,CloudWatchLogsEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-                    {"InternalStreamingException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalStreamingExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
+            {"InternalStreamingException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalStreamingExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

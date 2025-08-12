@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MedicalScribeConfigurationEvent Marshaller
     /// </summary>
-    public class MedicalScribeConfigurationEventMarshaller : IRequestMarshaller<MedicalScribeConfigurationEvent, JsonMarshallerContext> 
+    public class MedicalScribeConfigurationEventMarshaller : IRequestMarshaller<MedicalScribeConfigurationEvent, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,83 +45,76 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MedicalScribeConfigurationEvent requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeConfigurationEvent requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetChannelDefinitions())
+
+            if (requestObject.IsSetChannelDefinitions())
             {
-                context.Writer.WritePropertyName("ChannelDefinitions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ChannelDefinitions");
+                context.Writer.WriteStartArray(requestObject.ChannelDefinitions.Count);
                 foreach(var requestObjectChannelDefinitionsListValue in requestObject.ChannelDefinitions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = MedicalScribeChannelDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectChannelDefinitionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEncryptionSettings())
+            if (requestObject.IsSetEncryptionSettings())
             {
-                context.Writer.WritePropertyName("EncryptionSettings");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EncryptionSettings");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MedicalScribeEncryptionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionSettings, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetMedicalScribeContext())
+            if (requestObject.IsSetMedicalScribeContext())
             {
-                context.Writer.WritePropertyName("MedicalScribeContext");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MedicalScribeContext");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MedicalScribeContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.MedicalScribeContext, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPostStreamAnalyticsSettings())
+            if (requestObject.IsSetPostStreamAnalyticsSettings())
             {
-                context.Writer.WritePropertyName("PostStreamAnalyticsSettings");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PostStreamAnalyticsSettings");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MedicalScribePostStreamAnalyticsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostStreamAnalyticsSettings, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetResourceAccessRoleArn())
+            if (requestObject.IsSetResourceAccessRoleArn())
             {
-                context.Writer.WritePropertyName("ResourceAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.ResourceAccessRoleArn);
+                context.Writer.WriteTextString("ResourceAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.ResourceAccessRoleArn);
             }
-
-            if(requestObject.IsSetVocabularyFilterMethod())
+            if (requestObject.IsSetVocabularyFilterMethod())
             {
-                context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteTextString("VocabularyFilterMethod");
+                context.Writer.WriteTextString(requestObject.VocabularyFilterMethod);
             }
-
-            if(requestObject.IsSetVocabularyFilterName())
+            if (requestObject.IsSetVocabularyFilterName())
             {
-                context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
+                context.Writer.WriteTextString("VocabularyFilterName");
+                context.Writer.WriteTextString(requestObject.VocabularyFilterName);
             }
-
-            if(requestObject.IsSetVocabularyName())
+            if (requestObject.IsSetVocabularyName())
             {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(requestObject.VocabularyName);
+                context.Writer.WriteTextString("VocabularyName");
+                context.Writer.WriteTextString(requestObject.VocabularyName);
             }
-
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Entity Marshaller
     /// </summary>
-    public class EntityMarshaller : IRequestMarshaller<Entity, JsonMarshallerContext> 
+    public class EntityMarshaller : IRequestMarshaller<Entity, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,37 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Entity requestObject, JsonMarshallerContext context)
+        public void Marshall(Entity requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAttributes())
+
+            if (requestObject.IsSetAttributes())
             {
-                context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("attributes");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
-                    context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
+                    context.Writer.WriteTextString(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.WriteStringValue(requestObjectAttributesValue);
+                        context.Writer.WriteTextString(requestObjectAttributesValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetKeyAttributes())
+            if (requestObject.IsSetKeyAttributes())
             {
-                context.Writer.WritePropertyName("keyAttributes");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("keyAttributes");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectKeyAttributesKvp in requestObject.KeyAttributes)
                 {
-                    context.Writer.WritePropertyName(requestObjectKeyAttributesKvp.Key);
+                    context.Writer.WriteTextString(requestObjectKeyAttributesKvp.Key);
                     var requestObjectKeyAttributesValue = requestObjectKeyAttributesKvp.Value;
 
-                        context.Writer.WriteStringValue(requestObjectKeyAttributesValue);
+                        context.Writer.WriteTextString(requestObjectKeyAttributesValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

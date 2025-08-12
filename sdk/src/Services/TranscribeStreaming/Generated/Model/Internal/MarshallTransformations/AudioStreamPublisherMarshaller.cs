@@ -20,13 +20,15 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.EventStreams;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
     /// </summary>
-    public partial class AudioStreamPublisherMarshaller : EventStreamPublisher
+    public partial class AudioStreamPublisherMarshaller : CborEventStreamPublisher
     {
         Func< Task<IAudioStreamEvent>> _publisher;
 
@@ -55,29 +57,41 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             string eventType;
             if (evnt is AudioEvent)
             {
-                var memoryStream = new MemoryStream();
-                var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
-                AudioEventMarshaller.Instance.Marshall((AudioEvent)evnt, context);
-                context.Writer.WriteEndObject();
-                context.Writer.Flush();
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    AudioEventMarshaller.Instance.Marshall((AudioEvent)evnt, context);
+                    context.Writer.WriteEndMap();
 
                 eventType = "AudioEvent";
                 contentType = "application/octet-stream";
                 eventPayload = context.Request.Content;
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
             }
             else if (evnt is ConfigurationEvent)
             {
-                var memoryStream = new MemoryStream();
-                var context = CreateJsonMarshallerContext(memoryStream);
-                context.Writer.WriteStartObject();
-                ConfigurationEventMarshaller.Instance.Marshall((ConfigurationEvent)evnt, context);
-                context.Writer.WriteEndObject();
-                context.Writer.Flush();
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    ConfigurationEventMarshaller.Instance.Marshall((ConfigurationEvent)evnt, context);
+                    context.Writer.WriteEndMap();
 
                 eventType = "ConfigurationEvent";
-                contentType = "application/json";
-                eventPayload = memoryStream.ToArray();
+                    contentType = "application/cbor";
+                    eventPayload = writer.Encode();
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
             }
             else
             {

@@ -29,40 +29,53 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MedicalScribeTranscriptEvent Object
     /// </summary>  
-    public class MedicalScribeTranscriptEventUnmarshaller : IJsonUnmarshaller<MedicalScribeTranscriptEvent, JsonUnmarshallerContext>
+    public class MedicalScribeTranscriptEventUnmarshaller : ICborUnmarshaller<MedicalScribeTranscriptEvent, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MedicalScribeTranscriptEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MedicalScribeTranscriptEvent Unmarshall(CborUnmarshallerContext context)
         {
             MedicalScribeTranscriptEvent unmarshalledObject = new MedicalScribeTranscriptEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("TranscriptSegment", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = MedicalScribeTranscriptSegmentUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptSegment = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "TranscriptSegment":
+                        {
+                            context.AddPathSegment("TranscriptSegment");
+                            var unmarshaller = MedicalScribeTranscriptSegmentUnmarshaller.Instance;
+                            unmarshalledObject.TranscriptSegment = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

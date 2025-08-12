@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PatternToken Object
     /// </summary>  
-    public class PatternTokenUnmarshaller : IJsonUnmarshaller<PatternToken, JsonUnmarshallerContext>
+    public class PatternTokenUnmarshaller : ICborUnmarshaller<PatternToken, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PatternToken Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PatternToken Unmarshall(CborUnmarshallerContext context)
         {
             PatternToken unmarshalledObject = new PatternToken();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("dynamicTokenPosition", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DynamicTokenPosition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("enumerations", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);
-                    unmarshalledObject.Enumerations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("inferredTokenName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferredTokenName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("isDynamic", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDynamic = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tokenString", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TokenString = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "dynamicTokenPosition":
+                        {
+                            context.AddPathSegment("DynamicTokenPosition");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.DynamicTokenPosition = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "enumerations":
+                        {
+                            context.AddPathSegment("Enumerations");
+                            var unmarshaller = new CborDictionaryUnmarshaller<string, long, CborStringUnmarshaller, CborLongUnmarshaller>(CborStringUnmarshaller.Instance, CborLongUnmarshaller.Instance);
+                            unmarshalledObject.Enumerations = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "inferredTokenName":
+                        {
+                            context.AddPathSegment("InferredTokenName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InferredTokenName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "isDynamic":
+                        {
+                            context.AddPathSegment("IsDynamic");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.IsDynamic = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tokenString":
+                        {
+                            context.AddPathSegment("TokenString");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TokenString = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

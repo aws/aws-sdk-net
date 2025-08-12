@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PostCallAnalyticsSettings Marshaller
     /// </summary>
-    public class PostCallAnalyticsSettingsMarshaller : IRequestMarshaller<PostCallAnalyticsSettings, JsonMarshallerContext> 
+    public class PostCallAnalyticsSettingsMarshaller : IRequestMarshaller<PostCallAnalyticsSettings, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PostCallAnalyticsSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(PostCallAnalyticsSettings requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetContentRedactionOutput())
-            {
-                context.Writer.WritePropertyName("ContentRedactionOutput");
-                context.Writer.WriteStringValue(requestObject.ContentRedactionOutput);
-            }
 
-            if(requestObject.IsSetDataAccessRoleArn())
+            if (requestObject.IsSetContentRedactionOutput())
             {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
+                context.Writer.WriteTextString("ContentRedactionOutput");
+                context.Writer.WriteTextString(requestObject.ContentRedactionOutput);
             }
-
-            if(requestObject.IsSetOutputEncryptionKMSKeyId())
+            if (requestObject.IsSetDataAccessRoleArn())
             {
-                context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
-                context.Writer.WriteStringValue(requestObject.OutputEncryptionKMSKeyId);
+                context.Writer.WriteTextString("DataAccessRoleArn");
+                context.Writer.WriteTextString(requestObject.DataAccessRoleArn);
             }
-
-            if(requestObject.IsSetOutputLocation())
+            if (requestObject.IsSetOutputEncryptionKMSKeyId())
             {
-                context.Writer.WritePropertyName("OutputLocation");
-                context.Writer.WriteStringValue(requestObject.OutputLocation);
+                context.Writer.WriteTextString("OutputEncryptionKMSKeyId");
+                context.Writer.WriteTextString(requestObject.OutputEncryptionKMSKeyId);
             }
-
+            if (requestObject.IsSetOutputLocation())
+            {
+                context.Writer.WriteTextString("OutputLocation");
+                context.Writer.WriteTextString(requestObject.OutputLocation);
+            }
         }
 
         /// <summary>

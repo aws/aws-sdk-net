@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ParseKeyValue Marshaller
     /// </summary>
-    public class ParseKeyValueMarshaller : IRequestMarshaller<ParseKeyValue, JsonMarshallerContext> 
+    public class ParseKeyValueMarshaller : IRequestMarshaller<ParseKeyValue, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,52 +45,46 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ParseKeyValue requestObject, JsonMarshallerContext context)
+        public void Marshall(ParseKeyValue requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDestination())
-            {
-                context.Writer.WritePropertyName("destination");
-                context.Writer.WriteStringValue(requestObject.Destination);
-            }
 
-            if(requestObject.IsSetFieldDelimiter())
+            if (requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("fieldDelimiter");
-                context.Writer.WriteStringValue(requestObject.FieldDelimiter);
+                context.Writer.WriteTextString("destination");
+                context.Writer.WriteTextString(requestObject.Destination);
             }
-
-            if(requestObject.IsSetKeyPrefix())
+            if (requestObject.IsSetFieldDelimiter())
             {
-                context.Writer.WritePropertyName("keyPrefix");
-                context.Writer.WriteStringValue(requestObject.KeyPrefix);
+                context.Writer.WriteTextString("fieldDelimiter");
+                context.Writer.WriteTextString(requestObject.FieldDelimiter);
             }
-
-            if(requestObject.IsSetKeyValueDelimiter())
+            if (requestObject.IsSetKeyPrefix())
             {
-                context.Writer.WritePropertyName("keyValueDelimiter");
-                context.Writer.WriteStringValue(requestObject.KeyValueDelimiter);
+                context.Writer.WriteTextString("keyPrefix");
+                context.Writer.WriteTextString(requestObject.KeyPrefix);
             }
-
-            if(requestObject.IsSetNonMatchValue())
+            if (requestObject.IsSetKeyValueDelimiter())
             {
-                context.Writer.WritePropertyName("nonMatchValue");
-                context.Writer.WriteStringValue(requestObject.NonMatchValue);
+                context.Writer.WriteTextString("keyValueDelimiter");
+                context.Writer.WriteTextString(requestObject.KeyValueDelimiter);
             }
-
-            if(requestObject.IsSetOverwriteIfExists())
+            if (requestObject.IsSetNonMatchValue())
             {
-                context.Writer.WritePropertyName("overwriteIfExists");
-                context.Writer.WriteBooleanValue(requestObject.OverwriteIfExists.Value);
+                context.Writer.WriteTextString("nonMatchValue");
+                context.Writer.WriteTextString(requestObject.NonMatchValue);
             }
-
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetOverwriteIfExists())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("overwriteIfExists");
+                context.Writer.WriteBoolean(requestObject.OverwriteIfExists.Value);
             }
-
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
+            }
         }
 
         /// <summary>

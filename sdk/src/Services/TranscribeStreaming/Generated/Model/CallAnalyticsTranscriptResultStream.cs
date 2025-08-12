@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations;
@@ -51,16 +52,16 @@ namespace Amazon.TranscribeStreaming.Model
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"CategoryEvent", payload => 
                 {
-                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
-                    return new CategoryEventUnmarshaller().Unmarshall(context, ref reader);
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new CategoryEventUnmarshaller().Unmarshall(context);
                 }
             },
             {"UtteranceEvent", payload => 
                 {
-                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
-                    return new UtteranceEventUnmarshaller().Unmarshall(context, ref reader);
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new UtteranceEventUnmarshaller().Unmarshall(context);
                 }
             },
         };
@@ -70,41 +71,41 @@ namespace Amazon.TranscribeStreaming.Model
         protected override IDictionary<string,Func<IEventStreamMessage,TranscribeStreamingEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,TranscribeStreamingEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-                    {"BadRequestException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadRequestExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
-                    {"ConflictException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
-                    {"InternalFailureException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
-                    {"LimitExceededException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new LimitExceededExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
-                    {"ServiceUnavailableException", payload => 
-                        {
-                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
-                            return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceUnavailableExceptionUnmarshaller().Unmarshall(context, ref reader));
-                        }
-                    },
+            {"BadRequestException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadRequestExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
+            {"ConflictException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
+            {"InternalFailureException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
+            {"LimitExceededException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new LimitExceededExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
+            {"ServiceUnavailableException", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceUnavailableExceptionUnmarshaller().Unmarshall(context));
+                }
+            },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.

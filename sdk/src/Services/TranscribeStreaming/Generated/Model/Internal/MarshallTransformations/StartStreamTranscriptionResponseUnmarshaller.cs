@@ -29,71 +29,29 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StartStreamTranscription operation
     /// </summary>  
-    public class StartStreamTranscriptionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartStreamTranscriptionResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
             StartStreamTranscriptionResponse response = new StartStreamTranscriptionResponse();
+            var reader = context.Reader;
+            context.AddPathSegment("StartStreamTranscription");
             response.TranscriptResultStream = new TranscriptResultStream(context.Stream);
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-content-identification-type"))
-                response.ContentIdentificationType = context.ResponseData.GetHeaderValue("x-amzn-transcribe-content-identification-type");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-content-redaction-type"))
-                response.ContentRedactionType = context.ResponseData.GetHeaderValue("x-amzn-transcribe-content-redaction-type");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-enable-channel-identification"))
-                response.EnableChannelIdentification = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-enable-channel-identification"));
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-enable-partial-results-stabilization"))
-                response.EnablePartialResultsStabilization = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-enable-partial-results-stabilization"));
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-identify-language"))
-                response.IdentifyLanguage = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-identify-language"));
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-identify-multiple-languages"))
-                response.IdentifyMultipleLanguages = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-identify-multiple-languages"));
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-code"))
-                response.LanguageCode = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-code");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-model-name"))
-                response.LanguageModelName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-model-name");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-options"))
-                response.LanguageOptions = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-options");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-media-encoding"))
-                response.MediaEncoding = context.ResponseData.GetHeaderValue("x-amzn-transcribe-media-encoding");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-sample-rate"))
-                response.MediaSampleRateHertz = int.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-sample-rate"), CultureInfo.InvariantCulture);
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-number-of-channels"))
-                response.NumberOfChannels = int.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-number-of-channels"), CultureInfo.InvariantCulture);
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-partial-results-stability"))
-                response.PartialResultsStability = context.ResponseData.GetHeaderValue("x-amzn-transcribe-partial-results-stability");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-pii-entity-types"))
-                response.PiiEntityTypes = context.ResponseData.GetHeaderValue("x-amzn-transcribe-pii-entity-types");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-preferred-language"))
-                response.PreferredLanguage = context.ResponseData.GetHeaderValue("x-amzn-transcribe-preferred-language");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-request-id"))
-                response.RequestId = context.ResponseData.GetHeaderValue("x-amzn-request-id");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-session-id"))
-                response.SessionId = context.ResponseData.GetHeaderValue("x-amzn-transcribe-session-id");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-show-speaker-label"))
-                response.ShowSpeakerLabel = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-show-speaker-label"));
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-method"))
-                response.VocabularyFilterMethod = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-method");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-name"))
-                response.VocabularyFilterName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-name");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-names"))
-                response.VocabularyFilterNames = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-names");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-name"))
-                response.VocabularyName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-name");
-            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-names"))
-                response.VocabularyNames = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-names");
 
             return response;
         }
@@ -105,38 +63,36 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonTranscribeStreamingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

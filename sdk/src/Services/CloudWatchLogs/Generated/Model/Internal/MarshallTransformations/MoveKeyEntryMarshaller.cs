@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MoveKeyEntry Marshaller
     /// </summary>
-    public class MoveKeyEntryMarshaller : IRequestMarshaller<MoveKeyEntry, JsonMarshallerContext> 
+    public class MoveKeyEntryMarshaller : IRequestMarshaller<MoveKeyEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MoveKeyEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(MoveKeyEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetOverwriteIfExists())
-            {
-                context.Writer.WritePropertyName("overwriteIfExists");
-                context.Writer.WriteBooleanValue(requestObject.OverwriteIfExists.Value);
-            }
 
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetOverwriteIfExists())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("overwriteIfExists");
+                context.Writer.WriteBoolean(requestObject.OverwriteIfExists.Value);
             }
-
-            if(requestObject.IsSetTarget())
+            if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("target");
-                context.Writer.WriteStringValue(requestObject.Target);
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
-
+            if (requestObject.IsSetTarget())
+            {
+                context.Writer.WriteTextString("target");
+                context.Writer.WriteTextString(requestObject.Target);
+            }
         }
 
         /// <summary>

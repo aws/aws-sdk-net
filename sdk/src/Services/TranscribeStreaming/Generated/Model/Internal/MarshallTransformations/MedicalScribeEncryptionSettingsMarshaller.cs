@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MedicalScribeEncryptionSettings Marshaller
     /// </summary>
-    public class MedicalScribeEncryptionSettingsMarshaller : IRequestMarshaller<MedicalScribeEncryptionSettings, JsonMarshallerContext> 
+    public class MedicalScribeEncryptionSettingsMarshaller : IRequestMarshaller<MedicalScribeEncryptionSettings, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +45,29 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MedicalScribeEncryptionSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeEncryptionSettings requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKmsEncryptionContext())
+
+            if (requestObject.IsSetKmsEncryptionContext())
             {
-                context.Writer.WritePropertyName("KmsEncryptionContext");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("KmsEncryptionContext");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectKmsEncryptionContextKvp in requestObject.KmsEncryptionContext)
                 {
-                    context.Writer.WritePropertyName(requestObjectKmsEncryptionContextKvp.Key);
+                    context.Writer.WriteTextString(requestObjectKmsEncryptionContextKvp.Key);
                     var requestObjectKmsEncryptionContextValue = requestObjectKmsEncryptionContextKvp.Value;
 
-                        context.Writer.WriteStringValue(requestObjectKmsEncryptionContextValue);
+                        context.Writer.WriteTextString(requestObjectKmsEncryptionContextValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetKmsKeyId())
+            if (requestObject.IsSetKmsKeyId())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(requestObject.KmsKeyId);
+                context.Writer.WriteTextString("KmsKeyId");
+                context.Writer.WriteTextString(requestObject.KmsKeyId);
             }
-
         }
 
         /// <summary>

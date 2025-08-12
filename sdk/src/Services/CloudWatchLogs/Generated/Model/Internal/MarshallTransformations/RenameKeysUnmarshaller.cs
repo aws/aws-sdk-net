@@ -29,40 +29,53 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RenameKeys Object
     /// </summary>  
-    public class RenameKeysUnmarshaller : IJsonUnmarshaller<RenameKeys, JsonUnmarshallerContext>
+    public class RenameKeysUnmarshaller : ICborUnmarshaller<RenameKeys, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RenameKeys Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RenameKeys Unmarshall(CborUnmarshallerContext context)
         {
             RenameKeys unmarshalledObject = new RenameKeys();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("entries", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<RenameKeyEntry, RenameKeyEntryUnmarshaller>(RenameKeyEntryUnmarshaller.Instance);
-                    unmarshalledObject.Entries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "entries":
+                        {
+                            context.AddPathSegment("Entries");
+                            var unmarshaller = new CborListUnmarshaller<RenameKeyEntry, RenameKeyEntryUnmarshaller>(RenameKeyEntryUnmarshaller.Instance);
+                            unmarshalledObject.Entries = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

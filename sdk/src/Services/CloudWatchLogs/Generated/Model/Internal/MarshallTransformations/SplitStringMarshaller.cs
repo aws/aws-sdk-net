@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SplitString Marshaller
     /// </summary>
-    public class SplitStringMarshaller : IRequestMarshaller<SplitString, JsonMarshallerContext> 
+    public class SplitStringMarshaller : IRequestMarshaller<SplitString, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +45,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SplitString requestObject, JsonMarshallerContext context)
+        public void Marshall(SplitString requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEntries())
+
+            if (requestObject.IsSetEntries())
             {
-                context.Writer.WritePropertyName("entries");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("entries");
+                context.Writer.WriteStartArray(requestObject.Entries.Count);
                 foreach(var requestObjectEntriesListValue in requestObject.Entries)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = SplitStringEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectEntriesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

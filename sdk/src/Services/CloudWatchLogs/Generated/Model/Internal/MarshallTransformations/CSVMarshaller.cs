@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CSV Marshaller
     /// </summary>
-    public class CSVMarshaller : IRequestMarshaller<CSV, JsonMarshallerContext> 
+    public class CSVMarshaller : IRequestMarshaller<CSV, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CSV requestObject, JsonMarshallerContext context)
+        public void Marshall(CSV requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetColumns())
+
+            if (requestObject.IsSetColumns())
             {
-                context.Writer.WritePropertyName("columns");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("columns");
+                context.Writer.WriteStartArray(requestObject.Columns.Count);
                 foreach(var requestObjectColumnsListValue in requestObject.Columns)
                 {
-                        context.Writer.WriteStringValue(requestObjectColumnsListValue);
+                        context.Writer.WriteTextString(requestObjectColumnsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetDelimiter())
+            if (requestObject.IsSetDelimiter())
             {
-                context.Writer.WritePropertyName("delimiter");
-                context.Writer.WriteStringValue(requestObject.Delimiter);
+                context.Writer.WriteTextString("delimiter");
+                context.Writer.WriteTextString(requestObject.Delimiter);
             }
-
-            if(requestObject.IsSetQuoteCharacter())
+            if (requestObject.IsSetQuoteCharacter())
             {
-                context.Writer.WritePropertyName("quoteCharacter");
-                context.Writer.WriteStringValue(requestObject.QuoteCharacter);
+                context.Writer.WriteTextString("quoteCharacter");
+                context.Writer.WriteTextString(requestObject.QuoteCharacter);
             }
-
-            if(requestObject.IsSetSource())
+            if (requestObject.IsSetSource())
             {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
             }
-
         }
 
         /// <summary>

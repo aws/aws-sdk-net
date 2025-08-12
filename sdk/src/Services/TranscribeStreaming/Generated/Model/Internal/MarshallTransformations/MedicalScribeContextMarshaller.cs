@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MedicalScribeContext Marshaller
     /// </summary>
-    public class MedicalScribeContextMarshaller : IRequestMarshaller<MedicalScribeContext, JsonMarshallerContext> 
+    public class MedicalScribeContextMarshaller : IRequestMarshaller<MedicalScribeContext, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MedicalScribeContext requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeContext requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetPatientContext())
+
+            if (requestObject.IsSetPatientContext())
             {
-                context.Writer.WritePropertyName("PatientContext");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PatientContext");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = MedicalScribePatientContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.PatientContext, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

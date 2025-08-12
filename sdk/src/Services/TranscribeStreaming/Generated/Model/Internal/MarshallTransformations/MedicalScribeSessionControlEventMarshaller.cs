@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MedicalScribeSessionControlEvent Marshaller
     /// </summary>
-    public class MedicalScribeSessionControlEventMarshaller : IRequestMarshaller<MedicalScribeSessionControlEvent, JsonMarshallerContext> 
+    public class MedicalScribeSessionControlEventMarshaller : IRequestMarshaller<MedicalScribeSessionControlEvent, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MedicalScribeSessionControlEvent requestObject, JsonMarshallerContext context)
+        public void Marshall(MedicalScribeSessionControlEvent requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
-            }
 
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>
