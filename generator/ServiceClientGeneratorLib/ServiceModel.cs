@@ -535,18 +535,19 @@ namespace ServiceClientGenerator
                         ////// *****
                         new Operation(this, "GetBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["GetBucketLifecycleConfiguration"]),
                         new Operation(this, "GetBucketNotificationConfiguration", DocumentRoot[OperationsKey]["GetBucketNotificationConfiguration"]),
-                        //////new Operation(this, "GetObjectAcl", DocumentRoot[OperationsKey]["GetObjectAcl"]),
-                        //////new Operation(this, "HeadObject", DocumentRoot[OperationsKey]["HeadObject"]),
-                        //////new Operation(this, "ListObjectVersions", DocumentRoot[OperationsKey]["ListObjectVersions"]),
-                        //////new Operation(this, "PutBucketAcl", DocumentRoot[OperationsKey]["PutBucketAcl"]),
-                        //////new Operation(this, "PutBucketCors", DocumentRoot[OperationsKey]["PutBucketCors"]),
+                        new Operation(this, "GetObjectAcl", DocumentRoot[OperationsKey]["GetObjectAcl"]),
+                        new Operation(this, "HeadObject", DocumentRoot[OperationsKey]["HeadObject"]),
+                        new Operation(this, "ListObjectVersions", DocumentRoot[OperationsKey]["ListObjectVersions"]),
+                        new Operation(this, "PutBucketAcl", DocumentRoot[OperationsKey]["PutBucketAcl"]),
+                        new Operation(this, "PutBucketCors", DocumentRoot[OperationsKey]["PutBucketCors"]),
                         ////// **** deprecated
                         //////new Operation(this, "PutBucketLifecycle", DocumentRoot[OperationsKey]["PutBucketLifecycle"]),
                         ////// **** deprecated
                         new Operation(this, "PutBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["PutBucketLifecycleConfiguration"]),
                         new Operation(this, "PutBucketNotificationConfiguration", DocumentRoot[OperationsKey]["PutBucketNotificationConfiguration"]),
-                        //////new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
+                        new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
                         //////new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
+                        new Operation(this, "ListObjectsV2", DocumentRoot[OperationsKey]["ListObjectsV2"]),
 
                     };
                 }
@@ -571,7 +572,11 @@ namespace ServiceClientGenerator
                         "ListDirectoryBuckets",
                         "GetObjectLegalHold",
                         "GetObjectRetention",
-                        "PutObjectRetention"
+                        "PutObjectRetention",
+                        "PutObjectAcl",
+                        "GetObjectAcl",
+                        "ListObjectsV2",
+                        "ListVersions"
                     };
                 }
                 return _s3AddParametersList;
@@ -598,7 +603,10 @@ namespace ServiceClientGenerator
                     {
                         "CreateSession",
                         "GetObjectAttributes",
-                        "GetBucketAcl"
+                        "GetBucketAcl",
+                        "PutObjectAcl",
+                        "GetObjectAcl",
+                        "PutBucketAcl"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

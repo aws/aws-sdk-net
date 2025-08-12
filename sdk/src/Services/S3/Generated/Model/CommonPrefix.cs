@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -27,25 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This is the response object from the PutObjectAcl operation.
+    /// Container for all (if there are any) keys between Prefix and the next occurrence of
+    /// the string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories
+    /// in the directory specified by Prefix. For example, if the prefix is notes/ and the
+    /// delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/.
     /// </summary>
-    public partial class PutObjectAclResponse : AmazonWebServiceResponse
+    public partial class CommonPrefix
     {
-        private RequestCharged _requestCharged;
+        private string _prefix;
 
         /// <summary>
-        /// Gets and sets the property RequestCharged.
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// Container for the specified common prefix.
+        /// </para>
         /// </summary>
-        public RequestCharged RequestCharged
+        public string Prefix
         {
-            get { return this._requestCharged; }
-            set { this._requestCharged = value; }
+            get { return this._prefix; }
+            set { this._prefix = value; }
         }
 
-        // Check to see if RequestCharged property is set
-        internal bool IsSetRequestCharged()
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
         {
-            return !string.IsNullOrEmpty(this._requestCharged);
+            return this._prefix != null;
         }
 
     }

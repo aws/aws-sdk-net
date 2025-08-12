@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectLegalHold operation
     /// </summary>  
-    public class GetObjectLegalHoldResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetObjectLegalHoldResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetObjectLegalHoldResponse response = new GetObjectLegalHoldResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -101,6 +101,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetObjectLegalHoldResponse response);
 
         private static GetObjectLegalHoldResponseUnmarshaller _instance = new GetObjectLegalHoldResponseUnmarshaller();        
 

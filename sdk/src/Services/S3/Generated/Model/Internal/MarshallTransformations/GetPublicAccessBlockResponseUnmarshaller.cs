@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetPublicAccessBlock operation
     /// </summary>  
-    public class GetPublicAccessBlockResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetPublicAccessBlockResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetPublicAccessBlockResponse response = new GetPublicAccessBlockResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -101,6 +101,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetPublicAccessBlockResponse response);
 
         private static GetPublicAccessBlockResponseUnmarshaller _instance = new GetPublicAccessBlockResponseUnmarshaller();        
 
