@@ -4,7 +4,8 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Generate CopyPart"
+        "Generate CopyPart.",
+        "[Breaking Change] Amazon.S3.Model.CopyPartResponse's BucketKeyEnabled will not return bool? instead of bool, in line with other S3 nullable types."
       ]
     }
   ]
