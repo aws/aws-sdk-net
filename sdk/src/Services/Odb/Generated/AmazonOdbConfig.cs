@@ -33,7 +33,7 @@ namespace Amazon.Odb
     public partial class AmazonOdbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("odb", "4.0.0.5");
+            InternalSDKUtils.BuildUserAgentString("odb", "4.0.0.6");
 
         private static readonly AmazonOdbEndpointResolver EndpointResolver =
             new AmazonOdbEndpointResolver();

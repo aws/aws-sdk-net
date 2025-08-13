@@ -1,3 +1,23 @@
+### 4.0.69.0 (2025-08-13 18:21 UTC)
+* Braket (4.0.1.0)
+	* Add support for Braket program sets.
+* DataZone (4.0.5.0)
+	* Adds support for account pools and project profile account decoupling
+* FSx (4.0.3.0)
+	* Add Dual-Stack support for Amazon FSx for OpenZFS file systems
+* PartnerCentralSelling (4.0.3.0)
+	* Add Tagging Support for Opportunity resources
+* S3 (4.0.6.5)
+	* Generate PutBucketAcl PutBucketCors,PutObjectAcl, GetObjectAcl, ListObjectsV2, ListVersions, HeadObject.
+	* As part of generating S3, all response unmarshallers will implement UnmarshallException. GetObjectACL will now throw NoSuchKeyException if no such key exists. This is not a breaking change.
+* SageMaker (4.0.19.0)
+	* This release introduces compute quota for GPU, Trainium accelerators, vCPU, and vCPU memory utilization across teams in HyperPod clusters
+* SecurityIR (4.0.3.0)
+	* Added support for Organizational Unit-level Membership configuration and the ability to resume a cancelled membership.
+* Core 4.0.0.22
+	* Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates. Update all rest-xml service response unmarshallers to generate partial method PostUnmarshallCustomization. Generator updates.
+	* All services packages updated to require new Core
+
 ### 4.0.68.0 (2025-08-12 19:48 UTC)
 * BackupSearch (4.0.2.0)
 	* Using recommended smithy trait to generate regional endpoints for Backup Search
