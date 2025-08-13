@@ -102,7 +102,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceQueueInfo. 
         /// <para>
-        /// List of information about tasks and jobs queued on a device.
+        /// The number of quantum tasks and hybrid jobs currently queued on the device.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

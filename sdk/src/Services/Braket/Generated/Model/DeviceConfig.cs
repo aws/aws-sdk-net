@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Configures the quantum processing units (QPUs) or simulator used to create and run
-    /// an Amazon Braket job.
+    /// Configures the primary device used to create and run an Amazon Braket hybrid job.
     /// </summary>
     public partial class DeviceConfig
     {
@@ -40,8 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Device. 
         /// <para>
-        /// The primary quantum processing unit (QPU) or simulator used to create and run an Amazon
-        /// Braket job.
+        /// The primary device ARN used to create and run an Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -30,19 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchDevices operation.
-    /// Searches for devices using the specified filters.
+    /// Contains information about validation failures that occurred during the processing
+    /// of a program set in a quantum task.
     /// </summary>
-    public partial class SearchDevicesRequest : AmazonBraketRequest
+    public partial class ProgramSetValidationFailure
     {
-        private List<SearchDevicesFilter> _filters = AWSConfigs.InitializeCollections ? new List<SearchDevicesFilter>() : null;
-        private int? _maxResults;
-        private string _nextToken;
+        private List<string> _errors = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private long? _inputsIndex;
+        private long? _programIndex;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// Array of SearchDevicesFilter objects to use when searching for devices.
+        /// A list of error messages describing the validation failures that occurred.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -50,55 +50,53 @@ namespace Amazon.Braket.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10)]
-        public List<SearchDevicesFilter> Filters
+        public List<string> Errors
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return in the response.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
-        {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property InputsIndex. 
         /// <para>
-        /// A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue search where the previous request ended.
+        /// The index of the input within the program set that failed validation.
         /// </para>
         /// </summary>
-        public string NextToken
+        public long? InputsIndex
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._inputsIndex; }
+            set { this._inputsIndex = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if InputsIndex property is set
+        internal bool IsSetInputsIndex()
         {
-            return this._nextToken != null;
+            return this._inputsIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgramIndex. 
+        /// <para>
+        /// The index of the program within the program set that failed validation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public long? ProgramIndex
+        {
+            get { return this._programIndex; }
+            set { this._programIndex = value; }
+        }
+
+        // Check to see if ProgramIndex property is set
+        internal bool IsSetProgramIndex()
+        {
+            return this._programIndex.HasValue; 
         }
 
     }

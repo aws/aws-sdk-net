@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Provides summary information about an Amazon Braket job.
+    /// Provides summary information about an Amazon Braket hybrid job.
     /// </summary>
     public partial class JobSummary
     {
@@ -46,7 +46,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job was created.
+        /// The time at which the Amazon Braket hybrid job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Device. 
         /// <para>
-        /// Provides summary information about the primary device used by an Amazon Braket job.
+        /// The primary device used by an Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -84,7 +84,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job ended.
+        /// The time at which the Amazon Braket hybrid job ended.
         /// </para>
         /// </summary>
         public DateTime? EndedAt
@@ -102,7 +102,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the Amazon Braket job.
+        /// The ARN of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +121,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the Amazon Braket job.
+        /// The name of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +140,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The date and time that the Amazon Braket job was started.
+        /// The time at which the Amazon Braket hybrid job was started.
         /// </para>
         /// </summary>
         public DateTime? StartedAt
@@ -158,7 +158,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Amazon Braket job.
+        /// The status of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,8 +177,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A tag object that consists of a key and an optional value, used to manage metadata
-        /// for Amazon Braket resources.
+        /// Displays the key, value pairs of tags associated with this hybrid job.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

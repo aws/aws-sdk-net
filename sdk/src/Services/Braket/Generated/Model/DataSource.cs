@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Information about the source of the data used by the Amazon Braket job.
+    /// Information about the source of the input data used by the Amazon Braket hybrid job.
     /// </summary>
     public partial class DataSource
     {
@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property S3DataSource. 
         /// <para>
-        /// Information about the data stored in Amazon S3 used by the Amazon Braket job.
+        /// Amazon S3 path of the input data used by the hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

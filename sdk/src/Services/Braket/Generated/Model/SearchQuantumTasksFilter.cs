@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// A filter to use to search for tasks.
+    /// A filter used to search for quantum tasks.
     /// </summary>
     public partial class SearchQuantumTasksFilter
     {
@@ -41,7 +41,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the device used for the task.
+        /// The name of the quantum task parameter to filter based on. Filter name can be either
+        /// <c>quantumTaskArn</c>, <c>deviceArn</c>, <c>jobArn</c>, <c>status</c> or <c>createdAt</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +61,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// An operator to use in the filter.
+        /// An operator to use for the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +80,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use for the filter.
+        /// The values used to filter quantum tasks based on the filter name and operator.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

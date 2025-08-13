@@ -41,7 +41,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property AdditionalAttributeNames. 
         /// <para>
-        /// A list of attributes to return information for.
+        /// A list of attributes to return additional information for. Only the QueueInfo additional
+        /// attribute name is currently supported.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +65,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTaskArn. 
         /// <para>
-        /// The ARN of the task to retrieve.
+        /// The ARN of the quantum task to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

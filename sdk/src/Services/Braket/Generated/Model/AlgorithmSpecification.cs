@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Defines the Amazon Braket job to be created. Specifies the container image the job
-    /// uses and the paths to the Python scripts used for entry and training.
+    /// Defines the Amazon Braket hybrid job to be created. Specifies the container image
+    /// the job uses and the paths to the Python scripts used for entry and training.
     /// </summary>
     public partial class AlgorithmSpecification
     {
@@ -41,7 +41,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ContainerImage. 
         /// <para>
-        /// The container image used to create an Amazon Braket job.
+        /// The container image used to create an Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         public ContainerImage ContainerImage

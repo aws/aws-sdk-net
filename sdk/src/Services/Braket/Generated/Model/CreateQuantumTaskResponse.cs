@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTaskArn. 
         /// <para>
-        /// The ARN of the task created by the request.
+        /// The ARN of the quantum task created by the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

@@ -49,7 +49,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action associated with the task.
+        /// The action associated with the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,7 +111,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceArn. 
         /// <para>
-        /// The ARN of the device to run the task on.
+        /// The ARN of the device to run the quantum task on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -130,7 +130,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceParameters. 
         /// <para>
-        /// The parameters for the device to run the task on.
+        /// The parameters for the device to run the quantum task on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=48000)]
@@ -149,7 +149,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobToken. 
         /// <para>
-        /// The token for an Amazon Braket job that associates it with the quantum task.
+        /// The token for an Amazon Braket hybrid job that associates it with the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -168,7 +168,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputS3Bucket. 
         /// <para>
-        /// The S3 bucket to store task result files in.
+        /// The S3 bucket to store quantum task result files in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -187,7 +187,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputS3KeyPrefix. 
         /// <para>
-        /// The key prefix for the location in the S3 bucket to store task results in.
+        /// The key prefix for the location in the S3 bucket to store quantum task results in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -206,7 +206,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Shots. 
         /// <para>
-        /// The number of shots to use for the task.
+        /// The number of shots to use for the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
