@@ -1171,6 +1171,10 @@ namespace ServiceClientGenerator
                 }
             }
 
+            if (Configuration.ServiceModel.Type == ServiceType.Cbor)
+            {
+                awsDependencies.Add(string.Format("AWSSDK.Extensions.CborProtocol"), "[4.0.0.0, 5.0)");
+            }
 
             var nugetAssemblyName = Configuration.AssemblyTitle;
             var nugetAssemblyTitle = Configuration.AssemblyTitle.Replace("AWSSDK.", "AWSSDK - ");
