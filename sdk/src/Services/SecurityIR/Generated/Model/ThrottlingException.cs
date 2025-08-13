@@ -130,7 +130,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Element providing the quota of the originating service.
+        /// The quota code of the exception.
         /// </para>
         /// </summary>
         public string QuotaCode
@@ -148,7 +148,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// Element providing advice to clients on when the call can be safely retried.
+        /// The number of seconds after which to retry the request.
         /// </para>
         /// </summary>
         public int? RetryAfterSeconds
@@ -166,7 +166,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Element providing the service code of the originating service.
+        /// The service code of the exception.
         /// </para>
         /// </summary>
         public string ServiceCode

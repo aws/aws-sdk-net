@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation.
-    /// Grants permission to create a new case.
+    /// Creates a new case.
     /// </summary>
     public partial class CreateCaseRequest : AmazonSecurityIRRequest
     {
@@ -51,7 +51,13 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Required element used in combination with CreateCase.
+        /// <note> 
+        /// <para>
+        /// The <c>clientToken</c> field is an idempotency key used to ensure that repeated attempts
+        /// for a single action will be ignored by the server during retries. A caller supplied
+        /// unique ID (typically a UUID) should be provided. 
+        /// </para>
+        ///  </note>
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -70,8 +76,11 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Required element used in combination with CreateCase to provide a description for
-        /// the new case.
+        /// Required element used in combination with CreateCase
+        /// </para>
+        ///  
+        /// <para>
+        /// to provide a description for the new case.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=8000)]
@@ -114,6 +123,13 @@ namespace Amazon.SecurityIR.Model
         /// Required element used in combination with CreateCase to provide a list of impacted
         /// accounts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -207,7 +223,6 @@ namespace Amazon.SecurityIR.Model
         /// Gets and sets the property ResolverType. 
         /// <para>
         /// Required element used in combination with CreateCase to identify the resolver type.
-        /// Available resolvers include self-supported | aws-supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

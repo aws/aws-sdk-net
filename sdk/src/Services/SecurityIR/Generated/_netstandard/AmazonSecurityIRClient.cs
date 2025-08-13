@@ -40,8 +40,7 @@ namespace Amazon.SecurityIR
     /// <summary>
     /// <para>Implementation for accessing SecurityIR</para>
     ///
-    /// This guide provides documents the action and response elements for customer use of
-    /// the service.
+    /// This guide documents the action and response elements for use of the service.
     /// </summary>
     public partial class AmazonSecurityIRClient : AmazonServiceClient, IAmazonSecurityIR
     {
@@ -278,7 +277,15 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view an existing membership.
+        /// Provides information on whether the supplied account IDs are associated with a membership.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetMemberAccountDetails service method.</param>
         /// <param name="cancellationToken">
@@ -338,7 +345,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to cancel an existing membership.
+        /// Cancels an existing membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMembership service method.</param>
         /// <param name="cancellationToken">
@@ -398,7 +405,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to close an existing case.
+        /// Closes an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseCase service method.</param>
         /// <param name="cancellationToken">
@@ -458,7 +465,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to create a new case.
+        /// Creates a new case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// <param name="cancellationToken">
@@ -518,7 +525,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a comment to an existing case.
+        /// Adds a comment to an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCaseComment service method.</param>
         /// <param name="cancellationToken">
@@ -578,7 +585,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to create a new membership.
+        /// Creates a new membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -638,7 +645,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grant permission to view a designated case.
+        /// Returns the attributes of a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCase service method.</param>
         /// <param name="cancellationToken">
@@ -698,7 +705,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to obtain an Amazon S3 presigned URL to download an attachment.
+        /// Returns a Pre-Signed URL for uploading attachments into a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentDownloadUrl service method.</param>
         /// <param name="cancellationToken">
@@ -758,7 +765,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to upload an attachment to a case.
+        /// Uploads an attachment to a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentUploadUrl service method.</param>
         /// <param name="cancellationToken">
@@ -818,7 +825,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to get details of a designated service membership.
+        /// Returns the attributes of a membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembership service method.</param>
         /// <param name="cancellationToken">
@@ -878,7 +885,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to view the aidt log for edits made to a designated case.
+        /// Views the case history for edits made to a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCaseEdits service method.</param>
         /// <param name="cancellationToken">
@@ -938,7 +945,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to list all cases the requester has access to.
+        /// Lists all cases the requester has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCases service method.</param>
         /// <param name="cancellationToken">
@@ -998,7 +1005,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to list and view comments for a designated case.
+        /// Returns comments for a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComments service method.</param>
         /// <param name="cancellationToken">
@@ -1058,7 +1065,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to query the memberships a principal has access to.
+        /// Returns the memberships that the calling principal can access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -1118,7 +1125,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view currently configured tags on a resource.
+        /// Returns currently configured tags on a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1178,7 +1185,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a tag(s) to a designated resource.
+        /// Adds a tag(s) to a designated resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1238,7 +1245,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to remove a tag(s) from a designate resource.
+        /// Removes a tag(s) from a designate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1298,7 +1305,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case.
+        /// Updates an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// <param name="cancellationToken">
@@ -1358,7 +1365,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case comment.
+        /// Updates an existing case comment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseComment service method.</param>
         /// <param name="cancellationToken">
@@ -1418,9 +1425,48 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the status for a designated cases. Options include <c>Submitted
-        /// | Detection and Analysis | Eradication, Containment and Recovery | Post-Incident Activities
-        /// | Closed</c>.
+        /// Updates the state transitions for a designated cases.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Self-managed</b>: the following states are available for self-managed cases. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Submitted → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any → Closed
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>AWS supported</b>: You must use the <c>CloseCase</c> API to close. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1480,7 +1526,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants access to UpdateMembership to change membership configuration.
+        /// Updates membership configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -1540,16 +1586,13 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the resolver type for a case.
+        /// Updates the resolver type for a case.
         /// 
         ///  <important> 
         /// <para>
         /// This is a one-way action and cannot be reversed.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// Options include self-supported &gt; AWS-supported.
-        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResolverType service method.</param>
         /// <param name="cancellationToken">

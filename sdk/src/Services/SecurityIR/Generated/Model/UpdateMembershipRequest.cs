@@ -31,14 +31,16 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMembership operation.
-    /// Grants access to UpdateMembership to change membership configuration.
+    /// Updates membership configuration.
     /// </summary>
     public partial class UpdateMembershipRequest : AmazonSecurityIRRequest
     {
         private List<IncidentResponder> _incidentResponseTeam = AWSConfigs.InitializeCollections ? new List<IncidentResponder>() : null;
+        private MembershipAccountsConfigurationsUpdate _membershipAccountsConfigurationsUpdate;
         private string _membershipId;
         private string _membershipName;
         private List<OptInFeature> _optInFeatures = AWSConfigs.InitializeCollections ? new List<OptInFeature>() : null;
+        private bool? _undoMembershipCancellation;
 
         /// <summary>
         /// Gets and sets the property IncidentResponseTeam. 
@@ -62,6 +64,31 @@ namespace Amazon.SecurityIR.Model
         internal bool IsSetIncidentResponseTeam()
         {
             return this._incidentResponseTeam != null && (this._incidentResponseTeam.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MembershipAccountsConfigurationsUpdate. 
+        /// <para>
+        /// The <c>membershipAccountsConfigurationsUpdate</c> field in the <c>UpdateMembershipRequest</c>
+        /// structure allows you to update the configuration settings for accounts within a membership.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is optional and contains a structure of type <c>MembershipAccountsConfigurationsUpdate
+        /// </c> that specifies the updated account configurations for the membership. 
+        /// </para>
+        /// </summary>
+        public MembershipAccountsConfigurationsUpdate MembershipAccountsConfigurationsUpdate
+        {
+            get { return this._membershipAccountsConfigurationsUpdate; }
+            set { this._membershipAccountsConfigurationsUpdate = value; }
+        }
+
+        // Check to see if MembershipAccountsConfigurationsUpdate property is set
+        internal bool IsSetMembershipAccountsConfigurationsUpdate()
+        {
+            return this._membershipAccountsConfigurationsUpdate != null;
         }
 
         /// <summary>
@@ -125,6 +152,41 @@ namespace Amazon.SecurityIR.Model
         internal bool IsSetOptInFeatures()
         {
             return this._optInFeatures != null && (this._optInFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UndoMembershipCancellation. 
+        /// <para>
+        /// The <c>undoMembershipCancellation</c> parameter is a boolean flag that indicates whether
+        /// to reverse a previously requested membership cancellation. When set to true, this
+        /// will revoke the cancellation request and maintain the membership status. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional and can be used in scenarios where you need to restore
+        /// a membership that was marked for cancellation but hasn't been fully terminated yet.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <c>true</c>, the cancellation request will be revoked 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <c>false</c> the service will throw a ValidationException. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool? UndoMembershipCancellation
+        {
+            get { return this._undoMembershipCancellation; }
+            set { this._undoMembershipCancellation = value; }
+        }
+
+        // Check to see if UndoMembershipCancellation property is set
+        internal bool IsSetUndoMembershipCancellation()
+        {
+            return this._undoMembershipCancellation.HasValue; 
         }
 
     }

@@ -37,6 +37,7 @@ namespace Amazon.SecurityIR.Model
         private string _accountId;
         private CustomerType _customerType;
         private List<IncidentResponder> _incidentResponseTeam = AWSConfigs.InitializeCollections ? new List<IncidentResponder>() : null;
+        private MembershipAccountsConfigurations _membershipAccountsConfigurations;
         private DateTime? _membershipActivationTimestamp;
         private string _membershipArn;
         private DateTime? _membershipDeactivationTimestamp;
@@ -50,8 +51,8 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Response element for GetMembership that provides the configured account for managing
-        /// the membership. 
+        /// Response element for GetMembership that provides the account configured to manage
+        /// the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -109,6 +110,43 @@ namespace Amazon.SecurityIR.Model
         internal bool IsSetIncidentResponseTeam()
         {
             return this._incidentResponseTeam != null && (this._incidentResponseTeam.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MembershipAccountsConfigurations. 
+        /// <para>
+        /// The <c>membershipAccountsConfigurations</c> field contains the configuration details
+        /// for member accounts within the Amazon Web Services Organizations membership structure.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field returns a structure containing information about:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Account configurations for member accounts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Membership settings and preferences
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Account-level permissions and roles
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MembershipAccountsConfigurations MembershipAccountsConfigurations
+        {
+            get { return this._membershipAccountsConfigurations; }
+            set { this._membershipAccountsConfigurations = value; }
+        }
+
+        // Check to see if MembershipAccountsConfigurations property is set
+        internal bool IsSetMembershipAccountsConfigurations()
+        {
+            return this._membershipAccountsConfigurations != null;
         }
 
         /// <summary>
@@ -270,8 +308,8 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// Response element for GetMembership that provides the configured region for managing
-        /// the membership.
+        /// Response element for GetMembership that provides the region configured to manage the
+        /// membership.
         /// </para>
         /// </summary>
         public AwsRegion Region
