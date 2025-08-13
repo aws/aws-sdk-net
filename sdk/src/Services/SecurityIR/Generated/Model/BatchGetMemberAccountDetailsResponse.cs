@@ -40,7 +40,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// The response element providing errors messages for requests to GetMembershipAccountDetails.
+        /// The response element providing error messages for requests to GetMembershipAccountDetails.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

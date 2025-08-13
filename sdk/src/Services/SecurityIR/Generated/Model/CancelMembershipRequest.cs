@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelMembership operation.
-    /// Grants permissions to cancel an existing membership.
+    /// Cancels an existing membership.
     /// </summary>
     public partial class CancelMembershipRequest : AmazonSecurityIRRequest
     {

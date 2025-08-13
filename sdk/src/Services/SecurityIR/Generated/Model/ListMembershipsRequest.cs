@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberships operation.
-    /// Grants permission to query the memberships a principal has access to.
+    /// Returns the memberships that the calling principal can access.
     /// </summary>
     public partial class ListMembershipsRequest : AmazonSecurityIRRequest
     {
@@ -60,7 +60,9 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional element.
+        /// An optional string that, if supplied, must be copied from the output of a previous
+        /// call to ListMemberships. When provided in this manner, the API fetches the next page
+        /// of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]

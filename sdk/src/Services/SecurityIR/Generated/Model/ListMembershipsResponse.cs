@@ -59,7 +59,8 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional element.
+        /// An optional string that, if supplied on subsequent calls to ListMemberships, allows
+        /// the API to fetch the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

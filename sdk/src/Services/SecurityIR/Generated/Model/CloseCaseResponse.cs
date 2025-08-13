@@ -41,7 +41,7 @@ namespace Amazon.SecurityIR.Model
         /// Gets and sets the property CaseStatus. 
         /// <para>
         /// A response element providing responses for requests to CloseCase. This element responds
-        /// with the case status following the action. 
+        /// <c>Closed </c> if successful. 
         /// </para>
         /// </summary>
         public CaseStatus CaseStatus
@@ -60,7 +60,7 @@ namespace Amazon.SecurityIR.Model
         /// Gets and sets the property ClosedDate. 
         /// <para>
         /// A response element providing responses for requests to CloseCase. This element responds
-        /// with the case closure date following the action. 
+        /// with the ISO-8601 formatted timestamp of the moment when the case was closed. 
         /// </para>
         /// </summary>
         public DateTime ClosedDate

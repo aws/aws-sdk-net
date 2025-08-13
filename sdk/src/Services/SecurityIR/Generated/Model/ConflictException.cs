@@ -130,7 +130,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Element providing the ID of the resource affected.
+        /// The ID of the conflicting resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,7 +149,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Element providing the type of the resource affected.
+        /// The type of the conflicting resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

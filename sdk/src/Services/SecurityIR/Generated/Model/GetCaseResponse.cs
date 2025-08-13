@@ -301,8 +301,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property PendingAction. 
         /// <para>
-        /// Response element for GetCase that provides identifies the case is waiting on customer
-        /// input.
+        /// Response element for GetCase that identifies the case is waiting on customer input.
         /// </para>
         /// </summary>
         public PendingAction PendingAction
@@ -338,8 +337,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ResolverType. 
         /// <para>
-        /// Response element for GetCase that provides the current resolver types. Options include
-        /// <c> self-supported | AWS-supported</c>. 
+        /// Response element for GetCase that provides the current resolver types.
         /// </para>
         /// </summary>
         public ResolverType ResolverType

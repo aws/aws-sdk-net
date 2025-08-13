@@ -60,7 +60,8 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional request elements.
+        /// An optional string that, if supplied on subsequent calls to ListComments, allows the
+        /// API to fetch the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

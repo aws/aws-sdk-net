@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Grants permission to remove a tag(s) from a designate resource.
+    /// Removes a tag(s) from a designate resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonSecurityIRRequest
     {

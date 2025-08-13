@@ -31,7 +31,15 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetMemberAccountDetails operation.
-    /// Grants permission to view an existing membership.
+    /// Provides information on whether the supplied account IDs are associated with a membership.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+    /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+    /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchGetMemberAccountDetailsRequest : AmazonSecurityIRRequest
     {
@@ -44,6 +52,13 @@ namespace Amazon.SecurityIR.Model
         /// Optional element to query the membership relationship status to a provided list of
         /// account IDs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> AccountIds

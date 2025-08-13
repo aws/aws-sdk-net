@@ -130,7 +130,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property FieldList. 
         /// <para>
-        /// Element that provides the list of field(s) that caused the error, if applicable.
+        /// The fields which lead to the exception.
         /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList
@@ -148,7 +148,7 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// Element that provides the reason the request failed validation.
+        /// The reason for the exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

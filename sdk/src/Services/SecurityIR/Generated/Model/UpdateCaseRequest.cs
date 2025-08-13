@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCase operation.
-    /// Grants permission to update an existing case.
+    /// Updates an existing case.
     /// </summary>
     public partial class UpdateCaseRequest : AmazonSecurityIRRequest
     {
@@ -132,6 +132,13 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Optional element for UpdateCase to provide content to add accounts impacted.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<string> ImpactedAccountsToAdd
@@ -151,6 +158,13 @@ namespace Amazon.SecurityIR.Model
         /// <para>
         /// Optional element for UpdateCase to provide content to add accounts impacted.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<string> ImpactedAccountsToDelete

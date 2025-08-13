@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the CloseCase operation.
-    /// Grants permission to close an existing case.
+    /// Closes an existing case.
     /// </summary>
     public partial class CloseCaseRequest : AmazonSecurityIRRequest
     {

@@ -86,6 +86,17 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMembershipAccountsConfigurationsUpdate())
+                {
+                    context.Writer.WritePropertyName("membershipAccountsConfigurationsUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MembershipAccountsConfigurationsUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MembershipAccountsConfigurationsUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMembershipName())
                 {
                     context.Writer.WritePropertyName("membershipName");
@@ -106,6 +117,12 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetUndoMembershipCancellation())
+                {
+                    context.Writer.WritePropertyName("undoMembershipCancellation");
+                    context.Writer.Write(publicRequest.UndoMembershipCancellation);
                 }
 
                 writer.WriteObjectEnd();

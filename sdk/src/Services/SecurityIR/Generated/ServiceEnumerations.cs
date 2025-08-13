@@ -39,6 +39,10 @@ namespace Amazon.SecurityIR
         /// </summary>
         public static readonly AwsRegion ApEast1 = new AwsRegion("ap-east-1");
         /// <summary>
+        /// Constant ApEast2 for AwsRegion
+        /// </summary>
+        public static readonly AwsRegion ApEast2 = new AwsRegion("ap-east-2");
+        /// <summary>
         /// Constant ApNortheast1 for AwsRegion
         /// </summary>
         public static readonly AwsRegion ApNortheast1 = new AwsRegion("ap-northeast-1");
@@ -498,6 +502,10 @@ namespace Amazon.SecurityIR
         /// Constant Disassociated for MembershipAccountRelationshipStatus
         /// </summary>
         public static readonly MembershipAccountRelationshipStatus Disassociated = new MembershipAccountRelationshipStatus("Disassociated");
+        /// <summary>
+        /// Constant Unassociated for MembershipAccountRelationshipStatus
+        /// </summary>
+        public static readonly MembershipAccountRelationshipStatus Unassociated = new MembershipAccountRelationshipStatus("Unassociated");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -544,6 +552,10 @@ namespace Amazon.SecurityIR
         /// Constant Organization for MembershipAccountRelationshipType
         /// </summary>
         public static readonly MembershipAccountRelationshipType Organization = new MembershipAccountRelationshipType("Organization");
+        /// <summary>
+        /// Constant Unrelated for MembershipAccountRelationshipType
+        /// </summary>
+        public static readonly MembershipAccountRelationshipType Unrelated = new MembershipAccountRelationshipType("Unrelated");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

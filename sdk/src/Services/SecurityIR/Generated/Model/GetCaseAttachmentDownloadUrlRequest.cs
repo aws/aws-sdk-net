@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCaseAttachmentDownloadUrl operation.
-    /// Grants permission to obtain an Amazon S3 presigned URL to download an attachment.
+    /// Returns a Pre-Signed URL for uploading attachments into a case.
     /// </summary>
     public partial class GetCaseAttachmentDownloadUrlRequest : AmazonSecurityIRRequest
     {
