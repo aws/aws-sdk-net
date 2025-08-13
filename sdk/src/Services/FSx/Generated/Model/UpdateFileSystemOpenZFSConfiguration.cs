@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         private bool? _copyTagsToVolumes;
         private string _dailyAutomaticBackupStartTime;
         private DiskIopsConfiguration _diskIopsConfiguration;
+        private string _endpointIpv6AddressRange;
         private OpenZFSReadCacheConfiguration _readCacheConfiguration;
         private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
@@ -162,6 +163,29 @@ namespace Amazon.FSx.Model
         internal bool IsSetDiskIopsConfiguration()
         {
             return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointIpv6AddressRange. 
+        /// <para>
+        /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your
+        /// file system will be created. By default in the Amazon FSx API and Amazon FSx console,
+        /// Amazon FSx selects an available /118 IP address range for you from one of the VPC's
+        /// CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+        /// in the same VPC/route tables, as long as they don't overlap with any subnet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=43)]
+        public string EndpointIpv6AddressRange
+        {
+            get { return this._endpointIpv6AddressRange; }
+            set { this._endpointIpv6AddressRange = value; }
+        }
+
+        // Check to see if EndpointIpv6AddressRange property is set
+        internal bool IsSetEndpointIpv6AddressRange()
+        {
+            return this._endpointIpv6AddressRange != null;
         }
 
         /// <summary>

@@ -96,6 +96,7 @@ namespace Amazon.FSx.Model
         private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
+        private NetworkType _networkType;
         private CreateFileSystemOntapConfiguration _ontapConfiguration;
         private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -224,6 +225,27 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreConfiguration()
         {
             return this._lustreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the Amazon FSx file system that you are creating. Valid values
+        /// are <c>IPV4</c> (which supports IPv4 only) and <c>DUAL</c> (for dual-stack mode, which
+        /// supports both IPv4 and IPv6). The default is <c>IPV4</c>. Supported only for Amazon
+        /// FSx for OpenZFS file systems.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
