@@ -46,6 +46,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccountPools())
+            {
+                context.Writer.WritePropertyName("accountPools");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAccountPoolsListValue in requestObject.AccountPools)
+                {
+                        context.Writer.WriteStringValue(requestObjectAccountPoolsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAwsAccount())
             {
                 context.Writer.WritePropertyName("awsAccount");

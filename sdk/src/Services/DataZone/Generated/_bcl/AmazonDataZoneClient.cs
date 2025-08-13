@@ -854,6 +854,95 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateAccountPool
+
+
+        /// <summary>
+        /// Creates an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
+        public virtual CreateAccountPoolResponse CreateAccountPool(CreateAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccountPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
+        public virtual Task<CreateAccountPoolResponse> CreateAccountPoolAsync(CreateAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAccountPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAsset
 
 
@@ -3084,6 +3173,83 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteAccountPool
+
+
+        /// <summary>
+        /// Deletes an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
+        public virtual DeleteAccountPoolResponse DeleteAccountPool(DeleteAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
+        public virtual Task<DeleteAccountPoolResponse> DeleteAccountPoolAsync(DeleteAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccountPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAsset
 
 
@@ -5129,6 +5295,83 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateEnvironmentRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccountPool
+
+
+        /// <summary>
+        /// Gets the details of the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
+        public virtual GetAccountPoolResponse GetAccountPool(GetAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the details of the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
+        public virtual Task<GetAccountPoolResponse> GetAccountPoolAsync(GetAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccountPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7799,6 +8042,154 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = GetUserProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetUserProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAccountPools
+
+
+        /// <summary>
+        /// Lists existing account pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountPools service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountPools service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
+        public virtual ListAccountPoolsResponse ListAccountPools(ListAccountPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountPoolsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists existing account pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountPools service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
+        public virtual Task<ListAccountPoolsResponse> ListAccountPoolsAsync(ListAccountPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAccountPoolsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAccountsInAccountPool
+
+
+        /// <summary>
+        /// Lists the accounts in the specified account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountsInAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountsInAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
+        public virtual ListAccountsInAccountPoolResponse ListAccountsInAccountPool(ListAccountsInAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountsInAccountPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the accounts in the specified account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountsInAccountPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAccountsInAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
+        public virtual Task<ListAccountsInAccountPoolResponse> ListAccountsInAccountPoolAsync(ListAccountsInAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAccountsInAccountPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11541,6 +11932,95 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountPool
+
+
+        /// <summary>
+        /// Updates the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
+        public virtual UpdateAccountPoolResponse UpdateAccountPool(UpdateAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountPoolResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
+        public virtual Task<UpdateAccountPoolResponse> UpdateAccountPoolAsync(UpdateAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAccountPoolResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnvironmentConfigurationUserParameter Object
+    /// Response Unmarshaller for AccountInfo Object
     /// </summary>  
-    public class EnvironmentConfigurationUserParameterUnmarshaller : IJsonUnmarshaller<EnvironmentConfigurationUserParameter, JsonUnmarshallerContext>
+    public class AccountInfoUnmarshaller : IJsonUnmarshaller<AccountInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EnvironmentConfigurationUserParameter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AccountInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            EnvironmentConfigurationUserParameter unmarshalledObject = new EnvironmentConfigurationUserParameter();
+            AccountInfo unmarshalledObject = new AccountInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentConfigurationName", targetDepth))
+                if (context.TestExpression("awsAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentConfigurationName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentId", targetDepth))
+                if (context.TestExpression("awsAccountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AwsAccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentParameters", targetDepth))
+                if (context.TestExpression("supportedRegions", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<EnvironmentParameter, EnvironmentParameterUnmarshaller>(EnvironmentParameterUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("environmentResolvedAccount", targetDepth))
-                {
-                    var unmarshaller = EnvironmentResolvedAccountUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentResolvedAccount = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static EnvironmentConfigurationUserParameterUnmarshaller _instance = new EnvironmentConfigurationUserParameterUnmarshaller();        
+        private static AccountInfoUnmarshaller _instance = new AccountInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnvironmentConfigurationUserParameterUnmarshaller Instance
+        public static AccountInfoUnmarshaller Instance
         {
             get
             {

@@ -34,6 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class EnvironmentConfiguration
     {
+        private List<string> _accountPools = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AwsAccount _awsAccount;
         private Region _awsRegion;
         private EnvironmentConfigurationParametersDetails _configurationParameters;
@@ -45,12 +46,35 @@ namespace Amazon.DataZone.Model
         private string _name;
 
         /// <summary>
+        /// Gets and sets the property AccountPools. 
+        /// <para>
+        /// The account pools used by a custom project profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> AccountPools
+        {
+            get { return this._accountPools; }
+            set { this._accountPools = value; }
+        }
+
+        // Check to see if AccountPools property is set
+        internal bool IsSetAccountPools()
+        {
+            return this._accountPools != null && (this._accountPools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsAccount. 
         /// <para>
         /// The Amazon Web Services account of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AwsAccount AwsAccount
         {
             get { return this._awsAccount; }
@@ -69,7 +93,6 @@ namespace Amazon.DataZone.Model
         /// The Amazon Web Services Region of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Region AwsRegion
         {
             get { return this._awsRegion; }
