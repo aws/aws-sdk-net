@@ -43,7 +43,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// Configures the number of resource instances to use while running an Amazon Braket
-        /// job on Amazon Braket. The default value is 1.
+        /// hybrid job on Amazon Braket. The default value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -62,7 +62,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Configures the type resource instances to use while running an Amazon Braket hybrid
+        /// Configures the type of resource instances to use while running an Amazon Braket hybrid
         /// job.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInGb. 
         /// <para>
-        /// The size of the storage volume, in GB, that user wants to provision.
+        /// The size of the storage volume, in GB, to provision.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -31,7 +31,7 @@ namespace Amazon.Braket.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJob operation.
-    /// Retrieves the specified Amazon Braket job.
+    /// Retrieves the specified Amazon Braket hybrid job.
     /// </summary>
     public partial class GetJobRequest : AmazonBraketRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property AdditionalAttributeNames. 
         /// <para>
-        /// A list of attributes to return information for.
+        /// A list of attributes to return additional information for. Only the QueueInfo additional
+        /// attribute name is currently supported. 
         /// </para>
         /// </summary>
         public List<string> AdditionalAttributeNames
@@ -59,7 +60,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the job to retrieve.
+        /// The ARN of the hybrid job to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

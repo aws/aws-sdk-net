@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// A filter used to search for Amazon Braket jobs.
+    /// A filter used to search for Amazon Braket hybrid jobs.
     /// </summary>
     public partial class SearchJobsFilter
     {
@@ -41,7 +41,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to use for the jobs filter.
+        /// The name of the hybrid job parameter to filter based on. Filter name can be either
+        /// <c>jobArn</c> or <c>createdAt</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +61,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// An operator to use for the jobs filter.
+        /// An operator to use for the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +80,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use for the jobs filter.
+        /// The values used to filter hybrid jobs based on the filter name and operator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

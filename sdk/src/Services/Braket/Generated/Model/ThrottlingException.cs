@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The throttling rate limit is met.
+    /// The API throttling rate limit is exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

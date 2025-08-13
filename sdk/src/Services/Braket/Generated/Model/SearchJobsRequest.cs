@@ -31,7 +31,7 @@ namespace Amazon.Braket.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchJobs operation.
-    /// Searches for Amazon Braket jobs that match the specified filter values.
+    /// Searches for Amazon Braket hybrid jobs that match the specified filter values.
     /// </summary>
     public partial class SearchJobsRequest : AmazonBraketRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filter values to use when searching for a job.
+        /// Array of SearchJobsFilter objects to use when searching for hybrid jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -81,7 +81,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.
+        /// from the previous request to continue search where the previous request ended.
         /// </para>
         /// </summary>
         public string NextToken

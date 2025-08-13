@@ -41,7 +41,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token used for pagination of results, or null if there are no additional results.
-        /// Use the token value in a subsequent request to continue results where the previous
+        /// Use the token value in a subsequent request to continue search where the previous
         /// request ended.
         /// </para>
         /// </summary>
@@ -60,7 +60,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTasks. 
         /// <para>
-        /// An array of <c>QuantumTaskSummary</c> objects for tasks that match the specified filters.
+        /// An array of <c>QuantumTaskSummary</c> objects for quantum tasks that match the specified
+        /// filters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

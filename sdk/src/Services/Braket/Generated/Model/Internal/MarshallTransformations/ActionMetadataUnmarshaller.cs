@@ -35,59 +35,66 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for ActionMetadata Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class ActionMetadataUnmarshaller : IUnmarshaller<ActionMetadata, XmlUnmarshallerContext>, IUnmarshaller<ActionMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        ActionMetadata IUnmarshaller<ActionMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        /// <returns>The unmarshalled object</returns>
+        public ActionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            ActionMetadata unmarshalledObject = new ActionMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("programSetValidationFailures", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ProgramSetValidationFailure, ProgramSetValidationFailureUnmarshaller>(ProgramSetValidationFailureUnmarshaller.Instance);
-                    unmarshalledObject.ProgramSetValidationFailures = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("actionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executableCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ExecutableCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("programCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ProgramCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+
+        private static ActionMetadataUnmarshaller _instance = new ActionMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static ActionMetadataUnmarshaller Instance
         {
             get
             {

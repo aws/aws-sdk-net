@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CancellationStatus. 
         /// <para>
-        /// The status of the cancellation request.
+        /// The status of the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTaskArn. 
         /// <para>
-        /// The ARN of the task.
+        /// The ARN of the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

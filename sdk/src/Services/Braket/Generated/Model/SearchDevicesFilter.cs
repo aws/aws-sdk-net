@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The filter to use for searching devices.
+    /// The filter used to search for devices.
     /// </summary>
     public partial class SearchDevicesFilter
     {
@@ -40,7 +40,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to use to filter results.
+        /// The name of the device parameter to filter based on. Only <c>deviceArn</c> filter
+        /// name is currently supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -59,7 +60,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use to filter results.
+        /// The values used to filter devices based on the filter name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

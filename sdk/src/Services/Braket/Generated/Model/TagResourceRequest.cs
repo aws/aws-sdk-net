@@ -60,7 +60,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specify the tags to add to the resource.
+        /// Specify the tags to add to the resource. Tags can be specified as a key-value map.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

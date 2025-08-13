@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the Amazon Braket job created.
+        /// The ARN of the Amazon Braket hybrid job created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

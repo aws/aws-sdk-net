@@ -35,59 +35,66 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for ProgramSetValidationFailure Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class ProgramSetValidationFailureUnmarshaller : IUnmarshaller<ProgramSetValidationFailure, XmlUnmarshallerContext>, IUnmarshaller<ProgramSetValidationFailure, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        ProgramSetValidationFailure IUnmarshaller<ProgramSetValidationFailure, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        /// <returns>The unmarshalled object</returns>
+        public ProgramSetValidationFailure Unmarshall(JsonUnmarshallerContext context)
         {
+            ProgramSetValidationFailure unmarshalledObject = new ProgramSetValidationFailure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("programSetValidationFailures", targetDepth))
+                if (context.TestExpression("errors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ProgramSetValidationFailure, ProgramSetValidationFailureUnmarshaller>(ProgramSetValidationFailureUnmarshaller.Instance);
-                    unmarshalledObject.ProgramSetValidationFailures = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("inputsIndex", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.InputsIndex = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("programIndex", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ProgramIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+
+        private static ProgramSetValidationFailureUnmarshaller _instance = new ProgramSetValidationFailureUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static ProgramSetValidationFailureUnmarshaller Instance
         {
             get
             {

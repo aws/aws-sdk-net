@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Details about the type and time events occurred related to the Amazon Braket job.
+    /// Details about the type and time events that occurred related to the Amazon Braket
+    /// hybrid job.
     /// </summary>
     public partial class JobEventDetails
     {
@@ -41,7 +42,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event that occurred related to the Amazon Braket job.
+        /// The type of event that occurred related to the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         public JobEventType EventType
@@ -59,7 +60,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message describing the event that occurred related to the Amazon Braket job.
+        /// A message describing the event that occurred related to the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2500)]
@@ -78,7 +79,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property TimeOfEvent. 
         /// <para>
-        /// The type of event that occurred related to the Amazon Braket job.
+        /// The time of the event that occurred related to the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         public DateTime TimeOfEvent

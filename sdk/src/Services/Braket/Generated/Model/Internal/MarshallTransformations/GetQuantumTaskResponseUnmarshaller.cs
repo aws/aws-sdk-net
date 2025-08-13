@@ -52,6 +52,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actionMetadata", targetDepth))
+                {
+                    var unmarshaller = ActionMetadataUnmarshaller.Instance;
+                    response.ActionMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("associations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Association, AssociationUnmarshaller>(AssociationUnmarshaller.Instance);
@@ -92,6 +98,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numSuccessfulShots", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.NumSuccessfulShots = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outputS3Bucket", targetDepth))
