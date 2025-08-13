@@ -73,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectTaggingRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
             if (publicRequest.IsSetVersionId())
                 request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";

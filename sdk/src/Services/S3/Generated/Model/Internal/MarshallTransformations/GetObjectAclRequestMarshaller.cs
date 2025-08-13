@@ -73,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetKey())
                 throw new AmazonS3Exception("Request object does not have required field Key set");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";

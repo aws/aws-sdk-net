@@ -77,7 +77,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "AbortMultipartUploadRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
+            if (string.IsNullOrEmpty(publicRequest.UploadId))
+                throw new System.ArgumentException("UploadId is a required property and must be set before making this call.", "AbortMultipartUploadRequest.UploadId");
             if (publicRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";

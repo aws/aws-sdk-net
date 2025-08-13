@@ -259,7 +259,24 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach(var member in operation.RequestQueryStringMembers)
 			{
-#>			
+                if (member.IsRequired)
+                {
+                    if (member.Shape.IsString)
+                    {
+#>
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.Name#>Request.<#=member.PropertyName#>");
+<#+
+                    }
+                    else
+                    {
+#>
+            if (<#=variableName#>.<#=member.PropertyName#> == null)
+                throw new System.ArgumentException("<#=member.PropertyName#> is a required property and must be set before making this call.", "<#=operation.Name#>Request.<#=member.PropertyName#>");
+<#+
+                    }
+                }
+#>
 			if (<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#+
                 if (member.CustomMarshallerTransformation != null)

@@ -120,53 +120,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     if (publicRequestConfigurationRulesValue.Filter != null)
                                     {
-                                        xmlWriter.WriteStartElement("Filter");
-                                        if (publicRequestConfigurationRulesValue.Filter.And != null)
+                                        if (publicRequestConfigurationRulesValue.Filter.LifecycleFilterPredicate != null)
                                         {
-                                            xmlWriter.WriteStartElement("And");
-                                            if(publicRequestConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
-                                                xmlWriter.WriteElementString("ObjectSizeGreaterThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan.Value));
-                                            if(publicRequestConfigurationRulesValue.Filter.And.IsSetObjectSizeLessThan())
-                                                xmlWriter.WriteElementString("ObjectSizeLessThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.And.ObjectSizeLessThan.Value));
-                                            if(publicRequestConfigurationRulesValue.Filter.And.IsSetPrefix())
-                                                xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.And.Prefix));
-                                            var publicRequestConfigurationRulesValueFilterAndTags = publicRequestConfigurationRulesValue.Filter.And.Tags;
-                                            if (publicRequestConfigurationRulesValueFilterAndTags != null && (publicRequestConfigurationRulesValueFilterAndTags.Count > 0 || !AWSConfigs.InitializeCollections)) 
-                                            {
-                                                foreach (var publicRequestConfigurationRulesValueFilterAndTagsValue in publicRequestConfigurationRulesValueFilterAndTags) 
-                                                {
-                                                if (publicRequestConfigurationRulesValueFilterAndTagsValue != null)
-                                                {
-                                                    xmlWriter.WriteStartElement("Tag");
-                                                    if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetKey())
-                                                        xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Key));
-                                                    if(publicRequestConfigurationRulesValueFilterAndTagsValue.IsSetValue())
-                                                        xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValueFilterAndTagsValue.Value));
-                                                    xmlWriter.WriteEndElement();
-                                                }
-                                                }            
-                                            }
+                                            xmlWriter.WriteStartElement("Filter");
+                                            publicRequestConfigurationRulesValue.Filter.LifecycleFilterPredicate.Accept(new LifecycleFilterPredicateMarshallVisitor(xmlWriter));
                                             xmlWriter.WriteEndElement();
                                         }
-                                        if(publicRequestConfigurationRulesValue.Filter.IsSetObjectSizeGreaterThan())
-                                            xmlWriter.WriteElementString("ObjectSizeGreaterThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.ObjectSizeGreaterThan.Value));
-                                        if(publicRequestConfigurationRulesValue.Filter.IsSetObjectSizeLessThan())
-                                            xmlWriter.WriteElementString("ObjectSizeLessThan", StringUtils.FromLong(publicRequestConfigurationRulesValue.Filter.ObjectSizeLessThan.Value));
-                                        if(publicRequestConfigurationRulesValue.Filter.IsSetPrefix())
-                                            xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Prefix));
-                                        if (publicRequestConfigurationRulesValue.Filter.Tag != null)
-                                        {
-                                            xmlWriter.WriteStartElement("Tag");
-                                            if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetKey())
-                                                xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Key));
-                                            if(publicRequestConfigurationRulesValue.Filter.Tag.IsSetValue())
-                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestConfigurationRulesValue.Filter.Tag.Value));
-                                            xmlWriter.WriteEndElement();
-                                        }
-                                        xmlWriter.WriteEndElement();
                                     }
                                         }
-
                                     }
                             if(publicRequestConfigurationRulesValue.IsSetId())
                                 xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));

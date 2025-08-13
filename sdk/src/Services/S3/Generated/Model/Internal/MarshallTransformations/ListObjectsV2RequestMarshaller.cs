@@ -75,25 +75,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListObjectsV2Request.BucketName");
-            
             if (publicRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
             if (publicRequest.IsSetDelimiter())
                 request.Parameters.Add("delimiter", StringUtils.FromString(publicRequest.Delimiter));
-            
             if (publicRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", StringUtils.FromString(publicRequest.Encoding));
-            
             if (publicRequest.IsSetFetchOwner())
                 request.Parameters.Add("fetch-owner", StringUtils.FromBool(publicRequest.FetchOwner));
-            
             if (publicRequest.IsSetMaxKeys())
                 request.Parameters.Add("max-keys", StringUtils.FromInt(publicRequest.MaxKeys));
-            
             if (publicRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
-            
             if (publicRequest.IsSetStartAfter())
                 request.Parameters.Add("start-after", StringUtils.FromString(publicRequest.StartAfter));
             request.ResourcePath = "/";

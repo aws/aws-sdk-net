@@ -53,6 +53,7 @@ namespace Amazon.S3.Model
         /// that owns the source object.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public AccessControlTranslation AccessControlTranslation
         {
             get { return this._accessControlTranslation; }
@@ -76,6 +77,7 @@ namespace Amazon.S3.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -95,6 +97,7 @@ namespace Amazon.S3.Model
         /// results.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketArn
         {
             get { return this._bucketArn; }
@@ -114,6 +117,7 @@ namespace Amazon.S3.Model
         /// is specified, you must specify this element.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public EncryptionConfiguration EncryptionConfiguration
         {
             get { return this._encryptionConfiguration; }
@@ -133,6 +137,7 @@ namespace Amazon.S3.Model
         /// metrics and events. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Metrics Metrics
         {
             get { return this._metrics; }
@@ -153,6 +158,7 @@ namespace Amazon.S3.Model
         /// Must be specified together with a <c>Metrics</c> block. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReplicationTime ReplicationTime
         {
             get { return this._replicationTime; }
@@ -182,6 +188,7 @@ namespace Amazon.S3.Model
         ///  <c>FSX_OPENZFS</c> is not an accepted value when replicating objects.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3StorageClass StorageClass
         {
             get { return this._storageClass; }

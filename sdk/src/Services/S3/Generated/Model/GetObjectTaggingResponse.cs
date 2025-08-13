@@ -48,6 +48,7 @@ namespace Amazon.S3.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Tag> Tagging
         {
             get { return this._tagging; }
@@ -66,6 +67,7 @@ namespace Amazon.S3.Model
         /// The versionId of the object for which you got the tagging information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string VersionId
         {
             get { return this._versionId; }

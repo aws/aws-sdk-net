@@ -107,28 +107,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectMetadataRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
             if (publicRequest.IsSetPartNumber())
                 request.AddSubResource("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
-            
             if (publicRequest.IsSetResponseCacheControl())
                 request.AddSubResource("response-cache-control", StringUtils.FromString(publicRequest.ResponseCacheControl));
-            
             if (publicRequest.IsSetResponseContentDisposition())
                 request.AddSubResource("response-content-disposition", StringUtils.FromString(publicRequest.ResponseContentDisposition));
-            
             if (publicRequest.IsSetResponseContentEncoding())
                 request.AddSubResource("response-content-encoding", StringUtils.FromString(publicRequest.ResponseContentEncoding));
-            
             if (publicRequest.IsSetResponseContentLanguage())
                 request.AddSubResource("response-content-language", StringUtils.FromString(publicRequest.ResponseContentLanguage));
-            
             if (publicRequest.IsSetResponseContentType())
                 request.AddSubResource("response-content-type", StringUtils.FromString(publicRequest.ResponseContentType));
-            
             if (publicRequest.IsSetResponseExpires())
                 request.AddSubResource("response-expires", StringUtils.FromDateTimeToRFC822(publicRequest.ResponseExpires));
-            
             if (publicRequest.IsSetVersionId())
                 request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";

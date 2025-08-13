@@ -75,22 +75,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListVersionsRequest.BucketName");
-            
             if (publicRequest.IsSetDelimiter())
                 request.Parameters.Add("delimiter", StringUtils.FromString(publicRequest.Delimiter));
-            
             if (publicRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", StringUtils.FromString(publicRequest.Encoding));
-            
             if (publicRequest.IsSetKeyMarker())
                 request.Parameters.Add("key-marker", StringUtils.FromString(publicRequest.KeyMarker));
-            
             if (publicRequest.IsSetMaxKeys())
                 request.Parameters.Add("max-keys", StringUtils.FromInt(publicRequest.MaxKeys));
-            
             if (publicRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
-            
             if (publicRequest.IsSetVersionIdMarker())
                 request.Parameters.Add("version-id-marker", StringUtils.FromString(publicRequest.VersionIdMarker));
             request.ResourcePath = "/";

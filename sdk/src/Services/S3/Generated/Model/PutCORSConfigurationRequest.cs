@@ -121,6 +121,7 @@ namespace Amazon.S3.Model
         /// Specifies the bucket impacted by the <c>cors</c>configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -149,6 +150,7 @@ namespace Amazon.S3.Model
         /// parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ChecksumAlgorithm ChecksumAlgorithm
         {
             get { return this._checksumAlgorithm; }
@@ -169,6 +171,7 @@ namespace Amazon.S3.Model
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CORSConfiguration Configuration
         {
             get { return this._configuration; }
@@ -195,6 +198,7 @@ namespace Amazon.S3.Model
         /// Web Services SDKs, this field is calculated automatically.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ContentMD5
         {
             get { return this._contentMD5; }
@@ -215,6 +219,7 @@ namespace Amazon.S3.Model
         /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ExpectedBucketOwner
         {
             get { return this._expectedBucketOwner; }

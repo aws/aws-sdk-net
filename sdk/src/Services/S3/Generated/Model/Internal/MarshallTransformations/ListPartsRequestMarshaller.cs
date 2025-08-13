@@ -87,13 +87,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "ListPartsRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
-            
             if (publicRequest.IsSetMaxParts())
                 request.AddSubResource("max-parts", StringUtils.FromInt(publicRequest.MaxParts));
-            
             if (publicRequest.IsSetPartNumberMarker())
                 request.AddSubResource("part-number-marker", StringUtils.FromString(publicRequest.PartNumberMarker));
-            
+            if (string.IsNullOrEmpty(publicRequest.UploadId))
+                throw new System.ArgumentException("UploadId is a required property and must be set before making this call.", "ListPartsRequest.UploadId");
             if (publicRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";

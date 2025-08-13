@@ -1442,6 +1442,7 @@ namespace ServiceClientGenerator
             public const string AccessModifierKey = "accessModifier";
             public const string InjectXmlUnmarshallCodeKey = "injectXmlUnmarshallCode";
             public const string SkipContextTestExpressionUnmarshallingLogicKey = "skipContextTestExpressionUnmarshallingLogic";
+            public const string GenerateRequiredFieldCheckKey = "generateRequiredFieldCheck";
 
             private readonly string _modelPropertyName; // for debug inspection assist
             private readonly JsonData _modifierData;
@@ -1452,6 +1453,7 @@ namespace ServiceClientGenerator
                 this._modifierData = modifierData;
                 _injectXmlUnmarshallCode = ParseInjectXmlUnmarshallCode();
             }
+            public string OriginalPropertyName { get { return _modelPropertyName; } }
 
             // The access modifier for the property. Defaults to public if not set in the customization.
             public string AccessModifier
@@ -1570,7 +1572,13 @@ namespace ServiceClientGenerator
             ///   ]
             /// }
             /// </summary>
-        public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
+            public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
+
+            /// <summary>
+            /// If this is set, a check for the required field will be generated in the request class.
+            /// </summary>
+            public bool GenerateRequiredFieldCheck { get { return _modifierData[GenerateRequiredFieldCheckKey] != null && _modifierData[GenerateRequiredFieldCheckKey].IsBoolean ? (bool)_modifierData[GenerateRequiredFieldCheckKey] : false; } }
+
         }
 
         #endregion

@@ -45,6 +45,7 @@ namespace Amazon.S3.Model
         /// Service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public SseKmsEncryptedObjectsStatus SseKmsEncryptedObjectsStatus
         {
             get { return this._sseKmsEncryptedObjectsStatus; }

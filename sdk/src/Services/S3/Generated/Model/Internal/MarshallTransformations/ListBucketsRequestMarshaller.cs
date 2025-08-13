@@ -57,16 +57,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
-            
             if (publicRequest.IsSetBucketRegion())
                 request.Parameters.Add("bucket-region", StringUtils.FromString(publicRequest.BucketRegion));
-            
             if (publicRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
             if (publicRequest.IsSetMaxBuckets())
                 request.Parameters.Add("max-buckets", StringUtils.FromInt(publicRequest.MaxBuckets));
-            
             if (publicRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", StringUtils.FromString(publicRequest.Prefix));
             request.ResourcePath = "/";

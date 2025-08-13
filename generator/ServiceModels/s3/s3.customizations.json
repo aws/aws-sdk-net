@@ -636,6 +636,84 @@
                     "EncodingType" : {"emitPropertyName" : "Encoding"}
                 }
             ]
+        },
+        "UploadPartCopyOutput" :{
+            "modify" : [
+                {
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                }
+            ]
+        },
+        "AnalyticsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : {"emitPropertyName" : "AnalyticsFilter"}
+                },
+                {
+                    "Id" : {"emitPropertyName" : "AnalyticsId"}
+                }
+            ],
+            "predicateListUnmarshallers":[
+                {
+                    "AnalyticsFilter": 
+                    {
+                        "predicateListUnmarshallerName": "AnalyticsPredicateListUnmarshaller",
+                        "filterPredicateName": "AnalyticsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "PutBucketAnalyticsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" : {"emitPropertyName" : "AnalyticsId"}
+                }
+            ]
+        },
+        "GetBucketAnalyticsConfigurationRequest" : {
+            "modify" :[
+                {
+                    "Id" : {"emitPropertyName" : "AnalyticsId"}
+                }
+            ]
+        },
+        "IntelligentTieringConfiguration":{
+            "modify" :[
+                {
+                    "Id" : {"emitPropertyName": "IntelligentTieringId"}
+                },
+                {
+                    "Filter" : {"emitPropertyName" :"IntelligentTieringFilter"}
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "IntelligentTieringFilter" :{
+                        "predicateListUnmarshallerName" : "IntelligentTieringPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "IntelligentTieringFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "PutBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id" : {"emitPropertyName" : "IntelligentTieringId"}
+                },
+                {
+                    "IntelligentTieringConfiguration" : {"generateRequiredFieldCheck" : true}
+                }
+            ]
+        },
+        "GetBucketIntelligentTieringConfigurationRequest" :{
+            "modify" :[
+                {
+                    "Id" : {"emitPropertyName" : "IntelligentTieringId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -896,6 +974,35 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             }
+        },
+        "UploadPartCopyRequest":{
+            "ServerSideEncryptionCustomerMethod" : {
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "CopySourceServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"                
+            },
+            "ETagToMatch":{
+                "Type" : "List<string>",
+                "Marshaller": "Amazon.Util.AWSSDKUtils.Join",
+                "Unmarshaller": "StringUnmarshaller"       
+            },
+            "ETagsToNotMatch" : {
+                "Type" : "List<string>",
+                "Marshaller" : "Amazon.Util.AWSSDKUtils.Join",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "AnalyticsS3BucketDestination":{
+            "Format": {
+                "Type":"string",
+                "Marshaller" :"StringUtils.FromString",
+                "StringUnmarshaller" : "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -974,12 +1081,27 @@
         ]
     },
     "excludeShapes":[
-        "NotificationConfiguration"
+        "NotificationConfiguration",
+        "CopyPartResult",
+        "AnalyticsAndOperator",
+        "AnalyticsFilter",
+        "IntelligentTieringFilter",
+        "IntelligentTieringAndOperator"
     ],
     "implementsVisitorPattern":{
         "LifecycleFilter":{
             "predicateName": "LifecycleFilterPredicate",
             "visitorName": "LifecycleFilterPredicateMarshallVisitor",
+            "visitorParam": "xmlWriter"
+        },
+        "AnalyticsFilter":{
+            "predicateName": "AnalyticsFilterPredicate",
+            "visitorName": "AnalyticsPredicateVisitor",
+            "visitorParam": "xmlWriter"
+            },
+        "IntelligentTieringFilter":{
+            "predicateName":"IntelligentTieringFilterPredicate",
+            "visitorName" :"IntelligentTieringPredicateVisitor",
             "visitorParam": "xmlWriter"
         }
     }

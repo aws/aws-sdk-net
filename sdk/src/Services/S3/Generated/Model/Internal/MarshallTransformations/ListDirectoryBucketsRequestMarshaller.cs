@@ -57,10 +57,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
-            
             if (publicRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", StringUtils.FromString(publicRequest.ContinuationToken));
-            
             if (publicRequest.IsSetMaxDirectoryBuckets())
                 request.Parameters.Add("max-directory-buckets", StringUtils.FromInt(publicRequest.MaxDirectoryBuckets));
             request.ResourcePath = "/";

@@ -71,6 +71,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ServerSideEncryptionMethod ServerSideEncryptionAlgorithm
         {
             get { return this._serverSideEncryptionAlgorithm; }
@@ -147,7 +148,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this._serverSideEncryptionKeyManagementServiceKeyId; }

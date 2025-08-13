@@ -23,7 +23,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Filter class for Metrics.
     /// </summary>
-    public class AnalyticsFilter
+    public partial class AnalyticsFilter
     {
         private AnalyticsFilterPredicate analyticsFilterPredicate;
 
