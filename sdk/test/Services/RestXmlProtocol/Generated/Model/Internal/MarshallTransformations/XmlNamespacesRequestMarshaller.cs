@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 xmlWriter.WriteStartElement("XmlNamespacesRequest", "http://foo.com");
                 if (publicRequest.Nested != null)
                 {
-                    xmlWriter.WriteStartElement("nested");
+                    xmlWriter.WriteStartElement("nested","http://foo.com");
                     if(publicRequest.Nested.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
                     var publicRequestNestedValues = publicRequest.Nested.Values;

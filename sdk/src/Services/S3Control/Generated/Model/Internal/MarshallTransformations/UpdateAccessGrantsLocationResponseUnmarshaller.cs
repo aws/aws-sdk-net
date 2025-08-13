@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateAccessGrantsLocation operation
     /// </summary>  
-    public class UpdateAccessGrantsLocationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class UpdateAccessGrantsLocationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             UpdateAccessGrantsLocationResponse response = new UpdateAccessGrantsLocationResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -101,7 +102,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -127,6 +127,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, UpdateAccessGrantsLocationResponse response);
 
         private static UpdateAccessGrantsLocationResponseUnmarshaller _instance = new UpdateAccessGrantsLocationResponseUnmarshaller();        
 

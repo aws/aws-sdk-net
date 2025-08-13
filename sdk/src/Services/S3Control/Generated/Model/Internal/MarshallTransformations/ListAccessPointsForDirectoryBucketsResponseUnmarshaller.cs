@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListAccessPointsForDirectoryBuckets operation
     /// </summary>  
-    public class ListAccessPointsForDirectoryBucketsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListAccessPointsForDirectoryBucketsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             ListAccessPointsForDirectoryBucketsResponse response = new ListAccessPointsForDirectoryBucketsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -87,7 +88,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -113,6 +113,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListAccessPointsForDirectoryBucketsResponse response);
 
         private static ListAccessPointsForDirectoryBucketsResponseUnmarshaller _instance = new ListAccessPointsForDirectoryBucketsResponseUnmarshaller();        
 

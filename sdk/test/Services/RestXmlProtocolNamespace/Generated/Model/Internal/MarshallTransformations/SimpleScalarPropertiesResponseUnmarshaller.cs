@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SimpleScalarProperties operation
     /// </summary>  
-    public class SimpleScalarPropertiesResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class SimpleScalarPropertiesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-Foo"))
                 response.Foo = context.ResponseData.GetHeaderValue("X-Foo");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -133,7 +134,6 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -159,6 +159,8 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolNamespaceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, SimpleScalarPropertiesResponse response);
 
         private static SimpleScalarPropertiesResponseUnmarshaller _instance = new SimpleScalarPropertiesResponseUnmarshaller();        
 

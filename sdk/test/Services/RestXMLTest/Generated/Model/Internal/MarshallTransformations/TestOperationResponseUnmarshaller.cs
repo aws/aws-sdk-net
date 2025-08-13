@@ -36,7 +36,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestOperation operation
     /// </summary>  
-    public class TestOperationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class TestOperationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         {
             TestOperationResponse response = new TestOperationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXMLTestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, TestOperationResponse response);
 
         private static TestOperationResponseUnmarshaller _instance = new TestOperationResponseUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateVPCAssociationAuthorization operation
     /// </summary>  
-    public class CreateVPCAssociationAuthorizationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateVPCAssociationAuthorizationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             CreateVPCAssociationAuthorizationResponse response = new CreateVPCAssociationAuthorizationResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -83,7 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -129,6 +129,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateVPCAssociationAuthorizationResponse response);
 
         private static CreateVPCAssociationAuthorizationResponseUnmarshaller _instance = new CreateVPCAssociationAuthorizationResponseUnmarshaller();        
 

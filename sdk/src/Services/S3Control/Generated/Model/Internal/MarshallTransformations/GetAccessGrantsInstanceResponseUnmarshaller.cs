@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetAccessGrantsInstance operation
     /// </summary>  
-    public class GetAccessGrantsInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetAccessGrantsInstanceResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             GetAccessGrantsInstanceResponse response = new GetAccessGrantsInstanceResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -107,7 +108,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -133,6 +133,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetAccessGrantsInstanceResponse response);
 
         private static GetAccessGrantsInstanceResponseUnmarshaller _instance = new GetAccessGrantsInstanceResponseUnmarshaller();        
 

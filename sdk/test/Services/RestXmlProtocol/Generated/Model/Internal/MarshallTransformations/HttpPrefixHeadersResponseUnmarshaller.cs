@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpPrefixHeaders operation
     /// </summary>  
-    public class HttpPrefixHeadersResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpPrefixHeadersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if(headersForFooMap.Count > 0)
                 response.FooMap = headersForFooMap;
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -93,6 +94,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpPrefixHeadersResponse response);
 
         private static HttpPrefixHeadersResponseUnmarshaller _instance = new HttpPrefixHeadersResponseUnmarshaller();        
 

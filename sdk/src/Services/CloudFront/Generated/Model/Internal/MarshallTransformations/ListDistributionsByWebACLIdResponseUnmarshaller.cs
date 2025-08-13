@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDistributionsByWebACLId operation
     /// </summary>  
-    public class ListDistributionsByWebACLIdResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListDistributionsByWebACLIdResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListDistributionsByWebACLIdResponse response = new ListDistributionsByWebACLIdResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -109,6 +109,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListDistributionsByWebACLIdResponse response);
 
         private static ListDistributionsByWebACLIdResponseUnmarshaller _instance = new ListDistributionsByWebACLIdResponseUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetMonitoringSubscription operation
     /// </summary>  
-    public class GetMonitoringSubscriptionResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetMonitoringSubscriptionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             GetMonitoringSubscriptionResponse response = new GetMonitoringSubscriptionResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -117,6 +117,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetMonitoringSubscriptionResponse response);
 
         private static GetMonitoringSubscriptionResponseUnmarshaller _instance = new GetMonitoringSubscriptionResponseUnmarshaller();        
 

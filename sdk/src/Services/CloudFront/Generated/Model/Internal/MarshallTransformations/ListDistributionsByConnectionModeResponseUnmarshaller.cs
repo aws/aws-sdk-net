@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDistributionsByConnectionMode operation
     /// </summary>  
-    public class ListDistributionsByConnectionModeResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListDistributionsByConnectionModeResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListDistributionsByConnectionModeResponse response = new ListDistributionsByConnectionModeResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -109,6 +109,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListDistributionsByConnectionModeResponse response);
 
         private static ListDistributionsByConnectionModeResponseUnmarshaller _instance = new ListDistributionsByConnectionModeResponseUnmarshaller();        
 

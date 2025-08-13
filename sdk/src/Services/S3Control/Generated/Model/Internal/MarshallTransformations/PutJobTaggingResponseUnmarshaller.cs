@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutJobTagging operation
     /// </summary>  
-    public class PutJobTaggingResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class PutJobTaggingResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             PutJobTaggingResponse response = new PutJobTaggingResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -88,6 +89,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutJobTaggingResponse response);
 
         private static PutJobTaggingResponseUnmarshaller _instance = new PutJobTaggingResponseUnmarshaller();        
 

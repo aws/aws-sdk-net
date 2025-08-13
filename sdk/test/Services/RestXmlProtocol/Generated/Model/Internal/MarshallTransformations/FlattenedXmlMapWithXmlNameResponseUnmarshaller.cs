@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FlattenedXmlMapWithXmlName operation
     /// </summary>  
-    public class FlattenedXmlMapWithXmlNameResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class FlattenedXmlMapWithXmlNameResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             FlattenedXmlMapWithXmlNameResponse response = new FlattenedXmlMapWithXmlNameResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -81,7 +82,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -107,6 +107,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, FlattenedXmlMapWithXmlNameResponse response);
 
         private static FlattenedXmlMapWithXmlNameResponseUnmarshaller _instance = new FlattenedXmlMapWithXmlNameResponseUnmarshaller();        
 

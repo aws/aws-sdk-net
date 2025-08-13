@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpPayloadTraits operation
     /// </summary>  
-    public class HttpPayloadTraitsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpPayloadTraitsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-Foo"))
                 response.Foo = context.ResponseData.GetHeaderValue("X-Foo");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -81,6 +82,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpPayloadTraitsResponse response);
 
         private static HttpPayloadTraitsResponseUnmarshaller _instance = new HttpPayloadTraitsResponseUnmarshaller();        
 

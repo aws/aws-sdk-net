@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpEmptyPrefixHeaders operation
     /// </summary>  
-    public class HttpEmptyPrefixHeadersResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpEmptyPrefixHeadersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("hello"))
                 response.SpecificHeader = context.ResponseData.GetHeaderValue("hello");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -93,6 +94,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpEmptyPrefixHeadersResponse response);
 
         private static HttpEmptyPrefixHeadersResponseUnmarshaller _instance = new HttpEmptyPrefixHeadersResponseUnmarshaller();        
 

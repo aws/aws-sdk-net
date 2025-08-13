@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteRealtimeLogConfig operation
     /// </summary>  
-    public class DeleteRealtimeLogConfigResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteRealtimeLogConfigResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteRealtimeLogConfigResponse response = new DeleteRealtimeLogConfigResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -88,6 +89,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteRealtimeLogConfigResponse response);
 
         private static DeleteRealtimeLogConfigResponseUnmarshaller _instance = new DeleteRealtimeLogConfigResponseUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GreetingWithErrors operation
     /// </summary>  
-    public class GreetingWithErrorsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GreetingWithErrorsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -49,6 +49,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("X-Greeting"))
                 response.Greeting = context.ResponseData.GetHeaderValue("X-Greeting");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -82,6 +83,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GreetingWithErrorsResponse response);
 
         private static GreetingWithErrorsResponseUnmarshaller _instance = new GreetingWithErrorsResponseUnmarshaller();        
 

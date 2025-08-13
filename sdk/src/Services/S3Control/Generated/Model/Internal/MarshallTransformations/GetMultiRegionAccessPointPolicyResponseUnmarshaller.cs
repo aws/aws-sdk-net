@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetMultiRegionAccessPointPolicy operation
     /// </summary>  
-    public class GetMultiRegionAccessPointPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetMultiRegionAccessPointPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             GetMultiRegionAccessPointPolicyResponse response = new GetMultiRegionAccessPointPolicyResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -103,6 +103,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetMultiRegionAccessPointPolicyResponse response);
 
         private static GetMultiRegionAccessPointPolicyResponseUnmarshaller _instance = new GetMultiRegionAccessPointPolicyResponseUnmarshaller();        
 

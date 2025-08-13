@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpPayloadWithXmlNamespaceAndPrefix operation
     /// </summary>  
-    public class HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             HttpPayloadWithXmlNamespaceAndPrefixResponse response = new HttpPayloadWithXmlNamespaceAndPrefixResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -101,6 +101,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpPayloadWithXmlNamespaceAndPrefixResponse response);
 
         private static HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller _instance = new HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller();        
 

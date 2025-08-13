@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDistributionsByAnycastIpListId operation
     /// </summary>  
-    public class ListDistributionsByAnycastIpListIdResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListDistributionsByAnycastIpListIdResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListDistributionsByAnycastIpListIdResponse response = new ListDistributionsByAnycastIpListIdResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -117,6 +117,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListDistributionsByAnycastIpListIdResponse response);
 
         private static ListDistributionsByAnycastIpListIdResponseUnmarshaller _instance = new ListDistributionsByAnycastIpListIdResponseUnmarshaller();        
 

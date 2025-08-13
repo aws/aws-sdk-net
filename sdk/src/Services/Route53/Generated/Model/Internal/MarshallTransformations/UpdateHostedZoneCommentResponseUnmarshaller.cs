@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateHostedZoneComment operation
     /// </summary>  
-    public class UpdateHostedZoneCommentResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class UpdateHostedZoneCommentResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             UpdateHostedZoneCommentResponse response = new UpdateHostedZoneCommentResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -115,6 +115,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, UpdateHostedZoneCommentResponse response);
 
         private static UpdateHostedZoneCommentResponseUnmarshaller _instance = new UpdateHostedZoneCommentResponseUnmarshaller();        
 
