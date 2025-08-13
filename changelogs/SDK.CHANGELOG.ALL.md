@@ -1,3 +1,17 @@
+### 3.7.1101.0 (2025-08-13 18:21 UTC)
+* Braket (3.7.501.0)
+	* Add support for Braket program sets.
+* DataZone (3.7.501.0)
+	* Adds support for account pools and project profile account decoupling
+* FSx (3.7.501.0)
+	* Add Dual-Stack support for Amazon FSx for OpenZFS file systems
+* PartnerCentralSelling (3.7.502.0)
+	* Add Tagging Support for Opportunity resources
+* SageMaker (3.7.505.0)
+	* This release introduces compute quota for GPU, Trainium accelerators, vCPU, and vCPU memory utilization across teams in HyperPod clusters
+* SecurityIR (3.7.502.0)
+	* Added support for Organizational Unit-level Membership configuration and the ability to resume a cancelled membership.
+
 ### 3.7.1100.0 (2025-08-12 18:21 UTC)
 * BackupSearch (3.7.502.0)
 	* Using recommended smithy trait to generate regional endpoints for Backup Search
