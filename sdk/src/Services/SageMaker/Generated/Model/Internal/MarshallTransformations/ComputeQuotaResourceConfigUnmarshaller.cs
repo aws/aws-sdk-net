@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Accelerators", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Accelerators = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Count", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -76,6 +82,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MemoryInGiB", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MemoryInGiB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VCpu", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.VCpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

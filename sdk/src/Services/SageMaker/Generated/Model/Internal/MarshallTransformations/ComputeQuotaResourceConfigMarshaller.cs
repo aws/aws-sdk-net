@@ -48,6 +48,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccelerators())
+            {
+                context.Writer.WritePropertyName("Accelerators");
+                context.Writer.Write(requestObject.Accelerators);
+            }
+
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
@@ -58,6 +64,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.Write(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetMemoryInGiB())
+            {
+                context.Writer.WritePropertyName("MemoryInGiB");
+                if(StringUtils.IsSpecialFloatValue(requestObject.MemoryInGiB))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MemoryInGiB));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MemoryInGiB);
+                }
+            }
+
+            if(requestObject.IsSetVCpu())
+            {
+                context.Writer.WritePropertyName("VCpu");
+                if(StringUtils.IsSpecialFloatValue(requestObject.VCpu))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.VCpu));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.VCpu);
+                }
             }
 
         }

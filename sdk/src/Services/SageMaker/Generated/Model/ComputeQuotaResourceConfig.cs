@@ -34,8 +34,34 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ComputeQuotaResourceConfig
     {
+        private int? _accelerators;
         private int? _count;
         private ClusterInstanceType _instanceType;
+        private float? _memoryInGiB;
+        private float? _vCpu;
+
+        /// <summary>
+        /// Gets and sets the property Accelerators. 
+        /// <para>
+        /// The number of accelerators to allocate. If you don't specify a value for vCPU and
+        /// MemoryInGiB, SageMaker AI automatically allocates ratio-based values for those parameters
+        /// based on the number of accelerators you provide. For example, if you allocate 16 out
+        /// of 32 total accelerators, SageMaker AI uses the ratio of 0.5 and allocates values
+        /// to vCPU and MemoryInGiB.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
+        public int Accelerators
+        {
+            get { return this._accelerators.GetValueOrDefault(); }
+            set { this._accelerators = value; }
+        }
+
+        // Check to see if Accelerators property is set
+        internal bool IsSetAccelerators()
+        {
+            return this._accelerators.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -73,6 +99,51 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryInGiB. 
+        /// <para>
+        /// The amount of memory in GiB to allocate. If you specify a value only for this parameter,
+        /// SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory
+        /// that you provide. For example, if you allocate 200 out of 400 total memory in GiB,
+        /// SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are
+        /// set to 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
+        public float MemoryInGiB
+        {
+            get { return this._memoryInGiB.GetValueOrDefault(); }
+            set { this._memoryInGiB = value; }
+        }
+
+        // Check to see if MemoryInGiB property is set
+        internal bool IsSetMemoryInGiB()
+        {
+            return this._memoryInGiB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VCpu. 
+        /// <para>
+        /// The number of vCPU to allocate. If you specify a value only for vCPU, SageMaker AI
+        /// automatically allocates ratio-based values for MemoryInGiB based on this vCPU parameter.
+        /// For example, if you allocate 20 out of 40 total vCPU, SageMaker AI uses the ratio
+        /// of 0.5 and allocates values to MemoryInGiB. Accelerators are set to 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
+        public float VCpu
+        {
+            get { return this._vCpu.GetValueOrDefault(); }
+            set { this._vCpu = value; }
+        }
+
+        // Check to see if VCpu property is set
+        internal bool IsSetVCpu()
+        {
+            return this._vCpu.HasValue; 
         }
 
     }
