@@ -3742,9 +3742,9 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// To synchronize your system with Amazon Web Services, only list the opportunities that
+        /// To synchronize your system with Amazon Web Services, list only the opportunities that
         /// were newly created or updated. We recommend you rely on events emitted by the service
-        /// into your Amazon Web Services account’s Amazon EventBridge default event bus, you
+        /// into your Amazon Web Services account’s Amazon EventBridge default event bus. You
         /// can also use the <c>ListOpportunities</c> action.
         /// </para>
         ///  
@@ -3838,9 +3838,9 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// To synchronize your system with Amazon Web Services, only list the opportunities that
+        /// To synchronize your system with Amazon Web Services, list only the opportunities that
         /// were newly created or updated. We recommend you rely on events emitted by the service
-        /// into your Amazon Web Services account’s Amazon EventBridge default event bus, you
+        /// into your Amazon Web Services account’s Amazon EventBridge default event bus. You
         /// can also use the <c>ListOpportunities</c> action.
         /// </para>
         ///  
@@ -4958,10 +4958,13 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// This action initiates the engagement process from an existing opportunity by accepting
-        /// the engagement invitation and creating a corresponding opportunity in the partner’s
-        /// system. Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is
-        /// asynchronous and performs multiple steps before completion.
+        /// Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is asynchronous
+        /// and performs multiple steps before completion. This action orchestrates a comprehensive
+        /// workflow that combines multiple API operations into a single task to create and initiate
+        /// an engagement from an existing opportunity. It automatically executes a sequence of
+        /// operations including <c>GetOpportunity</c>, <c>CreateEngagement</c> (if it doesn't
+        /// exist), <c>CreateResourceSnapshot</c>, <c>CreateResourceSnapshotJob</c>, <c>CreateEngagementInvitation</c>
+        /// (if not already invited/accepted), and <c>SubmitOpportunity</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEngagementFromOpportunityTask service method.</param>
         /// 
@@ -5048,10 +5051,13 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// This action initiates the engagement process from an existing opportunity by accepting
-        /// the engagement invitation and creating a corresponding opportunity in the partner’s
-        /// system. Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is
-        /// asynchronous and performs multiple steps before completion.
+        /// Similar to <c>StartEngagementByAcceptingInvitationTask</c>, this action is asynchronous
+        /// and performs multiple steps before completion. This action orchestrates a comprehensive
+        /// workflow that combines multiple API operations into a single task to create and initiate
+        /// an engagement from an existing opportunity. It automatically executes a sequence of
+        /// operations including <c>GetOpportunity</c>, <c>CreateEngagement</c> (if it doesn't
+        /// exist), <c>CreateResourceSnapshot</c>, <c>CreateResourceSnapshotJob</c>, <c>CreateEngagementInvitation</c>
+        /// (if not already invited/accepted), and <c>SubmitOpportunity</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEngagementFromOpportunityTask service method.</param>
         /// <param name="cancellationToken">
