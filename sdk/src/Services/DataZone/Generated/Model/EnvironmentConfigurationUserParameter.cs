@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
         private string _environmentConfigurationName;
         private string _environmentId;
         private List<EnvironmentParameter> _environmentParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
+        private EnvironmentResolvedAccount _environmentResolvedAccount;
 
         /// <summary>
         /// Gets and sets the property EnvironmentConfigurationName. 
@@ -91,6 +92,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentParameters()
         {
             return this._environmentParameters != null && (this._environmentParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentResolvedAccount. 
+        /// <para>
+        /// Specifies the account/Region that is to be used during project creation for a particular
+        /// blueprint.
+        /// </para>
+        /// </summary>
+        public EnvironmentResolvedAccount EnvironmentResolvedAccount
+        {
+            get { return this._environmentResolvedAccount; }
+            set { this._environmentResolvedAccount = value; }
+        }
+
+        // Check to see if EnvironmentResolvedAccount property is set
+        internal bool IsSetEnvironmentResolvedAccount()
+        {
+            return this._environmentResolvedAccount != null;
         }
 
     }

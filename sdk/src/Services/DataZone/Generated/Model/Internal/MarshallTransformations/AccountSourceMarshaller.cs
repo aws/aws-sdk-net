@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EnvironmentConfigurationUserParameter Marshaller
+    /// AccountSource Marshaller
     /// </summary>
-    public class EnvironmentConfigurationUserParameterMarshaller : IRequestMarshaller<EnvironmentConfigurationUserParameter, JsonMarshallerContext> 
+    public class AccountSourceMarshaller : IRequestMarshaller<AccountSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,45 +44,33 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EnvironmentConfigurationUserParameter requestObject, JsonMarshallerContext context)
+        public void Marshall(AccountSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnvironmentConfigurationName())
+            if(requestObject.IsSetAccounts())
             {
-                context.Writer.WritePropertyName("environmentConfigurationName");
-                context.Writer.Write(requestObject.EnvironmentConfigurationName);
-            }
-
-            if(requestObject.IsSetEnvironmentId())
-            {
-                context.Writer.WritePropertyName("environmentId");
-                context.Writer.Write(requestObject.EnvironmentId);
-            }
-
-            if(requestObject.IsSetEnvironmentParameters())
-            {
-                context.Writer.WritePropertyName("environmentParameters");
+                context.Writer.WritePropertyName("accounts");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectEnvironmentParametersListValue in requestObject.EnvironmentParameters)
+                foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = EnvironmentParameterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEnvironmentParametersListValue, context);
+                    var marshaller = AccountInfoMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAccountsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetEnvironmentResolvedAccount())
+            if(requestObject.IsSetCustomAccountPoolHandler())
             {
-                context.Writer.WritePropertyName("environmentResolvedAccount");
+                context.Writer.WritePropertyName("customAccountPoolHandler");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EnvironmentResolvedAccountMarshaller.Instance;
-                marshaller.Marshall(requestObject.EnvironmentResolvedAccount, context);
+                var marshaller = CustomAccountPoolHandlerMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomAccountPoolHandler, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -92,7 +80,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EnvironmentConfigurationUserParameterMarshaller Instance = new EnvironmentConfigurationUserParameterMarshaller();
+        public readonly static AccountSourceMarshaller Instance = new AccountSourceMarshaller();
 
     }
 }

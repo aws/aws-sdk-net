@@ -28,6 +28,26 @@ namespace Amazon.DataZone.Model
     {
 
         /// <summary>
+        /// Paginator for ListAccountPools operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAccountPoolsPaginator ListAccountPools(ListAccountPoolsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAccountsInAccountPool operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAccountsInAccountPoolPaginator ListAccountsInAccountPool(ListAccountsInAccountPoolRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetFilters operation
         ///</summary>
         [AWSPaginator(

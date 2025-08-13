@@ -798,6 +798,84 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateAccountPool
+
+        /// <summary>
+        /// Creates an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
+        public virtual CreateAccountPoolResponse CreateAccountPool(CreateAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccountPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountPool operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccountPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccountPool(CreateAccountPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountPool.</param>
+        /// 
+        /// <returns>Returns a  CreateAccountPoolResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
+        public virtual CreateAccountPoolResponse EndCreateAccountPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccountPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAsset
 
         /// <summary>
@@ -2784,6 +2862,78 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteAccountPool
+
+        /// <summary>
+        /// Deletes an account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
+        public virtual DeleteAccountPoolResponse DeleteAccountPool(DeleteAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPool operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccountPool(DeleteAccountPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountPool.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccountPoolResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
+        public virtual DeleteAccountPoolResponse EndDeleteAccountPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccountPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAsset
 
         /// <summary>
@@ -4642,6 +4792,78 @@ namespace Amazon.DataZone
         public virtual DisassociateEnvironmentRoleResponse EndDisassociateEnvironmentRole(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateEnvironmentRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountPool
+
+        /// <summary>
+        /// Gets the details of the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
+        public virtual GetAccountPoolResponse GetAccountPool(GetAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountPool operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountPool(GetAccountPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountPool.</param>
+        /// 
+        /// <returns>Returns a  GetAccountPoolResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
+        public virtual GetAccountPoolResponse EndGetAccountPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountPoolResponse>(asyncResult);
         }
 
         #endregion
@@ -7116,6 +7338,147 @@ namespace Amazon.DataZone
         public virtual GetUserProfileResponse EndGetUserProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUserProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccountPools
+
+        /// <summary>
+        /// Lists existing account pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountPools service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountPools service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
+        public virtual ListAccountPoolsResponse ListAccountPools(ListAccountPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountPoolsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountPools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountPools operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountPools
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
+        public virtual IAsyncResult BeginListAccountPools(ListAccountPoolsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountPools operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountPools.</param>
+        /// 
+        /// <returns>Returns a  ListAccountPoolsResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
+        public virtual ListAccountPoolsResponse EndListAccountPools(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccountPoolsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccountsInAccountPool
+
+        /// <summary>
+        /// Lists the accounts in the specified account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountsInAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the ListAccountsInAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
+        public virtual ListAccountsInAccountPoolResponse ListAccountsInAccountPool(ListAccountsInAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountsInAccountPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountsInAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountsInAccountPool operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountsInAccountPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
+        public virtual IAsyncResult BeginListAccountsInAccountPool(ListAccountsInAccountPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccountsInAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountsInAccountPool.</param>
+        /// 
+        /// <returns>Returns a  ListAccountsInAccountPoolResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
+        public virtual ListAccountsInAccountPoolResponse EndListAccountsInAccountPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccountsInAccountPoolResponse>(asyncResult);
         }
 
         #endregion
@@ -10595,6 +10958,84 @@ namespace Amazon.DataZone
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountPool
+
+        /// <summary>
+        /// Updates the account pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPool service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccountPool service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
+        public virtual UpdateAccountPoolResponse UpdateAccountPool(UpdateAccountPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPool operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAccountPool(UpdateAccountPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccountPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountPool.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccountPoolResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
+        public virtual UpdateAccountPoolResponse EndUpdateAccountPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAccountPoolResponse>(asyncResult);
         }
 
         #endregion

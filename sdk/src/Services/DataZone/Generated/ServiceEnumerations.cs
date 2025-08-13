@@ -3343,6 +3343,52 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type ResolutionStrategy.
+    /// </summary>
+    public class ResolutionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for ResolutionStrategy
+        /// </summary>
+        public static readonly ResolutionStrategy MANUAL = new ResolutionStrategy("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolutionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolutionStrategy FindValue(string value)
+        {
+            return FindValue<ResolutionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolutionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuleAction.
     /// </summary>
     public class RuleAction : ConstantClass
@@ -3652,6 +3698,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelfGrantStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortFieldAccountPool.
+    /// </summary>
+    public class SortFieldAccountPool : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAME for SortFieldAccountPool
+        /// </summary>
+        public static readonly SortFieldAccountPool NAME = new SortFieldAccountPool("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortFieldAccountPool(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortFieldAccountPool FindValue(string value)
+        {
+            return FindValue<SortFieldAccountPool>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortFieldAccountPool(string value)
         {
             return FindValue(value);
         }

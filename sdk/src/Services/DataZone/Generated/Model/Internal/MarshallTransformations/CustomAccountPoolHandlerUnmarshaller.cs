@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnvironmentConfigurationUserParameter Object
+    /// Response Unmarshaller for CustomAccountPoolHandler Object
     /// </summary>  
-    public class EnvironmentConfigurationUserParameterUnmarshaller : IUnmarshaller<EnvironmentConfigurationUserParameter, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentConfigurationUserParameter, JsonUnmarshallerContext>
+    public class CustomAccountPoolHandlerUnmarshaller : IUnmarshaller<CustomAccountPoolHandler, XmlUnmarshallerContext>, IUnmarshaller<CustomAccountPoolHandler, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EnvironmentConfigurationUserParameter IUnmarshaller<EnvironmentConfigurationUserParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CustomAccountPoolHandler IUnmarshaller<CustomAccountPoolHandler, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public EnvironmentConfigurationUserParameter Unmarshall(JsonUnmarshallerContext context)
+        public CustomAccountPoolHandler Unmarshall(JsonUnmarshallerContext context)
         {
-            EnvironmentConfigurationUserParameter unmarshalledObject = new EnvironmentConfigurationUserParameter();
+            CustomAccountPoolHandler unmarshalledObject = new CustomAccountPoolHandler();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("environmentConfigurationName", targetDepth))
+                if (context.TestExpression("lambdaExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentConfigurationName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LambdaExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("environmentId", targetDepth))
+                if (context.TestExpression("lambdaFunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("environmentParameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EnvironmentParameter, EnvironmentParameterUnmarshaller>(EnvironmentParameterUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("environmentResolvedAccount", targetDepth))
-                {
-                    var unmarshaller = EnvironmentResolvedAccountUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentResolvedAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LambdaFunctionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static EnvironmentConfigurationUserParameterUnmarshaller _instance = new EnvironmentConfigurationUserParameterUnmarshaller();        
+        private static CustomAccountPoolHandlerUnmarshaller _instance = new CustomAccountPoolHandlerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnvironmentConfigurationUserParameterUnmarshaller Instance
+        public static CustomAccountPoolHandlerUnmarshaller Instance
         {
             get
             {
