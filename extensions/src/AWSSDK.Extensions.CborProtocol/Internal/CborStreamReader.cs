@@ -106,13 +106,6 @@ namespace Amazon.Extensions.CborProtocol.Internal
             // Update the total size of valid data in our buffer.
             _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
 
-            // Check for a malformed stream: if we have leftovers but the stream is empty,
-            // it means the CBOR data was truncated.
-            if (bytesReadFromStream == 0 && leftoverBytesCount > 0)
-            {
-                throw new CborContentException("Stream ended unexpectedly with an incomplete CBOR data item.");
-            }
-
             var newMemorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
             _internalCborReader.Reset(newMemorySlice);
 
@@ -139,7 +132,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 {
                     return readOperation(_internalCborReader);
                 }
-                catch (CborContentException ex)
+                catch (Exception ex) when (ex is InvalidOperationException || ex is CborContentException)
                 {
                     if (_currentChunkSize == 0 && _internalCborReader.BytesRemaining == 0)
                     {
@@ -200,13 +193,12 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
                 if (state == CborReaderState.Finished)
                 {
+                    // Try to refill first, maybe the break marker is in the next chunk.
+                    RefillBuffer(0);
+
                     if (IsNextByteEndOfContainer())
                     {
                         RefillBuffer(1); // Skip the break marker (0xFF)
-                    }
-                    else
-                    {
-                        RefillBuffer(0); // This means we are in a definite-length map/array which doesn't end with 0xFF.
                     }
                     _nestingStack.Pop();
                     return true;
@@ -247,26 +239,42 @@ namespace Amazon.Extensions.CborProtocol.Internal
         {
             return ExecuteRead(r =>
             {
-                try
+                // We need to Peek twice incase the first time failed because we are near the end of the current chunk and we just need to refill.
+                for (int attempt = 0; attempt < 2; attempt++)
                 {
-                    return r.PeekState();
-                }
-                catch (CborContentException ex)
-                {
-                    // Translate a Break code to the appropriate container end state
-                    // based on our own nesting stack.
-                    if (_nestingStack.Count > 0)
+                    try
                     {
-                        var inferredState = _nestingStack.Peek() == CborContainerType.Map
-                            ? CborReaderState.EndMap
-                            : CborReaderState.EndArray;
+                        var state = r.PeekState();
+                        if (state == CborReaderState.Finished && _nestingStack.Count > 0)
+                        {
+                            _logger.DebugFormat("PeekState returned Finished, but nesting stack is not empty. Attempting refill.");
+                            RefillBuffer(0);
+                            continue;
+                        }
 
-                        _logger.Debug(ex, "CborContentException during PeekState interpreted as {0} due to nesting stack.", inferredState);
-                        return inferredState;
+                        return state;
                     }
-                    // If our stack is empty, it's a genuine error.
-                    throw;
+                    catch (CborContentException ex)
+                    {
+                        // PeekState threw an exception, we will attempt to refill incase we aren't at the end of the stream.
+                        _logger.Debug(ex, "PeekState threw exception (attempt #{0}). Attempting refill.", attempt + 1);
+                        RefillBuffer(0);
+                    }
                 }
+
+                // If PeekState still fails after refilling, and we're truly at the end of the stream,
+                // only then consider inferring the state based on container nesting.
+                if (_nestingStack.Count > 0)
+                {
+                    var inferredState = _nestingStack.Peek() == CborContainerType.Map
+                        ? CborReaderState.EndMap
+                        : CborReaderState.EndArray;
+
+                    _logger.DebugFormat("CborContentException during PeekState interpreted as {0} due to nesting stack.", inferredState);
+                    return inferredState;
+                }
+
+                throw new CborContentException("Unable to determine CBOR reader state after retries, and no containers remain.");
             });
         }
 
