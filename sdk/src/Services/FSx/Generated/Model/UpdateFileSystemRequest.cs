@@ -208,6 +208,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>EndpointIpv6AddressRange</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>ReadCacheConfiguration</c> 
     /// </para>
     ///  </li> <li> 
@@ -234,6 +238,7 @@ namespace Amazon.FSx.Model
         private string _fileSystemId;
         private string _fileSystemTypeVersion;
         private UpdateFileSystemLustreConfiguration _lustreConfiguration;
+        private NetworkType _networkType;
         private UpdateFileSystemOntapConfiguration _ontapConfiguration;
         private UpdateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private int? _storageCapacity;
@@ -314,6 +319,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreConfiguration()
         {
             return this._lustreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Changes the network type of an FSx for OpenZFS file system.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

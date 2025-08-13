@@ -272,8 +272,9 @@ namespace Amazon.FSx
         /// <summary>
         /// Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS
         /// file systems, the volume must be hosted on a high-availability file system, either
-        /// Single-AZ or Multi-AZ. For more information, see <a href="fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
-        /// your data using access points</a> in the Amazon FSx for OpenZFS User Guide. 
+        /// Single-AZ or Multi-AZ. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html">Accessing
+        /// your data using Amazon S3 access points</a>. in the Amazon FSx for OpenZFS User Guide.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1234,9 +1235,9 @@ namespace Amazon.FSx
         /// <para>
         /// Before deleting an Amazon FSx for OpenZFS file system, make sure that there aren't
         /// any Amazon S3 access points attached to any volume. For more information on how to
-        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list">Listing
+        /// list S3 access points that are attached to volumes, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-list.html">Listing
         /// S3 access point attachments</a>. For more information on how to delete S3 access points,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-points-list">Deleting
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/delete-access-point.html">Deleting
         /// an S3 access point attachment</a>.
         /// </para>
         ///  
@@ -2492,6 +2493,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         ///  <c>DiskIopsConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EndpointIpv6AddressRange</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

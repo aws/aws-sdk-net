@@ -265,7 +265,7 @@ namespace Amazon.FSx.Model
         /// File Shares</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=15)]
+        [AWSProperty(Min=1, Max=45)]
         public string PreferredFileServerIp
         {
             get { return this._preferredFileServerIp; }

@@ -42,6 +42,8 @@ namespace Amazon.FSx.Model
         private DiskIopsConfiguration _diskIopsConfiguration;
         private string _endpointIpAddress;
         private string _endpointIpAddressRange;
+        private string _endpointIpv6Address;
+        private string _endpointIpv6AddressRange;
         private string _preferredSubnetId;
         private OpenZFSReadCacheConfiguration _readCacheConfiguration;
         private string _rootVolumeId;
@@ -168,7 +170,7 @@ namespace Amazon.FSx.Model
         /// The IP address of the endpoint that is used to access data or to manage the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=15)]
+        [AWSProperty(Min=1, Max=45)]
         public string EndpointIpAddress
         {
             get { return this._endpointIpAddress; }
@@ -202,6 +204,49 @@ namespace Amazon.FSx.Model
         internal bool IsSetEndpointIpAddressRange()
         {
             return this._endpointIpAddressRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointIpv6Address. 
+        /// <para>
+        /// The IPv6 address of the endpoint that is used to access data or to manage the file
+        /// system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=45)]
+        public string EndpointIpv6Address
+        {
+            get { return this._endpointIpv6Address; }
+            set { this._endpointIpv6Address = value; }
+        }
+
+        // Check to see if EndpointIpv6Address property is set
+        internal bool IsSetEndpointIpv6Address()
+        {
+            return this._endpointIpv6Address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointIpv6AddressRange. 
+        /// <para>
+        /// (Multi-AZ only) Specifies the IP address range in which the endpoints to access your
+        /// file system will be created. By default in the Amazon FSx API and Amazon FSx console,
+        /// Amazon FSx selects an available /118 IP address range for you from one of the VPC's
+        /// CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+        /// in the same VPC/route tables, as long as they don't overlap with any subnet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=43)]
+        public string EndpointIpv6AddressRange
+        {
+            get { return this._endpointIpv6AddressRange; }
+            set { this._endpointIpv6AddressRange = value; }
+        }
+
+        // Check to see if EndpointIpv6AddressRange property is set
+        internal bool IsSetEndpointIpv6AddressRange()
+        {
+            return this._endpointIpv6AddressRange != null;
         }
 
         /// <summary>
