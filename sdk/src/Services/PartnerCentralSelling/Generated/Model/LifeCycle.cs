@@ -184,8 +184,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewComments. 
         /// <para>
-        /// Indicates why an opportunity was sent back for further details. Partners must take
-        /// corrective action based on the <c>ReviewComments</c>.
+        /// Contains detailed feedback from Amazon Web Services when requesting additional information
+        /// from partners. Provides specific guidance on what partners need to provide or clarify
+        /// for opportunity validation, complementing the <c>ReviewStatusReason</c> field.
         /// </para>
         /// </summary>
         public string ReviewComments
@@ -300,9 +301,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewStatusReason. 
         /// <para>
-        /// Indicates the reason a decision was made during the opportunity review process. This
-        /// field combines the reasons for both disqualified and action required statuses, and
-        /// provide clarity for why an opportunity was disqualified or requires further action.
+        /// Code indicating the validation decision during the Amazon Web Services opportunity
+        /// review. Applies when status is <c>Rejected</c> or <c>Action Required</c>. Used to
+        /// document validation results for AWS Partner Referrals and indicate when additional
+        /// information is needed from partners as part of the APN Customer Engagement (ACE) program.
         /// </para>
         /// </summary>
         public string ReviewStatusReason

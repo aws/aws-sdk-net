@@ -78,6 +78,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private List<string> _primaryNeedsFromAws = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Project _project;
         private SoftwareRevenue _softwareRevenue;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -216,7 +217,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// of this opportunity who are within the partner's organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=2)]
         public List<Contact> OpportunityTeam
         {
             get { return this._opportunityTeam; }
@@ -419,6 +420,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetSoftwareRevenue()
         {
             return this._softwareRevenue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of the key-value pairs of the tag or tags to assign.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

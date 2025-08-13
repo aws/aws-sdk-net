@@ -37,9 +37,9 @@ namespace Amazon.PartnerCentralSelling.Model
     /// 
     ///  
     /// <para>
-    /// To synchronize your system with Amazon Web Services, only list the opportunities that
+    /// To synchronize your system with Amazon Web Services, list only the opportunities that
     /// were newly created or updated. We recommend you rely on events emitted by the service
-    /// into your Amazon Web Services account’s Amazon EventBridge default event bus, you
+    /// into your Amazon Web Services account’s Amazon EventBridge default event bus. You
     /// can also use the <c>ListOpportunities</c> action.
     /// </para>
     ///  

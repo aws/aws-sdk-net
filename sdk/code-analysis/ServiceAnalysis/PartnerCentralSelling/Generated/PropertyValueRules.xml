@@ -2,29 +2,29 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AcceptEngagementInvitationRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AcceptEngagementInvitationRequest.Identifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssignOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssignOpportunityRequest.Identifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssociateOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssociateOpportunityRequest.OpportunityIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssociateOpportunityRequest.RelatedEntityIdentifier</property>
@@ -33,11 +33,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementRequest.ClientToken</property>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementRequest.Description</property>
@@ -51,35 +51,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementResponse.Id</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementInvitationRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementInvitationRequest.ClientToken</property>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementInvitationRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementInvitationResponse.Arn</property>
-    <pattern>^arn:aws:partnercentral::[0-9]{12}:[a-zA-Z]+/engagement-invitation/engi-[0-9,a-z]{13}$</pattern>
+    <pattern>arn:aws:partnercentral::[0-9]{12}:[a-zA-Z]+/engagement-invitation/engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementInvitationResponse.Id</property>
-    <pattern>^engi-[0-9,a-z]{13}$</pattern>
+    <pattern>engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateOpportunityRequest.ClientToken</property>
@@ -92,31 +92,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateOpportunityResponse.Id</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotRequest.ClientToken</property>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotRequest.ResourceIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotRequest.ResourceSnapshotTemplateIdentifier</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotResponse.Revision</property>
@@ -124,47 +124,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobRequest.ClientToken</property>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobRequest.ResourceIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobRequest.ResourceSnapshotTemplateIdentifier</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateResourceSnapshotJobResponse.Id</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.DeleteResourceSnapshotJobRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.DeleteResourceSnapshotJobRequest.ResourceSnapshotJobIdentifier</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.DisassociateOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.DisassociateOpportunityRequest.OpportunityIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.DisassociateOpportunityRequest.RelatedEntityIdentifier</property>
@@ -173,35 +173,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetAwsOpportunitySummaryRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetAwsOpportunitySummaryRequest.RelatedOpportunityIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetAwsOpportunitySummaryResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetAwsOpportunitySummaryResponse.RelatedOpportunityId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementRequest.Identifier</property>
-    <pattern>^(arn:.*|eng-[0-9a-z]{14})$</pattern>
+    <pattern>(arn:.*|eng-[0-9a-z]{14})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.Description</property>
@@ -210,7 +210,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.Id</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.Title</property>
@@ -219,17 +219,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationRequest.Identifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.EngagementDescription</property>
@@ -238,7 +238,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.EngagementTitle</property>
@@ -249,7 +249,7 @@
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.InvitationMessage</property>
@@ -258,11 +258,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.RejectionReason</property>
-    <pattern>^[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]{1,80}$</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]{1,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.SenderAwsAccountId</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.SenderCompanyName</property>
@@ -271,23 +271,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityRequest.Identifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityResponse.Arn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityResponse.Id</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetOpportunityResponse.PartnerOpportunityIdentifier</property>
@@ -296,19 +296,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.ResourceIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.ResourceSnapshotTemplateIdentifier</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotRequest.Revision</property>
@@ -316,27 +316,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.ResourceId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.ResourceSnapshotTemplateName</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotResponse.Revision</property>
@@ -344,57 +344,57 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobRequest.ResourceSnapshotJobIdentifier</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.Id</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.ResourceArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.ResourceId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetResourceSnapshotJobResponse.ResourceSnapshotTemplateName</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetSellingSystemSettingsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetSellingSystemSettingsResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetSellingSystemSettingsResponse.ResourceSnapshotJobRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTasksRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTasksRequest.MaxResults</property>
@@ -408,7 +408,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTasksRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTasksRequest.MaxResults</property>
@@ -422,7 +422,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementInvitationsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementInvitationsRequest.MaxResults</property>
@@ -431,11 +431,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementMembersRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementMembersRequest.Identifier</property>
-    <pattern>^(arn:.*|eng-[0-9a-z]{14})$</pattern>
+    <pattern>(arn:.*|eng-[0-9a-z]{14})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementMembersRequest.MaxResults</property>
@@ -444,15 +444,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementResourceAssociationsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementResourceAssociationsRequest.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementResourceAssociationsRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementResourceAssociationsRequest.MaxResults</property>
@@ -461,11 +461,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementResourceAssociationsRequest.ResourceIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementsRequest.MaxResults</property>
@@ -474,7 +474,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListOpportunitiesRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListOpportunitiesRequest.MaxResults</property>
@@ -483,11 +483,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotJobsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotJobsRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotJobsRequest.MaxResults</property>
@@ -496,15 +496,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.EngagementIdentifier</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.MaxResults</property>
@@ -513,15 +513,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.ResourceIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListResourceSnapshotsRequest.ResourceSnapshotTemplateIdentifier</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListSolutionsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListSolutionsRequest.MaxResults</property>
@@ -532,157 +532,157 @@
     <property>Amazon.PartnerCentralSelling.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+    <pattern>arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.PutSellingSystemSettingsRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.PutSellingSystemSettingsRequest.ResourceSnapshotJobRoleIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^(arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*)?[-+=,.@_a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>(arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*)?[-+=,.@_a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.PutSellingSystemSettingsResponse.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.PutSellingSystemSettingsResponse.ResourceSnapshotJobRoleArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>^arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}$</pattern>
+    <pattern>arn:aws:iam::\d{12}:role/([-+=,.@_a-zA-Z0-9]+/)*[-+=,.@_a-zA-Z0-9]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.RejectEngagementInvitationRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.RejectEngagementInvitationRequest.Identifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.RejectEngagementInvitationRequest.RejectionReason</property>
-    <pattern>^[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]{1,80}$</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]{1,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskRequest.ClientToken</property>
     <min>1</min>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskRequest.Identifier</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskResponse.EngagementInvitationId</property>
-    <pattern>^engi-[0-9,a-z]{13}$</pattern>
+    <pattern>engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskResponse.OpportunityId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskResponse.ResourceSnapshotJobId</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskResponse.TaskArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskResponse.TaskId</property>
-    <pattern>task-[0-9a-z]{13}$</pattern>
+    <pattern>.*task-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskRequest.ClientToken</property>
     <min>1</min>
-    <pattern>^[!-~]{1,64}$</pattern>
+    <pattern>[!-~]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskRequest.Identifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.EngagementInvitationId</property>
-    <pattern>^engi-[0-9,a-z]{13}$</pattern>
+    <pattern>engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.OpportunityId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.ResourceSnapshotJobId</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.TaskArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskResponse.TaskId</property>
-    <pattern>task-[0-9a-z]{13}$</pattern>
+    <pattern>.*task-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartResourceSnapshotJobRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartResourceSnapshotJobRequest.ResourceSnapshotJobIdentifier</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StopResourceSnapshotJobRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StopResourceSnapshotJobRequest.ResourceSnapshotJobIdentifier</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SubmitOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SubmitOpportunityRequest.Identifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+    <pattern>arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+    <pattern>arn:[\w+=/,.@-]+:partnercentral:[\w+=/,.@-]*:[0-9]{12}:catalog/([a-zA-Z]+)/[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateOpportunityRequest.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateOpportunityRequest.Identifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateOpportunityRequest.PartnerOpportunityIdentifier</property>
@@ -691,11 +691,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateOpportunityResponse.Id</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Account.AwsAccountId</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Account.CompanyName</property>
@@ -704,7 +704,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Account.Duns</property>
-    <pattern>^[0-9]{9}$</pattern>
+    <pattern>[0-9]{9}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Account.OtherIndustry</property>
@@ -723,7 +723,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AccountReceiver.AwsAccountId</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AccountSummary.CompanyName</property>
@@ -774,7 +774,7 @@
     <property>Amazon.PartnerCentralSelling.Model.AssigneeContact.Email</property>
     <min>0</min>
     <max>80</max>
-    <pattern>^[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$</pattern>
+    <pattern>[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AssigneeContact.FirstName</property>
@@ -793,13 +793,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsOpportunityLifeCycle.TargetCloseDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsTeamMember.Email</property>
     <min>0</min>
     <max>80</max>
-    <pattern>^[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$</pattern>
+    <pattern>[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsTeamMember.FirstName</property>
@@ -820,7 +820,7 @@
     <property>Amazon.PartnerCentralSelling.Model.Contact.Email</property>
     <min>0</min>
     <max>80</max>
-    <pattern>^[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$</pattern>
+    <pattern>[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Contact.FirstName</property>
@@ -836,7 +836,7 @@
     <property>Amazon.PartnerCentralSelling.Model.Contact.Phone</property>
     <min>0</min>
     <max>40</max>
-    <pattern>^\+[1-9]\d{1,14}$</pattern>
+    <pattern>\+[1-9]\d{1,14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomer.CompanyName</property>
@@ -847,7 +847,7 @@
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomer.WebsiteUrl</property>
     <min>4</min>
     <max>255</max>
-    <pattern>^((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?$</pattern>
+    <pattern>((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomerProjectDetails.BusinessProblem</property>
@@ -856,7 +856,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomerProjectDetails.TargetCompletionDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementCustomerProjectDetails.Title</property>
@@ -865,11 +865,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.EngagementTitle</property>
@@ -880,11 +880,11 @@
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.Id</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(arn:.*|engi-[0-9a-z]{13})$</pattern>
+    <pattern>(arn:.*|engi-[0-9a-z]{13})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.SenderAwsAccountId</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.SenderCompanyName</property>
@@ -893,7 +893,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementMember.AccountId</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementMember.CompanyName</property>
@@ -907,31 +907,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementResourceAssociationSummary.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementResourceAssociationSummary.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementResourceAssociationSummary.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementResourceAssociationSummary.ResourceId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementSummary.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementSummary.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementSummary.Id</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementSummary.Title</property>
@@ -939,8 +939,12 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.Amount</property>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.CurrencyCode</property>
-    <pattern>^USD$</pattern>
+    <pattern>USD</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.EstimationUrl</property>
@@ -964,7 +968,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycle.TargetCloseDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycleForView.NextSteps</property>
@@ -973,7 +977,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycleForView.TargetCloseDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycleSummary.NextSteps</property>
@@ -982,67 +986,67 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycleSummary.TargetCloseDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTaskSummary.EngagementInvitationId</property>
-    <pattern>^engi-[0-9,a-z]{13}$</pattern>
+    <pattern>engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTaskSummary.OpportunityId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTaskSummary.ResourceSnapshotJobId</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTaskSummary.TaskArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementByAcceptingInvitationTaskSummary.TaskId</property>
-    <pattern>task-[0-9a-z]{13}$</pattern>
+    <pattern>.*task-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.EngagementInvitationId</property>
-    <pattern>^engi-[0-9,a-z]{13}$</pattern>
+    <pattern>engi-[0-9,a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.OpportunityId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.ResourceSnapshotJobId</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.TaskArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ListEngagementFromOpportunityTaskSummary.TaskId</property>
-    <pattern>task-[0-9a-z]{13}$</pattern>
+    <pattern>.*task-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.MonetaryValue.Amount</property>
-    <pattern>^(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?$</pattern>
+    <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.OpportunitySummary.Arn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.OpportunitySummary.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.OpportunitySummary.Id</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Project.AdditionalComments</property>
@@ -1066,7 +1070,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Project.RelatedOpportunityIdentifier</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Project.Title</property>
@@ -1080,7 +1084,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ProjectDetails.TargetCompletionDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ProjectDetails.Title</property>
@@ -1094,31 +1098,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotJobSummary.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotJobSummary.EngagementId</property>
-    <pattern>^eng-[0-9a-z]{14}$</pattern>
+    <pattern>eng-[0-9a-z]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotJobSummary.Id</property>
-    <pattern>^job-[0-9a-z]{13}$</pattern>
+    <pattern>job-[0-9a-z]{13}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotSummary.Arn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotSummary.CreatedBy</property>
-    <pattern>^([0-9]{12}|\w{1,12})$</pattern>
+    <pattern>([0-9]{12}|\w{1,12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotSummary.ResourceId</property>
-    <pattern>^O[0-9]{1,19}$</pattern>
+    <pattern>O[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotSummary.ResourceSnapshotTemplateName</property>
-    <pattern>^[a-zA-Z0-9]{3,80}$</pattern>
+    <pattern>[a-zA-Z0-9]{3,80}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ResourceSnapshotSummary.Revision</property>
@@ -1133,7 +1137,7 @@
     <property>Amazon.PartnerCentralSelling.Model.SenderContact.Email</property>
     <min>0</min>
     <max>80</max>
-    <pattern>^[a-zA-Z0-9.!#$%&amp;'*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$</pattern>
+    <pattern>[a-zA-Z0-9.!#$%&amp;'*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SenderContact.FirstName</property>
@@ -1149,38 +1153,38 @@
     <property>Amazon.PartnerCentralSelling.Model.SenderContact.Phone</property>
     <min>0</min>
     <max>40</max>
-    <pattern>^\+[1-9]\d{1,14}$</pattern>
+    <pattern>\+[1-9]\d{1,14}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SoftwareRevenue.EffectiveDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SoftwareRevenue.ExpirationDate</property>
-    <pattern>^[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SolutionBase.Arn</property>
-    <pattern>^S-[0-9]{1,19}$</pattern>
+    <pattern>S-[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SolutionBase.Catalog</property>
-    <pattern>^[a-zA-Z]+$</pattern>
+    <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.SolutionBase.Id</property>
-    <pattern>^S-[0-9]{1,19}$</pattern>
+    <pattern>S-[0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
 </property-value-rules>
