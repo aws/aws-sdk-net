@@ -75,6 +75,18 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionId);
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
                 if(publicRequest.IsSetVirtualInterfaceId())
                 {
                     context.Writer.WritePropertyName("virtualInterfaceId");

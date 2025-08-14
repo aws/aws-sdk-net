@@ -4244,6 +4244,18 @@ namespace Amazon.DirectConnect
         /// A virtual interface (VLAN) transmits the traffic between the Direct Connect location
         /// and the customer network.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using <c>asnLong</c>, the response returns a value of <c>0</c> (zero) for
+        /// the <c>asn</c> attribute because it exceeds the highest ASN value of 2,147,483,647
+        /// that it can support
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by DirectConnect.</returns>
@@ -4272,6 +4284,18 @@ namespace Amazon.DirectConnect
         /// A virtual interface (VLAN) transmits the traffic between the Direct Connect location
         /// and the customer network.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using <c>asnLong</c>, the response returns a value of <c>0</c> (zero) for
+        /// the <c>asn</c> attribute because it exceeds the highest ASN value of 2,147,483,647
+        /// that it can support
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualInterfaces service method.</param>
         /// 
@@ -4305,6 +4329,18 @@ namespace Amazon.DirectConnect
         /// A virtual interface (VLAN) transmits the traffic between the Direct Connect location
         /// and the customer network.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using <c>asnLong</c>, the response returns a value of <c>0</c> (zero) for
+        /// the <c>asn</c> attribute because it exceeds the highest ASN value of 2,147,483,647
+        /// that it can support
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4335,6 +4371,18 @@ namespace Amazon.DirectConnect
         /// A virtual interface (VLAN) transmits the traffic between the Direct Connect location
         /// and the customer network.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're using <c>asnLong</c>, the response returns a value of <c>0</c> (zero) for
+        /// the <c>asn</c> attribute because it exceeds the highest ASN value of 2,147,483,647
+        /// that it can support
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualInterfaces service method.</param>
         /// <param name="cancellationToken">

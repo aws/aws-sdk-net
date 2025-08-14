@@ -76,6 +76,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.Asn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("asnLong", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.AsnLong = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

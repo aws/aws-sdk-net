@@ -35,6 +35,7 @@ namespace Amazon.DirectConnect.Model
     public partial class DescribeLagsResponse : AmazonWebServiceResponse
     {
         private List<Lag> _lags = AWSConfigs.InitializeCollections ? new List<Lag>() : null;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Lags. 
@@ -52,6 +53,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetLags()
         {
             return this._lags != null && (this._lags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. This value is <c>null</c> when
+        /// there are no more results to return.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
