@@ -46,5 +46,16 @@ namespace Amazon.Runtime.EventStreams.Utils
             var stream = new MemoryStream(message.Payload);
             return new JsonUnmarshallerContext(stream, false, null);
         }
+
+        /// <summary>
+        /// Converts an <seealso cref="EventStreamMessage"/> to a Stream
+        /// </summary>
+        /// <param name="message">The event stream message</param>
+        /// <returns>The stream of <seealso cref="EventStreamMessage"/></returns>
+        public static Stream ConvertMessageToStream(IEventStreamMessage message)
+        {
+            var stream = new MemoryStream(message.Payload);
+            return stream;
+        }
     }
 }

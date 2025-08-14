@@ -71,7 +71,15 @@
                 }
                 else if (protocol == "Cbor")
                 {
-                    // TODO
+#>
+            {"<#=member.PropertyName#>", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new <#=member.DetermineType()#>Unmarshaller().Unmarshall(context);
+                }
+            },
+<#
                 }
                 else
                 {
@@ -112,7 +120,15 @@
                 }
                 else if (protocol == "Cbor")
                 {
-                    // TODO
+#>
+            {"<#=member.PropertyName#>", payload => 
+                {
+                    var stream = EventStreamUtils.ConvertMessageToStream(payload);
+                    var context = new CborUnmarshallerContext(stream, false, null);
+                    return new <#=this.Config.ClassName#>EventStreamException(Encoding.UTF8.GetString(payload.Payload), new <#=member.ModelShape#>Unmarshaller().Unmarshall(context));
+                }
+            },
+<#
                 }
                 else
                     throw new NotImplementedException("The given protocol is not supported");
