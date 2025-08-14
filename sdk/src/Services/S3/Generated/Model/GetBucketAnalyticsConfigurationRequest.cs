@@ -127,7 +127,6 @@ namespace Amazon.S3.Model
         /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ExpectedBucketOwner
         {
             get { return this._expectedBucketOwner; }

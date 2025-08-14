@@ -185,6 +185,7 @@ namespace Amazon.S3.Model
         /// The name of the bucket for which to set the configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

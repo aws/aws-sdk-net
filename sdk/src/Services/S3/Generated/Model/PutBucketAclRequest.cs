@@ -350,6 +350,7 @@ namespace Amazon.S3.Model
         /// The bucket to which to apply the ACL.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

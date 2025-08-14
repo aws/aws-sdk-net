@@ -75,6 +75,7 @@ namespace Amazon.S3.Model
         /// The bucket whose Object Lock configuration you want to create or replace.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

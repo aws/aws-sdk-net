@@ -110,6 +110,7 @@ namespace Amazon.S3.Model
         /// The bucket name of the lifecycle to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

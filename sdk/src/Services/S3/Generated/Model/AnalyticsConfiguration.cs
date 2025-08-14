@@ -47,7 +47,6 @@ namespace Amazon.S3.Model
         /// all objects will be considered in any analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AnalyticsFilter AnalyticsFilter
         {
             get { return this._analyticsFilter; }

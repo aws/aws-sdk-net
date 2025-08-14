@@ -46,7 +46,6 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Id.
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }

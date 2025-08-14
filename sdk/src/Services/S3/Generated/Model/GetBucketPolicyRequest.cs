@@ -151,6 +151,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

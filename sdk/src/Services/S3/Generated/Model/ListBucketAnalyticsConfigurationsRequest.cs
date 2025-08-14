@@ -96,6 +96,7 @@ namespace Amazon.S3.Model
         /// The name of the bucket from which analytics configurations are retrieved.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

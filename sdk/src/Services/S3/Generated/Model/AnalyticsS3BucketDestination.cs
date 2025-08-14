@@ -70,6 +70,7 @@ namespace Amazon.S3.Model
         /// The Amazon Resource Name (ARN) of the bucket to which data is exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

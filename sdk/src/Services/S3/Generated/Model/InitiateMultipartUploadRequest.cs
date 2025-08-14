@@ -414,6 +414,7 @@ namespace Amazon.S3.Model
         /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

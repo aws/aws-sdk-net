@@ -67,7 +67,6 @@ namespace Amazon.S3.Model
         /// The versionId of the object for which you got the tagging information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string VersionId
         {
             get { return this._versionId; }

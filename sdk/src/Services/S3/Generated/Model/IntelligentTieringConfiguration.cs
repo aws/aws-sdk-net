@@ -52,7 +52,6 @@ namespace Amazon.S3.Model
         /// criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IntelligentTieringFilter IntelligentTieringFilter
         {
             get { return this._intelligentTieringFilter; }

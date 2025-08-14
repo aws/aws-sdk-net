@@ -169,7 +169,6 @@ namespace Amazon.S3.Model
         /// parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ChecksumAlgorithm ChecksumAlgorithm
         {
             get { return this._checksumAlgorithm; }
@@ -212,7 +211,6 @@ namespace Amazon.S3.Model
         /// Web Services SDKs, this field is calculated automatically.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ContentMD5
         {
             get { return this._contentMD5; }
@@ -233,7 +231,6 @@ namespace Amazon.S3.Model
         /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ExpectedBucketOwner
         {
             get { return this._expectedBucketOwner; }
@@ -252,7 +249,6 @@ namespace Amazon.S3.Model
         /// A token to allow Object Lock to be enabled for an existing bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Token
         {
             get { return this._token; }

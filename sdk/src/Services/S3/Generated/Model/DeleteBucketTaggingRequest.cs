@@ -72,6 +72,7 @@ namespace Amazon.S3.Model
         /// The bucket that has the tag set to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

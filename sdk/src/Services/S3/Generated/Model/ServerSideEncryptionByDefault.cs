@@ -148,7 +148,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
         {
             get { return this._serverSideEncryptionKeyManagementServiceKeyId; }

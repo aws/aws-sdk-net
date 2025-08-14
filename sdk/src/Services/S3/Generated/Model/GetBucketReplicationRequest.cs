@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
         /// The bucket name for which to get the replication information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

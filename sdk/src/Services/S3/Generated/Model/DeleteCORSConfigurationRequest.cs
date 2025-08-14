@@ -77,6 +77,7 @@ namespace Amazon.S3.Model
         /// Specifies the bucket whose <c>cors</c> configuration is being deleted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
