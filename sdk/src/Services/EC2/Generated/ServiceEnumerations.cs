@@ -5168,6 +5168,18 @@ namespace Amazon.EC2
         /// Constant DeleteInProgress for Ec2InstanceConnectEndpointState
         /// </summary>
         public static readonly Ec2InstanceConnectEndpointState DeleteInProgress = new Ec2InstanceConnectEndpointState("delete-in-progress");
+        /// <summary>
+        /// Constant UpdateComplete for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState UpdateComplete = new Ec2InstanceConnectEndpointState("update-complete");
+        /// <summary>
+        /// Constant UpdateFailed for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState UpdateFailed = new Ec2InstanceConnectEndpointState("update-failed");
+        /// <summary>
+        /// Constant UpdateInProgress for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState UpdateInProgress = new Ec2InstanceConnectEndpointState("update-in-progress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

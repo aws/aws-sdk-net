@@ -120,6 +120,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PreserveClientIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("publicDnsNames", targetDepth))
+                    {
+                        var unmarshaller = InstanceConnectEndpointPublicDnsNamesUnmarshaller.Instance;
+                        unmarshalledObject.PublicDnsNames = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

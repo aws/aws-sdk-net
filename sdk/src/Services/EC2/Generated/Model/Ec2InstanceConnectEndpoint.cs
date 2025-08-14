@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private bool? _preserveClientIp;
+        private InstanceConnectEndpointPublicDnsNames _publicDnsNames;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Ec2InstanceConnectEndpointState _state;
         private string _stateMessage;
@@ -251,6 +252,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPreserveClientIp()
         {
             return this._preserveClientIp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicDnsNames. 
+        /// <para>
+        /// The public DNS names of the endpoint.
+        /// </para>
+        /// </summary>
+        public InstanceConnectEndpointPublicDnsNames PublicDnsNames
+        {
+            get { return this._publicDnsNames; }
+            set { this._publicDnsNames = value; }
+        }
+
+        // Check to see if PublicDnsNames property is set
+        internal bool IsSetPublicDnsNames()
+        {
+            return this._publicDnsNames != null;
         }
 
         /// <summary>
