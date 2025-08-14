@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CmafIngestGroupSettings
     {
+        private List<AdditionalDestinations> _additionalDestinations = AWSConfigs.InitializeCollections ? new List<AdditionalDestinations>() : null;
         private List<CmafIngestCaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CmafIngestCaptionLanguageMapping>() : null;
         private OutputLocationRef _destination;
         private CmafId3Behavior _id3Behavior;
@@ -50,6 +51,22 @@ namespace Amazon.MediaLive.Model
         private CmafTimedMetadataId3Frame _timedMetadataId3Frame;
         private int? _timedMetadataId3Period;
         private CmafTimedMetadataPassthrough _timedMetadataPassthrough;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDestinations. Optional an array of additional
+        /// destinational HTTP destinations for the OutputGroup outputs
+        /// </summary>
+        public List<AdditionalDestinations> AdditionalDestinations
+        {
+            get { return this._additionalDestinations; }
+            set { this._additionalDestinations = value; }
+        }
+
+        // Check to see if AdditionalDestinations property is set
+        internal bool IsSetAdditionalDestinations()
+        {
+            return this._additionalDestinations != null && (this._additionalDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CaptionLanguageMappings. An array that identifies the languages

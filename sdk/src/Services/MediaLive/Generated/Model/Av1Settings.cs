@@ -76,7 +76,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
         /// the rate control mode is CBR. Not used for QVBR.
         /// </summary>
-        [AWSProperty(Min=50000, Max=8000000)]
+        [AWSProperty(Min=50000, Max=12000000)]
         public int Bitrate
         {
             get { return this._bitrate.GetValueOrDefault(); }
@@ -92,7 +92,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BufSize. The size of the buffer (HRD buffer model) in bits.
         /// </summary>
-        [AWSProperty(Min=50000, Max=16000000)]
+        [AWSProperty(Min=50000, Max=24000000)]
         public int BufSize
         {
             get { return this._bufSize.GetValueOrDefault(); }
@@ -241,7 +241,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaxBitrate. The maximum bitrate to assign.For recommendations,
         /// see the description for qvbrQualityLevel.
         /// </summary>
-        [AWSProperty(Min=50000, Max=8000000)]
+        [AWSProperty(Min=50000, Max=12000000)]
         public int MaxBitrate
         {
             get { return this._maxBitrate.GetValueOrDefault(); }

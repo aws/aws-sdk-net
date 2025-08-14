@@ -48,6 +48,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalDestinations())
+            {
+                context.Writer.WritePropertyName("additionalDestinations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalDestinationsListValue in requestObject.AdditionalDestinations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdditionalDestinationsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalDestinationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCaptionLanguageMappings())
             {
                 context.Writer.WritePropertyName("captionLanguageMappings");
