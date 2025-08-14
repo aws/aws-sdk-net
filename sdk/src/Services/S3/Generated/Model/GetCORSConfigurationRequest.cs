@@ -105,6 +105,7 @@ namespace Amazon.S3.Model
         /// of Error Codes</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

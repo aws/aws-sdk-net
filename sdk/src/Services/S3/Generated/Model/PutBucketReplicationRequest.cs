@@ -140,6 +140,7 @@ namespace Amazon.S3.Model
         /// The name of the bucket
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -183,6 +184,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Configuration.
         /// </summary>
+        [AWSProperty(Required=true)]
         public ReplicationConfiguration Configuration
         {
             get { return this._configuration; }

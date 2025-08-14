@@ -141,6 +141,7 @@ namespace Amazon.S3.Model
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i> 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
