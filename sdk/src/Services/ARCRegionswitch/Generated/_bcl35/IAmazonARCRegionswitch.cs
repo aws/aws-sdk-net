@@ -42,6 +42,11 @@ namespace Amazon.ARCRegionswitch
     /// to meet your recovery time objectives (RTOs) and maintain business continuity during
     /// regional disruptions.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/region-switch.html">Region
+    /// switch in ARC</a> in the <i>Amazon Application Recovery Controller User Guide</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonARCRegionswitch : IAmazonService, IDisposable
     {
