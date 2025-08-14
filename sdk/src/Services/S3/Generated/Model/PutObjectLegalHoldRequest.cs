@@ -76,6 +76,7 @@ namespace Amazon.S3.Model
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add required attributes to properties that have been renamed"
+      ]
+    },
+    {
+      "serviceName": "WAF",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add required attributes to properties that have been renamed"
+      ]
+    },
+    {
+      "serviceName": "WAFRegional",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add required attributes to properties that have been renamed"
+      ]
+    },
+    {
+      "serviceName": "SimpleWorkflow",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add required attributes to properties that have been renamed"
+      ]
+    },
+    {
+      "serviceName": "ApiGatewayV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add required attributes to properties that have been renamed"
+      ]
+    }
+  ]
+}

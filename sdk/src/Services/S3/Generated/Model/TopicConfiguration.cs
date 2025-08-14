@@ -65,6 +65,7 @@ namespace Amazon.S3.Model
         /// a message when it detects events of the specified type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Topic
         {
             get { return this._topic; }

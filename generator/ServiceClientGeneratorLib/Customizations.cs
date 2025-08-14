@@ -1443,7 +1443,7 @@ namespace ServiceClientGenerator
             public const string InjectXmlUnmarshallCodeKey = "injectXmlUnmarshallCode";
             public const string SkipContextTestExpressionUnmarshallingLogicKey = "skipContextTestExpressionUnmarshallingLogic";
 
-            private readonly string _modelPropertyName; // for debug inspection assist
+            private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
             private readonly HashSet<string> _injectXmlUnmarshallCode;
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
@@ -1452,6 +1452,11 @@ namespace ServiceClientGenerator
                 this._modifierData = modifierData;
                 _injectXmlUnmarshallCode = ParseInjectXmlUnmarshallCode();
             }
+
+            /// <summary>
+            /// Returns the original property name of the renamed property
+            /// </summary>
+            public string OriginalPropertyName { get { return _modelPropertyName; } }
 
             // The access modifier for the property. Defaults to public if not set in the customization.
             public string AccessModifier

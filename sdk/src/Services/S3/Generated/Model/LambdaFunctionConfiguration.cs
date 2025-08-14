@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         /// the specified event type occurs.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FunctionArn
         {
             get { return this._functionArn; }
