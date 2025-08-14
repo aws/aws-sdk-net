@@ -104,8 +104,8 @@ namespace Amazon.FSx.Model
         /// for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but
         /// you can provision additional IOPS per GB of storage. The configuration consists of
         /// an IOPS mode (<c>AUTOMATIC</c> or <c>USER_PROVISIONED</c>), and in the case of <c>USER_PROVISIONED</c>
-        /// IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
-        /// SSD storage capacity and IOPS</a>.
+        /// IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/storage-capacity-and-IOPS.html">File
+        /// system storage capacity and IOPS</a>.
         /// </para>
         /// </summary>
         public DiskIopsConfiguration DiskIopsConfiguration

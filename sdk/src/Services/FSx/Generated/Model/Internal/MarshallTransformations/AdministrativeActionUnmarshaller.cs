@@ -78,6 +78,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
