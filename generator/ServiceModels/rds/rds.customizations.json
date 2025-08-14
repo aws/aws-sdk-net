@@ -20,7 +20,7 @@
                 "operation": "addBefore",
                 "newType": "Amazon.RDS.Internal.PreSignedUrlRequestHandler",
                 "targetType": "Amazon.Runtime.Internal.Marshaller",
-                "constructorInput": "this.DefaultAWSCredentials ?? this.Config.DefaultAWSCredentials"
+                "constructorInput": "this.ExplicitAWSCredentials ?? this.Config.DefaultAWSCredentials"
             }
         ]
     }

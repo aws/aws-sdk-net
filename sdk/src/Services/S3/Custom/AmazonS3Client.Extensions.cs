@@ -104,7 +104,7 @@ namespace Amazon.S3
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
             var credentials = 
-                DefaultAWSCredentials ??
+                ExplicitAWSCredentials ??
                 Config.DefaultAWSCredentials ?? 
                 DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
@@ -175,7 +175,7 @@ namespace Amazon.S3
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
             var credentials = 
-                DefaultAWSCredentials ??
+                ExplicitAWSCredentials ??
                 Config.DefaultAWSCredentials ?? 
                 DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
@@ -716,7 +716,7 @@ namespace Amazon.S3
             ValidateCreatePresignedPostRequest(request);
 
             var credentials =
-                DefaultAWSCredentials ??
+                ExplicitAWSCredentials ??
                 Config.DefaultAWSCredentials ??
                 DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             
@@ -741,7 +741,7 @@ namespace Amazon.S3
             ValidateCreatePresignedPostRequest(request);
 
             var credentials =
-                DefaultAWSCredentials ??
+                ExplicitAWSCredentials ??
                 Config.DefaultAWSCredentials ??
                 DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 

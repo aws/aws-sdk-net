@@ -49,7 +49,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Credentials explicitly specified when constructing the client.
         /// </summary>
-        protected internal AWSCredentials DefaultAWSCredentials { get; private set; }
+        protected internal AWSCredentials ExplicitAWSCredentials { get; private set; }
 
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
@@ -169,7 +169,7 @@ namespace Amazon.Runtime
 
             if (credentials != null)
             {
-                DefaultAWSCredentials = credentials;
+                ExplicitAWSCredentials = credentials;
             }
 
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
@@ -213,7 +213,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
-                    DefaultAWSCredentials = this.DefaultAWSCredentials,
+                    ExplicitAWSCredentials = this.ExplicitAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,
@@ -243,7 +243,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
-                    DefaultAWSCredentials = this.DefaultAWSCredentials,
+                    ExplicitAWSCredentials = this.ExplicitAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,

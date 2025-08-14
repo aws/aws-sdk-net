@@ -34,7 +34,7 @@ namespace Amazon.Runtime
         RequestMetrics Metrics { get; }
         ISigner Signer { get; set; }
         BaseIdentity Identity { get; set; }
-        AWSCredentials DefaultAWSCredentials { get; }
+        AWSCredentials ExplicitAWSCredentials { get; }
         IClientConfig ClientConfig { get; }
         IRequest Request { get; set; }
         bool IsSigned { get; set; }
@@ -106,7 +106,7 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }
         public ISigner Signer { get; set; }
         public BaseIdentity Identity { get; set; }
-        public AWSCredentials DefaultAWSCredentials { get; set; }
+        public AWSCredentials ExplicitAWSCredentials { get; set; }
         public UserAgentDetails UserAgentDetails
         {
             get

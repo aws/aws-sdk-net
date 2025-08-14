@@ -5,7 +5,7 @@
                 "operation": "addBefore",
                 "newType": "Amazon.EC2.Internal.AmazonEC2PreMarshallHandler",
                 "targetType": "Amazon.Runtime.Internal.Marshaller",
-                "constructorInput": "this.DefaultAWSCredentials ?? this.Config.DefaultAWSCredentials"
+                "constructorInput": "this.ExplicitAWSCredentials ?? this.Config.DefaultAWSCredentials"
             },
             {
                 "operation": "addAfter",

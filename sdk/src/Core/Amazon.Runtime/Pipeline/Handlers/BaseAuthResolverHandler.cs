@@ -57,7 +57,7 @@ namespace Amazon.Runtime.Internal
             }
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
-            var defaultCredentials = executionContext.RequestContext.DefaultAWSCredentials ?? clientConfig.DefaultAWSCredentials;
+            var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
             for (int i = 0; i < authOptions.Count; i++)
             {
@@ -144,7 +144,7 @@ namespace Amazon.Runtime.Internal
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
-            var defaultCredentials = executionContext.RequestContext.DefaultAWSCredentials ?? clientConfig.DefaultAWSCredentials;
+            var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
             for (int i = 0; i < authOptions.Count; i++)
             {
