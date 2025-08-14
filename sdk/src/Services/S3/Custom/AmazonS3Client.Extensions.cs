@@ -718,7 +718,7 @@ namespace Amazon.S3
             var credentials =
                 DefaultAWSCredentials ??
                 Config.DefaultAWSCredentials ??
-                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>(); 
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
