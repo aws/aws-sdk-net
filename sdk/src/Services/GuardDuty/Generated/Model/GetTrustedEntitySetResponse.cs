@@ -30,84 +30,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateThreatIntelSet operation.
-    /// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator
-    /// account can use this operation.
+    /// This is the response object from the GetTrustedEntitySet operation.
     /// </summary>
-    public partial class CreateThreatIntelSetRequest : AmazonGuardDutyRequest
+    public partial class GetTrustedEntitySetResponse : AmazonWebServiceResponse
     {
-        private bool? _activate;
-        private string _clientToken;
-        private string _detectorId;
+        private DateTime? _createdAt;
+        private string _errorDetails;
         private string _expectedBucketOwner;
-        private ThreatIntelSetFormat _format;
+        private TrustedEntitySetFormat _format;
         private string _location;
         private string _name;
+        private TrustedEntitySetStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property Activate. 
+        /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.
+        /// The timestamp when the associated trusted entity set was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool Activate
+        public DateTime CreatedAt
         {
-            get { return this._activate.GetValueOrDefault(); }
-            set { this._activate = value; }
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
         }
 
-        // Check to see if Activate property is set
-        internal bool IsSetActivate()
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
         {
-            return this._activate.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The idempotency token for the create request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=64)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property DetectorId. 
+        /// Gets and sets the property ErrorDetails. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account for which you want to create
-        /// a <c>threatIntelSet</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
-        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
-        /// API.
+        /// The error details when the status is shown as <c>ERROR</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=300)]
-        public string DetectorId
+        public string ErrorDetails
         {
-            get { return this._detectorId; }
-            set { this._detectorId = value; }
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
         }
 
-        // Check to see if DetectorId property is set
-        internal bool IsSetDetectorId()
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
         {
-            return this._detectorId != null;
+            return this._errorDetails != null;
         }
 
         /// <summary>
@@ -133,11 +103,11 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the file that contains the ThreatIntelSet.
+        /// The format of the file that contains the trusted entity set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
-        public ThreatIntelSetFormat Format
+        public TrustedEntitySetFormat Format
         {
             get { return this._format; }
             set { this._format = value; }
@@ -152,7 +122,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The URI of the file that contains the ThreatIntelSet. 
+        /// The URI of the file that contains the trusted entity set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -171,8 +141,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-friendly ThreatIntelSet name displayed in all findings that are generated by
-        /// activity that involves IP addresses included in this ThreatIntelSet.
+        /// The name of the threat entity set associated with the specified <c>trustedEntitySetId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -189,9 +158,28 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the associated trusted entity set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=300)]
+        public TrustedEntitySetStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be added to a new threat list resource.
+        /// The tags associated with trusted entity set resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -205,6 +193,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp when the associated trusted entity set was updated.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

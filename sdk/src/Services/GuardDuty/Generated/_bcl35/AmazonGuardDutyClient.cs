@@ -990,6 +990,69 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateThreatEntitySet
+
+        /// <summary>
+        /// Creates a new threat entity set. In a threat entity set, you can provide known malicious
+        /// IP addresses and domains for your Amazon Web Services environment. GuardDuty generates
+        /// findings based on the entries in the threat entity sets. Only users of the administrator
+        /// account can manage entity sets, which automatically apply to member accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the CreateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">REST API Reference for CreateThreatEntitySet Operation</seealso>
+        public virtual CreateThreatEntitySetResponse CreateThreatEntitySet(CreateThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThreatEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThreatEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">REST API Reference for CreateThreatEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginCreateThreatEntitySet(CreateThreatEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThreatEntitySet.</param>
+        /// 
+        /// <returns>Returns a  CreateThreatEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">REST API Reference for CreateThreatEntitySet Operation</seealso>
+        public virtual CreateThreatEntitySetResponse EndCreateThreatEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateThreatEntitySetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateThreatIntelSet
 
         /// <summary>
@@ -1051,6 +1114,76 @@ namespace Amazon.GuardDuty
         public virtual CreateThreatIntelSetResponse EndCreateThreatIntelSet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateThreatIntelSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrustedEntitySet
+
+        /// <summary>
+        /// Creates a new trusted entity set. In the trusted entity set, you can provide IP addresses
+        /// and domains that you believe are secure for communication in your Amazon Web Services
+        /// environment. GuardDuty will not generate findings for the entries that are specified
+        /// in a trusted entity set. At any given time, you can have only one trusted entity set.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Only users of the administrator account can manage the entity sets, which automatically
+        /// apply to member accounts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">REST API Reference for CreateTrustedEntitySet Operation</seealso>
+        public virtual CreateTrustedEntitySetResponse CreateTrustedEntitySet(CreateTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustedEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrustedEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">REST API Reference for CreateTrustedEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrustedEntitySet(CreateTrustedEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrustedEntitySet.</param>
+        /// 
+        /// <returns>Returns a  CreateTrustedEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">REST API Reference for CreateTrustedEntitySet Operation</seealso>
+        public virtual CreateTrustedEntitySetResponse EndCreateTrustedEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrustedEntitySetResponse>(asyncResult);
         }
 
         #endregion
@@ -1554,6 +1687,66 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DeleteThreatEntitySet
+
+        /// <summary>
+        /// Deletes the threat entity set that is associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">REST API Reference for DeleteThreatEntitySet Operation</seealso>
+        public virtual DeleteThreatEntitySetResponse DeleteThreatEntitySet(DeleteThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThreatEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThreatEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThreatEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">REST API Reference for DeleteThreatEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginDeleteThreatEntitySet(DeleteThreatEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThreatEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThreatEntitySet.</param>
+        /// 
+        /// <returns>Returns a  DeleteThreatEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">REST API Reference for DeleteThreatEntitySet Operation</seealso>
+        public virtual DeleteThreatEntitySetResponse EndDeleteThreatEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteThreatEntitySetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteThreatIntelSet
 
         /// <summary>
@@ -1610,6 +1803,66 @@ namespace Amazon.GuardDuty
         public virtual DeleteThreatIntelSetResponse EndDeleteThreatIntelSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThreatIntelSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrustedEntitySet
+
+        /// <summary>
+        /// Deletes the trusted entity set that is associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">REST API Reference for DeleteTrustedEntitySet Operation</seealso>
+        public virtual DeleteTrustedEntitySetResponse DeleteTrustedEntitySet(DeleteTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustedEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrustedEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">REST API Reference for DeleteTrustedEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrustedEntitySet(DeleteTrustedEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrustedEntitySet.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrustedEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">REST API Reference for DeleteTrustedEntitySet Operation</seealso>
+        public virtual DeleteTrustedEntitySetResponse EndDeleteTrustedEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrustedEntitySetResponse>(asyncResult);
         }
 
         #endregion
@@ -3164,6 +3417,66 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetThreatEntitySet
+
+        /// <summary>
+        /// Retrieves the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the GetThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">REST API Reference for GetThreatEntitySet Operation</seealso>
+        public virtual GetThreatEntitySetResponse GetThreatEntitySet(GetThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<GetThreatEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetThreatEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThreatEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">REST API Reference for GetThreatEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginGetThreatEntitySet(GetThreatEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThreatEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThreatEntitySet.</param>
+        /// 
+        /// <returns>Returns a  GetThreatEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">REST API Reference for GetThreatEntitySet Operation</seealso>
+        public virtual GetThreatEntitySetResponse EndGetThreatEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetThreatEntitySetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetThreatIntelSet
 
         /// <summary>
@@ -3220,6 +3533,66 @@ namespace Amazon.GuardDuty
         public virtual GetThreatIntelSetResponse EndGetThreatIntelSet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetThreatIntelSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTrustedEntitySet
+
+        /// <summary>
+        /// Retrieves the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">REST API Reference for GetTrustedEntitySet Operation</seealso>
+        public virtual GetTrustedEntitySetResponse GetTrustedEntitySet(GetTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustedEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustedEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">REST API Reference for GetTrustedEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginGetTrustedEntitySet(GetTrustedEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustedEntitySet.</param>
+        /// 
+        /// <returns>Returns a  GetTrustedEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">REST API Reference for GetTrustedEntitySet Operation</seealso>
+        public virtual GetTrustedEntitySetResponse EndGetTrustedEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrustedEntitySetResponse>(asyncResult);
         }
 
         #endregion
@@ -4079,6 +4452,68 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListThreatEntitySets
+
+        /// <summary>
+        /// Lists the threat entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the threat entity sets that are returned
+        /// as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatEntitySets service method.</param>
+        /// 
+        /// <returns>The response from the ListThreatEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">REST API Reference for ListThreatEntitySets Operation</seealso>
+        public virtual ListThreatEntitySetsResponse ListThreatEntitySets(ListThreatEntitySetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThreatEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatEntitySetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatEntitySetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThreatEntitySets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatEntitySets operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThreatEntitySets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">REST API Reference for ListThreatEntitySets Operation</seealso>
+        public virtual IAsyncResult BeginListThreatEntitySets(ListThreatEntitySetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThreatEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatEntitySetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThreatEntitySets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThreatEntitySets.</param>
+        /// 
+        /// <returns>Returns a  ListThreatEntitySetsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">REST API Reference for ListThreatEntitySets Operation</seealso>
+        public virtual ListThreatEntitySetsResponse EndListThreatEntitySets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThreatEntitySetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListThreatIntelSets
 
         /// <summary>
@@ -4137,6 +4572,68 @@ namespace Amazon.GuardDuty
         public virtual ListThreatIntelSetsResponse EndListThreatIntelSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThreatIntelSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrustedEntitySets
+
+        /// <summary>
+        /// Lists the trusted entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the trusted entity sets that are
+        /// returned as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedEntitySets service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustedEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">REST API Reference for ListTrustedEntitySets Operation</seealso>
+        public virtual ListTrustedEntitySetsResponse ListTrustedEntitySets(ListTrustedEntitySetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedEntitySetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustedEntitySetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrustedEntitySets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedEntitySets operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrustedEntitySets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">REST API Reference for ListTrustedEntitySets Operation</seealso>
+        public virtual IAsyncResult BeginListTrustedEntitySets(ListTrustedEntitySetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedEntitySetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrustedEntitySets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrustedEntitySets.</param>
+        /// 
+        /// <returns>Returns a  ListTrustedEntitySetsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">REST API Reference for ListTrustedEntitySets Operation</seealso>
+        public virtual ListTrustedEntitySetsResponse EndListTrustedEntitySets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrustedEntitySetsResponse>(asyncResult);
         }
 
         #endregion
@@ -5134,6 +5631,66 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  UpdateThreatEntitySet
+
+        /// <summary>
+        /// Updates the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">REST API Reference for UpdateThreatEntitySet Operation</seealso>
+        public virtual UpdateThreatEntitySetResponse UpdateThreatEntitySet(UpdateThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThreatEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThreatEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">REST API Reference for UpdateThreatEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginUpdateThreatEntitySet(UpdateThreatEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateThreatEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThreatEntitySet.</param>
+        /// 
+        /// <returns>Returns a  UpdateThreatEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">REST API Reference for UpdateThreatEntitySet Operation</seealso>
+        public virtual UpdateThreatEntitySetResponse EndUpdateThreatEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateThreatEntitySetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateThreatIntelSet
 
         /// <summary>
@@ -5193,6 +5750,66 @@ namespace Amazon.GuardDuty
         public virtual UpdateThreatIntelSetResponse EndUpdateThreatIntelSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateThreatIntelSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTrustedEntitySet
+
+        /// <summary>
+        /// Updates the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">REST API Reference for UpdateTrustedEntitySet Operation</seealso>
+        public virtual UpdateTrustedEntitySetResponse UpdateTrustedEntitySet(UpdateTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustedEntitySetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedEntitySet operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrustedEntitySet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">REST API Reference for UpdateTrustedEntitySet Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTrustedEntitySet(UpdateTrustedEntitySetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrustedEntitySet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrustedEntitySet.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrustedEntitySetResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">REST API Reference for UpdateTrustedEntitySet Operation</seealso>
+        public virtual UpdateTrustedEntitySetResponse EndUpdateTrustedEntitySet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrustedEntitySetResponse>(asyncResult);
         }
 
         #endregion
