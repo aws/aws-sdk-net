@@ -194,7 +194,30 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                 }
                 else if (protocol == "Cbor")
                 {
-                    // TODO
+
+            
+            #line default
+            #line hidden
+            this.Write("            {\"");
+            
+            #line 75 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write("\", payload => \r\n                {\r\n                    var stream = EventStreamUt" +
+                    "ils.ConvertMessageToStream(payload);\r\n                    var context = new Cbor" +
+                    "UnmarshallerContext(stream, false, null);\r\n                    return new ");
+            
+            #line 79 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
+            
+            #line default
+            #line hidden
+            this.Write("Unmarshaller().Unmarshall(context);\r\n                }\r\n            },\r\n");
+            
+            #line 82 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+
                 }
                 else
                 {
@@ -211,7 +234,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "</summary>\r\n        protected override IDictionary<string,Func<IEventStreamMessa" +
                     "ge,");
             
-            #line 87 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 95 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -219,14 +242,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("EventStreamException>> ExceptionMapping {get;} =\r\n        new Dictionary<string,F" +
                     "unc<IEventStreamMessage,");
             
-            #line 88 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 96 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException>>(StringComparer.OrdinalIgnoreCase)\r\n        {\r\n");
             
-            #line 90 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         foreach(var member in this.Structure.Members)
         {
@@ -240,7 +263,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    {\"");
             
-            #line 98 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 106 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -248,7 +271,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\", payload => \r\n                        {\r\n                            var contex" +
                     "t = EventStreamUtils.ConvertMessageTo");
             
-            #line 100 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 108 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(protocol));
             
             #line default
@@ -256,14 +279,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Context(payload);\r\n                            var reader = new StreamingUtf8Json" +
                     "Reader(context.Stream);\r\n                            return new ");
             
-            #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ");
             
-            #line 102 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape));
             
             #line default
@@ -271,7 +294,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Unmarshaller().Unmarshall(context, ref reader));\r\n                        }\r\n    " +
                     "                },\r\n");
             
-            #line 105 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 113 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 }
                 else if (protocol == "Xml")
@@ -282,40 +305,70 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("            { \"");
             
-            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\", payload => new ");
             
-            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ");
             
-            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape));
             
             #line default
             #line hidden
             this.Write("Unmarshaller().Unmarshall(EventStreamUtils.ConvertMessageTo");
             
-            #line 110 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 118 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(protocol));
             
             #line default
             #line hidden
             this.Write("Context(payload))) },\r\n");
             
-            #line 111 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 }
                 else if (protocol == "Cbor")
                 {
-                    // TODO
+
+            
+            #line default
+            #line hidden
+            this.Write("            {\"");
+            
+            #line 124 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+            
+            #line default
+            #line hidden
+            this.Write("\", payload => \r\n                {\r\n                    var stream = EventStreamUt" +
+                    "ils.ConvertMessageToStream(payload);\r\n                    var context = new Cbor" +
+                    "UnmarshallerContext(stream, false, null);\r\n                    return new ");
+            
+            #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ");
+            
+            #line 128 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape));
+            
+            #line default
+            #line hidden
+            this.Write("Unmarshaller().Unmarshall(context));\r\n                }\r\n            },\r\n");
+            
+            #line 131 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+
                 }
                 else
                     throw new NotImplementedException("The given protocol is not supported");
@@ -349,14 +402,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         public override event EventHandler<EventStreamExceptionReceivedArgs<");
             
-            #line 144 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 160 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("EventStreamException>> ExceptionReceived;\r\n");
             
-            #line 145 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 161 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         if(isResponse)
         {
@@ -368,7 +421,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "/summary>\r\n        public event EventHandler<EventStreamEventReceivedArgs<Initia" +
                     "lResponseEvent>> InitialResponseReceived;\r\n");
             
-            #line 153 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 169 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         }
         else if(isRequest)
@@ -381,7 +434,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "summary>\r\n        public event EventHandler<EventStreamEventReceivedArgs<Initial" +
                     "RequestEvent>> InitialRequestReceived;\r\n");
             
-            #line 162 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 178 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         }
 
@@ -389,7 +442,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 165 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 181 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         foreach(var member in this.Structure.Members)
         {
@@ -401,7 +454,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        ///<summary>\r\n        ///Raised when an ");
             
-            #line 172 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 188 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -409,21 +462,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" event is received\r\n        ///</summary>\r\n        public event EventHandler<Even" +
                     "tStreamEventReceivedArgs<");
             
-            #line 174 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(">> ");
             
-            #line 174 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 190 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("Received;\r\n");
             
-            #line 175 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 191 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
             }
 
@@ -431,7 +484,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 178 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 194 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
         }
 
@@ -441,7 +494,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n        /// <summary>\r\n        /// Construct an instance\r\n        /// </summary" +
                     ">\r\n        /// <param name=\"stream\"></param>        \r\n        public ");
             
-            #line 186 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 202 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -457,7 +510,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""eventStreamDecoder""></param>
         public ");
             
-            #line 195 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 211 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -486,7 +539,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                 var _ =
 ");
             
-            #line 217 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 233 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 if(isResponse)
 
@@ -495,7 +548,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    RaiseEvent(InitialResponseReceived, ev) ||\r\n");
             
-            #line 221 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 237 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 else if(isRequest)
 
@@ -504,7 +557,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    RaiseEvent(InitialRequestReceived,ev) ||\r\n");
             
-            #line 225 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 241 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
 
                 var eventMembers = this.Structure.Members.Where(m => m.ModelShape.IsEvent).ToArray();
@@ -516,14 +569,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    RaiseEvent(");
             
-            #line 231 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 247 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventMembers[0].PropertyName));
             
             #line default
             #line hidden
             this.Write("Received,ev);\r\n");
             
-            #line 232 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 248 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 }
                 else if (eventMembers.Length > 1)
@@ -536,14 +589,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    RaiseEvent(");
             
-            #line 239 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 255 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventMembers[i].PropertyName));
             
             #line default
             #line hidden
             this.Write("Received,ev) ||\r\n");
             
-            #line 240 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 256 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                     }
 
@@ -552,14 +605,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("                    RaiseEvent(");
             
-            #line 243 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 259 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(eventMembers.Last().PropertyName));
             
             #line default
             #line hidden
             this.Write("Received,ev);\r\n");
             
-            #line 244 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
+            #line 260 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EventStreamOutputGenerator.tt"
 
                 }
 
