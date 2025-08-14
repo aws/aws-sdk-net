@@ -56,6 +56,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("additionalDestinations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AdditionalDestinations, AdditionalDestinationsUnmarshaller>(AdditionalDestinationsUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalDestinations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("captionLanguageMappings", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CmafIngestCaptionLanguageMapping, CmafIngestCaptionLanguageMappingUnmarshaller>(CmafIngestCaptionLanguageMappingUnmarshaller.Instance);

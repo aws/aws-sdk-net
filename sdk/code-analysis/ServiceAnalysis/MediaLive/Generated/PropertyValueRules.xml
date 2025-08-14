@@ -871,12 +871,12 @@
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.Bitrate</property>
     <min>50000</min>
-    <max>8000000</max>
+    <max>12000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.BufSize</property>
     <min>50000</min>
-    <max>16000000</max>
+    <max>24000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.FramerateDenominator</property>
@@ -890,7 +890,7 @@
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.MaxBitrate</property>
     <min>50000</min>
-    <max>8000000</max>
+    <max>12000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.MinIInterval</property>
