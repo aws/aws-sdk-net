@@ -1,3 +1,31 @@
+### 3.7.1102.0 (2025-08-14 18:38 UTC)
+* ARCRegionswitch (3.7.501.0)
+	* Endpoint rule test and documentation update.
+* BCMRecommendedActions (3.7.500.0)
+	* Initial SDK release for AWS Billing and Cost Management Recommended Actions.
+* DirectConnect (3.7.501.0)
+	* Added pagination support for DescribeHostedConnections, DescribeVirtualInterfaces, DescribeConnections, DescribeInterconnects, DescribeLags. Added asnLong support for BGP peer operations which supports a large range.
+* DynamoDBv2 (3.7.501.0)
+	* This release 1/ Adds support for throttled keys mode for CloudWatch Contributor Insights, 2/ Adds throttling reasons to exceptions across dataplane APIs. 3/ Explicitly models ThrottlingException as a class in statically typed languages. Refer to the launch day blog post for more details.
+* EC2 (3.7.504.0)
+	* This release adds ModifyInstanceConnectEndpoint API to update configurations on existing EC2 Instance Connect Endpoints and improves IPv6 support through dualstack DNS names for EC2 Instance Connect Endpoints.
+* FSx (3.7.502.0)
+	* Amazon FSx for NetApp ONTAP 2nd generation file systems now support decreasing SSD storage capacity.
+* Glue (3.7.502.0)
+	* AWS Glue now supports Trusted Identity Propagation.
+* GuardDuty (3.7.502.0)
+	* Added support for entity lists.
+* MediaLive (3.7.501.0)
+	* CMAF Ingest output groups in MediaLive can now accept one additional destination url for single pipeline channels and up to two additional destination urls for standard channels.
+* PCS (3.7.502.0)
+	* Updated the regex pattern and description of iamInstanceProfileArn in the CreateComputeNodeGroup and UpdateComputeNodeGroup API actions. Name and path requirements apply to the ARN of the IAM role associated with the instance profile and not the ARN of the instance profile.
+* QApps (3.7.500.8)
+	* Documentation update for Amazon Q Apps API Reference
+* ServiceDiscovery (3.7.501.0)
+	* Added support for cross account through Id parameter overloading with ARN and allow owner account for some APIs instead of ARN
+* WorkSpaces (3.7.501.0)
+	* New APIs introduced to import WorkSpaces BYOL image using a new process that leveraged EC2 Image Builder. WorkSpaces tests and fixes your image's compatibility issues and supports customized VM images.
+
 ### 3.7.1101.0 (2025-08-13 18:21 UTC)
 * Braket (3.7.501.0)
 	* Add support for Braket program sets.
