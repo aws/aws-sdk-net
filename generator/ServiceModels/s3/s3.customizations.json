@@ -1037,7 +1037,6 @@
                 "Marshaller" : "Amazon.Util.AWSSDKUtils.Join",
                 "Unmarshaller" : "StringUnmarshaller"
             }
-<<<<<<< HEAD
         },
         "AnalyticsS3BucketDestination":{
             "Format": {
@@ -1045,8 +1044,6 @@
                 "Marshaller" :"StringUtils.FromString",
                 "StringUnmarshaller" : "StringUnmarshaller"
             }
-=======
->>>>>>> 8d5ef47ddc87 (Generate copy part)
         }
     },
     "excludeMembers":{
@@ -1129,15 +1126,11 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-<<<<<<< HEAD
         "CopyPartResult",
         "AnalyticsAndOperator",
         "AnalyticsFilter",
         "IntelligentTieringFilter",
         "IntelligentTieringAndOperator"
-=======
-        "CopyPartResult"
->>>>>>> 8d5ef47ddc87 (Generate copy part)
     ],
     "implementsVisitorPattern":{
         "LifecycleFilter":{
