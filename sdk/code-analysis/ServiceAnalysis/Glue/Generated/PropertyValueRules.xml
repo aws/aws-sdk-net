@@ -322,6 +322,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlueIdentityCenterConfigurationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlueIdentityCenterConfigurationResponse.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationRequest.DataFilter</property>
     <min>1</min>
     <max>2048</max>
@@ -1557,6 +1567,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlueIdentityCenterConfigurationResponse.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlueIdentityCenterConfigurationResponse.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationResourcePropertyRequest.ResourceArn</property>

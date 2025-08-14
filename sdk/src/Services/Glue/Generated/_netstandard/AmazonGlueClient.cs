@@ -1925,6 +1925,59 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateGlueIdentityCenterConfiguration
+
+        internal virtual CreateGlueIdentityCenterConfigurationResponse CreateGlueIdentityCenterConfiguration(CreateGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Glue Identity Center configuration to enable integration between Glue
+        /// and Amazon Web Services IAM Identity Center for authentication and authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlueIdentityCenterConfiguration">REST API Reference for CreateGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<CreateGlueIdentityCenterConfigurationResponse> CreateGlueIdentityCenterConfigurationAsync(CreateGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIntegration
 
         internal virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
@@ -3581,6 +3634,59 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDevEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGlueIdentityCenterConfiguration
+
+        internal virtual DeleteGlueIdentityCenterConfigurationResponse DeleteGlueIdentityCenterConfiguration(DeleteGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the existing Glue Identity Center configuration, removing the integration
+        /// between Glue and Amazon Web Services IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlueIdentityCenterConfiguration">REST API Reference for DeleteGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<DeleteGlueIdentityCenterConfigurationResponse> DeleteGlueIdentityCenterConfigurationAsync(DeleteGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6295,6 +6401,59 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = GetEntityRecordsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEntityRecordsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGlueIdentityCenterConfiguration
+
+        internal virtual GetGlueIdentityCenterConfigurationResponse GetGlueIdentityCenterConfiguration(GetGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the current Glue Identity Center configuration details, including the associated
+        /// Identity Center instance and application information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlueIdentityCenterConfiguration">REST API Reference for GetGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<GetGlueIdentityCenterConfigurationResponse> GetGlueIdentityCenterConfigurationAsync(GetGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12423,6 +12582,59 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDevEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGlueIdentityCenterConfiguration
+
+        internal virtual UpdateGlueIdentityCenterConfigurationResponse UpdateGlueIdentityCenterConfiguration(UpdateGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the existing Glue Identity Center configuration, allowing modification of
+        /// scopes and permissions for the integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlueIdentityCenterConfiguration">REST API Reference for UpdateGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<UpdateGlueIdentityCenterConfigurationResponse> UpdateGlueIdentityCenterConfigurationAsync(UpdateGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
