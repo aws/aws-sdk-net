@@ -43,6 +43,7 @@ namespace Amazon.ServiceDiscovery.Model
         private int? _maxResults;
         private string _namespaceName;
         private Dictionary<string, string> _optionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _ownerAccount;
         private Dictionary<string, string> _queryParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _serviceName;
 
@@ -107,7 +108,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
+        /// The <c>HttpName</c> name of the namespace. The <c>HttpName</c> is found in the <c>HttpProperties</c>
         /// member of the <c>Properties</c> member of the namespace. In most cases, <c>Name</c>
         /// and <c>HttpName</c> match. However, if you reuse <c>Name</c> for namespace creation,
         /// a generated hash is added to <c>HttpName</c> to distinguish the two.
@@ -151,6 +152,28 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetOptionalParameters()
         {
             return this._optionalParameters != null && (this._optionalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the namespace associated with
+        /// the instance, as specified in the namespace <c>ResourceOwner</c> field. For instances
+        /// associated with namespaces that are shared with your account, you must specify an
+        /// <c>OwnerAccount</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
         /// <summary>

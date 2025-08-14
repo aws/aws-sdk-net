@@ -125,7 +125,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// The ID of the operation that's already in progress.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Max=255)]
         public string DuplicateOperationId
         {
             get { return this._duplicateOperationId; }

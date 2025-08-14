@@ -455,7 +455,7 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePrivateDnsNamespace()
         {
-            #region to-update-a-public-dns-namespace-1712868389604
+            #region to-update-a-private-dns-namespace-1712868389604
 
             var client = new AmazonServiceDiscoveryClient();
             var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 
@@ -472,7 +472,7 @@ namespace AWSSDKDocSamples.Amazon.ServiceDiscovery.Generated
 
         public void ServiceDiscoveryUpdatePrivateDnsNamespace()
         {
-            #region to-update-a-private-dns-namespace-1712868389604
+            #region to-update-a-public-dns-namespace-1712868389604
 
             var client = new AmazonServiceDiscoveryClient();
             var response = client.UpdatePrivateDnsNamespace(new UpdatePrivateDnsNamespaceRequest 

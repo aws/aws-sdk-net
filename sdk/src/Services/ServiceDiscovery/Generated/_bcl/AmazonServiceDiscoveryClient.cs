@@ -1603,7 +1603,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Lists summary information about the namespaces that were created by the current Amazon
-        /// Web Services account.
+        /// Web Services account and shared with the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// 
@@ -1626,7 +1626,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Lists summary information about the namespaces that were created by the current Amazon
-        /// Web Services account.
+        /// Web Services account and shared with the current Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// <param name="cancellationToken">
@@ -2457,7 +2457,21 @@ namespace Amazon.ServiceDiscovery
         /// If you omit an existing <c>HealthCheckCustomConfig</c> configuration from an <c>UpdateService</c>
         /// request, the configuration isn't deleted from the service.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can't call <c>UpdateService</c> and update settings in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the service is associated with an HTTP namespace
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the service is associated with a shared namespace and contains instances that
+        /// were registered by Amazon Web Services accounts other than the account making the
+        /// <c>UpdateService</c> call
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// When you update settings for a service, Cloud Map also updates the corresponding settings
         /// in all the records and health checks that were created by using the specified service.
@@ -2517,7 +2531,21 @@ namespace Amazon.ServiceDiscovery
         /// If you omit an existing <c>HealthCheckCustomConfig</c> configuration from an <c>UpdateService</c>
         /// request, the configuration isn't deleted from the service.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You can't call <c>UpdateService</c> and update settings in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When the service is associated with an HTTP namespace
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When the service is associated with a shared namespace and contains instances that
+        /// were registered by Amazon Web Services accounts other than the account making the
+        /// <c>UpdateService</c> call
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         /// When you update settings for a service, Cloud Map also updates the corresponding settings
         /// in all the records and health checks that were created by using the specified service.

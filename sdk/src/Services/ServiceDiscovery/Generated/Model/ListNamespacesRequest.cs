@@ -32,7 +32,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
     /// Lists summary information about the namespaces that were created by the current Amazon
-    /// Web Services account.
+    /// Web Services account and shared with the current Amazon Web Services account.
     /// </summary>
     public partial class ListNamespacesRequest : AmazonServiceDiscoveryRequest
     {
