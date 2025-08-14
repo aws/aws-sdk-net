@@ -3075,6 +3075,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant CANCELLED for Status
+        /// </summary>
+        public static readonly Status CANCELLED = new Status("CANCELLED");
+        /// <summary>
         /// Constant COMPLETED for Status
         /// </summary>
         public static readonly Status COMPLETED = new Status("COMPLETED");
@@ -3090,6 +3094,10 @@ namespace Amazon.FSx
         /// Constant OPTIMIZING for Status
         /// </summary>
         public static readonly Status OPTIMIZING = new Status("OPTIMIZING");
+        /// <summary>
+        /// Constant PAUSED for Status
+        /// </summary>
+        public static readonly Status PAUSED = new Status("PAUSED");
         /// <summary>
         /// Constant PENDING for Status
         /// </summary>

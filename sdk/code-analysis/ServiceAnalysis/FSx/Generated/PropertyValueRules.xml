@@ -876,6 +876,11 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.AdministrativeAction.Message</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.AdministrativeAction.ProgressPercent</property>
     <min>0</min>
     <max>100</max>
