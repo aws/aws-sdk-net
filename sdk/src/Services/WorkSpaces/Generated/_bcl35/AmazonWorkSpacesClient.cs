@@ -2982,6 +2982,66 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeCustomWorkspaceImageImport
+
+        /// <summary>
+        /// Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomWorkspaceImageImport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCustomWorkspaceImageImport service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        public virtual DescribeCustomWorkspaceImageImportResponse DescribeCustomWorkspaceImageImport(DescribeCustomWorkspaceImageImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomWorkspaceImageImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCustomWorkspaceImageImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomWorkspaceImageImport operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomWorkspaceImageImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCustomWorkspaceImageImport(DescribeCustomWorkspaceImageImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCustomWorkspaceImageImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomWorkspaceImageImport.</param>
+        /// 
+        /// <returns>Returns a  DescribeCustomWorkspaceImageImportResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        public virtual DescribeCustomWorkspaceImageImportResponse EndDescribeCustomWorkspaceImageImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCustomWorkspaceImageImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeImageAssociations
 
         /// <summary>
@@ -4223,6 +4283,82 @@ namespace Amazon.WorkSpaces
         public virtual ImportClientBrandingResponse EndImportClientBranding(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportClientBrandingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportCustomWorkspaceImage
+
+        /// <summary>
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces using EC2 Image Builder. The image must be an already licensed image that
+        /// is in your Amazon Web Services account, and you must own the image. For more information
+        /// about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCustomWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportCustomWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        public virtual ImportCustomWorkspaceImageResponse ImportCustomWorkspaceImage(ImportCustomWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCustomWorkspaceImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCustomWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCustomWorkspaceImage operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCustomWorkspaceImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        public virtual IAsyncResult BeginImportCustomWorkspaceImage(ImportCustomWorkspaceImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportCustomWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportCustomWorkspaceImage.</param>
+        /// 
+        /// <returns>Returns a  ImportCustomWorkspaceImageResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        public virtual ImportCustomWorkspaceImageResponse EndImportCustomWorkspaceImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportCustomWorkspaceImageResponse>(asyncResult);
         }
 
         #endregion

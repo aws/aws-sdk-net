@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyAccount operation.
+    /// Container for the parameters to the DescribeCustomWorkspaceImageImport operation.
+    /// Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
     /// </summary>
-    public partial class ModifyAccountResponse : AmazonWebServiceResponse
+    public partial class DescribeCustomWorkspaceImageImportRequest : AmazonWorkSpacesRequest
     {
-        private string _message;
+        private string _imageId;
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property ImageId. 
         /// <para>
-        /// The text message to describe the status of BYOL modification.
+        /// The identifier of the WorkSpace image.
         /// </para>
         /// </summary>
-        public string Message
+        [AWSProperty(Required=true)]
+        public string ImageId
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this._message != null;
+            return this._imageId != null;
         }
 
     }

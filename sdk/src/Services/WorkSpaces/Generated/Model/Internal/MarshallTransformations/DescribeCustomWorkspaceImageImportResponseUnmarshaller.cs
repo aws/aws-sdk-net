@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyAccount operation
+    /// Response Unmarshaller for DescribeCustomWorkspaceImageImport operation
     /// </summary>  
-    public class ModifyAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeCustomWorkspaceImageImportResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,58 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ModifyAccountResponse response = new ModifyAccountResponse();
+            DescribeCustomWorkspaceImageImportResponse response = new DescribeCustomWorkspaceImageImportResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Message", targetDepth))
+                if (context.TestExpression("Created", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.Created = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ErrorDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CustomWorkspaceImageImportErrorDetails, CustomWorkspaceImageImportErrorDetailsUnmarshaller>(CustomWorkspaceImageImportErrorDetailsUnmarshaller.Instance);
+                    response.ErrorDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImageBuilderInstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Message = unmarshaller.Unmarshall(context);
+                    response.ImageBuilderInstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImageId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImageId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImageSource", targetDepth))
+                {
+                    var unmarshaller = ImageSourceIdentifierUnmarshaller.Instance;
+                    response.ImageSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InfrastructureConfigurationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InfrastructureConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -85,29 +127,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
-                {
-                    return InvalidParameterValuesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateException"))
-                {
-                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceUnavailableException"))
-                {
-                    return ResourceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonWorkSpacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ModifyAccountResponseUnmarshaller _instance = new ModifyAccountResponseUnmarshaller();        
+        private static DescribeCustomWorkspaceImageImportResponseUnmarshaller _instance = new DescribeCustomWorkspaceImageImportResponseUnmarshaller();        
 
-        internal static ModifyAccountResponseUnmarshaller GetInstance()
+        internal static DescribeCustomWorkspaceImageImportResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +145,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyAccountResponseUnmarshaller Instance
+        public static DescribeCustomWorkspaceImageImportResponseUnmarshaller Instance
         {
             get
             {

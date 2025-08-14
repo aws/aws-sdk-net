@@ -30,28 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyAccount operation.
+    /// This is the response object from the ImportCustomWorkspaceImage operation.
     /// </summary>
-    public partial class ModifyAccountResponse : AmazonWebServiceResponse
+    public partial class ImportCustomWorkspaceImageResponse : AmazonWebServiceResponse
     {
-        private string _message;
+        private string _imageId;
+        private CustomWorkspaceImageImportState _state;
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property ImageId. 
         /// <para>
-        /// The text message to describe the status of BYOL modification.
+        /// The identifier of the WorkSpace image.
         /// </para>
         /// </summary>
-        public string Message
+        public string ImageId
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this._message != null;
+            return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the WorkSpace image.
+        /// </para>
+        /// </summary>
+        public CustomWorkspaceImageImportState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
     }

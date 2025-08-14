@@ -70,6 +70,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     response.DedicatedTenancySupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -37,6 +37,7 @@ namespace Amazon.WorkSpaces.Model
         private DedicatedTenancyAccountType _dedicatedTenancyAccountType;
         private string _dedicatedTenancyManagementCidrRange;
         private DedicatedTenancySupportResultEnum _dedicatedTenancySupport;
+        private string _message;
 
         /// <summary>
         /// Gets and sets the property DedicatedTenancyAccountType. 
@@ -97,6 +98,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDedicatedTenancySupport()
         {
             return this._dedicatedTenancySupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The text message to describe the status of BYOL.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }
