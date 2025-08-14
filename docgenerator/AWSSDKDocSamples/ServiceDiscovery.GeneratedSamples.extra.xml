@@ -504,12 +504,12 @@
         <value>
             <example>
                 <para>
-                    The following example updates the description of a public DNS namespace.
+                    The following example updates the description of a private DNS namespace.
                 </para>
                 <code
-                    title="To update a public DNS namespace"
+                    title="To update a private DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
-                    region="to-update-a-public-dns-namespace-1712868389604" />
+                    region="to-update-a-private-dns-namespace-1712868389604" />
             </example>
         </value>
     </doc>
@@ -523,12 +523,12 @@
         <value>
             <example>
                 <para>
-                    The following example updates the description of a private DNS namespace.
+                    The following example updates the description of a public DNS namespace.
                 </para>
                 <code
-                    title="To update a private DNS namespace"
+                    title="To update a public DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
-                    region="to-update-a-private-dns-namespace-1712868389604" />
+                    region="to-update-a-public-dns-namespace-1712868389604" />
             </example>
         </value>
     </doc>

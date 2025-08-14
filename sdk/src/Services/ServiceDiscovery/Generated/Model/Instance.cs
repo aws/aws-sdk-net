@@ -36,6 +36,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class Instance
     {
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _createdByAccount;
         private string _creatorRequestId;
         private string _id;
 
@@ -172,6 +173,29 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedByAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that registered the instance. If this isn't
+        /// your account ID, it's the ID of the account that shared the namespace with your account
+        /// or the ID of another account with which the namespace has been shared. For more information
+        /// about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string CreatedByAccount
+        {
+            get { return this._createdByAccount; }
+            set { this._createdByAccount = value; }
+        }
+
+        // Check to see if CreatedByAccount property is set
+        internal bool IsSetCreatedByAccount()
+        {
+            return this._createdByAccount != null;
         }
 
         /// <summary>

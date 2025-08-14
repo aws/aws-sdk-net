@@ -36,6 +36,7 @@ namespace Amazon.ServiceDiscovery.Model
     {
         private List<InstanceSummary> _instances = AWSConfigs.InitializeCollections ? new List<InstanceSummary>() : null;
         private string _nextToken;
+        private string _resourceOwner;
 
         /// <summary>
         /// Gets and sets the property Instances. 
@@ -74,6 +75,27 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the namespace that contains
+        /// the specified service. If this isn't your account ID, it's the ID of the account that
+        /// shared the namespace with your account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
     }

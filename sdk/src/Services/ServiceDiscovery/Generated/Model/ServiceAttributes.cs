@@ -36,6 +36,7 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class ServiceAttributes
     {
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _resourceOwner;
         private string _serviceArn;
 
         /// <summary>
@@ -68,6 +69,29 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the namespace with which the
+        /// service is associated. If this isn't your account ID, it is the ID of the account
+        /// that shared the namespace with your account. For more information about shared namespaces,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
         /// <summary>

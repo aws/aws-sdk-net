@@ -47,8 +47,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>EQ</c>: When you specify <c>EQ</c>, specify one namespace ID for <c>Values</c>.
-        /// <c>EQ</c> is the default condition and can be omitted.
+        ///  <c>EQ</c>: When you specify <c>EQ</c>, specify one value. <c>EQ</c> is the default
+        /// condition and can be omitted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -67,8 +67,21 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specify <c>NAMESPACE_ID</c>.
+        /// Specify the services that you want to get using one of the following.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>NAMESPACE_ID</c>: Gets the services associated with the specified namespace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOURCE_OWNER</c>: Gets the services associated with the namespaces created by
+        /// your Amazon Web Services account or by other accounts. This can be used to filter
+        /// for services created in a shared namespace. For more information about shared namespaces,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ServiceFilterName Name
@@ -89,6 +102,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// The values that are applicable to the value that you specify for <c>Condition</c>
         /// to filter the list of services.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NAMESPACE_ID</b>: Specify one namespace ID or ARN. Specify the namespace ARN for
+        /// namespaces that are shared with your Amazon Web Services account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RESOURCE_OWNER</b>: Specify one of <c>SELF</c> or <c>OTHER_ACCOUNTS</c>. <c>SELF</c>
+        /// can be used to filter services associated with namespaces created by you and <c>OTHER_ACCOUNTS</c>
+        /// can be used to filter services associated with namespaces that were shared with you.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Values

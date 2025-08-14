@@ -58,6 +58,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     response.Instance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

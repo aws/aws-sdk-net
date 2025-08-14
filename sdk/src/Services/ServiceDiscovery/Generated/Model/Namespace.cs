@@ -41,6 +41,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _id;
         private string _name;
         private NamespaceProperties _properties;
+        private string _resourceOwner;
         private int? _serviceCount;
         private NamespaceType _type;
 
@@ -178,6 +179,28 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetProperties()
         {
             return this._properties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the namespace. If this isn't
+        /// your account ID, it's the ID of the account that shared the namespace with your account.
+        /// For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
         /// <summary>

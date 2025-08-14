@@ -36,12 +36,13 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class DiscoverInstancesRevisionRequest : AmazonServiceDiscoveryRequest
     {
         private string _namespaceName;
+        private string _ownerAccount;
         private string _serviceName;
 
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
+        /// The <c>HttpName</c> name of the namespace. The <c>HttpName</c> is found in the <c>HttpProperties</c>
         /// member of the <c>Properties</c> member of the namespace.
         /// </para>
         /// </summary>
@@ -56,6 +57,29 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccount. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the namespace associated with
+        /// the instance, as specified in the namespace <c>ResourceOwner</c> field. For instances
+        /// associated with namespaces that are shared with your account, you must specify an
+        /// <c>OwnerAccount</c>. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccount
+        {
+            get { return this._ownerAccount; }
+            set { this._ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this._ownerAccount != null;
         }
 
         /// <summary>

@@ -75,6 +75,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NamespaceName);
                 }
 
+                if(publicRequest.IsSetOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("OwnerAccount");
+                    context.Writer.Write(publicRequest.OwnerAccount);
+                }
+
                 if(publicRequest.IsSetServiceName())
                 {
                     context.Writer.WritePropertyName("ServiceName");
