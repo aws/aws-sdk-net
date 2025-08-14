@@ -65,6 +65,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ThrottlingReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ThrottlingReason, ThrottlingReasonUnmarshaller>(ThrottlingReasonUnmarshaller.Instance);
+                    unmarshalledObject.ThrottlingReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

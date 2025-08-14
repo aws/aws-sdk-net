@@ -75,6 +75,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ContributorInsightsAction);
                 }
 
+                if(publicRequest.IsSetContributorInsightsMode())
+                {
+                    context.Writer.WritePropertyName("ContributorInsightsMode");
+                    context.Writer.Write(publicRequest.ContributorInsightsMode);
+                }
+
                 if(publicRequest.IsSetIndexName())
                 {
                     context.Writer.WritePropertyName("IndexName");

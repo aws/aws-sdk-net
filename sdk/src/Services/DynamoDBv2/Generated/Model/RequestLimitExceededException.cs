@@ -30,15 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Throughput exceeds the current throughput quota for your account. Please contact <a
-    /// href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a
-    /// quota increase.
+    /// Throughput exceeds the current throughput quota for your account. For detailed information
+    /// about why the request was throttled and the ARN of the impacted resource, find the
+    /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+    /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+    /// Web ServicesSupport</a> to request a quota increase.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class RequestLimitExceededException : AmazonDynamoDBException
     {
+        private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
         /// Constructs a new RequestLimitExceededException with the specified error
@@ -100,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         protected RequestLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ThrottlingReasons = (List<ThrottlingReason>)info.GetValue("ThrottlingReasons", typeof(List<ThrottlingReason>));
         }
 
         /// <summary>
@@ -120,8 +124,29 @@ namespace Amazon.DynamoDBv2.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ThrottlingReasons", this.ThrottlingReasons);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ThrottlingReasons. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// that provide detailed diagnostic information about why the request was throttled.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<ThrottlingReason> ThrottlingReasons
+        {
+            get { return this._throttlingReasons; }
+            set { this._throttlingReasons = value; }
+        }
+
+        // Check to see if ThrottlingReasons property is set
+        internal bool IsSetThrottlingReasons()
+        {
+            return this._throttlingReasons != null && (this._throttlingReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

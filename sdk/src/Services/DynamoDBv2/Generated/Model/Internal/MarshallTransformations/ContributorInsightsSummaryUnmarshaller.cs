@@ -66,6 +66,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ContributorInsightsMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContributorInsightsMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContributorInsightsStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

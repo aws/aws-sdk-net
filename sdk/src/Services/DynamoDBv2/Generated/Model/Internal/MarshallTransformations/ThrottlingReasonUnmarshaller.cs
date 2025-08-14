@@ -35,53 +35,60 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RequestLimitExceededException Object
+    /// Response Unmarshaller for ThrottlingReason Object
     /// </summary>  
-    public class RequestLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<RequestLimitExceededException, JsonUnmarshallerContext>
+    public class ThrottlingReasonUnmarshaller : IUnmarshaller<ThrottlingReason, XmlUnmarshallerContext>, IUnmarshaller<ThrottlingReason, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RequestLimitExceededException Unmarshall(JsonUnmarshallerContext context)
+        ThrottlingReason IUnmarshaller<ThrottlingReason, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public RequestLimitExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        /// <returns>The unmarshalled object</returns>
+        public ThrottlingReason Unmarshall(JsonUnmarshallerContext context)
         {
+            ThrottlingReason unmarshalledObject = new ThrottlingReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            RequestLimitExceededException unmarshalledObject = new RequestLimitExceededException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ThrottlingReasons", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ThrottlingReason, ThrottlingReasonUnmarshaller>(ThrottlingReasonUnmarshaller.Instance);
-                    unmarshalledObject.ThrottlingReasons = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
-        private static RequestLimitExceededExceptionUnmarshaller _instance = new RequestLimitExceededExceptionUnmarshaller();        
+
+        private static ThrottlingReasonUnmarshaller _instance = new ThrottlingReasonUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RequestLimitExceededExceptionUnmarshaller Instance
+        public static ThrottlingReasonUnmarshaller Instance
         {
             get
             {
