@@ -25213,6 +25213,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyInstanceConnectEndpoint
+
+        internal virtual ModifyInstanceConnectEndpointResponse ModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceConnectEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the specified EC2 Instance Connect Endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/modify-ec2-instance-connect-endpoint.html">Modify
+        /// an EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceConnectEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyInstanceConnectEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
+        public virtual Task<ModifyInstanceConnectEndpointResponse> ModifyInstanceConnectEndpointAsync(ModifyInstanceConnectEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstanceConnectEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyInstanceCpuOptions
 
         internal virtual ModifyInstanceCpuOptionsResponse ModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request)

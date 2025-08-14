@@ -27899,6 +27899,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyInstanceConnectEndpoint
+
+
+        /// <summary>
+        /// Modifies the specified EC2 Instance Connect Endpoint.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/modify-ec2-instance-connect-endpoint.html">Modify
+        /// an EC2 Instance Connect Endpoint</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceConnectEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceConnectEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
+        ModifyInstanceConnectEndpointResponse ModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceConnectEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceConnectEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
+        IAsyncResult BeginModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceConnectEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceConnectEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceConnectEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
+        ModifyInstanceConnectEndpointResponse EndModifyInstanceConnectEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyInstanceCpuOptions
 
 
