@@ -45,6 +45,12 @@ namespace Amazon.Runtime
         protected RuntimePipeline RuntimePipeline { get; set; }
         public IClientConfig Config => _config;
         private readonly ClientConfig _config;
+
+        /// <summary>
+        /// Credentials explicitly specified when constructing the client.
+        /// </summary>
+        protected internal AWSCredentials DefaultAWSCredentials { get; private set; }
+
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
@@ -159,11 +165,13 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-
-            if(credentials != null)
-                config.DefaultAWSCredentials = credentials;
-
             _config = config;
+
+            if (credentials != null)
+            {
+                DefaultAWSCredentials = credentials;
+            }
+
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             UpdateSecurityProtocol();
@@ -205,6 +213,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
+                    DefaultAWSCredentials = this.DefaultAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,
@@ -234,6 +243,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
+                    DefaultAWSCredentials = this.DefaultAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,

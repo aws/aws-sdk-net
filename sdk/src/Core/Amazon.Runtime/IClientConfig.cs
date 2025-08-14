@@ -65,15 +65,15 @@ namespace Amazon.Runtime
         /// <summary> 
         /// <para> 
         /// The AWS credentials used for authenticating calls to AWS for services using AWS signature version 4 (SigV4). 
-        /// SigV4 is the most common authentication mechanism used for AWS service calls. If AWSCredentials are used as a 
-        /// parameter to the service client's constructor the value will be set on this property. 
+        /// SigV4 is the most common authentication mechanism used for AWS service calls. 
         /// </para> 
         /// <para> 
         /// Common instances of AWSCredentials are <see cref="Amazon.Runtime.BasicAWSCredentials" /> for static credentials and 
         /// <see cref="Amazon.Runtime.AssumeRoleAWSCredentials" /> for getting credentials by assuming an IAM role. 
         /// </para> 
         /// <para> 
-        /// If null, the SDK will determine which credentials to use at request time using information from the source service model. 
+        /// If null, the SDK will determine which credentials to use at request time using information from the source service model.
+        /// Credentials passed as a parameter to the service client's constructor take precedence over these default credentials.
         /// </para> 
         /// </summary>
         AWSCredentials DefaultAWSCredentials { get; }

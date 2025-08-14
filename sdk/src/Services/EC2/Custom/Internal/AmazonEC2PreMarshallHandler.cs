@@ -18,6 +18,7 @@ using System.Globalization;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.EC2.Model;
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
@@ -38,7 +39,7 @@ namespace Amazon.EC2.Internal
         /// <param name="credentials"></param>
         public AmazonEC2PreMarshallHandler(AWSCredentials credentials)
         {
-            this._credentials = credentials;
+            this._credentials = credentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
         }
 
         /// <summary>

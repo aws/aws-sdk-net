@@ -57,6 +57,7 @@ namespace Amazon.Runtime.Internal
             }
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
+            var defaultCredentials = executionContext.RequestContext.DefaultAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
             for (int i = 0; i < authOptions.Count; i++)
             {
@@ -72,10 +73,10 @@ namespace Amazon.Runtime.Internal
                 {
                     executionContext.RequestContext.Signer = GetSigner(scheme);
 
-                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && defaultCredentials != null)
                     {
                         // We can use DefaultAWSCredentials if it was set by the user for these schemes.
-                        executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                        executionContext.RequestContext.Identity = defaultCredentials;
                         break;
                     }
 
@@ -143,6 +144,7 @@ namespace Amazon.Runtime.Internal
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
+            var defaultCredentials = executionContext.RequestContext.DefaultAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
             for (int i = 0; i < authOptions.Count; i++)
             {
@@ -158,10 +160,10 @@ namespace Amazon.Runtime.Internal
                 {
                     executionContext.RequestContext.Signer = GetSigner(scheme);
 
-                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
+                    if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && defaultCredentials != null)
                     {
                         // We can use DefaultAWSCredentials if it was set by the user for these schemes.
-                        executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                        executionContext.RequestContext.Identity = defaultCredentials;
                         break;
                     }
 
