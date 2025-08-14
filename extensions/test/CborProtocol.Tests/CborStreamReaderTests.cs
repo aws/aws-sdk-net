@@ -404,5 +404,219 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
             reader.ReadEndMap();
         }
     }
+
+    [Fact]
+    public void PeekState_DoesNotAssumeEnd_WhenValueIsInNextChunk()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null);
+        writer.WriteTextString("key");
+        writer.WriteTextString(new string('X', 95)); // Forces a refill before the value is fully read
+        writer.WriteEndMap();
+
+        byte[] bytes = writer.Encode();
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        Assert.Equal("key", reader.ReadTextString());
+
+        // This should trigger a refill, not treat it as EndMap
+        var value = reader.ReadTextString();
+        Assert.Equal(95, value.Length);
+
+        reader.ReadEndMap();
+    }
+
+    [Fact]
+    public void Handles_BreakMarker_AtStartOfNextChunk()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartArray(null);
+        writer.WriteTextString(new string('A', 95)); // Fills buffer almost completely
+        writer.WriteEndArray(); // Writes 0xFF as break byte
+
+        var bytes = writer.Encode();
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+        string value = reader.ReadTextString();
+
+        // This will cause a refill where the 0xFF is the first byte of the new chunk
+        reader.ReadEndArray();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Handles_MultipleBreakMarkers_AtEndOfStream()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartArray(null);
+        writer.WriteStartArray(null);
+        writer.WriteTextString("val");
+        writer.WriteEndArray(); // Ends inner
+        writer.WriteEndArray(); // Ends outer
+
+        byte[] bytes = writer.Encode();
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray(); // outer
+        reader.ReadStartArray(); // inner
+        Assert.Equal("val", reader.ReadTextString());
+
+        // Should skip 0xFF, refill, then skip another 0xFF
+        reader.ReadEndArray();
+        reader.ReadEndArray();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void DoesNotInferEndMap_WhenContentFollows()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(2);
+        writer.WriteTextString("k1");
+        writer.WriteTextString(new string('A', 80));
+        writer.WriteTextString("k2");
+        writer.WriteTextString(new string('B', 80));
+        writer.WriteEndMap();
+
+        byte[] bytes = writer.Encode();
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        Assert.Equal("k1", reader.ReadTextString());
+        Assert.Equal(80, reader.ReadTextString().Length);
+
+        Assert.Equal("k2", reader.ReadTextString());
+
+        // This should not throw or prematurely infer EndMap
+        Assert.Equal(80, reader.ReadTextString().Length);
+
+        reader.ReadEndMap();
+    }
+
+    [Fact]
+    public void Handles_DefinedLengthMap_ThatEndsExactlyAtEof()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(1);
+        writer.WriteTextString("key");
+        writer.WriteTextString("value");
+        writer.WriteEndMap(); // Definite-length, no break byte
+
+        var bytes = writer.Encode();
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        Assert.Equal("key", reader.ReadTextString());
+        Assert.Equal("value", reader.ReadTextString());
+        reader.ReadEndMap();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Handles_NestedMapEndAtBufferBoundary_FollowedByOuterKey()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null);      // Outer map
+        writer.WriteTextString("outerKey1");
+        writer.WriteStartMap(null);      // Inner map
+        writer.WriteTextString("innerKey");
+        writer.WriteTextString("innerVal");
+        writer.WriteEndMap();            // Ends inner map
+        writer.WriteTextString("outerKey2");
+        writer.WriteTextString("outerVal");
+        writer.WriteEndMap();            // Ends outer map
+
+        byte[] bytes = writer.Encode();
+
+        using var stream = new MemoryStream(bytes);
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        Assert.Equal("outerKey1", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("innerKey", reader.ReadTextString());
+        Assert.Equal("innerVal", reader.ReadTextString());
+
+        // This ReadEndMap will bring us to the end of current buffer
+        reader.ReadEndMap(); // This will trigger refill internally if needed
+
+        // Without a refill, the next ReadTextString() throws:
+        // "No more CBOR data items to read in the current context."
+        Assert.Equal("outerKey2", reader.ReadTextString());
+        Assert.Equal("outerVal", reader.ReadTextString());
+        reader.ReadEndMap();
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void ReadTextString_TriggersRefill_After_ReadEndMap_AtBufferEnd()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null);              // Outer map
+        writer.WriteTextString("outerKey1");
+        writer.WriteStartMap(null);              // Inner map
+        writer.WriteTextString("innerKey");
+        writer.WriteTextString(new string('A', 30)); // Ensure we consume most of the buffer
+        writer.WriteEndMap();                    // End inner map — should still fit in buffer
+        writer.WriteTextString("outerKey2");     // Starts in next refill
+        writer.WriteTextString("outerVal");
+        writer.WriteEndMap();                    // End outer map
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();                   // outer map
+        Assert.Equal("outerKey1", reader.ReadTextString());
+
+        reader.ReadStartMap();                   // inner map
+        Assert.Equal("innerKey", reader.ReadTextString());
+        Assert.Equal(new string('A', 30), reader.ReadTextString());
+
+        reader.ReadEndMap();                     // This must succeed without triggering refill
+
+        // This next read should trigger refill and continue parsing correctly
+        Assert.Equal("outerKey2", reader.ReadTextString());
+        Assert.Equal("outerVal", reader.ReadTextString());
+        reader.ReadEndMap();                     // outer map
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Unmarshall_MultipleNestedIndefiniteMapsEndingAtStreamEnd_ShouldSucceed()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null);
+        writer.WriteTextString("nested");
+        writer.WriteStartMap(null);
+        writer.WriteTextString("deep");
+        writer.WriteTextString("value");
+        writer.WriteEndMap(); // emits 0xFF
+        writer.WriteEndMap(); // emits 0xFF
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+        reader.ReadStartMap();
+        Assert.Equal("nested", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("deep", reader.ReadTextString());
+        Assert.Equal("value", reader.ReadTextString());
+        reader.ReadEndMap(); // should correctly handle 0xFF at end
+        reader.ReadEndMap(); // should correctly handle 0xFF at end
+    }
+
 }
 
