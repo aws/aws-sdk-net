@@ -2911,6 +2911,142 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ThreatEntitySetFormat.
+    /// </summary>
+    public class ThreatEntitySetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIEN_VAULT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat ALIEN_VAULT = new ThreatEntitySetFormat("ALIEN_VAULT");
+        /// <summary>
+        /// Constant FIRE_EYE for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat FIRE_EYE = new ThreatEntitySetFormat("FIRE_EYE");
+        /// <summary>
+        /// Constant OTX_CSV for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat OTX_CSV = new ThreatEntitySetFormat("OTX_CSV");
+        /// <summary>
+        /// Constant PROOF_POINT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat PROOF_POINT = new ThreatEntitySetFormat("PROOF_POINT");
+        /// <summary>
+        /// Constant STIX for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat STIX = new ThreatEntitySetFormat("STIX");
+        /// <summary>
+        /// Constant TXT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat TXT = new ThreatEntitySetFormat("TXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThreatEntitySetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatEntitySetFormat FindValue(string value)
+        {
+            return FindValue<ThreatEntitySetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatEntitySetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThreatEntitySetStatus.
+    /// </summary>
+    public class ThreatEntitySetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ACTIVATING = new ThreatEntitySetStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ACTIVE = new ThreatEntitySetStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEACTIVATING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DEACTIVATING = new ThreatEntitySetStatus("DEACTIVATING");
+        /// <summary>
+        /// Constant DELETE_PENDING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DELETE_PENDING = new ThreatEntitySetStatus("DELETE_PENDING");
+        /// <summary>
+        /// Constant DELETED for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DELETED = new ThreatEntitySetStatus("DELETED");
+        /// <summary>
+        /// Constant ERROR for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ERROR = new ThreatEntitySetStatus("ERROR");
+        /// <summary>
+        /// Constant INACTIVE for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus INACTIVE = new ThreatEntitySetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThreatEntitySetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatEntitySetStatus FindValue(string value)
+        {
+            return FindValue<ThreatEntitySetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatEntitySetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ThreatIntelSetFormat.
     /// </summary>
     public class ThreatIntelSetFormat : ConstantClass
@@ -3040,6 +3176,142 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatIntelSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedEntitySetFormat.
+    /// </summary>
+    public class TrustedEntitySetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIEN_VAULT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat ALIEN_VAULT = new TrustedEntitySetFormat("ALIEN_VAULT");
+        /// <summary>
+        /// Constant FIRE_EYE for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat FIRE_EYE = new TrustedEntitySetFormat("FIRE_EYE");
+        /// <summary>
+        /// Constant OTX_CSV for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat OTX_CSV = new TrustedEntitySetFormat("OTX_CSV");
+        /// <summary>
+        /// Constant PROOF_POINT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat PROOF_POINT = new TrustedEntitySetFormat("PROOF_POINT");
+        /// <summary>
+        /// Constant STIX for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat STIX = new TrustedEntitySetFormat("STIX");
+        /// <summary>
+        /// Constant TXT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat TXT = new TrustedEntitySetFormat("TXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedEntitySetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedEntitySetFormat FindValue(string value)
+        {
+            return FindValue<TrustedEntitySetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedEntitySetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedEntitySetStatus.
+    /// </summary>
+    public class TrustedEntitySetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ACTIVATING = new TrustedEntitySetStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ACTIVE = new TrustedEntitySetStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEACTIVATING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DEACTIVATING = new TrustedEntitySetStatus("DEACTIVATING");
+        /// <summary>
+        /// Constant DELETE_PENDING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DELETE_PENDING = new TrustedEntitySetStatus("DELETE_PENDING");
+        /// <summary>
+        /// Constant DELETED for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DELETED = new TrustedEntitySetStatus("DELETED");
+        /// <summary>
+        /// Constant ERROR for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ERROR = new TrustedEntitySetStatus("ERROR");
+        /// <summary>
+        /// Constant INACTIVE for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus INACTIVE = new TrustedEntitySetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedEntitySetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedEntitySetStatus FindValue(string value)
+        {
+            return FindValue<TrustedEntitySetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedEntitySetStatus(string value)
         {
             return FindValue(value);
         }

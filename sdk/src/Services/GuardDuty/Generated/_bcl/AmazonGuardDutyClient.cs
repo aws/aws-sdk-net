@@ -1011,6 +1011,65 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateThreatEntitySet
+
+
+        /// <summary>
+        /// Creates a new threat entity set. In a threat entity set, you can provide known malicious
+        /// IP addresses and domains for your Amazon Web Services environment. GuardDuty generates
+        /// findings based on the entries in the threat entity sets. Only users of the administrator
+        /// account can manage entity sets, which automatically apply to member accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the CreateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">REST API Reference for CreateThreatEntitySet Operation</seealso>
+        public virtual CreateThreatEntitySetResponse CreateThreatEntitySet(CreateThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThreatEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new threat entity set. In a threat entity set, you can provide known malicious
+        /// IP addresses and domains for your Amazon Web Services environment. GuardDuty generates
+        /// findings based on the entries in the threat entity sets. Only users of the administrator
+        /// account can manage entity sets, which automatically apply to member accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatEntitySet">REST API Reference for CreateThreatEntitySet Operation</seealso>
+        public virtual Task<CreateThreatEntitySetResponse> CreateThreatEntitySetAsync(CreateThreatEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThreatEntitySetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateThreatIntelSet
 
 
@@ -1070,6 +1129,79 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = CreateThreatIntelSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateThreatIntelSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrustedEntitySet
+
+
+        /// <summary>
+        /// Creates a new trusted entity set. In the trusted entity set, you can provide IP addresses
+        /// and domains that you believe are secure for communication in your Amazon Web Services
+        /// environment. GuardDuty will not generate findings for the entries that are specified
+        /// in a trusted entity set. At any given time, you can have only one trusted entity set.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Only users of the administrator account can manage the entity sets, which automatically
+        /// apply to member accounts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">REST API Reference for CreateTrustedEntitySet Operation</seealso>
+        public virtual CreateTrustedEntitySetResponse CreateTrustedEntitySet(CreateTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustedEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new trusted entity set. In the trusted entity set, you can provide IP addresses
+        /// and domains that you believe are secure for communication in your Amazon Web Services
+        /// environment. GuardDuty will not generate findings for the entries that are specified
+        /// in a trusted entity set. At any given time, you can have only one trusted entity set.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Only users of the administrator account can manage the entity sets, which automatically
+        /// apply to member accounts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustedEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateTrustedEntitySet">REST API Reference for CreateTrustedEntitySet Operation</seealso>
+        public virtual Task<CreateTrustedEntitySetResponse> CreateTrustedEntitySetAsync(CreateTrustedEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustedEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTrustedEntitySetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1536,6 +1668,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DeleteThreatEntitySet
+
+
+        /// <summary>
+        /// Deletes the threat entity set that is associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">REST API Reference for DeleteThreatEntitySet Operation</seealso>
+        public virtual DeleteThreatEntitySetResponse DeleteThreatEntitySet(DeleteThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThreatEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the threat entity set that is associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThreatEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatEntitySet">REST API Reference for DeleteThreatEntitySet Operation</seealso>
+        public virtual Task<DeleteThreatEntitySetResponse> DeleteThreatEntitySetAsync(DeleteThreatEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThreatEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThreatEntitySetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteThreatIntelSet
 
 
@@ -1585,6 +1770,59 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = DeleteThreatIntelSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteThreatIntelSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrustedEntitySet
+
+
+        /// <summary>
+        /// Deletes the trusted entity set that is associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">REST API Reference for DeleteTrustedEntitySet Operation</seealso>
+        public virtual DeleteTrustedEntitySetResponse DeleteTrustedEntitySet(DeleteTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustedEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the trusted entity set that is associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustedEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteTrustedEntitySet">REST API Reference for DeleteTrustedEntitySet Operation</seealso>
+        public virtual Task<DeleteTrustedEntitySetResponse> DeleteTrustedEntitySetAsync(DeleteTrustedEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustedEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTrustedEntitySetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3140,6 +3378,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetThreatEntitySet
+
+
+        /// <summary>
+        /// Retrieves the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the GetThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">REST API Reference for GetThreatEntitySet Operation</seealso>
+        public virtual GetThreatEntitySetResponse GetThreatEntitySet(GetThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<GetThreatEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThreatEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatEntitySet">REST API Reference for GetThreatEntitySet Operation</seealso>
+        public virtual Task<GetThreatEntitySetResponse> GetThreatEntitySetAsync(GetThreatEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThreatEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetThreatEntitySetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetThreatIntelSet
 
 
@@ -3189,6 +3480,59 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = GetThreatIntelSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetThreatIntelSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrustedEntitySet
+
+
+        /// <summary>
+        /// Retrieves the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">REST API Reference for GetTrustedEntitySet Operation</seealso>
+        public virtual GetTrustedEntitySetResponse GetTrustedEntitySet(GetTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustedEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustedEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetTrustedEntitySet">REST API Reference for GetTrustedEntitySet Operation</seealso>
+        public virtual Task<GetTrustedEntitySetResponse> GetTrustedEntitySetAsync(GetTrustedEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustedEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTrustedEntitySetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4032,6 +4376,63 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListThreatEntitySets
+
+
+        /// <summary>
+        /// Lists the threat entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the threat entity sets that are returned
+        /// as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatEntitySets service method.</param>
+        /// 
+        /// <returns>The response from the ListThreatEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">REST API Reference for ListThreatEntitySets Operation</seealso>
+        public virtual ListThreatEntitySetsResponse ListThreatEntitySets(ListThreatEntitySetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThreatEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatEntitySetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatEntitySetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the threat entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the threat entity sets that are returned
+        /// as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatEntitySets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThreatEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatEntitySets">REST API Reference for ListThreatEntitySets Operation</seealso>
+        public virtual Task<ListThreatEntitySetsResponse> ListThreatEntitySetsAsync(ListThreatEntitySetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThreatEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatEntitySetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThreatEntitySetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListThreatIntelSets
 
 
@@ -4085,6 +4486,63 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = ListThreatIntelSetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListThreatIntelSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTrustedEntitySets
+
+
+        /// <summary>
+        /// Lists the trusted entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the trusted entity sets that are
+        /// returned as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedEntitySets service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustedEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">REST API Reference for ListTrustedEntitySets Operation</seealso>
+        public virtual ListTrustedEntitySetsResponse ListTrustedEntitySets(ListTrustedEntitySetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedEntitySetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustedEntitySetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the trusted entity sets associated with the specified GuardDuty detector ID.
+        /// If you use this operation from a member account, the trusted entity sets that are
+        /// returned as a response, belong to the administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustedEntitySets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrustedEntitySets service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTrustedEntitySets">REST API Reference for ListTrustedEntitySets Operation</seealso>
+        public virtual Task<ListTrustedEntitySetsResponse> ListTrustedEntitySetsAsync(ListTrustedEntitySetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustedEntitySetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustedEntitySetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTrustedEntitySetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5070,6 +5528,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  UpdateThreatEntitySet
+
+
+        /// <summary>
+        /// Updates the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">REST API Reference for UpdateThreatEntitySet Operation</seealso>
+        public virtual UpdateThreatEntitySetResponse UpdateThreatEntitySet(UpdateThreatEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThreatEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the threat entity set associated with the specified <c>threatEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThreatEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatEntitySet">REST API Reference for UpdateThreatEntitySet Operation</seealso>
+        public virtual Task<UpdateThreatEntitySetResponse> UpdateThreatEntitySetAsync(UpdateThreatEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThreatEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThreatEntitySetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateThreatIntelSet
 
 
@@ -5125,6 +5636,59 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = UpdateThreatIntelSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateThreatIntelSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrustedEntitySet
+
+
+        /// <summary>
+        /// Updates the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedEntitySet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">REST API Reference for UpdateTrustedEntitySet Operation</seealso>
+        public virtual UpdateTrustedEntitySetResponse UpdateTrustedEntitySet(UpdateTrustedEntitySetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedEntitySetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustedEntitySetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the trusted entity set associated with the specified <c>trustedEntitySetId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustedEntitySet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrustedEntitySet service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateTrustedEntitySet">REST API Reference for UpdateTrustedEntitySet Operation</seealso>
+        public virtual Task<UpdateTrustedEntitySetResponse> UpdateTrustedEntitySetAsync(UpdateTrustedEntitySetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustedEntitySetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustedEntitySetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTrustedEntitySetResponse>(request, options, cancellationToken);
         }
 
         #endregion
