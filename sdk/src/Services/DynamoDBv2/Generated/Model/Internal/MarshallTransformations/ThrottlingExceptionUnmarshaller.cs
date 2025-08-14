@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProvisionedThroughputExceededException Object
+    /// Response Unmarshaller for ThrottlingException Object
     /// </summary>  
-    public class ProvisionedThroughputExceededExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ProvisionedThroughputExceededException, JsonUnmarshallerContext>
+    public class ThrottlingExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ThrottlingException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns></returns>
-        public ProvisionedThroughputExceededException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
@@ -57,14 +57,14 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="errorResponse"></param>
         /// <param name="reader"></param>
         /// <returns></returns>
-        public ProvisionedThroughputExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
             if (context.Stream.Length > 0)
             {
                 context.Read(ref reader);
             }
 
-            ProvisionedThroughputExceededException unmarshalledObject = new ProvisionedThroughputExceededException(errorResponse.Message, errorResponse.InnerException,
+            ThrottlingException unmarshalledObject = new ThrottlingException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ThrottlingReasons", targetDepth))
+                    if (context.TestExpression("throttlingReasons", targetDepth))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ThrottlingReason, ThrottlingReasonUnmarshaller>(ThrottlingReasonUnmarshaller.Instance);
                         unmarshalledObject.ThrottlingReasons = unmarshaller.Unmarshall(context, ref reader);
@@ -84,12 +84,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ProvisionedThroughputExceededExceptionUnmarshaller _instance = new ProvisionedThroughputExceededExceptionUnmarshaller();        
+        private static ThrottlingExceptionUnmarshaller _instance = new ThrottlingExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProvisionedThroughputExceededExceptionUnmarshaller Instance
+        public static ThrottlingExceptionUnmarshaller Instance
         {
             get
             {

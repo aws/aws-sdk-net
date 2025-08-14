@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContributorInsightsSummary Object
+    /// Response Unmarshaller for ThrottlingReason Object
     /// </summary>  
-    public class ContributorInsightsSummaryUnmarshaller : IJsonUnmarshaller<ContributorInsightsSummary, JsonUnmarshallerContext>
+    public class ThrottlingReasonUnmarshaller : IJsonUnmarshaller<ThrottlingReason, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContributorInsightsSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ThrottlingReason Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ContributorInsightsSummary unmarshalledObject = new ContributorInsightsSummary();
+            ThrottlingReason unmarshalledObject = new ThrottlingReason();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContributorInsightsMode", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContributorInsightsMode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContributorInsightsStatus", targetDepth))
+                if (context.TestExpression("resource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContributorInsightsStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IndexName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TableName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContributorInsightsSummaryUnmarshaller _instance = new ContributorInsightsSummaryUnmarshaller();        
+        private static ThrottlingReasonUnmarshaller _instance = new ThrottlingReasonUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContributorInsightsSummaryUnmarshaller Instance
+        public static ThrottlingReasonUnmarshaller Instance
         {
             get
             {

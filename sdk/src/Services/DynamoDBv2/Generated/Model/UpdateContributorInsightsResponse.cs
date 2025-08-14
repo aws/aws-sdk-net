@@ -34,9 +34,29 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateContributorInsightsResponse : AmazonWebServiceResponse
     {
+        private ContributorInsightsMode _contributorInsightsMode;
         private ContributorInsightsStatus _contributorInsightsStatus;
         private string _indexName;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property ContributorInsightsMode. 
+        /// <para>
+        /// The updated mode of CloudWatch Contributor Insights that determines whether to monitor
+        /// all access and throttled events or to track throttled events exclusively.
+        /// </para>
+        /// </summary>
+        public ContributorInsightsMode ContributorInsightsMode
+        {
+            get { return this._contributorInsightsMode; }
+            set { this._contributorInsightsMode = value; }
+        }
+
+        // Check to see if ContributorInsightsMode property is set
+        internal bool IsSetContributorInsightsMode()
+        {
+            return this._contributorInsightsMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContributorInsightsStatus. 

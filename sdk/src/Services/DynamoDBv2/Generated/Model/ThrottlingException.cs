@@ -32,46 +32,42 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// The request was denied due to request throttling. For detailed information about why
     /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
-    /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
-    /// retry requests that receive this exception. Your request is eventually successful,
-    /// unless your retry queue is too large to finish. Reduce the frequency of requests and
-    /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
-    /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// field in the returned exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ProvisionedThroughputExceededException : AmazonDynamoDBException
+    public partial class ThrottlingException : AmazonDynamoDBException
     {
         private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
-        /// Constructs a new ProvisionedThroughputExceededException with the specified error
+        /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ProvisionedThroughputExceededException(string message) 
+        public ThrottlingException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ProvisionedThroughputExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ProvisionedThroughputExceededException(string message, Exception innerException) 
+        public ThrottlingException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ProvisionedThroughputExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="innerException"></param>
-        public ProvisionedThroughputExceededException(Exception innerException) 
+        public ThrottlingException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ProvisionedThroughputExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -79,30 +75,30 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ProvisionedThroughputExceededException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ProvisionedThroughputExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ProvisionedThroughputExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ProvisionedThroughputExceededException class with serialized data.
+        /// Constructs a new instance of the ThrottlingException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ProvisionedThroughputExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
             this.ThrottlingReasons = (List<ThrottlingReason>)info.GetValue("ThrottlingReasons", typeof(List<ThrottlingReason>));
