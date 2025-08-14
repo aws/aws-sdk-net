@@ -406,6 +406,24 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportRequest.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportResponse.ImageBuilderInstanceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportResponse.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeCustomWorkspaceImageImportResponse.InfrastructureConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws):infrastructure-configuration/[a-z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeImageAssociationsRequest.ImageId</property>
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
@@ -615,6 +633,28 @@
     <min>10</min>
     <max>65</max>
     <pattern>^(d-[0-9a-f]{8,63}$)|(wsd-[0-9a-z]{8,63}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImportCustomWorkspaceImageRequest.ImageDescription</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_./() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImportCustomWorkspaceImageRequest.ImageName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_./()\\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImportCustomWorkspaceImageRequest.InfrastructureConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws):infrastructure-configuration/[a-z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImportCustomWorkspaceImageResponse.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ImportWorkspaceImageRequest.Ec2ImageId</property>
@@ -1025,6 +1065,16 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CustomWorkspaceImageImportErrorDetails.ErrorCode</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CustomWorkspaceImageImportErrorDetails.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DefaultClientBrandingAttributes.ForgotPasswordLink</property>
     <min>1</min>
     <max>200</max>
@@ -1104,6 +1154,22 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ImageResourceAssociation.ImageId</property>
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImageSourceIdentifier.Ec2ImageId</property>
+    <pattern>^ami\-([a-f0-9]{8}|[a-f0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImageSourceIdentifier.Ec2ImportTaskId</property>
+    <min>19</min>
+    <max>28</max>
+    <pattern>^import-ami\-([a-zA-Z0-9]{8}|[a-zA-Z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ImageSourceIdentifier.ImageBuildVersionArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):image/[a-z0-9-_]+/(?:(?:([0-9]+|x)\.([0-9]+|x)\.([0-9]+|x))|(?:[0-9]+\.[0-9]+\.[0-9]+/[0-9]+))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.IosClientBrandingAttributes.ForgotPasswordLink</property>

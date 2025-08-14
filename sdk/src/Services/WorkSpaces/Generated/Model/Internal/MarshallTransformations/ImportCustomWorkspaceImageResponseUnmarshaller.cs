@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeAccount operation
+    /// Response Unmarshaller for ImportCustomWorkspaceImage operation
     /// </summary>  
-    public class DescribeAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ImportCustomWorkspaceImageResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeAccountResponse response = new DescribeAccountResponse();
+            ImportCustomWorkspaceImageResponse response = new ImportCustomWorkspaceImageResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DedicatedTenancyAccountType", targetDepth))
+                if (context.TestExpression("ImageId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyAccountType = unmarshaller.Unmarshall(context, ref reader);
+                    response.ImageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DedicatedTenancyManagementCidrRange", targetDepth))
+                if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancyManagementCidrRange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DedicatedTenancySupport", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DedicatedTenancySupport = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Message", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Message = unmarshaller.Unmarshall(context, ref reader);
+                    response.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -105,13 +93,33 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
+                {
+                    return InvalidParameterValuesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
+                {
+                    return OperationNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
+                {
+                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
+                {
+                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
             }
             return new AmazonWorkSpacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeAccountResponseUnmarshaller _instance = new DescribeAccountResponseUnmarshaller();        
+        private static ImportCustomWorkspaceImageResponseUnmarshaller _instance = new ImportCustomWorkspaceImageResponseUnmarshaller();        
 
-        internal static DescribeAccountResponseUnmarshaller GetInstance()
+        internal static ImportCustomWorkspaceImageResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +127,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAccountResponseUnmarshaller Instance
+        public static ImportCustomWorkspaceImageResponseUnmarshaller Instance
         {
             get
             {

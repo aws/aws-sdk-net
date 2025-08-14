@@ -2204,6 +2204,45 @@ namespace Amazon.WorkSpaces
         }
         #endregion
         
+        #region  DescribeCustomWorkspaceImageImport
+
+        internal virtual DescribeCustomWorkspaceImageImportResponse DescribeCustomWorkspaceImageImport(DescribeCustomWorkspaceImageImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomWorkspaceImageImportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomWorkspaceImageImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomWorkspaceImageImport service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        public virtual Task<DescribeCustomWorkspaceImageImportResponse> DescribeCustomWorkspaceImageImportAsync(DescribeCustomWorkspaceImageImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomWorkspaceImageImportResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeImageAssociations
 
         internal virtual DescribeImageAssociationsResponse DescribeImageAssociations(DescribeImageAssociationsRequest request)
@@ -3077,6 +3116,61 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportClientBrandingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ImportCustomWorkspaceImage
+
+        internal virtual ImportCustomWorkspaceImageResponse ImportCustomWorkspaceImage(ImportCustomWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCustomWorkspaceImageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces using EC2 Image Builder. The image must be an already licensed image that
+        /// is in your Amazon Web Services account, and you must own the image. For more information
+        /// about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCustomWorkspaceImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportCustomWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        public virtual Task<ImportCustomWorkspaceImageResponse> ImportCustomWorkspaceImageAsync(ImportCustomWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportCustomWorkspaceImageResponse>(request, options, cancellationToken);
         }
         #endregion
         
