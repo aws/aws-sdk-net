@@ -1066,7 +1066,6 @@ namespace ServiceClientGenerator
                 _shapeModifierXmlNamespace = ParseXmlNamespace(data);
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
                 _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
-                Validate(data);
             }
 
 
@@ -1087,20 +1086,6 @@ namespace ServiceClientGenerator
             //        }
             //   },
             // Above is an example of how to specify the originalMember on the injected member.
-            private void Validate(JsonData data)
-            {
-                // if a property was excluded, then the injected member must reference the original member that it is replacing
-                // unless the originalMember isn't part of the members array and is from a different shape.
-                if (_excludedProperties.Count == 0 || _injectedProperties.Count == 0)
-                    return;
-                int injectedPropertyOriginalMemberCount = _injectedProperties.Values
-                    .Count(jsonData => jsonData[CustomizationsModel.OriginalMemberKey] != null || jsonData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] != null);
-                if (_excludedProperties.Count != injectedPropertyOriginalMemberCount)
-                {
-                    throw new InvalidDataException($"The customization excludes and injects members without specifying the originalMember. If you are excluding a member and injecting a different member, make sure to specify the original member that" +
-                        $" was excluded on the injected member in the customizations.json file.");
-                }
-            }
 
             #region Property Exclusion
 
