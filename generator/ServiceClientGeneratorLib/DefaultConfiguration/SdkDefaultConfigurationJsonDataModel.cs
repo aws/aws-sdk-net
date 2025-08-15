@@ -8,7 +8,7 @@ namespace ServiceClientGenerator.DefaultConfiguration
 {
     /// <summary>
     /// Represents the sdk-default-configuration.json file so that it be serialized with
-    /// <see cref="JsonMapper.ToObject{T}(string)"/>
+    /// <see cref="JsonMapper.ToObject{T}(string, bool)"/>
     ///
     /// Also contains some helper conversions for navigating the deserialized model.
     /// </summary>
