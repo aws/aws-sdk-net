@@ -471,6 +471,64 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type WorkspacePolicyStatusCode.
+    /// </summary>
+    public class WorkspacePolicyStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode ACTIVE = new WorkspacePolicyStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode CREATING = new WorkspacePolicyStatusCode("CREATING");
+        /// <summary>
+        /// Constant DELETING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode DELETING = new WorkspacePolicyStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode UPDATING = new WorkspacePolicyStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspacePolicyStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspacePolicyStatusCode FindValue(string value)
+        {
+            return FindValue<WorkspacePolicyStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspacePolicyStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceStatusCode.
     /// </summary>
     public class WorkspaceStatusCode : ConstantClass
