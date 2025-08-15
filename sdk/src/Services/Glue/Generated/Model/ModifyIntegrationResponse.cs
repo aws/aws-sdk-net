@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
+        private IntegrationConfig _integrationConfig;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
@@ -158,6 +159,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetIntegrationArn()
         {
             return this._integrationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationConfig.
+        /// </summary>
+        public IntegrationConfig IntegrationConfig
+        {
+            get { return this._integrationConfig; }
+            set { this._integrationConfig = value; }
+        }
+
+        // Check to see if IntegrationConfig property is set
+        internal bool IsSetIntegrationConfig()
+        {
+            return this._integrationConfig != null;
         }
 
         /// <summary>

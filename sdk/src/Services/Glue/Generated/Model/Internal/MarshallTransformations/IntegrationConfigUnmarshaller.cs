@@ -66,6 +66,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ContinuousSync", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ContinuousSync = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RefreshInterval", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
