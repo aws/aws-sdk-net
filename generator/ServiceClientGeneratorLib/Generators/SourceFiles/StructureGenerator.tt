@@ -385,7 +385,8 @@ namespace <#=this.Config.Namespace#>.Model
                     // restxml and restjson is the only protocol where we send empty lists in headers. See following protocol tests.
                     // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
                     // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
-                        if (this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
+                    // S3 is the exception to this rule. We do not want to send empty header lists for S3.
+                        if (this.Config.ServiceId != "S3" && this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
                         {
 
 #>
@@ -395,7 +396,7 @@ namespace <#=this.Config.Namespace#>.Model
                         else
                         {
 #>
-            return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0;
+            return this.<#=member.VariableName#> != null && (this.<#=member.VariableName#>.Count > 0 || !AWSConfigs.InitializeCollections);
 <#
                         }
                     }
