@@ -4,7 +4,7 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Fixes issue #3959. Do not send empty lists for headers"
+        "Fixes issue #3959. Do not send empty lists for headers. ListObjectsV2 calls were failing if AWSConfigs.InitializeCollections was set to true. This was causing the SDK to send the `x-amz-optional-attributes` as an empty string which is not a valid value."
       ]
     }
   ]
