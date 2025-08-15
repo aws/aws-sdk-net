@@ -34,8 +34,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IntegrationConfig
     {
+        private bool? _continuousSync;
         private string _refreshInterval;
         private Dictionary<string, string> _sourceProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ContinuousSync. 
+        /// <para>
+        /// Enables continuous synchronization for on-demand data extractions from SaaS applications
+        /// to Amazon Web Services data services like Amazon Redshift and Amazon S3.
+        /// </para>
+        /// </summary>
+        public bool? ContinuousSync
+        {
+            get { return this._continuousSync; }
+            set { this._continuousSync = value; }
+        }
+
+        // Check to see if ContinuousSync property is set
+        internal bool IsSetContinuousSync()
+        {
+            return this._continuousSync.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RefreshInterval. 
