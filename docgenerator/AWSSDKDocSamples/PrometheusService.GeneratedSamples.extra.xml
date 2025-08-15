@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.CreateScraper(Amazon.PrometheusService.Model.CreateScraperRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.CreateScraper(Amazon.PrometheusService.Model.CreateScraperRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.CreateScraperRequest" />
+            <member name="T:Amazon.PrometheusService.Model.CreateScraperResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateScraper with optional alias input, optional clientToken input, and one set of tags"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.DeleteScraper(Amazon.PrometheusService.Model.DeleteScraperRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.DeleteScraper(Amazon.PrometheusService.Model.DeleteScraperRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.DeleteScraperRequest" />
+            <member name="T:Amazon.PrometheusService.Model.DeleteScraperResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteScraper with optional clientToken input"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.DescribeScraper(Amazon.PrometheusService.Model.DescribeScraperRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.DescribeScraper(Amazon.PrometheusService.Model.DescribeScraperRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.DescribeScraperRequest" />
+            <member name="T:Amazon.PrometheusService.Model.DescribeScraperResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DescribeScraper, with no statusReason to report"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.GetDefaultScraperConfiguration(Amazon.PrometheusService.Model.GetDefaultScraperConfigurationRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.GetDefaultScraperConfiguration(Amazon.PrometheusService.Model.GetDefaultScraperConfigurationRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.GetDefaultScraperConfigurationRequest" />
+            <member name="T:Amazon.PrometheusService.Model.GetDefaultScraperConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetDefaultScraperConfiguration"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.ListScrapers(Amazon.PrometheusService.Model.ListScrapersRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.ListScrapers(Amazon.PrometheusService.Model.ListScrapersRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.ListScrapersRequest" />
+            <member name="T:Amazon.PrometheusService.Model.ListScrapersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListScrapers, with a max result of 2, using a pagination token from a previous call to ListScrapers"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.ListScrapers(Amazon.PrometheusService.Model.ListScrapersRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.ListScrapers(Amazon.PrometheusService.Model.ListScrapersRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.ListScrapersRequest" />
+            <member name="T:Amazon.PrometheusService.Model.ListScrapersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListScrapers, with filters"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.UpdateScraper(Amazon.PrometheusService.Model.UpdateScraperRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.UpdateScraper(Amazon.PrometheusService.Model.UpdateScraperRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.UpdateScraperRequest" />
+            <member name="T:Amazon.PrometheusService.Model.UpdateScraperResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateScraper with all optional parameters"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
