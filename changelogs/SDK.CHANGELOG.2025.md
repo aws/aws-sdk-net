@@ -1,3 +1,11 @@
+### 3.7.1103.0 (2025-08-15 18:25 UTC)
+* BedrockAgent (3.7.501.0)
+	* This release adds support for saving Bedrock Flows while node configuration is still in progress, even if the Flow is not yet able to be invoked
+* Glue (3.7.503.0)
+	* AWS Glue Zero ETL now supports On-demand snapshot load
+* PrometheusService (3.7.501.0)
+	* Add Resource-based Policy APIs for Amazon Prometheus
+
 ### 3.7.1102.0 (2025-08-14 18:38 UTC)
 * ARCRegionswitch (3.7.501.0)
 	* Endpoint rule test and documentation update.
