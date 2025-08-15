@@ -1,0 +1,253 @@
+<#@ template language="C#" inherits="BaseResponseUnmarshaller"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+
+    AddCommonUsingStatements();
+#>
+using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
+#pragma warning disable CS0612,CS0618
+namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> operation
+    /// </summary>  
+    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : CborResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
+        {
+            <#=this.UnmarshallerBaseName #>Response response = new <#=this.Operation.Name #>Response();
+            var reader = context.Reader;
+            context.AddPathSegment("<#=this.Operation.Name#>");
+<#
+    var payload = this.Operation.ResponsePayloadMember;
+    var unmarshallPayload = payload != null && payload.IsStructure;
+    var payloadIsStream = payload != null && !unmarshallPayload;
+    bool isEventStreamOutput = this.Operation.IsEventStreamOutput;
+    if (this.Operation.ResponseHasBodyMembers || payload != null)
+    {
+        if (this.Operation.AllowEmptyResult)
+        {
+            throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
+        }
+        if (isEventStreamOutput)
+        {            
+            if(payload == null)
+            {
+               payload = this.Structure.Members.Where(m => m.ModelShape.IsEventStream).FirstOrDefault();
+               //if payload is still null after we search for a member that is of eventStream then the operation is not modeled correctly
+
+               if(payload == null)
+                    throw new InvalidOperationException("An eventstream operation's response must have at least one member that is marked with the eventStream trait");
+            }
+#>
+            response.<#=payload.PropertyName#> = new <#=payload.Shape.Name#>(context.Stream);
+<#
+        }
+        else if (payloadIsStream)
+        {
+            if (payload.Shape.IsStreaming)
+            {
+#>
+            response.<#=payload.PropertyName#> = context.Stream;
+<#
+            }
+            else if (payload.ModelShape.IsString)
+            {
+#>
+            response.<#=payload.PropertyName#> = reader.ReadTextString();
+<#
+            }
+            else if (payload.ModelShape.IsMemoryStream)
+            {
+#>
+            response.<#=payload.PropertyName#> = CborMemoryStreamUnmarshaller.Instance.Unmarshall(context);
+<#
+            }
+            else
+            {
+                // At this point, all valid configurations have been handled.  Valid use of payload is defined:
+                // https://awslabs.github.io/smithy/1.0/spec/core/http-traits.html#httppayload-trait
+                throw new Exception(
+                    $"{payload.PropertyName} can not be a Payload as Type {payload.Shape.Type} is not a valid target for the httpPayload trait.  " +
+                    "The httpPayload trait can be applied to structure members that target a string, blob, structure, union, document, set, map, or list.");
+            }
+        }
+        else if (unmarshallPayload)
+        {
+#>
+            var unmarshaller = <#= payload.DetermineTypeUnmarshallerInstantiate() #>;
+            response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
+<#
+        }
+		else if (this.IsWrapped)
+		{
+#>
+			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
+<#
+		}
+        else
+        {
+#>
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+<#
+        
+            foreach (var member in this.Operation.ResponseBodyMembers)
+            {
+#>
+                    case "<#=member.MarshallName#>":
+                        {
+                            context.AddPathSegment("<#=member.PropertyName#>");
+                            var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                            response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+<#
+            }
+#>
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
+<#
+        }
+    }
+	ProcessStatusCode();
+#>
+
+            return response;
+        }
+
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(CborUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var errorResponse = CborErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+<#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+#>
+<# // Create a copy of context with headers in the response 
+
+#>
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
+<#
+            }   
+            else
+            {
+#>
+            using (var contextCopy = new CborUnmarshallerContext(streamCopy, false, context.ResponseData))
+<#
+            }
+#>
+            {
+<#
+    foreach (var exception in this.Operation.Exceptions)
+    {
+#>
+                if (errorResponse.Code != null && errorResponse.Code.Equals("<#=exception.ShapeOriginalName #>"))
+                {
+<#
+    if  (exception.ShapeOriginalName != exception.Code)
+    {
+#>
+                    errorResponse.Code = "<#=exception.Code#>";
+<#
+    }
+#>
+                    return <#=exception.Name#>Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+<#
+    }
+#>
+            }
+<#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+                GenerateAWSQueryCompatibleBlock();
+#>
+            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+            else
+            {
+#>
+            return new <#=this.BaseException#>(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+#>
+        }
+
+<#
+    if (payload != null && payload.Shape.IsStreaming)
+    {
+#>
+        /// <summary>
+        /// Overriden to return true indicating the response contains streaming data.
+        /// </summary>
+        public override bool HasStreamingProperty
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+<#
+	}
+    this.AddResponseSingletonMethod();
+#>
+<#
+    if(isEventStreamOutput)
+    {
+#>
+        /// <summary>
+        /// Return false for reading the entire response
+        /// </summary>
+        /// <param name="response"></param>
+        /// <param name="readEntireResponse"></param>
+        /// <returns></returns>
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return false;
+        }
+        /// <summary>
+        /// Specifies that the response should be streamed
+        /// </summary>
+        public override bool HasStreamingProperty => true;
+<#
+    }
+#>
+    }
+}

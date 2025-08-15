@@ -611,7 +611,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (this.ModelShape.IsEventStream && this.model.Operations.FirstOrDefault(x => string.Equals(this.OwningShape.Name, x.RequestStructure.Name)) != null)
+                if (this.ModelShape.IsEventStream && this.model.Operations.FirstOrDefault(x => string.Equals(this.OwningShape.Name, x.RequestStructure?.Name)) != null)
                 {
                     return true;
                 }
@@ -665,24 +665,28 @@ namespace ServiceClientGenerator
 
             var nullable = useNullable || UseNullable ? "Nullable" : "";
 
+            var primitiveUnmarshallerPrefix = "";
+            if (this.model.Type == ServiceType.Cbor)
+                primitiveUnmarshallerPrefix = "Cbor";
+
             switch (typeNode.ToString())
             {
                 case "string":
-                    return "StringUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}StringUnmarshaller";
                 case "blob":
-                    return "MemoryStreamUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}MemoryStreamUnmarshaller";
                 case "boolean":
-                    return $"{nullable}BoolUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}BoolUnmarshaller";
                 case "double":
-                    return $"{nullable}DoubleUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}DoubleUnmarshaller";
                 case "float":
-                    return $"{nullable}FloatUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}FloatUnmarshaller";
                 case "integer":
-                    return $"{nullable}IntUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}IntUnmarshaller";
                 case "long":
-                    return $"{nullable}LongUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}LongUnmarshaller";
                 case "timestamp":
-                    return $"{nullable}DateTimeUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller";
                 case "structure":
                     var shapeName = extendsNode.ToString();
                     var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
@@ -707,6 +711,9 @@ namespace ServiceClientGenerator
                     else if (this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml)
                         return string.Format("XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        return string.Format("CborDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
                     else
                         throw new Exception("Unknown protocol type");
                 case "list":
@@ -714,8 +721,11 @@ namespace ServiceClientGenerator
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
-                    if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
+                    else if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
                         return string.Format("XmlListUnmarshaller<{0}, {1}>",
+                        listType, listTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        return string.Format("CborListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
                     else
                     {
@@ -746,11 +756,6 @@ namespace ServiceClientGenerator
         /// <returns></returns>
         public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, string parentTypeNode, bool useNullable = true)
         {
-            // Check to see if customizations is overriding.
-            var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
-            if (overrideType != null && !string.IsNullOrEmpty(overrideType.Unmarshaller))
-                return overrideType.Unmarshaller + ".Instance";
-
             var extendsNode = extendedData[ServiceModel.ShapeKey];
             if (extendsNode == null)
                 throw new Exception("Missing extends for member " + this._name);
@@ -772,24 +777,38 @@ namespace ServiceClientGenerator
 
             var nullable = useNullable || UseNullable ? "Nullable" : "";
 
+            var primitiveUnmarshallerPrefix = "";
+            if (typeNode.ToString() != "structure" && typeNode.ToString() != "map" && typeNode.ToString() != "list")
+            {
+                if (this.model.Type == ServiceType.Cbor)
+                    primitiveUnmarshallerPrefix = "Cbor";
+            }
+
+            // Check to see if customizations is overriding.
+            var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
+            if (overrideType != null && !string.IsNullOrEmpty(overrideType.Unmarshaller))
+            {
+                return $"{primitiveUnmarshallerPrefix}{overrideType.Unmarshaller}.Instance";
+            }
+
             switch (typeNode.ToString())
             {
                 case "string":
-                    return "StringUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}StringUnmarshaller.Instance";
                 case "blob":
-                    return "MemoryStreamUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}MemoryStreamUnmarshaller.Instance";
                 case "boolean":
-                    return $"{nullable}BoolUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}BoolUnmarshaller.Instance";
                 case "double":
-                    return $"{nullable}DoubleUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}DoubleUnmarshaller.Instance";
                 case "float":
-                    return $"{nullable}FloatUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}FloatUnmarshaller.Instance";
                 case "integer":
-                    return $"{nullable}IntUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}IntUnmarshaller.Instance";
                 case "long":
-                    return $"{nullable}LongUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}LongUnmarshaller.Instance";
                 case "timestamp":
-                    return $"{nullable}DateTimeUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
                 case "map":
@@ -813,6 +832,9 @@ namespace ServiceClientGenerator
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        return string.Format("new CborDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(CborStringUnmarshaller.Instance, {5})",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else if (this.model.Type == ServiceType.Rest_Xml && !isFlat)
                         return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5}, \"{6}\", \"{7}\")",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate, keyLocationName, valueLocationName);
@@ -826,6 +848,9 @@ namespace ServiceClientGenerator
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
+                            listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Cbor)
+                        return string.Format("new CborListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
                     else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
                         return $"new {listTypeUnmarshaller}({listTypeUnmarshallerInstantiate})";
@@ -1219,6 +1244,8 @@ namespace ServiceClientGenerator
                         return TimestampFormat.ISO8601;
                     case ServiceType.Rest_Xml:
                         return TimestampFormat.ISO8601;
+                    case ServiceType.Cbor:
+                        return TimestampFormat.UnixTimestamp;
 
                     default:
                         throw new InvalidOperationException(

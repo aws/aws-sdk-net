@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+    #line 1 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EventStreamPublisherMarshaller : BaseMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 6 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
     AddLicenseHeader();
 
@@ -37,9 +37,29 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write("using System;\r\nusing System.IO;\r\nusing System.Threading.Tasks;\r\nusing Amazon.Runt" +
-                    "ime.EventStreams;\r\n#pragma warning disable CS0612,CS0618\r\nnamespace ");
+                    "ime.EventStreams;\r\n");
             
-            #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 13 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+    if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("using Amazon.Extensions.CborProtocol.Internal;\r\nusing Amazon.Extensions.CborProto" +
+                    "col.Internal.EventStreams;\r\n");
+            
+            #line 19 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("#pragma warning disable CS0612,CS0618\r\nnamespace ");
+            
+            #line 23 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -48,21 +68,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     " the service events for the event stream to the low level IEventStreamMessage.\r\n" +
                     "    /// </summary>\r\n    public partial class ");
             
-            #line 19 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 28 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
-            this.Write("PublisherMarshaller : EventStreamPublisher\r\n    {\r\n        Func< Task<I");
+            this.Write("PublisherMarshaller : ");
             
-            #line 21 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 28 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type == ServiceType.Cbor ? "Cbor": ""));
+            
+            #line default
+            #line hidden
+            this.Write("EventStreamPublisher\r\n    {\r\n        Func< Task<I");
+            
+            #line 30 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Event>> _publisher;\r\n\r\n        /// <summary>\r\n        /// Creates instance of ");
             
-            #line 24 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 33 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -71,14 +98,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
                     "The service event publisher provided by the consumer of the SDK.</param>\r\n      " +
                     "  public ");
             
-            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 36 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("PublisherMarshaller(Func<Task<I");
             
-            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 36 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -104,7 +131,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             string eventType;
 ");
             
-            #line 46 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 55 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
     for (var i = 0; i < this.Structure.Members.Count; i++)
     {
@@ -115,45 +142,92 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            ");
             
-            #line 51 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 60 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i > 0 ? "else " : ""));
             
             #line default
             #line hidden
             this.Write("if (evnt is ");
             
-            #line 51 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 60 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
             
             #line default
             #line hidden
-            this.Write(")\r\n            {\r\n                var memoryStream = new MemoryStream();\r\n       " +
-                    "         var context = CreateJsonMarshallerContext(memoryStream);\r\n             " +
-                    "   context.Writer.WriteStartObject();\r\n                ");
+            this.Write(")\r\n            {\r\n");
             
-            #line 56 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 62 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+    if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                var writer = CborWriterPool.Rent();\r\n                try\r\n       " +
+                    "         {\r\n                    var context = CreateCborMarshallerContext(writer" +
+                    ");\r\n                    context.Writer.WriteStartMap(null);\r\n                   " +
+                    " ");
+            
+            #line 71 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
             
             #line default
             #line hidden
             this.Write("Marshaller.Instance.Marshall((");
             
-            #line 56 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 71 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write(")evnt, context);\r\n                    context.Writer.WriteEndMap();\r\n");
+            
+            #line 73 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+    }
+    else 
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                var memoryStream = new MemoryStream();\r\n                var conte" +
+                    "xt = CreateJsonMarshallerContext(memoryStream);\r\n                context.Writer." +
+                    "WriteStartObject();\r\n                ");
+            
+            #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
+            
+            #line default
+            #line hidden
+            this.Write("Marshaller.Instance.Marshall((");
+            
+            #line 81 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.ModelShape.Name));
             
             #line default
             #line hidden
             this.Write(")evnt, context);\r\n                context.Writer.WriteEndObject();\r\n             " +
-                    "   context.Writer.Flush();\r\n\r\n                eventType = \"");
+                    "   context.Writer.Flush();\r\n");
             
-            #line 60 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 84 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\n                eventType = \"");
+            
+            #line 88 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.EventTypeName));
             
             #line default
             #line hidden
             this.Write("\";\r\n");
             
-            #line 61 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 89 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
             if (member.ModelShape.GetExplicitEventPayloadMember() != null)
             {
@@ -166,7 +240,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("                contentType = \"application/octet-stream\";\r\n                eventP" +
                     "ayload = context.Request.Content;\r\n");
             
-            #line 69 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 97 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
                 }
                 else
@@ -178,9 +252,21 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("                contentType = \"text/plain\";\r\n                eventPayload = conte" +
                     "xt.Request.Content;\r\n");
             
-            #line 76 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 104 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
                 }
+            }
+            else if (this.Config.ServiceModel.Type == ServiceType.Cbor)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("                    contentType = \"application/cbor\";\r\n                    eventP" +
+                    "ayload = writer.Encode();\r\n");
+            
+            #line 112 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
             }
             else
             {
@@ -191,7 +277,19 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("                contentType = \"application/json\";\r\n                eventPayload =" +
                     " memoryStream.ToArray();\r\n");
             
-            #line 84 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 119 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+
+            }
+            if (this.Config.ServiceModel.Type == ServiceType.Cbor)
+            {
+
+            
+            #line default
+            #line hidden
+            this.Write("                }\r\n                finally\r\n                {\r\n                  " +
+                    "  CborWriterPool.Return(writer);\r\n                }\r\n");
+            
+            #line 129 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
             }
 
@@ -200,7 +298,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 88 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+            #line 133 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
     }
 
@@ -220,7 +318,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 100 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
+        #line 145 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\EventStreamPublisherMarshaller.tt"
 
     public string ClassName { get; set; }
     public Shape Structure { get; set; }

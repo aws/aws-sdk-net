@@ -10,13 +10,22 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+<#
+    if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+    {
+#>
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.EventStreams;
+<#
+    }
+#>
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
     /// </summary>
-    public partial class <#=this.Structure.Name #>PublisherMarshaller : EventStreamPublisher
+    public partial class <#=this.Structure.Name #>PublisherMarshaller : <#=this.Config.ServiceModel.Type == ServiceType.Cbor ? "Cbor": ""#>EventStreamPublisher
     {
         Func< Task<I<#=this.Structure.Name #>Event>> _publisher;
 
@@ -50,12 +59,31 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
             <#= i > 0 ? "else " : ""#>if (evnt is <#=member.ModelShape.Name#>)
             {
+<#
+    if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+    {
+#>
+                var writer = CborWriterPool.Rent();
+                try
+                {
+                    var context = CreateCborMarshallerContext(writer);
+                    context.Writer.WriteStartMap(null);
+                    <#=member.ModelShape.Name#>Marshaller.Instance.Marshall((<#=member.ModelShape.Name#>)evnt, context);
+                    context.Writer.WriteEndMap();
+<#
+    }
+    else 
+    {
+#>
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 <#=member.ModelShape.Name#>Marshaller.Instance.Marshall((<#=member.ModelShape.Name#>)evnt, context);
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
+<#
+    }
+#>
 
                 eventType = "<#=member.EventTypeName#>";
 <#
@@ -76,11 +104,28 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
                 }
             }
+            else if (this.Config.ServiceModel.Type == ServiceType.Cbor)
+            {
+#>
+                    contentType = "application/cbor";
+                    eventPayload = writer.Encode();
+<#
+            }
             else
             {
 #>
                 contentType = "application/json";
                 eventPayload = memoryStream.ToArray();
+<#
+            }
+            if (this.Config.ServiceModel.Type == ServiceType.Cbor)
+            {
+#>
+                }
+                finally
+                {
+                    CborWriterPool.Return(writer);
+                }
 <#
             }
 #>
