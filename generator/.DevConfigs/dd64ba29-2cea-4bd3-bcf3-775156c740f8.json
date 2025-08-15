@@ -1,0 +1,12 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update SDK not to mutate credentials in provided config object (https://github.com/aws/aws-sdk-net/issues/3950)"
+        ],
+        "backwardIncompatibilitiesToIgnore": [
+            "Amazon.Runtime.IRequestContext/MethodAbstractMethodAdded"
+        ]
+    }
+}

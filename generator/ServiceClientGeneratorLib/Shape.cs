@@ -861,12 +861,27 @@ namespace ServiceClientGenerator
         public bool IsFieldRequired(string fieldName)
         {
             var requiredList = data[RequiredKey];
+            var customizations = this.model.Customizations.GetShapeModifier(this.Name);
             if (requiredList != null && requiredList.IsArray)
             {
                 foreach (var name in requiredList)
                 {
-                    if (string.Equals(name.ToString(), fieldName))
+                    var namestr = name.ToString();
+                    if (string.Equals(namestr, fieldName))
                         return true;
+                    // check for "*" override (bucketName). S3 only
+                    if (this.model.Customizations.TryGetPropertyModifier("*", "Bucket", out var _))
+                    {
+                        if (namestr == "Bucket" && fieldName == "BucketName") return true;
+                    }
+                    if (customizations != null && customizations.PropertyModifier(namestr) != null)
+                    {
+                        var propertyModifier = customizations.PropertyModifier(namestr);
+                        // if the original member name is part of required list and we overrode that with a different property name via "emit from member name"
+                        // then it should still have the required attribute
+                        if (propertyModifier.EmitName != null && propertyModifier.EmitName.Equals(fieldName) && propertyModifier.OriginalPropertyName.Equals(namestr))
+                            return true;
+                    }
                 }
             }
             return false;

@@ -251,6 +251,7 @@ namespace Amazon.WAF.Model
         /// the value.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MemoryStream TargetStream
         {
             get { return this._targetStream; }

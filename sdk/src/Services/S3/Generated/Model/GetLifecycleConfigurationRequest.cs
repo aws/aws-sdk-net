@@ -144,6 +144,7 @@ namespace Amazon.S3.Model
         /// The name of the bucket for which to get the lifecycle information.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

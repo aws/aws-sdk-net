@@ -65,6 +65,7 @@ namespace Amazon.S3.Model
         /// a message when it detects events of the specified type.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Queue
         {
             get { return this._queue; }

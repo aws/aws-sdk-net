@@ -178,6 +178,7 @@ namespace Amazon.S3.Model
         /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -372,7 +373,7 @@ namespace Amazon.S3.Model
         // Check to see if OptionalObjectAttributes property is set
         internal bool IsSetOptionalObjectAttributes()
         {
-            return this._optionalObjectAttributes != null;
+            return this._optionalObjectAttributes != null && (this._optionalObjectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

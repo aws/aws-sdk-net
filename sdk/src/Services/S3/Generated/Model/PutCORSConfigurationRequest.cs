@@ -121,6 +121,7 @@ namespace Amazon.S3.Model
         /// Specifies the bucket impacted by the <c>cors</c>configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -169,6 +170,7 @@ namespace Amazon.S3.Model
         /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CORSConfiguration Configuration
         {
             get { return this._configuration; }

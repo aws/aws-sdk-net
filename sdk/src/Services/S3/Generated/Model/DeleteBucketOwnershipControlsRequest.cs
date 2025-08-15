@@ -72,6 +72,7 @@ namespace Amazon.S3.Model
         /// The Amazon S3 bucket whose <c>OwnershipControls</c> you want to delete. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
