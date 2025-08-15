@@ -33,7 +33,7 @@ namespace Amazon.OpsWorksCM
     public partial class AmazonOpsWorksCMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OpsWorksCM", "4.0.0.18");
+            InternalSDKUtils.BuildUserAgentString("OpsWorksCM", "4.0.0.19");
 
         private static readonly AmazonOpsWorksCMEndpointResolver EndpointResolver =
             new AmazonOpsWorksCMEndpointResolver();

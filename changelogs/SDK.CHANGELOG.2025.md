@@ -1,3 +1,25 @@
+### 4.0.71.0 (2025-08-15 18:17 UTC)
+* ApiGatewayV2 (4.0.1.15)
+	* Add required attributes to properties that have been renamed
+* BedrockAgent (4.0.5.0)
+	* This release adds support for saving Bedrock Flows while node configuration is still in progress, even if the Flow is not yet able to be invoked
+* Glue (4.0.14.0)
+	* AWS Glue Zero ETL now supports On-demand snapshot load
+* PrometheusService (4.0.2.0)
+	* Add Resource-based Policy APIs for Amazon Prometheus
+* S3 (4.0.6.6)
+	* Fixes issue #3959. Do not send empty lists for headers. ListObjectsV2 calls were failing if AWSConfigs.InitializeCollections was set to true. This was causing the SDK to send the `x-amz-optional-attributes` as an empty string which is not a valid value.
+	* Add required attributes to properties that have been renamed
+* SimpleWorkflow (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* WAF (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* WAFRegional (4.0.0.19)
+	* Add required attributes to properties that have been renamed
+* Core 4.0.0.23
+	* Update SDK not to mutate credentials in provided config object (https://github.com/aws/aws-sdk-net/issues/3950)
+	* All services packages updated to require new Core
+
 ### 4.0.70.0 (2025-08-14 18:35 UTC)
 * ARCRegionswitch (4.0.1.0)
 	* Endpoint rule test and documentation update.

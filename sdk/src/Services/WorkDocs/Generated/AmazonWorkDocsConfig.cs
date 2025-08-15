@@ -33,7 +33,7 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkDocs", "4.0.0.18");
+            InternalSDKUtils.BuildUserAgentString("WorkDocs", "4.0.0.19");
 
         private static readonly AmazonWorkDocsEndpointResolver EndpointResolver =
             new AmazonWorkDocsEndpointResolver();
