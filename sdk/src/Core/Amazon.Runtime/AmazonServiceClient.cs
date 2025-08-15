@@ -167,11 +167,7 @@ namespace Amazon.Runtime
             config.Validate();
             _config = config;
 
-            if (credentials != null)
-            {
-                ExplicitAWSCredentials = credentials;
-            }
-
+            ExplicitAWSCredentials = credentials;
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             UpdateSecurityProtocol();
