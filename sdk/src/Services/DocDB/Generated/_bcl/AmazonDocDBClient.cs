@@ -231,7 +231,7 @@ namespace Amazon.DocDB
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.DocDB.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.DocDB.Internal.PreSignedUrlRequestHandler(this.ExplicitAWSCredentials ?? this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBEndpointResolver());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBAuthSchemeHandler());
