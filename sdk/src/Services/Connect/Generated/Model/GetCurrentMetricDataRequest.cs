@@ -75,10 +75,6 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Narrow the time range of your request
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Add filters to reduce the amount of data returned
     /// </para>
     ///  </li> </ul> </li> </ul> </note>
