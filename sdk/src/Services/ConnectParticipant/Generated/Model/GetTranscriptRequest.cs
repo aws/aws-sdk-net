@@ -39,7 +39,7 @@ namespace Amazon.ConnectParticipant.Model
     ///  
     /// <para>
     /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a>.
+    /// Connect Chat security best practices</a>. 
     /// </para>
     ///  
     /// <para>
@@ -49,11 +49,15 @@ namespace Amazon.ConnectParticipant.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+    ///  <c>application/vnd.amazonaws.connect.event.participant.invited</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

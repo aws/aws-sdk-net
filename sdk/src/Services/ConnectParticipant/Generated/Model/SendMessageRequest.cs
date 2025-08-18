@@ -36,7 +36,7 @@ namespace Amazon.ConnectParticipant.Model
     ///  
     /// <para>
     /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a>.
+    /// Connect Chat security best practices</a>. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -134,8 +134,20 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of the content. Supported types are <c>text/plain</c>, <c>text/markdown</c>,
+        /// The type of the content. Possible types are <c>text/plain</c>, <c>text/markdown</c>,
         /// <c>application/json</c>, and <c>application/vnd.amazonaws.connect.message.interactive.response</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported types on the contact are configured through <c>SupportedMessagingContentTypes</c>
+        /// on <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// and <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For Apple Messages for Business, SMS, and WhatsApp Business Messaging contacts, only
+        /// <c>text/plain</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
