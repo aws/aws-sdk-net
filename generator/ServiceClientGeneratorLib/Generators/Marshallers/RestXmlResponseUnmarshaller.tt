@@ -134,6 +134,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				   targetDepth += 1;
 <#
         }
+        if (payload != null && this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(payload.ModeledName))
+        {
+#>
+            // payload has been flattened so that members of the result object are directly unmarshalled instead of unmarshalled
+            // as part of the container class, so look one level deeper
+            targetDepth += 1;
+<#
+        }
     }
 #>
             if (context.IsEmptyResponse)

@@ -388,41 +388,82 @@
         "UploadPartCopyRequest": {
             "modify": [
                 {
-                    "Bucket": { "emitPropertyName": "DestinationBucket" }
+                   "CopySourceIfModifiedSince":{"emitPropertyName":"ModifiedSinceDate"} 
+                },
+                {
+                    "CopySourceIfUnmodifiedSince":{"emitPropertyName":"UnmodifiedSinceDate"}
+                },
+                {
+                    "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "SSECustomerKey" : {"emitPropertyName" : "ServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "SSECustomerKeyMD5" : {"emitPropertyName":"ServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "CopySourceSSECustomerAlgorithm" : {"emitPropertyName" : "CopySourceServerSideEncryptionCustomerMethod"}
+                },
+                {
+                    "CopySourceSSECustomerKey" : {"emitPropertyName" : "CopySourceServerSideEncryptionCustomerProvidedKey"}
+                },
+                {
+                    "CopySourceSSECustomerKeyMD5" : {"emitPropertyName":"CopySourceServerSideEncryptionCustomerProvidedKeyMD5"}
+                },
+                {
+                    "CopySourceIfMatch" : {"emitPropertyName" : "ETagToMatch"}
+                },
+                {
+                    "CopySourceIfNoneMatch" : {"emitPropertyName" : "ETagsToNotMatch"}
+                },
+                {
+                    "Bucket" : {"emitPropertyName" : "DestinationBucket"}
                 }
             ],
             "exclude": [
                 "CopySource",
-                "Key"
+                "Key",
+                "CopySourceRange"
             ],
             "inject": [
                 {
                     "SourceBucket": {
-                        "shape": "BucketName"
+                        "shape": "BucketName",
+                        "location":"header"
                     }
                 },
                 {
                     "SourceKey": {
                         "shape": "ObjectKey",
-                        "originalMember":"CopySource"
+                        "originalMember":"CopySource",
+                        "location":"header"
                     }
                 },
                 {
                     "SourceVersionId": {
-                        "shape": "CopySourceVersionId"
-                    }
-                },
-                {
-                    "DestinationBucket": {
-                        "shape": "BucketName"
+                        "shape": "CopySourceVersionId",
+                        "location":"header"
                     }
                 },
                 {
                     "DestinationKey": {
                         "shape": "ObjectKey",
-                        "originalMember": "Key"
+                        "originalMember": "Key",
+                        "location":"header"
                     }
                 }
+            ],
+            "excludeFromMarshalling":[
+                "ServerSideEncryptionCustomerProvidedKey",
+                "ServerSideEncryptionCustomerProvidedKeyMD5",
+                "CopySourceServerSideEncryptionCustomerProvidedKey",
+                "CopySourceServerSideEncryptionCustomerProvidedKeyMD5",
+                "SourceKey",
+                "SourceBucket",
+                "DestinationKey",
+                "DestinationBucket",
+                "SourceVersionId"
             ]
         },
         "S3Grantee":{
@@ -634,6 +675,16 @@
             "modify" : [
                 {
                     "EncodingType" : {"emitPropertyName" : "Encoding"}
+                }
+            ]
+        },
+        "UploadPartCopyOutput" :{
+            "modify" : [
+                {
+                    "SSEKMSKeyId" : {"emitPropertyName" : "ServerSideEncryptionKeyManagementServiceKeyId"}
+                },
+                {
+                    "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
                 }
             ]
         }
@@ -896,6 +947,28 @@
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             }
+        },
+        "UploadPartCopyRequest":{
+            "ServerSideEncryptionCustomerMethod" : {
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            },
+            "CopySourceServerSideEncryptionCustomerMethod":{
+                "Type": "ServerSideEncryptionCustomerMethod",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"                
+            },
+            "ETagToMatch":{
+                "Type" : "List<string>",
+                "Marshaller": "Amazon.Util.AWSSDKUtils.Join",
+                "Unmarshaller": "StringUnmarshaller"       
+            },
+            "ETagsToNotMatch" : {
+                "Type" : "List<string>",
+                "Marshaller" : "Amazon.Util.AWSSDKUtils.Join",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -971,10 +1044,14 @@
     "flattenShapes" : {
         "PutBucketNotificationConfigurationRequest" : [
             "NotificationConfiguration"
+        ],
+        "UploadPartCopyOutput" : [
+            "CopyPartResult"
         ]
     },
     "excludeShapes":[
-        "NotificationConfiguration"
+        "NotificationConfiguration",
+        "CopyPartResult"
     ],
     "implementsVisitorPattern":{
         "LifecycleFilter":{

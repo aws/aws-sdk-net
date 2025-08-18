@@ -445,6 +445,8 @@ using Amazon.Runtime.Internal.Util;
 			if (dataTypeOverride.IsFlattened)
 				dataTypeSwapIsFlattened = true;
 		}
+		if (this.Config.ServiceModel.Customizations.FlattenShapes(member.OwningShape.Name).Contains(member.ModeledName))
+			return;
 		string unmarshalledVariable = isStructure ? "unmarshalledObject" : "response";
 		if (member.Shape.IsList || isDataTypeSwapList)
 		{
