@@ -37,6 +37,7 @@ namespace Amazon.S3Control.Model
     public partial class JobOperation
     {
         private LambdaInvokeOperation _lambdaInvoke;
+        private S3ComputeObjectChecksumOperation _s3ComputeObjectChecksum;
         private S3DeleteObjectTaggingOperation _s3DeleteObjectTagging;
         private S3InitiateRestoreObjectOperation _s3InitiateRestoreObject;
         private S3SetObjectAclOperation _s3PutObjectAcl;
@@ -62,6 +63,24 @@ namespace Amazon.S3Control.Model
         internal bool IsSetLambdaInvoke()
         {
             return this._lambdaInvoke != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ComputeObjectChecksum. 
+        /// <para>
+        /// Directs the specified job to compute checksum values for every object in the manifest.
+        /// </para>
+        /// </summary>
+        public S3ComputeObjectChecksumOperation S3ComputeObjectChecksum
+        {
+            get { return this._s3ComputeObjectChecksum; }
+            set { this._s3ComputeObjectChecksum = value; }
+        }
+
+        // Check to see if S3ComputeObjectChecksum property is set
+        internal bool IsSetS3ComputeObjectChecksum()
+        {
+            return this._s3ComputeObjectChecksum != null;
         }
 
         /// <summary>

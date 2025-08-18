@@ -1620,6 +1620,11 @@
     <pattern>arn:[^:]+:s3:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.JobReport.ExpectedBucketOwner</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.JobReport.Prefix</property>
     <min>1</min>
     <max>512</max>

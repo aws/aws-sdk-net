@@ -87,7 +87,13 @@ namespace Amazon.S3Control.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateAccessPointRequest : AmazonS3ControlRequest
     {
@@ -262,6 +268,17 @@ namespace Amazon.S3Control.Model
         /// tags with Amazon S3</a>. For information about tagging access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#using-tags-for-abac">Using
         /// tags for attribute-based access control (ABAC)</a>.
         /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have the <c>s3:TagResource</c> permission to create an access point with
+        /// tags for a general purpose bucket. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the <c>s3express:TagResource</c> permission to create an access point
+        /// with tags for a directory bucket.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<Tag> Tags

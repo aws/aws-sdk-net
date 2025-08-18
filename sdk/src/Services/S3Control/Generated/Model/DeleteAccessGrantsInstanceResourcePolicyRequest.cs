@@ -41,7 +41,13 @@ namespace Amazon.S3Control.Model
     /// You must have the <c>s3:DeleteAccessGrantsInstanceResourcePolicy</c> permission to
     /// use this operation. 
     /// </para>
-    ///  </dd> </dl>
+    ///  </dd> </dl> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteAccessGrantsInstanceResourcePolicyRequest : AmazonS3ControlRequest
     {

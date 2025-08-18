@@ -273,6 +273,122 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeObjectChecksumAlgorithm.
+    /// </summary>
+    public class ComputeObjectChecksumAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRC32 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm CRC32 = new ComputeObjectChecksumAlgorithm("CRC32");
+        /// <summary>
+        /// Constant CRC32C for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm CRC32C = new ComputeObjectChecksumAlgorithm("CRC32C");
+        /// <summary>
+        /// Constant CRC64NVME for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm CRC64NVME = new ComputeObjectChecksumAlgorithm("CRC64NVME");
+        /// <summary>
+        /// Constant MD5 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm MD5 = new ComputeObjectChecksumAlgorithm("MD5");
+        /// <summary>
+        /// Constant SHA1 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm SHA1 = new ComputeObjectChecksumAlgorithm("SHA1");
+        /// <summary>
+        /// Constant SHA256 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm SHA256 = new ComputeObjectChecksumAlgorithm("SHA256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeObjectChecksumAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeObjectChecksumAlgorithm FindValue(string value)
+        {
+            return FindValue<ComputeObjectChecksumAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeObjectChecksumAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeObjectChecksumType.
+    /// </summary>
+    public class ComputeObjectChecksumType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPOSITE for ComputeObjectChecksumType
+        /// </summary>
+        public static readonly ComputeObjectChecksumType COMPOSITE = new ComputeObjectChecksumType("COMPOSITE");
+        /// <summary>
+        /// Constant FULL_OBJECT for ComputeObjectChecksumType
+        /// </summary>
+        public static readonly ComputeObjectChecksumType FULL_OBJECT = new ComputeObjectChecksumType("FULL_OBJECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeObjectChecksumType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeObjectChecksumType FindValue(string value)
+        {
+            return FindValue<ComputeObjectChecksumType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeObjectChecksumType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeleteMarkerReplicationStatus.
     /// </summary>
     public class DeleteMarkerReplicationStatus : ConstantClass
@@ -1312,6 +1428,10 @@ namespace Amazon.S3Control
         /// Constant LambdaInvoke for OperationName
         /// </summary>
         public static readonly OperationName LambdaInvoke = new OperationName("LambdaInvoke");
+        /// <summary>
+        /// Constant S3ComputeObjectChecksum for OperationName
+        /// </summary>
+        public static readonly OperationName S3ComputeObjectChecksum = new OperationName("S3ComputeObjectChecksum");
         /// <summary>
         /// Constant S3DeleteObjectTagging for OperationName
         /// </summary>

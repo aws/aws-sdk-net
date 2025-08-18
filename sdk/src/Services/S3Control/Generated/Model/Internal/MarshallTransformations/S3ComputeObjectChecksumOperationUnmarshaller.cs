@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobReport Object
+    /// Response Unmarshaller for S3ComputeObjectChecksumOperation Object
     /// </summary>  
-    public class JobReportUnmarshaller : IUnmarshaller<JobReport, XmlUnmarshallerContext>, IUnmarshaller<JobReport, JsonUnmarshallerContext>
+    public class S3ComputeObjectChecksumOperationUnmarshaller : IUnmarshaller<S3ComputeObjectChecksumOperation, XmlUnmarshallerContext>, IUnmarshaller<S3ComputeObjectChecksumOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobReport Unmarshall(XmlUnmarshallerContext context)
+        public S3ComputeObjectChecksumOperation Unmarshall(XmlUnmarshallerContext context)
         {
-            JobReport unmarshalledObject = new JobReport();
+            S3ComputeObjectChecksumOperation unmarshalledObject = new S3ComputeObjectChecksumOperation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,40 +56,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Bucket", targetDepth))
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ChecksumAlgorithm = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Enabled", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ExpectedBucketOwner", targetDepth))
+                    if (context.TestExpression("ChecksumType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ExpectedBucketOwner = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Format", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Prefix", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ReportScope", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ReportScope = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ChecksumType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -106,17 +82,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobReport Unmarshall(JsonUnmarshallerContext context)
+        public S3ComputeObjectChecksumOperation Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static JobReportUnmarshaller _instance = new JobReportUnmarshaller();        
+        private static S3ComputeObjectChecksumOperationUnmarshaller _instance = new S3ComputeObjectChecksumOperationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobReportUnmarshaller Instance
+        public static S3ComputeObjectChecksumOperationUnmarshaller Instance
         {
             get
             {

@@ -285,7 +285,13 @@ namespace Amazon.S3Control
         /// You must also have the following permissions: <c>sso:CreateApplication</c>, <c>sso:PutApplicationGrant</c>,
         /// and <c>sso:PutApplicationAuthenticationMethod</c>. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAccessGrantsIdentityCenter service method.</param>
         /// 
@@ -364,7 +370,13 @@ namespace Amazon.S3Control
         /// <para>
         /// For directory groups - <c>identitystore:DescribeGroup</c> 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrant service method.</param>
         /// 
@@ -433,7 +445,13 @@ namespace Amazon.S3Control
         /// <c>sso:PutApplicationGrant</c>, and <c>sso:PutApplicationAuthenticationMethod</c>
         /// permissions. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsInstance service method.</param>
         /// 
@@ -521,7 +539,13 @@ namespace Amazon.S3Control
         /// You must also have the following permission for the specified IAM role: <c>iam:PassRole</c>
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsLocation service method.</param>
         /// 
@@ -631,7 +655,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
         /// 
@@ -713,7 +743,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPointForObjectLambda service method.</param>
         /// 
@@ -944,7 +980,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -1056,7 +1098,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionAccessPoint service method.</param>
         /// 
@@ -1131,6 +1179,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
         /// 
@@ -1191,7 +1246,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:DeleteAccessGrant</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrant service method.</param>
         /// 
@@ -1258,7 +1319,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsInstance</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstance service method.</param>
         /// 
@@ -1322,7 +1389,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsInstanceResourcePolicy</c> permission to
         /// use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstanceResourcePolicy service method.</param>
         /// 
@@ -1388,7 +1461,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsLocation</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsLocation service method.</param>
         /// 
@@ -1473,7 +1552,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
         /// 
@@ -1554,7 +1639,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointForObjectLambda service method.</param>
         /// 
@@ -1634,7 +1725,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html">GetAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
         /// 
@@ -1710,7 +1807,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicyForObjectLambda service method.</param>
         /// 
@@ -1780,6 +1883,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointScope service method.</param>
         /// 
@@ -1979,7 +2089,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketLifecycleConfiguration service method.</param>
         /// 
@@ -2091,7 +2207,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// 
@@ -2200,7 +2322,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">GetBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -2295,7 +2423,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// 
@@ -2376,7 +2510,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html">PutJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
         /// 
@@ -2484,7 +2624,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionAccessPoint service method.</param>
         /// 
@@ -2562,7 +2708,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -2633,7 +2785,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensConfiguration service method.</param>
         /// 
@@ -2704,7 +2862,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensConfigurationTagging service method.</param>
         /// 
@@ -2772,6 +2936,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
         /// 
@@ -2858,7 +3029,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -2959,7 +3136,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionAccessPointOperation service method.</param>
         /// 
@@ -3025,7 +3208,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>sso:DeleteApplication</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociateAccessGrantsIdentityCenter service method.</param>
         /// 
@@ -3085,7 +3274,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:GetAccessGrant</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrant service method.</param>
         /// 
@@ -3151,7 +3346,13 @@ namespace Amazon.S3Control
         ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
         /// only call the API from the account that owns the S3 Access Grants instance.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
         /// 
@@ -3217,7 +3418,13 @@ namespace Amazon.S3Control
         /// The prefix owner account must grant you the following permissions to their S3 Access
         /// Grants instance: <c>s3:GetAccessGrantsInstanceForPrefix</c>. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceForPrefix service method.</param>
         /// 
@@ -3278,7 +3485,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsInstanceResourcePolicy</c> permission to use
         /// this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceResourcePolicy service method.</param>
         /// 
@@ -3340,7 +3553,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsLocation</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsLocation service method.</param>
         /// 
@@ -3425,7 +3644,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
         /// 
@@ -3496,7 +3721,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointConfigurationForObjectLambda service method.</param>
         /// 
@@ -3577,7 +3808,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointForObjectLambda service method.</param>
         /// 
@@ -3647,7 +3884,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">DeleteAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
         /// 
@@ -3723,7 +3966,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyForObjectLambda service method.</param>
         /// 
@@ -3787,6 +4036,13 @@ namespace Amazon.S3Control
         /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// 
@@ -3849,6 +4105,13 @@ namespace Amazon.S3Control
         /// Returns the status of the resource policy associated with an Object Lambda Access
         /// Point.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatusForObjectLambda service method.</param>
         /// 
@@ -3914,6 +4177,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointScope service method.</param>
         /// 
@@ -4013,7 +4283,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucket service method.</param>
         /// 
@@ -4134,7 +4410,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html">DeleteBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLifecycleConfiguration service method.</param>
         /// 
@@ -4253,7 +4535,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// 
@@ -4655,7 +4943,13 @@ namespace Amazon.S3Control
         /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SetSourceIdentity</c>.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataAccess service method.</param>
         /// 
@@ -4736,7 +5030,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
         /// 
@@ -4837,7 +5137,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPoint service method.</param>
         /// 
@@ -4919,7 +5225,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicy service method.</param>
         /// 
@@ -5002,7 +5314,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicyStatus service method.</param>
         /// 
@@ -5090,7 +5408,13 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
         /// 
@@ -5168,7 +5492,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
@@ -5243,7 +5573,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensConfiguration service method.</param>
         /// 
@@ -5314,7 +5650,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensConfigurationTagging service method.</param>
         /// 
@@ -5382,6 +5724,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
         /// 
@@ -5441,7 +5790,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:ListAccessGrants</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrants service method.</param>
         /// 
@@ -5504,7 +5859,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListAccessGrantsInstances</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsInstances service method.</param>
         /// 
@@ -5565,7 +5926,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListAccessGrantsLocations</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsLocations service method.</param>
         /// 
@@ -5664,7 +6031,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// 
@@ -5735,6 +6108,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForDirectoryBuckets service method.</param>
         /// 
@@ -5818,7 +6198,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForObjectLambda service method.</param>
         /// 
@@ -5889,7 +6275,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants service method.</param>
         /// 
@@ -5977,7 +6369,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
@@ -6081,7 +6479,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionAccessPoints service method.</param>
         /// 
@@ -6152,6 +6556,13 @@ namespace Amazon.S3Control
         /// the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples">Examples</a>
         /// section.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRegionalBuckets service method.</param>
         /// 
@@ -6222,7 +6633,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStorageLensConfigurations service method.</param>
         /// 
@@ -6290,6 +6707,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
         /// 
@@ -6353,6 +6777,16 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
@@ -6378,9 +6812,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
-        /// to use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:ListTagsForResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -6392,6 +6826,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -6452,7 +6893,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:PutAccessGrantsInstanceResourcePolicy</c> permission to use
         /// this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessGrantsInstanceResourcePolicy service method.</param>
         /// 
@@ -6523,7 +6970,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointConfigurationForObjectLambda service method.</param>
         /// 
@@ -6605,7 +7058,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">DeleteAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
         /// 
@@ -6683,7 +7142,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicyForObjectLambda service method.</param>
         /// 
@@ -6756,6 +7221,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointScope service method.</param>
         /// 
@@ -7421,7 +7893,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// 
@@ -7550,7 +8028,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
         /// 
@@ -7647,7 +8131,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMultiRegionAccessPointPolicy service method.</param>
         /// 
@@ -7726,7 +8216,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 
@@ -7798,7 +8294,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageLensConfiguration service method.</param>
         /// 
@@ -7869,7 +8371,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageLensConfigurationTagging service method.</param>
         /// 
@@ -7973,7 +8481,13 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
         /// 
@@ -8038,6 +8552,35 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, or grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <note> 
+        /// <para>
+        /// This operation is only supported for the following Amazon S3 resource:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
@@ -8063,9 +8606,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:TagResource</c> permission to
-        /// use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:TagResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -8077,6 +8620,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -8139,6 +8689,16 @@ namespace Amazon.S3Control
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
         /// </para>
@@ -8164,9 +8724,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:UntagResource</c> permission
-        /// to use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:UntagResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -8178,6 +8738,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -8242,7 +8809,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must also have the following permission: <c>iam:PassRole</c> 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessGrantsLocation service method.</param>
         /// 
@@ -8329,7 +8902,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
         /// 
@@ -8428,7 +9007,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
         /// 
@@ -8511,6 +9096,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
         /// 

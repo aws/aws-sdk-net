@@ -36,6 +36,7 @@ namespace Amazon.S3Control.Model
     {
         private string _bucket;
         private bool? _enabled;
+        private string _expectedBucketOwner;
         private JobReportFormat _format;
         private string _prefix;
         private JobReportScope _reportScope;
@@ -83,6 +84,26 @@ namespace Amazon.S3Control.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// Lists the Amazon Web Services account ID that owns the target bucket, where the completion
+        /// report is received.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string ExpectedBucketOwner
+        {
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return this._expectedBucketOwner != null;
         }
 
         /// <summary>

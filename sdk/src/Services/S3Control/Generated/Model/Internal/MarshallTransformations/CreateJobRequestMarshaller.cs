@@ -284,6 +284,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         xmlWriter.WriteEndElement();
                     }
+                    if (publicRequest.Operation.S3ComputeObjectChecksum != null)
+                    {
+                        xmlWriter.WriteStartElement("S3ComputeObjectChecksum");
+                        if(publicRequest.Operation.S3ComputeObjectChecksum.IsSetChecksumAlgorithm())
+                            xmlWriter.WriteElementString("ChecksumAlgorithm", StringUtils.FromString(publicRequest.Operation.S3ComputeObjectChecksum.ChecksumAlgorithm));                 
+
+                        if(publicRequest.Operation.S3ComputeObjectChecksum.IsSetChecksumType())
+                            xmlWriter.WriteElementString("ChecksumType", StringUtils.FromString(publicRequest.Operation.S3ComputeObjectChecksum.ChecksumType));                 
+
+                        xmlWriter.WriteEndElement();
+                    }
                     if (publicRequest.Operation.S3DeleteObjectTagging != null)
                     {
                         xmlWriter.WriteStartElement("S3DeleteObjectTagging");
@@ -584,6 +595,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 
                     if(publicRequest.Report.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Report.Enabled));                 
+
+                    if(publicRequest.Report.IsSetExpectedBucketOwner())
+                        xmlWriter.WriteElementString("ExpectedBucketOwner", StringUtils.FromString(publicRequest.Report.ExpectedBucketOwner));                 
 
                     if(publicRequest.Report.IsSetFormat())
                         xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Report.Format));                 
