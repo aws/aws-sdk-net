@@ -9088,6 +9088,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterEbsVolumeConfig.VolumeKmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9:/_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterEbsVolumeConfig.VolumeSizeInGB</property>
     <min>1</min>
     <max>16384</max>

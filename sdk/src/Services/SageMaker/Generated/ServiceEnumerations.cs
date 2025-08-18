@@ -4385,6 +4385,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlP6B20048xlarge = new ClusterInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
+        /// Constant MlP6eGb20036xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP6eGb20036xlarge = new ClusterInstanceType("ml.p6e-gb200.36xlarge");
+        /// <summary>
         /// Constant MlR6i12xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlR6i12xlarge = new ClusterInstanceType("ml.r6i.12xlarge");
