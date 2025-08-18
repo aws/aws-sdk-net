@@ -44,28 +44,32 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters to apply to the service job list query. The filter names and values can
-        /// be:
+        /// The filter to apply to the query. Only one filter can be used at a time. When the
+        /// filter is used, <c>jobStatus</c> is ignored. The results are sorted by the <c>createdAt</c>
+        /// field, with the most recent jobs being first.
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>JOB_NAME</dt> <dd> 
         /// <para>
-        /// name: <c>JOB_STATUS</c> 
+        /// The value of the filter is a case-insensitive match for the job name. If the value
+        /// ends with an asterisk (*), the filter matches any job name that begins with the string
+        /// before the '*'. This corresponds to the <c>jobName</c> value. For example, <c>test1</c>
+        /// matches both <c>Test1</c> and <c>test1</c>, and <c>test1*</c> matches both <c>test1</c>
+        /// and <c>Test10</c>. When the <c>JOB_NAME</c> filter is used, the results are grouped
+        /// by the job name and version.
         /// </para>
-        ///  
+        ///  </dd> <dt>BEFORE_CREATED_AT</dt> <dd> 
         /// <para>
-        /// values: <c>SUBMITTED | PENDING | RUNNABLE | STARTING | RUNNING | SUCCEEDED | FAILED
-        /// | SCHEDULED</c> 
+        /// The value for the filter is the time that's before the job was created. This corresponds
+        /// to the <c>createdAt</c> value. The value is a string representation of the number
+        /// of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>AFTER_CREATED_AT</dt> <dd> 
         /// <para>
-        /// name: <c>JOB_NAME</c> 
+        /// The value for the filter is the time that's after the job was created. This corresponds
+        /// to the <c>createdAt</c> value. The value is a string representation of the number
+        /// of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.
         /// </para>
-        ///  
-        /// <para>
-        /// values: case-insensitive matches for the job name. If a filter value ends with an
-        /// asterisk (*), it matches any job name that begins with the string before the '*'.
-        /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
