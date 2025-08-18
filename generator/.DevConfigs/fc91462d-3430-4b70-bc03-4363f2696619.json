@@ -5,7 +5,7 @@
       "type": "patch",
       "changeLogMessages": [
         "Generate CopyPart.",
-        "[Breaking Change] Amazon.S3.Model.CopyPartResponse's BucketKeyEnabled will not return bool? instead of bool, in line with other S3 nullable types."
+        "[Breaking Change] Amazon.S3.Model.CopyPartResponse's BucketKeyEnabled will now return bool? instead of bool, in line with other S3 nullable types."
       ]
     }
   ]
