@@ -41,6 +41,16 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+    /// Points for directory buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+    /// Points for general purpose buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
     /// buckets</a> 
     /// </para>
@@ -66,9 +76,9 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
     /// <para>
-    /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
-    /// to use this operation. For more information about directory buckets policies and permissions,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+    /// For directory buckets and access points for directory buckets, you must have the <c>s3express:ListTagsForResource</c>
+    /// permission to use this operation. For more information about directory buckets policies
+    /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
     /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -80,6 +90,13 @@ namespace Amazon.S3Control.Model
     /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
     /// of Amazon S3 Tagging error codes</a>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonS3ControlRequest
     {

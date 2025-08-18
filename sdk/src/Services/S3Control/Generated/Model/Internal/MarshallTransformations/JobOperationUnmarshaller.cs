@@ -62,6 +62,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.LambdaInvoke = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3ComputeObjectChecksum", targetDepth))
+                    {
+                        var unmarshaller = S3ComputeObjectChecksumOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3ComputeObjectChecksum = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("S3DeleteObjectTagging", targetDepth))
                     {
                         var unmarshaller = S3DeleteObjectTaggingOperationUnmarshaller.Instance;
