@@ -546,7 +546,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "PutBucketLifecycleConfiguration", DocumentRoot[OperationsKey]["PutBucketLifecycleConfiguration"]),
                         new Operation(this, "PutBucketNotificationConfiguration", DocumentRoot[OperationsKey]["PutBucketNotificationConfiguration"]),
                         new Operation(this, "PutObjectAcl", DocumentRoot[OperationsKey]["PutObjectAcl"]),
-                        //////new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
+                        new Operation(this, "UploadPartCopy", DocumentRoot[OperationsKey]["UploadPartCopy"]),
                         new Operation(this, "ListObjectsV2", DocumentRoot[OperationsKey]["ListObjectsV2"]),
 
                     };
