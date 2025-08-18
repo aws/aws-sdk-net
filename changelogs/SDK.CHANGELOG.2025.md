@@ -1,3 +1,17 @@
+### 3.7.1104.0 (2025-08-18 18:30 UTC)
+* Batch (3.7.500.9)
+	* Added default_x86_64 and default_arm64 as values to the instanceTypes field.
+* BCMDashboards (3.7.500.0)
+	* Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.
+* Connect (3.7.503.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* ConnectParticipant (3.7.501.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* S3Control (3.7.501.0)
+	* Adds support for Compute checksum functionality in Amazon S3 Batch Operations. You can now calculate checksums for a list of objects using supported algorithms in Amazon S3, without requiring a restore or download
+* SageMaker (3.7.506.0)
+	* Customer managed keys now available for volume encryption of SageMaker HyperPod clusters.
+
 ### 3.7.1103.0 (2025-08-15 18:25 UTC)
 * BedrockAgent (3.7.501.0)
 	* This release adds support for saving Bedrock Flows while node configuration is still in progress, even if the Flow is not yet able to be invoked
