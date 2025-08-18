@@ -186,6 +186,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Add support for searching backups
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.BCMDashboards](https://www.nuget.org/packages/AWSSDK.BCMDashboards/)
+	* Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.
 * [AWSSDK.BCMDataExports](https://www.nuget.org/packages/AWSSDK.BCMDataExports/)
 	* Users can create, read, update, delete Exports of billing and cost management data.  Users can get details of Export Executions and details of Tables for exporting.  Tagging support is provided for Exports
 * [AWSSDK.BCMPricingCalculator](https://www.nuget.org/packages/AWSSDK.BCMPricingCalculator/)
