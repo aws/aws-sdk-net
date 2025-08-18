@@ -1,3 +1,20 @@
+### 4.0.72.0 (2025-08-18 18:31 UTC)
+* Batch (4.0.2.6)
+	* Added default_x86_64 and default_arm64 as values to the instanceTypes field.
+* BCMDashboards (4.0.0.0)
+	* Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.
+* Connect (4.0.7.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* ConnectParticipant (4.0.1.0)
+	* Amazon Connect Service Feature: Add support to enable multi-user in-app, web, and video calling.
+* S3 (4.0.6.7)
+	* Generate CopyPart.
+	* [Breaking Change] Amazon.S3.Model.CopyPartResponse's BucketKeyEnabled will now return bool? instead of bool, in line with other S3 nullable types.
+* S3Control (4.0.5.0)
+	* Adds support for Compute checksum functionality in Amazon S3 Batch Operations. You can now calculate checksums for a list of objects using supported algorithms in Amazon S3, without requiring a restore or download
+* SageMaker (4.0.20.0)
+	* Customer managed keys now available for volume encryption of SageMaker HyperPod clusters.
+
 ### 4.0.71.0 (2025-08-15 18:17 UTC)
 * ApiGatewayV2 (4.0.1.15)
 	* Add required attributes to properties that have been renamed
