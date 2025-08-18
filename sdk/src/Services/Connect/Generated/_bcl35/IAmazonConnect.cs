@@ -2204,13 +2204,18 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Adds a new participant into an on-going chat contact. For more information, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-        /// chat flow experiences by integrating custom participants</a>.
+        /// Adds a new participant into an on-going chat contact or webRTC call. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
         /// 
         /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -7774,10 +7779,6 @@ namespace Amazon.Connect
         /// If the response is slow due to large result sets, try these approaches:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// Narrow the time range of your request
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// Add filters to reduce the amount of data returned
         /// </para>

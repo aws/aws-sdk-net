@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ParticipantDetailsToAdd
     {
         private string _displayName;
+        private ParticipantCapabilities _participantCapabilities;
         private ParticipantRole _participantRole;
 
         /// <summary>
@@ -54,6 +55,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipantCapabilities.
+        /// </summary>
+        public ParticipantCapabilities ParticipantCapabilities
+        {
+            get { return this._participantCapabilities; }
+            set { this._participantCapabilities = value; }
+        }
+
+        // Check to see if ParticipantCapabilities property is set
+        internal bool IsSetParticipantCapabilities()
+        {
+            return this._participantCapabilities != null;
         }
 
         /// <summary>
