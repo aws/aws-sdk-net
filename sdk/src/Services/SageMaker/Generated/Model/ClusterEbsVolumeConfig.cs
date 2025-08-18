@@ -37,7 +37,83 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterEbsVolumeConfig
     {
+        private bool? _rootVolume;
+        private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
+
+        /// <summary>
+        /// Gets and sets the property RootVolume. 
+        /// <para>
+        /// Specifies whether the configuration is for the cluster's root or secondary Amazon
+        /// EBS volume. You can specify two <c>ClusterEbsVolumeConfig</c> fields to configure
+        /// both the root and secondary volumes. Set the value to <c>True</c> if you'd like to
+        /// provide your own customer managed Amazon Web Services KMS key to encrypt the root
+        /// volume. When <c>True</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The configuration is applied to the root volume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't specify the <c>VolumeSizeInGB</c> field. The size of the root volume is
+        /// determined for you.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify a KMS key ID for <c>VolumeKmsKeyId</c> to encrypt the root volume
+        /// with your own KMS key instead of an Amazon Web Services owned KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Otherwise, by default, the value is <c>False</c>, and the following applies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The configuration is applied to the secondary volume, while the root volume is encrypted
+        /// with an Amazon Web Services owned key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must specify the <c>VolumeSizeInGB</c> field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>VolumeKmsKeyId</c> to encrypt the secondary volume
+        /// with your own KMS key instead of an Amazon Web Services owned KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool RootVolume
+        {
+            get { return this._rootVolume.GetValueOrDefault(); }
+            set { this._rootVolume = value; }
+        }
+
+        // Check to see if RootVolume property is set
+        internal bool IsSetRootVolume()
+        {
+            return this._rootVolume.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeKmsKeyId. 
+        /// <para>
+        /// The ID of a KMS key to encrypt the Amazon EBS volume.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string VolumeKmsKeyId
+        {
+            get { return this._volumeKmsKeyId; }
+            set { this._volumeKmsKeyId = value; }
+        }
+
+        // Check to see if VolumeKmsKeyId property is set
+        internal bool IsSetVolumeKmsKeyId()
+        {
+            return this._volumeKmsKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VolumeSizeInGB. 
