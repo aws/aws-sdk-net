@@ -27,12 +27,12 @@ These instructions guide Copilot and contributors in reviewing pull requests for
 	- .NET 8.0
 	- .NET Framework 4.7.2
 
-### 6. General Best Practices
+### 5. General Best Practices
 - Follow .NET and AWS SDK coding standards.
 - Avoid introducing unused code, dependencies, or files.
 - Ensure all code is properly formatted and linted.
 
-### 7. Generator Changes
+### 6. Generator Changes
 - When replacing handwritten code with generated code, ensure the generated code is functionally equivalent to the original.
 - Document any differences, edge cases, or limitations in the PR description.
 - If possible, provide a comparison or summary of key behaviors between the old and new implementations.
