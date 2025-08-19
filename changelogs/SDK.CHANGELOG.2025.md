@@ -1,3 +1,11 @@
+### 3.7.1105.0 (2025-08-19 18:20 UTC)
+* CleanRooms (3.7.501.0)
+	* Support error message configuration for analysis templates
+* EC2 (3.7.505.0)
+	* Add support for "warning" volume status.
+* Polly (3.7.501.0)
+	* Added support for new output format - Opus.
+
 ### 3.7.1104.0 (2025-08-18 18:30 UTC)
 * Batch (3.7.500.9)
 	* Added default_x86_64 and default_arm64 as values to the instanceTypes field.
