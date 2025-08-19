@@ -98,6 +98,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetErrorMessageConfiguration())
+            {
+                context.Writer.WritePropertyName("errorMessageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ErrorMessageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ErrorMessageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");

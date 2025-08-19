@@ -969,6 +969,52 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type ErrorMessageType.
+    /// </summary>
+    public class ErrorMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETAILED for ErrorMessageType
+        /// </summary>
+        public static readonly ErrorMessageType DETAILED = new ErrorMessageType("DETAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorMessageType FindValue(string value)
+        {
+            return FindValue<ErrorMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterableMemberStatus.
     /// </summary>
     public class FilterableMemberStatus : ConstantClass
