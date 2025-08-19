@@ -37,8 +37,21 @@ These instructions guide Copilot and contributors in reviewing pull requests for
 - Document any differences, edge cases, or limitations in the PR description.
 - If possible, provide a comparison or summary of key behaviors between the old and new implementations.
 
+ ### 7. General Review Practices
+ - Review code for bugs, flaws in logic, and potential edge cases.
+ - Check for correct error handling and input validation.
+ - Ensure code is maintainable, readable, and follows best practices.
+ - Look for opportunities to simplify or optimize code where appropriate.
+
 ## Automated Checks
 - Copilot should flag PRs that:
-	- Introduce breaking changes without a major version bump.
-	- Lack a dev config file or changelog update.
-	- Change public APIs without documentation or tests.
+ 	- Introduce breaking changes without a major version bump.
+ 	- Lack a dev config file or changelog update.
+ 	- Change public APIs without documentation or tests.
+ 	- Have failing unit or integration tests.
+ 	- Reduce test coverage for affected code.
+ 	- Introduce unhandled exceptions, missing error handling, or poor input validation.
+ 	- Increase code complexity or reduce maintainability.
+ 	- Do not document or justify changes in logic, edge cases, or optimizations.
+ 	- For generator changes, do not provide evidence of equivalence (e.g., missing test results, behavioral comparison, or documentation).
+    
