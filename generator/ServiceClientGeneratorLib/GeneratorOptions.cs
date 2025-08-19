@@ -37,7 +37,15 @@ namespace ServiceClientGenerator
         /// </summary>
         public string ModelsFolder { get; set; }
 
+        /// <summary>
+        /// The location of the folder containing the test service model files.
+        /// </summary>
         public string TestModelsFolder { get; set; }
+
+        /// <summary>
+        /// The location of the folder containing the extension folders.
+        /// </summary>
+        public string ExtensionsSrcFolder { get; set; }
 
         /// <summary>
         /// The root folder beneath which the code for the SDK is arranged. Source code exists under
@@ -104,6 +112,7 @@ namespace ServiceClientGenerator
             Versions = Utils.PathCombineAlt("..", "..", "..", "ServiceModels", "_sdk-versions.json");
             ModelsFolder = Utils.PathCombineAlt("..", "..", "..", "ServiceModels");
             TestModelsFolder = Utils.PathCombineAlt("..", "..", "..", "TestServiceModels");
+            ExtensionsSrcFolder = Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src");
             SdkRootFolder = Utils.PathCombineAlt("..", "..", "..", "..", "sdk");
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

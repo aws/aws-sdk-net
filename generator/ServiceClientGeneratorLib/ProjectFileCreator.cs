@@ -110,15 +110,26 @@ namespace ServiceClientGenerator
                 if (projectFileConfiguration.Template.Equals("VS2017ProjectFile", StringComparison.InvariantCultureIgnoreCase))
                 {
                     var projectReferenceList = new List<ProjectReference>();
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies.Keys)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies.Keys)
                     {
                         if (string.Equals(dependency, "Core", StringComparison.InvariantCultureIgnoreCase))
                             continue;
 
-                        projectReferenceList.Add(new ProjectReference
+                        if (dependency.StartsWith("Extensions."))
                         {
-                            IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
-                        });
+                            projectReferenceList.Add(new ProjectReference
+                            {
+                                IncludePath =
+                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", "AWSSDK.Extensions.CborProtocol", $"AWSSDK.Extensions.CborProtocol.{projectType}.csproj")
+                            });
+                        }
+                        else
+                        {
+                            projectReferenceList.Add(new ProjectReference
+                            {
+                                IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
+                            });
+                        }                            
                     }
 
                     projectReferenceList.Add(new ProjectReference
@@ -126,16 +137,7 @@ namespace ServiceClientGenerator
                         IncludePath = serviceConfiguration.IsTestService
                             ? Utils.PathCombineAlt("..", "..", "..", "src", "Core", $"AWSSDK.Core.{projectType}.csproj")
                             : Utils.PathCombineAlt("..", "..", "Core", $"AWSSDK.Core.{projectType}.csproj")
-                    });
-
-                    if (serviceConfiguration.ServiceModel.Type == ServiceType.Cbor)
-                    {
-                        projectReferenceList.Add(new ProjectReference
-                        {
-                            IncludePath =
-                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", "AWSSDK.Extensions.CborProtocol", $"AWSSDK.Extensions.CborProtocol.{projectType}.csproj")
-                        });
-                    }
+                    });                                        
 
                     GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration, projectReferenceList);
                     continue;
@@ -184,9 +186,9 @@ namespace ServiceClientGenerator
                 var projectReferences = new List<ProjectReference>();
 
 
-                if (serviceConfiguration.ServiceDependencies != null)
+                if (serviceConfiguration.SdkDependencies != null)
                 {
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies)
                     {
                         var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
                         string dependencyProject;

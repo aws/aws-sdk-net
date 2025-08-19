@@ -52,7 +52,10 @@ namespace ServiceClientGenerator
         /// </summary>
         public IEnumerable<ServiceConfiguration> ServiceConfigurations { get; private set; }
 
-        //public IDictionary<string, string> ServiceVersions { get; private set; }
+        /// <summary>
+        /// The set of extensions declared in the manifest as supporting generation. 
+        /// </summary>
+        public IEnumerable<ExtensionConfiguration> ExtensionConfigurations { get; private set; }
 
         /// <summary>
         /// The set of per-platform project metadata needed to generate a platform
@@ -116,7 +119,8 @@ namespace ServiceClientGenerator
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
             generationManifest.LoadDefaultConfiguration(options.ModelsFolder);
-            generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], options);
+            generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], versionsManifest["ExtensionVersions"], options);
+            generationManifest.LoadExtensionConfigurations(versionsManifest["ServiceVersions"], versionsManifest["ExtensionVersions"], options);
             generationManifest.LoadProjectConfigurations(manifest);
             generationManifest.LoadUnitTestProjectConfigurations(manifest);
 
@@ -138,9 +142,10 @@ namespace ServiceClientGenerator
         /// model files to generate ServiceConfiguration objects.
         /// </summary>
         /// <param name="manifest">loaded _manifest.json file</param>
-        /// <param name="serviceVersions">loaded _sdk-versions.json file</param>
+        /// <param name="serviceVersions">loaded _sdk-versions.json file "ServiceVersions" secton</param>
+        /// <param name="extensionVersions">loaded _sdk-versions.json file "ExtensionVersions" secton</param>
         /// <param name="options">generator options</param>
-        void LoadServiceConfigurations(JsonData manifest, JsonData serviceVersions, GeneratorOptions options)
+        void LoadServiceConfigurations(JsonData manifest, JsonData serviceVersions, JsonData extensionVersions, GeneratorOptions options)
         {
             List<Tuple<JsonData, ServiceConfiguration>> modelConfigList = new List<Tuple<JsonData, ServiceConfiguration>>();
             var serviceConfigurations = new List<ServiceConfiguration>();
@@ -165,7 +170,7 @@ namespace ServiceClientGenerator
                     var serviceModelFileName = GetLatestModel(serviceDirectory);
                     string paginatorsFileName = GetLatestPaginators(serviceDirectory);
                     
-                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName, paginatorsFileName);
+                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, extensionVersions, serviceDirectory, serviceModelFileName, paginatorsFileName);
                     serviceConfigurations.Add(config);
 
                     modelConfigList.Add(new Tuple<JsonData, ServiceConfiguration>(metadataNode, config));
@@ -214,7 +219,40 @@ namespace ServiceClientGenerator
             }
 
             ServiceConfigurations = serviceConfigurations
-                .OrderBy(sc => sc.ServiceDependencies.Count)
+                .OrderBy(sc => sc.SdkDependencies.Count)
+                .ToList();
+        }
+
+        /// <summary>
+        /// Load ExtensionConfiguration objects.
+        /// </summary>        
+        /// <param name="serviceVersions">loaded _sdk-versions.json file "ServiceVersions" secton</param>
+        /// <param name="extensionVersions">loaded _sdk-versions.json file "ExtensionVersions" secton</param>
+        /// <param name="options">generator options</param>
+        void LoadExtensionConfigurations(JsonData serviceVersions, JsonData extensionVersions, GeneratorOptions options)
+        {
+            var extensionConfigurations = new List<ExtensionConfiguration>();
+
+            var extensionDirectories = Utils.GetExtensionDirectories(options);
+
+            foreach (var extensionDirectory in extensionDirectories)
+            {
+                var altExtensionDirectory = Utils.ConvertPathAlt(extensionDirectory);
+                var extensionId = altExtensionDirectory.Substring(altExtensionDirectory.LastIndexOf(Path.AltDirectorySeparatorChar) + 1);
+
+                string nuspecFile = Utils.PathCombineAlt(altExtensionDirectory, extensionId + ".nuspec");
+                if (!File.Exists(nuspecFile))
+                {
+                    // Not an active extension so skip it.
+                    continue;
+                }
+
+                var config = CreateExtensionConfiguration(serviceVersions, extensionVersions, altExtensionDirectory, extensionId);
+                extensionConfigurations.Add(config);
+            }
+
+            ExtensionConfigurations = extensionConfigurations
+                .OrderBy(sc => sc.Id)
                 .ToList();
         }
 
@@ -249,7 +287,7 @@ namespace ServiceClientGenerator
         private const string EndpointRuleSetFile = "endpoint-rule-set.json";
         private const string EndpointRuleSetTestsFile = "endpoint-tests.json";
 
-        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
+        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, JsonData extensionVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
         {
             var paginatorsFullPath = Utils.PathCombineAlt(serviceDirectoryPath, servicePaginatorsFileName);
 
@@ -362,13 +400,18 @@ namespace ServiceClientGenerator
             else
                 config.NetStandardSupport = true;
 
-            config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
+            config.SdkDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
             if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
             {
                 foreach (var d in modelNode[ModelsSectionKeys.DependenciesKey])
                 {
-                    config.ServiceDependencies.Add(d.ToString(), null);
+                    config.SdkDependencies.Add(d.ToString(), null);
                 }
+            }
+
+            if (config.ServiceModel.Type == ServiceType.Cbor)
+            {
+                config.SdkDependencies.Add("Extensions.CborProtocol", extensionVersions["Extensions.CborProtocol"]["Version"].ToString());                
             }
 
             if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
@@ -387,9 +430,8 @@ namespace ServiceClientGenerator
                 foreach (var name in dependencies.PropertyNames)
                 {
                     var version = dependencies[name].ToString();
-                    config.ServiceDependencies[name] = version;
+                    config.SdkDependencies[name] = version;
                 }
-
 
                 var versionText = versionInfoJson["Version"].ToString();
                 config.ServiceFileVersion = versionText;
@@ -407,7 +449,7 @@ namespace ServiceClientGenerator
             }
             else
             {
-                config.ServiceDependencies["Core"] = CoreFileVersion;
+                config.SdkDependencies["Core"] = CoreFileVersion;
                 config.InPreview = this.DefaultToPreview;
 
                 config.ServiceFileVersion = DefaultAssemblyVersion;
@@ -416,6 +458,44 @@ namespace ServiceClientGenerator
                 {
                     throw new NotImplementedException($"{nameof(DefaultAssemblyVersion)} '{DefaultAssemblyVersion}' should be updated to match the AWSSDK.Core minor version number '{versionTokens[0]}.{versionTokens[1]}'.");
                 }
+            }
+
+            return config;
+        }
+
+        private ExtensionConfiguration CreateExtensionConfiguration(JsonData serviceVersions, JsonData extensionVersions, string extensionDirectoryPath, string extensionId)
+        {
+            var config = new ExtensionConfiguration
+            {
+                Id = extensionId,
+                Name = extensionId.Substring("AWSSDK.".Length),
+                Path = extensionDirectoryPath,
+                SdkDependencies = new Dictionary<string, string>(StringComparer.Ordinal)
+            };
+                        
+            var versionInfoJson = extensionVersions[config.Name];
+            if (versionInfoJson != null)
+            {
+                var dependencies = versionInfoJson["Dependencies"];
+                foreach (var name in dependencies.PropertyNames)
+                {
+                    var version = dependencies[name].ToString();
+                    config.SdkDependencies[name] = version;
+                }
+
+                var versionText = versionInfoJson["Version"].ToString();
+                config.FileVersion = versionText;
+
+                var assemblyVersionOverride = versionInfoJson["AssemblyVersionOverride"];
+                if (assemblyVersionOverride != null)
+                {
+                    config.AssemblyVersionOverride = assemblyVersionOverride.ToString();
+                }
+
+                if (versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
+                    config.InPreview = true;
+                else
+                    config.InPreview = this.DefaultToPreview;
             }
 
             return config;
