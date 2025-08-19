@@ -24846,6 +24846,10 @@ namespace Amazon.EC2
         /// Constant Ok for VolumeStatusInfoStatus
         /// </summary>
         public static readonly VolumeStatusInfoStatus Ok = new VolumeStatusInfoStatus("ok");
+        /// <summary>
+        /// Constant Warning for VolumeStatusInfoStatus
+        /// </summary>
+        public static readonly VolumeStatusInfoStatus Warning = new VolumeStatusInfoStatus("warning");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
