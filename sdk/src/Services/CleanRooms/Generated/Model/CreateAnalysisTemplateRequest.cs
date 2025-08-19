@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
     {
         private List<AnalysisParameter> _analysisParameters = AWSConfigs.InitializeCollections ? new List<AnalysisParameter>() : null;
         private string _description;
+        private ErrorMessageConfiguration _errorMessageConfiguration;
         private AnalysisFormat _format;
         private string _membershipIdentifier;
         private string _name;
@@ -80,6 +81,28 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessageConfiguration. 
+        /// <para>
+        /// The configuration that specifies the level of detail in error messages returned by
+        /// analyses using this template. When set to <c>DETAILED</c>, error messages include
+        /// more information to help troubleshoot issues with PySpark jobs. Detailed error messages
+        /// may expose underlying data, including sensitive information. Recommended for faster
+        /// troubleshooting in development and testing environments.
+        /// </para>
+        /// </summary>
+        public ErrorMessageConfiguration ErrorMessageConfiguration
+        {
+            get { return this._errorMessageConfiguration; }
+            set { this._errorMessageConfiguration = value; }
+        }
+
+        // Check to see if ErrorMessageConfiguration property is set
+        internal bool IsSetErrorMessageConfiguration()
+        {
+            return this._errorMessageConfiguration != null;
         }
 
         /// <summary>
