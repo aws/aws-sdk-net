@@ -53,5 +53,5 @@ These instructions guide Copilot and contributors in reviewing pull requests for
  	- Introduce unhandled exceptions, missing error handling, or poor input validation.
  	- Increase code complexity or reduce maintainability.
  	- Do not document or justify changes in logic, edge cases, or optimizations.
- 	- For generator changes, do not provide evidence of equivalence (e.g., missing test results, behavioral comparison, or documentation).
+ 	- For changes related to migrating custom code to generated code, where evidence of equivalence (e.g., missing test results, behavioral comparison, or documentation) is not provided.
     
