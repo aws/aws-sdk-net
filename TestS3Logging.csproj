@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>sdk/src/Services/S3/bin/Debug/net8.0/AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>sdk/src/Core/bin/Debug/net8.0/AWSSDK.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

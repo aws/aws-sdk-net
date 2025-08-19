@@ -352,6 +352,16 @@ namespace Amazon.S3
                     if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
                         _sigV2SupportedRegions.Contains(endpoint?.SystemName))
                     {
+                        var logger = Logger.GetLogger(this.GetType());
+                        logger.InfoFormat(
+                            "Presigned URL expiration ({0} seconds) exceeds SigV4 maximum ({1} seconds). " +
+                            "Automatically using SigV2 for bucket '{2}' in region '{3}'. " +
+                            "Consider reducing expiration time to use SigV4 for better security.",
+                            secondsUntilExpiration,
+                            AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry,
+                            request.BucketName,
+                            endpoint?.SystemName);
+
                         signatureVersionToUse = SignatureVersion.SigV2;
                     }
                 }
