@@ -101,7 +101,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property DataFilterExpression. 
         /// <para>
-        ///  See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        ///  See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
         /// Billing view only supports <c>LINKED_ACCOUNT</c> and <c>Tags</c>. 
         /// </para>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  A list of names of the billing view. 
+        ///  The account name of the billing view. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -158,7 +158,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        ///  The list of owners of the billing view. 
+        /// The account owner of the billing view. 
         /// </para>
         /// </summary>
         public string OwnerAccountId

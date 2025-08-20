@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+    /// See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
     /// Billing view only supports <c>LINKED_ACCOUNT</c> and <c>Tags</c>.
     /// </summary>
     public partial class Expression
