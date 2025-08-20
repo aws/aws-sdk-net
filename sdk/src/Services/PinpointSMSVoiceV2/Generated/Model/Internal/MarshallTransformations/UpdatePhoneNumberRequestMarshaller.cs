@@ -75,6 +75,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeletionProtectionEnabled);
                 }
 
+                if(publicRequest.IsSetInternationalSendingEnabled())
+                {
+                    context.Writer.WritePropertyName("InternationalSendingEnabled");
+                    context.Writer.Write(publicRequest.InternationalSendingEnabled);
+                }
+
                 if(publicRequest.IsSetOptOutListName())
                 {
                     context.Writer.WritePropertyName("OptOutListName");

@@ -78,6 +78,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InternationalSendingEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InternationalSendingEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsoCountryCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

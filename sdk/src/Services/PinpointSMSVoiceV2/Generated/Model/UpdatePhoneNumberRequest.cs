@@ -43,6 +43,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class UpdatePhoneNumberRequest : AmazonPinpointSMSVoiceV2Request
     {
         private bool? _deletionProtectionEnabled;
+        private bool? _internationalSendingEnabled;
         private string _optOutListName;
         private string _phoneNumberId;
         private bool? _selfManagedOptOutsEnabled;
@@ -67,6 +68,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternationalSendingEnabled. 
+        /// <para>
+        /// By default this is set to false. When set to true the international sending of phone
+        /// number is Enabled. 
+        /// </para>
+        /// </summary>
+        public bool InternationalSendingEnabled
+        {
+            get { return this._internationalSendingEnabled.GetValueOrDefault(); }
+            set { this._internationalSendingEnabled = value; }
+        }
+
+        // Check to see if InternationalSendingEnabled property is set
+        internal bool IsSetInternationalSendingEnabled()
+        {
+            return this._internationalSendingEnabled.HasValue; 
         }
 
         /// <summary>
