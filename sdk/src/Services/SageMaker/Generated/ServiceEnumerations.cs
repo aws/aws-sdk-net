@@ -13873,6 +13873,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProcessingInstanceType MlP38xlarge = new ProcessingInstanceType("ml.p3.8xlarge");
         /// <summary>
+        /// Constant MlP54xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlP54xlarge = new ProcessingInstanceType("ml.p5.4xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlR512xlarge = new ProcessingInstanceType("ml.r5.12xlarge");
@@ -16394,6 +16398,10 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for ReservedCapacityInstanceType
         /// </summary>
         public static readonly ReservedCapacityInstanceType MlP548xlarge = new ReservedCapacityInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP54xlarge for ReservedCapacityInstanceType
+        /// </summary>
+        public static readonly ReservedCapacityInstanceType MlP54xlarge = new ReservedCapacityInstanceType("ml.p5.4xlarge");
         /// <summary>
         /// Constant MlP5e48xlarge for ReservedCapacityInstanceType
         /// </summary>
@@ -20578,6 +20586,10 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP548xlarge = new TrainingInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP54xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlP54xlarge = new TrainingInstanceType("ml.p5.4xlarge");
         /// <summary>
         /// Constant MlP5e48xlarge for TrainingInstanceType
         /// </summary>

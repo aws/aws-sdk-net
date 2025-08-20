@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// is mounted within the Studio environment. For example: <c>s3://&lt;bucket-name&gt;/&lt;prefix&gt;/</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }
