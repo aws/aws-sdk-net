@@ -1,3 +1,50 @@
+### 3.7.1106.0 (2025-08-20 18:44 UTC)
+* AWSMarketplaceMetering (3.7.501.0)
+	* Remove incorrect endpoint tests
+* BedrockRuntime (3.7.502.0)
+	* Launch CountTokens API to allow token counting
+* Billing (3.7.502.0)
+	* Clarify IPv4 and IPv6 endpoints
+* Budgets (3.7.502.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentityProvider (3.7.502.0)
+	* This release adds support for the new Terms APIs which allow displaying Terms of Use and Privacy Policy on the Managed Login user-registration page.
+* CostExplorer (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DataZone (3.7.502.0)
+	* This release supports policy grant identifier for cloud formation integration
+* Detective (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (3.7.502.0)
+	* Remove incorrect endpoint tests
+* EKS (3.7.502.0)
+	* EKS Add-ons Custom Namespace Support
+* ElasticFileSystem (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IdentityManagement (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Kinesis (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisAnalyticsV2 (3.7.501.0)
+	* Adds Key Management Service (KMS) support allowing customer-managed key (CMK) encryption for Flink application data.
+* MarketplaceEntitlementService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* NetworkManager (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoiceV2 (3.7.501.0)
+	* This change added InternationalSendingEnbaled as part of describe/Update/Request phone number API response, and as part of update/Request phone number API request
+* Route53RecoveryControlConfig (3.7.501.0)
+	* Remove incorrect endpoint tests
+* S3 (3.7.500.8)
+	* Decorated AnalyticsId, StorageClassAnalysis properties in AnalyticsConfiguration class and AnalyticsConfiguration property in PutBucketAnalyticsConfigurationRequest class with [AWSProperty(Required = true)] attribute per S3 service API model.
+* SageMaker (3.7.507.0)
+	* This release adds 1/ Launch ml.p5.4xlarge instance in Processing jobs, Training jobs and Training Plan 2/ Makes S3Uri to be required for S3FileSystem and S3FileSystemConfig.
+* SimpleEmailV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Core 3.7.500.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1105.0 (2025-08-19 18:20 UTC)
 * CleanRooms (3.7.501.0)
 	* Support error message configuration for analysis templates
