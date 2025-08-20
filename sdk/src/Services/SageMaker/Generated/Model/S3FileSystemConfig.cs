@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// The Amazon S3 URI of the S3 file system configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Required=true, Min=0, Max=1024)]
         public string S3Uri
         {
             get { return this._s3Uri; }
