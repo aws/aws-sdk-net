@@ -120,6 +120,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("namespaceConfig", targetDepth))
+                {
+                    var unmarshaller = AddonNamespaceConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.NamespaceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("owner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

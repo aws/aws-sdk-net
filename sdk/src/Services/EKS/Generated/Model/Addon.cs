@@ -44,6 +44,7 @@ namespace Amazon.EKS.Model
         private AddonHealth _health;
         private MarketplaceInformation _marketplaceInformation;
         private DateTime? _modifiedAt;
+        private AddonNamespaceConfigResponse _namespaceConfig;
         private string _owner;
         private List<string> _podIdentityAssociations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _publisher;
@@ -212,6 +213,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceConfig. 
+        /// <para>
+        /// The namespace configuration for the addon. This specifies the Kubernetes namespace
+        /// where the addon is installed.
+        /// </para>
+        /// </summary>
+        public AddonNamespaceConfigResponse NamespaceConfig
+        {
+            get { return this._namespaceConfig; }
+            set { this._namespaceConfig = value; }
+        }
+
+        // Check to see if NamespaceConfig property is set
+        internal bool IsSetNamespaceConfig()
+        {
+            return this._namespaceConfig != null;
         }
 
         /// <summary>
