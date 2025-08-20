@@ -2,15 +2,6 @@
 
 Thank you for your interest in contributing to the AWS SDK for .NET! This guide will help you understand our development process and how to submit successful pull requests.
 
-## Table of Contents
-
-- [DevConfig Files - Essential for Pull Requests](#devconfig-files---essential-for-pull-requests)
-- [Development Workflow](#development-workflow)
-- [Pull Request Guidelines](#pull-request-guidelines)
-- [Code Standards](#code-standards)
-- [Testing](#testing)
-- [Getting Help](#getting-help)
-
 ## DevConfig Files - Essential for Pull Requests
 
 **⚠️ Important: All pull requests that modify code MUST include a DevConfig file. This is required for the release process and changelog generation.**
