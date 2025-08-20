@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// to notification emails when users have potentially suspicious authentication events.
     /// Users invoke this operation when they select the link that corresponds to <c>{one-click-link-valid}</c>
     /// or <c>{one-click-link-invalid}</c> in your notification template. Because <c>FeedbackToken</c>
-    /// is a required parameter, you can' make requests to <c>UpdateAuthEventFeedback</c>
+    /// is a required parameter, you can't make requests to <c>UpdateAuthEventFeedback</c>
     /// without the contents of the notification email message.
     /// </para>
     ///  <note> 
