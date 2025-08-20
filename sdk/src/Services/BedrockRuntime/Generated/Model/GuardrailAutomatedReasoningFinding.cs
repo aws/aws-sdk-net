@@ -45,7 +45,12 @@ namespace Amazon.BedrockRuntime.Model
         private GuardrailAutomatedReasoningValidFinding _valid;
 
         /// <summary>
-        /// Gets and sets the property Impossible.
+        /// Gets and sets the property Impossible. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation determines that no valid
+        /// logical conclusions can be drawn due to contradictions in the premises or policy rules
+        /// themselves.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningImpossibleFinding Impossible
         {
@@ -60,7 +65,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Invalid.
+        /// Gets and sets the property Invalid. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation determines that the claims
+        /// in the input are logically invalid and contradict the established premises or policy
+        /// rules.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningInvalidFinding Invalid
         {
@@ -75,7 +85,11 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NoTranslations.
+        /// Gets and sets the property NoTranslations. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation cannot extract any relevant
+        /// logical information from the input that can be validated against the policy rules.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningNoTranslationsFinding NoTranslations
         {
@@ -90,7 +104,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Satisfiable.
+        /// Gets and sets the property Satisfiable. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation determines that the claims
+        /// in the input could be either true or false depending on additional assumptions not
+        /// provided in the input context.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningSatisfiableFinding Satisfiable
         {
@@ -105,7 +124,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TooComplex.
+        /// Gets and sets the property TooComplex. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation cannot process the input
+        /// due to its complexity or volume exceeding the system's processing capacity for logical
+        /// analysis.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningTooComplexFinding TooComplex
         {
@@ -120,7 +144,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TranslationAmbiguous.
+        /// Gets and sets the property TranslationAmbiguous. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation detects that the input
+        /// has multiple valid logical interpretations, requiring additional context or clarification
+        /// to proceed with validation.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningTranslationAmbiguousFinding TranslationAmbiguous
         {
@@ -135,7 +164,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Valid.
+        /// Gets and sets the property Valid. 
+        /// <para>
+        /// Contains the result when the automated reasoning evaluation determines that the claims
+        /// in the input are logically valid and definitively true based on the provided premises
+        /// and policy rules.
+        /// </para>
         /// </summary>
         public GuardrailAutomatedReasoningValidFinding Valid
         {

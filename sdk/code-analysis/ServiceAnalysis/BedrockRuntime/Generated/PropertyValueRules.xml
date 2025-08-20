@@ -23,6 +23,12 @@
     <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:imported-model/[a-z0-9]{12})|([0-9]{12}:provisioned-model/[a-z0-9]{12})|([0-9]{12}:custom-model-deployment/[a-z0-9]{12})|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+)))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|([a-zA-Z0-9-:.]+)|(^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10}(?::[0-9]{1,5})?))$|(^arn:aws:sagemaker:[a-z0-9-]+:[0-9]{12}:endpoint/[a-zA-Z0-9-]+$)|(^arn:aws(-[^:]+)?:bedrock:([0-9a-z-]{1,20}):([0-9]{12}):(default-)?prompt-router/[a-zA-Z0-9-:.]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.CountTokensRequest.ModelId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_\.\-/0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GetAsyncInvokeRequest.InvocationArn</property>
     <min>1</min>
     <max>2048</max>
@@ -326,6 +332,11 @@
     <property>Amazon.BedrockRuntime.Model.InferenceConfiguration.TopP</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.InvokeModelTokensRequest.Body</property>
+    <min>0</min>
+    <max>25000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelWithBidirectionalStreamRequest.ModelId</property>

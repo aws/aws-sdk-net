@@ -666,6 +666,134 @@ namespace Amazon.BedrockRuntime
 
         #endregion
         
+        #region  CountTokens
+
+        /// <summary>
+        /// Returns the token count for a given inference request. This operation helps you estimate
+        /// token usage before sending requests to foundation models by returning the token count
+        /// that would be used if the same input were sent to the model in an inference request.
+        /// 
+        ///  
+        /// <para>
+        /// Token counting is model-specific because different models use different tokenization
+        /// strategies. The token count returned by this operation will match the token count
+        /// that would be charged if the same input were sent to the model in an <c>InvokeModel</c>
+        /// or <c>Converse</c> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this operation to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Estimate costs before sending inference requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optimize prompts to fit within token limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Plan for token usage in your applications.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation accepts the same input formats as <c>InvokeModel</c> and <c>Converse</c>,
+        /// allowing you to count tokens for both raw text inputs and structured conversation
+        /// formats.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>CountTokens</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/API/API_runtime_InvokeModel.html">InvokeModel</a>
+        /// - Sends inference requests to foundation models
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock/latest/API/API_runtime_Converse.html">Converse</a>
+        /// - Sends conversation-based inference requests to foundation models
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CountTokens service method.</param>
+        /// 
+        /// <returns>The response from the CountTokens service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because you do not have sufficient permissions to perform the
+        /// requested action. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-access-denied">AccessDeniedException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-internal-failure">InternalFailure</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-resource-not-found">ResourceNotFound</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
+        /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by <i>Amazon Bedrock</i>. For
+        /// troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">REST API Reference for CountTokens Operation</seealso>
+        public virtual CountTokensResponse CountTokens(CountTokensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountTokensResponseUnmarshaller.Instance;
+
+            return Invoke<CountTokensResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CountTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CountTokens operation on AmazonBedrockRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCountTokens
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">REST API Reference for CountTokens Operation</seealso>
+        public virtual IAsyncResult BeginCountTokens(CountTokensRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CountTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CountTokensResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CountTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCountTokens.</param>
+        /// 
+        /// <returns>Returns a  CountTokensResult from BedrockRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">REST API Reference for CountTokens Operation</seealso>
+        public virtual CountTokensResponse EndCountTokens(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CountTokensResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAsyncInvoke
 
         /// <summary>
