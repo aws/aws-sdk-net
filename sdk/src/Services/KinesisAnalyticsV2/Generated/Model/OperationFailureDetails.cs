@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Provides a description of the operation failure
+    /// Provides a description of the operation failure.
     /// </summary>
     public partial class OperationFailureDetails
     {
@@ -53,8 +53,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RollbackOperationId. Provides the operation ID of a system-rollback
-        /// operation executed due to failure in the current operation
+        /// Gets and sets the property RollbackOperationId. 
+        /// <para>
+        /// The rollback operation ID of the system-rollback operation that executed due to failure
+        /// in the current operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string RollbackOperationId

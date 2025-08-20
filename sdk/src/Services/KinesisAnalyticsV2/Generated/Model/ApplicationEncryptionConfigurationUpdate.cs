@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateApplication operation.
+    /// Describes configuration updates to encryption at rest.
     /// </summary>
-    public partial class UpdateApplicationResponse : AmazonWebServiceResponse
+    public partial class ApplicationEncryptionConfigurationUpdate
     {
-        private ApplicationDetail _applicationDetail;
-        private string _operationId;
+        private string _keyIdUpdate;
+        private KeyType _keyTypeUpdate;
 
         /// <summary>
-        /// Gets and sets the property ApplicationDetail. 
+        /// Gets and sets the property KeyIdUpdate. 
         /// <para>
-        /// Describes application updates.
+        /// The key ARN, key ID, alias ARN, or alias name of the KMS key to be used for encryption
+        /// at rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KeyIdUpdate
+        {
+            get { return this._keyIdUpdate; }
+            set { this._keyIdUpdate = value; }
+        }
+
+        // Check to see if KeyIdUpdate property is set
+        internal bool IsSetKeyIdUpdate()
+        {
+            return this._keyIdUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyTypeUpdate. 
+        /// <para>
+        /// Specifies the type of key to be used for encryption at rest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ApplicationDetail ApplicationDetail
+        public KeyType KeyTypeUpdate
         {
-            get { return this._applicationDetail; }
-            set { this._applicationDetail = value; }
+            get { return this._keyTypeUpdate; }
+            set { this._keyTypeUpdate = value; }
         }
 
-        // Check to see if ApplicationDetail property is set
-        internal bool IsSetApplicationDetail()
+        // Check to see if KeyTypeUpdate property is set
+        internal bool IsSetKeyTypeUpdate()
         {
-            return this._applicationDetail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OperationId. 
-        /// <para>
-        /// The operation ID that can be used to track the request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string OperationId
-        {
-            get { return this._operationId; }
-            set { this._operationId = value; }
-        }
-
-        // Check to see if OperationId property is set
-        internal bool IsSetOperationId()
-        {
-            return this._operationId != null;
+            return this._keyTypeUpdate != null;
         }
 
     }

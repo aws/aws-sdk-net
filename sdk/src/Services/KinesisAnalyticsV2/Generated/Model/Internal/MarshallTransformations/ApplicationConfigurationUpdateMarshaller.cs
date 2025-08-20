@@ -57,6 +57,17 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetApplicationEncryptionConfigurationUpdate())
+            {
+                context.Writer.WritePropertyName("ApplicationEncryptionConfigurationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApplicationEncryptionConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApplicationEncryptionConfigurationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetApplicationSnapshotConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ApplicationSnapshotConfigurationUpdate");

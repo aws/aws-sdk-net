@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SnapshotDetails Object
+    /// Response Unmarshaller for ApplicationEncryptionConfigurationDescription Object
     /// </summary>  
-    public class SnapshotDetailsUnmarshaller : IJsonUnmarshaller<SnapshotDetails, JsonUnmarshallerContext>
+    public class ApplicationEncryptionConfigurationDescriptionUnmarshaller : IJsonUnmarshaller<ApplicationEncryptionConfigurationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SnapshotDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ApplicationEncryptionConfigurationDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SnapshotDetails unmarshalledObject = new SnapshotDetails();
+            ApplicationEncryptionConfigurationDescription unmarshalledObject = new ApplicationEncryptionConfigurationDescription();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth))
-                {
-                    var unmarshaller = ApplicationEncryptionConfigurationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationEncryptionConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ApplicationVersionId", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RuntimeEnvironment", targetDepth))
+                if (context.TestExpression("KeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuntimeEnvironment = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotCreationTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotCreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SnapshotName", targetDepth))
+                if (context.TestExpression("KeyType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SnapshotStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SnapshotDetailsUnmarshaller _instance = new SnapshotDetailsUnmarshaller();        
+        private static ApplicationEncryptionConfigurationDescriptionUnmarshaller _instance = new ApplicationEncryptionConfigurationDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnapshotDetailsUnmarshaller Instance
+        public static ApplicationEncryptionConfigurationDescriptionUnmarshaller Instance
         {
             get
             {
