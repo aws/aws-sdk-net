@@ -1,3 +1,45 @@
+### 4.0.74.0 (2025-08-20 18:47 UTC)
+* AWSMarketplaceMetering (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockRuntime (4.0.4.0)
+	* Launch CountTokens API to allow token counting
+* Billing (4.0.2.0)
+	* Clarify IPv4 and IPv6 endpoints
+* Budgets (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentityProvider (4.0.3.0)
+	* This release adds support for the new Terms APIs which allow displaying Terms of Use and Privacy Policy on the Managed Login user-registration page.
+* CostExplorer (4.0.3.0)
+	* Remove incorrect endpoint tests
+* DataZone (4.0.6.0)
+	* This release supports policy grant identifier for cloud formation integration
+* Detective (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* EKS (4.0.4.0)
+	* EKS Add-ons Custom Namespace Support
+* ElasticFileSystem (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IdentityManagement (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Kinesis (4.0.3.0)
+	* Remove incorrect endpoint tests
+* KinesisAnalyticsV2 (4.0.1.0)
+	* Adds Key Management Service (KMS) support allowing customer-managed key (CMK) encryption for Flink application data.
+* MarketplaceEntitlementService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkManager (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoiceV2 (4.0.2.0)
+	* This change added InternationalSendingEnbaled as part of describe/Update/Request phone number API response, and as part of update/Request phone number API request
+* Route53RecoveryControlConfig (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.21.0)
+	* This release adds 1/ Launch ml.p5.4xlarge instance in Processing jobs, Training jobs and Training Plan 2/ Makes S3Uri to be required for S3FileSystem and S3FileSystemConfig.
+* SimpleEmailV2 (4.0.4.0)
+	* Remove incorrect endpoint tests
+
 ### 4.0.73.0 (2025-08-19 18:18 UTC)
 * CleanRooms (4.0.3.0)
 	* Support error message configuration for analysis templates
