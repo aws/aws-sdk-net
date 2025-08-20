@@ -88,6 +88,10 @@
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.AddPolicyGrantResponse.GrantId</property>
+    <pattern>^[A-Za-z0-9+/]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.AssociateEnvironmentRoleRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -3637,6 +3641,10 @@
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.RemovePolicyGrantRequest.GrantIdentifier</property>
+    <pattern>^[A-Za-z0-9+/]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.RevokeSubscriptionRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -5792,6 +5800,10 @@
     <min>0</min>
     <max>32</max>
     <pattern>^subnet-[a-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PolicyGrantMember.GrantId</property>
+    <pattern>^[A-Za-z0-9+/]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ProjectPolicyGrantPrincipal.ProjectIdentifier</property>
