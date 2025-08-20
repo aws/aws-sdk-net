@@ -38120,6 +38120,9 @@
         },
         "trustedadvisor": {
           "endpoints": {
+            "ap-northeast-2": {},
+            "ap-southeast-2": {},
+            "eu-west-1": {},
             "fips-us-east-1": {
               "credentialScope": {
                 "region": "us-east-1"
@@ -38137,7 +38140,10 @@
                 "region": "us-west-2"
               },
               "hostname": "trustedadvisor-fips.us-west-2.api.aws"
-            }
+            },
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-2": {}
           }
         },
         "verifiedpermissions": {
@@ -50544,7 +50550,8 @@
                   ]
                 }
               ]
-            }
+            },
+            "us-iso-west-1": {}
           }
         },
         "glacier": {
@@ -53062,6 +53069,11 @@
             "eu-isoe-west-1": {}
           }
         },
+        "trustedadvisor": {
+          "endpoints": {
+            "eu-isoe-west-1": {}
+          }
+        },
         "xray": {
           "endpoints": {
             "eu-isoe-west-1": {}
@@ -54004,6 +54016,11 @@
           },
           "endpoints": {
             "us-isof-east-1": {},
+            "us-isof-south-1": {}
+          }
+        },
+        "trustedadvisor": {
+          "endpoints": {
             "us-isof-south-1": {}
           }
         },
