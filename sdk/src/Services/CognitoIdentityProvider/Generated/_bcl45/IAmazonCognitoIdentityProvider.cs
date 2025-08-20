@@ -2661,8 +2661,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Resets the specified user's password in a user pool. This operation doesn't change
-        /// the user's password, but sends a password-reset code.
+        /// Begins the password reset process. Sets the requested user’s account into a <c>RESET_REQUIRED</c>
+        /// status, and sends them a password-reset code. Your user pool also sends the user a
+        /// notification with a reset code and the information that their password has been reset.
+        /// At sign-in, your application or the managed login session receives a challenge to
+        /// complete the reset by confirming the code and setting a new password.
         /// 
         ///  
         /// <para>
@@ -2769,8 +2772,11 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Resets the specified user's password in a user pool. This operation doesn't change
-        /// the user's password, but sends a password-reset code.
+        /// Begins the password reset process. Sets the requested user’s account into a <c>RESET_REQUIRED</c>
+        /// status, and sends them a password-reset code. Your user pool also sends the user a
+        /// notification with a reset code and the information that their password has been reset.
+        /// At sign-in, your application or the managed login session receives a challenge to
+        /// complete the reset by confirming the code and setting a new password.
         /// 
         ///  
         /// <para>
@@ -5417,7 +5423,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Creates a new set of branding settings for a user pool style and associates it with
         /// an app client. This operation is the programmatic option for the creation of a new
-        /// style in the branding designer.
+        /// style in the branding editor.
         /// 
         ///  
         /// <para>
@@ -5495,7 +5501,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Creates a new set of branding settings for a user pool style and associates it with
         /// an app client. This operation is the programmatic option for the creation of a new
-        /// style in the branding designer.
+        /// style in the branding editor.
         /// 
         ///  
         /// <para>
@@ -5688,6 +5694,174 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer">REST API Reference for CreateResourceServer Operation</seealso>
         Task<CreateResourceServerResponse> CreateResourceServerAsync(CreateResourceServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTerms
+
+
+        /// <summary>
+        /// Creates terms documents for the requested app client. When Terms and conditions and
+        /// Privacy policy documents are configured, the app client displays links to them in
+        /// the sign-up page of managed login for the app client.
+        /// 
+        ///  
+        /// <para>
+        /// You can provide URLs for terms documents in the languages that are supported by <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+        /// login localization</a>. Amazon Cognito directs users to the terms documents for their
+        /// current language, with fallback to <c>default</c> if no document exists for the language.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each request accepts one type of terms document and a map of language-to-link for
+        /// that document type. You must provide both types of terms documents in at least one
+        /// language before Amazon Cognito displays your terms documents. Supply each type in
+        /// separate requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTerms service method.</param>
+        /// 
+        /// <returns>The response from the CreateTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TermsExistsException">
+        /// Terms document names must be unique to the app client. This exception is thrown when
+        /// you attempt to create terms documents with a duplicate <c>TermsName</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateTerms">REST API Reference for CreateTerms Operation</seealso>
+        CreateTermsResponse CreateTerms(CreateTermsRequest request);
+
+
+
+        /// <summary>
+        /// Creates terms documents for the requested app client. When Terms and conditions and
+        /// Privacy policy documents are configured, the app client displays links to them in
+        /// the sign-up page of managed login for the app client.
+        /// 
+        ///  
+        /// <para>
+        /// You can provide URLs for terms documents in the languages that are supported by <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+        /// login localization</a>. Amazon Cognito directs users to the terms documents for their
+        /// current language, with fallback to <c>default</c> if no document exists for the language.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each request accepts one type of terms document and a map of language-to-link for
+        /// that document type. You must provide both types of terms documents in at least one
+        /// language before Amazon Cognito displays your terms documents. Supply each type in
+        /// separate requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TermsExistsException">
+        /// Terms document names must be unique to the app client. This exception is thrown when
+        /// you attempt to create terms documents with a duplicate <c>TermsName</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateTerms">REST API Reference for CreateTerms Operation</seealso>
+        Task<CreateTermsResponse> CreateTermsAsync(CreateTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6799,6 +6973,116 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteTerms
+
+
+        /// <summary>
+        /// Deletes the terms documents with the requested ID from your app client.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTerms service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteTerms">REST API Reference for DeleteTerms Operation</seealso>
+        DeleteTermsResponse DeleteTerms(DeleteTermsRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the terms documents with the requested ID from your app client.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteTerms">REST API Reference for DeleteTerms Operation</seealso>
+        Task<DeleteTermsResponse> DeleteTermsAsync(DeleteTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteUser
 
 
@@ -7697,6 +7981,114 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeTerms
+
+
+        /// <summary>
+        /// Returns details for the requested terms documents ID. For more information, see <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTerms service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTerms">REST API Reference for DescribeTerms Operation</seealso>
+        DescribeTermsResponse DescribeTerms(DescribeTermsRequest request);
+
+
+
+        /// <summary>
+        /// Returns details for the requested terms documents ID. For more information, see <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTerms">REST API Reference for DescribeTerms Operation</seealso>
+        Task<DescribeTermsResponse> DescribeTermsAsync(DescribeTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
 
@@ -8213,11 +8605,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Sends a password-reset confirmation code for the currently signed-in user.
+        /// Sends a password-reset confirmation code to the email address or phone number of the
+        /// requested username. The message delivery method is determined by the user's available
+        /// attributes and the <c>AccountRecoverySetting</c> configuration of the user pool.
         /// 
         ///  
         /// <para>
-        /// For the <c>Username</c> parameter, you can use the username or user alias.
+        /// For the <c>Username</c> parameter, you can use the username or an email, phone, or
+        /// preferred username alias.
         /// </para>
         ///  
         /// <para>
@@ -8320,11 +8715,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Sends a password-reset confirmation code for the currently signed-in user.
+        /// Sends a password-reset confirmation code to the email address or phone number of the
+        /// requested username. The message delivery method is determined by the user's available
+        /// attributes and the <c>AccountRecoverySetting</c> configuration of the user pool.
         /// 
         ///  
         /// <para>
-        /// For the <c>Username</c> parameter, you can use the username or user alias.
+        /// For the <c>Username</c> parameter, you can use the username or an email, phone, or
+        /// preferred username alias.
         /// </para>
         ///  
         /// <para>
@@ -10768,6 +11166,110 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTerms
+
+
+        /// <summary>
+        /// Returns details about all terms documents for the requested user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTerms service method.</param>
+        /// 
+        /// <returns>The response from the ListTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListTerms">REST API Reference for ListTerms Operation</seealso>
+        ListTermsResponse ListTerms(ListTermsRequest request);
+
+
+
+        /// <summary>
+        /// Returns details about all terms documents for the requested user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListTerms">REST API Reference for ListTerms Operation</seealso>
+        Task<ListTermsResponse> ListTermsAsync(ListTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13346,7 +13848,7 @@ namespace Amazon.CognitoIdentityProvider
         /// to notification emails when users have potentially suspicious authentication events.
         /// Users invoke this operation when they select the link that corresponds to <c>{one-click-link-valid}</c>
         /// or <c>{one-click-link-invalid}</c> in your notification template. Because <c>FeedbackToken</c>
-        /// is a required parameter, you can' make requests to <c>UpdateAuthEventFeedback</c>
+        /// is a required parameter, you can't make requests to <c>UpdateAuthEventFeedback</c>
         /// without the contents of the notification email message.
         /// </para>
         ///  <note> 
@@ -13403,7 +13905,7 @@ namespace Amazon.CognitoIdentityProvider
         /// to notification emails when users have potentially suspicious authentication events.
         /// Users invoke this operation when they select the link that corresponds to <c>{one-click-link-valid}</c>
         /// or <c>{one-click-link-invalid}</c> in your notification template. Because <c>FeedbackToken</c>
-        /// is a required parameter, you can' make requests to <c>UpdateAuthEventFeedback</c>
+        /// is a required parameter, you can't make requests to <c>UpdateAuthEventFeedback</c>
         /// without the contents of the notification email message.
         /// </para>
         ///  <note> 
@@ -13820,7 +14322,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Configures the branding settings for a user pool style. This operation is the programmatic
-        /// option for the configuration of a style in the branding designer.
+        /// option for the configuration of a style in the branding editor.
         /// 
         ///  
         /// <para>
@@ -13886,7 +14388,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Configures the branding settings for a user pool style. This operation is the programmatic
-        /// option for the configuration of a style in the branding designer.
+        /// option for the configuration of a style in the branding editor.
         /// 
         ///  
         /// <para>
@@ -14066,6 +14568,166 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">REST API Reference for UpdateResourceServer Operation</seealso>
         Task<UpdateResourceServerResponse> UpdateResourceServerAsync(UpdateResourceServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateTerms
+
+
+        /// <summary>
+        /// Modifies existing terms documents for the requested app client. When Terms and conditions
+        /// and Privacy policy documents are configured, the app client displays links to them
+        /// in the sign-up page of managed login for the app client.
+        /// 
+        ///  
+        /// <para>
+        /// You can provide URLs for terms documents in the languages that are supported by <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+        /// login localization</a>. Amazon Cognito directs users to the terms documents for their
+        /// current language, with fallback to <c>default</c> if no document exists for the language.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each request accepts one type of terms document and a map of language-to-link for
+        /// that document type. You must provide both types of terms documents in at least one
+        /// language before Amazon Cognito displays your terms documents. Supply each type in
+        /// separate requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTerms service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TermsExistsException">
+        /// Terms document names must be unique to the app client. This exception is thrown when
+        /// you attempt to create terms documents with a duplicate <c>TermsName</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateTerms">REST API Reference for UpdateTerms Operation</seealso>
+        UpdateTermsResponse UpdateTerms(UpdateTermsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies existing terms documents for the requested app client. When Terms and conditions
+        /// and Privacy policy documents are configured, the app client displays links to them
+        /// in the sign-up page of managed login for the app client.
+        /// 
+        ///  
+        /// <para>
+        /// You can provide URLs for terms documents in the languages that are supported by <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization">managed
+        /// login localization</a>. Amazon Cognito directs users to the terms documents for their
+        /// current language, with fallback to <c>default</c> if no document exists for the language.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each request accepts one type of terms document and a map of language-to-link for
+        /// that document type. You must provide both types of terms documents in at least one
+        /// language before Amazon Cognito displays your terms documents. Supply each type in
+        /// separate requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTerms service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TermsExistsException">
+        /// Terms document names must be unique to the app client. This exception is thrown when
+        /// you attempt to create terms documents with a duplicate <c>TermsName</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateTerms">REST API Reference for UpdateTerms Operation</seealso>
+        Task<UpdateTermsResponse> UpdateTermsAsync(UpdateTermsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

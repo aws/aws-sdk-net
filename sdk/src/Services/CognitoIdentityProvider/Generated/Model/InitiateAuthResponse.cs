@@ -94,52 +94,60 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <note> 
         /// <para>
         /// All of the following challenges require <c>USERNAME</c> and, when the app client has
-        /// a client secret, <c>SECRET_HASH</c> in the parameters.
+        /// a client secret, <c>SECRET_HASH</c> in the parameters. Include a <c>DEVICE_KEY</c>
+        /// for device authentication.
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
         ///  <c>WEB_AUTHN</c>: Respond to the challenge with the results of a successful authentication
-        /// with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include
-        /// biometric devices and security keys.
+        /// with a WebAuthn authenticator, or passkey, as <c>CREDENTIAL</c>. Examples of WebAuthn
+        /// authenticators include biometric devices and security keys.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PASSWORD</c>: Respond with <c>USER_PASSWORD_AUTH</c> parameters: <c>USERNAME</c>
-        /// (required), <c>PASSWORD</c> (required), <c>SECRET_HASH</c> (required if the app client
-        /// is configured with a client secret), <c>DEVICE_KEY</c>.
+        ///  <c>PASSWORD</c>: Respond with the user's password as <c>PASSWORD</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PASSWORD_SRP</c>: Respond with <c>USER_SRP_AUTH</c> parameters: <c>USERNAME</c>
-        /// (required), <c>SRP_A</c> (required), <c>SECRET_HASH</c> (required if the app client
-        /// is configured with a client secret), <c>DEVICE_KEY</c>.
+        ///  <c>PASSWORD_SRP</c>: Respond with the initial SRP secret as <c>SRP_A</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SELECT_CHALLENGE</c>: Respond to the challenge with <c>USERNAME</c> and an <c>ANSWER</c>
-        /// that matches one of the challenge types in the <c>AvailableChallenges</c> response
-        /// parameter.
+        ///  <c>SELECT_CHALLENGE</c>: Respond with a challenge selection as <c>ANSWER</c>. It
+        /// must be one of the challenge types in the <c>AvailableChallenges</c> response parameter.
+        /// Add the parameters of the selected challenge, for example <c>USERNAME</c> and <c>SMS_OTP</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SMS_MFA</c>: Respond with an <c>SMS_MFA_CODE</c> that your user pool delivered
-        /// in an SMS message.
+        ///  <c>SMS_MFA</c>: Respond with the code that your user pool delivered in an SMS message,
+        /// as <c>SMS_MFA_CODE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>EMAIL_OTP</c>: Respond with an <c>EMAIL_OTP_CODE</c> that your user pool delivered
-        /// in an email message.
+        ///  <c>EMAIL_MFA</c>: Respond with the code that your user pool delivered in an email
+        /// message, as <c>EMAIL_MFA_CODE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PASSWORD_VERIFIER</c>: Respond with <c>PASSWORD_CLAIM_SIGNATURE</c>, <c>PASSWORD_CLAIM_SECRET_BLOCK</c>,
-        /// and <c>TIMESTAMP</c> after client-side SRP calculations.
+        ///  <c>EMAIL_OTP</c>: Respond with the code that your user pool delivered in an email
+        /// message, as <c>EMAIL_OTP_CODE</c> .
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SMS_OTP</c>: Respond with the code that your user pool delivered in an SMS message,
+        /// as <c>SMS_OTP_CODE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PASSWORD_VERIFIER</c>: Respond with the second stage of SRP secrets as <c>PASSWORD_CLAIM_SIGNATURE</c>,
+        /// <c>PASSWORD_CLAIM_SECRET_BLOCK</c>, and <c>TIMESTAMP</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>CUSTOM_CHALLENGE</c>: This is returned if your custom authentication flow determines
         /// that the user should pass another challenge before tokens are issued. The parameters
-        /// of the challenge are determined by your Lambda function.
+        /// of the challenge are determined by your Lambda function and issued in the <c>ChallengeParameters</c>
+        /// of a challenge response.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -89,7 +89,27 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP",
     /// "USERNAME": "[username]"}</c> 
     /// </para>
-    ///  </li> </ul> </dd> <dt>SMS_OTP</dt> <dd> 
+    ///  </li> </ul> </dd> <dt>WEB_AUTHN</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "WEB_AUTHN", "ChallengeResponses": { "USERNAME": "[username]",
+    /// "CREDENTIAL": "[AuthenticationResponseJSON]"}</c> 
+    /// </para>
+    ///  
+    /// <para>
+    /// See <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson">
+    /// AuthenticationResponseJSON</a>.
+    /// </para>
+    ///  </dd> <dt>PASSWORD</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "PASSWORD", "ChallengeResponses": { "USERNAME": "[username]",
+    /// "PASSWORD": "[password]"}</c> 
+    /// </para>
+    ///  </dd> <dt>PASSWORD_SRP</dt> <dd> 
+    /// <para>
+    ///  <c>"ChallengeName": "PASSWORD_SRP", "ChallengeResponses": { "USERNAME": "[username]",
+    /// "SRP_A": "[SRP_A]"}</c> 
+    /// </para>
+    ///  </dd> <dt>SMS_OTP</dt> <dd> 
     /// <para>
     ///  <c>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "[code]", "USERNAME":
     /// "[username]"}</c> 
@@ -116,18 +136,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP":
     /// [timestamp], "USERNAME": "[username]"}</c> 
     /// </para>
-    ///  
-    /// <para>
-    /// Add <c>"DEVICE_KEY"</c> when you sign in with a remembered device.
-    /// </para>
     ///  </dd> <dt>CUSTOM_CHALLENGE</dt> <dd> 
     /// <para>
     ///  <c>"ChallengeName": "CUSTOM_CHALLENGE", "ChallengeResponses": {"USERNAME": "[username]",
     /// "ANSWER": "[challenge_answer]"}</c> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Add <c>"DEVICE_KEY"</c> when you sign in with a remembered device.
     /// </para>
     ///  </dd> <dt>NEW_PASSWORD_REQUIRED</dt> <dd> 
     /// <para>
@@ -173,7 +185,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  </dd> <dt>SELECT_MFA_TYPE</dt> <dd> 
     /// <para>
     ///  <c>"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]",
-    /// "ANSWER": "[SMS_MFA or SOFTWARE_TOKEN_MFA]"}</c> 
+    /// "ANSWER": "[SMS_MFA|EMAIL_MFA|SOFTWARE_TOKEN_MFA]"}</c> 
     /// </para>
     ///  </dd> </dl> 
     /// <para>
