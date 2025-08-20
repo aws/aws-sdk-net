@@ -50,6 +50,7 @@ namespace Amazon.Billing.Internal
         {
             var config = (AmazonBillingConfig)requestContext.ClientConfig;
             var result = new BillingEndpointParameters();
+            result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
             result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;;

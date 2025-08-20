@@ -60,14 +60,45 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Billing")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -80,6 +111,22 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing.us-east-1.api.aws", endpoint.URL);
         }
@@ -94,8 +141,24 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -108,8 +171,24 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -122,8 +201,24 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing-fips.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -136,8 +231,174 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var parameters = new BillingEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://billing.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Billing")]
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new BillingEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonBillingEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://billing.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
