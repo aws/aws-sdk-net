@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime.Internal;
 
 
 namespace Amazon.S3.Model
@@ -51,6 +52,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The identifier used to represent an analytics configuration.
         /// </summary>
+        [AWSProperty(Required = true)]
         public string AnalyticsId
         {
             get { return this.analyticsId; }
@@ -67,6 +69,7 @@ namespace Amazon.S3.Model
         /// If present, it indicates that data related to access patterns will be collected 
         /// and made available to analyze the tradeoffs between different storage classes.
         /// </summary>
+        [AWSProperty(Required = true)]
         public StorageClassAnalysis StorageClassAnalysis
         {
             get { return this.storageClassAnalysis; }
