@@ -2573,6 +2573,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ResourceType Message = new ResourceType("message");
         /// <summary>
+        /// Constant MessageTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType MessageTemplate = new ResourceType("message-template");
+        /// <summary>
         /// Constant OptedOutNumber for ResourceType
         /// </summary>
         public static readonly ResourceType OptedOutNumber = new ResourceType("opted-out-number");
@@ -2928,6 +2932,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant FIELD_VALIDATION_FAILED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
+        /// <summary>
+        /// Constant INTERNATIONAL_SENDING_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INTERNATIONAL_SENDING_NOT_SUPPORTED = new ValidationExceptionReason("INTERNATIONAL_SENDING_NOT_SUPPORTED");
         /// <summary>
         /// Constant INVALID_ARN for ValidationExceptionReason
         /// </summary>
