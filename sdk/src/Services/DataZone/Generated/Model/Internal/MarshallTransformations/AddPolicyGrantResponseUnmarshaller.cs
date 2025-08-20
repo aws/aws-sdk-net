@@ -48,6 +48,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             AddPolicyGrantResponse response = new AddPolicyGrantResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("grantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GrantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

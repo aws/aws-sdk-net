@@ -84,6 +84,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.Detail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("grantId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GrantId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("principal", targetDepth))
                 {
                     var unmarshaller = PolicyGrantPrincipalUnmarshaller.Instance;
