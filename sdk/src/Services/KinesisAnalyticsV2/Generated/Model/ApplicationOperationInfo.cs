@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Provides a description of the operation, such as the type and status of operation
+    /// A description of the aplication operation that provides information about the updates
+    /// that were made to the application.
     /// </summary>
     public partial class ApplicationOperationInfo
     {
@@ -41,8 +42,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property EndTime. The timestamp at which the operation finished
-        /// for the application
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The timestamp that indicates when the operation finished.
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -104,7 +107,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. The timestamp at which the operation was created
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The timestamp that indicates when the operation was created.
+        /// </para>
         /// </summary>
         public DateTime StartTime
         {

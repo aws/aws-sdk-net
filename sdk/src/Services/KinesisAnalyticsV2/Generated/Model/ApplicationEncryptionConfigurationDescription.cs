@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateApplication operation.
+    /// Describes the encryption at rest configuration.
     /// </summary>
-    public partial class UpdateApplicationResponse : AmazonWebServiceResponse
+    public partial class ApplicationEncryptionConfigurationDescription
     {
-        private ApplicationDetail _applicationDetail;
-        private string _operationId;
+        private string _keyId;
+        private KeyType _keyType;
 
         /// <summary>
-        /// Gets and sets the property ApplicationDetail. 
+        /// Gets and sets the property KeyId. 
         /// <para>
-        /// Describes application updates.
+        /// The key ARN, key ID, alias ARN, or alias name of the KMS key used for encryption at
+        /// rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyType. 
+        /// <para>
+        /// Specifies the type of key used for encryption at rest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ApplicationDetail ApplicationDetail
+        public KeyType KeyType
         {
-            get { return this._applicationDetail; }
-            set { this._applicationDetail = value; }
+            get { return this._keyType; }
+            set { this._keyType = value; }
         }
 
-        // Check to see if ApplicationDetail property is set
-        internal bool IsSetApplicationDetail()
+        // Check to see if KeyType property is set
+        internal bool IsSetKeyType()
         {
-            return this._applicationDetail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OperationId. 
-        /// <para>
-        /// The operation ID that can be used to track the request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string OperationId
-        {
-            get { return this._operationId; }
-            set { this._operationId = value; }
-        }
-
-        // Check to see if OperationId property is set
-        internal bool IsSetOperationId()
-        {
-            return this._operationId != null;
+            return this._keyType != null;
         }
 
     }

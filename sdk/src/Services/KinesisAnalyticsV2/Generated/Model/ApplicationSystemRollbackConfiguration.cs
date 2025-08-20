@@ -30,15 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes system rollback configuration for a Managed Service for Apache Flink application
+    /// Describes the system rollback configuration for a Managed Service for Apache Flink
+    /// application.
     /// </summary>
     public partial class ApplicationSystemRollbackConfiguration
     {
         private bool? _rollbackEnabled;
 
         /// <summary>
-        /// Gets and sets the property RollbackEnabled. Describes whether system rollbacks are
-        /// enabled for a Managed Service for Apache Flink application
+        /// Gets and sets the property RollbackEnabled. 
+        /// <para>
+        /// Describes whether system rollbacks are enabled for a Managed Service for Apache Flink
+        /// application.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool RollbackEnabled

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Contains information about the application version changes due to an operation
+    /// Contains information about the version changes that the operation applied to the application.
     /// </summary>
     public partial class ApplicationVersionChangeDetails
     {
@@ -38,8 +38,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private long? _applicationVersionUpdatedTo;
 
         /// <summary>
-        /// Gets and sets the property ApplicationVersionUpdatedFrom. The operation was performed
-        /// on this version of the application
+        /// Gets and sets the property ApplicationVersionUpdatedFrom. 
+        /// <para>
+        /// The new version that the application was updated to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long ApplicationVersionUpdatedFrom
@@ -55,8 +57,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationVersionUpdatedTo. The operation execution resulted
-        /// in the transition to the following version of the application
+        /// Gets and sets the property ApplicationVersionUpdatedTo. 
+        /// <para>
+        /// The version that the operation execution applied to the applicartion.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
         public long ApplicationVersionUpdatedTo

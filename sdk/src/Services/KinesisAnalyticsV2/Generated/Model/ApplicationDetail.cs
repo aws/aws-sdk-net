@@ -188,8 +188,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationVersionCreateTimestamp. The current timestamp
-        /// when the application version was created.
+        /// Gets and sets the property ApplicationVersionCreateTimestamp. 
+        /// <para>
+        /// The timestamp that indicates when the application version was created.
+        /// </para>
         /// </summary>
         public DateTime ApplicationVersionCreateTimestamp
         {

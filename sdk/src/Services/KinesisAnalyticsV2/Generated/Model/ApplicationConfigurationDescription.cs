@@ -36,6 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class ApplicationConfigurationDescription
     {
         private ApplicationCodeConfigurationDescription _applicationCodeConfigurationDescription;
+        private ApplicationEncryptionConfigurationDescription _applicationEncryptionConfigurationDescription;
         private ApplicationSnapshotConfigurationDescription _applicationSnapshotConfigurationDescription;
         private ApplicationSystemRollbackConfigurationDescription _applicationSystemRollbackConfigurationDescription;
         private EnvironmentPropertyDescriptions _environmentPropertyDescriptions;
@@ -64,6 +65,24 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApplicationEncryptionConfigurationDescription. 
+        /// <para>
+        /// Describes the encryption at rest configuration.
+        /// </para>
+        /// </summary>
+        public ApplicationEncryptionConfigurationDescription ApplicationEncryptionConfigurationDescription
+        {
+            get { return this._applicationEncryptionConfigurationDescription; }
+            set { this._applicationEncryptionConfigurationDescription = value; }
+        }
+
+        // Check to see if ApplicationEncryptionConfigurationDescription property is set
+        internal bool IsSetApplicationEncryptionConfigurationDescription()
+        {
+            return this._applicationEncryptionConfigurationDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationDescription. 
         /// <para>
         /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
@@ -82,7 +101,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationSystemRollbackConfigurationDescription.
+        /// Gets and sets the property ApplicationSystemRollbackConfigurationDescription. 
+        /// <para>
+        /// Describes whether system rollbacks are enabled for a Managed Service for Apache Flink
+        /// application.
+        /// </para>
         /// </summary>
         public ApplicationSystemRollbackConfigurationDescription ApplicationSystemRollbackConfigurationDescription
         {

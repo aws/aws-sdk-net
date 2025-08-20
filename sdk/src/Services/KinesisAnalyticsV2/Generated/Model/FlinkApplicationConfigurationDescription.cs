@@ -61,8 +61,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property JobPlanDescription. 
         /// <para>
-        /// The job plan for an application. For more information about the job plan, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.19/internals/job_scheduling.html">Jobs
-        /// and Scheduling</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.19/">Apache
+        /// The job plan for an application. For more information about the job plan, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.20/internals/job_scheduling.html">Jobs
+        /// and Scheduling</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.20/">Apache
         /// Flink Documentation</a>. To retrieve the job plan for the application, use the <a>DescribeApplicationRequest$IncludeAdditionalDetails</a>
         /// parameter of the <a>DescribeApplication</a> operation.
         /// </para>
