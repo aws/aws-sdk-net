@@ -167,7 +167,7 @@ When making changes to both core and services:
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Remove extra Content MD5 setting in BaseMarshaller. Minor Xml namespace logic updates. Update all rest-xml service response unmarshallers to generate partial method PostUnmarshallCustomization. Generator updates."
+      "Message 1."
     ]
   },
   "services": [
@@ -175,8 +175,8 @@ When making changes to both core and services:
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Generate PutBucketAcl PutBucketCors,PutObjectAcl, GetObjectAcl, ListObjectsV2, ListVersions, HeadObject.",
-        "As part of generating S3, all response unmarshallers will implement UnmarshallException. GetObjectACL will now throw NoSuchKeyException if no such key exists. This is not a breaking change."
+        "Message 2.",
+        "Message 3."
       ]
     }
   ]
