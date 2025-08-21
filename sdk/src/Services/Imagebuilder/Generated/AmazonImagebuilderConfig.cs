@@ -32,7 +32,7 @@ namespace Amazon.Imagebuilder
     public partial class AmazonImagebuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("imagebuilder", "3.7.500.8");
+            InternalSDKUtils.BuildUserAgentString("imagebuilder", "3.7.500.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>

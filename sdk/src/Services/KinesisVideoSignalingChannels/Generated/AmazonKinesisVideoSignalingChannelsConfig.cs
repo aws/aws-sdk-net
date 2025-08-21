@@ -32,7 +32,7 @@ namespace Amazon.KinesisVideoSignalingChannels
     public partial class AmazonKinesisVideoSignalingChannelsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Signaling", "3.7.500.8");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video Signaling", "3.7.501.0");
 
         private string _userAgent = UserAgentString;
         ///<summary>

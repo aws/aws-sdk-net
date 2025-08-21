@@ -1,3 +1,157 @@
+### 3.7.1107.0 (2025-08-21 19:46 UTC)
+* AccessAnalyzer (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayManagementApi (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppFabric (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppIntegrationsService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppStream (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Artifact (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AuditManager (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Backup (3.7.501.0)
+	* Remove incorrect endpoint tests
+* BackupGateway (3.7.501.0)
+	* Remove incorrect endpoint tests
+* BedrockAgentRuntime (3.7.501.0)
+	* Remove incorrect endpoint tests
+* BillingConductor (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CloudFront (3.7.502.0)
+	* Remove incorrect endpoint tests
+* CloudHSM (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CloudTrail (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentity (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Comprehend (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ConfigService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Connect (3.7.504.0)
+	* Remove incorrect endpoint tests
+* ConnectCampaignsV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ConnectCases (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ConnectWisdomService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CostOptimizationHub (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CustomerProfiles (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DatabaseMigrationService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Deadline (3.7.502.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DirectoryServiceData (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (3.7.503.0)
+	* Remove incorrect endpoint tests
+* EBS (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ECRPublic (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ECS (3.7.500.9)
+	* This is a documentation only release that adds additional information for the update-service request parameters.
+* ElasticBeanstalk (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancingV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Elasticsearch (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ForecastQueryService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* GameLiftStreams (3.7.502.0)
+	* The default application in a stream group can now be changed at any time using UpdateStreamGroup to update the DefaultApplicationIdentifier.
+* Glue (3.7.504.0)
+	* Added support for preprocessing queries in Data Quality operations through new DataQualityGlueTable structure.
+* GreengrassV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* GuardDuty (3.7.503.0)
+	* Remove Pattern trait from email field
+* Inspector2 (3.7.502.0)
+	* Remove incorrect endpoint tests
+* IoTDeviceAdvisor (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTEvents (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTEventsData (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTThingsGraph (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IVS (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoSignalingChannels (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoWebRTCStorage (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LexRuntimeV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Lightsail (3.7.502.0)
+	* Remove incorrect endpoint tests
+* LookoutMetrics (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ManagedBlockchain (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ManagedGrafana (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MarketplaceAgreement (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaConnect (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaConvert (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaPackage (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaPackageV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaTailor (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MWAA (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ObservabilityAdmin (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Panorama (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PinpointEmail (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PrometheusService (3.7.502.0)
+	* Remove incorrect endpoint tests
+* ResourceGroups (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Route53Profiles (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Route53Resolver (3.7.501.0)
+	* Remove incorrect endpoint tests
+* S3Outposts (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SecurityLake (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SecurityToken (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SSMContacts (3.7.500.9)
+	* Doc-only updates for Incident Manager Contacts August 2025
+* SSMQuickSetup (3.7.501.0)
+	* Remove incorrect endpoint tests
+* TimestreamInfluxDB (3.7.501.0)
+	* Remove incorrect endpoint tests
+* VerifiedPermissions (3.7.501.0)
+	* Remove incorrect endpoint tests
+* WorkSpacesWeb (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Core 3.7.500.9
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1106.0 (2025-08-20 18:44 UTC)
 * AWSMarketplaceMetering (3.7.501.0)
 	* Remove incorrect endpoint tests
