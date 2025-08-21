@@ -121,7 +121,7 @@
           "description": "If set this role will be assumed using the resolved AWS credentials."
         },
         "ThrottleRetries": {
-          "type": "bool",
+          "type": "boolean",
           "description": "Enables the SDK to use intelligent throttle retry logic."
         },
         "Timeout": {
