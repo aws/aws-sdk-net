@@ -9,29 +9,26 @@ namespace ServiceClientGeneratorTests
     public class ProtocolSelectionTests
     {
         [Fact]
-        public void TestSkipsCborProtocol()
+        public void TestDoesNotSkipsCborProtocol()
         {
             var model = GetServiceModel("ModelWithCborAndJson.json");
-            Assert.Equal("json", model.Protocol);
+            Assert.Equal("smithy-rpc-v2-cbor", model.Protocol);
         }
 
         [Fact]
-        public void TestDoesNotSupportCbor()
+        public void TestDoesSupportCbor()
         {
             var model = GetServiceModel("ModelWithCborOnly.json");
-            Assert.Equal(string.Empty, model.Protocol);
-
-            var exception = Assert.Throws<Exception>(() => model.Type);
-            Assert.Contains("TestService does not support any of the protocols available in the .NET SDK", exception.Message);
+            Assert.Equal("smithy-rpc-v2-cbor", model.Protocol);
         }
 
         [Theory]
-        [InlineData("ModelWithMultipleProtocols.json")]
-        [InlineData("ModelWithJsonAndQuery.json")]
-        public void TestPicksProtocolByPriority(string fileName)
+        [InlineData("ModelWithMultipleProtocols.json", "smithy-rpc-v2-cbor")]
+        [InlineData("ModelWithJsonAndQuery.json", "json")]
+        public void TestPicksProtocolByPriority(string fileName, string expectedProtocol)
         {
             var model = GetServiceModel(fileName);
-            Assert.Equal("json", model.Protocol);
+            Assert.Equal(expectedProtocol, model.Protocol);
         }
 
         [Fact]
