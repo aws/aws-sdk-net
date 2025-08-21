@@ -1,3 +1,158 @@
+### 4.0.75.0 (2025-08-21 19:51 UTC)
+* AccessAnalyzer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayManagementApi (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppFabric (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppIntegrationsService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AppStream (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Artifact (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AuditManager (4.0.4.0)
+	* Remove incorrect endpoint tests
+* Backup (4.0.3.0)
+	* Remove incorrect endpoint tests
+* BackupGateway (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockAgentRuntime (4.0.5.0)
+	* Remove incorrect endpoint tests
+* BillingConductor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudFront (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CloudHSM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudTrail (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CognitoIdentity (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Comprehend (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConfigService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Connect (4.0.8.0)
+	* Remove incorrect endpoint tests
+* ConnectCampaignsV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ConnectCases (4.0.3.0)
+	* Remove incorrect endpoint tests
+* ConnectWisdomService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CostOptimizationHub (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CustomerProfiles (4.0.4.0)
+	* Remove incorrect endpoint tests
+* DatabaseMigrationService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Deadline (4.0.9.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DirectoryServiceData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBStreams (4.0.2.0)
+	* Remove incorrect endpoint tests
+* EBS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ECRPublic (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ECS (4.0.4.6)
+	* This is a documentation only release that adds additional information for the update-service request parameters.
+* ElasticBeanstalk (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancingV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Elasticsearch (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ForecastQueryService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GameLiftStreams (4.0.2.0)
+	* The default application in a stream group can now be changed at any time using UpdateStreamGroup to update the DefaultApplicationIdentifier.
+* Glue (4.0.15.0)
+	* Added support for preprocessing queries in Data Quality operations through new DataQualityGlueTable structure.
+* GreengrassV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GuardDuty (4.0.6.0)
+	* Remove Pattern trait from email field
+* Inspector2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* IoTDeviceAdvisor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTEvents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTEventsData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTThingsGraph (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IVS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoSignalingChannels (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoWebRTCStorage (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LexRuntimeV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Lightsail (4.0.2.0)
+	* Remove incorrect endpoint tests
+* LookoutMetrics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedBlockchain (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedGrafana (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceAgreement (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaConnect (4.0.2.0)
+	* Remove incorrect endpoint tests
+* MediaConvert (4.0.7.0)
+	* Remove incorrect endpoint tests
+* MediaPackage (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaPackageV2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* MediaTailor (4.0.2.0)
+	* Remove incorrect endpoint tests
+* MWAA (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ObservabilityAdmin (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Panorama (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PinpointEmail (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PrometheusService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* ResourceGroups (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53Profiles (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53Resolver (4.0.2.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.8)
+	* Fix issue of not passing in the explicit credentials when an internal instance of the S3 client is created for detecting bucket region.
+* S3Outposts (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityLake (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityToken (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SSMContacts (4.0.0.20)
+	* Doc-only updates for Incident Manager Contacts August 2025
+* SSMQuickSetup (4.0.1.0)
+	* Remove incorrect endpoint tests
+* TimestreamInfluxDB (4.0.2.0)
+	* Remove incorrect endpoint tests
+* VerifiedPermissions (4.0.2.0)
+	* Remove incorrect endpoint tests
+* WorkSpacesWeb (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Core 4.0.0.24
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 4.0.74.0 (2025-08-20 18:47 UTC)
 * AWSMarketplaceMetering (4.0.1.0)
 	* Remove incorrect endpoint tests

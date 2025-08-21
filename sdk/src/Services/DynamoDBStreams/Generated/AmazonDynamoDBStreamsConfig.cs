@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBStreams
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DynamoDB Streams", "4.0.1.5");
+            InternalSDKUtils.BuildUserAgentString("DynamoDB Streams", "4.0.2.0");
 
         private static readonly AmazonDynamoDBStreamsEndpointResolver EndpointResolver =
             new AmazonDynamoDBStreamsEndpointResolver();
