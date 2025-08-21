@@ -47,7 +47,12 @@ namespace Amazon.SSMContacts.Model
         /// The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.
         /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Only the <c>PERSONAL</c> contact type is supported. The contact types <c>ESCALATION</c>
+        /// and <c>ONCALL_SCHEDULE</c> are not supported for this operation. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The order in which you list the contacts is their shift order in the rotation schedule.
         /// </para>
@@ -133,7 +138,7 @@ namespace Amazon.SSMContacts.Model
         ///  <note> 
         /// <para>
         /// Designators for time zones that don’t support Daylight Savings Time Rules, such as
-        /// Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.
+        /// Pacific Standard Time (PST), aren't supported.
         /// </para>
         ///  </note>
         /// </summary>

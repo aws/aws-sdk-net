@@ -59,8 +59,8 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property RetryIntervalInMinutes. 
         /// <para>
-        /// The number of minutes to wait to retry sending engagement in the case the engagement
-        /// initially fails.
+        /// The number of minutes to wait before retrying to send engagement if the engagement
+        /// initially failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
