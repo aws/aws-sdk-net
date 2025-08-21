@@ -338,7 +338,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: <c>1m</c> 
+        /// Default value: <c>10m</c> 
         /// </para>
         ///  
         /// <para>

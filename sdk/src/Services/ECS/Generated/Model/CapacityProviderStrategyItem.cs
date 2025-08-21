@@ -79,10 +79,31 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Base. 
         /// <para>
         /// The <i>base</i> value designates how many tasks, at a minimum, to run on the specified
-        /// capacity provider. Only one capacity provider in a capacity provider strategy can
-        /// have a <i>base</i> defined. If no value is specified, the default value of <c>0</c>
-        /// is used.
+        /// capacity provider for each service. Only one capacity provider in a capacity provider
+        /// strategy can have a <i>base</i> defined. If no value is specified, the default value
+        /// of <c>0</c> is used.
         /// </para>
+        ///  
+        /// <para>
+        /// Base value characteristics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Only one capacity provider in a strategy can have a base defined
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default value is <c>0</c> if not specified
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid range: 0 to 100,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Base requirements are satisfied first before weight distribution
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
         public int Base
@@ -135,12 +156,55 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// An example scenario for using weights is defining a strategy that contains two capacity
-        /// providers and both have a weight of <c>1</c>, then when the <c>base</c> is satisfied,
-        /// the tasks will be split evenly across the two capacity providers. Using that same
-        /// logic, if you specify a weight of <c>1</c> for <i>capacityProviderA</i> and a weight
-        /// of <c>4</c> for <i>capacityProviderB</i>, then for every one task that's run using
-        /// <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.
+        /// Weight value characteristics:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Weight is considered after the base value is satisfied
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default value is <c>0</c> if not specified
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid range: 0 to 1,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// At least one capacity provider must have a weight greater than zero
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Capacity providers with weight of <c>0</c> cannot place tasks
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Task distribution logic:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Base satisfaction: The minimum number of tasks specified by the base value are placed
+        /// on that capacity provider
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Weight distribution: After base requirements are met, additional tasks are distributed
+        /// according to weight ratios
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// Examples:
+        /// </para>
+        ///  
+        /// <para>
+        /// Equal Distribution: Two capacity providers both with weight <c>1</c> will split tasks
+        /// evenly after base requirements are met.
+        /// </para>
+        ///  
+        /// <para>
+        /// Weighted Distribution: If capacityProviderA has weight <c>1</c> and capacityProviderB
+        /// has weight <c>4</c>, then for every 1 task on A, 4 tasks will run on B.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

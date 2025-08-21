@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ActiveServicesCount. 
         /// <para>
         /// The number of services that are running on the cluster in an <c>ACTIVE</c> state.
-        /// You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">PListServices</a>.
+        /// You can view these services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// </para>
         /// </summary>
         public int ActiveServicesCount

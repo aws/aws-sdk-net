@@ -224,6 +224,10 @@ namespace Amazon.ECS.Model
         /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
         /// Service Developer Guide</i> </i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
         {
@@ -288,6 +292,10 @@ namespace Amazon.ECS.Model
         /// For information about Amazon Web Services CDK considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html">Amazon
         /// Web Services CDK considerations</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
         {
@@ -330,6 +338,10 @@ namespace Amazon.ECS.Model
         /// Optional deployment parameters that control how many tasks run during the deployment
         /// and the ordering of stopping and starting tasks.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public DeploymentConfiguration DeploymentConfiguration
         {
@@ -363,6 +375,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The number of instantiations of the task to place and keep running in your service.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public int DesiredCount
         {
@@ -390,6 +406,10 @@ namespace Amazon.ECS.Model
         /// all tasks, set <c>forceNewDeployment</c> to <c>true</c>, so that Amazon ECS starts
         /// new tasks with the updated tags.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public bool EnableECSManagedTags
         {
@@ -412,6 +432,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you do not want to override the value that was set when the service was created,
         /// you can set this to <c>null</c> when performing this action.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -464,6 +488,10 @@ namespace Amazon.ECS.Model
         /// During that time, the Amazon ECS service scheduler ignores health check status. This
         /// grace period can prevent the service scheduler from marking tasks as unhealthy and
         /// stopping them before they have time to come up.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -523,6 +551,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can remove existing <c>loadBalancers</c> by passing an empty list.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
+        /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
         {
@@ -540,6 +572,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// An object representing the network configuration for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -568,6 +604,10 @@ namespace Amazon.ECS.Model
         /// You can specify a maximum of 10 constraints for each task. This limit includes constraints
         /// in the task definition and those specified at runtime.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public List<PlacementConstraint> PlacementConstraints
         {
@@ -593,6 +633,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can specify a maximum of five strategy rules for each service.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
+        /// </para>
         /// </summary>
         public List<PlacementStrategy> PlacementStrategy
         {
@@ -614,6 +658,10 @@ namespace Amazon.ECS.Model
         /// specified, the <c>LATEST</c> platform version is used. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -639,6 +687,10 @@ namespace Amazon.ECS.Model
         /// Only tasks launched after the update will reflect the update. To update the tags on
         /// all tasks, set <c>forceNewDeployment</c> to <c>true</c>, so that Amazon ECS starts
         /// new tasks with the updated tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't trigger a new service deployment.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -687,6 +739,10 @@ namespace Amazon.ECS.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
         /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
+        /// </para>
         /// </summary>
         public ServiceConnectConfiguration ServiceConnectConfiguration
         {
@@ -727,6 +783,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can remove existing <c>serviceRegistries</c> by passing an empty list.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
+        /// </para>
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries
         {
@@ -748,6 +808,10 @@ namespace Amazon.ECS.Model
         /// latest <c>ACTIVE</c> revision is used. If you modify the task definition with <c>UpdateService</c>,
         /// Amazon ECS spawns a task with the new version of the task definition and then stops
         /// an old task after the new version is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
         /// </para>
         /// </summary>
         public string TaskDefinition
@@ -771,6 +835,10 @@ namespace Amazon.ECS.Model
         /// If set to null, no new deployment is triggered. Otherwise, if this configuration differs
         /// from the existing one, it triggers a new deployment.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
+        /// </para>
         /// </summary>
         public List<ServiceVolumeConfiguration> VolumeConfigurations
         {
@@ -788,6 +856,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property VpcLatticeConfigurations. 
         /// <para>
         /// An object representing the VPC Lattice configuration for the service being updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter triggers a new service deployment.
         /// </para>
         /// </summary>
         public List<VpcLatticeConfiguration> VpcLatticeConfigurations
