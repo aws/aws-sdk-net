@@ -134,8 +134,8 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>List naming constraints</b> - The name of your list can include lowercase letters,
-        /// uppercase letters, numbers, dash (-), and underscore (_).
+        /// The name of your list can include lowercase letters, uppercase letters, numbers, dash
+        /// (-), and underscore (_).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

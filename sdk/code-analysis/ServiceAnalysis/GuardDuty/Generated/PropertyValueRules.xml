@@ -811,7 +811,6 @@
     <property>Amazon.GuardDuty.Model.AccountDetail.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>See rules in parameter description</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ActorProcess.Name</property>
@@ -932,7 +931,6 @@
     <property>Amazon.GuardDuty.Model.Member.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>See rules in parameter description</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>
