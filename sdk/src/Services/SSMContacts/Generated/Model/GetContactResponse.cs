@@ -120,7 +120,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of contact, either <c>PERSONAL</c> or <c>ESCALATION</c>.
+        /// The type of contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
