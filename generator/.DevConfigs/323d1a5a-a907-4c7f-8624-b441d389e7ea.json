@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix issue of not passing in the explicit credentials when an internal instance of the S3 client is created for detecting bucket region."
+      ]
+    }
+  ]
+}
