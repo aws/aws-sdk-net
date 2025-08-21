@@ -300,6 +300,14 @@ namespace ServiceClientGenerator
             "ec2",
         };
 
+        /// <summary>
+        /// Dictionary of services that should skip a specific protocol.
+        /// </summary>
+        private readonly Dictionary<string, string> _skipProtocolForService = new Dictionary<string, string>()
+        {
+            { "ARC Region switch", "smithy-rpc-v2-cbor" }
+        };
+
         private string _preferredProtocol;
 
         /// <summary>
@@ -321,7 +329,8 @@ namespace ServiceClientGenerator
                         var serviceProtocols = modelProtocols.Cast<JsonData>().Select(x => x.ToString());
                         foreach (var supportedProtocol in _supportedProtocols)
                         {
-                            if (serviceProtocols.Contains(supportedProtocol))
+                            if (serviceProtocols.Contains(supportedProtocol) && 
+                                !(_skipProtocolForService.ContainsKey(ServiceId) && _skipProtocolForService[ServiceId] == supportedProtocol))
                             {
                                 _preferredProtocol = supportedProtocol;
                                 break;
