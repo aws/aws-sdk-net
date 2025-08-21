@@ -68,7 +68,8 @@ namespace Amazon.GameLiftStreams.Model
         /// <para>
         /// The streaming capacity that is allocated and ready to handle stream requests without
         /// delay. You pay for this capacity whether it's in use or not. Best for quickest time
-        /// from streaming request to streaming session.
+        /// from streaming request to streaming session. Default is 1 when creating a stream group
+        /// or adding a location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -133,6 +134,7 @@ namespace Amazon.GameLiftStreams.Model
         /// The streaming capacity that Amazon GameLift Streams can allocate in response to stream
         /// requests, and then de-allocate when the session has terminated. This offers a cost
         /// control measure at the expense of a greater startup time (typically under 5 minutes).
+        /// Default is 0 when creating a stream group or adding a location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -177,27 +179,27 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  
         /// <para>
-        ///  A location can be in one of the following states: 
+        /// A location can be in one of the following states:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot
-        /// stream from, scale the capacity of, or remove this location yet. 
+        ///  <c>ACTIVATING</c>: Amazon GameLift Streams is preparing the location. You cannot
+        /// stream from, scale the capacity of, or remove this location yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream
-        /// from, scale the capacity of, or remove this location. 
+        ///  <c>ACTIVE</c>: The location is provisioned with initial capacity. You can now stream
+        /// from, scale the capacity of, or remove this location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason
-        /// field describes the error. You can remove this location and try to add it again. 
+        ///  <c>ERROR</c>: Amazon GameLift Streams failed to set up this location. The <c>StatusReason</c>
+        /// field describes the error. You can remove this location and try to add it again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases
-        /// all provisioned capacity for this location in this stream group. 
+        ///  <c>REMOVING</c>: Amazon GameLift Streams is working to remove this location. This
+        /// will release all provisioned capacity for this location in this stream group.
         /// </para>
         ///  </li> </ul>
         /// </summary>
