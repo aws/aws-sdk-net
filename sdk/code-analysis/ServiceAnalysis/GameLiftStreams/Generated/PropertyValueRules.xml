@@ -521,6 +521,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupRequest.DefaultApplicationIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[a-zA-Z0-9-]+$)|(^arn:aws:gameliftstreams:([^: ]*):([0-9]{12}):([^: ]*)$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.UpdateStreamGroupRequest.Description</property>
     <min>1</min>
     <max>80</max>

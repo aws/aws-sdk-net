@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
-    /// Describes a Amazon GameLift Streams stream session. To retrieve additional details
+    /// Describes an Amazon GameLift Streams stream session. To retrieve additional details
     /// for the stream session, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.
     /// </summary>
     public partial class StreamSessionSummary
@@ -148,12 +148,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The location where Amazon GameLift Streams is hosting the stream session.
-        /// </para>
-        ///  
-        /// <para>
-        ///  A location's name. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+        /// The location where Amazon GameLift Streams hosts and streams your application. For
+        /// example, <c>us-east-1</c>. For a complete list of locations that Amazon GameLift Streams
+        /// supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
         /// quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
         /// 
         /// </para>
@@ -192,8 +189,7 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the stream session resource. Possible statuses include the following:
-        /// 
+        /// The current status of the stream session resource.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -201,17 +197,33 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ACTIVE</c>: The stream session is ready to accept client connections.
+        ///  <c>ACTIVE</c>: The stream session is ready and waiting for a client connection. A
+        /// client has <c>ConnectionTimeoutSeconds</c> (specified in <c>StartStreamSession</c>)
+        /// from when the session reaches <c>ACTIVE</c> state to establish a connection. If no
+        /// client connects within this timeframe, the session automatically terminates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CONNECTED</c>: The stream session has a connected client.
+        ///  <c>CONNECTED</c>: The stream session has a connected client. A session will automatically
+        /// terminate if there is no user input for 60 minutes, or if the maximum length of a
+        /// session specified by <c>SessionLengthSeconds</c> in <c>StartStreamSession</c> is exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PENDING_CLIENT_RECONNECTION</c>: A client has recently disconnected, and the stream
-        /// session is waiting for the client to reconnect. After a short time, if the client
-        /// doesn't reconnect, the stream session status transitions to <c>TERMINATED</c>.
+        ///  <c>ERROR</c>: The stream session failed to activate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PENDING_CLIENT_RECONNECTION</c>: A client has recently disconnected and the stream
+        /// session is waiting for the client to reconnect. A client has <c>ConnectionTimeoutSeconds</c>
+        /// (specified in <c>StartStreamSession</c>) from when the session reaches <c>PENDING_CLIENT_RECONNECTION</c>
+        /// state to re-establish a connection. If no client connects within this timeframe, the
+        /// session automatically terminates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RECONNECTING</c>: A client has initiated a reconnect to a session that was in
+        /// <c>PENDING_CLIENT_RECONNECTION</c> state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -220,10 +232,6 @@ namespace Amazon.GameLiftStreams.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>TERMINATED</c>: The stream session has ended.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ERROR</c>: The stream session failed to activate.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -64,17 +64,17 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>SUCCEEDED</b>: The exported files are successfully stored in S3 bucket. 
+        ///  <c>SUCCEEDED</c>: The exported files are successfully stored in an S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b>: The session ended but Amazon GameLift Streams couldn't collect and
-        /// upload the to S3. 
+        ///  <c>FAILED</c>: The session ended but Amazon GameLift Streams couldn't collect and
+        /// upload the files to S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PENDING</b>: Either the stream session is still in progress, or uploading the
-        /// exported files to the S3 bucket is in progress. 
+        ///  <c>PENDING</c>: Either the stream session is still in progress, or uploading the
+        /// exported files to the S3 bucket is in progress.
         /// </para>
         ///  </li> </ul>
         /// </summary>

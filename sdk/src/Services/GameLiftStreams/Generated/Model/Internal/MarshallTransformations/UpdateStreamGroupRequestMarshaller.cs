@@ -70,6 +70,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultApplicationIdentifier())
+                {
+                    context.Writer.WritePropertyName("DefaultApplicationIdentifier");
+                    context.Writer.Write(publicRequest.DefaultApplicationIdentifier);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

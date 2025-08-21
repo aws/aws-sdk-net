@@ -50,14 +50,16 @@ namespace Amazon.GameLiftStreams.Model
     /// <para>
     ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
     /// requests without delay. You pay for this capacity whether it's in use or not. Best
-    /// for quickest time from streaming request to streaming session. 
+    /// for quickest time from streaming request to streaming session. Default is 1 when creating
+    /// a stream group or adding a location. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>On-demand</b>: The streaming capacity that Amazon GameLift Streams can allocate
     /// in response to stream requests, and then de-allocate when the session has terminated.
     /// This offers a cost control measure at the expense of a greater startup time (typically
-    /// under 5 minutes). 
+    /// under 5 minutes). Default is 0 when creating a stream group or adding a location.
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -108,12 +110,15 @@ namespace Amazon.GameLiftStreams.Model
         /// Gets and sets the property DefaultApplicationIdentifier. 
         /// <para>
         /// The unique identifier of the Amazon GameLift Streams application that you want to
-        /// associate to a stream group as the default application. The application must be in
-        /// <c>READY</c> status. By setting the default application identifier, you will optimize
-        /// startup performance of this application in your stream group. Once set, this application
-        /// cannot be disassociated from the stream group, unlike applications that are associated
-        /// using AssociateApplications. If not set when creating a stream group, you will need
-        /// to call AssociateApplications later, before you can start streaming.
+        /// set as the default application in a stream group. The application that you specify
+        /// must be in <c>READY</c> status. The default application is pre-cached on always-on
+        /// compute resources, reducing stream startup times. Other applications are automatically
+        /// cached as needed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not link an application when you create a stream group, you will need to
+        /// link one later, before you can start streaming, using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AssociateApplications.html">AssociateApplications</a>.
         /// </para>
         ///  
         /// <para>
