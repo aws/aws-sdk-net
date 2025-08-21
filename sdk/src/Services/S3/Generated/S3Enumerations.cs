@@ -198,14 +198,9 @@ namespace Amazon.S3
         public static readonly S3Region CNNorthWest1 = new S3Region("cn-northwest-1");
 
         /// <summary>
-        /// Specifies that the S3 Bucket should use the us-gov-east-1 locality.
+        /// Specifies that the S3 Bucket should use the eusc-de-east-1 locality.
         /// </summary>
-        public static readonly S3Region USGovCloudEast1 = new S3Region("us-gov-east-1");
-
-        /// <summary>
-        /// Specifies that the S3 Bucket should use the us-gov-west-1 locality.
-        /// </summary>
-        public static readonly S3Region USGovCloudWest1 = new S3Region("us-gov-west-1");
+        public static readonly S3Region EUSCDeEast1 = new S3Region("eusc-de-east-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use the us-iso-east-1 locality.
@@ -238,9 +233,14 @@ namespace Amazon.S3
         public static readonly S3Region USIsofSouth1 = new S3Region("us-isof-south-1");
 
         /// <summary>
-        /// Specifies that the S3 Bucket should use the eusc-de-east-1 locality.
+        /// Specifies that the S3 Bucket should use the us-gov-east-1 locality.
         /// </summary>
-        public static readonly S3Region EUSCDeEast1 = new S3Region("eusc-de-east-1");
+        public static readonly S3Region USGovCloudEast1 = new S3Region("us-gov-east-1");
+
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the us-gov-west-1 locality.
+        /// </summary>
+        public static readonly S3Region USGovCloudWest1 = new S3Region("us-gov-west-1");
 
     }
 }
