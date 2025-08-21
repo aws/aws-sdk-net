@@ -34,7 +34,26 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DataSource
     {
+        private DataQualityGlueTable _dataQualityGlueTable;
         private GlueTable _glueTable;
+
+        /// <summary>
+        /// Gets and sets the property DataQualityGlueTable. 
+        /// <para>
+        /// An Glue table for Data Quality Operations.
+        /// </para>
+        /// </summary>
+        public DataQualityGlueTable DataQualityGlueTable
+        {
+            get { return this._dataQualityGlueTable; }
+            set { this._dataQualityGlueTable = value; }
+        }
+
+        // Check to see if DataQualityGlueTable property is set
+        internal bool IsSetDataQualityGlueTable()
+        {
+            return this._dataQualityGlueTable != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GlueTable. 
@@ -42,7 +61,6 @@ namespace Amazon.Glue.Model
         /// An Glue table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public GlueTable GlueTable
         {
             get { return this._glueTable; }

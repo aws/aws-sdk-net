@@ -1289,7 +1289,9 @@ namespace Amazon.Glue
         #region  BatchPutDataQualityStatisticAnnotation
 
         /// <summary>
-        /// Annotate datapoints over time for a specific data quality statistic.
+        /// Annotate datapoints over time for a specific data quality statistic. The API requires
+        /// both profileID and statisticID as part of the InclusionAnnotation input. The API only
+        /// works for a single statisticId across multiple profiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
         /// 

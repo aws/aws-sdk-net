@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDataQualityGlueTable())
+            {
+                context.Writer.WritePropertyName("DataQualityGlueTable");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataQualityGlueTableMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataQualityGlueTable, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGlueTable())
             {
                 context.Writer.WritePropertyName("GlueTable");
