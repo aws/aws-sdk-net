@@ -1,0 +1,29 @@
+name: 'DevConfig Manager'
+description: 'Manages DevConfig files for AWS SDK .NET pull requests'
+author: 'AWS SDK Team'
+
+inputs:
+  pr-title:
+    description: 'Pull request title for changelog messages'
+    required: true
+  pr-number:
+    description: 'Pull request number'
+    required: true
+  github-token:
+    description: 'GitHub token for API access'
+    required: true
+  branch-name:
+    description: 'Current branch name'
+    required: true
+
+outputs:
+  needs-devconfig:
+    description: 'Whether a DevConfig file is needed'
+  has-devconfig:
+    description: 'Whether a DevConfig file already exists'
+  devconfig-content:
+    description: 'Generated DevConfig content'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

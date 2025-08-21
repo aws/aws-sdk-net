@@ -1,0 +1,35 @@
+name: DevConfig Validator
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  validate-devconfig:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      needs_devconfig: ${{ steps.devconfig-manager.outputs.needs-devconfig }}
+      has_devconfig: ${{ steps.devconfig-manager.outputs.has-devconfig }}
+      devconfig_content: ${{ steps.devconfig-manager.outputs.devconfig-content }}
+      pr_number: ${{ github.event.pull_request.number }}
+      pr_head_ref: ${{ github.event.pull_request.head.ref }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run DevConfig validation
+        id: devconfig-manager
+        uses: ./.github/actions/devconfig-manager
+        with:
+          pr-title: ${{ github.event.pull_request.title }}
+          pr-number: ${{ github.event.pull_request.number }}
+          branch-name: ${{ github.head_ref || github.ref_name }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
