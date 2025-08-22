@@ -19,6 +19,7 @@ These instructions guide Copilot and contributors in reviewing pull requests for
 	- **Patch**: Bug fixes, no API or behavior change.
 	- **Minor**: New features, backward compatible.
 	- **Major**: Breaking changes (should be rare).
+ - Please reference https://github.com/aws/aws-sdk-net/blob/main/CONTRIBUTING.md for details on dev configs.
 
 ### 4. Platform Compatibility
 - Ensure changes do not break support for the following .NET versions:
