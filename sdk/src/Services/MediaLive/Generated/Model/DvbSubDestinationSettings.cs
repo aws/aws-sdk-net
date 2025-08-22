@@ -48,6 +48,7 @@ namespace Amazon.MediaLive.Model
         private int? _shadowOpacity;
         private int? _shadowXOffset;
         private int? _shadowYOffset;
+        private DvbSubDestinationSubtitleRows _subtitleRows;
         private DvbSubDestinationTeletextGridControl _teletextGridControl;
         private int? _xPosition;
         private int? _yPosition;
@@ -300,6 +301,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetShadowYOffset()
         {
             return this._shadowYOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubtitleRows. Applies only when the input captions are
+        /// Teletext and the output captions are DVB-Sub or Burn-In. Choose the number of lines
+        /// for the captions bitmap. The captions bitmap is 700 wide × 576 high and will be laid
+        /// over the video. For example, a value of 16 divides the bitmap into 16 lines, with
+        /// each line 36 pixels high (16 × 36 = 576). The default is 24 (24 pixels high). Enter
+        /// the same number in every encode in every output that converts the same Teletext source
+        /// to DVB-Sub or Burn-in.
+        /// </summary>
+        public DvbSubDestinationSubtitleRows SubtitleRows
+        {
+            get { return this._subtitleRows; }
+            set { this._subtitleRows = value; }
+        }
+
+        // Check to see if SubtitleRows property is set
+        internal bool IsSetSubtitleRows()
+        {
+            return this._subtitleRows != null;
         }
 
         /// <summary>
