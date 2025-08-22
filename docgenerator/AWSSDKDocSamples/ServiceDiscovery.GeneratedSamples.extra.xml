@@ -78,6 +78,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.CreateService(Amazon.ServiceDiscovery.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.CreateService(Amazon.ServiceDiscovery.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Namespace sharee creates a service using a namespace ARN instead of namespace ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Create service using namespace ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-create-service-namespace-arn-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest" />
@@ -92,6 +111,25 @@
                     title="Example: Delete namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-delete-namespace-1587416093508" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteNamespace(Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a namespace using a namespace ARN instead of namespace ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Delete namespace using namespace ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-namespace-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -116,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteService(Amazon.ServiceDiscovery.Model.DeleteServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteService(Amazon.ServiceDiscovery.Model.DeleteServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a service using a service ARN instead of service ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Delete service using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-service-arn-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest" />
@@ -130,6 +187,25 @@
                     title="DeleteServiceAttributes example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-delete-service-attributes-1587416462902" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes service attributes using a service ARN instead of service ID, useful for cross-account scenarios or when working with shared namespaces.
+                </para>
+                <code
+                    title="Delete service attributes using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-service-attributes-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -154,6 +230,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeregisterInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deregisters an instance using a service ARN instead of service ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Deregister instance using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-deregister-instance-arn-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest" />
@@ -168,6 +263,25 @@
                     title="Example: Discover registered instances"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-discover-registered-instances-1587236343568" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DiscoverInstances(Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Discovers instances in a shared namespace by specifying the OwnerAccount parameter, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Discover instances using owner account"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="discover-instances-owner-account-1692720000000" />
             </example>
         </value>
     </doc>
@@ -192,6 +306,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DiscoverInstancesRevision(Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DiscoverInstancesRevision(Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Discovers the instances revision in a shared namespace by specifying the OwnerAccount parameter, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Discover instances revision using owner account"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="discover-instances-revision-owner-account-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceRequest" />
@@ -206,6 +339,25 @@
                     title="GetInstance example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="getinstance-example-1590115065598" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets information about an instance using a service ARN instead of service ID. This is useful for listing instances associated with shared namespaces.
+                </para>
+                <code
+                    title="Get instance details using service ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getinstance-shared-namespace-1642680000000" />
             </example>
         </value>
     </doc>
@@ -230,6 +382,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstancesHealthStatus(Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstancesHealthStatus(Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetInstancesHealthStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the current health status of instances using a service ARN instead of service ID. This is useful for checking health status of instances associated with shared namespaces.
+                </para>
+                <code
+                    title="Get instances health status using service ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="getinstanceshealthstatus-shared-namespace-1642680000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.GetNamespaceRequest" />
@@ -244,6 +415,25 @@
                     title="GetNamespace example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="getnamespace-example-1590115383708" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetNamespace(Amazon.ServiceDiscovery.Model.GetNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets namespace information using a namespace ARN instead of namespace ID, useful when working with shared namespaces. Shows a namespace owned by another account (123456789012) that is shared with the current account.
+                </para>
+                <code
+                    title="Get namespace using namespace ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="get-namespace-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -268,6 +458,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetOperation(Amazon.ServiceDiscovery.Model.GetOperationRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetOperationRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetOperationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets operation information by specifying the OwnerAccount parameter for operations associated with shared namespaces.
+                </para>
+                <code
+                    title="Get operation using owner account"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="get-operation-owner-account-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.GetServiceRequest" />
@@ -282,6 +491,25 @@
                     title="GetService Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="getservice-example-1590117234294" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetService(Amazon.ServiceDiscovery.Model.GetServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets service settings using a service ARN instead of service ID, useful when working with shared namespaces. Shows a service created by a sharee (111122223333) in a namespace owned by another account (123456789012).
+                </para>
+                <code
+                    title="Get service using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="get-service-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -306,6 +534,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetServiceAttributes(Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetServiceAttributes(Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Gets service attributes using a service ARN instead of service ID, useful when working with shared namespaces. Shows attributes for a service created by a sharee in a namespace owned by another account.
+                </para>
+                <code
+                    title="Get service attributes using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="get-service-attributes-arn-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.ListInstancesRequest" />
@@ -325,6 +572,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListInstances(Amazon.ServiceDiscovery.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListInstancesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists instances using a service ARN instead of service ID. This is useful for listing instances associated with shared namespaces.
+                </para>
+                <code
+                    title="List instances using service ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="listinstances-shared-namespace-1642680000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.ListNamespacesRequest" />
@@ -339,6 +605,25 @@
                     title="Example: List namespaces"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-list-namespaces-1587401553154" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListNamespaces(Amazon.ServiceDiscovery.Model.ListNamespacesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListNamespacesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListNamespacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to list namespaces that are shared with you from other AWS accounts using the RESOURCE_OWNER filter.
+                </para>
+                <code
+                    title="List namespaces filtered by resource owner"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="list-namespaces-resource-owner-1642089600000" />
             </example>
         </value>
     </doc>
@@ -382,6 +667,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListServices(Amazon.ServiceDiscovery.Model.ListServicesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListServicesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.ListServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists services created in namespaces owned by other accounts using the RESOURCE_OWNER filter with OTHER_ACCOUNTS value, useful when working with shared namespaces. Account 111122223333 is making the request.
+                </para>
+                <code
+                    title="List services in shared namespaces using resource owner filter"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="list-services-resource-owner-1692720000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.ListTagsForResource(Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.ListTagsForResource(Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.ListTagsForResourceRequest" />
@@ -415,6 +719,25 @@
                     title="Example: Register Instance"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="example-register-instance-1587236116314" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.RegisterInstance(Amazon.ServiceDiscovery.Model.RegisterInstanceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.RegisterInstanceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.RegisterInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Registers an instance using a service ARN instead of service ID, useful when working with shared namespaces. Shows registering an instance to a service created by a sharee in a namespace owned by another account.
+                </para>
+                <code
+                    title="Register instance using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="register-instance-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -477,6 +800,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateHttpNamespace(Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateHttpNamespace(Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates an HTTP namespace using a namespace ARN instead of namespace ID.
+                </para>
+                <code
+                    title="Update HTTP namespace using namespace ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updatehttpnamespace-shared-namespace-1642680000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest" />
@@ -491,6 +833,25 @@
                     title="UpdateInstanceCustomHealthStatus Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="updateinstancecustomhealthstatus-example-1590118408574" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates instance custom health status using a service ARN instead of service ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Update instance custom health status using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="update-instance-custom-health-status-arn-1692720000000" />
             </example>
         </value>
     </doc>
@@ -523,12 +884,50 @@
         <value>
             <example>
                 <para>
+                    This example updates a private DNS namespace using a namespace ARN instead of namespace ID.
+                </para>
+                <code
+                    title="Update private DNS namespace using namespace ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updateprivatednsnamespace-shared-namespace-1642680000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
                     The following example updates the description of a public DNS namespace.
                 </para>
                 <code
                     title="To update a public DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="to-update-a-public-dns-namespace-1712868389604" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdatePublicDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePublicDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates a public DNS namespace using a namespace ARN instead of namespace ID.
+                </para>
+                <code
+                    title="Update public DNS namespace using namespace ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updatepublicdnsnamespace-shared-namespace-1642680000000" />
             </example>
         </value>
     </doc>
@@ -553,6 +952,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateService(Amazon.ServiceDiscovery.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateService(Amazon.ServiceDiscovery.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates a service using a service ARN instead of service ID. This is useful for updating services associated with shared namespaces.
+                </para>
+                <code
+                    title="Update service using service ARN for shared namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="updateservice-shared-namespace-1642680000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest" />
@@ -567,6 +985,25 @@
                     title="UpdateServiceAttributes Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="update-service-attributes-example-1590117830880" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates service attributes using a service ARN instead of service ID, useful when working with shared namespaces.
+                </para>
+                <code
+                    title="Update service attributes using service ARN"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="update-service-attributes-arn-1692720000000" />
             </example>
         </value>
     </doc>
