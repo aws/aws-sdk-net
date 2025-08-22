@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// f you choose to use a custom AMI (<c>CustomAmiId</c>), ensure it meets the following
+        /// If you choose to use a custom AMI (<c>CustomAmiId</c>), ensure it meets the following
         /// requirements:
         /// </para>
         ///  <ul> <li> 
@@ -107,7 +107,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// When updating the instance group's AMI through the <c>UpdateClusterSoftware</c> operation,
         /// if an instance group uses a custom AMI, you must provide an <c>ImageId</c> or use
-        /// the default as input.
+        /// the default as input. Note that if you don't specify an instance group in your <c>UpdateClusterSoftware</c>
+        /// request, then all of the instance groups are patched with the specified image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=21)]

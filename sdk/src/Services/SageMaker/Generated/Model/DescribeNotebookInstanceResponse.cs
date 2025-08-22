@@ -373,7 +373,7 @@ namespace Amazon.SageMaker.Model
         /// The platform identifier of the notebook instance runtime environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=15)]
+        [AWSProperty(Min=0, Max=20)]
         public string PlatformIdentifier
         {
             get { return this._platformIdentifier; }

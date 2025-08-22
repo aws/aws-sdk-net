@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableDockerAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootlessDocker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RootlessDocker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcOnlyTrustedAccounts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
