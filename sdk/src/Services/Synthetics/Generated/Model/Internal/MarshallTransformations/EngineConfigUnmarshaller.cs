@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VisualReferenceOutput Object
+    /// Response Unmarshaller for EngineConfig Object
     /// </summary>  
-    public class VisualReferenceOutputUnmarshaller : IJsonUnmarshaller<VisualReferenceOutput, JsonUnmarshallerContext>
+    public class EngineConfigUnmarshaller : IJsonUnmarshaller<EngineConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VisualReferenceOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EngineConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            VisualReferenceOutput unmarshalledObject = new VisualReferenceOutput();
+            EngineConfig unmarshalledObject = new EngineConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseCanaryRunId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseCanaryRunId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("BaseScreenshots", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<BaseScreenshot, BaseScreenshotUnmarshaller>(BaseScreenshotUnmarshaller.Instance);
-                    unmarshalledObject.BaseScreenshots = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("BrowserType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BrowserType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EngineArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         }
 
 
-        private static VisualReferenceOutputUnmarshaller _instance = new VisualReferenceOutputUnmarshaller();        
+        private static EngineConfigUnmarshaller _instance = new EngineConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VisualReferenceOutputUnmarshaller Instance
+        public static EngineConfigUnmarshaller Instance
         {
             get
             {
