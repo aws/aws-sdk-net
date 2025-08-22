@@ -615,6 +615,13 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates an Amazon Q in Connect AI Prompt.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system and custom prompts</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAIPrompt service method.</param>
         /// <param name="cancellationToken">
