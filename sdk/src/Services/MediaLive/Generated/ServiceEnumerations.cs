@@ -2131,6 +2131,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type BurnInDestinationSubtitleRows.
+    /// </summary>
+    public class BurnInDestinationSubtitleRows : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROWS_16 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_16 = new BurnInDestinationSubtitleRows("ROWS_16");
+        /// <summary>
+        /// Constant ROWS_20 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_20 = new BurnInDestinationSubtitleRows("ROWS_20");
+        /// <summary>
+        /// Constant ROWS_24 for BurnInDestinationSubtitleRows
+        /// </summary>
+        public static readonly BurnInDestinationSubtitleRows ROWS_24 = new BurnInDestinationSubtitleRows("ROWS_24");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BurnInDestinationSubtitleRows(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BurnInDestinationSubtitleRows FindValue(string value)
+        {
+            return FindValue<BurnInDestinationSubtitleRows>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BurnInDestinationSubtitleRows(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BurnInFontColor.
     /// </summary>
     public class BurnInFontColor : ConstantClass
@@ -4226,6 +4280,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DvbSubDestinationShadowColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DvbSubDestinationSubtitleRows.
+    /// </summary>
+    public class DvbSubDestinationSubtitleRows : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROWS_16 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_16 = new DvbSubDestinationSubtitleRows("ROWS_16");
+        /// <summary>
+        /// Constant ROWS_20 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_20 = new DvbSubDestinationSubtitleRows("ROWS_20");
+        /// <summary>
+        /// Constant ROWS_24 for DvbSubDestinationSubtitleRows
+        /// </summary>
+        public static readonly DvbSubDestinationSubtitleRows ROWS_24 = new DvbSubDestinationSubtitleRows("ROWS_24");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubDestinationSubtitleRows(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubDestinationSubtitleRows FindValue(string value)
+        {
+            return FindValue<DvbSubDestinationSubtitleRows>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubDestinationSubtitleRows(string value)
         {
             return FindValue(value);
         }

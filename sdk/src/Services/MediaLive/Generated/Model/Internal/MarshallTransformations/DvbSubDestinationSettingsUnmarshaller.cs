@@ -150,6 +150,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ShadowYOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subtitleRows", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubtitleRows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("teletextGridControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
