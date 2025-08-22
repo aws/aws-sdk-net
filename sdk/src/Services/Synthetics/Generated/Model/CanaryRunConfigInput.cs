@@ -115,7 +115,7 @@ namespace Amazon.Synthetics.Model
         /// storage value is 1024 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1024, Max=5120)]
+        [AWSProperty(Min=1024, Max=10240)]
         public int EphemeralStorage
         {
             get { return this._ephemeralStorage.GetValueOrDefault(); }

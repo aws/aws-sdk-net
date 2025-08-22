@@ -434,7 +434,7 @@
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.EphemeralStorage</property>
     <min>1024</min>
-    <max>5120</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.MemoryInMB</property>
@@ -449,7 +449,7 @@
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.EphemeralStorage</property>
     <min>1024</min>
-    <max>5120</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.MemoryInMB</property>
@@ -504,6 +504,12 @@
     <property>Amazon.Synthetics.Model.DryRunConfigOutput.LastDryRunExecutionStatus</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.EngineConfig.EngineArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2,4}(-[a-z]{2,4})?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Group.Arn</property>

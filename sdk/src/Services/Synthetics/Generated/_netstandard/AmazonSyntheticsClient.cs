@@ -1423,6 +1423,20 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
+        /// For multibrowser canaries, you can add or remove browsers by updating the browserConfig
+        /// list in the update call. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To add Firefox to a canary that currently uses Chrome, specify browserConfigs as [CHROME,
+        /// FIREFOX]
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To remove Firefox and keep only Chrome, specify browserConfigs as [CHROME]
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// You can't use this operation to update the tags of an existing canary. To change the
         /// tags of an existing canary, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.
         /// </para>

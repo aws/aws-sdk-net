@@ -36,9 +36,11 @@ namespace Amazon.Synthetics.Model
     {
         private ArtifactConfigOutput _artifactConfig;
         private string _artifactS3Location;
+        private List<BrowserConfig> _browserConfigs = AWSConfigs.InitializeCollections ? new List<BrowserConfig>() : null;
         private CanaryCodeOutput _code;
         private DryRunConfigOutput _dryRunConfig;
         private string _engineArn;
+        private List<EngineConfig> _engineConfigs = AWSConfigs.InitializeCollections ? new List<EngineConfig>() : null;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
         private string _id;
@@ -52,6 +54,7 @@ namespace Amazon.Synthetics.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CanaryTimeline _timeline;
         private VisualReferenceOutput _visualReference;
+        private List<VisualReferenceOutput> _visualReferences = AWSConfigs.InitializeCollections ? new List<VisualReferenceOutput>() : null;
         private VpcConfigOutput _vpcConfig;
 
         /// <summary>
@@ -91,6 +94,31 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserConfigs. 
+        /// <para>
+        /// A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics
+        /// supports running canaries on both <c>CHROME</c> and <c>FIREFOX</c> browsers.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If not specified, <c>browserConfigs</c> defaults to Chrome.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<BrowserConfig> BrowserConfigs
+        {
+            get { return this._browserConfigs; }
+            set { this._browserConfigs = value; }
+        }
+
+        // Check to see if BrowserConfigs property is set
+        internal bool IsSetBrowserConfigs()
+        {
+            return this._browserConfigs != null && (this._browserConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,6 +173,36 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetEngineArn()
         {
             return this._engineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineConfigs. 
+        /// <para>
+        /// A list of engine configurations for the canary, one for each browser type that the
+        /// canary is configured to run on.
+        /// </para>
+        ///  
+        /// <para>
+        /// All runtime versions <c>syn-nodejs-puppeteer-11.0</c> and above, and <c>syn-nodejs-playwright-3.0</c>
+        /// and above, use <c>engineConfigs</c> only. You can no longer use <c>engineArn</c> in
+        /// these versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Runtime versions older than <c>syn-nodejs-puppeteer-11.0</c> and <c>syn-nodejs-playwright-3.0</c>
+        /// continue to support <c>engineArn</c> to ensure backward compatibility.
+        /// </para>
+        /// </summary>
+        public List<EngineConfig> EngineConfigs
+        {
+            get { return this._engineConfigs; }
+            set { this._engineConfigs = value; }
+        }
+
+        // Check to see if EngineConfigs property is set
+        internal bool IsSetEngineConfigs()
+        {
+            return this._engineConfigs != null && (this._engineConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,6 +465,39 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetVisualReference()
         {
             return this._visualReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualReferences. 
+        /// <para>
+        /// A list of visual reference configurations for the canary, one for each browser type
+        /// that the canary is configured to run on. Visual references are used for visual monitoring
+        /// comparisons.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>syn-nodejs-puppeteer-11.0</c> and above, and <c>syn-nodejs-playwright-3.0</c>
+        /// and above, only supports <c>visualReferences</c>. <c>visualReference</c> field is
+        /// not supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Versions older than <c>syn-nodejs-puppeteer-11.0</c> supports both <c>visualReference</c>
+        /// and <c>visualReferences</c> for backward compatibility. It is recommended to use <c>visualReferences</c>
+        /// for consistency and future compatibility.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<VisualReferenceOutput> VisualReferences
+        {
+            get { return this._visualReferences; }
+            set { this._visualReferences = value; }
+        }
+
+        // Check to see if VisualReferences property is set
+        internal bool IsSetVisualReferences()
+        {
+            return this._visualReferences != null && (this._visualReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

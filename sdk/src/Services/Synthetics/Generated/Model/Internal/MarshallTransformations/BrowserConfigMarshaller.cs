@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VisualReferenceInput Marshaller
+    /// BrowserConfig Marshaller
     /// </summary>
-    public class VisualReferenceInputMarshaller : IRequestMarshaller<VisualReferenceInput, JsonMarshallerContext> 
+    public class BrowserConfigMarshaller : IRequestMarshaller<BrowserConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,32 +44,10 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VisualReferenceInput requestObject, JsonMarshallerContext context)
+        public void Marshall(BrowserConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBaseCanaryRunId())
-            {
-                context.Writer.WritePropertyName("BaseCanaryRunId");
-                context.Writer.Write(requestObject.BaseCanaryRunId);
-            }
-
-            if(requestObject.IsSetBaseScreenshots())
-            {
-                context.Writer.WritePropertyName("BaseScreenshots");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectBaseScreenshotsListValue in requestObject.BaseScreenshots)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BaseScreenshotMarshaller.Instance;
-                    marshaller.Marshall(requestObjectBaseScreenshotsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
             if(requestObject.IsSetBrowserType())
             {
                 context.Writer.WritePropertyName("BrowserType");
@@ -81,7 +59,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VisualReferenceInputMarshaller Instance = new VisualReferenceInputMarshaller();
+        public readonly static BrowserConfigMarshaller Instance = new BrowserConfigMarshaller();
 
     }
 }

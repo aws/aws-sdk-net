@@ -84,6 +84,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ArtifactS3Location);
                 }
 
+                if(publicRequest.IsSetBrowserConfigs())
+                {
+                    context.Writer.WritePropertyName("BrowserConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBrowserConfigsListValue in publicRequest.BrowserConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BrowserConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBrowserConfigsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCode())
                 {
                     context.Writer.WritePropertyName("Code");
