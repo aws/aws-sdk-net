@@ -1,3 +1,87 @@
+### 3.7.1108.0 (2025-08-22 19:13 UTC)
+* Account (3.7.501.0)
+	* Remove incorrect endpoint tests
+* APIGateway (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayV2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AugmentedAIRuntime (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AWSMarketplaceCommerceAnalytics (3.7.501.0)
+	* Remove incorrect endpoint tests
+* B2bi (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CloudDirectory (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CloudWatchRUM (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CodePipeline (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CognitoSync (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DataExchange (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DocDB (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancing (3.7.501.0)
+	* Remove incorrect endpoint tests
+* EMRServerless (3.7.501.0)
+	* Remove incorrect endpoint tests
+* HealthLake (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IAMRolesAnywhere (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTAnalytics (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisFirehose (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LaunchWizard (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LocationService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Macie2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MediaLive (3.7.502.0)
+	* AWS Elemental MediaLive now has a field called "SubtitleRows" for controlling subtitle row count for DVB-Sub and Burn-In captions outputs
+* MemoryDB (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MigrationHubOrchestrator (3.7.501.0)
+	* Remove incorrect endpoint tests
+* NetworkMonitor (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Organizations (3.7.502.0)
+	* Remove incorrect endpoint tests
+* PaymentCryptography (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Pricing (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Proton (3.7.501.0)
+	* Remove incorrect endpoint tests
+* QConnect (3.7.501.0)
+	* Releasing model ID support for UpdateAIPrompt
+* QLDB (3.7.501.0)
+	* Remove incorrect endpoint tests
+* RDS (3.7.501.7)
+	* Updates Amazon RDS documentation for Db2 read-only replicas.
+* RedshiftDataAPIService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryReadiness (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SageMaker (3.7.508.0)
+	* Launch SageMaker Notebook Instances support for AL2023 along with P6-B200 instance type and Rootless Docker support for SageMaker Studio.
+* SageMakerMetrics (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ServiceDiscovery (3.7.501.3)
+	* Updating SDK examples after launch of shared AWS Cloud Map namespaces
+* SimSpaceWeaver (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SQS (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Synthetics (3.7.501.0)
+	* Added multi browser support for synthetics canaries, Increased ephemeral storage limit from 5GB to 10GB
+* WAFV2 (3.7.501.0)
+	* test and verified, safe to release
+
 ### 3.7.1107.0 (2025-08-21 19:46 UTC)
 * AccessAnalyzer (3.7.501.0)
 	* Remove incorrect endpoint tests
