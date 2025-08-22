@@ -177,8 +177,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information on AZs, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
-        /// Zones</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For the first three DB instances that you create, RDS distributes each DB instance
+        /// to a different AZ that you specify. For additional DB instances that you create, RDS
+        /// randomly distributes them to the AZs that you specified. For example, if you create
+        /// a DB cluster with one writer instance and three reader instances, RDS might distribute
+        /// the writer instance to AZ 1, the first reader instance to AZ 2, the second reader
+        /// instance to AZ 3, and the third reader instance to either AZ 1, AZ 2, or AZ 3. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+        /// Zones</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Concepts.AuroraHighAvailability.Instances">High
+        /// availability for Aurora DB instances</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>

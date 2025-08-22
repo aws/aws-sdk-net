@@ -1684,18 +1684,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB,
-        /// MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+        /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+        /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
         /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// 
-        ///  
-        /// <para>
-        /// Amazon RDS for Db2 supports this operation for standby replicas. To create a standby
-        /// replica for a DB instance running Db2, you must set <c>ReplicaMode</c> to <c>mounted</c>.
-        /// </para>
         ///  
         /// <para>
         /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
@@ -7224,8 +7219,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// operation doesn't apply to RDS Custom or RDS for Db2.
+        /// Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle.
+        /// This operation doesn't apply to RDS Custom or RDS for Db2.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -8888,8 +8883,8 @@ namespace Amazon.RDS
         /// Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases
         /// by using backup files. You can create a backup of your on-premises database, store
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
-        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-        /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
+        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Restoring
+        /// a backup into an Amazon RDS for MySQL DB instance</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// 
         ///  

@@ -2182,11 +2182,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The open mode of a replica database.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is only supported for Db2 DB instances and Oracle DB instances.
         /// </para>
-        ///  </note> <dl> <dt>Db2</dt> <dd> 
+        ///  <dl> <dt>Db2</dt> <dd> 
         /// <para>
         /// Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition
         /// (SE). The main use case for standby replicas is cross-Region disaster recovery. Because
@@ -2196,7 +2196,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// You can create a combination of standby and read-only DB replicas for the same primary
         /// DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-        /// with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
+        /// with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
