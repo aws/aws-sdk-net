@@ -608,3 +608,17 @@ foreach (var member in docMembers)
         }
     }
 #>
+<#+
+	protected void WriteInjectXmlUnmarshallCode(Member member, int level)
+	{
+		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
+		{
+			foreach (var code in modifier.InjectXmlUnmarshallCode)
+			{
+#>
+<#=new string(' ', level * 4)#><#=code#>
+<#+
+			}
+		}
+	}
+#>

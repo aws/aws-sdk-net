@@ -1916,7 +1916,7 @@ this.Write(".Add(unmarshaller.Unmarshall(context));\r\n");
         #line hidden
         
         #line 475 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2130,7 +2130,7 @@ this.Write(".Add(unmarshaller.Unmarshall(context));\r\n");
         #line hidden
         
         #line 506 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2305,7 +2305,7 @@ this.Write(".Add(unmarshaller.Unmarshall(context));\r\n");
         #line hidden
         
         #line 540 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2435,7 +2435,7 @@ this.Write(" = unmarshaller.Unmarshall(context);\r\n");
         #line hidden
         
         #line 567 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2602,7 +2602,7 @@ this.Write(" = unmarshaller.Unmarshall(context);\r\n");
         #line hidden
         
         #line 607 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2743,7 +2743,7 @@ this.Write(" = predicateList[0];\r\n");
         #line hidden
         
         #line 625 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-WriteInjectXmlUnmarshallCode(member);
+WriteInjectXmlUnmarshallCode(member, 6);
         
         #line default
         #line hidden
@@ -2775,50 +2775,6 @@ this.Write("\t\t\t\t\t}\r\n");
         #line 633 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 
 				}
-		}
-	}
-
-        
-        #line default
-        #line hidden
-        
-        #line 638 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-
-	protected void WriteInjectXmlUnmarshallCode(Member member)
-	{
-		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
-		{
-			foreach (var code in modifier.InjectXmlUnmarshallCode)
-			{
-
-        
-        #line default
-        #line hidden
-        
-        #line 645 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write("                        ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 646 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(code));
-
-        
-        #line default
-        #line hidden
-        
-        #line 646 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write("\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 647 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-
-			}
 		}
 	}
 

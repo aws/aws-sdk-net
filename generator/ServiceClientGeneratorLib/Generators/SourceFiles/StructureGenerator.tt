@@ -429,10 +429,18 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-
+                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlUnmarshallCode.Count > 0)
+                        {
+#>
+<#WriteInjectXmlUnmarshallCode(member, 3);#>
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }

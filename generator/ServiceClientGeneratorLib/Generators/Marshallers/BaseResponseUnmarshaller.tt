@@ -472,7 +472,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -503,7 +503,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 					    continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -537,7 +537,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -564,7 +564,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
 <#+
 				if (!skipXmlTestExpression)
@@ -604,7 +604,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
 <#+
 			}
@@ -622,7 +622,7 @@ using Amazon.Runtime.Internal.Util;
 <#+
 				}
 #>
-<#+WriteInjectXmlUnmarshallCode(member);#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
 <#+
 			}
@@ -632,20 +632,6 @@ using Amazon.Runtime.Internal.Util;
 					}
 <#+
 				}
-		}
-	}
-#>
-<#+
-	protected void WriteInjectXmlUnmarshallCode(Member member)
-	{
-		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
-		{
-			foreach (var code in modifier.InjectXmlUnmarshallCode)
-			{
-#>
-                        <#=code#>
-<#+
-			}
 		}
 	}
 #>

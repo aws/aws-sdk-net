@@ -2032,6 +2032,50 @@ this.Write("        }\r\n\r\n");
         
         #line default
         #line hidden
+        
+        #line 611 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+	protected void WriteInjectXmlUnmarshallCode(Member member, int level)
+	{
+		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
+		{
+			foreach (var code in modifier.InjectXmlUnmarshallCode)
+			{
+
+        
+        #line default
+        #line hidden
+        
+        #line 619 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 619 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(code));
+
+        
+        #line default
+        #line hidden
+        
+        #line 619 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 620 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+			}
+		}
+	}
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
