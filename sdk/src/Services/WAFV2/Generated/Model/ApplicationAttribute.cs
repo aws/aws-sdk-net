@@ -63,7 +63,7 @@ namespace Amazon.WAFV2.Model
         /// Specifies the attribute value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=50)]
         public List<string> Values
         {
             get { return this._values; }
