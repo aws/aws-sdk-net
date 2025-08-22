@@ -39,6 +39,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private string _clientToken;
         private string _description;
+        private string _modelId;
         private AIPromptTemplateConfiguration _templateConfiguration;
         private VisibilityStatus _visibilityStatus;
 
@@ -120,6 +121,31 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelId. 
+        /// <para>
+        /// The identifier of the model used for this AI Prompt.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For more information on supported models, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported
+        /// models for system and custom prompts</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelId
+        {
+            get { return this._modelId; }
+            set { this._modelId = value; }
+        }
+
+        // Check to see if ModelId property is set
+        internal bool IsSetModelId()
+        {
+            return this._modelId != null;
         }
 
         /// <summary>
