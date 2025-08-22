@@ -36,9 +36,11 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Take care to verify the rule names in your overrides. If you provide a rule name that
-    /// doesn't match the name of any rule in the rule group, WAF doesn't return an error
-    /// and doesn't apply the override setting.
+    /// Verify the rule names in your overrides carefully. With managed rule groups, WAF silently
+    /// ignores any override that uses an invalid rule name. With customer-owned rule groups,
+    /// invalid rule names in your overrides will cause web ACL updates to fail. An invalid
+    /// rule name is any name that doesn't exactly match the case-sensitive name of an existing
+    /// rule in the rule group.
     /// </para>
     ///  </note> 
     /// <para>
@@ -80,9 +82,11 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Take care to verify the rule names in your overrides. If you provide a rule name that
-        /// doesn't match the name of any rule in the rule group, WAF doesn't return an error
-        /// and doesn't apply the override setting.
+        /// Verify the rule names in your overrides carefully. With managed rule groups, WAF silently
+        /// ignores any override that uses an invalid rule name. With customer-owned rule groups,
+        /// invalid rule names in your overrides will cause web ACL updates to fail. An invalid
+        /// rule name is any name that doesn't exactly match the case-sensitive name of an existing
+        /// rule in the rule group.
         /// </para>
         ///  </note>
         /// </summary>
