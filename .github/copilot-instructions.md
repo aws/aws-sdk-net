@@ -43,11 +43,12 @@ These instructions guide Copilot and contributors in reviewing pull requests for
  - Check for correct error handling and input validation.
  - Ensure code is maintainable, readable, and follows best practices.
  - Look for opportunities to simplify or optimize code where appropriate.
+ - Look for security vulnerabilities.
 
 ## Automated Checks
 - Copilot should flag PRs that:
  	- Introduce breaking changes without a major version bump.
- 	- Lack a dev config file or changelog update.
+ 	- Lack a dev config file when its required (see https://github.com/aws/aws-sdk-net/blob/main/CONTRIBUTING.md)
  	- Change public APIs without documentation or tests.
  	- Have failing unit or integration tests.
  	- Reduce test coverage for affected code.
