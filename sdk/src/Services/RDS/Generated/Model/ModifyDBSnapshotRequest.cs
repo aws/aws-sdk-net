@@ -36,8 +36,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-    /// operation doesn't apply to RDS Custom or RDS for Db2.
+    /// Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle.
+    /// This operation doesn't apply to RDS Custom or RDS for Db2.
     /// </para>
     /// </summary>
     public partial class ModifyDBSnapshotRequest : AmazonRDSRequest
@@ -77,6 +77,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the list of engine versions that are available for upgrading a DB snapshot, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html">
+        /// Upgrading a MariaDB DB snapshot engine version</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>MySQL</b> 
         /// </para>
         ///  
@@ -91,6 +102,17 @@ namespace Amazon.RDS.Model
         ///  <b>Oracle</b> 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>21.0.0.0.ru-2025-04.rur-2025-04.r1</c> (supported for 21.0.0.0.ru-2022-01.rur-2022-01.r1,
+        /// 21.0.0.0.ru-2022-04.rur-2022-04.r1, 21.0.0.0.ru-2022-07.rur-2022-07.r1, 21.0.0.0.ru-2022-10.rur-2022-10.r1,
+        /// 21.0.0.0.ru-2023-01.rur-2023-01.r1 and 21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>19.0.0.0.ru-2025-04.rur-2025-04.r1</c> (supported for 19.0.0.0.ru-2019-07.rur-2019-07.r1,
+        /// 19.0.0.0.ru-2019-10.rur-2019-10.r1 and 0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>19.0.0.0.ru-2022-01.rur-2022-01.r1</c> (supported for 12.2.0.1 DB snapshots)
         /// </para>

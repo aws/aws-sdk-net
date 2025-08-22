@@ -90,12 +90,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DebugLogging. 
         /// <para>
-        /// Specifies whether the proxy includes detailed information about SQL statements in
-        /// its logs. This information helps you to debug issues involving SQL behavior or the
-        /// performance and scalability of the proxy connections. The debug information includes
-        /// the text of SQL statements that you submit through the proxy. Thus, only enable this
-        /// setting when needed for debugging, and only when you have security measures in place
-        /// to safeguard any sensitive information that appears in the logs.
+        /// Specifies whether the proxy logs detailed connection and query information. When you
+        /// enable <c>DebugLogging</c>, the proxy captures connection details and connection pool
+        /// behavior from your queries. Debug logging increases CloudWatch costs and can impact
+        /// proxy performance. Enable this option only when you need to troubleshoot connection
+        /// or performance issues.
         /// </para>
         /// </summary>
         public bool DebugLogging
