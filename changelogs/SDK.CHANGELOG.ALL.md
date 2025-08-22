@@ -1,3 +1,89 @@
+### 4.0.76.0 (2025-08-22 19:15 UTC)
+* Account (4.0.1.0)
+	* Remove incorrect endpoint tests
+* APIGateway (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApiGatewayV2 (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AugmentedAIRuntime (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AWSMarketplaceCommerceAnalytics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* B2bi (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CloudDirectory (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudWatchRUM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodePipeline (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CognitoSync (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DataExchange (4.0.3.0)
+	* Remove incorrect endpoint tests
+* DocDB (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ElasticLoadBalancing (4.0.1.0)
+	* Remove incorrect endpoint tests
+* EMRServerless (4.0.5.0)
+	* Remove incorrect endpoint tests
+* HealthLake (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IAMRolesAnywhere (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTAnalytics (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisFirehose (4.0.2.0)
+	* Remove incorrect endpoint tests
+* LaunchWizard (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LocationService (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Macie2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaLive (4.0.4.0)
+	* AWS Elemental MediaLive now has a field called "SubtitleRows" for controlling subtitle row count for DVB-Sub and Burn-In captions outputs
+* MemoryDB (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubOrchestrator (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkMonitor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Organizations (4.0.3.0)
+	* Remove incorrect endpoint tests
+* PaymentCryptography (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Pricing (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Proton (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QConnect (4.0.2.0)
+	* Releasing model ID support for UpdateAIPrompt
+* QLDB (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RDS (4.0.5.5)
+	* Updates Amazon RDS documentation for Db2 read-only replicas.
+* RedshiftDataAPIService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryReadiness (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.22.0)
+	* Launch SageMaker Notebook Instances support for AL2023 along with P6-B200 instance type and Rootless Docker support for SageMaker Studio.
+* SageMakerMetrics (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ServiceDiscovery (4.0.1.3)
+	* Updating SDK examples after launch of shared AWS Cloud Map namespaces
+* SimSpaceWeaver (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SQS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Synthetics (4.0.6.0)
+	* Added multi browser support for synthetics canaries, Increased ephemeral storage limit from 5GB to 10GB
+* WAFV2 (4.0.4.0)
+	* test and verified, safe to release
+* Core 4.0.0.25
+	* Add support for RPCv2 CBOR protocol.
+
 ### 4.0.75.0 (2025-08-21 19:51 UTC)
 * AccessAnalyzer (4.0.2.0)
 	* Remove incorrect endpoint tests
