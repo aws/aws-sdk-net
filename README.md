@@ -71,11 +71,9 @@ You can find the archive for _**legacy**_ Unity support at https://github.com/aw
 
 This SDK has optional functionality that requires the [AWS Common Runtime (CRT)](https://docs.aws.amazon.com/sdkref/latest/guide/common-runtime.html)
 bindings to be included as a dependency with your application. This functionality includes:
-* [Amazon S3 Multi-Region Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html)
 * [Amazon S3 Object Integrity](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html)
-* Amazon EventBridge Global Endpoints
 
-If the required AWS Common Runtime components are not installed you will receive an error like `Attempting to make a request that requires an implementation of AWS Signature V4a. Add a reference to the AWSSDK.Extensions.CrtIntegration NuGet package to your project to include the AWS Signature V4a signer.`,
+If the required AWS Common Runtime components are not installed you will receive an error like `Attempting to handle a request that requires additional checksums. Add a reference to the AWSSDK.Extensions.CrtIntegration NuGet package to your project to include the AWS Common Runtime checksum implementation.`,
 indicating that the required dependency is missing to use the associated functionality. To install this dependency follow
 the provided [instructions](#installing-the-aws-common-runtime-crt-dependency).
 
