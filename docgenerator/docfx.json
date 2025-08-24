@@ -1,0 +1,79 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**/bin/Debug/**/*.dll"
+          ],
+          "exclude": [
+            "**/AWSSDK.Extensions.*.dll",
+            "**/test/**",
+            "**/tests/**"
+          ],
+          "src": "../sdk/src",
+          "dest": "api"
+        }
+      ],
+      "dest": "api",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": true,
+      "namespaceLayout": "flattened",
+      "memberLayout": "samePage",
+      "allowCompilationErrors": true
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern",
+      "templates/material"
+    ],
+    "postProcessors": ["ExtractSearchIndex"],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false,
+    "globalMetadata": {
+      "_appTitle": "AWS SDK for .NET API Reference",
+      "_appName": "AWS SDK for .NET",
+      "_appFooter": "AWS SDK for .NET",
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "_disableContribution": false,
+      "_gitContribute": {
+        "repo": "https://github.com/aws/aws-sdk-net",
+        "branch": "main"
+      },
+      "_gitUrlPattern": "github"
+    },
+    "fileMetadata": {},
+    "dest": "../Deployment/docs"
+  }
+}
+

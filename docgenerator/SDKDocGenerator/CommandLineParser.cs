@@ -238,6 +238,13 @@ namespace SDKDocGenerator
                 HasValue = true,
                 Parse = (arguments, argValue) => arguments.ParsedOptions.OutputFolder = argValue, 
                 HelpText = "The root folder beneath which the generated documentation will be placed."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "usedocfx", 
+                ShortName = "docfx", 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.UseDocFx = true, 
+                HelpText = "Use DocFX with Material theme instead of the legacy HTML generator for modern, beautiful documentation."
             }
         };
 

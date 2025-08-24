@@ -96,6 +96,11 @@ namespace SDKDocGenerator
         public string CodeSamplesRootFolder { get; set; }
 
         /// <summary>
+        /// If set, uses DocFX with Material theme instead of the legacy HTML generator
+        /// </summary>
+        public bool UseDocFx { get; set; }
+
+        /// <summary>
         /// Returns the concatenation of the output folder and the content subfolder
         /// </summary>
         public string ComputedContentFolder

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace SDKDocGenerator
 {
@@ -54,6 +55,16 @@ namespace SDKDocGenerator
         /// <returns>0 on successful completion</returns>
         public int Execute(GeneratorOptions options)
         {
+            return ExecuteAsync(options).GetAwaiter().GetResult();
+        }
+
+        /// <summary>
+        /// Async version of Execute method
+        /// </summary>
+        /// <param name="options"></param>
+        /// <returns>0 on successful completion</returns>
+        public async Task<int> ExecuteAsync(GeneratorOptions options)
+        {
             // this is just to record the run duration, so we can monitor and optimize 
             // build-time perf
             _startTimeTicks = DateTime.Now.Ticks;
@@ -78,6 +89,7 @@ namespace SDKDocGenerator
                 Info("...Clean: {0}", Options.Clean);
                 Info("...WriteStaticContent: {0}", Options.WriteStaticContent);
                 Info("...WaitOnExit: {0}", Options.WaitOnExit);
+                Info("...UseDocFx: {0}", Options.UseDocFx);
                 Info("");
                 Info("...SDKAssembliesRoot: {0}", Options.SDKAssembliesRoot);
                 Info("...OutputFolder: {0}", Options.OutputFolder);
@@ -85,6 +97,12 @@ namespace SDKDocGenerator
                 Info("...Services: {0}", string.Join(",", Options.Services));
                 Info("...CodeSamplesRootFolder: {0}", Options.CodeSamplesRootFolder);
                 Info("");
+            }
+
+            // If using DocFX, delegate to the new DocFX-based generation
+            if (Options.UseDocFx)
+            {
+                return await ExecuteDocFxGenerationAsync();
             }
 
             if (options.Clean)
@@ -266,6 +284,153 @@ namespace SDKDocGenerator
         {
             Trace.WriteLine(String.Format(format, args), "Verbose");
             Trace.Flush();
+        }
+
+        /// <summary>
+        /// Executes documentation generation using DocFX with Material theme
+        /// </summary>
+        /// <returns>0 on successful completion</returns>
+        private async Task<int> ExecuteDocFxGenerationAsync()
+        {
+            try
+            {
+                Info("Starting DocFX-based documentation generation...");
+                
+                var docfxIntegration = new DocFxIntegration(Options);
+                
+                // Setup material theme
+                Info("Setting up DocFX Material theme...");
+                var themeSetup = await docfxIntegration.SetupMaterialThemeAsync();
+                if (!themeSetup)
+                {
+                    Info("Failed to setup Material theme, but continuing...");
+                }
+
+                // Update DocFX configuration with current SDK assemblies path
+                Info("Updating DocFX configuration...");
+                await UpdateDocFxConfigurationAsync();
+
+                // Generate metadata from assemblies
+                Info("Generating metadata from SDK assemblies...");
+                var metadataGenerated = await docfxIntegration.GenerateMetadataAsync();
+                if (!metadataGenerated)
+                {
+                    Info("ERROR: Failed to generate DocFX metadata");
+                    return -1;
+                }
+
+                // Build documentation
+                Info("Building documentation with DocFX...");
+                var buildSuccess = await docfxIntegration.BuildDocumentationAsync();
+                if (!buildSuccess)
+                {
+                    Info("ERROR: Failed to build documentation with DocFX");
+                    return -1;
+                }
+
+                Info("DocFX documentation generation completed successfully!");
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Info("ERROR: Exception during DocFX generation: {0}", ex.Message);
+                if (Options.Verbose)
+                    Info("Stack trace: {0}", ex.StackTrace);
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Updates the DocFX configuration file with current options
+        /// </summary>
+        private async Task UpdateDocFxConfigurationAsync()
+        {
+            try
+            {
+                var docGeneratorRoot = GetDocGeneratorRoot();
+                var docfxConfigPath = Path.Combine(docGeneratorRoot, "docfx.json");
+                
+                if (!File.Exists(docfxConfigPath))
+                {
+                    Info("DocFX configuration file not found, using default");
+                    return;
+                }
+
+                // Read current configuration
+                var configContent = File.ReadAllText(docfxConfigPath);
+                
+                // Update the source paths to point to the current SDK assemblies
+                var platformPath = Path.Combine(Options.SDKAssembliesRoot, Options.Platform);
+                var relativePath = GetRelativePath(docGeneratorRoot, platformPath);
+                
+                // Simple string replacement for the source path
+                // In a production scenario, you'd want to use a JSON parser
+                configContent = configContent.Replace(
+                    "\"src\": \"../sdk/src/Core/bin/Release/net472\"",
+                    $"\"src\": \"{relativePath.Replace('\\', '/')}\""
+                );
+                
+                // Update output path if specified
+                if (!string.IsNullOrEmpty(Options.OutputFolder))
+                {
+                    var outputRelativePath = GetRelativePath(docGeneratorRoot, Options.OutputFolder);
+                    configContent = configContent.Replace(
+                        "\"dest\": \"../Deployment/docs\"",
+                        $"\"dest\": \"{outputRelativePath.Replace('\\', '/')}\""
+                    );
+                }
+
+                File.WriteAllText(docfxConfigPath, configContent);
+                
+                if (Options.Verbose)
+                    Info("Updated DocFX configuration with current options");
+            }
+            catch (Exception ex)
+            {
+                Info("Warning: Failed to update DocFX configuration: {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Gets the root directory of the doc generator
+        /// </summary>
+        private string GetDocGeneratorRoot()
+        {
+            var assemblyLocation = typeof(SdkDocGenerator).Assembly.Location;
+            var assemblyDir = Path.GetDirectoryName(assemblyLocation);
+            
+            var current = new DirectoryInfo(assemblyDir);
+            while (current != null && !current.Name.Equals("docgenerator", StringComparison.OrdinalIgnoreCase))
+            {
+                current = current.Parent;
+            }
+            
+            return current?.FullName ?? assemblyDir;
+        }
+
+        /// <summary>
+        /// Gets a relative path from one directory to another (compatibility method for .NET Standard 2.0)
+        /// </summary>
+        private string GetRelativePath(string fromPath, string toPath)
+        {
+            if (string.IsNullOrEmpty(fromPath) || string.IsNullOrEmpty(toPath))
+                return toPath;
+
+            var fromUri = new Uri(fromPath.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);
+            var toUri = new Uri(toPath);
+
+            if (fromUri.Scheme != toUri.Scheme)
+                return toPath; // Different schemes, can't make relative
+
+            var relativeUri = fromUri.MakeRelativeUri(toUri);
+            var relativePath = Uri.UnescapeDataString(relativeUri.ToString());
+
+            if (toUri.Scheme.Equals("file", StringComparison.InvariantCultureIgnoreCase))
+            {
+                relativePath = relativePath.Replace('/', Path.DirectorySeparatorChar);
+            }
+
+            return relativePath;
         }
     }
 
