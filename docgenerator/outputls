@@ -1,0 +1,3 @@
+=== DEBUG: Program starting ===
+=== DEBUG: Args: --usedocfx --verbose --SDKAssembliesRoot ../sdk/src -la AWSSDKDocSamples/ ===
+Unrecognised argument: -la

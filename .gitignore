@@ -79,6 +79,7 @@ docgenerator/api/**
 docgenerator/docs-output/**
 docgenerator/templates/material/**
 docgenerator/_site/**
+docgenerator/overwrites/**
 
 ####################
 # macOS System Files

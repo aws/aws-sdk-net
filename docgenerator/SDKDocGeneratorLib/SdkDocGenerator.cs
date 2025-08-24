@@ -306,6 +306,14 @@ namespace SDKDocGenerator
                     Info("Failed to setup Material theme, but continuing...");
                 }
 
+                // Process code samples
+                Info("Processing code samples...");
+                var samplesProcessed = docfxIntegration.ProcessCodeSamples();
+                if (!samplesProcessed)
+                {
+                    Info("Failed to process code samples, but continuing...");
+                }
+
                 // Update DocFX configuration with current SDK assemblies path
                 Info("Updating DocFX configuration...");
                 await UpdateDocFxConfigurationAsync();

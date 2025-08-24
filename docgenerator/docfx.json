@@ -38,7 +38,8 @@
           "toc.yml",
           "*.md"
         ]
-      }
+      },
+
     ],
     "resource": [
       {
@@ -47,7 +48,17 @@
         ]
       }
     ],
-    "output": "_site",
+    "overwrite": [
+      {
+        "files": [
+          "overwrites/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
     "template": [
       "default",
       "modern",
