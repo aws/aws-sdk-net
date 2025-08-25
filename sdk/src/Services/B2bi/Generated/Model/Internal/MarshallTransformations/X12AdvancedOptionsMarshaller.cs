@@ -59,6 +59,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetValidationOptions())
+            {
+                context.Writer.WritePropertyName("validationOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = X12ValidationOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ValidationOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

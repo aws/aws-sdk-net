@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputConversion Marshaller
+    /// X12ValidationOptions Marshaller
     /// </summary>
-    public class OutputConversionMarshaller : IRequestMarshaller<OutputConversion, JsonMarshallerContext> 
+    public class X12ValidationOptionsMarshaller : IRequestMarshaller<X12ValidationOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,24 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputConversion requestObject, JsonMarshallerContext context)
+        public void Marshall(X12ValidationOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedOptions())
+            if(requestObject.IsSetValidationRules())
             {
-                context.Writer.WritePropertyName("advancedOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("validationRules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectValidationRulesListValue in requestObject.ValidationRules)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = AdvancedOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedOptions, context);
+                    var marshaller = X12ValidationRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectValidationRulesListValue, context);
 
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFormatOptions())
-            {
-                context.Writer.WritePropertyName("formatOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FormatOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FormatOptions, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetToFormat())
-            {
-                context.Writer.WritePropertyName("toFormat");
-                context.Writer.Write(requestObject.ToFormat);
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -81,7 +69,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputConversionMarshaller Instance = new OutputConversionMarshaller();
+        public readonly static X12ValidationOptionsMarshaller Instance = new X12ValidationOptionsMarshaller();
 
     }
 }

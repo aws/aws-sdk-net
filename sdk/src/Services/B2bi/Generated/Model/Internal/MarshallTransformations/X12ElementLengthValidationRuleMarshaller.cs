@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputConversion Marshaller
+    /// X12ElementLengthValidationRule Marshaller
     /// </summary>
-    public class OutputConversionMarshaller : IRequestMarshaller<OutputConversion, JsonMarshallerContext> 
+    public class X12ElementLengthValidationRuleMarshaller : IRequestMarshaller<X12ElementLengthValidationRule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,26 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputConversion requestObject, JsonMarshallerContext context)
+        public void Marshall(X12ElementLengthValidationRule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedOptions())
+            if(requestObject.IsSetElementId())
             {
-                context.Writer.WritePropertyName("advancedOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AdvancedOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("elementId");
+                context.Writer.Write(requestObject.ElementId);
             }
 
-            if(requestObject.IsSetFormatOptions())
+            if(requestObject.IsSetMaxLength())
             {
-                context.Writer.WritePropertyName("formatOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FormatOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FormatOptions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxLength");
+                context.Writer.Write(requestObject.MaxLength);
             }
 
-            if(requestObject.IsSetToFormat())
+            if(requestObject.IsSetMinLength())
             {
-                context.Writer.WritePropertyName("toFormat");
-                context.Writer.Write(requestObject.ToFormat);
+                context.Writer.WritePropertyName("minLength");
+                context.Writer.Write(requestObject.MinLength);
             }
 
         }
@@ -81,7 +71,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputConversionMarshaller Instance = new OutputConversionMarshaller();
+        public readonly static X12ElementLengthValidationRuleMarshaller Instance = new X12ElementLengthValidationRuleMarshaller();
 
     }
 }

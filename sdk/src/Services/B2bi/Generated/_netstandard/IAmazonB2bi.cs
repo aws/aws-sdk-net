@@ -103,6 +103,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
         Task<CreateCapabilityResponse> CreateCapabilityAsync(CreateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -150,6 +154,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreatePartnership">REST API Reference for CreatePartnership Operation</seealso>
         Task<CreatePartnershipResponse> CreatePartnershipAsync(CreatePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -197,6 +205,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -250,6 +262,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
         Task<CreateStarterMappingTemplateResponse> CreateStarterMappingTemplateAsync(CreateStarterMappingTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -332,6 +348,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">REST API Reference for CreateTransformer Operation</seealso>
         Task<CreateTransformerResponse> CreateTransformerAsync(CreateTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -373,6 +393,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
         Task<DeleteCapabilityResponse> DeleteCapabilityAsync(DeleteCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -414,6 +438,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeletePartnership">REST API Reference for DeletePartnership Operation</seealso>
         Task<DeletePartnershipResponse> DeletePartnershipAsync(DeletePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -455,6 +483,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -497,6 +529,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">REST API Reference for DeleteTransformer Operation</seealso>
         Task<DeleteTransformerResponse> DeleteTransformerAsync(DeleteTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -557,6 +593,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
         Task<GenerateMappingResponse> GenerateMappingAsync(GenerateMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -594,6 +634,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetCapability">REST API Reference for GetCapability Operation</seealso>
         Task<GetCapabilityResponse> GetCapabilityAsync(GetCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -632,6 +676,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetPartnership">REST API Reference for GetPartnership Operation</seealso>
         Task<GetPartnershipResponse> GetPartnershipAsync(GetPartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -669,6 +717,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">REST API Reference for GetProfile Operation</seealso>
         Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -708,6 +760,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">REST API Reference for GetTransformer Operation</seealso>
         Task<GetTransformerResponse> GetTransformerAsync(GetTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -753,6 +809,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformerJob">REST API Reference for GetTransformerJob Operation</seealso>
         Task<GetTransformerJobResponse> GetTransformerJobAsync(GetTransformerJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -787,6 +847,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -825,6 +889,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">REST API Reference for ListPartnerships Operation</seealso>
         Task<ListPartnershipsResponse> ListPartnershipsAsync(ListPartnershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -859,6 +927,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -889,6 +961,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -923,6 +999,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         Task<ListTransformersResponse> ListTransformersAsync(ListTransformersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -979,6 +1059,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">REST API Reference for StartTransformerJob Operation</seealso>
         Task<StartTransformerJobResponse> StartTransformerJobAsync(StartTransformerJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1018,6 +1102,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1056,6 +1144,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
         Task<TestConversionResponse> TestConversionAsync(TestConversionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1094,6 +1186,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestMapping">REST API Reference for TestMapping Operation</seealso>
         Task<TestMappingResponse> TestMappingAsync(TestMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1131,6 +1227,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestParsing">REST API Reference for TestParsing Operation</seealso>
         Task<TestParsingResponse> TestParsingAsync(TestParsingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1162,6 +1262,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1209,6 +1313,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
         Task<UpdateCapabilityResponse> UpdateCapabilityAsync(UpdateCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1256,6 +1364,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdatePartnership">REST API Reference for UpdatePartnership Operation</seealso>
         Task<UpdatePartnershipResponse> UpdatePartnershipAsync(UpdatePartnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1302,6 +1414,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1350,6 +1466,10 @@ namespace Amazon.B2bi
         /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ValidationException">
         /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// This exception can be thrown during standard EDI validation or when custom validation
+        /// rules fail, such as when element length constraints are violated, invalid codes are
+        /// used in code list validations, or required elements are missing based on configured
+        /// element requirement rules.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">REST API Reference for UpdateTransformer Operation</seealso>
         Task<UpdateTransformerResponse> UpdateTransformerAsync(UpdateTransformerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

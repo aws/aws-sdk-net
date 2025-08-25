@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputConversion Marshaller
+    /// X12ValidationRule Marshaller
     /// </summary>
-    public class OutputConversionMarshaller : IRequestMarshaller<OutputConversion, JsonMarshallerContext> 
+    public class X12ValidationRuleMarshaller : IRequestMarshaller<X12ValidationRule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,41 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputConversion requestObject, JsonMarshallerContext context)
+        public void Marshall(X12ValidationRule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedOptions())
+            if(requestObject.IsSetCodeListValidationRule())
             {
-                context.Writer.WritePropertyName("advancedOptions");
+                context.Writer.WritePropertyName("codeListValidationRule");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AdvancedOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedOptions, context);
+                var marshaller = X12CodeListValidationRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeListValidationRule, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetFormatOptions())
+            if(requestObject.IsSetElementLengthValidationRule())
             {
-                context.Writer.WritePropertyName("formatOptions");
+                context.Writer.WritePropertyName("elementLengthValidationRule");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FormatOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FormatOptions, context);
+                var marshaller = X12ElementLengthValidationRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElementLengthValidationRule, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetToFormat())
+            if(requestObject.IsSetElementRequirementValidationRule())
             {
-                context.Writer.WritePropertyName("toFormat");
-                context.Writer.Write(requestObject.ToFormat);
+                context.Writer.WritePropertyName("elementRequirementValidationRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = X12ElementRequirementValidationRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.ElementRequirementValidationRule, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -81,7 +86,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputConversionMarshaller Instance = new OutputConversionMarshaller();
+        public readonly static X12ValidationRuleMarshaller Instance = new X12ValidationRuleMarshaller();
 
     }
 }

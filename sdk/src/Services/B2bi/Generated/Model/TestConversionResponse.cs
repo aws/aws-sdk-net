@@ -59,8 +59,12 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property ValidationMessages. 
         /// <para>
-        /// Returns an array of strings, each containing a message that Amazon Web Services B2B
-        /// Data Interchange generates during the conversion.
+        /// Returns an array of validation messages that Amazon Web Services B2B Data Interchange
+        /// generates during the conversion process. These messages include both standard EDI
+        /// validation results and custom validation messages when custom validation rules are
+        /// configured. Custom validation messages provide detailed feedback on element length
+        /// constraints, code list validations, and element requirement checks applied during
+        /// the outbound EDI generation process.
         /// </para>
         /// </summary>
         public List<string> ValidationMessages

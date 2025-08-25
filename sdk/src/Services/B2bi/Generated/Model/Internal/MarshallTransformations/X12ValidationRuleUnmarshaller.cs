@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputConversion Object
+    /// Response Unmarshaller for X12ValidationRule Object
     /// </summary>  
-    public class OutputConversionUnmarshaller : IUnmarshaller<OutputConversion, XmlUnmarshallerContext>, IUnmarshaller<OutputConversion, JsonUnmarshallerContext>
+    public class X12ValidationRuleUnmarshaller : IUnmarshaller<X12ValidationRule, XmlUnmarshallerContext>, IUnmarshaller<X12ValidationRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputConversion IUnmarshaller<OutputConversion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        X12ValidationRule IUnmarshaller<X12ValidationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputConversion Unmarshall(JsonUnmarshallerContext context)
+        public X12ValidationRule Unmarshall(JsonUnmarshallerContext context)
         {
-            OutputConversion unmarshalledObject = new OutputConversion();
+            X12ValidationRule unmarshalledObject = new X12ValidationRule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
+                if (context.TestExpression("codeListValidationRule", targetDepth))
                 {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = X12CodeListValidationRuleUnmarshaller.Instance;
+                    unmarshalledObject.CodeListValidationRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("formatOptions", targetDepth))
+                if (context.TestExpression("elementLengthValidationRule", targetDepth))
                 {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = X12ElementLengthValidationRuleUnmarshaller.Instance;
+                    unmarshalledObject.ElementLengthValidationRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("toFormat", targetDepth))
+                if (context.TestExpression("elementRequirementValidationRule", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToFormat = unmarshaller.Unmarshall(context);
+                    var unmarshaller = X12ElementRequirementValidationRuleUnmarshaller.Instance;
+                    unmarshalledObject.ElementRequirementValidationRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputConversionUnmarshaller _instance = new OutputConversionUnmarshaller();        
+        private static X12ValidationRuleUnmarshaller _instance = new X12ValidationRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputConversionUnmarshaller Instance
+        public static X12ValidationRuleUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputConversion Object
+    /// Response Unmarshaller for X12ElementRequirementValidationRule Object
     /// </summary>  
-    public class OutputConversionUnmarshaller : IUnmarshaller<OutputConversion, XmlUnmarshallerContext>, IUnmarshaller<OutputConversion, JsonUnmarshallerContext>
+    public class X12ElementRequirementValidationRuleUnmarshaller : IUnmarshaller<X12ElementRequirementValidationRule, XmlUnmarshallerContext>, IUnmarshaller<X12ElementRequirementValidationRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputConversion IUnmarshaller<OutputConversion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        X12ElementRequirementValidationRule IUnmarshaller<X12ElementRequirementValidationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputConversion Unmarshall(JsonUnmarshallerContext context)
+        public X12ElementRequirementValidationRule Unmarshall(JsonUnmarshallerContext context)
         {
-            OutputConversion unmarshalledObject = new OutputConversion();
+            X12ElementRequirementValidationRule unmarshalledObject = new X12ElementRequirementValidationRule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
-                {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("formatOptions", targetDepth))
-                {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toFormat", targetDepth))
+                if (context.TestExpression("elementPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElementPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("requirement", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Requirement = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputConversionUnmarshaller _instance = new OutputConversionUnmarshaller();        
+        private static X12ElementRequirementValidationRuleUnmarshaller _instance = new X12ElementRequirementValidationRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputConversionUnmarshaller Instance
+        public static X12ElementRequirementValidationRuleUnmarshaller Instance
         {
             get
             {
