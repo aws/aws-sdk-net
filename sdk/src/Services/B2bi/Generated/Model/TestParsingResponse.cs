@@ -36,6 +36,7 @@ namespace Amazon.B2bi.Model
     {
         private string _parsedFileContent;
         private List<string> _parsedSplitFileContents = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _validationMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ParsedFileContent. 
@@ -80,6 +81,33 @@ namespace Amazon.B2bi.Model
         internal bool IsSetParsedSplitFileContents()
         {
             return this._parsedSplitFileContents != null && (this._parsedSplitFileContents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationMessages. 
+        /// <para>
+        /// Returns an array of validation messages generated during EDI validation. These messages
+        /// provide detailed information about validation errors, warnings, or confirmations based
+        /// on the configured X12 validation rules such as element length constraints, code list
+        /// validations, and element requirement checks. This field is populated when the <c>TestParsing</c>
+        /// API validates EDI documents.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ValidationMessages
+        {
+            get { return this._validationMessages; }
+            set { this._validationMessages = value; }
+        }
+
+        // Check to see if ValidationMessages property is set
+        internal bool IsSetValidationMessages()
+        {
+            return this._validationMessages != null && (this._validationMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

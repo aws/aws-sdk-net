@@ -35,8 +35,24 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class OutputConversion
     {
+        private AdvancedOptions _advancedOptions;
         private FormatOptions _formatOptions;
         private ToFormat _toFormat;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedOptions.
+        /// </summary>
+        public AdvancedOptions AdvancedOptions
+        {
+            get { return this._advancedOptions; }
+            set { this._advancedOptions = value; }
+        }
+
+        // Check to see if AdvancedOptions property is set
+        internal bool IsSetAdvancedOptions()
+        {
+            return this._advancedOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FormatOptions. 

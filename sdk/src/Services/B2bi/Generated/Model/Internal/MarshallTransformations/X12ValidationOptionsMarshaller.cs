@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12AdvancedOptions Marshaller
+    /// X12ValidationOptions Marshaller
     /// </summary>
-    public class X12AdvancedOptionsMarshaller : IRequestMarshaller<X12AdvancedOptions, JsonMarshallerContext> 
+    public class X12ValidationOptionsMarshaller : IRequestMarshaller<X12ValidationOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,24 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12AdvancedOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(X12ValidationOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSplitOptions())
+            if(requestObject.IsSetValidationRules())
             {
-                context.Writer.WritePropertyName("splitOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("validationRules");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectValidationRulesListValue in requestObject.ValidationRules)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = X12SplitOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SplitOptions, context);
+                    var marshaller = X12ValidationRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectValidationRulesListValue, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetValidationOptions())
-            {
-                context.Writer.WritePropertyName("validationOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = X12ValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ValidationOptions, context);
-
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +67,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12AdvancedOptionsMarshaller Instance = new X12AdvancedOptionsMarshaller();
+        public readonly static X12ValidationOptionsMarshaller Instance = new X12ValidationOptionsMarshaller();
 
     }
 }

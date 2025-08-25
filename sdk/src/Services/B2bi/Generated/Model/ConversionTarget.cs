@@ -34,9 +34,25 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class ConversionTarget
     {
+        private AdvancedOptions _advancedOptions;
         private ConversionTargetFormat _fileFormat;
         private ConversionTargetFormatDetails _formatDetails;
         private OutputSampleFileSource _outputSampleFile;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedOptions.
+        /// </summary>
+        public AdvancedOptions AdvancedOptions
+        {
+            get { return this._advancedOptions; }
+            set { this._advancedOptions = value; }
+        }
+
+        // Check to see if AdvancedOptions property is set
+        internal bool IsSetAdvancedOptions()
+        {
+            return this._advancedOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FileFormat. 

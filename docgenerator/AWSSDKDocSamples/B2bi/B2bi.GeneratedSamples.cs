@@ -164,6 +164,33 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 Name = "transformX12",
                 ClientToken = "foo",
                 InputConversion = new InputConversion {
+                    AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions {
+                        SplitOptions = new X12SplitOptions { SplitBy = "NONE" },
+                        ValidationOptions = new X12ValidationOptions { ValidationRules = new List<X12ValidationRule> {
+                            new X12ValidationRule { CodeListValidationRule = new X12CodeListValidationRule {
+                                CodesToAdd = new List<string> {
+                                    "A",
+                                    "B",
+                                    "C"
+                                },
+                                CodesToRemove = new List<string> {
+                                    "X",
+                                    "Y",
+                                    "Z"
+                                },
+                                ElementId = "1234"
+                            } },
+                            new X12ValidationRule { ElementRequirementValidationRule = new X12ElementRequirementValidationRule {
+                                ElementPosition = "NM1-01",
+                                Requirement = "MANDATORY"
+                            } },
+                            new X12ValidationRule { ElementLengthValidationRule = new X12ElementLengthValidationRule {
+                                ElementId = "5678",
+                                MaxLength = 10,
+                                MinLength = 2
+                            } }
+                        } }
+                    } },
                     FormatOptions = new FormatOptions { X12 = new X12Details {
                         Version = "VERSION_4010",
                         TransactionSet = "X12_110"
@@ -523,6 +550,30 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                     InputFile = new InputFileSource { FileContent = "Sample file content" }
                 },
                 Target = new ConversionTarget {
+                    AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { ValidationOptions = new X12ValidationOptions { ValidationRules = new List<X12ValidationRule> {
+                        new X12ValidationRule { CodeListValidationRule = new X12CodeListValidationRule {
+                            CodesToAdd = new List<string> {
+                                "X",
+                                "Y",
+                                "Z"
+                            },
+                            CodesToRemove = new List<string> {
+                                "A",
+                                "B",
+                                "C"
+                            },
+                            ElementId = "1280"
+                        } },
+                        new X12ValidationRule { ElementRequirementValidationRule = new X12ElementRequirementValidationRule {
+                            ElementPosition = "NM1-01",
+                            Requirement = "OPTIONAL"
+                        } },
+                        new X12ValidationRule { ElementLengthValidationRule = new X12ElementLengthValidationRule {
+                            ElementId = "0803",
+                            MaxLength = 30,
+                            MinLength = 5
+                        } }
+                    } } } },
                     FileFormat = "X12",
                     FormatDetails = new ConversionTargetFormatDetails { X12 = new X12Details {
                         Version = "VERSION_4010",
@@ -609,6 +660,54 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             var response = client.TestParsing(new TestParsingRequest 
             {
                 AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { SplitOptions = new X12SplitOptions { SplitBy = "TRANSACTION" } } },
+                EdiType = new EdiType { X12Details = new X12Details {
+                    Version = "VERSION_4010",
+                    TransactionSet = "X12_110"
+                } },
+                FileFormat = "JSON",
+                InputFile = new S3Location {
+                    Key = "sampleFile.txt",
+                    BucketName = "test-bucket"
+                }
+            });
+
+            string parsedFileContent = response.ParsedFileContent;
+            List<string> parsedSplitFileContents = response.ParsedSplitFileContents;
+
+            #endregion
+        }
+
+        public void B2biTestParsing()
+        {
+            #region example-4
+
+            var client = new AmazonB2biClient();
+            var response = client.TestParsing(new TestParsingRequest 
+            {
+                AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions { ValidationOptions = new X12ValidationOptions { ValidationRules = new List<X12ValidationRule> {
+                    new X12ValidationRule { CodeListValidationRule = new X12CodeListValidationRule {
+                        CodesToAdd = new List<string> {
+                            "X",
+                            "Y",
+                            "Z"
+                        },
+                        CodesToRemove = new List<string> {
+                            "A",
+                            "B",
+                            "C"
+                        },
+                        ElementId = "1280"
+                    } },
+                    new X12ValidationRule { ElementRequirementValidationRule = new X12ElementRequirementValidationRule {
+                        ElementPosition = "NM1-01",
+                        Requirement = "OPTIONAL"
+                    } },
+                    new X12ValidationRule { ElementLengthValidationRule = new X12ElementLengthValidationRule {
+                        ElementId = "0803",
+                        MaxLength = 30,
+                        MinLength = 5
+                    } }
+                } } } },
                 EdiType = new EdiType { X12Details = new X12Details {
                     Version = "VERSION_4010",
                     TransactionSet = "X12_110"
@@ -752,6 +851,33 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             {
                 Name = "transformX12",
                 InputConversion = new InputConversion {
+                    AdvancedOptions = new AdvancedOptions { X12 = new X12AdvancedOptions {
+                        SplitOptions = new X12SplitOptions { SplitBy = "NONE" },
+                        ValidationOptions = new X12ValidationOptions { ValidationRules = new List<X12ValidationRule> {
+                            new X12ValidationRule { CodeListValidationRule = new X12CodeListValidationRule {
+                                CodesToAdd = new List<string> {
+                                    "A",
+                                    "B",
+                                    "C"
+                                },
+                                CodesToRemove = new List<string> {
+                                    "X",
+                                    "Y",
+                                    "Z"
+                                },
+                                ElementId = "1234"
+                            } },
+                            new X12ValidationRule { ElementRequirementValidationRule = new X12ElementRequirementValidationRule {
+                                ElementPosition = "NM1-01",
+                                Requirement = "MANDATORY"
+                            } },
+                            new X12ValidationRule { ElementLengthValidationRule = new X12ElementLengthValidationRule {
+                                ElementId = "5678",
+                                MaxLength = 10,
+                                MinLength = 2
+                            } }
+                        } }
+                    } },
                     FormatOptions = new FormatOptions { X12 = new X12Details {
                         Version = "VERSION_4010",
                         TransactionSet = "X12_110"

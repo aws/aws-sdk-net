@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputConversion Object
+    /// Response Unmarshaller for X12ElementLengthValidationRule Object
     /// </summary>  
-    public class OutputConversionUnmarshaller : IJsonUnmarshaller<OutputConversion, JsonUnmarshallerContext>
+    public class X12ElementLengthValidationRuleUnmarshaller : IJsonUnmarshaller<X12ElementLengthValidationRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OutputConversion Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public X12ElementLengthValidationRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OutputConversion unmarshalledObject = new OutputConversion();
+            X12ElementLengthValidationRule unmarshalledObject = new X12ElementLengthValidationRule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedOptions", targetDepth))
-                {
-                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("formatOptions", targetDepth))
-                {
-                    var unmarshaller = FormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("toFormat", targetDepth))
+                if (context.TestExpression("elementId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToFormat = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ElementId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxLength", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxLength = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("minLength", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MinLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputConversionUnmarshaller _instance = new OutputConversionUnmarshaller();        
+        private static X12ElementLengthValidationRuleUnmarshaller _instance = new X12ElementLengthValidationRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputConversionUnmarshaller Instance
+        public static X12ElementLengthValidationRuleUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// X12AdvancedOptions Marshaller
+    /// X12CodeListValidationRule Marshaller
     /// </summary>
-    public class X12AdvancedOptionsMarshaller : IRequestMarshaller<X12AdvancedOptions, JsonMarshallerContext> 
+    public class X12CodeListValidationRuleMarshaller : IRequestMarshaller<X12CodeListValidationRule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,36 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(X12AdvancedOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(X12CodeListValidationRule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSplitOptions())
+            if(requestObject.IsSetCodesToAdd())
             {
-                context.Writer.WritePropertyName("splitOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = X12SplitOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SplitOptions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("codesToAdd");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodesToAddListValue in requestObject.CodesToAdd)
+                {
+                        context.Writer.WriteStringValue(requestObjectCodesToAddListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetValidationOptions())
+            if(requestObject.IsSetCodesToRemove())
             {
-                context.Writer.WritePropertyName("validationOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("codesToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCodesToRemoveListValue in requestObject.CodesToRemove)
+                {
+                        context.Writer.WriteStringValue(requestObjectCodesToRemoveListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
 
-                var marshaller = X12ValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ValidationOptions, context);
-
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetElementId())
+            {
+                context.Writer.WritePropertyName("elementId");
+                context.Writer.WriteStringValue(requestObject.ElementId);
             }
 
         }
@@ -73,7 +79,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static X12AdvancedOptionsMarshaller Instance = new X12AdvancedOptionsMarshaller();
+        public readonly static X12CodeListValidationRuleMarshaller Instance = new X12CodeListValidationRuleMarshaller();
 
     }
 }
