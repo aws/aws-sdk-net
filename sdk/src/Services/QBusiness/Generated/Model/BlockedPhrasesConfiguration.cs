@@ -42,6 +42,12 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// A list of phrases blocked from a Amazon Q Business web experience chat.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each phrase can contain a maximum of 36 characters. The list can contain a maximum
+        /// of 20 phrases.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> BlockedPhrases
         {

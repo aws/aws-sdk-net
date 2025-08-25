@@ -1736,6 +1736,11 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.SearchRelevantContentRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.SearchRelevantContentRequest.NextToken</property>
     <min>1</min>
     <max>800</max>

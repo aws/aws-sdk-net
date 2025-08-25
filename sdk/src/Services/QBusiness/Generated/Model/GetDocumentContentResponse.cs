@@ -40,7 +40,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MimeType. 
         /// <para>
-        /// The MIME type of the document content (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).
+        /// The MIME type of the document content. When outputFormat is RAW, this corresponds
+        /// to the original document's MIME type (e.g., application/pdf, text/plain, application/vnd.openxmlformats-officedocument.wordprocessingml.document).
+        /// When outputFormat is EXTRACTED, the MIME type is always application/json.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

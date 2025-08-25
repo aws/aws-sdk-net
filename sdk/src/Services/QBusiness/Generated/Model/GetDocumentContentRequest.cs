@@ -128,7 +128,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// Raw document outputFormat.
+        /// Document outputFormat. Defaults to RAW if not selected.
         /// </para>
         /// </summary>
         public OutputFormat OutputFormat

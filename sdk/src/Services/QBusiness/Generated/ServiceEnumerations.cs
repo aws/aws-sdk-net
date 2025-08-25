@@ -2099,6 +2099,10 @@ namespace Amazon.QBusiness
     {
 
         /// <summary>
+        /// Constant EXTRACTED for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat EXTRACTED = new OutputFormat("EXTRACTED");
+        /// <summary>
         /// Constant RAW for OutputFormat
         /// </summary>
         public static readonly OutputFormat RAW = new OutputFormat("RAW");

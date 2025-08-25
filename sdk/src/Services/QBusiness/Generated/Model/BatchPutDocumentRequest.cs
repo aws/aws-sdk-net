@@ -107,6 +107,12 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// One or more documents to add to the index.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Ensure that the name of your document doesn't contain any confidential information.
+        /// Amazon Q Business returns document names in chat responses and citations when relevant.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
         public List<Document> Documents

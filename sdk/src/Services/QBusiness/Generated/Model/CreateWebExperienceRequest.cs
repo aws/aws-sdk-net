@@ -185,9 +185,8 @@ namespace Amazon.QBusiness.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must provide this value if you're using IAM Identity Center to manage end user
-        /// access to your application. If you're using legacy identity management to manage user
-        /// access, you don't need to provide this value.
+        /// The <c>roleArn</c> parameter is required when your Amazon Q Business application is
+        /// created with IAM Identity Center. It is not required for SAML-based applications.
         /// </para>
         ///  </note>
         /// </summary>
