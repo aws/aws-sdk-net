@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Test so that no regression happens like the one reported above.
+        /// Test so that no regression happens like the one reported below.
         /// https://github.com/aws/aws-sdk-net/issues/3971 
         /// </summary>
         [TestMethod]
