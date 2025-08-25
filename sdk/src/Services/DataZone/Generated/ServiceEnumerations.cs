@@ -1823,6 +1823,52 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type GlossaryUsageRestriction.
+    /// </summary>
+    public class GlossaryUsageRestriction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET_GOVERNED_TERMS for GlossaryUsageRestriction
+        /// </summary>
+        public static readonly GlossaryUsageRestriction ASSET_GOVERNED_TERMS = new GlossaryUsageRestriction("ASSET_GOVERNED_TERMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlossaryUsageRestriction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlossaryUsageRestriction FindValue(string value)
+        {
+            return FindValue<GlossaryUsageRestriction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlossaryUsageRestriction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlueConnectionType.
     /// </summary>
     public class GlueConnectionType : ConstantClass
@@ -1960,6 +2006,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GovernanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GovernedEntityType.
+    /// </summary>
+    public class GovernedEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for GovernedEntityType
+        /// </summary>
+        public static readonly GovernedEntityType ASSET = new GovernedEntityType("ASSET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GovernedEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernedEntityType FindValue(string value)
+        {
+            return FindValue<GovernedEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernedEntityType(string value)
         {
             return FindValue(value);
         }
@@ -3178,6 +3270,10 @@ namespace Amazon.DataZone
         /// Constant DELETING for ProjectStatus
         /// </summary>
         public static readonly ProjectStatus DELETING = new ProjectStatus("DELETING");
+        /// <summary>
+        /// Constant MOVING for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus MOVING = new ProjectStatus("MOVING");
         /// <summary>
         /// Constant UPDATE_FAILED for ProjectStatus
         /// </summary>

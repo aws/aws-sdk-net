@@ -102,6 +102,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlossaryTerms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("governedGlossaryTerms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DetailedGlossaryTerm, DetailedGlossaryTermUnmarshaller>(DetailedGlossaryTermUnmarshaller.Instance);
+                    unmarshalledObject.GovernedGlossaryTerms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("latestTimeSeriesDataPointForms", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);

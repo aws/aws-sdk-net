@@ -120,6 +120,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlossaryTerms = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("governedGlossaryTerms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.GovernedGlossaryTerms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

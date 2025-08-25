@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateGlossaryTerm operation
+    /// Response Unmarshaller for AssociateGovernedTerms operation
     /// </summary>  
-    public class UpdateGlossaryTermResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateGovernedTermsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,67 +46,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateGlossaryTermResponse response = new UpdateGlossaryTermResponse();
+            AssociateGovernedTermsResponse response = new AssociateGovernedTermsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("domainId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("glossaryId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GlossaryId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("longDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LongDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("shortDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ShortDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("termRelations", targetDepth))
-                {
-                    var unmarshaller = TermRelationsUnmarshaller.Instance;
-                    response.TermRelations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("usageRestrictions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.UsageRestrictions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -161,9 +102,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             return new AmazonDataZoneException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateGlossaryTermResponseUnmarshaller _instance = new UpdateGlossaryTermResponseUnmarshaller();        
+        private static AssociateGovernedTermsResponseUnmarshaller _instance = new AssociateGovernedTermsResponseUnmarshaller();        
 
-        internal static UpdateGlossaryTermResponseUnmarshaller GetInstance()
+        internal static AssociateGovernedTermsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +112,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateGlossaryTermResponseUnmarshaller Instance
+        public static AssociateGovernedTermsResponseUnmarshaller Instance
         {
             get
             {

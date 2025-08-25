@@ -46,6 +46,7 @@ namespace Amazon.DataZone.Model
         private TermRelations _termRelations;
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private List<string> _usageRestrictions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -268,6 +269,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetUpdatedBy()
         {
             return this._updatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageRestrictions. 
+        /// <para>
+        /// The usage restriction of a term within a restricted glossary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UsageRestrictions
+        {
+            get { return this._usageRestrictions; }
+            set { this._usageRestrictions = value; }
+        }
+
+        // Check to see if UsageRestrictions property is set
+        internal bool IsSetUsageRestrictions()
+        {
+            return this._usageRestrictions != null && (this._usageRestrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

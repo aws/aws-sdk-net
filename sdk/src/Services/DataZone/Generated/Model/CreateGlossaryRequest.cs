@@ -41,6 +41,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _owningProjectIdentifier;
         private GlossaryStatus _status;
+        private List<string> _usageRestrictions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -154,6 +155,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageRestrictions. 
+        /// <para>
+        /// The usage restriction of the restricted glossary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> UsageRestrictions
+        {
+            get { return this._usageRestrictions; }
+            set { this._usageRestrictions = value; }
+        }
+
+        // Check to see if UsageRestrictions property is set
+        internal bool IsSetUsageRestrictions()
+        {
+            return this._usageRestrictions != null && (this._usageRestrictions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -359,6 +359,67 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AssociateGovernedTerms
+
+
+        /// <summary>
+        /// Associates governed terms with an asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGovernedTerms service method.</param>
+        /// 
+        /// <returns>The response from the AssociateGovernedTerms service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">REST API Reference for AssociateGovernedTerms Operation</seealso>
+        AssociateGovernedTermsResponse AssociateGovernedTerms(AssociateGovernedTermsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateGovernedTerms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGovernedTerms operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateGovernedTerms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">REST API Reference for AssociateGovernedTerms Operation</seealso>
+        IAsyncResult BeginAssociateGovernedTerms(AssociateGovernedTermsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateGovernedTerms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateGovernedTerms.</param>
+        /// 
+        /// <returns>Returns a  AssociateGovernedTermsResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">REST API Reference for AssociateGovernedTerms Operation</seealso>
+        AssociateGovernedTermsResponse EndAssociateGovernedTerms(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
 
@@ -3734,6 +3795,67 @@ namespace Amazon.DataZone
         /// <returns>Returns a  DisassociateEnvironmentRoleResult from DataZone.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
         DisassociateEnvironmentRoleResponse EndDisassociateEnvironmentRole(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateGovernedTerms
+
+
+        /// <summary>
+        /// Disassociates restricted terms from an asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGovernedTerms service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateGovernedTerms service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">REST API Reference for DisassociateGovernedTerms Operation</seealso>
+        DisassociateGovernedTermsResponse DisassociateGovernedTerms(DisassociateGovernedTermsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateGovernedTerms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGovernedTerms operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateGovernedTerms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">REST API Reference for DisassociateGovernedTerms Operation</seealso>
+        IAsyncResult BeginDisassociateGovernedTerms(DisassociateGovernedTermsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateGovernedTerms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateGovernedTerms.</param>
+        /// 
+        /// <returns>Returns a  DisassociateGovernedTermsResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">REST API Reference for DisassociateGovernedTerms Operation</seealso>
+        DisassociateGovernedTermsResponse EndDisassociateGovernedTerms(IAsyncResult asyncResult);
 
         #endregion
         

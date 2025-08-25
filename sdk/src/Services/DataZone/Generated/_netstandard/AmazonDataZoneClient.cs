@@ -552,6 +552,61 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  AssociateGovernedTerms
+
+        internal virtual AssociateGovernedTermsResponse AssociateGovernedTerms(AssociateGovernedTermsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateGovernedTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGovernedTermsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateGovernedTermsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates governed terms with an asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateGovernedTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateGovernedTerms service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">REST API Reference for AssociateGovernedTerms Operation</seealso>
+        public virtual Task<AssociateGovernedTermsResponse> AssociateGovernedTermsAsync(AssociateGovernedTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateGovernedTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateGovernedTermsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateGovernedTermsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelMetadataGenerationRun
 
         internal virtual CancelMetadataGenerationRunResponse CancelMetadataGenerationRun(CancelMetadataGenerationRunRequest request)
@@ -3596,6 +3651,61 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateEnvironmentRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateGovernedTerms
+
+        internal virtual DisassociateGovernedTermsResponse DisassociateGovernedTerms(DisassociateGovernedTermsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateGovernedTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGovernedTermsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateGovernedTermsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates restricted terms from an asset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateGovernedTerms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateGovernedTerms service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">REST API Reference for DisassociateGovernedTerms Operation</seealso>
+        public virtual Task<DisassociateGovernedTermsResponse> DisassociateGovernedTermsAsync(DisassociateGovernedTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateGovernedTermsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateGovernedTermsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateGovernedTermsResponse>(request, options, cancellationToken);
         }
 
         #endregion

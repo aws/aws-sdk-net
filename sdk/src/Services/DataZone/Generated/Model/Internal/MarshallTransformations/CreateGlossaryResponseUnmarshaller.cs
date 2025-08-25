@@ -88,6 +88,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("usageRestrictions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.UsageRestrictions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

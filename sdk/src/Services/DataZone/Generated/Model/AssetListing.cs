@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private DateTime? _createdAt;
         private string _forms;
         private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
+        private List<DetailedGlossaryTerm> _governedGlossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
         private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointForms = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private string _owningProjectId;
 
@@ -152,6 +153,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GovernedGlossaryTerms. 
+        /// <para>
+        /// The restricted glossary terms associated with an asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<DetailedGlossaryTerm> GovernedGlossaryTerms
+        {
+            get { return this._governedGlossaryTerms; }
+            set { this._governedGlossaryTerms = value; }
+        }
+
+        // Check to see if GovernedGlossaryTerms property is set
+        internal bool IsSetGovernedGlossaryTerms()
+        {
+            return this._governedGlossaryTerms != null && (this._governedGlossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
