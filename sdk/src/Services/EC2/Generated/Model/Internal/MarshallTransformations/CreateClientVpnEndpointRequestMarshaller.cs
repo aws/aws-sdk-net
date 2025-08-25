@@ -169,6 +169,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEndpointIpAddressType())
+                {
+                    request.Parameters.Add("EndpointIpAddressType", StringUtils.FromString(publicRequest.EndpointIpAddressType));
+                }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -221,6 +225,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetTrafficIpAddressType())
+                {
+                    request.Parameters.Add("TrafficIpAddressType", StringUtils.FromString(publicRequest.TrafficIpAddressType));
                 }
                 if(publicRequest.IsSetTransportProtocol())
                 {
