@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGlossary Request Marshaller
+    /// DisassociateGovernedTerms Request Marshaller
     /// </summary>       
-    public class CreateGlossaryRequestMarshaller : IMarshaller<IRequest, CreateGlossaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateGovernedTermsRequestMarshaller : IMarshaller<IRequest, DisassociateGovernedTermsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGlossaryRequest)input);
+            return this.Marshall((DisassociateGovernedTermsRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,23 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGlossaryRequest publicRequest)
+        public IRequest Marshall(DisassociateGovernedTermsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataZone");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetDomainIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
-            request.ResourcePath = "/v2/domains/{domainIdentifier}/glossaries";
+            if (!publicRequest.IsSetEntityIdentifier())
+                throw new AmazonDataZoneException("Request object does not have required field EntityIdentifier set");
+            request.AddPathResource("{entityIdentifier}", StringUtils.FromString(publicRequest.EntityIdentifier));
+            if (!publicRequest.IsSetEntityType())
+                throw new AmazonDataZoneException("Request object does not have required field EntityType set");
+            request.AddPathResource("{entityType}", StringUtils.FromString(publicRequest.EntityType));
+            request.ResourcePath = "/v2/domains/{domainIdentifier}/entities/{entityType}/{entityIdentifier}/disassociate-governed-terms";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -76,48 +82,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
+            if(publicRequest.IsSetGovernedGlossaryTerms())
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetOwningProjectIdentifier())
-            {
-                context.Writer.WritePropertyName("owningProjectIdentifier");
-                context.Writer.WriteStringValue(publicRequest.OwningProjectIdentifier);
-            }
-
-            if(publicRequest.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(publicRequest.Status);
-            }
-
-            if(publicRequest.IsSetUsageRestrictions())
-            {
-                context.Writer.WritePropertyName("usageRestrictions");
+                context.Writer.WritePropertyName("governedGlossaryTerms");
                 context.Writer.WriteStartArray();
-                foreach(var publicRequestUsageRestrictionsListValue in publicRequest.UsageRestrictions)
+                foreach(var publicRequestGovernedGlossaryTermsListValue in publicRequest.GovernedGlossaryTerms)
                 {
-                        context.Writer.WriteStringValue(publicRequestUsageRestrictionsListValue);
+                        context.Writer.WriteStringValue(publicRequestGovernedGlossaryTermsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -135,9 +106,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateGlossaryRequestMarshaller _instance = new CreateGlossaryRequestMarshaller();        
+        private static DisassociateGovernedTermsRequestMarshaller _instance = new DisassociateGovernedTermsRequestMarshaller();        
 
-        internal static CreateGlossaryRequestMarshaller GetInstance()
+        internal static DisassociateGovernedTermsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +116,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGlossaryRequestMarshaller Instance
+        public static DisassociateGovernedTermsRequestMarshaller Instance
         {
             get
             {
