@@ -97,6 +97,10 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         public static readonly ClusterStatus FAILED = new ClusterStatus("FAILED");
         /// <summary>
+        /// Constant MAINTENANCE for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus MAINTENANCE = new ClusterStatus("MAINTENANCE");
+        /// <summary>
         /// Constant UPDATING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
@@ -610,6 +614,10 @@ namespace Amazon.TimestreamInfluxDB
         /// Constant FAILED for Status
         /// </summary>
         public static readonly Status FAILED = new Status("FAILED");
+        /// <summary>
+        /// Constant MAINTENANCE for Status
+        /// </summary>
+        public static readonly Status MAINTENANCE = new Status("MAINTENANCE");
         /// <summary>
         /// Constant MODIFYING for Status
         /// </summary>
