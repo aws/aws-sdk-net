@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixes issue #3971. For initiateMultipartUpload, if CannedACL was set to NoACL, request was failing with bad request error."
+      ]
+    }
+  ]
+}
