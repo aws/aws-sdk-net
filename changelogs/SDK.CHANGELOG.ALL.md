@@ -1,3 +1,21 @@
+### 4.0.77.0 (2025-08-25 20:57 UTC)
+* B2bi (4.0.3.0)
+	* Updated APIs to support custom validation rules.
+* CodeGuruSecurity (4.0.0.21)
+	* Documentation update to notify users of the discontinuation of Amazon CodeGuru Security.
+* DataZone (4.0.7.0)
+	* Releasing the following features - Asset classification that lets users use restricted terms for classifying assets if they have the right permissions. Also adding a new enum value "Moving" to project status.
+* EC2 (4.0.32.0)
+	* Added IPv6 support for AWS Client VPN.
+* MediaConvert (4.0.8.0)
+	* This release adds support for input rendition selection for HLS input, adds new Share API to enable sharing jobs with AWS Support for support investigations, and adds INCLUDE_AS_TS to iFrameOnlyManifest setting for HLS outputs.
+* QBusiness (4.0.5.0)
+	* The Amazon Q Business GetDocumentContent operation now supports retrieval of the extracted text content in JSON format.
+* SQS (4.0.1.1)
+	* Documentation update for Amazon SQS Supports Large Payload Message feature
+* TimestreamInfluxDB (4.0.3.0)
+	* Add MAINTENANCE status for DbInstance and DbCluster
+
 ### 4.0.76.0 (2025-08-22 19:15 UTC)
 * Account (4.0.1.0)
 	* Remove incorrect endpoint tests
