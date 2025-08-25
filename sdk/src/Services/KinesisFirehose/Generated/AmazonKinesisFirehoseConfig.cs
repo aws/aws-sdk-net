@@ -32,7 +32,7 @@ namespace Amazon.KinesisFirehose
     public partial class AmazonKinesisFirehoseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Firehose", "3.7.501.0");
+            InternalSDKUtils.BuildUserAgentString("Firehose", "3.7.501.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>
