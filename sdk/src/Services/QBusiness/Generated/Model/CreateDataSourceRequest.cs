@@ -243,7 +243,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role with permission to access the data source
-        /// and required resources.
+        /// and required resources. This field is required for all connector types except custom
+        /// connectors, where it is optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

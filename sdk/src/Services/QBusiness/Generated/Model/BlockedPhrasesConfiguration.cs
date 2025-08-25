@@ -42,6 +42,12 @@ namespace Amazon.QBusiness.Model
         /// <para>
         /// A list of phrases blocked from a Amazon Q Business web experience chat.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Each phrase can contain a maximum of 36 characters. The list can contain a maximum
+        /// of 20 phrases.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

@@ -1960,6 +1960,10 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
@@ -1997,6 +2001,10 @@ namespace Amazon.QBusiness
         /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
