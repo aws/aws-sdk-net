@@ -13548,6 +13548,10 @@ namespace Amazon.MediaConvert
         /// Constant INCLUDE for HlsIFrameOnlyManifest
         /// </summary>
         public static readonly HlsIFrameOnlyManifest INCLUDE = new HlsIFrameOnlyManifest("INCLUDE");
+        /// <summary>
+        /// Constant INCLUDE_AS_TS for HlsIFrameOnlyManifest
+        /// </summary>
+        public static readonly HlsIFrameOnlyManifest INCLUDE_AS_TS = new HlsIFrameOnlyManifest("INCLUDE_AS_TS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -17428,6 +17432,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MovReference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mp2AudioDescriptionMix.
+    /// </summary>
+    public class Mp2AudioDescriptionMix : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BROADCASTER_MIXED_AD for Mp2AudioDescriptionMix
+        /// </summary>
+        public static readonly Mp2AudioDescriptionMix BROADCASTER_MIXED_AD = new Mp2AudioDescriptionMix("BROADCASTER_MIXED_AD");
+        /// <summary>
+        /// Constant NONE for Mp2AudioDescriptionMix
+        /// </summary>
+        public static readonly Mp2AudioDescriptionMix NONE = new Mp2AudioDescriptionMix("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mp2AudioDescriptionMix(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mp2AudioDescriptionMix FindValue(string value)
+        {
+            return FindValue<Mp2AudioDescriptionMix>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mp2AudioDescriptionMix(string value)
         {
             return FindValue(value);
         }
@@ -21511,6 +21565,60 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type ShareStatus.
+    /// </summary>
+    public class ShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INITIATED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus INITIATED = new ShareStatus("INITIATED");
+        /// <summary>
+        /// Constant NOT_SHARED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus NOT_SHARED = new ShareStatus("NOT_SHARED");
+        /// <summary>
+        /// Constant SHARED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus SHARED = new ShareStatus("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareStatus FindValue(string value)
+        {
+            return FindValue<ShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SimulateReservedQueue.
     /// </summary>
     public class SimulateReservedQueue : ConstantClass
@@ -23352,6 +23460,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoOverlayUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoSelectorType.
+    /// </summary>
+    public class VideoSelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for VideoSelectorType
+        /// </summary>
+        public static readonly VideoSelectorType AUTO = new VideoSelectorType("AUTO");
+        /// <summary>
+        /// Constant STREAM for VideoSelectorType
+        /// </summary>
+        public static readonly VideoSelectorType STREAM = new VideoSelectorType("STREAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoSelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoSelectorType FindValue(string value)
+        {
+            return FindValue<VideoSelectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoSelectorType(string value)
         {
             return FindValue(value);
         }

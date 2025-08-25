@@ -34,9 +34,33 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class Mp2Settings
     {
+        private Mp2AudioDescriptionMix _audioDescriptionMix;
         private int? _bitrate;
         private int? _channels;
         private int? _sampleRate;
+
+        /// <summary>
+        /// Gets and sets the property AudioDescriptionMix. Choose BROADCASTER_MIXED_AD when the
+        /// input contains pre-mixed main audio + audio description (AD) as a stereo pair. The
+        /// value for AudioType will be set to 3, which signals to downstream systems that this
+        /// stream contains "broadcaster mixed AD". Note that the input received by the encoder
+        /// must contain pre-mixed audio; the encoder does not perform the mixing. When you choose
+        /// BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and
+        /// FollowInputAudioType. Choose NONE when the input does not contain pre-mixed audio
+        /// + audio description (AD). In this case, the encoder will use any values you provide
+        /// for AudioType and FollowInputAudioType.
+        /// </summary>
+        public Mp2AudioDescriptionMix AudioDescriptionMix
+        {
+            get { return this._audioDescriptionMix; }
+            set { this._audioDescriptionMix = value; }
+        }
+
+        // Check to see if AudioDescriptionMix property is set
+        internal bool IsSetAudioDescriptionMix()
+        {
+            return this._audioDescriptionMix != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.

@@ -132,6 +132,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.SampleRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("selectorType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelectorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("streams", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.Streams = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

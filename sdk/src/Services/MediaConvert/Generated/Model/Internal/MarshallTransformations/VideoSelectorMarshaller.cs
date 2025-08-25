@@ -119,6 +119,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SampleRange);
             }
 
+            if(requestObject.IsSetSelectorType())
+            {
+                context.Writer.WritePropertyName("selectorType");
+                context.Writer.Write(requestObject.SelectorType);
+            }
+
+            if(requestObject.IsSetStreams())
+            {
+                context.Writer.WritePropertyName("streams");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStreamsListValue in requestObject.Streams)
+                {
+                        context.Writer.Write(requestObjectStreamsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

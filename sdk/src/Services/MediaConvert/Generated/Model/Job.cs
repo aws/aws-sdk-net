@@ -50,6 +50,7 @@ namespace Amazon.MediaConvert.Model
         private string _jobEngineVersionUsed;
         private int? _jobPercentComplete;
         private string _jobTemplate;
+        private string _lastShareDetails;
         private JobMessages _messages;
         private List<OutputGroupDetail> _outputGroupDetails = AWSConfigs.InitializeCollections ? new List<OutputGroupDetail>() : null;
         private int? _priority;
@@ -58,6 +59,7 @@ namespace Amazon.MediaConvert.Model
         private int? _retryCount;
         private string _role;
         private JobSettings _settings;
+        private ShareStatus _shareStatus;
         private SimulateReservedQueue _simulateReservedQueue;
         private JobStatus _status;
         private StatusUpdateInterval _statusUpdateInterval;
@@ -327,6 +329,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastShareDetails. Contains information about the most recent
+        /// share attempt for the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/creating-resource-share.html
+        /// </summary>
+        public string LastShareDetails
+        {
+            get { return this._lastShareDetails; }
+            set { this._lastShareDetails = value; }
+        }
+
+        // Check to see if LastShareDetails property is set
+        internal bool IsSetLastShareDetails()
+        {
+            return this._lastShareDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Messages. Provides messages from the service about jobs
         /// that you have already successfully submitted.
         /// </summary>
@@ -453,6 +471,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareStatus. A job's share status can be NOT_SHARED, INITIATED,
+        /// or SHARED
+        /// </summary>
+        public ShareStatus ShareStatus
+        {
+            get { return this._shareStatus; }
+            set { this._shareStatus = value; }
+        }
+
+        // Check to see if ShareStatus property is set
+        internal bool IsSetShareStatus()
+        {
+            return this._shareStatus != null;
         }
 
         /// <summary>
