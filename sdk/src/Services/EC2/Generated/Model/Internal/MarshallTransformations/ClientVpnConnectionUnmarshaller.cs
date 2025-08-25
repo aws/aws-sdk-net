@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("clientIpv6Address", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientIpv6Address = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientVpnEndpointId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -5517,6 +5517,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointIpAddressType.
+    /// </summary>
+    public class EndpointIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DualStack for EndpointIpAddressType
+        /// </summary>
+        public static readonly EndpointIpAddressType DualStack = new EndpointIpAddressType("dual-stack");
+        /// <summary>
+        /// Constant Ipv4 for EndpointIpAddressType
+        /// </summary>
+        public static readonly EndpointIpAddressType Ipv4 = new EndpointIpAddressType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for EndpointIpAddressType
+        /// </summary>
+        public static readonly EndpointIpAddressType Ipv6 = new EndpointIpAddressType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointIpAddressType FindValue(string value)
+        {
+            return FindValue<EndpointIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EphemeralNvmeSupport.
     /// </summary>
     public class EphemeralNvmeSupport : ConstantClass
@@ -22550,6 +22604,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrafficDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrafficIpAddressType.
+    /// </summary>
+    public class TrafficIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DualStack for TrafficIpAddressType
+        /// </summary>
+        public static readonly TrafficIpAddressType DualStack = new TrafficIpAddressType("dual-stack");
+        /// <summary>
+        /// Constant Ipv4 for TrafficIpAddressType
+        /// </summary>
+        public static readonly TrafficIpAddressType Ipv4 = new TrafficIpAddressType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for TrafficIpAddressType
+        /// </summary>
+        public static readonly TrafficIpAddressType Ipv6 = new TrafficIpAddressType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrafficIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficIpAddressType FindValue(string value)
+        {
+            return FindValue<TrafficIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficIpAddressType(string value)
         {
             return FindValue(value);
         }
