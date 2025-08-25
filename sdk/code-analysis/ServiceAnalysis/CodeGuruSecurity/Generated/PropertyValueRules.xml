@@ -4,39 +4,39 @@
     <property>Amazon.CodeGuruSecurity.Model.CreateScanRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateScanRequest.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateScanResponse.RunId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateScanResponse.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateScanResponse.ScanNameArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateUploadUrlRequest.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateUploadUrlResponse.CodeArtifactId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.CreateUploadUrlResponse.S3Url</property>
@@ -51,29 +51,29 @@
     <property>Amazon.CodeGuruSecurity.Model.GetFindingsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetFindingsRequest.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetFindingsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanRequest.RunId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanRequest.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.ErrorMessage</property>
@@ -81,19 +81,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.RunId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.GetScanResponse.ScanNameArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ListFindingsMetricsRequest.MaxResults</property>
@@ -104,13 +104,13 @@
     <property>Amazon.CodeGuruSecurity.Model.ListFindingsMetricsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ListFindingsMetricsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ListScansRequest.MaxResults</property>
@@ -121,62 +121,62 @@
     <property>Amazon.CodeGuruSecurity.Model.ListScansRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ListScansResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^[\S]+$</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.BatchGetFindingsError.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.EncryptionConfig.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^arn:aws:kms:[\S]+:[\d]{12}:key\/(([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})|(mrk-[0-9a-zA-Z]{32}))$</pattern>
+    <pattern>arn:aws:kms:[\S]+:[\d]{12}:key\/(([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})|(mrk-[0-9a-zA-Z]{32}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ResourceId.CodeArtifactId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ScanSummary.RunId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ScanSummary.ScanName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>^[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruSecurity.Model.ScanSummary.ScanNameArn</property>
     <min>1</min>
     <max>300</max>
-    <pattern>^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$</pattern>
+    <pattern>arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*</pattern>
   </property-value-rule>
 </property-value-rules>
