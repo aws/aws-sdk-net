@@ -2076,6 +2076,48 @@ this.Write("\r\n");
         
         #line default
         #line hidden
+        
+        #line 625 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+
+    // writes injected xml code. Call this when you know that the property modifier exists.
+    protected void WriteInjectXmlCode(HashSet<string> codeArray, int level)
+    {
+        foreach (var code in codeArray)
+        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 632 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 632 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(code));
+
+        
+        #line default
+        #line hidden
+        
+        #line 632 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+this.Write("\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 633 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
+      
+        }
+    }
+
+        
+        #line default
+        #line hidden
     }
     
     #line default

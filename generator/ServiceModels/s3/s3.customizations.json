@@ -164,6 +164,13 @@
                 },
                 {
                     "NoncurrentVersionTransition": {"emitPropertyName": "NoncurrentVersionTransitions"}
+                },
+                {
+                    "Status":{
+                          "injectXmlPrivateMemberAssignment" :[
+                            "private LifecycleRuleStatus _status = LifecycleRuleStatus.Disabled;"
+                        ]
+                    }
                 }
             ],
             "predicateListUnmarshallers":[
@@ -261,7 +268,7 @@
                 },
                 {
                     "CannedACL":{
-                          "injectXmlUnmarshallCode" :[
+                          "injectXmlIsSet" :[
                             "return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;"
                         ]
                     }
@@ -479,6 +486,30 @@
             "modify":[
                 {
                     "ID": {"emitPropertyName": "CanonicalUser"}
+                },
+                {
+                    "Type":{
+                        "injectXmlPropertyGetter":[
+                            "get",
+                            "{",
+                            "   if (this.IsSetEmailAddress())",
+                            "       return GranteeType.Email;",
+                            "   if (this.IsSetURI())",
+                            "       return GranteeType.Group;",
+                            "   if (this.IsSetCanonicalUser())",
+                            "       return GranteeType.CanonicalUser;",
+                            "   return null;",
+                            "}"
+
+                        ],
+                        "skipSetter" : true,
+                        "injectXmlIsSet":[
+                            "return Type != null;"
+                        ],
+                        "injectXmlPrivateMemberAssignment":[
+                            ""
+                        ]
+                    }
                 }
             ],
             "excludeFromUnmarshalling":[
@@ -581,6 +612,21 @@
                 },
                 {
                     "IfUnmodifiedSince" : {"emitPropertyName" : "UnmodifiedSinceDate"}
+                },
+                {
+                    "ModifiedSinceDate":
+                    {
+                        "injectXmlPropertyGetter" : [
+                            "get { return this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"
+                        ]
+                    }
+                },
+                {
+                    "UnmodifiedSinceDate":{
+                        "injectXmlPropertyGetter" : [
+                            "get { return this._unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }"
+                        ]
+                    }
                 },
                 {
                     "IfMatch" : {"emitPropertyName" : "EtagToMatch"}
@@ -832,6 +878,12 @@
         },
         "ObjectStorageClass": {
              "renameShape": "S3StorageClass"
+        },
+        "ExpirationStatus": {
+            "renameShape": "LifecycleRuleStatus"
+        },
+        "Type" :{
+            "renameShape":"GranteeType"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -990,9 +1042,6 @@
             "ETag",
             "PartNumber"
         ],
-        "LifecycleRule":[
-            "Status"
-        ],
         "TopicConfiguration":[
             "Events",
             "Filter"
@@ -1004,13 +1053,6 @@
         "LambdaFunctionConfiguration":[
             "Events",
             "Filter"
-        ],
-        "S3Grantee":[
-            "Type"
-        ],
-        "HeadObjectRequest":[
-            "UnmodifiedSinceDate",
-            "ModifiedSinceDate"
         ],
         "S3ObjectVersion":[
             "ChecksumAlgorithm",
@@ -1048,6 +1090,9 @@
         },
         "S3ObjectVersion" :{
             "alternateBaseClass" : "S3Object"
+        },
+        "PartDetail":{
+            "alternateBaseClass": "PartETag"
         }
     },
     "flattenShapes" : {
