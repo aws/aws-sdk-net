@@ -79,6 +79,7 @@ namespace Amazon.GeoRoutes.Model
         /// The time.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Time
         {
             get { return this._time; }

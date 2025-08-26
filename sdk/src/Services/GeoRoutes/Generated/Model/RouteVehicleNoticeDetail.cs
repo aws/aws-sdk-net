@@ -43,6 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// The notice title.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Title
         {
             get { return this._title; }

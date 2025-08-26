@@ -84,6 +84,7 @@ namespace Amazon.GeoRoutes.Model
         /// or work. This contributes to the total time breakdown returned within the response.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public WaypointOptimizationServiceTimeTreatment TreatServiceTimeAs
         {
             get { return this._treatServiceTimeAs; }

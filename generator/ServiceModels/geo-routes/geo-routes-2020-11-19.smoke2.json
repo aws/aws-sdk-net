@@ -24,11 +24,14 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "CalculateRoutesSuccess",
-    "operationName" : "CalculateRoutes",
+    "id" : "SnapToRoadsSuccess",
+    "operationName" : "SnapToRoads",
     "input" : {
-      "Origin" : [ -123.253374, 49.351673 ],
-      "Destination" : [ -123.930756, 49.1314 ]
+      "TracePoints" : [ {
+        "Position" : [ 8.53404, 50.16364 ]
+      }, {
+        "Position" : [ 8.53379056, 50.16352417 ]
+      } ]
     },
     "expectation" : {
       "success" : { }
@@ -40,14 +43,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "SnapToRoadsSuccess",
-    "operationName" : "SnapToRoads",
+    "id" : "CalculateRoutesSuccess",
+    "operationName" : "CalculateRoutes",
     "input" : {
-      "TracePoints" : [ {
-        "Position" : [ 8.53404, 50.16364 ]
-      }, {
-        "Position" : [ 8.53379056, 50.16352417 ]
-      } ]
+      "Origin" : [ -123.253374, 49.351673 ],
+      "Destination" : [ -123.930756, 49.1314 ]
     },
     "expectation" : {
       "success" : { }

@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// Day of the week.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DayOfWeek DayOfWeek
         {
             get { return this._dayOfWeek; }
@@ -62,7 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// Time of the day.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string TimeOfDay
         {
             get { return this._timeOfDay; }

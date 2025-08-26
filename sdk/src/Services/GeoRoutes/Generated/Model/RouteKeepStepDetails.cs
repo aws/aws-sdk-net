@@ -69,6 +69,7 @@ namespace Amazon.GeoRoutes.Model
         /// Steering direction for the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteSteeringDirection SteeringDirection
         {
             get { return this._steeringDirection; }
@@ -106,6 +107,7 @@ namespace Amazon.GeoRoutes.Model
         /// Intensity of the turn.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteTurnIntensity TurnIntensity
         {
             get { return this._turnIntensity; }

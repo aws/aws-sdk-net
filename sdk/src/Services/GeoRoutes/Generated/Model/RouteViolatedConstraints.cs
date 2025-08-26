@@ -61,6 +61,7 @@ namespace Amazon.GeoRoutes.Model
         /// on which hazardous materials are prohibited from being transported.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? AllHazardsRestricted
         {
             get { return this._allHazardsRestricted; }
@@ -121,7 +122,7 @@ namespace Amazon.GeoRoutes.Model
         /// The maximum height of the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxHeight
         {
             get { return this._maxHeight; }
@@ -144,7 +145,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxKpraLength
         {
             get { return this._maxKpraLength; }
@@ -163,7 +164,7 @@ namespace Amazon.GeoRoutes.Model
         /// The maximum length of the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxLength
         {
             get { return this._maxLength; }
@@ -186,7 +187,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxPayloadCapacity
         {
             get { return this._maxPayloadCapacity; }
@@ -231,7 +232,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxWeightPerAxle
         {
             get { return this._maxWeightPerAxle; }
@@ -272,7 +273,7 @@ namespace Amazon.GeoRoutes.Model
         /// The maximum width of the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxWidth
         {
             get { return this._maxWidth; }
@@ -331,6 +332,7 @@ namespace Amazon.GeoRoutes.Model
         /// The time dependent constraint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? TimeDependent
         {
             get { return this._timeDependent; }
@@ -371,6 +373,7 @@ namespace Amazon.GeoRoutes.Model
         /// Travel mode corresponding to the leg.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? TravelMode
         {
             get { return this._travelMode; }
@@ -413,6 +416,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the truck.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteTruckType TruckType
         {
             get { return this._truckType; }
@@ -486,7 +490,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1)]
         public string TunnelRestrictionCode
         {
             get { return this._tunnelRestrictionCode; }
