@@ -5306,6 +5306,65 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateImageUsageReport
+
+
+        /// <summary>
+        /// Creates a report that shows how your image is used across other Amazon Web Services
+        /// accounts. The report provides visibility into which accounts are using the specified
+        /// image, and how many resources (EC2 instances or launch templates) are referencing
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageUsageReport service method.</param>
+        /// 
+        /// <returns>The response from the CreateImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        public virtual CreateImageUsageReportResponse CreateImageUsageReport(CreateImageUsageReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageUsageReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a report that shows how your image is used across other Amazon Web Services
+        /// accounts. The report provides visibility into which accounts are using the specified
+        /// image, and how many resources (EC2 instances or launch templates) are referencing
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageUsageReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        public virtual Task<CreateImageUsageReportResponse> CreateImageUsageReportAsync(CreateImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateImageUsageReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInstanceConnectEndpoint
 
 
@@ -10889,6 +10948,59 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteFpgaImageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImageUsageReport
+
+
+        /// <summary>
+        /// Deletes the specified image usage report.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageUsageReport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        public virtual DeleteImageUsageReportResponse DeleteImageUsageReport(DeleteImageUsageReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageUsageReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified image usage report.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageUsageReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        public virtual Task<DeleteImageUsageReportResponse> DeleteImageUsageReportAsync(DeleteImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteImageUsageReportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17669,6 +17781,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeImageReferences
+
+
+        /// <summary>
+        /// Describes your Amazon Web Services resources that are referencing the specified images.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
+        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        public virtual DescribeImageReferencesResponse DescribeImageReferences(DescribeImageReferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageReferencesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes your Amazon Web Services resources that are referencing the specified images.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
+        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        public virtual Task<DescribeImageReferencesResponse> DescribeImageReferencesAsync(DescribeImageReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImageReferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeImages
 
 
@@ -17904,6 +18071,116 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeImagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageUsageReportEntries
+
+
+        /// <summary>
+        /// Describes the entries in image usage reports, showing how your images are used across
+        /// other Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReportEntries service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReportEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        public virtual DescribeImageUsageReportEntriesResponse DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageUsageReportEntriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the entries in image usage reports, showing how your images are used across
+        /// other Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReportEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReportEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        public virtual Task<DescribeImageUsageReportEntriesResponse> DescribeImageUsageReportEntriesAsync(DescribeImageUsageReportEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImageUsageReportEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageUsageReports
+
+
+        /// <summary>
+        /// Describes the configuration and status of image usage reports, filtered by report
+        /// IDs or image IDs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        public virtual DescribeImageUsageReportsResponse DescribeImageUsageReports(DescribeImageUsageReportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageUsageReportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the configuration and status of image usage reports, filtered by report
+        /// IDs or image IDs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        public virtual Task<DescribeImageUsageReportsResponse> DescribeImageUsageReportsAsync(DescribeImageUsageReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImageUsageReportsResponse>(request, options, cancellationToken);
         }
 
         #endregion

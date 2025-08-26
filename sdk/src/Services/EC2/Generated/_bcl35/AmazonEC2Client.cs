@@ -5406,6 +5406,69 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateImageUsageReport
+
+        /// <summary>
+        /// Creates a report that shows how your image is used across other Amazon Web Services
+        /// accounts. The report provides visibility into which accounts are using the specified
+        /// image, and how many resources (EC2 instances or launch templates) are referencing
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageUsageReport service method.</param>
+        /// 
+        /// <returns>The response from the CreateImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        public virtual CreateImageUsageReportResponse CreateImageUsageReport(CreateImageUsageReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateImageUsageReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateImageUsageReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageUsageReport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImageUsageReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        public virtual IAsyncResult BeginCreateImageUsageReport(CreateImageUsageReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateImageUsageReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImageUsageReport.</param>
+        /// 
+        /// <returns>Returns a  CreateImageUsageReportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        public virtual CreateImageUsageReportResponse EndCreateImageUsageReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateImageUsageReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateInstanceConnectEndpoint
 
         /// <summary>
@@ -11041,6 +11104,66 @@ namespace Amazon.EC2
         public virtual DeleteFpgaImageResponse EndDeleteFpgaImage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFpgaImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteImageUsageReport
+
+        /// <summary>
+        /// Deletes the specified image usage report.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageUsageReport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        public virtual DeleteImageUsageReportResponse DeleteImageUsageReport(DeleteImageUsageReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImageUsageReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImageUsageReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageUsageReport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImageUsageReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImageUsageReport(DeleteImageUsageReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImageUsageReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImageUsageReport.</param>
+        /// 
+        /// <returns>Returns a  DeleteImageUsageReportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        public virtual DeleteImageUsageReportResponse EndDeleteImageUsageReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImageUsageReportResponse>(asyncResult);
         }
 
         #endregion
@@ -18636,6 +18759,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeImageReferences
+
+        /// <summary>
+        /// Describes your Amazon Web Services resources that are referencing the specified images.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
+        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        public virtual DescribeImageReferencesResponse DescribeImageReferences(DescribeImageReferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageReferencesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageReferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageReferences(DescribeImageReferencesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageReferences.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageReferencesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        public virtual DescribeImageReferencesResponse EndDescribeImageReferences(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageReferencesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeImages
 
         /// <summary>
@@ -18783,6 +18967,128 @@ namespace Amazon.EC2
         public virtual DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImageUsageReportEntries
+
+        /// <summary>
+        /// Describes the entries in image usage reports, showing how your images are used across
+        /// other Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReportEntries service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReportEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        public virtual DescribeImageUsageReportEntriesResponse DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageUsageReportEntriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageUsageReportEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReportEntries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageUsageReportEntries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageUsageReportEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageUsageReportEntries.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageUsageReportEntriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        public virtual DescribeImageUsageReportEntriesResponse EndDescribeImageUsageReportEntries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageUsageReportEntriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeImageUsageReports
+
+        /// <summary>
+        /// Describes the configuration and status of image usage reports, filtered by report
+        /// IDs or image IDs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        public virtual DescribeImageUsageReportsResponse DescribeImageUsageReports(DescribeImageUsageReportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageUsageReportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageUsageReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReports operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageUsageReports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImageUsageReports(DescribeImageUsageReportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageUsageReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageUsageReports.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageUsageReportsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        public virtual DescribeImageUsageReportsResponse EndDescribeImageUsageReports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImageUsageReportsResponse>(asyncResult);
         }
 
         #endregion

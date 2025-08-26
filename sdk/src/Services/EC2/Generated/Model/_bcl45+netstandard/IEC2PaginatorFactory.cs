@@ -348,6 +348,16 @@ namespace Amazon.EC2.Model
         IDescribeIamInstanceProfileAssociationsPaginator DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeImageReferences operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeImageReferencesPaginator DescribeImageReferences(DescribeImageReferencesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
         [AWSPaginator(
@@ -356,6 +366,26 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReportEntries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeImageUsageReportEntriesPaginator DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReports operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeImageUsageReportsPaginator DescribeImageUsageReports(DescribeImageUsageReportsRequest request);
 
         /// <summary>
         /// Paginator for DescribeImportImageTasks operation

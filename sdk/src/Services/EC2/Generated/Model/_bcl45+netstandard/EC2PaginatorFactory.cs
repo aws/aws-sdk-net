@@ -293,11 +293,35 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeImageReferences operation
+        ///</summary>
+        public IDescribeImageReferencesPaginator DescribeImageReferences(DescribeImageReferencesRequest request) 
+        {
+            return new DescribeImageReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
         public IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request) 
         {
             return new DescribeImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReportEntries operation
+        ///</summary>
+        public IDescribeImageUsageReportEntriesPaginator DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request) 
+        {
+            return new DescribeImageUsageReportEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReports operation
+        ///</summary>
+        public IDescribeImageUsageReportsPaginator DescribeImageUsageReports(DescribeImageUsageReportsRequest request) 
+        {
+            return new DescribeImageUsageReportsPaginator(this.client, request);
         }
 
         /// <summary>

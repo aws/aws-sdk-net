@@ -59,11 +59,20 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActivityStatus. 
         /// <para>
-        /// The progress of the EC2 Fleet. If there is an error, the status is <c>error</c>. After
-        /// all requests are placed, the status is <c>pending_fulfillment</c>. If the size of
-        /// the EC2 Fleet is equal to or greater than its target capacity, the status is <c>fulfilled</c>.
-        /// If the size of the EC2 Fleet is decreased, the status is <c>pending_termination</c>
-        /// while instances are terminating.
+        /// The progress of the EC2 Fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets of type <c>instant</c>, the status is <c>fulfilled</c> after all requests
+        /// are placed, regardless of whether target capacity is met (this is the only possible
+        /// status for <c>instant</c> fleets).
+        /// </para>
+        ///  
+        /// <para>
+        /// For fleets of type <c>request</c> or <c>maintain</c>, the status is <c>pending_fulfillment</c>
+        /// after all requests are placed, <c>fulfilled</c> when the fleet size meets or exceeds
+        /// target capacity, <c>pending_termination</c> while instances are terminating when fleet
+        /// size is decreased, and <c>error</c> if there's an error.
         /// </para>
         /// </summary>
         public FleetActivityStatus ActivityStatus

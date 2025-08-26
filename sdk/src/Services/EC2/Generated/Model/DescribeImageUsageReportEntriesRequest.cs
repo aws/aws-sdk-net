@@ -30,16 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVpcEndpointAssociations operation.
-    /// Describes the VPC resources, VPC endpoint services, Amazon Lattice services, or service
-    /// networks associated with the VPC endpoint.
+    /// Container for the parameters to the DescribeImageUsageReportEntries operation.
+    /// Describes the entries in image usage reports, showing how your images are used across
+    /// other Amazon Web Services accounts.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+    /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class DescribeVpcEndpointAssociationsRequest : AmazonEC2Request
+    public partial class DescribeImageUsageReportEntriesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _imageIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _vpcEndpointIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _reportIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -48,35 +55,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>vpc-endpoint-id</c> - The ID of the VPC endpoint.
+        ///  <c>account-id</c> - A 12-digit Amazon Web Services account ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>associated-resource-accessibility</c> - The association state. When the state
-        /// is <c>accessible</c>, it returns <c>AVAILABLE</c>. When the state is <c>inaccessible</c>,
-        /// it returns <c>PENDING</c> or <c>FAILED</c>.
+        ///  <c>creation-time</c> - The time when the report was created, in the ISO 8601 format
+        /// in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <c>2025-11-29T11:04:43.305Z</c>.
+        /// You can use a wildcard (<c>*</c>), for example, <c>2025-11-29T*</c>, which matches
+        /// an entire day.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>association-id</c> - The ID of the VPC endpoint association.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>associated-resource-id</c> - The ID of the associated resource configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>service-network-arn</c> - The Amazon Resource Name (ARN) of the associated service
-        /// network. Only VPC endpoints of type service network will be returned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>resource-configuration-group-arn</c> - The Amazon Resource Name (ARN) of the resource
-        /// configuration of type GROUP.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>service-network-resource-association-id</c> - The ID of the association.
+        ///  <c>resource-type</c> - The resource type (<c>ec2:Instance</c> | <c>ec2:LaunchTemplate</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,12 +83,34 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ImageIds. 
         /// <para>
-        /// The maximum page size.
+        /// The IDs of the images for filtering the report entries. If specified, only report
+        /// entries containing these images are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=200)]
+        public List<string> ImageIds
+        {
+            get { return this._imageIds; }
+            set { this._imageIds = value; }
+        }
+
+        // Check to see if ImageIds property is set
+        internal bool IsSetImageIds()
+        {
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -114,7 +126,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -130,21 +143,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcEndpointIds. 
+        /// Gets and sets the property ReportIds. 
         /// <para>
-        /// The IDs of the VPC endpoints.
+        /// The IDs of the usage reports.
         /// </para>
         /// </summary>
-        public List<string> VpcEndpointIds
+        [AWSProperty(Min=0, Max=200)]
+        public List<string> ReportIds
         {
-            get { return this._vpcEndpointIds; }
-            set { this._vpcEndpointIds = value; }
+            get { return this._reportIds; }
+            set { this._reportIds = value; }
         }
 
-        // Check to see if VpcEndpointIds property is set
-        internal bool IsSetVpcEndpointIds()
+        // Check to see if ReportIds property is set
+        internal bool IsSetReportIds()
         {
-            return this._vpcEndpointIds != null && (this._vpcEndpointIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._reportIds != null && (this._reportIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

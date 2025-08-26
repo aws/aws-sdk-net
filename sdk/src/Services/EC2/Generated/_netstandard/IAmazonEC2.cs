@@ -2363,6 +2363,33 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateImageUsageReport
+
+
+
+        /// <summary>
+        /// Creates a report that shows how your image is used across other Amazon Web Services
+        /// accounts. The report provides visibility into which accounts are using the specified
+        /// image, and how many resources (EC2 instances or launch templates) are referencing
+        /// it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImageUsageReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
+        Task<CreateImageUsageReportResponse> CreateImageUsageReportAsync(CreateImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateInstanceConnectEndpoint
 
 
@@ -4940,6 +4967,30 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteFpgaImage service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
         Task<DeleteFpgaImageResponse> DeleteFpgaImageAsync(DeleteFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteImageUsageReport
+
+
+
+        /// <summary>
+        /// Deletes the specified image usage report.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImageUsageReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImageUsageReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
+        Task<DeleteImageUsageReportResponse> DeleteImageUsageReportAsync(DeleteImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8007,6 +8058,31 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeImageReferences
+
+
+
+        /// <summary>
+        /// Describes your Amazon Web Services resources that are referencing the specified images.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
+        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
+        Task<DescribeImageReferencesResponse> DescribeImageReferencesAsync(DescribeImageReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeImages
 
 
@@ -8120,6 +8196,56 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImageUsageReportEntries
+
+
+
+        /// <summary>
+        /// Describes the entries in image usage reports, showing how your images are used across
+        /// other Amazon Web Services accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReportEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReportEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
+        Task<DescribeImageUsageReportEntriesResponse> DescribeImageUsageReportEntriesAsync(DescribeImageUsageReportEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeImageUsageReports
+
+
+
+        /// <summary>
+        /// Describes the configuration and status of image usage reports, filtered by report
+        /// IDs or image IDs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageUsageReports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageUsageReports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
+        Task<DescribeImageUsageReportsResponse> DescribeImageUsageReportsAsync(DescribeImageUsageReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
