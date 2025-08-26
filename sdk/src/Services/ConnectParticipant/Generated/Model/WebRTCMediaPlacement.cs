@@ -33,13 +33,12 @@ namespace Amazon.ConnectParticipant.Model
     /// A set of endpoints used by clients to connect to the media service group for an Amazon
     /// Chime SDK meeting.
     /// </summary>
-    public partial class MediaPlacement
+    public partial class WebRTCMediaPlacement
     {
         private string _audioFallbackUrl;
         private string _audioHostUrl;
         private string _eventIngestionUrl;
         private string _signalingUrl;
-        private string _turnControlUrl;
 
         /// <summary>
         /// Gets and sets the property AudioFallbackUrl. 
@@ -115,25 +114,6 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetSignalingUrl()
         {
             return this._signalingUrl != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TurnControlUrl. 
-        /// <para>
-        /// The turn control URL.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
-        public string TurnControlUrl
-        {
-            get { return this._turnControlUrl; }
-            set { this._turnControlUrl = value; }
-        }
-
-        // Check to see if TurnControlUrl property is set
-        internal bool IsSetTurnControlUrl()
-        {
-            return this._turnControlUrl != null;
         }
 
     }

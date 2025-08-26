@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Meeting Object
+    /// Response Unmarshaller for WebRTCMeeting Object
     /// </summary>  
-    public class MeetingUnmarshaller : IJsonUnmarshaller<Meeting, JsonUnmarshallerContext>
+    public class WebRTCMeetingUnmarshaller : IJsonUnmarshaller<WebRTCMeeting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Meeting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WebRTCMeeting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Meeting unmarshalledObject = new Meeting();
+            WebRTCMeeting unmarshalledObject = new WebRTCMeeting();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -58,14 +58,8 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MediaPlacement", targetDepth))
                 {
-                    var unmarshaller = MediaPlacementUnmarshaller.Instance;
+                    var unmarshaller = WebRTCMediaPlacementUnmarshaller.Instance;
                     unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MediaRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingFeatures", targetDepth))
@@ -85,12 +79,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static MeetingUnmarshaller _instance = new MeetingUnmarshaller();        
+        private static WebRTCMeetingUnmarshaller _instance = new WebRTCMeetingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MeetingUnmarshaller Instance
+        public static WebRTCMeetingUnmarshaller Instance
         {
             get
             {

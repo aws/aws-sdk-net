@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectionData Object
+    /// Response Unmarshaller for WebRTCMediaPlacement Object
     /// </summary>  
-    public class ConnectionDataUnmarshaller : IJsonUnmarshaller<ConnectionData, JsonUnmarshallerContext>
+    public class WebRTCMediaPlacementUnmarshaller : IJsonUnmarshaller<WebRTCMediaPlacement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectionData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WebRTCMediaPlacement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ConnectionData unmarshalledObject = new ConnectionData();
+            WebRTCMediaPlacement unmarshalledObject = new WebRTCMediaPlacement();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attendee", targetDepth))
+                if (context.TestExpression("AudioFallbackUrl", targetDepth))
                 {
-                    var unmarshaller = AttendeeUnmarshaller.Instance;
-                    unmarshalledObject.Attendee = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Meeting", targetDepth))
+                if (context.TestExpression("AudioHostUrl", targetDepth))
                 {
-                    var unmarshaller = MeetingUnmarshaller.Instance;
-                    unmarshalledObject.Meeting = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EventIngestionUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SignalingUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SignalingUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConnectionDataUnmarshaller _instance = new ConnectionDataUnmarshaller();        
+        private static WebRTCMediaPlacementUnmarshaller _instance = new WebRTCMediaPlacementUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionDataUnmarshaller Instance
+        public static WebRTCMediaPlacementUnmarshaller Instance
         {
             get
             {

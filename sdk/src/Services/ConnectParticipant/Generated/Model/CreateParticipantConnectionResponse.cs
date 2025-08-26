@@ -35,7 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class CreateParticipantConnectionResponse : AmazonWebServiceResponse
     {
         private ConnectionCredentials _connectionCredentials;
-        private ConnectionData _webRTCConnection;
+        private WebRTCConnection _webRTCConnection;
         private Websocket _websocket;
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.ConnectParticipant.Model
         /// (mobile application or website) to connect to the call. 
         /// </para>
         /// </summary>
-        public ConnectionData WebRTCConnection
+        public WebRTCConnection WebRTCConnection
         {
             get { return this._webRTCConnection; }
             set { this._webRTCConnection = value; }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPlacement Object
+    /// Response Unmarshaller for WebRTCConnection Object
     /// </summary>  
-    public class MediaPlacementUnmarshaller : IJsonUnmarshaller<MediaPlacement, JsonUnmarshallerContext>
+    public class WebRTCConnectionUnmarshaller : IJsonUnmarshaller<WebRTCConnection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPlacement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WebRTCConnection Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MediaPlacement unmarshalledObject = new MediaPlacement();
+            WebRTCConnection unmarshalledObject = new WebRTCConnection();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AudioFallbackUrl", targetDepth))
+                if (context.TestExpression("Attendee", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AttendeeUnmarshaller.Instance;
+                    unmarshalledObject.Attendee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AudioHostUrl", targetDepth))
+                if (context.TestExpression("Meeting", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EventIngestionUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SignalingUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignalingUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TurnControlUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TurnControlUrl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = WebRTCMeetingUnmarshaller.Instance;
+                    unmarshalledObject.Meeting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPlacementUnmarshaller _instance = new MediaPlacementUnmarshaller();        
+        private static WebRTCConnectionUnmarshaller _instance = new WebRTCConnectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPlacementUnmarshaller Instance
+        public static WebRTCConnectionUnmarshaller Instance
         {
             get
             {
