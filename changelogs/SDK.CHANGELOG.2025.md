@@ -1,3 +1,131 @@
+### 4.0.78.0 (2025-08-26 19:34 UTC)
+* AppConfig (4.0.2.0)
+	* Remove incorrect endpoint tests
+* AppMesh (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRegistry (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRunner (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ARCZonalShift (4.0.2.0)
+	* This release adds new API options to enable allowed windows and multiple alarms for practice runs.
+* BedrockAgentCoreControl (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CleanRooms (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CloudWatch (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CodeCommit (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeStarconnections (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ComprehendMedical (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConnectContactLens (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ConnectParticipant (4.0.2.0)
+	* Amazon Connect Participant Service: Remove unused fields from WebRTCConnection
+* ControlCatalog (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DataSync (4.0.4.0)
+	* Remove incorrect endpoint tests
+* DLM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Drs (4.0.1.0)
+	* Remove incorrect endpoint tests
+* EC2 (4.0.33.0)
+	* Add new APIs for viewing how your shared AMIs are used by other accounts, and identify resources in your account that are dependent on particular AMIs
+* ElasticTranscoder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Evs (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Finspace (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GameLift (4.0.2.0)
+	* Remove incorrect endpoint tests
+* GeoRoutes (4.0.1.0)
+	* Added RouteFerryNotice PotentialViolatedVehicleRestrictionUsage value for CalculateRoutes. This value indicates when the Route is potentially forbidden for the given vehicle profile.
+* Glacier (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GlobalAccelerator (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Greengrass (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IdentityStore (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Imagebuilder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTJobsDataPlane (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTSecureTunneling (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoTTwinMaker (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Kafka (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LicenseManagerLinuxSubscriptions (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LookoutforVision (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MainframeModernization (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHub (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubRefactorSpaces (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MQ (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Neptunedata (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PcaConnectorScep (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PersonalizeEvents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Pinpoint (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Polly (4.0.2.0)
+	* Remove incorrect endpoint tests
+* RAM (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RDSDataService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RecycleBin (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ResourceExplorer2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Route53 (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryCluster (4.0.1.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.9)
+	* Fixes issue #3971. For initiateMultipartUpload, if CannedACL was set to NoACL, request was failing with bad request error.
+* SageMakerGeospatial (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecretsManager (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SecurityHub (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Signer (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleSystemsManagement (4.0.3.0)
+	* Remove incorrect endpoint tests
+* SocialMessaging (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SsmSap (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSOOIDC (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Tnb (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Transfer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* TrustedAdvisor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WAFRegional (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkSpaces (4.0.5.0)
+	* Remove incorrect endpoint tests
+
 ### 4.0.77.0 (2025-08-25 20:57 UTC)
 * B2bi (4.0.3.0)
 	* Updated APIs to support custom validation rules.
