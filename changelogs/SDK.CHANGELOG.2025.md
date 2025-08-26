@@ -1,3 +1,132 @@
+### 3.7.1110.0 (2025-08-26 19:39 UTC)
+* AppConfig (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppMesh (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppRegistry (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppRunner (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ARCZonalShift (3.7.501.0)
+	* This release adds new API options to enable allowed windows and multiple alarms for practice runs.
+* BedrockAgentCoreControl (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CleanRooms (3.7.502.0)
+	* Remove incorrect endpoint tests
+* CloudWatch (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CodeCommit (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CodeStarconnections (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ComprehendMedical (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ConnectContactLens (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ConnectParticipant (3.7.502.0)
+	* Amazon Connect Participant Service: Remove unused fields from WebRTCConnection
+* ControlCatalog (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DataSync (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DLM (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Drs (3.7.501.0)
+	* Remove incorrect endpoint tests
+* EC2 (3.7.507.0)
+	* Add new APIs for viewing how your shared AMIs are used by other accounts, and identify resources in your account that are dependent on particular AMIs
+* ElasticTranscoder (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Evs (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Finspace (3.7.501.0)
+	* Remove incorrect endpoint tests
+* GameLift (3.7.501.0)
+	* Remove incorrect endpoint tests
+* GeoRoutes (3.7.501.0)
+	* Added RouteFerryNotice PotentialViolatedVehicleRestrictionUsage value for CalculateRoutes. This value indicates when the Route is potentially forbidden for the given vehicle profile.
+* Glacier (3.7.501.0)
+	* Remove incorrect endpoint tests
+* GlobalAccelerator (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Greengrass (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IdentityStore (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Imagebuilder (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTJobsDataPlane (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTSecureTunneling (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTTwinMaker (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Kafka (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LicenseManagerLinuxSubscriptions (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LookoutforVision (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MainframeModernization (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MigrationHub (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MigrationHubRefactorSpaces (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MQ (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Neptunedata (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PcaConnectorScep (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PersonalizeEvents (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Pinpoint (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Polly (3.7.502.0)
+	* Remove incorrect endpoint tests
+* RAM (3.7.501.0)
+	* Remove incorrect endpoint tests
+* RDSDataService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* RecycleBin (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ResourceExplorer2 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Route53 (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Route53RecoveryCluster (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SageMakerGeospatial (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SecretsManager (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SecurityHub (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Signer (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SimpleSystemsManagement (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SocialMessaging (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SsmSap (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SSOOIDC (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Tnb (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Transfer (3.7.501.0)
+	* Remove incorrect endpoint tests
+* TrustedAdvisor (3.7.501.0)
+	* Remove incorrect endpoint tests
+* WAFRegional (3.7.501.0)
+	* Remove incorrect endpoint tests
+* WorkSpaces (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Core 3.7.500.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1109.0 (2025-08-25 20:57 UTC)
 * B2bi (3.7.502.0)
 	* Updated APIs to support custom validation rules.

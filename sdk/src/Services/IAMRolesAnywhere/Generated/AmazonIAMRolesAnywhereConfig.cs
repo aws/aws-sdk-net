@@ -32,7 +32,7 @@ namespace Amazon.IAMRolesAnywhere
     public partial class AmazonIAMRolesAnywhereConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "3.7.501.1");
+            InternalSDKUtils.BuildUserAgentString("RolesAnywhere", "3.7.501.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>
