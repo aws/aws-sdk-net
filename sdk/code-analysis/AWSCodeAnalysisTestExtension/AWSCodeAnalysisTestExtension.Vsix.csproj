@@ -972,14 +972,6 @@
       <Project>{39DAFECB-BFC3-4D23-BEAA-0C5235CFA02A}</Project>
       <Name>AWSSDK.OpenSearchService.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj">
-      <Project>{A4E9808D-E63F-4A23-AFAB-6F2B892BE800}</Project>
-      <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/OpsWorksCM/AWSSDK.OpsWorksCM.CodeAnalysis.csproj">
-      <Project>{475C25CB-7637-468F-840F-7A45C4CBF93E}</Project>
-      <Name>AWSSDK.OpsWorksCM.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj">
       <Project>{10373FAB-3A59-4888-A86E-8134207FE450}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>

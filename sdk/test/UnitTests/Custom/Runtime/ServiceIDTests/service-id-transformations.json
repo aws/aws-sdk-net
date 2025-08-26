@@ -1040,16 +1040,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_OPENSEARCH"
   },
   {
-    "service_id": "OpsWorks",
-    "services_section_name": "opsworks",
-    "service_envvar_name": "AWS_ENDPOINT_URL_OPSWORKS"
-  },
-  {
-    "service_id": "OpsWorksCM",
-    "services_section_name": "opsworkscm",
-    "service_envvar_name": "AWS_ENDPOINT_URL_OPSWORKSCM"
-  },
-  {
     "service_id": "Organizations",
     "services_section_name": "organizations",
     "service_envvar_name": "AWS_ENDPOINT_URL_ORGANIZATIONS"

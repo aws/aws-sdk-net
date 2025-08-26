@@ -545,7 +545,6 @@
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/OpsWorksCM/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
             <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
