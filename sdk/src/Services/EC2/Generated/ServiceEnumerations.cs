@@ -7589,6 +7589,118 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ImageReferenceOptionName.
+    /// </summary>
+    public class ImageReferenceOptionName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StateName for ImageReferenceOptionName
+        /// </summary>
+        public static readonly ImageReferenceOptionName StateName = new ImageReferenceOptionName("state-name");
+        /// <summary>
+        /// Constant VersionDepth for ImageReferenceOptionName
+        /// </summary>
+        public static readonly ImageReferenceOptionName VersionDepth = new ImageReferenceOptionName("version-depth");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageReferenceOptionName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageReferenceOptionName FindValue(string value)
+        {
+            return FindValue<ImageReferenceOptionName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageReferenceOptionName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageReferenceResourceType.
+    /// </summary>
+    public class ImageReferenceResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ec2Instance for ImageReferenceResourceType
+        /// </summary>
+        public static readonly ImageReferenceResourceType Ec2Instance = new ImageReferenceResourceType("ec2:Instance");
+        /// <summary>
+        /// Constant Ec2LaunchTemplate for ImageReferenceResourceType
+        /// </summary>
+        public static readonly ImageReferenceResourceType Ec2LaunchTemplate = new ImageReferenceResourceType("ec2:LaunchTemplate");
+        /// <summary>
+        /// Constant ImagebuilderContainerRecipe for ImageReferenceResourceType
+        /// </summary>
+        public static readonly ImageReferenceResourceType ImagebuilderContainerRecipe = new ImageReferenceResourceType("imagebuilder:ContainerRecipe");
+        /// <summary>
+        /// Constant ImagebuilderImageRecipe for ImageReferenceResourceType
+        /// </summary>
+        public static readonly ImageReferenceResourceType ImagebuilderImageRecipe = new ImageReferenceResourceType("imagebuilder:ImageRecipe");
+        /// <summary>
+        /// Constant SsmParameter for ImageReferenceResourceType
+        /// </summary>
+        public static readonly ImageReferenceResourceType SsmParameter = new ImageReferenceResourceType("ssm:Parameter");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageReferenceResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageReferenceResourceType FindValue(string value)
+        {
+            return FindValue<ImageReferenceResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageReferenceResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageState.
     /// </summary>
     public class ImageState : ConstantClass
@@ -19012,6 +19124,10 @@ namespace Amazon.EC2
         /// Constant Image for ResourceType
         /// </summary>
         public static readonly ResourceType Image = new ResourceType("image");
+        /// <summary>
+        /// Constant ImageUsageReport for ResourceType
+        /// </summary>
+        public static readonly ResourceType ImageUsageReport = new ResourceType("image-usage-report");
         /// <summary>
         /// Constant ImportImageTask for ResourceType
         /// </summary>

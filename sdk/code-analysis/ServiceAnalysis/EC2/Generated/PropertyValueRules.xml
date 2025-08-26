@@ -251,6 +251,18 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeImageReferencesRequest.MaxResults</property>
+    <min>5</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeImageUsageReportEntriesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeImageUsageReportsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceConnectEndpointsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
