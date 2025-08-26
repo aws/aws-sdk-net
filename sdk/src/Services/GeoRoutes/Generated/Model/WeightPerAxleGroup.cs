@@ -56,7 +56,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Quad
         {
             get { return this._quad.GetValueOrDefault(); }
@@ -79,7 +79,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Quint
         {
             get { return this._quint.GetValueOrDefault(); }
@@ -102,7 +102,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Single
         {
             get { return this._single.GetValueOrDefault(); }
@@ -125,7 +125,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Tandem
         {
             get { return this._tandem.GetValueOrDefault(); }
@@ -148,7 +148,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Triple
         {
             get { return this._triple.GetValueOrDefault(); }

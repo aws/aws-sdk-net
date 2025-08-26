@@ -43,6 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// The zone category.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteZoneCategory Category
         {
             get { return this._category; }
@@ -61,6 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// The name of the zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

@@ -49,7 +49,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long BestCaseDuration
         {
             get { return this._bestCaseDuration.GetValueOrDefault(); }
@@ -72,7 +72,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long Duration
         {
             get { return this._duration.GetValueOrDefault(); }
@@ -95,7 +95,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long TypicalDuration
         {
             get { return this._typicalDuration.GetValueOrDefault(); }

@@ -49,7 +49,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long RestDuration
         {
             get { return this._restDuration.GetValueOrDefault(); }
@@ -73,7 +73,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long ServiceDuration
         {
             get { return this._serviceDuration.GetValueOrDefault(); }
@@ -96,7 +96,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long TravelDuration
         {
             get { return this._travelDuration.GetValueOrDefault(); }
@@ -119,7 +119,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long WaitDuration
         {
             get { return this._waitDuration.GetValueOrDefault(); }

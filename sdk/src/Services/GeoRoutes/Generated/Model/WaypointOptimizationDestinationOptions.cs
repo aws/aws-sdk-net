@@ -65,6 +65,7 @@ namespace Amazon.GeoRoutes.Model
         /// Appointment time at the destination.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AppointmentTime
         {
             get { return this._appointmentTime; }
@@ -83,7 +84,7 @@ namespace Amazon.GeoRoutes.Model
         /// GPS Heading at the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=360)]
+        [AWSProperty(Sensitive=true, Min=0, Max=360)]
         public double Heading
         {
             get { return this._heading.GetValueOrDefault(); }
@@ -126,7 +127,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long ServiceDuration
         {
             get { return this._serviceDuration.GetValueOrDefault(); }

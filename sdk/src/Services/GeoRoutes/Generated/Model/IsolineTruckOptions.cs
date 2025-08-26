@@ -60,7 +60,7 @@ namespace Amazon.GeoRoutes.Model
         /// Total number of axles of the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=255)]
+        [AWSProperty(Sensitive=true, Min=2, Max=255)]
         public int AxleCount
         {
             get { return this._axleCount.GetValueOrDefault(); }
@@ -79,6 +79,7 @@ namespace Amazon.GeoRoutes.Model
         /// Engine type of the vehicle.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public IsolineEngineType EngineType
         {
             get { return this._engineType; }
@@ -101,7 +102,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long GrossWeight
         {
             get { return this._grossWeight.GetValueOrDefault(); }
@@ -143,7 +144,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public long Height
         {
             get { return this._height.GetValueOrDefault(); }
@@ -166,7 +167,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public long HeightAboveFirstAxle
         {
             get { return this._heightAboveFirstAxle.GetValueOrDefault(); }
@@ -189,7 +190,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long KpraLength
         {
             get { return this._kpraLength.GetValueOrDefault(); }
@@ -212,7 +213,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=30000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=30000)]
         public long Length
         {
             get { return this._length.GetValueOrDefault(); }
@@ -231,6 +232,7 @@ namespace Amazon.GeoRoutes.Model
         /// The vehicle License Plate.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public IsolineVehicleLicensePlate LicensePlate
         {
             get { return this._licensePlate; }
@@ -253,7 +255,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=252)]
+        [AWSProperty(Sensitive=true, Max=252)]
         public double MaxSpeed
         {
             get { return this._maxSpeed.GetValueOrDefault(); }
@@ -276,7 +278,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default Value: <c>1</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public int Occupancy
         {
             get { return this._occupancy.GetValueOrDefault(); }
@@ -299,7 +301,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long PayloadCapacity
         {
             get { return this._payloadCapacity.GetValueOrDefault(); }
@@ -318,7 +320,7 @@ namespace Amazon.GeoRoutes.Model
         /// Number of tires on the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public int TireCount
         {
             get { return this._tireCount.GetValueOrDefault(); }
@@ -428,7 +430,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1)]
         public string TunnelRestrictionCode
         {
             get { return this._tunnelRestrictionCode; }
@@ -452,7 +454,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>Kilograms</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long WeightPerAxle
         {
             get { return this._weightPerAxle.GetValueOrDefault(); }
@@ -498,7 +500,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>centimeters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public long Width
         {
             get { return this._width.GetValueOrDefault(); }

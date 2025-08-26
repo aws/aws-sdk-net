@@ -49,6 +49,7 @@ namespace Amazon.GeoRoutes.Model
         /// Time when the rate is valid.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ApplicableTimes
         {
             get { return this._applicableTimes; }
@@ -85,7 +86,7 @@ namespace Amazon.GeoRoutes.Model
         /// The Toll rate Id.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Id
         {
             get { return this._id; }
@@ -123,7 +124,7 @@ namespace Amazon.GeoRoutes.Model
         /// The name of the toll.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Name
         {
             get { return this._name; }

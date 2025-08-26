@@ -44,7 +44,7 @@ namespace Amazon.GeoRoutes.Model
         /// Confidence value for the correctness of this point match.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1)]
         public double Confidence
         {
             get { return this._confidence.GetValueOrDefault(); }

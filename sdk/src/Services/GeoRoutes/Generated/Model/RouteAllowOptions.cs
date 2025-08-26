@@ -47,6 +47,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Hot
         {
             get { return this._hot.GetValueOrDefault(); }
@@ -69,6 +70,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Hov
         {
             get { return this._hov.GetValueOrDefault(); }

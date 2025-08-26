@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// Validity period.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteTollPassValidityPeriodType Period
         {
             get { return this._period; }
@@ -62,7 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// Counts for the validity period.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public int PeriodCount
         {
             get { return this._periodCount.GetValueOrDefault(); }

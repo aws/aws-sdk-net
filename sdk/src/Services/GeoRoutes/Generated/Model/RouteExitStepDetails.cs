@@ -65,7 +65,7 @@ namespace Amazon.GeoRoutes.Model
         /// Exit to be taken.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=12)]
+        [AWSProperty(Sensitive=true, Min=1, Max=12)]
         public int RelativeExit
         {
             get { return this._relativeExit.GetValueOrDefault(); }
@@ -84,6 +84,7 @@ namespace Amazon.GeoRoutes.Model
         /// Steering direction for the step.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteSteeringDirection SteeringDirection
         {
             get { return this._steeringDirection; }
@@ -121,6 +122,7 @@ namespace Amazon.GeoRoutes.Model
         /// Intensity of the turn.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteTurnIntensity TurnIntensity
         {
             get { return this._turnIntensity; }

@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model
         /// or a destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Sensitive=true, Max=2000)]
         public long AvoidActionsForDistance
         {
             get { return this._avoidActionsForDistance.GetValueOrDefault(); }
@@ -70,6 +70,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid U-turns for calculation on highways and motorways.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AvoidUTurns
         {
             get { return this._avoidUTurns.GetValueOrDefault(); }
@@ -88,7 +89,7 @@ namespace Amazon.GeoRoutes.Model
         /// GPS Heading at the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=360)]
+        [AWSProperty(Sensitive=true, Min=0, Max=360)]
         public double Heading
         {
             get { return this._heading.GetValueOrDefault(); }
@@ -126,6 +127,7 @@ namespace Amazon.GeoRoutes.Model
         /// and doesn't split the route into different legs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool PassThrough
         {
             get { return this._passThrough.GetValueOrDefault(); }
@@ -185,7 +187,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long StopDuration
         {
             get { return this._stopDuration.GetValueOrDefault(); }

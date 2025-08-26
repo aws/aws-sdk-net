@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// Total number of axles of the vehicle.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public int AxleCount
         {
             get { return this._axleCount.GetValueOrDefault(); }
@@ -66,7 +66,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default Value: <c>0</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public int TrailerCount
         {
             get { return this._trailerCount.GetValueOrDefault(); }

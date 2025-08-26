@@ -168,6 +168,7 @@ namespace Amazon.GeoRoutes.Model
         /// Route name of the ferry line.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string RouteName
         {
             get { return this._routeName; }

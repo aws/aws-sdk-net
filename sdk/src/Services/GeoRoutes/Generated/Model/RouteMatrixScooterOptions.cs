@@ -44,6 +44,7 @@ namespace Amazon.GeoRoutes.Model
         /// The vehicle License Plate.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteMatrixVehicleLicensePlate LicensePlate
         {
             get { return this._licensePlate; }
@@ -66,7 +67,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=252)]
+        [AWSProperty(Sensitive=true, Max=252)]
         public double MaxSpeed
         {
             get { return this._maxSpeed.GetValueOrDefault(); }
@@ -89,7 +90,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default Value: <c>1</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public int Occupancy
         {
             get { return this._occupancy.GetValueOrDefault(); }

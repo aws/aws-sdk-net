@@ -46,7 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// The alpha-2 or alpha-3 character code for the country.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=3)]
+        [AWSProperty(Sensitive=true, Min=3, Max=3)]
         public string Country
         {
             get { return this._country; }

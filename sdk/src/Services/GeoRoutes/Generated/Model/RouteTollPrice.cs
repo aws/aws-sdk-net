@@ -67,7 +67,7 @@ namespace Amazon.GeoRoutes.Model
         /// If the price is an estimate or an exact value. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public bool Estimate
         {
             get { return this._estimate.GetValueOrDefault(); }
@@ -90,7 +90,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long PerDuration
         {
             get { return this._perDuration.GetValueOrDefault(); }
@@ -110,7 +110,7 @@ namespace Amazon.GeoRoutes.Model
         /// route is a range, the overall price is also a range.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public bool Range
         {
             get { return this._range.GetValueOrDefault(); }
@@ -147,7 +147,7 @@ namespace Amazon.GeoRoutes.Model
         /// Exact price, if not a range.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0)]
         public double Value
         {
             get { return this._value.GetValueOrDefault(); }

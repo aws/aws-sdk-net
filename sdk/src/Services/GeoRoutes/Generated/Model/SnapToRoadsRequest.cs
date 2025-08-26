@@ -98,7 +98,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default value: <c>300</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=10000)]
         public long SnapRadius
         {
             get { return this._snapRadius.GetValueOrDefault(); }

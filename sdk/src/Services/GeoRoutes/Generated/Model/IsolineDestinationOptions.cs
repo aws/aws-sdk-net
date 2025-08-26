@@ -47,7 +47,7 @@ namespace Amazon.GeoRoutes.Model
         /// or a destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long AvoidActionsForDistance
         {
             get { return this._avoidActionsForDistance.GetValueOrDefault(); }
@@ -66,7 +66,7 @@ namespace Amazon.GeoRoutes.Model
         /// GPS Heading at the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=360)]
+        [AWSProperty(Sensitive=true, Min=0, Max=360)]
         public double Heading
         {
             get { return this._heading.GetValueOrDefault(); }

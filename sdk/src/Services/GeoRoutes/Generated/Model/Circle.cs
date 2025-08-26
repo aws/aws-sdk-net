@@ -73,7 +73,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>meters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public double Radius
         {
             get { return this._radius.GetValueOrDefault(); }

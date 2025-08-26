@@ -42,7 +42,7 @@ namespace Amazon.GeoRoutes.Model
         /// Zone category to be avoided.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteZoneCategory Category
         {
             get { return this._category; }

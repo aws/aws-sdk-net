@@ -46,6 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// If the pass includes the rate for the return leg of the trip.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool IncludesReturnTrip
         {
             get { return this._includesReturnTrip.GetValueOrDefault(); }
@@ -64,6 +65,7 @@ namespace Amazon.GeoRoutes.Model
         /// If the pass is only valid for senior persons.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool SeniorPass
         {
             get { return this._seniorPass.GetValueOrDefault(); }
@@ -82,7 +84,7 @@ namespace Amazon.GeoRoutes.Model
         /// If the toll pass can be transferred, and how many times.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public int TransferCount
         {
             get { return this._transferCount.GetValueOrDefault(); }
@@ -101,7 +103,7 @@ namespace Amazon.GeoRoutes.Model
         /// Number of trips the pass is valid for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public int TripCount
         {
             get { return this._tripCount.GetValueOrDefault(); }

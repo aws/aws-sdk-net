@@ -102,6 +102,7 @@ namespace Amazon.GeoRoutes.Model
         /// The type of road.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteRoadType Type
         {
             get { return this._type; }

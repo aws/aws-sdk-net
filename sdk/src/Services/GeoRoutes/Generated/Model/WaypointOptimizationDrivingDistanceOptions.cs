@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// other into a single cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long DrivingDistance
         {
             get { return this._drivingDistance.GetValueOrDefault(); }

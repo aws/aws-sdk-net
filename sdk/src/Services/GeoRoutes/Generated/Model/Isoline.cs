@@ -66,7 +66,7 @@ namespace Amazon.GeoRoutes.Model
         /// Distance threshold corresponding to the calculated Isoline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long DistanceThreshold
         {
             get { return this._distanceThreshold.GetValueOrDefault(); }
@@ -104,7 +104,7 @@ namespace Amazon.GeoRoutes.Model
         /// Time threshold corresponding to the calculated isoline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long TimeThreshold
         {
             get { return this._timeThreshold.GetValueOrDefault(); }

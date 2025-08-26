@@ -46,6 +46,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public double Speed
         {
             get { return this._speed.GetValueOrDefault(); }

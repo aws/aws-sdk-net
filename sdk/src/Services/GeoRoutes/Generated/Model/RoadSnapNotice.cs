@@ -45,7 +45,7 @@ namespace Amazon.GeoRoutes.Model
         /// Code corresponding to the issue.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RoadSnapNoticeCode Code
         {
             get { return this._code; }
@@ -64,7 +64,7 @@ namespace Amazon.GeoRoutes.Model
         /// The notice title.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Title
         {
             get { return this._title; }
@@ -83,7 +83,7 @@ namespace Amazon.GeoRoutes.Model
         /// TracePoint indices for which the provided notice code corresponds to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000)]
         public List<int> TracePointIndexes
         {
             get { return this._tracePointIndexes; }

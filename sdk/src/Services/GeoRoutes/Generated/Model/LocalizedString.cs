@@ -63,7 +63,7 @@ namespace Amazon.GeoRoutes.Model
         /// The value of the localized string.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Value
         {
             get { return this._value; }

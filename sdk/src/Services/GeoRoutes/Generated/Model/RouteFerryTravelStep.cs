@@ -46,7 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// Distance of the step.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long Distance
         {
             get { return this._distance.GetValueOrDefault(); }
@@ -69,7 +69,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long Duration
         {
             get { return this._duration.GetValueOrDefault(); }
@@ -112,6 +112,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Instruction
         {
             get { return this._instruction; }
@@ -130,7 +131,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the step.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RouteFerryTravelStepType Type
         {
             get { return this._type; }

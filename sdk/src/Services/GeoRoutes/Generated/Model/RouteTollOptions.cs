@@ -47,6 +47,7 @@ namespace Amazon.GeoRoutes.Model
         /// impacts toll calculation, and if true the price with transponders is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AllTransponders
         {
             get { return this._allTransponders.GetValueOrDefault(); }
@@ -67,6 +68,7 @@ namespace Amazon.GeoRoutes.Model
         /// payment is necessary.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool AllVignettes
         {
             get { return this._allVignettes.GetValueOrDefault(); }
@@ -127,6 +129,7 @@ namespace Amazon.GeoRoutes.Model
         /// Vehicle category for toll cost calculation.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteTollVehicleCategory VehicleCategory
         {
             get { return this._vehicleCategory; }
