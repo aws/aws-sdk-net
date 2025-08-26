@@ -37,11 +37,51 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class UpdatePracticeRunConfigurationRequest : AmazonARCZonalShiftRequest
     {
+        private List<string> _allowedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedDates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ControlCondition> _blockingAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
         private List<ControlCondition> _outcomeAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
         private string _resourceIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property AllowedWindows. 
+        /// <para>
+        /// Add, change, or remove windows of days and times for when you can, optionally, allow
+        /// ARC to start a practice run for a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify
+        /// dates, that dates and times for practice runs are in UTC. Also, be aware of potential
+        /// time adjustments that might be required for daylight saving time differences. Separate
+        /// multiple allowed windows with spaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, say you want to allow practice runs only on Wednesdays and Fridays from
+        /// noon to 5 p.m. For this scenario, you could set the following recurring days and times
+        /// as allowed windows, for example: <c>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>allowedWindows</c> have to start and end on the same day. Windows that span
+        /// multiple days aren't supported.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<string> AllowedWindows
+        {
+            get { return this._allowedWindows; }
+            set { this._allowedWindows = value; }
+        }
+
+        // Check to see if AllowedWindows property is set
+        internal bool IsSetAllowedWindows()
+        {
+            return this._allowedWindows != null && (this._allowedWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BlockedDates. 
@@ -110,11 +150,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property BlockingAlarms. 
         /// <para>
-        /// Add, change, or remove the Amazon CloudWatch alarm that you optionally specify as
-        /// the blocking alarm for practice runs.
+        /// Add, change, or remove the Amazon CloudWatch alarms that you optionally specify as
+        /// the blocking alarms for practice runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ControlCondition> BlockingAlarms
         {
             get { return this._blockingAlarms; }
@@ -130,10 +170,10 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property OutcomeAlarms. 
         /// <para>
-        /// Specify a new the Amazon CloudWatch alarm as the outcome alarm for practice runs.
+        /// Specify one or more Amazon CloudWatch alarms as the outcome alarms for practice runs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=10)]
         public List<ControlCondition> OutcomeAlarms
         {
             get { return this._outcomeAlarms; }

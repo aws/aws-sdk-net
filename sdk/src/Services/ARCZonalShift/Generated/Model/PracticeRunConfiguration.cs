@@ -50,10 +50,42 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class PracticeRunConfiguration
     {
+        private List<string> _allowedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedDates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _blockedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ControlCondition> _blockingAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
         private List<ControlCondition> _outcomeAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AllowedWindows. 
+        /// <para>
+        /// An array of one or more windows of days and times that you can allow ARC to start
+        /// practice runs for a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, say you want to allow practice runs only on Wednesdays and Fridays from
+        /// noon to 5 p.m. For this scenario, you could set the following recurring days and times
+        /// as allowed windows, for example: <c>Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>allowedWindows</c> have to start and end on the same day. Windows that span
+        /// multiple days aren't supported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<string> AllowedWindows
+        {
+            get { return this._allowedWindows; }
+            set { this._allowedWindows = value; }
+        }
+
+        // Check to see if AllowedWindows property is set
+        internal bool IsSetAllowedWindows()
+        {
+            return this._allowedWindows != null && (this._allowedWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property BlockedDates. 
@@ -91,6 +123,11 @@ namespace Amazon.ARCZonalShift.Model
         /// Specify the blocked windows in UTC, using the format <c>DAY:HH:MM-DAY:HH:MM</c>, separated
         /// by spaces. For example, <c>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>blockedWindows</c> have to start and end on the same day. Windows that span
+        /// multiple days aren't supported.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public List<string> BlockedWindows
@@ -108,11 +145,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property BlockingAlarms. 
         /// <para>
-        /// The <i>blocking alarm</i> for practice runs is an optional alarm that you can specify
-        /// that blocks practice runs when the alarm is in an <c>ALARM</c> state.
+        ///  <i>Blocking alarms</i> for practice runs are optional alarms that you can specify
+        /// that block practice runs when one or more of the alarms is in an <c>ALARM</c> state.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=10)]
         public List<ControlCondition> BlockingAlarms
         {
             get { return this._blockingAlarms; }
@@ -128,11 +165,11 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property OutcomeAlarms. 
         /// <para>
-        /// The <i>outcome alarm</i> for practice runs is an alarm that you specify that ends
-        /// a practice run when the alarm is in an <c>ALARM</c> state.
+        ///  <i>Outcome alarms</i> for practice runs are alarms that you specify that end a practice
+        /// run when one or more of the alarms is in an <c>ALARM</c> state.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<ControlCondition> OutcomeAlarms
         {
             get { return this._outcomeAlarms; }

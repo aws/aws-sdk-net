@@ -70,6 +70,17 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedWindows())
+                {
+                    context.Writer.WritePropertyName("allowedWindows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowedWindowsListValue in publicRequest.AllowedWindows)
+                    {
+                            context.Writer.Write(publicRequestAllowedWindowsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBlockedDates())
                 {
                     context.Writer.WritePropertyName("blockedDates");
