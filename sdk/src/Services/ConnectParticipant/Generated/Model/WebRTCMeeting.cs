@@ -32,10 +32,9 @@ namespace Amazon.ConnectParticipant.Model
     /// <summary>
     /// A meeting created using the Amazon Chime SDK.
     /// </summary>
-    public partial class Meeting
+    public partial class WebRTCMeeting
     {
-        private MediaPlacement _mediaPlacement;
-        private string _mediaRegion;
+        private WebRTCMediaPlacement _mediaPlacement;
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingId;
 
@@ -45,7 +44,7 @@ namespace Amazon.ConnectParticipant.Model
         /// The media placement for the meeting.
         /// </para>
         /// </summary>
-        public MediaPlacement MediaPlacement
+        public WebRTCMediaPlacement MediaPlacement
         {
             get { return this._mediaPlacement; }
             set { this._mediaPlacement = value; }
@@ -58,28 +57,7 @@ namespace Amazon.ConnectParticipant.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaRegion. 
-        /// <para>
-        /// The Amazon Web Services Region in which you create the meeting.
-        /// </para>
-        /// </summary>
-        public string MediaRegion
-        {
-            get { return this._mediaRegion; }
-            set { this._mediaRegion = value; }
-        }
-
-        // Check to see if MediaRegion property is set
-        internal bool IsSetMediaRegion()
-        {
-            return this._mediaRegion != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MeetingFeatures. 
-        /// <para>
-        /// The configuration settings of the features available to a meeting.
-        /// </para>
+        /// Gets and sets the property MeetingFeatures.
         /// </summary>
         public MeetingFeaturesConfiguration MeetingFeatures
         {

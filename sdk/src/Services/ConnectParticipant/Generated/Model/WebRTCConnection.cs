@@ -30,18 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Information required to join the call.
+    /// Creates the participant’s WebRTC connection data required for the client application
+    /// (mobile or web) to connect to the call.
     /// </summary>
-    public partial class ConnectionData
+    public partial class WebRTCConnection
     {
         private Attendee _attendee;
-        private Meeting _meeting;
+        private WebRTCMeeting _meeting;
 
         /// <summary>
-        /// Gets and sets the property Attendee. 
-        /// <para>
-        /// The attendee information, including attendee ID and join token.
-        /// </para>
+        /// Gets and sets the property Attendee.
         /// </summary>
         public Attendee Attendee
         {
@@ -61,7 +59,7 @@ namespace Amazon.ConnectParticipant.Model
         /// A meeting created using the Amazon Chime SDK.
         /// </para>
         /// </summary>
-        public Meeting Meeting
+        public WebRTCMeeting Meeting
         {
             get { return this._meeting; }
             set { this._meeting = value; }

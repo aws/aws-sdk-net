@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPlacement Object
+    /// Response Unmarshaller for WebRTCMeeting Object
     /// </summary>  
-    public class MediaPlacementUnmarshaller : IUnmarshaller<MediaPlacement, XmlUnmarshallerContext>, IUnmarshaller<MediaPlacement, JsonUnmarshallerContext>
+    public class WebRTCMeetingUnmarshaller : IUnmarshaller<WebRTCMeeting, XmlUnmarshallerContext>, IUnmarshaller<WebRTCMeeting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaPlacement IUnmarshaller<MediaPlacement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WebRTCMeeting IUnmarshaller<WebRTCMeeting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPlacement Unmarshall(JsonUnmarshallerContext context)
+        public WebRTCMeeting Unmarshall(JsonUnmarshallerContext context)
         {
-            MediaPlacement unmarshalledObject = new MediaPlacement();
+            WebRTCMeeting unmarshalledObject = new WebRTCMeeting();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AudioFallbackUrl", targetDepth))
+                if (context.TestExpression("MediaPlacement", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = WebRTCMediaPlacementUnmarshaller.Instance;
+                    unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AudioHostUrl", targetDepth))
+                if (context.TestExpression("MeetingFeatures", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventIngestionUrl", targetDepth))
+                if (context.TestExpression("MeetingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SignalingUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignalingUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TurnControlUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TurnControlUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPlacementUnmarshaller _instance = new MediaPlacementUnmarshaller();        
+        private static WebRTCMeetingUnmarshaller _instance = new WebRTCMeetingUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPlacementUnmarshaller Instance
+        public static WebRTCMeetingUnmarshaller Instance
         {
             get
             {

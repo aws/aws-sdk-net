@@ -60,7 +60,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WebRTCConnection", targetDepth))
                 {
-                    var unmarshaller = ConnectionDataUnmarshaller.Instance;
+                    var unmarshaller = WebRTCConnectionUnmarshaller.Instance;
                     response.WebRTCConnection = unmarshaller.Unmarshall(context);
                     continue;
                 }

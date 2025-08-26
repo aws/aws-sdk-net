@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Meeting Object
+    /// Response Unmarshaller for WebRTCConnection Object
     /// </summary>  
-    public class MeetingUnmarshaller : IUnmarshaller<Meeting, XmlUnmarshallerContext>, IUnmarshaller<Meeting, JsonUnmarshallerContext>
+    public class WebRTCConnectionUnmarshaller : IUnmarshaller<WebRTCConnection, XmlUnmarshallerContext>, IUnmarshaller<WebRTCConnection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Meeting IUnmarshaller<Meeting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WebRTCConnection IUnmarshaller<WebRTCConnection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Meeting Unmarshall(JsonUnmarshallerContext context)
+        public WebRTCConnection Unmarshall(JsonUnmarshallerContext context)
         {
-            Meeting unmarshalledObject = new Meeting();
+            WebRTCConnection unmarshalledObject = new WebRTCConnection();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MediaPlacement", targetDepth))
+                if (context.TestExpression("Attendee", targetDepth))
                 {
-                    var unmarshaller = MediaPlacementUnmarshaller.Instance;
-                    unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AttendeeUnmarshaller.Instance;
+                    unmarshalledObject.Attendee = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MediaRegion", targetDepth))
+                if (context.TestExpression("Meeting", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MeetingFeatures", targetDepth))
-                {
-                    var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MeetingId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = WebRTCMeetingUnmarshaller.Instance;
+                    unmarshalledObject.Meeting = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static MeetingUnmarshaller _instance = new MeetingUnmarshaller();        
+        private static WebRTCConnectionUnmarshaller _instance = new WebRTCConnectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MeetingUnmarshaller Instance
+        public static WebRTCConnectionUnmarshaller Instance
         {
             get
             {
