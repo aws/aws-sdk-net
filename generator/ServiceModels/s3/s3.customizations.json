@@ -255,7 +255,16 @@
             ],
             "modify":[
                 {
-                    "ACL": { "emitPropertyName": "CannedACL"}
+                    "ACL": {
+                         "emitPropertyName": "CannedACL"
+                    }
+                },
+                {
+                    "CannedACL":{
+                          "injectXmlUnmarshallCode" :[
+                            "return _cannedACL != null && _cannedACL != S3CannedACL.NoACL;"
+                        ]
+                    }
                 },
                 {
                     "SSECustomerAlgorithm" : {"emitPropertyName": "ServerSideEncryptionCustomerMethod"}
