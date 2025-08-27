@@ -3907,6 +3907,160 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterAutoScalerType.
+    /// </summary>
+    public class ClusterAutoScalerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Karpenter for ClusterAutoScalerType
+        /// </summary>
+        public static readonly ClusterAutoScalerType Karpenter = new ClusterAutoScalerType("Karpenter");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterAutoScalerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterAutoScalerType FindValue(string value)
+        {
+            return FindValue<ClusterAutoScalerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterAutoScalerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterAutoScalingMode.
+    /// </summary>
+    public class ClusterAutoScalingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for ClusterAutoScalingMode
+        /// </summary>
+        public static readonly ClusterAutoScalingMode Disable = new ClusterAutoScalingMode("Disable");
+        /// <summary>
+        /// Constant Enable for ClusterAutoScalingMode
+        /// </summary>
+        public static readonly ClusterAutoScalingMode Enable = new ClusterAutoScalingMode("Enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterAutoScalingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterAutoScalingMode FindValue(string value)
+        {
+            return FindValue<ClusterAutoScalingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterAutoScalingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterAutoScalingStatus.
+    /// </summary>
+    public class ClusterAutoScalingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for ClusterAutoScalingStatus
+        /// </summary>
+        public static readonly ClusterAutoScalingStatus Creating = new ClusterAutoScalingStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for ClusterAutoScalingStatus
+        /// </summary>
+        public static readonly ClusterAutoScalingStatus Deleting = new ClusterAutoScalingStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for ClusterAutoScalingStatus
+        /// </summary>
+        public static readonly ClusterAutoScalingStatus Failed = new ClusterAutoScalingStatus("Failed");
+        /// <summary>
+        /// Constant InService for ClusterAutoScalingStatus
+        /// </summary>
+        public static readonly ClusterAutoScalingStatus InService = new ClusterAutoScalingStatus("InService");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterAutoScalingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterAutoScalingStatus FindValue(string value)
+        {
+            return FindValue<ClusterAutoScalingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterAutoScalingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterEventResourceType.
     /// </summary>
     public class ClusterEventResourceType : ConstantClass

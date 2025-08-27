@@ -39,7 +39,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonSageMakerRequest
     {
+        private ClusterAutoScalingConfig _autoScaling;
         private string _clusterName;
+        private string _clusterRole;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
         private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
@@ -47,6 +49,25 @@ namespace Amazon.SageMaker.Model
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AutoScaling. 
+        /// <para>
+        /// The autoscaling configuration for the cluster. Enables automatic scaling of cluster
+        /// nodes based on workload demand using a Karpenter-based system.
+        /// </para>
+        /// </summary>
+        public ClusterAutoScalingConfig AutoScaling
+        {
+            get { return this._autoScaling; }
+            set { this._autoScaling = value; }
+        }
+
+        // Check to see if AutoScaling property is set
+        internal bool IsSetAutoScaling()
+        {
+            return this._autoScaling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -65,6 +86,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster
+        /// autoscaling operations. This role must have permissions for <c>sagemaker:BatchAddClusterNodes</c>
+        /// and <c>sagemaker:BatchDeleteClusterNodes</c>. This is only required when autoscaling
+        /// is enabled and when HyperPod is performing autoscaling operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterRole
+        {
+            get { return this._clusterRole; }
+            set { this._clusterRole = value; }
+        }
+
+        // Check to see if ClusterRole property is set
+        internal bool IsSetClusterRole()
+        {
+            return this._clusterRole != null;
         }
 
         /// <summary>

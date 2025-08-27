@@ -52,6 +52,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AutoScaling", targetDepth))
+                {
+                    var unmarshaller = ClusterAutoScalingConfigOutputUnmarshaller.Instance;
+                    response.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ClusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -62,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ClusterRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClusterRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClusterStatus", targetDepth))
