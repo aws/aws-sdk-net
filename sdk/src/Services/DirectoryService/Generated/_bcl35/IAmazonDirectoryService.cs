@@ -1547,6 +1547,60 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeCAEnrollmentPolicy
+
+
+        /// <summary>
+        /// Retrieves detailed information about the certificate authority (CA) enrollment policy
+        /// for the specified directory. This policy determines how client certificates are automatically
+        /// enrolled and managed through Amazon Web Services Private Certificate Authority.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCAEnrollmentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCAEnrollmentPolicy service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">REST API Reference for DescribeCAEnrollmentPolicy Operation</seealso>
+        DescribeCAEnrollmentPolicyResponse DescribeCAEnrollmentPolicy(DescribeCAEnrollmentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCAEnrollmentPolicy operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCAEnrollmentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">REST API Reference for DescribeCAEnrollmentPolicy Operation</seealso>
+        IAsyncResult BeginDescribeCAEnrollmentPolicy(DescribeCAEnrollmentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCAEnrollmentPolicy.</param>
+        /// 
+        /// <returns>Returns a  DescribeCAEnrollmentPolicyResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">REST API Reference for DescribeCAEnrollmentPolicy Operation</seealso>
+        DescribeCAEnrollmentPolicyResponse EndDescribeCAEnrollmentPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCertificate
 
 
@@ -2502,6 +2556,79 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DisableCAEnrollmentPolicy
+
+
+        /// <summary>
+        /// Disables the certificate authority (CA) enrollment policy for the specified directory.
+        /// This stops automatic certificate enrollment and management for domain-joined clients,
+        /// but does not affect existing certificates.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Disabling the CA enrollment policy prevents new certificates from being automatically
+        /// enrolled, but existing certificates remain valid and functional until they expire.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableCAEnrollmentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DisableCAEnrollmentPolicy service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DisableAlreadyInProgressException">
+        /// A disable operation for CA enrollment policy is already in progress for this directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">REST API Reference for DisableCAEnrollmentPolicy Operation</seealso>
+        DisableCAEnrollmentPolicyResponse DisableCAEnrollmentPolicy(DisableCAEnrollmentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableCAEnrollmentPolicy operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableCAEnrollmentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">REST API Reference for DisableCAEnrollmentPolicy Operation</seealso>
+        IAsyncResult BeginDisableCAEnrollmentPolicy(DisableCAEnrollmentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableCAEnrollmentPolicy.</param>
+        /// 
+        /// <returns>Returns a  DisableCAEnrollmentPolicyResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">REST API Reference for DisableCAEnrollmentPolicy Operation</seealso>
+        DisableCAEnrollmentPolicyResponse EndDisableCAEnrollmentPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableClientAuthentication
 
 
@@ -2786,6 +2913,83 @@ namespace Amazon.DirectoryService
         /// <returns>Returns a  DisableSsoResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         DisableSsoResponse EndDisableSso(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableCAEnrollmentPolicy
+
+
+        /// <summary>
+        /// Enables certificate authority (CA) enrollment policy for the specified directory.
+        /// This allows domain-joined clients to automatically request and receive certificates
+        /// from the specified Amazon Web Services Private Certificate Authority.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before enabling CA enrollment, ensure that the PCA connector is properly configured
+        /// and accessible from the directory. The connector must be in an active state and have
+        /// the necessary permissions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableCAEnrollmentPolicy service method.</param>
+        /// 
+        /// <returns>The response from the EnableCAEnrollmentPolicy service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EnableAlreadyInProgressException">
+        /// An enable operation for CA enrollment policy is already in progress for this directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">REST API Reference for EnableCAEnrollmentPolicy Operation</seealso>
+        EnableCAEnrollmentPolicyResponse EnableCAEnrollmentPolicy(EnableCAEnrollmentPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableCAEnrollmentPolicy operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableCAEnrollmentPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">REST API Reference for EnableCAEnrollmentPolicy Operation</seealso>
+        IAsyncResult BeginEnableCAEnrollmentPolicy(EnableCAEnrollmentPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableCAEnrollmentPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableCAEnrollmentPolicy.</param>
+        /// 
+        /// <returns>Returns a  EnableCAEnrollmentPolicyResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">REST API Reference for EnableCAEnrollmentPolicy Operation</seealso>
+        EnableCAEnrollmentPolicyResponse EndEnableCAEnrollmentPolicy(IAsyncResult asyncResult);
 
         #endregion
         
