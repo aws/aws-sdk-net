@@ -737,7 +737,32 @@
                     "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
                 }
             ]
-        }
+        },
+        "PutBucketMetricsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" :{"emitPropertyName" :"MetricsId"}
+                }
+            ]
+        },
+        "MetricsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : {"emitPropertyName" : "MetricsFilter"}
+                },
+                {
+                    "Id" : {"emitPropertyName" : "MetricsId"}
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "MetricsFilter" :{
+                        "predicateListUnmarshallerName" : "MetricsPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "MetricsFilterPredicate"
+                    }
+                }
+            ]
+        },
     },
     "operationModifiers": {
         "CreateBucket": {
@@ -1100,12 +1125,19 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-        "CopyPartResult"
+        "CopyPartResult",
+        "MetricsFilter",
+        "MetricsAndOperator"
     ],
     "implementsVisitorPattern":{
         "LifecycleFilter":{
             "predicateName": "LifecycleFilterPredicate",
             "visitorName": "LifecycleFilterPredicateMarshallVisitor",
+            "visitorParam": "xmlWriter"
+        },
+        "MetricsFilter":{
+            "predicateName": "MetricsFilterPredicate",
+            "visitorName": "MetricsPredicateVisitor",
             "visitorParam": "xmlWriter"
         }
     }
