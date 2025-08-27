@@ -35,11 +35,32 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateClusterRequest : AmazonSageMakerRequest
     {
+        private ClusterAutoScalingConfig _autoScaling;
         private string _clusterName;
+        private string _clusterRole;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterNodeRecovery _nodeRecovery;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AutoScaling. 
+        /// <para>
+        /// Updates the autoscaling configuration for the cluster. Use to enable or disable automatic
+        /// node scaling.
+        /// </para>
+        /// </summary>
+        public ClusterAutoScalingConfig AutoScaling
+        {
+            get { return this._autoScaling; }
+            set { this._autoScaling = value; }
+        }
+
+        // Check to see if AutoScaling property is set
+        internal bool IsSetAutoScaling()
+        {
+            return this._autoScaling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -58,6 +79,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling
+        /// operations. Cannot be updated while autoscaling is enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterRole
+        {
+            get { return this._clusterRole; }
+            set { this._clusterRole = value; }
+        }
+
+        // Check to see if ClusterRole property is set
+        internal bool IsSetClusterRole()
+        {
+            return this._clusterRole != null;
         }
 
         /// <summary>

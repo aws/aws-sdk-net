@@ -34,8 +34,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeClusterResponse : AmazonWebServiceResponse
     {
+        private ClusterAutoScalingConfigOutput _autoScaling;
         private string _clusterArn;
         private string _clusterName;
+        private string _clusterRole;
         private ClusterStatus _clusterStatus;
         private DateTime? _creationTime;
         private string _failureMessage;
@@ -45,6 +47,24 @@ namespace Amazon.SageMaker.Model
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupDetails> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupDetails>() : null;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AutoScaling. 
+        /// <para>
+        /// The current autoscaling configuration and status for the autoscaler.
+        /// </para>
+        /// </summary>
+        public ClusterAutoScalingConfigOutput AutoScaling
+        {
+            get { return this._autoScaling; }
+            set { this._autoScaling = value; }
+        }
+
+        // Check to see if AutoScaling property is set
+        internal bool IsSetAutoScaling()
+        {
+            return this._autoScaling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -82,6 +102,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling
+        /// operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterRole
+        {
+            get { return this._clusterRole; }
+            set { this._clusterRole = value; }
+        }
+
+        // Check to see if ClusterRole property is set
+        internal bool IsSetClusterRole()
+        {
+            return this._clusterRole != null;
         }
 
         /// <summary>

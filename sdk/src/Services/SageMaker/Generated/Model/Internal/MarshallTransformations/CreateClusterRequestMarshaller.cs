@@ -69,10 +69,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoScaling())
+                {
+                    context.Writer.WritePropertyName("AutoScaling");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterAutoScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoScaling, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClusterName())
                 {
                     context.Writer.WritePropertyName("ClusterName");
                     context.Writer.Write(publicRequest.ClusterName);
+                }
+
+                if(publicRequest.IsSetClusterRole())
+                {
+                    context.Writer.WritePropertyName("ClusterRole");
+                    context.Writer.Write(publicRequest.ClusterRole);
                 }
 
                 if(publicRequest.IsSetInstanceGroups())
