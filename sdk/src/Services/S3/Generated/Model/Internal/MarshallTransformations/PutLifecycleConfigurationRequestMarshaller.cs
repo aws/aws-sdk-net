@@ -166,7 +166,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();
                                     }
                                         }
-
                                     }
                             if(publicRequestConfigurationRulesValue.IsSetId())
                                 xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequestConfigurationRulesValue.Id));
