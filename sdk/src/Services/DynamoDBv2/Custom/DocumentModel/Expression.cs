@@ -254,7 +254,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 keywordsOrder.Where(k => mergedSections.ContainsKey(k))
                              .Select(k => $"{k} {mergedSections[k]}"));
 
-            var mergedNames = Common.Combine(left.ExpressionAttributeNames, right.ExpressionAttributeNames, StringComparer.Ordinal); ;
+            var mergedNames = Common.Combine(left.ExpressionAttributeNames, right.ExpressionAttributeNames, StringComparer.Ordinal);
 
             var mergedValues = Common.Combine(left.ExpressionAttributeValues, right.ExpressionAttributeValues, null);
 

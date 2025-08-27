@@ -239,7 +239,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (UpdateBehaviorMode == UpdateBehavior.IfNotExists && (IsKey || IsVersion || IsCounter))
             {
-                throw new InvalidOperationException("Property " + PropertyName + " cannot be a key and have UpdateBehavior set to IfNotExists at the same time.");
+                string propertyType = IsKey ? "key" : IsVersion ? "version" : IsCounter ? "counter" : "unknown";
+                throw new InvalidOperationException($"Property {PropertyName} cannot be a {propertyType} and have UpdateBehavior set to IfNotExists at the same time.");
             }
 
             if (ConverterType != null)
