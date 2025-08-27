@@ -2004,6 +2004,61 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeInsightsRefresh
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        DescribeInsightsRefreshResponse DescribeInsightsRefresh(DescribeInsightsRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInsightsRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInsightsRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        IAsyncResult BeginDescribeInsightsRefresh(DescribeInsightsRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInsightsRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInsightsRefresh.</param>
+        /// 
+        /// <returns>Returns a  DescribeInsightsRefreshResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        DescribeInsightsRefreshResponse EndDescribeInsightsRefresh(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeNodegroup
 
 
@@ -3146,6 +3201,62 @@ namespace Amazon.EKS
         /// <returns>Returns a  RegisterClusterResult from EKS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
         RegisterClusterResponse EndRegisterCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartInsightsRefresh
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        StartInsightsRefreshResponse StartInsightsRefresh(StartInsightsRefreshRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInsightsRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInsightsRefresh
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        IAsyncResult BeginStartInsightsRefresh(StartInsightsRefreshRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartInsightsRefresh operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInsightsRefresh.</param>
+        /// 
+        /// <returns>Returns a  StartInsightsRefreshResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        StartInsightsRefreshResponse EndStartInsightsRefresh(IAsyncResult asyncResult);
 
         #endregion
         

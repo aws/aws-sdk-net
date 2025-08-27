@@ -3077,6 +3077,77 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeInsightsRefresh
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        public virtual DescribeInsightsRefreshResponse DescribeInsightsRefresh(DescribeInsightsRefreshRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightsRefreshResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightsRefreshResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        public virtual Task<DescribeInsightsRefreshResponse> DescribeInsightsRefreshAsync(DescribeInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightsRefreshResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInsightsRefreshResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeNodegroup
 
 
@@ -4622,6 +4693,79 @@ namespace Amazon.EKS
             options.ResponseUnmarshaller = RegisterClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<RegisterClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartInsightsRefresh
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        public virtual StartInsightsRefreshResponse StartInsightsRefresh(StartInsightsRefreshRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInsightsRefreshResponseUnmarshaller.Instance;
+
+            return Invoke<StartInsightsRefreshResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        public virtual Task<StartInsightsRefreshResponse> StartInsightsRefreshAsync(StartInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInsightsRefreshResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartInsightsRefreshResponse>(request, options, cancellationToken);
         }
 
         #endregion
