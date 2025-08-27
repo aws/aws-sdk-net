@@ -38,6 +38,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             var version = S3ObjectVersionUnmarshaller.Instance.Unmarshall(context);
             version.BucketName = response.Name;
+            version.IsDeleteMarker = true;
             response.Versions.Add(version);
             return;
         }
