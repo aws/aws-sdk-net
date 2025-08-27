@@ -1,5 +1,0 @@
-{
-  "active": true,
-  "synopsis": "AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.",
-  "legacy-service-id": "OpsWorksCM"
-}
