@@ -1,3 +1,133 @@
+### 3.7.1111.0 (2025-08-27 19:27 UTC)
+* ACMPCA (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AmplifyBackend (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AmplifyUIBuilder (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppConfigData (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ApplicationDiscoveryService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ApplicationInsights (3.7.501.0)
+	* Remove incorrect endpoint tests
+* AppTest (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Batch (3.7.500.14)
+	* Added ECS_AL2023_NVIDIA as an option for Ec2Configuration.imageType.
+* BedrockAgentCore (3.7.502.0)
+	* Remove incorrect endpoint tests
+* Chime (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKIdentity (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKMeetings (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKVoice (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CleanRoomsML (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CloudWatchEvidently (3.7.501.0)
+	* Remove incorrect endpoint tests
+* CodeBuild (3.7.503.0)
+	* Remove incorrect endpoint tests
+* CodeConnections (3.7.502.0)
+	* Remove incorrect endpoint tests
+* CodeGuruProfiler (3.7.501.0)
+	* Remove incorrect endpoint tests
+* ComputeOptimizer (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DataPipeline (3.7.501.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (3.7.502.0)
+	* Add APIs for CA AutoEnrollment support: DescribeCAEnrollmentPolicy, EnableCAEnrollmentPolicy and DisableCAEnrollmentPolicy.
+* EKS (3.7.503.0)
+	* Add support for on-demand refresh of EKS cluster insights
+* ElastiCache (3.7.501.0)
+	* Remove incorrect endpoint tests
+* FraudDetector (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Inspector (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoT (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTFleetWise (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IoTWireless (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Ivschat (3.7.501.0)
+	* Remove incorrect endpoint tests
+* IVSRealTime (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KafkaConnect (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KeyManagementService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisVideo (3.7.501.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoMedia (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LakeFormation (3.7.501.0)
+	* Remove incorrect endpoint tests
+* LexModelBuildingService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MarketplaceReporting (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MedicalImaging (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Mgn (3.7.501.0)
+	* Remove incorrect endpoint tests
+* MigrationHubConfig (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Neptune (3.7.501.0)
+	* Remove incorrect endpoint tests
+* NeptuneGraph (3.7.501.0)
+	* Add StartGraph and StopGraph operations to Neptune Analytics
+* Omics (3.7.501.0)
+	* Remove incorrect endpoint tests
+* OpsWorks (Removed)
+	* AWS OpsWorks has been removed from the SDK because it has been discontinued.
+* OpsWorksCM (Removed)
+	* AWS OpsWorksCM has been removed from the SDK because it has been discontinued.
+* PaymentCryptographyData (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Personalize (3.7.501.0)
+	* Remove incorrect endpoint tests
+* PI (3.7.501.0)
+	* Remove incorrect endpoint tests
+* QApps (3.7.501.0)
+	* Remove incorrect endpoint tests
+* QLDBSession (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Redshift (3.7.501.0)
+	* Remove incorrect endpoint tests
+* RoboMaker (3.7.501.0)
+	* Remove incorrect endpoint tests
+* S3Tables (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SageMaker (3.7.509.0)
+	* This release adds support for AutoScaling on SageMaker HyperPod.
+* Schemas (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SimpleNotificationService (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SnowDeviceManagement (3.7.501.0)
+	* Remove incorrect endpoint tests
+* SupplyChain (3.7.501.0)
+	* Remove incorrect endpoint tests
+* Textract (3.7.501.0)
+	* Remove incorrect endpoint tests
+* TimestreamWrite (3.7.501.0)
+	* Remove incorrect endpoint tests
+* VoiceID (3.7.501.0)
+	* Remove incorrect endpoint tests
+* VPCLattice (3.7.501.0)
+	* Remove incorrect endpoint tests
+* WorkDocs (3.7.501.0)
+	* Remove incorrect endpoint tests
+* WorkMail (3.7.501.0)
+	* Remove incorrect endpoint tests
+
 ### 3.7.1110.0 (2025-08-26 19:39 UTC)
 * AppConfig (3.7.501.0)
 	* Remove incorrect endpoint tests
