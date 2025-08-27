@@ -1,3 +1,135 @@
+### 4.0.79.0 (2025-08-27 19:34 UTC)
+* ACMPCA (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AmplifyBackend (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AmplifyUIBuilder (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppConfigData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationDiscoveryService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationInsights (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppTest (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Batch (4.0.2.8)
+	* Added ECS_AL2023_NVIDIA as an option for Ec2Configuration.imageType.
+* BedrockAgentCore (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Chime (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKIdentity (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKMeetings (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ChimeSDKVoice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CleanRoomsML (4.0.3.0)
+	* Remove incorrect endpoint tests
+* CloudWatchEvidently (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeBuild (4.0.4.0)
+	* Remove incorrect endpoint tests
+* CodeConnections (4.0.2.0)
+	* Remove incorrect endpoint tests
+* CodeGuruProfiler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ComputeOptimizer (4.0.2.0)
+	* Remove incorrect endpoint tests
+* DataPipeline (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DirectoryService (4.0.3.0)
+	* Add APIs for CA AutoEnrollment support: DescribeCAEnrollmentPolicy, EnableCAEnrollmentPolicy and DisableCAEnrollmentPolicy.
+* EKS (4.0.5.0)
+	* Add support for on-demand refresh of EKS cluster insights
+* ElastiCache (4.0.1.0)
+	* Remove incorrect endpoint tests
+* FraudDetector (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Inspector (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IoT (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IoTFleetWise (4.0.2.0)
+	* Remove incorrect endpoint tests
+* IoTWireless (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Ivschat (4.0.1.0)
+	* Remove incorrect endpoint tests
+* IVSRealTime (4.0.2.0)
+	* Remove incorrect endpoint tests
+* KafkaConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KeyManagementService (4.0.4.0)
+	* Remove incorrect endpoint tests
+* KinesisVideo (4.0.1.0)
+	* Remove incorrect endpoint tests
+* KinesisVideoMedia (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LakeFormation (4.0.1.0)
+	* Remove incorrect endpoint tests
+* LexModelBuildingService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceReporting (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MedicalImaging (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Mgn (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MigrationHubConfig (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Neptune (4.0.2.0)
+	* Remove incorrect endpoint tests
+* NeptuneGraph (4.0.1.0)
+	* Add StartGraph and StopGraph operations to Neptune Analytics
+* Omics (4.0.2.0)
+	* Remove incorrect endpoint tests
+* OpsWorks (Removed)
+	* AWS OpsWorks has been removed from the SDK because it has been discontinued.
+* OpsWorksCM (Removed)
+	* AWS OpsWorksCM has been removed from the SDK because it has been discontinued.
+* PaymentCryptographyData (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Personalize (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PI (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QApps (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QLDBSession (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Redshift (4.0.1.0)
+	* Remove incorrect endpoint tests
+* RoboMaker (4.0.1.0)
+	* Remove incorrect endpoint tests
+* S3 (4.0.6.10)
+	* set IsDeleteMarker to true for DeleteMarkers in ListVersionsResponse
+* S3Tables (4.0.4.0)
+	* Remove incorrect endpoint tests
+* SageMaker (4.0.23.0)
+	* This release adds support for AutoScaling on SageMaker HyperPod.
+* Schemas (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleNotificationService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SnowDeviceManagement (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SupplyChain (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Textract (4.0.2.0)
+	* Remove incorrect endpoint tests
+* TimestreamWrite (4.0.2.0)
+	* Remove incorrect endpoint tests
+* VoiceID (4.0.1.0)
+	* Remove incorrect endpoint tests
+* VPCLattice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkDocs (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkMail (4.0.1.0)
+	* Remove incorrect endpoint tests
+
 ### 4.0.78.0 (2025-08-26 19:34 UTC)
 * AppConfig (4.0.2.0)
 	* Remove incorrect endpoint tests
