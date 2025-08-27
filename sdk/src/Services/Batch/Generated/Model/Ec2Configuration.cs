@@ -134,6 +134,16 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Amazon Linux 2023 does not support <c>A1</c> instances.
         /// </para>
+        ///  </note> </dd> <dt>ECS_AL2023_NVIDIA</dt> <dd> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
+        /// Linux 2023 (GPU)</a>: For all GPU instance families and can be used for all non Amazon
+        /// Web Services Graviton-based instance types.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// ECS_AL2023_NVIDIA doesn't support <c>p3</c> and <c>g3</c> instance types.
+        /// </para>
         ///  </note> </dd> <dt>ECS_AL1</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
@@ -148,7 +158,24 @@ namespace Amazon.Batch.Model
         /// parameter is specified, then the latest Amazon EKS optimized AMI for that image type
         /// that Batch supports is used.
         /// </para>
-        ///  <dl> <dt>EKS_AL2</dt> <dd> 
+        ///  <important> 
+        /// <para>
+        /// Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the
+        /// default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version
+        /// 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported
+        /// on Batch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services will end support for Amazon EKS AL2-optimized and AL2-accelerated
+        /// AMIs, starting 11/26/25. You can continue using Batch-provided Amazon EKS optimized
+        /// Amazon Linux 2 AMIs on your Amazon EKS compute environments beyond the 11/26/25 end-of-support
+        /// date, these compute environments will no longer receive any new software updates,
+        /// security patches, or bug fixes from Amazon Web Services. For more information on upgrading
+        /// from AL2 to AL2023, see <a href="">How to upgrade from EKS AL2 to EKS AL2023</a> in
+        /// the <i>Batch User Guide</i>.
+        /// </para>
+        ///  </important> <dl> <dt>EKS_AL2</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
         /// Linux 2</a>: Default for all non-GPU instance families.
