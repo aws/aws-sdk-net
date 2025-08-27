@@ -25,6 +25,72 @@ namespace Amazon.DirectoryService
 {
 
     /// <summary>
+    /// Constants used for properties of type CaEnrollmentPolicyStatus.
+    /// </summary>
+    public class CaEnrollmentPolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus Disabled = new CaEnrollmentPolicyStatus("Disabled");
+        /// <summary>
+        /// Constant Disabling for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus Disabling = new CaEnrollmentPolicyStatus("Disabling");
+        /// <summary>
+        /// Constant Failed for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus Failed = new CaEnrollmentPolicyStatus("Failed");
+        /// <summary>
+        /// Constant Impaired for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus Impaired = new CaEnrollmentPolicyStatus("Impaired");
+        /// <summary>
+        /// Constant InProgress for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus InProgress = new CaEnrollmentPolicyStatus("InProgress");
+        /// <summary>
+        /// Constant Success for CaEnrollmentPolicyStatus
+        /// </summary>
+        public static readonly CaEnrollmentPolicyStatus Success = new CaEnrollmentPolicyStatus("Success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CaEnrollmentPolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaEnrollmentPolicyStatus FindValue(string value)
+        {
+            return FindValue<CaEnrollmentPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaEnrollmentPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateState.
     /// </summary>
     public class CertificateState : ConstantClass
