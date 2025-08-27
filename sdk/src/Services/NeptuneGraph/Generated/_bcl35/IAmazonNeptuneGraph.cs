@@ -1605,6 +1605,61 @@ namespace Amazon.NeptuneGraph
 
         #endregion
         
+        #region  StartGraph
+
+
+        /// <summary>
+        /// Starts the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartGraph service method.</param>
+        /// 
+        /// <returns>The response from the StartGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
+        StartGraphResponse StartGraph(StartGraphRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartGraph operation on AmazonNeptuneGraphClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartGraph
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
+        IAsyncResult BeginStartGraph(StartGraphRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartGraph.</param>
+        /// 
+        /// <returns>Returns a  StartGraphResult from NeptuneGraph.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
+        StartGraphResponse EndStartGraph(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartImportTask
 
 
@@ -1658,6 +1713,61 @@ namespace Amazon.NeptuneGraph
         /// <returns>Returns a  StartImportTaskResult from NeptuneGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
         StartImportTaskResponse EndStartImportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopGraph
+
+
+        /// <summary>
+        /// Stops the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopGraph service method.</param>
+        /// 
+        /// <returns>The response from the StopGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
+        StopGraphResponse StopGraph(StopGraphRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopGraph operation on AmazonNeptuneGraphClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopGraph
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
+        IAsyncResult BeginStopGraph(StopGraphRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopGraph operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopGraph.</param>
+        /// 
+        /// <returns>Returns a  StopGraphResult from NeptuneGraph.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
+        StopGraphResponse EndStopGraph(IAsyncResult asyncResult);
 
         #endregion
         

@@ -198,7 +198,15 @@ namespace Amazon.NeptuneGraph.Internal
                 result.ApiType = "ControlPlane";
                 return result;
             }
+            if (requestContext.RequestName == "StartGraphRequest") {
+                result.ApiType = "ControlPlane";
+                return result;
+            }
             if (requestContext.RequestName == "StartImportTaskRequest") {
+                result.ApiType = "ControlPlane";
+                return result;
+            }
+            if (requestContext.RequestName == "StopGraphRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
             }
