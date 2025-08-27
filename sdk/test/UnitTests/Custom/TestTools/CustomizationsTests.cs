@@ -240,17 +240,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         }
 
         [TestMethod][TestCategory("UnitTest")]
-        public void EnsureOpsWorksCustomizationsExists()
-        {
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeElasticLoadBalancers");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeMyUserProfile");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeUserProfiles");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeServiceErrors");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "DescribeStacks");
-            EnsureParameterlessMethodExists(typeof(Amazon.OpsWorks.AmazonOpsWorksClient), "UpdateMyUserProfile");
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
         public void EnsureRDSCustomizationsExists()
         {
             EnsureParameterlessMethodExists(typeof(Amazon.RDS.AmazonRDSClient), "DescribeDBEngineVersions");

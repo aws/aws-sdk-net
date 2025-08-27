@@ -678,10 +678,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Publish SDK for Amazon OpenSearch Serverless
 * [AWSSDK.OpenSearchService](https://www.nuget.org/packages/AWSSDK.OpenSearchService/)
 	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
-* [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
-	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
-* [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
-	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
 * [AWSSDK.OSIS](https://www.nuget.org/packages/AWSSDK.OSIS/)

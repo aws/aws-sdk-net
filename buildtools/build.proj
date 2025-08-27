@@ -572,7 +572,6 @@
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk/test/Services/CloudFront/UnitTests/Custom/EmbeddedResource/sample.rsa.private.key.txt" />
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/OpsWorksCM/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
         </ItemGroup>
 

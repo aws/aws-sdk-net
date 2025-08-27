@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "OpsWorks",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS OpsWorks has been removed from the SDK because it has been discontinued."
+            ]
+        },
+        {
+            "serviceName": "OpsWorksCM",
+            "type": "removal",
+            "changeLogMessages": [
+                "AWS OpsWorksCM has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}
