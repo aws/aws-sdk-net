@@ -1704,6 +1704,64 @@ namespace Amazon.NeptuneGraph
 
         #endregion
         
+        #region  StartGraph
+
+
+        /// <summary>
+        /// Starts the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartGraph service method.</param>
+        /// 
+        /// <returns>The response from the StartGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
+        StartGraphResponse StartGraph(StartGraphRequest request);
+
+
+
+        /// <summary>
+        /// Starts the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartGraph service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
+        Task<StartGraphResponse> StartGraphAsync(StartGraphRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartImportTask
 
 
@@ -1761,6 +1819,64 @@ namespace Amazon.NeptuneGraph
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
         Task<StartImportTaskResponse> StartImportTaskAsync(StartImportTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopGraph
+
+
+        /// <summary>
+        /// Stops the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopGraph service method.</param>
+        /// 
+        /// <returns>The response from the StopGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
+        StopGraphResponse StopGraph(StopGraphRequest request);
+
+
+
+        /// <summary>
+        /// Stops the specific graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopGraph service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopGraph service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
+        Task<StopGraphResponse> StopGraphAsync(StopGraphRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
