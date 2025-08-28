@@ -814,20 +814,5 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
         }
 
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("SimpleEmailV2")]
-        [Description("Valid EndpointId with DualStack enabled and partition does not support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Valid_EndpointId_with_DualStack_enabled_and_partition_does_not_support_DualStack_Test()
-        {
-            var parameters = new SimpleEmailServiceV2EndpointParameters();
-            parameters["EndpointId"] = "abc123.456def";
-            parameters["UseDualStack"] = true;
-            parameters["Region"] = "us-isob-east-1";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
-        }
-
     }
 }
