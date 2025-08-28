@@ -913,23 +913,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
-        [Description("Dual Stack not supported region.")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void Dual_Stack_not_supported_region_Test()
-        {
-            var parameters = new KinesisEndpointParameters();
-            parameters["Region"] = "us-iso-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["StreamARN"] = "arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream";
-            parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Kinesis")]
         [Description("OperationType not set")]
         [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void OperationType_not_set_Test()
@@ -1358,23 +1341,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Kinesis")]
-        [Description("Dual Stack not supported region.")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void Dual_Stack_not_supported_region_1_Test()
-        {
-            var parameters = new KinesisEndpointParameters();
-            parameters["Region"] = "us-iso-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["ConsumerARN"] = "arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            parameters["OperationType"] = "control";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -1852,23 +1818,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
-        [Description("ResourceARN as StreamARN test: Dual Stack not supported region.")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void ResourceARN_as_StreamARN_test_Dual_Stack_not_supported_region_Test()
-        {
-            var parameters = new KinesisEndpointParameters();
-            parameters["Region"] = "us-iso-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream";
-            parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: OperationType not set")]
         [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void ResourceARN_as_StreamARN_test_OperationType_not_set_Test()
@@ -2281,23 +2230,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Kinesis")]
-        [Description("ResourceARN as ConsumerARN test: Dual Stack not supported region.")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void ResourceARN_as_ConsumerARN_test_Dual_Stack_not_supported_region_Test()
-        {
-            var parameters = new KinesisEndpointParameters();
-            parameters["Region"] = "us-iso-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            parameters["OperationType"] = "control";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
         }
 
