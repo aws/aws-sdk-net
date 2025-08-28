@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReferenceImportJobs operation.
-    /// Retrieves a list of reference import jobs.
+    /// Retrieves the metadata of one or more reference import jobs for a reference store.
     /// </summary>
     public partial class ListReferenceImportJobsRequest : AmazonOmicsRequest
     {

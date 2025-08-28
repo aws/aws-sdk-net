@@ -50,8 +50,9 @@ namespace Amazon.Omics.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>ECR container images</i>: Create one or more container images for the workflow.
-    /// Store the images in a private ECR repository.
+    ///  <i>ECR container images</i>: Create container images for the workflow in a private
+    /// ECR repository, or synchronize images from a supported upstream registry with your
+    /// Amazon ECR private repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,6 +69,8 @@ namespace Amazon.Omics.Model
     public partial class CreateWorkflowRequest : AmazonOmicsRequest
     {
         private Accelerators _accelerators;
+        private ContainerRegistryMap _containerRegistryMap;
+        private string _containerRegistryMapUri;
         private DefinitionRepository _definitionRepository;
         private string _definitionUri;
         private MemoryStream _definitionZip;
@@ -103,6 +106,45 @@ namespace Amazon.Omics.Model
         internal bool IsSetAccelerators()
         {
             return this._accelerators != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRegistryMap. 
+        /// <para>
+        /// (Optional) Use a container registry map to specify mappings between the ECR private
+        /// repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public ContainerRegistryMap ContainerRegistryMap
+        {
+            get { return this._containerRegistryMap; }
+            set { this._containerRegistryMap = value; }
+        }
+
+        // Check to see if ContainerRegistryMap property is set
+        internal bool IsSetContainerRegistryMap()
+        {
+            return this._containerRegistryMap != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRegistryMapUri. 
+        /// <para>
+        /// (Optional) URI of the S3 location for the registry mapping file.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=750)]
+        public string ContainerRegistryMapUri
+        {
+            get { return this._containerRegistryMapUri; }
+            set { this._containerRegistryMapUri = value; }
+        }
+
+        // Check to see if ContainerRegistryMapUri property is set
+        internal bool IsSetContainerRegistryMapUri()
+        {
+            return this._containerRegistryMapUri != null;
         }
 
         /// <summary>

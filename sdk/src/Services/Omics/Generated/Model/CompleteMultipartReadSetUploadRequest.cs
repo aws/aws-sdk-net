@@ -31,7 +31,17 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteMultipartReadSetUpload operation.
-    /// Concludes a multipart upload once you have uploaded all the components.
+    /// Completes a multipart read set upload into a sequence store after you have initiated
+    /// the upload process with <c>CreateMultipartReadSetUpload</c> and uploaded all read
+    /// set parts using <c>UploadReadSetPart</c>. You must specify the parts you uploaded
+    /// using the parts parameter. If the operation is successful, it returns the read set
+    /// ID(s) of the uploaded read set(s).
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+    /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CompleteMultipartReadSetUploadRequest : AmazonOmicsRequest
     {

@@ -31,7 +31,16 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReferenceStore operation.
-    /// Creates a reference store.
+    /// Creates a reference store and returns metadata in JSON format. Reference stores are
+    /// used to store reference genomes in FASTA format. A reference store is created when
+    /// the first reference genome is imported. To import additional reference genomes from
+    /// an Amazon S3 bucket, use the <c>StartReferenceImportJob</c> API operation. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+    /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateReferenceStoreRequest : AmazonOmicsRequest
     {

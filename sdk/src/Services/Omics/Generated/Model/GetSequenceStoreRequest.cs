@@ -31,7 +31,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSequenceStore operation.
-    /// Gets information about a sequence store.
+    /// Retrieves metadata for a sequence store using its ID and returns it in JSON format.
     /// </summary>
     public partial class GetSequenceStoreRequest : AmazonOmicsRequest
     {
