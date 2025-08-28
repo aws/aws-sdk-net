@@ -88,6 +88,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Gpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageDetails", targetDepth))
+                {
+                    var unmarshaller = ImageDetailsUnmarshaller.Instance;
+                    response.ImageDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

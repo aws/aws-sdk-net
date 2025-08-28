@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Don’t include any personally identifiable information (PII) in the version name. Version
+    /// Don't include any personally identifiable information (PII) in the version name. Version
     /// names appear in the workflow version ARN.
     /// </para>
     ///  </note> 
@@ -59,6 +59,8 @@ namespace Amazon.Omics.Model
     public partial class CreateWorkflowVersionRequest : AmazonOmicsRequest
     {
         private Accelerators _accelerators;
+        private ContainerRegistryMap _containerRegistryMap;
+        private string _containerRegistryMapUri;
         private DefinitionRepository _definitionRepository;
         private string _definitionUri;
         private MemoryStream _definitionZip;
@@ -98,6 +100,45 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerRegistryMap. 
+        /// <para>
+        /// (Optional) Use a container registry map to specify mappings between the ECR private
+        /// repository and one or more upstream registries. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+        /// images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public ContainerRegistryMap ContainerRegistryMap
+        {
+            get { return this._containerRegistryMap; }
+            set { this._containerRegistryMap = value; }
+        }
+
+        // Check to see if ContainerRegistryMap property is set
+        internal bool IsSetContainerRegistryMap()
+        {
+            return this._containerRegistryMap != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRegistryMapUri. 
+        /// <para>
+        /// (Optional) URI of the S3 location for the registry mapping file.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=750)]
+        public string ContainerRegistryMapUri
+        {
+            get { return this._containerRegistryMapUri; }
+            set { this._containerRegistryMapUri = value; }
+        }
+
+        // Check to see if ContainerRegistryMapUri property is set
+        internal bool IsSetContainerRegistryMapUri()
+        {
+            return this._containerRegistryMapUri != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefinitionRepository. 
         /// <para>
         /// The repository information for the workflow version definition. This allows you to
@@ -119,7 +160,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property DefinitionUri. 
         /// <para>
-        /// The URI specifies the location of the workflow definition for this workflow version.
+        /// The S3 URI of a definition for this workflow version. The S3 bucket must be in the
+        /// same region as this workflow version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -138,7 +180,10 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property DefinitionZip. 
         /// <para>
-        /// A zip archive containing the workflow definition for this workflow version.
+        /// A ZIP archive containing the main workflow definition file and dependencies that it
+        /// imports for this workflow version. You can use a file with a ://fileb prefix instead
+        /// of the Base64 string. For more information, see Workflow definition requirements in
+        /// the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         public MemoryStream DefinitionZip
@@ -175,7 +220,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The workflow engine for this workflow version.
+        /// The workflow engine for this workflow version. This is only required if you have workflow
+        /// definition files from more than one engine in your zip file. Otherwise, the service
+        /// can detect the engine automatically from your workflow definition.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -194,7 +241,10 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Main. 
         /// <para>
-        /// The path of the main definition file for this workflow version.
+        /// The path of the main definition file for this workflow version. This parameter is
+        /// not required if the ZIP archive contains only one workflow definition file, or if
+        /// the main definition file is named “main”. An example path is: <c>workflow-definition/main-file.wdl</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -213,8 +263,11 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ParameterTemplate. 
         /// <para>
-        /// The parameter template defines the input parameters for runs that use this workflow
-        /// version.
+        /// A parameter template for this workflow version. If this field is blank, Amazon Web
+        /// Services HealthOmics will automatically parse the parameter template values from your
+        /// workflow definition file. To override these service generated default values, provide
+        /// a parameter template. To view an example of a parameter template, see <a href="https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html">Parameter
+        /// template files</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -326,7 +379,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// To ensure that requests don't run multiple times, specify a unique ID for each request.
+        /// An idempotency token to ensure that duplicate workflows are not created when Amazon
+        /// Web Services HealthOmics submits retry requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -346,7 +400,8 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property StorageCapacity. 
         /// <para>
         /// The default static storage capacity (in gibibytes) for runs that use this workflow
-        /// or workflow version.
+        /// version. The <c>storageCapacity</c> can be overwritten at run time. The storage capacity
+        /// is not required for runs with a <c>DYNAMIC</c> storage type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -365,11 +420,11 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The default storage type for runs that use this workflow. STATIC storage allocates
-        /// a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down,
-        /// based on file system utilization. For more information about static and dynamic storage,
-        /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-        /// workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// The default storage type for runs that use this workflow version. The <c>storageType</c>
+        /// can be overridden at run time. <c>DYNAMIC</c> storage dynamically scales the storage
+        /// up or down, based on file system utilization. STATIC storage allocates a fixed amount
+        /// of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run
+        /// storage types</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -388,7 +443,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optional tags to associate with this workflow version.
+        /// Tags for this workflow version. You can define up to 50 tags for the workflow. For
+        /// more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html">Adding
+        /// a tag</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -453,7 +510,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The ID of the workflow where you are creating the new version.
+        /// The ID of the workflow where you are creating the new version. The <c>workflowId</c>
+        /// is not the UUID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]

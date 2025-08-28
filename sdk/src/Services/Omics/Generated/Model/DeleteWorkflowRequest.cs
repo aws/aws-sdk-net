@@ -31,8 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWorkflow operation.
-    /// Deletes a workflow by specifying its ID. No response is returned if the deletion is
-    /// successful.
+    /// Deletes a workflow by specifying its ID. This operation returns a response with no
+    /// body if the deletion is successful.
     /// 
     ///  
     /// <para>

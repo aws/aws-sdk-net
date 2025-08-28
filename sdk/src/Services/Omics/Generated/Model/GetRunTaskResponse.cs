@@ -40,6 +40,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _failureReason;
         private int? _gpus;
+        private ImageDetails _imageDetails;
         private string _instanceType;
         private string _logStream;
         private int? _memory;
@@ -160,6 +161,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetGpus()
         {
             return this._gpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageDetails. 
+        /// <para>
+        /// Details about the container image that this task uses.
+        /// </para>
+        /// </summary>
+        public ImageDetails ImageDetails
+        {
+            get { return this._imageDetails; }
+            set { this._imageDetails = value; }
+        }
+
+        // Check to see if ImageDetails property is set
+        internal bool IsSetImageDetails()
+        {
+            return this._imageDetails != null;
         }
 
         /// <summary>

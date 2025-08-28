@@ -73,6 +73,23 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Accelerators);
                 }
 
+                if(publicRequest.IsSetContainerRegistryMap())
+                {
+                    context.Writer.WritePropertyName("containerRegistryMap");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContainerRegistryMapMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContainerRegistryMap, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetContainerRegistryMapUri())
+                {
+                    context.Writer.WritePropertyName("containerRegistryMapUri");
+                    context.Writer.Write(publicRequest.ContainerRegistryMapUri);
+                }
+
                 if(publicRequest.IsSetDefinitionRepository())
                 {
                     context.Writer.WritePropertyName("definitionRepository");

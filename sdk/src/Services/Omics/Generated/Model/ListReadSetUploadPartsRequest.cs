@@ -31,8 +31,8 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReadSetUploadParts operation.
-    /// This operation will list all parts in a requested multipart upload for a sequence
-    /// store.
+    /// Lists all parts in a multipart read set upload for a sequence store and returns the
+    /// metadata in a JSON formatted output.
     /// </summary>
     public partial class ListReadSetUploadPartsRequest : AmazonOmicsRequest
     {

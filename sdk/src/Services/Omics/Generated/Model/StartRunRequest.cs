@@ -222,7 +222,7 @@ namespace Amazon.Omics.Model
         /// The role ARN must have permission to write to this S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=750)]
+        [AWSProperty(Required=true, Min=1, Max=750)]
         public string OutputUri
         {
             get { return this._outputUri; }

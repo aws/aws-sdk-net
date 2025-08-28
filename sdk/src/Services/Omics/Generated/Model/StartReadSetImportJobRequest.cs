@@ -31,7 +31,9 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetImportJob operation.
-    /// Starts a read set import job.
+    /// Imports a read set from the sequence store. Read set import jobs support a maximum
+    /// of 100 read sets of different types. Monitor the progress of your read set import
+    /// job by calling the <c>GetReadSetImportJob</c> API operation.
     /// </summary>
     public partial class StartReadSetImportJobRequest : AmazonOmicsRequest
     {

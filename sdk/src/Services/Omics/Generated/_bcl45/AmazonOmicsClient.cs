@@ -278,7 +278,10 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Stops a multipart upload.
+        /// Stops a multipart read set upload into a sequence store and returns a response with
+        /// no body if the operation is successful. To confirm that a multipart read set upload
+        /// has been stopped, use the <c>ListMultipartReadSetUploads</c> API operation to view
+        /// all active multipart read set uploads.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartReadSetUpload service method.</param>
         /// 
@@ -319,7 +322,10 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Stops a multipart upload.
+        /// Stops a multipart read set upload into a sequence store and returns a response with
+        /// no body if the operation is successful. To confirm that a multipart read set upload
+        /// has been stopped, use the <c>ListMultipartReadSetUploads</c> API operation to view
+        /// all active multipart read set uploads.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortMultipartReadSetUpload service method.</param>
         /// <param name="cancellationToken">
@@ -450,7 +456,12 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes one or more read sets.
+        /// Deletes one or more read sets. If the operation is successful, it returns a response
+        /// with no body. If there is an error with deleting one of the read sets, the operation
+        /// returns an error list. If the operation successfully deletes only a subset of files,
+        /// it will return an error list for the remaining files that fail to be deleted. There
+        /// is a limit of 100 read sets that can be deleted in each <c>BatchDeleteReadSet</c>
+        /// API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteReadSet service method.</param>
         /// 
@@ -485,7 +496,12 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes one or more read sets.
+        /// Deletes one or more read sets. If the operation is successful, it returns a response
+        /// with no body. If there is an error with deleting one of the read sets, the operation
+        /// returns an error list. If the operation successfully deletes only a subset of files,
+        /// it will return an error list for the remaining files that fail to be deleted. There
+        /// is a limit of 100 read sets that can be deleted in each <c>BatchDeleteReadSet</c>
+        /// API call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteReadSet service method.</param>
         /// <param name="cancellationToken">
@@ -762,7 +778,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Concludes a multipart upload once you have uploaded all the components.
+        /// Completes a multipart read set upload into a sequence store after you have initiated
+        /// the upload process with <c>CreateMultipartReadSetUpload</c> and uploaded all read
+        /// set parts using <c>UploadReadSetPart</c>. You must specify the parts you uploaded
+        /// using the parts parameter. If the operation is successful, it returns the read set
+        /// ID(s) of the uploaded read set(s).
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartReadSetUpload service method.</param>
         /// 
@@ -803,7 +829,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Concludes a multipart upload once you have uploaded all the components.
+        /// Completes a multipart read set upload into a sequence store after you have initiated
+        /// the upload process with <c>CreateMultipartReadSetUpload</c> and uploaded all read
+        /// set parts using <c>UploadReadSetPart</c>. You must specify the parts you uploaded
+        /// using the parts parameter. If the operation is successful, it returns the read set
+        /// ID(s) of the uploaded read set(s).
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartReadSetUpload service method.</param>
         /// <param name="cancellationToken">
@@ -1017,7 +1053,38 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Begins a multipart read set upload.
+        /// Initiates a multipart read set upload for uploading partitioned source files into
+        /// a sequence store. You can directly import source files from an EC2 instance and other
+        /// local compute, or from an S3 bucket. To separate these source files into parts, use
+        /// the <c>split</c> operation. Each part cannot be larger than 100 MB. If the operation
+        /// is successful, it provides an <c>uploadId</c> which is required by the <c>UploadReadSetPart</c>
+        /// API operation to upload parts into a sequence store.
+        /// 
+        ///  
+        /// <para>
+        /// To continue uploading a multipart read set into your sequence store, you must use
+        /// the <c>UploadReadSetPart</c> API operation to upload each part individually following
+        /// the steps below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the <c>uploadId</c> obtained from the previous call to <c>CreateMultipartReadSetUpload</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upload parts for that <c>uploadId</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you have finished uploading parts, use the <c>CompleteMultipartReadSetUpload</c>
+        /// API to complete the multipart read set upload and to retrieve the final read set IDs
+        /// in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about creating parts and the <c>split</c> operation, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultipartReadSetUpload service method.</param>
         /// 
@@ -1058,7 +1125,38 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Begins a multipart read set upload.
+        /// Initiates a multipart read set upload for uploading partitioned source files into
+        /// a sequence store. You can directly import source files from an EC2 instance and other
+        /// local compute, or from an S3 bucket. To separate these source files into parts, use
+        /// the <c>split</c> operation. Each part cannot be larger than 100 MB. If the operation
+        /// is successful, it provides an <c>uploadId</c> which is required by the <c>UploadReadSetPart</c>
+        /// API operation to upload parts into a sequence store.
+        /// 
+        ///  
+        /// <para>
+        /// To continue uploading a multipart read set into your sequence store, you must use
+        /// the <c>UploadReadSetPart</c> API operation to upload each part individually following
+        /// the steps below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the <c>uploadId</c> obtained from the previous call to <c>CreateMultipartReadSetUpload</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upload parts for that <c>uploadId</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you have finished uploading parts, use the <c>CompleteMultipartReadSetUpload</c>
+        /// API to complete the multipart read set upload and to retrieve the final read set IDs
+        /// in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about creating parts and the <c>split</c> operation, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultipartReadSetUpload service method.</param>
         /// <param name="cancellationToken">
@@ -1106,7 +1204,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a reference store.
+        /// Creates a reference store and returns metadata in JSON format. Reference stores are
+        /// used to store reference genomes in FASTA format. A reference store is created when
+        /// the first reference genome is imported. To import additional reference genomes from
+        /// an Amazon S3 bucket, use the <c>StartReferenceImportJob</c> API operation. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReferenceStore service method.</param>
         /// 
@@ -1141,7 +1248,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a reference store.
+        /// Creates a reference store and returns metadata in JSON format. Reference stores are
+        /// used to store reference genomes in FASTA format. A reference store is created when
+        /// the first reference genome is imported. To import additional reference genomes from
+        /// an Amazon S3 bucket, use the <c>StartReferenceImportJob</c> API operation. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReferenceStore service method.</param>
         /// <param name="cancellationToken">
@@ -1385,7 +1501,44 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a sequence store.
+        /// Creates a sequence store and returns its metadata. Sequence stores are used to store
+        /// sequence data files called read sets that are saved in FASTQ, BAM, uBAM, or CRAM formats.
+        /// For aligned formats (BAM and CRAM), a sequence store can only use one reference genome.
+        /// For unaligned formats (FASTQ and uBAM), a reference genome is not required. You can
+        /// create multiple sequence stores per region per account. 
+        /// 
+        ///  
+        /// <para>
+        /// The following are optional parameters you can specify for your sequence store:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <c>s3AccessConfig</c> to configure your sequence store with S3 access logs (recommended).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>sseConfig</c> to define your own KMS key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>eTagAlgorithmFamily</c> to define which algorithm to use for the HealthOmics
+        /// eTag on objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>fallbackLocation</c> to define a backup location for storing files that have
+        /// failed a direct upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>propagatedSetLevelTags</c> to configure tags that propagate to all objects
+        /// in your store.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
+        /// a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSequenceStore service method.</param>
         /// 
@@ -1420,7 +1573,44 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Creates a sequence store.
+        /// Creates a sequence store and returns its metadata. Sequence stores are used to store
+        /// sequence data files called read sets that are saved in FASTQ, BAM, uBAM, or CRAM formats.
+        /// For aligned formats (BAM and CRAM), a sequence store can only use one reference genome.
+        /// For unaligned formats (FASTQ and uBAM), a reference genome is not required. You can
+        /// create multiple sequence stores per region per account. 
+        /// 
+        ///  
+        /// <para>
+        /// The following are optional parameters you can specify for your sequence store:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use <c>s3AccessConfig</c> to configure your sequence store with S3 access logs (recommended).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>sseConfig</c> to define your own KMS key for encryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>eTagAlgorithmFamily</c> to define which algorithm to use for the HealthOmics
+        /// eTag on objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>fallbackLocation</c> to define a backup location for storing files that have
+        /// failed a direct upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>propagatedSetLevelTags</c> to configure tags that propagate to all objects
+        /// in your store.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
+        /// a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSequenceStore service method.</param>
         /// <param name="cancellationToken">
@@ -1687,8 +1877,9 @@ namespace Amazon.Omics
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ECR container images</i>: Create one or more container images for the workflow.
-        /// Store the images in a private ECR repository.
+        ///  <i>ECR container images</i>: Create container images for the workflow in a private
+        /// ECR repository, or synchronize images from a supported upstream registry with your
+        /// Amazon ECR private repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1760,8 +1951,9 @@ namespace Amazon.Omics
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ECR container images</i>: Create one or more container images for the workflow.
-        /// Store the images in a private ECR repository.
+        ///  <i>ECR container images</i>: Create container images for the workflow in a private
+        /// ECR repository, or synchronize images from a supported upstream registry with your
+        /// Amazon ECR private repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1836,7 +2028,7 @@ namespace Amazon.Omics
         /// </para>
         ///  <note> 
         /// <para>
-        /// Don’t include any personally identifiable information (PII) in the version name. Version
+        /// Don't include any personally identifiable information (PII) in the version name. Version
         /// names appear in the workflow version ARN.
         /// </para>
         ///  </note> 
@@ -1900,7 +2092,7 @@ namespace Amazon.Omics
         /// </para>
         ///  <note> 
         /// <para>
-        /// Don’t include any personally identifiable information (PII) in the version name. Version
+        /// Don't include any personally identifiable information (PII) in the version name. Version
         /// names appear in the workflow version ARN.
         /// </para>
         ///  </note> 
@@ -2110,7 +2302,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a genome reference.
+        /// Deletes a reference genome and returns a response with no body if the operation is
+        /// successful. The read set associated with the reference genome must first be deleted
+        /// before deleting the reference genome. After the reference genome is deleted, you can
+        /// delete the reference store using the <c>DeleteReferenceStore</c> API operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReference service method.</param>
         /// 
@@ -2148,7 +2350,17 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a genome reference.
+        /// Deletes a reference genome and returns a response with no body if the operation is
+        /// successful. The read set associated with the reference genome must first be deleted
+        /// before deleting the reference genome. After the reference genome is deleted, you can
+        /// delete the reference store using the <c>DeleteReferenceStore</c> API operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReference service method.</param>
         /// <param name="cancellationToken">
@@ -2193,7 +2405,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a genome reference store.
+        /// Deletes a reference store and returns a response with no body if the operation is
+        /// successful. You can only delete a reference store when it does not contain any reference
+        /// genomes. To empty a reference store, use <c>DeleteReference</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReferenceStore service method.</param>
         /// 
@@ -2231,7 +2452,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a genome reference store.
+        /// Deletes a reference store and returns a response with no body if the operation is
+        /// successful. You can only delete a reference store when it does not contain any reference
+        /// genomes. To empty a reference store, use <c>DeleteReference</c>.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about your workflow status, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReferenceStore service method.</param>
         /// <param name="cancellationToken">
@@ -2710,7 +2940,21 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a sequence store.
+        /// Deletes a sequence store and returns a response with no body if the operation is successful.
+        /// You can only delete a sequence store when it does not contain any read sets.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>BatchDeleteReadSet</c> API operation to ensure that all read sets in the
+        /// sequence store are deleted. When a sequence store is deleted, all tags associated
+        /// with the store are also deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSequenceStore service method.</param>
         /// 
@@ -2748,7 +2992,21 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a sequence store.
+        /// Deletes a sequence store and returns a response with no body if the operation is successful.
+        /// You can only delete a sequence store when it does not contain any read sets.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>BatchDeleteReadSet</c> API operation to ensure that all read sets in the
+        /// sequence store are deleted. When a sequence store is deleted, all tags associated
+        /// with the store are also deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html">Deleting
+        /// HealthOmics reference and sequence stores</a> in the <i>Amazon Web Services HealthOmics
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSequenceStore service method.</param>
         /// <param name="cancellationToken">
@@ -2957,8 +3215,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a workflow by specifying its ID. No response is returned if the deletion is
-        /// successful.
+        /// Deletes a workflow by specifying its ID. This operation returns a response with no
+        /// body if the deletion is successful.
         /// 
         ///  
         /// <para>
@@ -3013,8 +3271,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Deletes a workflow by specifying its ID. No response is returned if the deletion is
-        /// successful.
+        /// Deletes a workflow by specifying its ID. This operation returns a response with no
+        /// body if the deletion is successful.
         /// 
         ///  
         /// <para>
@@ -3394,7 +3652,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets a file from a read set.
+        /// Retrieves detailed information from parts of a read set and returns the read set in
+        /// the same format that it was uploaded. You must have read sets uploaded to your sequence
+        /// store in order to run this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSet service method.</param>
         /// 
@@ -3435,7 +3695,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets a file from a read set.
+        /// Retrieves detailed information from parts of a read set and returns the read set in
+        /// the same format that it was uploaded. You must have read sets uploaded to your sequence
+        /// store in order to run this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSet service method.</param>
         /// <param name="cancellationToken">
@@ -3483,7 +3745,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set activation job.
+        /// Returns detailed information about the status of a read set activation job in JSON
+        /// format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetActivationJob service method.</param>
         /// 
@@ -3518,7 +3781,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set activation job.
+        /// Returns detailed information about the status of a read set activation job in JSON
+        /// format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetActivationJob service method.</param>
         /// <param name="cancellationToken">
@@ -3560,7 +3824,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set export job.
+        /// Retrieves status information about a read set export job and returns the data in JSON
+        /// format. Use this operation to actively monitor the progress of an export job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetExportJob service method.</param>
         /// 
@@ -3595,7 +3860,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set export job.
+        /// Retrieves status information about a read set export job and returns the data in JSON
+        /// format. Use this operation to actively monitor the progress of an export job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -3637,7 +3903,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set import job.
+        /// Gets detailed and status information about a read set import job and returns the data
+        /// in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetImportJob service method.</param>
         /// 
@@ -3672,7 +3939,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a read set import job.
+        /// Gets detailed and status information about a read set import job and returns the data
+        /// in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -3714,7 +3982,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets details about a read set.
+        /// Retrieves the metadata for a read set from a sequence store in JSON format. This operation
+        /// does not return tags. To retrieve the list of tags for a read set, use the <c>ListTagsForResource</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetMetadata service method.</param>
         /// 
@@ -3749,7 +4019,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets details about a read set.
+        /// Retrieves the metadata for a read set from a sequence store in JSON format. This operation
+        /// does not return tags. To retrieve the list of tags for a read set, use the <c>ListTagsForResource</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReadSetMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -3791,7 +4063,14 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets a reference file.
+        /// Downloads parts of data from a reference genome and returns the reference file in
+        /// the same format that it was uploaded.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReference service method.</param>
         /// 
@@ -3829,7 +4108,14 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets a reference file.
+        /// Downloads parts of data from a reference genome and returns the reference file in
+        /// the same format that it was uploaded.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a HealthOmics reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReference service method.</param>
         /// <param name="cancellationToken">
@@ -3874,7 +4160,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a reference import job.
+        /// Monitors the status of a reference import job. This operation can be called after
+        /// calling the <c>StartReferenceImportJob</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReferenceImportJob service method.</param>
         /// 
@@ -3909,7 +4196,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a reference import job.
+        /// Monitors the status of a reference import job. This operation can be called after
+        /// calling the <c>StartReferenceImportJob</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReferenceImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -3951,7 +4239,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a genome reference's metadata.
+        /// Retrieves metadata for a reference genome. This operation returns the number of parts,
+        /// part size, and MD5 of an entire file. This operation does not return tags. To retrieve
+        /// the list of tags for a read set, use the <c>ListTagsForResource</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReferenceMetadata service method.</param>
         /// 
@@ -3986,7 +4276,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a genome reference's metadata.
+        /// Retrieves metadata for a reference genome. This operation returns the number of parts,
+        /// part size, and MD5 of an entire file. This operation does not return tags. To retrieve
+        /// the list of tags for a read set, use the <c>ListTagsForResource</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReferenceMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -4582,7 +4874,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a sequence store.
+        /// Retrieves metadata for a sequence store using its ID and returns it in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSequenceStore service method.</param>
         /// 
@@ -4617,7 +4909,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Gets information about a sequence store.
+        /// Retrieves metadata for a sequence store using its ID and returns it in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSequenceStore service method.</param>
         /// <param name="cancellationToken">
@@ -5299,8 +5591,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
-        /// a read set is created and the upload will no longer be returned in the response.
+        /// Lists in-progress multipart read set uploads for a sequence store and returns it in
+        /// a JSON formatted output. Multipart read set uploads are initiated by the <c>CreateMultipartReadSetUploads</c>
+        /// API operation. This operation returns a response with no body when the upload is complete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
         /// 
@@ -5341,8 +5634,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
-        /// a read set is created and the upload will no longer be returned in the response.
+        /// Lists in-progress multipart read set uploads for a sequence store and returns it in
+        /// a JSON formatted output. Multipart read set uploads are initiated by the <c>CreateMultipartReadSetUploads</c>
+        /// API operation. This operation returns a response with no body when the upload is complete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
         /// <param name="cancellationToken">
@@ -5390,7 +5684,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set activation jobs.
+        /// Retrieves a list of read set activation jobs and returns the metadata in a JSON formatted
+        /// output. To extract metadata from a read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetActivationJobs service method.</param>
         /// 
@@ -5425,7 +5721,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set activation jobs.
+        /// Retrieves a list of read set activation jobs and returns the metadata in a JSON formatted
+        /// output. To extract metadata from a read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetActivationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -5467,7 +5765,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set export jobs.
+        /// Retrieves a list of read set export jobs in a JSON formatted response. This API operation
+        /// is used to check the status of a read set export job initiated by the <c>StartReadSetExportJob</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetExportJobs service method.</param>
         /// 
@@ -5502,7 +5802,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set export jobs.
+        /// Retrieves a list of read set export jobs in a JSON formatted response. This API operation
+        /// is used to check the status of a read set export job initiated by the <c>StartReadSetExportJob</c>
+        /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetExportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -5544,7 +5846,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set import jobs.
+        /// Retrieves a list of read set import jobs and returns the data in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetImportJobs service method.</param>
         /// 
@@ -5579,7 +5881,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read set import jobs.
+        /// Retrieves a list of read set import jobs and returns the data in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -5621,7 +5923,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read sets.
+        /// Retrieves a list of read sets from a sequence store ID and returns the metadata in
+        /// JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSets service method.</param>
         /// 
@@ -5656,7 +5959,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of read sets.
+        /// Retrieves a list of read sets from a sequence store ID and returns the metadata in
+        /// JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSets service method.</param>
         /// <param name="cancellationToken">
@@ -5698,8 +6002,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// This operation will list all parts in a requested multipart upload for a sequence
-        /// store.
+        /// Lists all parts in a multipart read set upload for a sequence store and returns the
+        /// metadata in a JSON formatted output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetUploadParts service method.</param>
         /// 
@@ -5740,8 +6044,8 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// This operation will list all parts in a requested multipart upload for a sequence
-        /// store.
+        /// Lists all parts in a multipart read set upload for a sequence store and returns the
+        /// metadata in a JSON formatted output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReadSetUploadParts service method.</param>
         /// <param name="cancellationToken">
@@ -5789,7 +6093,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of reference import jobs.
+        /// Retrieves the metadata of one or more reference import jobs for a reference store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferenceImportJobs service method.</param>
         /// 
@@ -5824,7 +6128,7 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of reference import jobs.
+        /// Retrieves the metadata of one or more reference import jobs for a reference store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferenceImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -5866,7 +6170,13 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of references.
+        /// Retrieves the metadata of one or more reference genomes in a reference store.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferences service method.</param>
         /// 
@@ -5901,7 +6211,13 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of references.
+        /// Retrieves the metadata of one or more reference genomes in a reference store.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferences service method.</param>
         /// <param name="cancellationToken">
@@ -5943,7 +6259,14 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of reference stores.
+        /// Retrieves a list of reference stores linked to your account and returns their metadata
+        /// in JSON format.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferenceStores service method.</param>
         /// 
@@ -5975,7 +6298,14 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of reference stores.
+        /// Retrieves a list of reference stores linked to your account and returns their metadata
+        /// in JSON format.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html">Creating
+        /// a reference store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReferenceStores service method.</param>
         /// <param name="cancellationToken">
@@ -6390,7 +6720,13 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of sequence stores.
+        /// Retrieves a list of sequence stores and returns each sequence store's metadata.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
+        /// a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSequenceStores service method.</param>
         /// 
@@ -6422,7 +6758,13 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Retrieves a list of sequence stores.
+        /// Retrieves a list of sequence stores and returns each sequence store's metadata.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
+        /// a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSequenceStores service method.</param>
         /// <param name="cancellationToken">
@@ -7129,8 +7471,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused
-        /// read sets after 30 days.
+        /// Activates an archived read set and returns its metadata in a JSON formatted output.
+        /// AWS HealthOmics automatically archives unused read sets after 30 days. To monitor
+        /// the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// To learn more, see <a href="https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html">Activating
+        /// read sets</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetActivationJob service method.</param>
         /// 
@@ -7168,8 +7518,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused
-        /// read sets after 30 days.
+        /// Activates an archived read set and returns its metadata in a JSON formatted output.
+        /// AWS HealthOmics automatically archives unused read sets after 30 days. To monitor
+        /// the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// To learn more, see <a href="https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html">Activating
+        /// read sets</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetActivationJob service method.</param>
         /// <param name="cancellationToken">
@@ -7214,7 +7572,15 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Exports a read set to Amazon S3.
+        /// Starts a read set export job. When the export job is finished, the read set is exported
+        /// to an Amazon S3 bucket which can be retrieved using the <c>GetReadSetExportJob</c>
+        /// API operation.
+        /// 
+        ///  
+        /// <para>
+        /// To monitor the status of the export job, use the <c>ListReadSetExportJobs</c> API
+        /// operation. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetExportJob service method.</param>
         /// 
@@ -7252,7 +7618,15 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Exports a read set to Amazon S3.
+        /// Starts a read set export job. When the export job is finished, the read set is exported
+        /// to an Amazon S3 bucket which can be retrieved using the <c>GetReadSetExportJob</c>
+        /// API operation.
+        /// 
+        ///  
+        /// <para>
+        /// To monitor the status of the export job, use the <c>ListReadSetExportJobs</c> API
+        /// operation. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetExportJob service method.</param>
         /// <param name="cancellationToken">
@@ -7297,7 +7671,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a read set import job.
+        /// Imports a read set from the sequence store. Read set import jobs support a maximum
+        /// of 100 read sets of different types. Monitor the progress of your read set import
+        /// job by calling the <c>GetReadSetImportJob</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetImportJob service method.</param>
         /// 
@@ -7335,7 +7711,9 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a read set import job.
+        /// Imports a read set from the sequence store. Read set import jobs support a maximum
+        /// of 100 read sets of different types. Monitor the progress of your read set import
+        /// job by calling the <c>GetReadSetImportJob</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReadSetImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -7380,7 +7758,10 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a reference import job.
+        /// Imports a reference genome from Amazon S3 into a specified reference store. You can
+        /// have multiple reference genomes in a reference store. You can only import reference
+        /// genomes one at a time into each reference store. Monitor the status of your reference
+        /// import job by using the <c>GetReferenceImportJob</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReferenceImportJob service method.</param>
         /// 
@@ -7418,7 +7799,10 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// Starts a reference import job.
+        /// Imports a reference genome from Amazon S3 into a specified reference store. You can
+        /// have multiple reference genomes in a reference store. You can only import reference
+        /// genomes one at a time into each reference store. Monitor the status of your reference
+        /// import job by using the <c>GetReferenceImportJob</c> API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReferenceImportJob service method.</param>
         /// <param name="cancellationToken">
@@ -8767,8 +9151,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// This operation uploads a specific part of a read set. If you upload a new part using
-        /// a previously used part number, the previously uploaded part will be overwritten.
+        /// Uploads a specific part of a read set into a sequence store. When you a upload a read
+        /// set part with a part number that already exists, the new part replaces the existing
+        /// one. This operation returns a JSON formatted response containing a string identifier
+        /// that is used to confirm that parts are being added to the intended upload.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadReadSetPart service method.</param>
         /// 
@@ -8809,8 +9201,16 @@ namespace Amazon.Omics
 
 
         /// <summary>
-        /// This operation uploads a specific part of a read set. If you upload a new part using
-        /// a previously used part number, the previously uploaded part will be overwritten.
+        /// Uploads a specific part of a read set into a sequence store. When you a upload a read
+        /// set part with a part number that already exists, the new part replaces the existing
+        /// one. This operation returns a JSON formatted response containing a string identifier
+        /// that is used to confirm that parts are being added to the intended upload.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html">Direct
+        /// upload to a sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadReadSetPart service method.</param>
         /// <param name="cancellationToken">
