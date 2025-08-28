@@ -72,7 +72,8 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  App Runner currently only provides support for IPv4. 
+        ///  App Runner only supports subnets of IP address type <i>IPv4</i> and <i>dual stack</i>
+        /// (IPv4 and IPv6).
         /// </para>
         ///  </note>
         /// </summary>
