@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The server-side encryption key configuration for a customer provided encryption key.
+    /// The server-side encryption key configuration for a customer-provided encryption key.
     /// </summary>
     public partial class SseConfiguration
     {
@@ -39,7 +39,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property KmsEncryptionConfig. 
         /// <para>
-        ///  The KMS encryption configuration used to provide details for data encryption. 
+        /// The Key Management Service (KMS) encryption configuration used to provide details
+        /// for data encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

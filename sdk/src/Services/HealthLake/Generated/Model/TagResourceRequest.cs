@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds a user specified key and value tag to a data store.
+    /// Add a user-specifed key and value tag to a data store.
     /// </summary>
     public partial class TagResourceRequest : AmazonHealthLakeRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        ///  The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which
-        /// tags are being added to. 
+        /// The Amazon Resource Name (ARN) that grants access to the data store tags are being
+        /// added to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The user specified key and value pair tags being added to a data store. 
+        /// The user-specified key and value pair tags being added to a data store.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

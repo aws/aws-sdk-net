@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFHIRImportJobs operation.
-    /// Lists all FHIR import jobs associated with an account and their statuses.
+    /// List all FHIR import jobs associated with an account and their statuses.
     /// </summary>
     public partial class ListFHIRImportJobsRequest : AmazonHealthLakeRequest
     {
@@ -46,8 +46,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        ///  This parameter limits the response to the import job with the specified data store
-        /// ID. 
+        /// Limits the response to the import job with the specified data store ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -66,8 +65,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        ///  This parameter limits the response to the import job with the specified job name.
-        /// 
+        /// Limits the response to the import job with the specified job name. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -86,8 +84,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        ///  This parameter limits the response to the import job with the specified job status.
-        /// 
+        /// Limits the response to the import job with the specified job status. 
         /// </para>
         /// </summary>
         public JobStatus JobStatus
@@ -105,8 +102,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  This parameter limits the number of results returned for a ListFHIRImportJobs to
-        /// a maximum quantity specified by the user. 
+        /// Limits the number of results returned for <c>ListFHIRImportJobs</c> to a maximum quantity
+        /// specified by the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -125,8 +122,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token used to identify the next page of results to return for a ListFHIRImportJobs
-        /// query. 
+        /// The pagination token used to identify the next page of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -145,8 +141,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property SubmittedAfter. 
         /// <para>
-        ///  This parameter limits the response to FHIR import jobs submitted after a user specified
-        /// date. 
+        /// Limits the response to FHIR import jobs submitted after a user-specified date.
         /// </para>
         /// </summary>
         public DateTime? SubmittedAfter
@@ -164,8 +159,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property SubmittedBefore. 
         /// <para>
-        ///  This parameter limits the response to FHIR import jobs submitted before a user specified
-        /// date. 
+        /// Limits the response to FHIR import jobs submitted before a user- specified date. 
         /// </para>
         /// </summary>
         public DateTime? SubmittedBefore

@@ -40,8 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property ImportJobPropertiesList. 
         /// <para>
-        ///  The properties of a listed FHIR import jobs, including the ID, ARN, name, the status
-        /// of the job, and the progress report of the job. 
+        /// The properties for listed import jobs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -65,8 +64,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token used to identify the next page of results to return for a ListFHIRImportJobs
-        /// query. 
+        /// The pagination token used to identify the next page of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
