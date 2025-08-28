@@ -5478,23 +5478,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["AccountId"] = "111111111111";
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
@@ -5506,23 +5489,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            parameters["AccountId"] = "111111111111";
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -5676,23 +5642,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
@@ -5704,23 +5653,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -5795,23 +5727,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
@@ -5823,23 +5738,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
-            parameters["AccountIdEndpointMode"] = "preferred";
-            parameters["Region"] = "us-iso-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
