@@ -4916,7 +4916,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -7898,7 +7898,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
         /// 
         /// </para>
         /// </summary>
@@ -8205,7 +8205,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -10732,7 +10732,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
@@ -12130,7 +12130,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web ServicesSupport. 
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -13548,7 +13548,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>

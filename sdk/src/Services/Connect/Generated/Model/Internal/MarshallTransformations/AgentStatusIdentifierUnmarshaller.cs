@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Dimensions Object
+    /// Response Unmarshaller for AgentStatusIdentifier Object
     /// </summary>  
-    public class DimensionsUnmarshaller : IUnmarshaller<Dimensions, XmlUnmarshallerContext>, IUnmarshaller<Dimensions, JsonUnmarshallerContext>
+    public class AgentStatusIdentifierUnmarshaller : IUnmarshaller<AgentStatusIdentifier, XmlUnmarshallerContext>, IUnmarshaller<AgentStatusIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Dimensions IUnmarshaller<Dimensions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentStatusIdentifier IUnmarshaller<AgentStatusIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Dimensions Unmarshall(JsonUnmarshallerContext context)
+        public AgentStatusIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
-            Dimensions unmarshalledObject = new Dimensions();
+            AgentStatusIdentifier unmarshalledObject = new AgentStatusIdentifier();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AgentStatus", targetDepth))
-                {
-                    var unmarshaller = AgentStatusIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.AgentStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Queue", targetDepth))
-                {
-                    var unmarshaller = QueueReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoutingProfile", targetDepth))
-                {
-                    var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoutingStepExpression", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static DimensionsUnmarshaller _instance = new DimensionsUnmarshaller();        
+        private static AgentStatusIdentifierUnmarshaller _instance = new AgentStatusIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DimensionsUnmarshaller Instance
+        public static AgentStatusIdentifierUnmarshaller Instance
         {
             get
             {

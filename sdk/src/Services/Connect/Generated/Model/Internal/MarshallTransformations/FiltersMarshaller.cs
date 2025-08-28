@@ -48,6 +48,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAgentStatuses())
+            {
+                context.Writer.WritePropertyName("AgentStatuses");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAgentStatusesListValue in requestObject.AgentStatuses)
+                {
+                        context.Writer.Write(requestObjectAgentStatusesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
