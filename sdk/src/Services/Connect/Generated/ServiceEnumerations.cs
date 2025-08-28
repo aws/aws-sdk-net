@@ -2357,6 +2357,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant AGENT_STATUS for Grouping
+        /// </summary>
+        public static readonly Grouping AGENT_STATUS = new Grouping("AGENT_STATUS");
+        /// <summary>
         /// Constant CHANNEL for Grouping
         /// </summary>
         public static readonly Grouping CHANNEL = new Grouping("CHANNEL");

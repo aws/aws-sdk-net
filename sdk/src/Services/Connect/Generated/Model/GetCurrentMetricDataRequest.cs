@@ -280,12 +280,20 @@ namespace Amazon.Connect.Model
         /// <para>
         /// RoutingStepExpressions: 50
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AgentStatuses: 50
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Metric data is retrieved only for the resources associated with the queues or routing
         /// profiles, and by any channels included in the filter. (You cannot filter by both queue
         /// AND routing profile.) You can include both resource IDs and resource ARNs in the same
         /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <c>AgentStatuses</c> as filter make sure Queues is added as primary filter.
         /// </para>
         ///  
         /// <para>
@@ -314,8 +322,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Groupings. 
         /// <para>
-        /// The grouping applied to the metrics returned. For example, when grouped by <c>QUEUE</c>,
-        /// the metrics returned apply to each queue rather than aggregated for all queues. 
+        /// Defines the level of aggregation for metrics data by a dimension(s). Its similar to
+        /// sorting items into buckets based on a common characteristic, then counting or calculating
+        /// something for each bucket. For example, when grouped by <c>QUEUE</c>, the metrics
+        /// returned apply to each queue rather than aggregated for all queues. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The grouping list is an ordered list, with the first item in the list defined as the
+        /// primary grouping. If no grouping is included in the request, the aggregation happens
+        /// at the instance-level.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -324,13 +340,15 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you group by <c>ROUTING_PROFILE</c>, you must include either a queue or routing
-        /// profile filter. In addition, a routing profile filter is required for metrics <c>CONTACTS_SCHEDULED</c>,
-        /// <c>CONTACTS_IN_QUEUE</c>, and <c> OLDEST_CONTACT_AGE</c>.
+        /// If you group by <c>AGENT_STATUS</c>, you must include the <c>QUEUE</c> as the primary
+        /// grouping and use queue filter. When you group by <c>AGENT_STATUS</c>, the only metric
+        /// available is the <c>AGENTS_ONLINE</c> metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If no <c>Grouping</c> is included in the request, a summary of metrics is returned.
+        /// If you group by <c>ROUTING_PROFILE</c>, you must include either a queue or routing
+        /// profile filter. In addition, a routing profile filter is required for metrics <c>CONTACTS_SCHEDULED</c>,
+        /// <c>CONTACTS_IN_QUEUE</c>, and <c> OLDEST_CONTACT_AGE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

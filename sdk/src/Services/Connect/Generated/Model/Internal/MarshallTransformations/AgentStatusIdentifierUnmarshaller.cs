@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Dimensions Object
+    /// Response Unmarshaller for AgentStatusIdentifier Object
     /// </summary>  
-    public class DimensionsUnmarshaller : IJsonUnmarshaller<Dimensions, JsonUnmarshallerContext>
+    public class AgentStatusIdentifierUnmarshaller : IJsonUnmarshaller<AgentStatusIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Dimensions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AgentStatusIdentifier Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Dimensions unmarshalledObject = new Dimensions();
+            AgentStatusIdentifier unmarshalledObject = new AgentStatusIdentifier();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentStatus", targetDepth))
-                {
-                    var unmarshaller = AgentStatusIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.AgentStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Queue", targetDepth))
-                {
-                    var unmarshaller = QueueReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Queue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RoutingProfile", targetDepth))
-                {
-                    var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
-                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RoutingStepExpression", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static DimensionsUnmarshaller _instance = new DimensionsUnmarshaller();        
+        private static AgentStatusIdentifierUnmarshaller _instance = new AgentStatusIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DimensionsUnmarshaller Instance
+        public static AgentStatusIdentifierUnmarshaller Instance
         {
             get
             {

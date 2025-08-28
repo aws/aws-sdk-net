@@ -34,10 +34,29 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Dimensions
     {
+        private AgentStatusIdentifier _agentStatus;
         private Channel _channel;
         private QueueReference _queue;
         private RoutingProfileReference _routingProfile;
         private string _routingStepExpression;
+
+        /// <summary>
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// Information about the agent status assigned to the user.
+        /// </para>
+        /// </summary>
+        public AgentStatusIdentifier AgentStatus
+        {
+            get { return this._agentStatus; }
+            set { this._agentStatus = value; }
+        }
+
+        // Check to see if AgentStatus property is set
+        internal bool IsSetAgentStatus()
+        {
+            return this._agentStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Channel. 
