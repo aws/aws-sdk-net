@@ -120,6 +120,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetValidationLevel())
+                {
+                    context.Writer.WritePropertyName("ValidationLevel");
+                    context.Writer.Write(publicRequest.ValidationLevel);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

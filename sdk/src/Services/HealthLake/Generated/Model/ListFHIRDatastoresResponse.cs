@@ -40,7 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastorePropertiesList. 
         /// <para>
-        /// All properties associated with the listed data stores.
+        /// The properties associated with all listed data stores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token that can be used to retrieve the next page of results.
+        /// The pagination token used to retrieve the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

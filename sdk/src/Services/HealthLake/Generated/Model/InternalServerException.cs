@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Unknown error occurs in the service.
+    /// An unknown internal error occurred in the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

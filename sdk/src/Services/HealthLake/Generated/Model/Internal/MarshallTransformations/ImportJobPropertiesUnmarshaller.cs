@@ -132,6 +132,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubmitTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValidationLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValidationLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

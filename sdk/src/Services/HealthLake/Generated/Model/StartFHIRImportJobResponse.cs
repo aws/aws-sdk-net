@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated data store ID.
+        /// The data store identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The AWS-generated job ID.
+        /// The import job identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -79,7 +79,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of an import job.
+        /// The import job status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

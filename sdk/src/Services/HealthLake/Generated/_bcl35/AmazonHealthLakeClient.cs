@@ -36,8 +36,9 @@ namespace Amazon.HealthLake
     /// <summary>
     /// <para>Implementation for accessing HealthLake</para>
     ///
-    /// AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform,
-    /// query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.
+    /// This is the <i>AWS HealthLake API Reference</i>. For an introduction to the service,
+    /// see <a href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What
+    /// is AWS HealthLake?</a> in the <i>AWS HealthLake Developer Guide</i>.
     /// </summary>
     public partial class AmazonHealthLakeClient : AmazonServiceClient, IAmazonHealthLake
     {
@@ -268,7 +269,7 @@ namespace Amazon.HealthLake
         #region  CreateFHIRDatastore
 
         /// <summary>
-        /// Creates a data store that can ingest and export FHIR formatted data.
+        /// Create a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFHIRDatastore service method.</param>
         /// 
@@ -277,7 +278,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -334,7 +335,7 @@ namespace Amazon.HealthLake
         #region  DeleteFHIRDatastore
 
         /// <summary>
-        /// Deletes a data store.
+        /// Delete a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFHIRDatastore service method.</param>
         /// 
@@ -343,10 +344,10 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ConflictException">
-        /// The data store is in a transition state and the user requested action can not be performed.
+        /// The data store is in a transition state and the user requested action cannot be performed.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -406,15 +407,13 @@ namespace Amazon.HealthLake
         #region  DescribeFHIRDatastore
 
         /// <summary>
-        /// Gets the properties associated with the FHIR data store, including the data store
-        /// ID, data store ARN, data store name, data store status, when the data store was created,
-        /// data store type version, and the data store's endpoint.
+        /// Get properties for a FHIR-enabled data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRDatastore service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRDatastore service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -474,14 +473,13 @@ namespace Amazon.HealthLake
         #region  DescribeFHIRExportJob
 
         /// <summary>
-        /// Displays the properties of a FHIR export job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get FHIR export job properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRExportJob service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRExportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -541,14 +539,13 @@ namespace Amazon.HealthLake
         #region  DescribeFHIRImportJob
 
         /// <summary>
-        /// Displays the properties of a FHIR import job, including the ID, ARN, name, and the
-        /// status of the job.
+        /// Get the import job properties to learn more about the job or job progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRImportJob service method.</param>
         /// 
         /// <returns>The response from the DescribeFHIRImportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -608,14 +605,13 @@ namespace Amazon.HealthLake
         #region  ListFHIRDatastores
 
         /// <summary>
-        /// Lists all FHIR data stores that are in the user’s account, regardless of data store
-        /// status.
+        /// List all FHIR-enabled data stores in a user’s account, regardless of data store status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRDatastores service method.</param>
         /// 
         /// <returns>The response from the ListFHIRDatastores service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -681,7 +677,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -741,7 +737,7 @@ namespace Amazon.HealthLake
         #region  ListFHIRImportJobs
 
         /// <summary>
-        /// Lists all FHIR import jobs associated with an account and their statuses.
+        /// List all FHIR import jobs associated with an account and their statuses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRImportJobs service method.</param>
         /// 
@@ -750,7 +746,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -870,7 +866,7 @@ namespace Amazon.HealthLake
         #region  StartFHIRExportJob
 
         /// <summary>
-        /// Begins a FHIR export job.
+        /// Start a FHIR export job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRExportJob service method.</param>
         /// 
@@ -879,7 +875,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -939,7 +935,9 @@ namespace Amazon.HealthLake
         #region  StartFHIRImportJob
 
         /// <summary>
-        /// Begins a FHIR Import job.
+        /// Start importing bulk FHIR data into an ACTIVE data store. The import job imports FHIR
+        /// data found in the <c>InputDataConfig</c> object and stores processing results in the
+        /// <c>JobOutputDataConfig</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFHIRImportJob service method.</param>
         /// 
@@ -948,7 +946,7 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
-        /// Unknown error occurs in the service.
+        /// An unknown internal error occurred in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
         /// The requested data store was not found.
@@ -1008,7 +1006,7 @@ namespace Amazon.HealthLake
         #region  TagResource
 
         /// <summary>
-        /// Adds a user specified key and value tag to a data store.
+        /// Add a user-specifed key and value tag to a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1068,7 +1066,7 @@ namespace Amazon.HealthLake
         #region  UntagResource
 
         /// <summary>
-        /// Removes tags from a data store.
+        /// Remove a user-specifed key and value tag from a data store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

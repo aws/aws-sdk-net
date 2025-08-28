@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The progress report of an import job.
+    /// The progress report for the import job.
     /// </summary>
     public partial class JobProgressReport
     {
@@ -46,7 +46,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput (in MB/sec) of the import job.
+        /// The transaction rate the import job is processed at.
         /// </para>
         /// </summary>
         public double Throughput
@@ -64,7 +64,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfFilesReadWithCustomerError. 
         /// <para>
-        /// The number of files that failed to be read from the input S3 bucket due to customer
+        /// The number of files that failed to be read from the S3 input bucket due to customer
         /// error.
         /// </para>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfImportedFiles. 
         /// <para>
-        /// The number of files imported so far.
+        /// The number of files imported.
         /// </para>
         /// </summary>
         public long TotalNumberOfImportedFiles
@@ -101,7 +101,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfResourcesImported. 
         /// <para>
-        /// The number of resources imported so far.
+        /// The number of resources imported.
         /// </para>
         /// </summary>
         public long TotalNumberOfResourcesImported
@@ -119,7 +119,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfResourcesScanned. 
         /// <para>
-        /// The number of resources scanned from the input S3 bucket.
+        /// The number of resources scanned from the S3 input bucket.
         /// </para>
         /// </summary>
         public long TotalNumberOfResourcesScanned
@@ -155,7 +155,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfScannedFiles. 
         /// <para>
-        /// The number of files scanned from input S3 bucket.
+        /// The number of files scanned from the S3 input bucket.
         /// </para>
         /// </summary>
         public long TotalNumberOfScannedFiles
@@ -173,7 +173,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalSizeOfScannedFilesInMB. 
         /// <para>
-        /// The size (in MB) of the files scanned from the input S3 bucket.
+        /// The size (in MB) of files scanned from the S3 input bucket.
         /// </para>
         /// </summary>
         public double TotalSizeOfScannedFilesInMB

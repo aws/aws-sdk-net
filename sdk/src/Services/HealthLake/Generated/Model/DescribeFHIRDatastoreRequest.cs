@@ -31,9 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFHIRDatastore operation.
-    /// Gets the properties associated with the FHIR data store, including the data store
-    /// ID, data store ARN, data store name, data store status, when the data store was created,
-    /// data store type version, and the data store's endpoint.
+    /// Get properties for a FHIR-enabled data store.
     /// </summary>
     public partial class DescribeFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
@@ -42,7 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated data store ID.
+        /// The data store identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

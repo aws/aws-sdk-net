@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The filters applied to data store query.
+    /// The filters applied to a data store query.
     /// </summary>
     public partial class DatastoreFilter
     {
@@ -42,8 +42,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// A filter that allows the user to set cutoff dates for records. All data stores created
-        /// after the specified date will be included in the results.
+        /// Filter to set cutoff dates for records. All data stores created after the specified
+        /// date are included in the results.
         /// </para>
         /// </summary>
         public DateTime CreatedAfter
@@ -61,8 +61,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// A filter that allows the user to set cutoff dates for records. All data stores created
-        /// before the specified date will be included in the results. 
+        /// Filter to set cutoff dates for records. All data stores created before the specified
+        /// date are included in the results. 
         /// </para>
         /// </summary>
         public DateTime CreatedBefore
@@ -80,7 +80,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// Allows the user to filter data store results by name.
+        /// Filter data store results by name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -99,7 +99,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreStatus. 
         /// <para>
-        /// Allows the user to filter data store results by status.
+        /// Filter data store results by status.
         /// </para>
         /// </summary>
         public DatastoreStatus DatastoreStatus

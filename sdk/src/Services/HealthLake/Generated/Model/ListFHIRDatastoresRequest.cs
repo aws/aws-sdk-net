@@ -31,8 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFHIRDatastores operation.
-    /// Lists all FHIR data stores that are in the user’s account, regardless of data store
-    /// status.
+    /// List all FHIR-enabled data stores in a user’s account, regardless of data store status.
     /// </summary>
     public partial class ListFHIRDatastoresRequest : AmazonHealthLakeRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Lists all filters associated with a FHIR data store request.
+        /// List all filters associated with a FHIR data store request.
         /// </para>
         /// </summary>
         public DatastoreFilter Filter
@@ -61,8 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest
-        /// call.
+        /// The maximum number of data stores returned on a page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -81,7 +79,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Fetches the next page of data stores when results are paginated.
+        /// The token used to retrieve the next page of data stores when results are paginated.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
