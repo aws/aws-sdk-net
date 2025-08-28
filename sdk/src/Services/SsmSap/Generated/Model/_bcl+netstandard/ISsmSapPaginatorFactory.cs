@@ -48,6 +48,26 @@ namespace Amazon.SsmSap.Model
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
+        /// Paginator for ListConfigurationCheckDefinitions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConfigurationCheckDefinitionsPaginator ListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfigurationCheckOperations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConfigurationCheckOperationsPaginator ListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         [AWSPaginator(
@@ -76,5 +96,25 @@ namespace Amazon.SsmSap.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListOperationsPaginator ListOperations(ListOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSubCheckResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSubCheckResultsPaginator ListSubCheckResults(ListSubCheckResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSubCheckRuleResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSubCheckRuleResultsPaginator ListSubCheckRuleResults(ListSubCheckRuleResultsRequest request);
     }
 }

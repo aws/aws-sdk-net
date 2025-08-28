@@ -495,6 +495,59 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  GetConfigurationCheckOperation
+
+
+        /// <summary>
+        /// Gets the details of a configuration check operation by specifying the operation ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationCheckOperation service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationCheckOperation service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
+        public virtual GetConfigurationCheckOperationResponse GetConfigurationCheckOperation(GetConfigurationCheckOperationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationCheckOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationCheckOperationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationCheckOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the details of a configuration check operation by specifying the operation ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationCheckOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfigurationCheckOperation service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
+        public virtual Task<GetConfigurationCheckOperationResponse> GetConfigurationCheckOperationAsync(GetConfigurationCheckOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationCheckOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationCheckOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationCheckOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDatabase
 
 
@@ -786,6 +839,118 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  ListConfigurationCheckDefinitions
+
+
+        /// <summary>
+        /// Lists all configuration check types supported by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckDefinitions service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
+        public virtual ListConfigurationCheckDefinitionsResponse ListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationCheckDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationCheckDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationCheckDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all configuration check types supported by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckDefinitions service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
+        public virtual Task<ListConfigurationCheckDefinitionsResponse> ListConfigurationCheckDefinitionsAsync(ListConfigurationCheckDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationCheckDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationCheckDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationCheckDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationCheckOperations
+
+
+        /// <summary>
+        /// Lists the configuration check operations performed by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckOperations service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
+        public virtual ListConfigurationCheckOperationsResponse ListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationCheckOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationCheckOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationCheckOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the configuration check operations performed by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckOperations service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
+        public virtual Task<ListConfigurationCheckOperationsResponse> ListConfigurationCheckOperationsAsync(ListConfigurationCheckOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationCheckOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationCheckOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationCheckOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDatabases
 
 
@@ -961,6 +1126,112 @@ namespace Amazon.SsmSap
             options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSubCheckResults
+
+
+        /// <summary>
+        /// Lists the sub-check results of a specified configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckResults service method.</param>
+        /// 
+        /// <returns>The response from the ListSubCheckResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
+        public virtual ListSubCheckResultsResponse ListSubCheckResults(ListSubCheckResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubCheckResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubCheckResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSubCheckResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the sub-check results of a specified configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubCheckResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
+        public virtual Task<ListSubCheckResultsResponse> ListSubCheckResultsAsync(ListSubCheckResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubCheckResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubCheckResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSubCheckResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSubCheckRuleResults
+
+
+        /// <summary>
+        /// Lists the rules of a specified sub-check belonging to a configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckRuleResults service method.</param>
+        /// 
+        /// <returns>The response from the ListSubCheckRuleResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
+        public virtual ListSubCheckRuleResultsResponse ListSubCheckRuleResults(ListSubCheckRuleResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubCheckRuleResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubCheckRuleResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSubCheckRuleResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the rules of a specified sub-check belonging to a configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckRuleResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubCheckRuleResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
+        public virtual Task<ListSubCheckRuleResultsResponse> ListSubCheckRuleResultsAsync(ListSubCheckRuleResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubCheckRuleResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubCheckRuleResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSubCheckRuleResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1326,6 +1597,71 @@ namespace Amazon.SsmSap
             options.ResponseUnmarshaller = StartApplicationRefreshResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartApplicationRefreshResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartConfigurationChecks
+
+
+        /// <summary>
+        /// Initiates configuration check operations against a specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationChecks service method.</param>
+        /// 
+        /// <returns>The response from the StartConfigurationChecks service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
+        public virtual StartConfigurationChecksResponse StartConfigurationChecks(StartConfigurationChecksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationChecksResponseUnmarshaller.Instance;
+
+            return Invoke<StartConfigurationChecksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates configuration check operations against a specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartConfigurationChecks service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
+        public virtual Task<StartConfigurationChecksResponse> StartConfigurationChecksAsync(StartConfigurationChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConfigurationChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConfigurationChecksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartConfigurationChecksResponse>(request, options, cancellationToken);
         }
 
         #endregion

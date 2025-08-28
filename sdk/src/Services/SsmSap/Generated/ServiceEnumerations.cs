@@ -521,6 +521,110 @@ namespace Amazon.SsmSap
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationCheckOperationListingMode.
+    /// </summary>
+    public class ConfigurationCheckOperationListingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_OPERATIONS for ConfigurationCheckOperationListingMode
+        /// </summary>
+        public static readonly ConfigurationCheckOperationListingMode ALL_OPERATIONS = new ConfigurationCheckOperationListingMode("ALL_OPERATIONS");
+        /// <summary>
+        /// Constant LATEST_PER_CHECK for ConfigurationCheckOperationListingMode
+        /// </summary>
+        public static readonly ConfigurationCheckOperationListingMode LATEST_PER_CHECK = new ConfigurationCheckOperationListingMode("LATEST_PER_CHECK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationCheckOperationListingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationCheckOperationListingMode FindValue(string value)
+        {
+            return FindValue<ConfigurationCheckOperationListingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationCheckOperationListingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationCheckType.
+    /// </summary>
+    public class ConfigurationCheckType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAP_CHECK_01 for ConfigurationCheckType
+        /// </summary>
+        public static readonly ConfigurationCheckType SAP_CHECK_01 = new ConfigurationCheckType("SAP_CHECK_01");
+        /// <summary>
+        /// Constant SAP_CHECK_02 for ConfigurationCheckType
+        /// </summary>
+        public static readonly ConfigurationCheckType SAP_CHECK_02 = new ConfigurationCheckType("SAP_CHECK_02");
+        /// <summary>
+        /// Constant SAP_CHECK_03 for ConfigurationCheckType
+        /// </summary>
+        public static readonly ConfigurationCheckType SAP_CHECK_03 = new ConfigurationCheckType("SAP_CHECK_03");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationCheckType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationCheckType FindValue(string value)
+        {
+            return FindValue<ConfigurationCheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationCheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectedEntityType.
     /// </summary>
     public class ConnectedEntityType : ConstantClass
@@ -1162,6 +1266,68 @@ namespace Amazon.SsmSap
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleResultStatus.
+    /// </summary>
+    public class RuleResultStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RuleResultStatus
+        /// </summary>
+        public static readonly RuleResultStatus FAILED = new RuleResultStatus("FAILED");
+        /// <summary>
+        /// Constant INFO for RuleResultStatus
+        /// </summary>
+        public static readonly RuleResultStatus INFO = new RuleResultStatus("INFO");
+        /// <summary>
+        /// Constant PASSED for RuleResultStatus
+        /// </summary>
+        public static readonly RuleResultStatus PASSED = new RuleResultStatus("PASSED");
+        /// <summary>
+        /// Constant UNKNOWN for RuleResultStatus
+        /// </summary>
+        public static readonly RuleResultStatus UNKNOWN = new RuleResultStatus("UNKNOWN");
+        /// <summary>
+        /// Constant WARNING for RuleResultStatus
+        /// </summary>
+        public static readonly RuleResultStatus WARNING = new RuleResultStatus("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleResultStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleResultStatus FindValue(string value)
+        {
+            return FindValue<RuleResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleResultStatus(string value)
         {
             return FindValue(value);
         }
