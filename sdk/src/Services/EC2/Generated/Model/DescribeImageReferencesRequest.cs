@@ -33,11 +33,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeImageReferences operation.
     /// Describes your Amazon Web Services resources that are referencing the specified images.
     /// 
-    /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
-    /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identify
+    /// your resources referencing specified AMIs</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeImageReferencesRequest : AmazonEC2Request

@@ -31,27 +31,115 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyImage operation.
-    /// Initiates an AMI copy operation. You can copy an AMI from one Region to another, or
-    /// from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from
-    /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+    /// Initiates an AMI copy operation. You must specify the source AMI ID and both the source
+    /// and destination locations. The copy operation must be initiated in the destination
+    /// Region.
     /// 
     ///  
     /// <para>
-    /// When you copy an AMI from one Region to another, the destination Region is the current
-    /// Region.
+    ///  <b>CopyImage supports the following source to destination copies:</b> 
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// When you copy an AMI from a Region to an Outpost, specify the ARN of the Outpost as
-    /// the destination. Backing snapshots copied to an Outpost are encrypted by default using
-    /// the default encryption key for the Region or the key that you specify. Outposts do
-    /// not support unencrypted snapshots.
+    /// Region to Region
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-    /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
+    /// Region to Outpost
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Parent Region to Local Zone
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Local Zone to parent Region
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Between Local Zones with the same parent Region (only supported for certain Local
+    /// Zones)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>CopyImage does not support the following source to destination copies:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Local Zone to non-parent Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Between Local Zones with different parent Regions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Local Zone to Outpost
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Outpost to Local Zone
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Outpost to Region
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Between Outposts
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Within same Outpost
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Cross-partition copies (use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>
+    /// instead)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Destination specification</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Region to Region: The destination Region is the Region in which you initiate the copy
+    /// operation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Region to Outpost: Specify the destination using the <c>DestinationOutpostArn</c>
+    /// parameter (the ARN of the Outpost)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Region to Local Zone, and Local Zone to Local Zone copies: Specify the destination
+    /// using the <c>DestinationAvailabilityZone</c> parameter (the name of the destination
+    /// Local Zone) or <c>DestinationAvailabilityZoneId</c> parameter (the ID of the destination
+    /// Local Zone).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Snapshot encryption</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Region to Outpost: Backing snapshots copied to an Outpost are encrypted by default
+    /// using the default encryption key for the Region or the key that you specify. Outposts
+    /// do not support unencrypted snapshots.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Region to Local Zone, and Local Zone to Local Zone: Not all Local Zones require encrypted
+    /// snapshots. In Local Zones that require encrypted snapshots, backing snapshots are
+    /// automatically encrypted during copy. In Local Zones where encryption is not required,
+    /// snapshots retain their original encryption state (encrypted or unencrypted) by default.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, including the required permissions for copying an AMI, see <a
+    /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
+    /// Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request
@@ -59,6 +147,8 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private bool? _copyImageTags;
         private string _description;
+        private string _destinationAvailabilityZone;
+        private string _destinationAvailabilityZoneId;
         private string _destinationOutpostArn;
         private bool? _encrypted;
         private string _kmsKeyId;
@@ -91,11 +181,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CopyImageTags. 
         /// <para>
-        /// Indicates whether to include your user-defined AMI tags when copying the AMI.
+        /// Specifies whether to copy your user-defined AMI tags to the new AMI.
         /// </para>
         ///  
         /// <para>
-        /// The following tags will not be copied:
+        /// The following tags are not be copied:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -126,7 +216,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the new AMI in the destination Region.
+        /// A description for the new AMI.
         /// </para>
         /// </summary>
         public string Description
@@ -142,18 +232,73 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationAvailabilityZone. 
+        /// <para>
+        /// The Local Zone for the new AMI (for example, <c>cn-north-1-pkx-1a</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one of <c>DestinationAvailabilityZone</c>, <c>DestinationAvailabilityZoneId</c>,
+        /// or <c>DestinationOutpostArn</c> can be specified.
+        /// </para>
+        /// </summary>
+        public string DestinationAvailabilityZone
+        {
+            get { return this._destinationAvailabilityZone; }
+            set { this._destinationAvailabilityZone = value; }
+        }
+
+        // Check to see if DestinationAvailabilityZone property is set
+        internal bool IsSetDestinationAvailabilityZone()
+        {
+            return this._destinationAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationAvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Local Zone for the new AMI (for example, <c>cnn1-pkx1-az1</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one of <c>DestinationAvailabilityZone</c>, <c>DestinationAvailabilityZoneId</c>,
+        /// or <c>DestinationOutpostArn</c> can be specified.
+        /// </para>
+        /// </summary>
+        public string DestinationAvailabilityZoneId
+        {
+            get { return this._destinationAvailabilityZoneId; }
+            set { this._destinationAvailabilityZoneId = value; }
+        }
+
+        // Check to see if DestinationAvailabilityZoneId property is set
+        internal bool IsSetDestinationAvailabilityZoneId()
+        {
+            return this._destinationAvailabilityZoneId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationOutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Outpost to which to copy the AMI. Only specify
-        /// this parameter when copying an AMI from an Amazon Web Services Region to an Outpost.
-        /// The AMI must be in the Region of the destination Outpost. You cannot copy an AMI from
-        /// an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+        /// The Amazon Resource Name (ARN) of the Outpost for the new AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only specify this parameter when copying an AMI from an Amazon Web Services Region
+        /// to an Outpost. The AMI must be in the Region of the destination Outpost. You can't
+        /// copy an AMI from an Outpost to a Region, from one Outpost to another, or within the
+        /// same Outpost.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
         /// AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User
         /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one of <c>DestinationAvailabilityZone</c>, <c>DestinationAvailabilityZoneId</c>,
+        /// or <c>DestinationOutpostArn</c> can be specified.
         /// </para>
         /// </summary>
         public string DestinationOutpostArn
@@ -171,7 +316,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the destination snapshots of the copied image should be encrypted.
+        /// Specifies whether to encrypt the snapshots of the copied image.
+        /// </para>
+        ///  
+        /// <para>
         /// You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted
         /// copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you
         /// specify a non-default Key Management Service (KMS) KMS key using <c>KmsKeyId</c>.
@@ -249,7 +397,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the new AMI in the destination Region.
+        /// The name of the new AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -279,7 +427,12 @@ namespace Amazon.EC2.Model
         /// If you do not specify a value, the AMI copy operation is completed on a best-effort
         /// basis.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported when copying an AMI to or from a Local Zone, or to
+        /// an Outpost.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html">Time-based
         /// copies for Amazon EBS snapshots and EBS-backed AMIs</a>.

@@ -3954,27 +3954,115 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Initiates an AMI copy operation. You can copy an AMI from one Region to another, or
-        /// from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from
-        /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+        /// Initiates an AMI copy operation. You must specify the source AMI ID and both the source
+        /// and destination locations. The copy operation must be initiated in the destination
+        /// Region.
         /// 
         ///  
         /// <para>
-        /// When you copy an AMI from one Region to another, the destination Region is the current
-        /// Region.
+        ///  <b>CopyImage supports the following source to destination copies:</b> 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// When you copy an AMI from a Region to an Outpost, specify the ARN of the Outpost as
-        /// the destination. Backing snapshots copied to an Outpost are encrypted by default using
-        /// the default encryption key for the Region or the key that you specify. Outposts do
-        /// not support unencrypted snapshots.
+        /// Region to Region
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Region to Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parent Region to Local Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local Zone to parent Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Local Zones with the same parent Region (only supported for certain Local
+        /// Zones)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>CopyImage does not support the following source to destination copies:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local Zone to non-parent Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Local Zones with different parent Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local Zone to Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Outpost to Local Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Outpost to Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Outposts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Within same Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cross-partition copies (use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>
+        /// instead)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Destination specification</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Region to Region: The destination Region is the Region in which you initiate the copy
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Outpost: Specify the destination using the <c>DestinationOutpostArn</c>
+        /// parameter (the ARN of the Outpost)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Local Zone, and Local Zone to Local Zone copies: Specify the destination
+        /// using the <c>DestinationAvailabilityZone</c> parameter (the name of the destination
+        /// Local Zone) or <c>DestinationAvailabilityZoneId</c> parameter (the ID of the destination
+        /// Local Zone).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Snapshot encryption</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Region to Outpost: Backing snapshots copied to an Outpost are encrypted by default
+        /// using the default encryption key for the Region or the key that you specify. Outposts
+        /// do not support unencrypted snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Local Zone, and Local Zone to Local Zone: Not all Local Zones require encrypted
+        /// snapshots. In Local Zones that require encrypted snapshots, backing snapshots are
+        /// automatically encrypted during copy. In Local Zones where encryption is not required,
+        /// snapshots retain their original encryption state (encrypted or unencrypted) by default.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, including the required permissions for copying an AMI, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
+        /// Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -3992,27 +4080,115 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Initiates an AMI copy operation. You can copy an AMI from one Region to another, or
-        /// from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from
-        /// one Outpost to another, or within the same Outpost. To copy an AMI to another partition,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.
+        /// Initiates an AMI copy operation. You must specify the source AMI ID and both the source
+        /// and destination locations. The copy operation must be initiated in the destination
+        /// Region.
         /// 
         ///  
         /// <para>
-        /// When you copy an AMI from one Region to another, the destination Region is the current
-        /// Region.
+        ///  <b>CopyImage supports the following source to destination copies:</b> 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// When you copy an AMI from a Region to an Outpost, specify the ARN of the Outpost as
-        /// the destination. Backing snapshots copied to an Outpost are encrypted by default using
-        /// the default encryption key for the Region or the key that you specify. Outposts do
-        /// not support unencrypted snapshots.
+        /// Region to Region
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For information about the prerequisites when copying an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-        /// an Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Region to Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parent Region to Local Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local Zone to parent Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Local Zones with the same parent Region (only supported for certain Local
+        /// Zones)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>CopyImage does not support the following source to destination copies:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Local Zone to non-parent Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Local Zones with different parent Regions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local Zone to Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Outpost to Local Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Outpost to Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between Outposts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Within same Outpost
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cross-partition copies (use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>
+        /// instead)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Destination specification</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Region to Region: The destination Region is the Region in which you initiate the copy
+        /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Outpost: Specify the destination using the <c>DestinationOutpostArn</c>
+        /// parameter (the ARN of the Outpost)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Local Zone, and Local Zone to Local Zone copies: Specify the destination
+        /// using the <c>DestinationAvailabilityZone</c> parameter (the name of the destination
+        /// Local Zone) or <c>DestinationAvailabilityZoneId</c> parameter (the ID of the destination
+        /// Local Zone).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Snapshot encryption</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Region to Outpost: Backing snapshots copied to an Outpost are encrypted by default
+        /// using the default encryption key for the Region or the key that you specify. Outposts
+        /// do not support unencrypted snapshots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Region to Local Zone, and Local Zone to Local Zone: Not all Local Zones require encrypted
+        /// snapshots. In Local Zones that require encrypted snapshots, backing snapshots are
+        /// automatically encrypted during copy. In Local Zones where encryption is not required,
+        /// snapshots retain their original encryption state (encrypted or unencrypted) by default.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, including the required permissions for copying an AMI, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an
+        /// Amazon EC2 AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
@@ -4037,16 +4213,29 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
-        /// copy a snapshot within the same Region, from one Region to another, or from a Region
-        /// to an Outpost. You can't copy a snapshot from an Outpost to a Region, from one Outpost
-        /// to another, or within the same Outpost.
+        /// Creates an exact copy of an Amazon EBS snapshot.
         /// 
         ///  
         /// <para>
-        /// You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
+        /// The location of the source snapshot determines whether you can copy it or not, and
+        /// the allowed destinations for the snapshot copy.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If the source snapshot is in a Region, you can copy it within that Region, to another
+        /// Region, to an Outpost associated with that Region, or to a Local Zone in that Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is in a Local Zone, you can copy it within that Local Zone,
+        /// to another Local Zone in the same zone group, or to the parent Region of the Local
+        /// Zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is on an Outpost, you can't copy it.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
         /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
@@ -4062,12 +4251,12 @@ namespace Amazon.EC2
         /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
         /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Snapshots created by copying another snapshot have an arbitrary volume ID that should
-        /// not be used for any purpose.
+        /// Snapshots copies have an arbitrary source volume ID. Do not use this volume ID for
+        /// any purpose.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
         /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
@@ -4088,16 +4277,29 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
-        /// copy a snapshot within the same Region, from one Region to another, or from a Region
-        /// to an Outpost. You can't copy a snapshot from an Outpost to a Region, from one Outpost
-        /// to another, or within the same Outpost.
+        /// Creates an exact copy of an Amazon EBS snapshot.
         /// 
         ///  
         /// <para>
-        /// You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
+        /// The location of the source snapshot determines whether you can copy it or not, and
+        /// the allowed destinations for the snapshot copy.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If the source snapshot is in a Region, you can copy it within that Region, to another
+        /// Region, to an Outpost associated with that Region, or to a Local Zone in that Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is in a Local Zone, you can copy it within that Local Zone,
+        /// to another Local Zone in the same zone group, or to the parent Region of the Local
+        /// Zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source snapshot is on an Outpost, you can't copy it.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
         /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
@@ -4113,12 +4315,12 @@ namespace Amazon.EC2
         /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
         /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Snapshots created by copying another snapshot have an arbitrary volume ID that should
-        /// not be used for any purpose.
+        /// Snapshots copies have an arbitrary source volume ID. Do not use this volume ID for
+        /// any purpose.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
         /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
@@ -5317,7 +5519,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -5343,7 +5545,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -10960,7 +11162,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -10983,7 +11185,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -17787,11 +17989,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes your Amazon Web Services resources that are referencing the specified images.
         /// 
-        /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
-        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identify
+        /// your resources referencing specified AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
@@ -17811,11 +18012,10 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes your Amazon Web Services resources that are referencing the specified images.
         /// 
-        /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identiy
-        /// your resources referencing selected AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html">Identify
+        /// your resources referencing specified AMIs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageReferences service method.</param>
@@ -18084,7 +18284,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -18108,7 +18308,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -18139,7 +18339,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -18163,7 +18363,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-usage.html">View
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
         /// your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
