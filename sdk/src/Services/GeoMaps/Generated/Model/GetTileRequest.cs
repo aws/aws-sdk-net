@@ -92,7 +92,7 @@ namespace Amazon.GeoMaps.Model
         /// The X axis value for the map tile. Must be between 0 and 19.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string X
         {
             get { return this._x; }
@@ -111,7 +111,7 @@ namespace Amazon.GeoMaps.Model
         /// The Y axis value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Y
         {
             get { return this._y; }
@@ -130,7 +130,7 @@ namespace Amazon.GeoMaps.Model
         /// The zoom value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Z
         {
             get { return this._z; }

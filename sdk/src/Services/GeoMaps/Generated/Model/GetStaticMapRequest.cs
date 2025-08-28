@@ -74,7 +74,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: 97.170451,78.039098,99.045536,27.176178
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7)]
+        [AWSProperty(Sensitive=true, Min=7)]
         public string BoundedPositions
         {
             get { return this._boundedPositions; }
@@ -98,7 +98,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: -123.17075,49.26959,-123.08125,49.31429
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7)]
+        [AWSProperty(Sensitive=true, Min=7)]
         public string BoundingBox
         {
             get { return this._boundingBox; }
@@ -126,7 +126,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: 49.295,-123.108
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=36)]
+        [AWSProperty(Sensitive=true, Min=3, Max=36)]
         public string Center
         {
             get { return this._center; }
@@ -189,7 +189,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=7000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=7000)]
         public string CompactOverlay
         {
             get { return this._compactOverlay; }
@@ -258,7 +258,7 @@ namespace Amazon.GeoMaps.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=7000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=7000)]
         public string GeoJsonOverlay
         {
             get { return this._geoJsonOverlay; }
@@ -277,7 +277,7 @@ namespace Amazon.GeoMaps.Model
         /// Specifies the height of the map image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=64, Max=1400)]
+        [AWSProperty(Required=true, Sensitive=true, Min=64, Max=1400)]
         public int? Height
         {
             get { return this._height; }
@@ -650,6 +650,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: <c>100</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public int? Padding
         {
             get { return this._padding; }
@@ -749,7 +750,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
@@ -781,7 +782,7 @@ namespace Amazon.GeoMaps.Model
         ///  <b>Unit</b>: <c>Meters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? Radius
         {
             get { return this._radius; }
@@ -841,7 +842,7 @@ namespace Amazon.GeoMaps.Model
         /// Specifies the width of the map image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=64, Max=1400)]
+        [AWSProperty(Required=true, Sensitive=true, Min=64, Max=1400)]
         public int? Width
         {
             get { return this._width; }
@@ -865,7 +866,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public float? Zoom
         {
             get { return this._zoom; }

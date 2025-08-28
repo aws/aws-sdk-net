@@ -160,7 +160,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Sensitive=true, Min=2, Max=3)]
         public string PoliticalView
         {
             get { return this._politicalView; }
