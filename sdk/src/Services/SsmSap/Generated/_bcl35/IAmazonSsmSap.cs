@@ -242,6 +242,52 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  GetConfigurationCheckOperation
+
+
+        /// <summary>
+        /// Gets the details of a configuration check operation by specifying the operation ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationCheckOperation service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationCheckOperation service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
+        GetConfigurationCheckOperationResponse GetConfigurationCheckOperation(GetConfigurationCheckOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfigurationCheckOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationCheckOperation operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfigurationCheckOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
+        IAsyncResult BeginGetConfigurationCheckOperation(GetConfigurationCheckOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfigurationCheckOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfigurationCheckOperation.</param>
+        /// 
+        /// <returns>Returns a  GetConfigurationCheckOperationResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
+        GetConfigurationCheckOperationResponse EndGetConfigurationCheckOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDatabase
 
 
@@ -485,6 +531,101 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  ListConfigurationCheckDefinitions
+
+
+        /// <summary>
+        /// Lists all configuration check types supported by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckDefinitions service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
+        ListConfigurationCheckDefinitionsResponse ListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationCheckDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckDefinitions operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationCheckDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
+        IAsyncResult BeginListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationCheckDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationCheckDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationCheckDefinitionsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
+        ListConfigurationCheckDefinitionsResponse EndListConfigurationCheckDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfigurationCheckOperations
+
+
+        /// <summary>
+        /// Lists the configuration check operations performed by AWS Systems Manager for SAP.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckOperations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationCheckOperations service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
+        ListConfigurationCheckOperationsResponse ListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationCheckOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationCheckOperations operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationCheckOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
+        IAsyncResult BeginListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationCheckOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationCheckOperations.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationCheckOperationsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
+        ListConfigurationCheckOperationsResponse EndListConfigurationCheckOperations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDatabases
 
 
@@ -630,6 +771,98 @@ namespace Amazon.SsmSap
         /// <returns>Returns a  ListOperationsResult from SsmSap.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse EndListOperations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSubCheckResults
+
+
+        /// <summary>
+        /// Lists the sub-check results of a specified configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckResults service method.</param>
+        /// 
+        /// <returns>The response from the ListSubCheckResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
+        ListSubCheckResultsResponse ListSubCheckResults(ListSubCheckResultsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSubCheckResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckResults operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubCheckResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
+        IAsyncResult BeginListSubCheckResults(ListSubCheckResultsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSubCheckResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubCheckResults.</param>
+        /// 
+        /// <returns>Returns a  ListSubCheckResultsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
+        ListSubCheckResultsResponse EndListSubCheckResults(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSubCheckRuleResults
+
+
+        /// <summary>
+        /// Lists the rules of a specified sub-check belonging to a configuration check operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckRuleResults service method.</param>
+        /// 
+        /// <returns>The response from the ListSubCheckRuleResults service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
+        ListSubCheckRuleResultsResponse ListSubCheckRuleResults(ListSubCheckRuleResultsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSubCheckRuleResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSubCheckRuleResults operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubCheckRuleResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
+        IAsyncResult BeginListSubCheckRuleResults(ListSubCheckRuleResultsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSubCheckRuleResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubCheckRuleResults.</param>
+        /// 
+        /// <returns>Returns a  ListSubCheckRuleResultsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
+        ListSubCheckRuleResultsResponse EndListSubCheckRuleResults(IAsyncResult asyncResult);
 
         #endregion
         
@@ -910,6 +1143,58 @@ namespace Amazon.SsmSap
         /// <returns>Returns a  StartApplicationRefreshResult from SsmSap.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
         StartApplicationRefreshResponse EndStartApplicationRefresh(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartConfigurationChecks
+
+
+        /// <summary>
+        /// Initiates configuration check operations against a specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationChecks service method.</param>
+        /// 
+        /// <returns>The response from the StartConfigurationChecks service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
+        StartConfigurationChecksResponse StartConfigurationChecks(StartConfigurationChecksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigurationChecks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigurationChecks operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartConfigurationChecks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
+        IAsyncResult BeginStartConfigurationChecks(StartConfigurationChecksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartConfigurationChecks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigurationChecks.</param>
+        /// 
+        /// <returns>Returns a  StartConfigurationChecksResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
+        StartConfigurationChecksResponse EndStartConfigurationChecks(IAsyncResult asyncResult);
 
         #endregion
         
