@@ -233,6 +233,9 @@ namespace Amazon.GeoMaps
         /// <exception cref="Amazon.GeoMaps.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.GeoMaps.Model.ResourceNotFoundException">
+        /// Exception thrown when the associated resource could not be found.
+        /// </exception>
         /// <exception cref="Amazon.GeoMaps.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
@@ -261,6 +264,9 @@ namespace Amazon.GeoMaps
         /// </exception>
         /// <exception cref="Amazon.GeoMaps.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.GeoMaps.Model.ResourceNotFoundException">
+        /// Exception thrown when the associated resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.GeoMaps.Model.ThrottlingException">
         /// The request was denied due to request throttling.
