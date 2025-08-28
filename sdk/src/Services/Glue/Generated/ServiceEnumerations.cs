@@ -1892,6 +1892,10 @@ namespace Amazon.Glue
         /// Constant NAME for DatabaseAttributes
         /// </summary>
         public static readonly DatabaseAttributes NAME = new DatabaseAttributes("NAME");
+        /// <summary>
+        /// Constant TARGET_DATABASE for DatabaseAttributes
+        /// </summary>
+        public static readonly DatabaseAttributes TARGET_DATABASE = new DatabaseAttributes("TARGET_DATABASE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
