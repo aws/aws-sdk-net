@@ -1,3 +1,131 @@
+### 4.0.80.0 (2025-08-28 19:41 UTC)
+* Amplify (4.0.2.0)
+	* Remove incorrect endpoint tests
+* ApplicationAutoScaling (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ApplicationCostProfiler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* AppRunner (4.0.1.1)
+	* Doc only updates for APIs and and datatypes related to IPAddressType and Subnets for IPv6 dualstack support.
+* AutoScalingPlans (4.0.1.0)
+	* Remove incorrect endpoint tests
+* BedrockRuntime (4.0.5.0)
+	* Remove incorrect endpoint tests
+* Cloud9 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudHSMV2 (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CloudSearchDomain (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeDeploy (4.0.1.0)
+	* Remove incorrect endpoint tests
+* CodeGuruReviewer (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Connect (4.0.9.0)
+	* AgentStatusDrillDown feature in GetCurrentMetricData API. Adding AGENT_STATUS as filter and grouping in GetCurrentMetricData API
+* ConnectCampaignService (4.0.1.0)
+	* Remove incorrect endpoint tests
+* DynamoDBv2 (4.0.6.0)
+	* Remove incorrect endpoint tests
+* EC2 (4.0.34.0)
+	* This release adds support for copying Amazon EBS snapshot and AMIs to and from Local Zones.
+* EC2InstanceConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ECR (4.0.4.0)
+	* Remove incorrect endpoint tests
+* ElasticMapReduce (4.0.3.0)
+	* Remove incorrect endpoint tests
+* EntityResolution (4.0.3.0)
+	* Remove incorrect endpoint tests
+* EventBridge (4.0.4.0)
+	* Remove incorrect endpoint tests
+* FIS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* FMS (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GeoMaps (4.0.1.0)
+	* Remove incorrect endpoint tests
+* GeoPlaces (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Glue (4.0.16.0)
+	* Adding support to fetch TargetDatabase field during GetDatabases with AttributesToGet
+* GlueDataBrew (4.0.1.0)
+	* Remove incorrect endpoint tests
+* HealthLake (4.0.2.0)
+	* Add ValidationLevel parameter to StartFHIRImportJob API, allowing users to specify a FHIR validation level for their asynchronous import jobs.
+* InspectorScan (4.0.1.0)
+	* Remove incorrect endpoint tests
+* InternetMonitor (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Kinesis (4.0.4.0)
+	* Remove incorrect endpoint tests
+* LicenseManagerUserSubscriptions (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MachineLearning (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ManagedBlockchainQuery (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MarketplaceDeployment (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MediaStoreData (4.0.1.0)
+	* Remove incorrect endpoint tests
+* MTurk (4.0.1.0)
+	* Remove incorrect endpoint tests
+* NetworkFirewall (4.0.5.0)
+	* Remove incorrect endpoint tests
+* OAM (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Omics (4.0.3.0)
+	* Adds Amazon ECR pull through cache support to AWS HealthOmics, so you can more easily use container images from external sources.
+* OpenSearchService (4.0.3.0)
+	* Remove incorrect endpoint tests
+* OSIS (4.0.2.0)
+	* Remove incorrect endpoint tests
+* PCS (4.0.7.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoice (4.0.1.0)
+	* Remove incorrect endpoint tests
+* PinpointSMSVoiceV2 (4.0.3.0)
+	* Remove incorrect endpoint tests
+* Pipes (4.0.1.0)
+	* Remove incorrect endpoint tests
+* QuickSight (4.0.5.0)
+	* Remove incorrect endpoint tests
+* RDS (4.0.6.0)
+	* Added RDS HTTP Endpoint feature support flag to DescribeOrderableDBInstanceOptions API
+* Rekognition (4.0.2.0)
+	* Remove incorrect endpoint tests
+* Route53Domains (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SavingsPlans (4.0.1.0)
+	* Remove incorrect endpoint tests
+* Scheduler (4.0.1.0)
+	* Remove incorrect endpoint tests
+* ServiceQuotas (4.0.2.0)
+	* Remove incorrect endpoint tests
+* SimpleEmail (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SimpleEmailV2 (4.0.5.0)
+	* Remove incorrect endpoint tests
+* SimpleWorkflow (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSMGuiConnect (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SSMIncidents (4.0.1.0)
+	* Remove incorrect endpoint tests
+* SsmSap (4.0.2.0)
+	* Added support for Configuration Checks on SAP HANA Applications.
+* SSO (4.0.1.0)
+	* Remove incorrect endpoint tests
+* TimestreamQuery (4.0.2.0)
+	* Remove incorrect endpoint tests
+* WAF (4.0.1.0)
+	* Remove incorrect endpoint tests
+* WorkMailMessageFlow (4.0.1.0)
+	* Remove incorrect endpoint tests
+* XRay (4.0.1.0)
+	* Remove incorrect endpoint tests
+
 ### 4.0.79.0 (2025-08-27 19:34 UTC)
 * ACMPCA (4.0.1.0)
 	* Remove incorrect endpoint tests
