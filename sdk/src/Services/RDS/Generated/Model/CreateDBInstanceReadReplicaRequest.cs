@@ -407,14 +407,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For the Db2 DB engine, if your source DB instance uses the Bring Your Own License
-        /// model, then a custom parameter group must be associated with the replica. For a same
-        /// Amazon Web Services Region replica, if you don't specify a custom parameter group,
-        /// Amazon RDS associates the custom parameter group associated with the source DB instance.
-        /// For a cross-Region replica, you must specify a custom parameter group. This custom
-        /// parameter group must include your IBM Site ID and IBM Customer ID. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html#db2-prereqs-ibm-info">
-        /// IBM IDs for Bring Your Own License for Db2</a>. 
+        /// For the Db2 DB engine, if your source DB instance uses the bring your own license
+        /// (BYOL) model, then a custom parameter group must be associated with the replica. For
+        /// a same Amazon Web Services Region replica, if you don't specify a custom parameter
+        /// group, Amazon RDS associates the custom parameter group associated with the source
+        /// DB instance. For a cross-Region replica, you must specify a custom parameter group.
+        /// This custom parameter group must include your IBM Site ID and IBM Customer ID. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html#db2-prereqs-ibm-info">IBM
+        /// IDs for bring your own license (BYOL) for Db2</a>. 
         /// </para>
         ///  
         /// <para>

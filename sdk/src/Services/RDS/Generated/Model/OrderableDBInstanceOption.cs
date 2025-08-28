@@ -68,6 +68,7 @@ namespace Amazon.RDS.Model
         private bool? _supportsDedicatedLogVolume;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
+        private bool? _supportsHttpEndpoint;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsKerberosAuthentication;
@@ -629,6 +630,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsGlobalDatabases()
         {
             return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsHttpEndpoint. 
+        /// <para>
+        /// Indicates whether a DB instance supports HTTP endpoints.
+        /// </para>
+        /// </summary>
+        public bool? SupportsHttpEndpoint
+        {
+            get { return this._supportsHttpEndpoint; }
+            set { this._supportsHttpEndpoint = value; }
+        }
+
+        // Check to see if SupportsHttpEndpoint property is set
+        internal bool IsSetSupportsHttpEndpoint()
+        {
+            return this._supportsHttpEndpoint.HasValue; 
         }
 
         /// <summary>
