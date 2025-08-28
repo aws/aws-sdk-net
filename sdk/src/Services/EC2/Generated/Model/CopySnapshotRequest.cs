@@ -31,16 +31,29 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
-    /// Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can
-    /// copy a snapshot within the same Region, from one Region to another, or from a Region
-    /// to an Outpost. You can't copy a snapshot from an Outpost to a Region, from one Outpost
-    /// to another, or within the same Outpost.
+    /// Creates an exact copy of an Amazon EBS snapshot.
     /// 
     ///  
     /// <para>
-    /// You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
+    /// The location of the source snapshot determines whether you can copy it or not, and
+    /// the allowed destinations for the snapshot copy.
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// If the source snapshot is in a Region, you can copy it within that Region, to another
+    /// Region, to an Outpost associated with that Region, or to a Local Zone in that Region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the source snapshot is in a Local Zone, you can copy it within that Local Zone,
+    /// to another Local Zone in the same zone group, or to the parent Region of the Local
+    /// Zone.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the source snapshot is on an Outpost, you can't copy it.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
     /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
@@ -56,12 +69,12 @@ namespace Amazon.EC2.Model
     /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
     /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// Snapshots created by copying another snapshot have an arbitrary volume ID that should
-    /// not be used for any purpose.
+    /// Snapshots copies have an arbitrary source volume ID. Do not use this volume ID for
+    /// any purpose.
     /// </para>
-    ///  
+    ///  </note> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
     /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
@@ -71,6 +84,7 @@ namespace Amazon.EC2.Model
     {
         private int? _completionDurationMinutes;
         private string _description;
+        private string _destinationAvailabilityZone;
         private string _destinationOutpostArn;
         private string _destinationRegion;
         private bool? _dryRun;
@@ -82,7 +96,11 @@ namespace Amazon.EC2.Model
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
-        /// Gets and sets the property CompletionDurationMinutes. 
+        /// Gets and sets the property CompletionDurationMinutes. <note> 
+        /// <para>
+        /// Not supported when copying snapshots to or from Local Zones or Outposts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot
         /// copy. Time-based snapshot copy operations complete within the specified duration.
@@ -127,15 +145,38 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationAvailabilityZone. 
+        /// <para>
+        /// The Local Zone, for example, <c>cn-north-1-pkx-1a</c> to which to copy the snapshot.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only supported when copying a snapshot to a Local Zone.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string DestinationAvailabilityZone
+        {
+            get { return this._destinationAvailabilityZone; }
+            set { this._destinationAvailabilityZone = value; }
+        }
+
+        // Check to see if DestinationAvailabilityZone property is set
+        internal bool IsSetDestinationAvailabilityZone()
+        {
+            return this._destinationAvailabilityZone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DestinationOutpostArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only
-        /// specify this parameter when copying a snapshot from an Amazon Web Services Region
-        /// to an Outpost. The snapshot must be in the Region for the destination Outpost. You
-        /// cannot copy a snapshot from an Outpost to a Region, from one Outpost to another, or
-        /// within the same Outpost.
+        /// The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Only supported when copying a snapshot to an Outpost.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
         /// Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
