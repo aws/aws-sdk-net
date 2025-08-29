@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SamplingTargetDocument Object
+    /// Response Unmarshaller for SamplingBoost Object
     /// </summary>  
-    public class SamplingTargetDocumentUnmarshaller : IJsonUnmarshaller<SamplingTargetDocument, JsonUnmarshallerContext>
+    public class SamplingBoostUnmarshaller : IJsonUnmarshaller<SamplingBoost, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SamplingTargetDocument Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SamplingBoost Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SamplingTargetDocument unmarshalledObject = new SamplingTargetDocument();
+            SamplingBoost unmarshalledObject = new SamplingBoost();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FixedRate", targetDepth))
+                if (context.TestExpression("BoostRate", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.FixedRate = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BoostRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interval", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Interval = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReservoirQuota", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ReservoirQuota = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
+                if (context.TestExpression("BoostRateTTL", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReservoirQuotaTTL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RuleName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SamplingBoost", targetDepth))
-                {
-                    var unmarshaller = SamplingBoostUnmarshaller.Instance;
-                    unmarshalledObject.SamplingBoost = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BoostRateTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         }
 
 
-        private static SamplingTargetDocumentUnmarshaller _instance = new SamplingTargetDocumentUnmarshaller();        
+        private static SamplingBoostUnmarshaller _instance = new SamplingBoostUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SamplingTargetDocumentUnmarshaller Instance
+        public static SamplingBoostUnmarshaller Instance
         {
             get
             {
