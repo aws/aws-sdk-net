@@ -840,7 +840,7 @@ namespace Amazon.S3.Model
         // Check to see if ServerSideEncryptionMethod property is set
         internal bool IsSetServerSideEncryptionMethod()
         {
-            return this._serverSideEncryptionMethod != null;
+            return this._serverSideEncryptionMethod != null && this._serverSideEncryptionMethod != ServerSideEncryptionMethod.None;
         }
 
         /// <summary>

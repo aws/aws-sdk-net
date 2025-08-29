@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
         private LifecycleRuleNoncurrentVersionExpiration _noncurrentVersionExpiration;
         private List<LifecycleRuleNoncurrentVersionTransition> _noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<LifecycleRuleNoncurrentVersionTransition>() : null;
         private string _prefix;
+        private LifecycleRuleStatus _status = LifecycleRuleStatus.Disabled;
         private List<LifecycleTransition> _transitions = AWSConfigs.InitializeCollections ? new List<LifecycleTransition>() : null;
 
         /// <summary>
@@ -205,6 +206,26 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return this._prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
+        /// currently being applied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LifecycleRuleStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
