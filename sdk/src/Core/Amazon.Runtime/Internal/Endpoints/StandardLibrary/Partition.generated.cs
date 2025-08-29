@@ -51,6 +51,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("ap-southeast-3", aws);
             _partitionsByRegionName.Add("ap-southeast-4", aws);
             _partitionsByRegionName.Add("ap-southeast-5", aws);
+            _partitionsByRegionName.Add("ap-southeast-6", aws);
             _partitionsByRegionName.Add("ap-southeast-7", aws);
             _partitionsByRegionName.Add("aws-global", aws);
             _partitionsByRegionName.Add("ca-central-1", aws);
@@ -93,7 +94,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 dnsSuffix = "amazonaws.eu",
                 dualStackDnsSuffix = "api.amazonwebservices.eu",
                 supportsFIPS = true,
-                supportsDualStack = false,
+                supportsDualStack = true,
                 implicitGlobalRegion = "eusc-de-east-1"
             };
             _partitionsByRegex.Add(@"^eusc\-(de)\-\w+\-\d+$", aws_eusc);
