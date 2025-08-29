@@ -622,3 +622,15 @@ foreach (var member in docMembers)
 		}
 	}
 #>
+<#+
+    // writes injected xml code. Call this when you know that the property modifier exists.
+    protected void WriteInjectXmlCode(HashSet<string> codeArray, int level)
+    {
+        foreach (var code in codeArray)
+        {
+#>
+<#=new string(' ', level * 4)#><#=code#>
+<#+      
+        }
+    }
+#>

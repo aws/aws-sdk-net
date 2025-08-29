@@ -37,6 +37,7 @@ namespace Amazon.S3.Model
         private string _canonicalUser;
         private string _displayName;
         private string _emailAddress;
+        
         private string _uri;
 
         /// <summary>
@@ -134,6 +135,24 @@ namespace Amazon.S3.Model
         internal bool IsSetEmailAddress()
         {
             return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Type of grantee
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public GranteeType Type
+        {
+            get { return GranteeTypeGetter();}
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return Type != null;
         }
 
         /// <summary>

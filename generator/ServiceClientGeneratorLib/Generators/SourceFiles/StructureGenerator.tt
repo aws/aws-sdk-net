@@ -196,6 +196,15 @@ namespace <#=this.Config.Namespace#>.Model
                         if (excludeMembersList.Contains(member.ModeledName))
                             continue;
                     }
+                    if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
+                    {
+
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlPrivateMemberAssignment, 2);#>
+<#
+
+                        continue;
+                    }
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#                  
@@ -329,14 +338,31 @@ namespace <#=this.Config.Namespace#>.Model
             }
 <#
                     }
+                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPropertyGetter.Count > 0)
+                    {
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlPropertyGetter, 3);#>
+<#
+                    }
                     else
                     {
 #>
             get { return this.<#=member.VariableName#>; }
 <#
                     }
+                    if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectSetterModifier) && injectSetterModifier.InjectXmlPropertySetter.Count > 0)
+                    {
+#>
+<#WriteInjectXmlCode(injectSetterModifier.InjectXmlPropertySetter, 3);#>
+<#
+                    }
+                    else if (this.Structure != null && (!this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name,member.ModeledName,out var skipSetterModifier) || !skipSetterModifier.SkipSetter))
+                    {
 #>
             set { this.<#=member.VariableName#> = value; }
+<#
+                    }
+#>
         }
 
 <#
@@ -429,10 +455,10 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlUnmarshallCode.Count > 0)
+                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
                         {
 #>
-<#WriteInjectXmlUnmarshallCode(member, 3);#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);#>
 <#
                         }
                         else

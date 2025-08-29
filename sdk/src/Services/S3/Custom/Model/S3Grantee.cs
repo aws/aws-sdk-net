@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,42 +12,35 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
-    /// <summary>Grantee
-    /// </summary>
     public partial class S3Grantee
     {
         /// <summary>
-        /// Type of grantee
-        ///  
+        /// custom getter for Type 
         /// </summary>
-        public GranteeType Type
+        /// <returns></returns>
+        public GranteeType GranteeTypeGetter()
         {
-            get 
-            {
-                if (this.IsSetEmailAddress())
-                    return GranteeType.Email;
-                if (this.IsSetURI())
-                    return GranteeType.Group;
-                if (this.IsSetCanonicalUser())
-                    return GranteeType.CanonicalUser;
-
-                return null; 
-            }
+            if (this.IsSetEmailAddress())
+                return GranteeType.Email;
+            if (this.IsSetURI())
+                return GranteeType.Group;
+            if (this.IsSetCanonicalUser())
+                return GranteeType.CanonicalUser;
+            return null;
         }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this.Type != null;
-        }
-
     }
 }

@@ -199,6 +199,7 @@ namespace Amazon.S3.Model
         private string _etagToNotMatch;
         private string _expectedBucketOwner;
         private string _key;
+        private DateTime? _modifiedSinceDate;
         private int? _partNumber;
         private string _range;
         private RequestPayer _requestPayer;
@@ -211,6 +212,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod _serverSideEncryptionCustomerMethod;
         private string _serverSideEncryptionCustomerProvidedKey;
         private string _serverSideEncryptionCustomerProvidedKeyMD5;
+        private DateTime? _unmodifiedSinceDate;
         private string _versionId;
 
         /// <summary>
@@ -421,6 +423,47 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedSinceDate. 
+        /// <para>
+        /// Return the object only if it has been modified since the specified time; otherwise,
+        /// return a 304 (not modified) error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both of the <c>If-None-Match</c> and <c>If-Modified-Since</c> headers are present
+        /// in the request as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>If-None-Match</c> condition evaluates to <c>false</c>, and;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>If-Modified-Since</c> condition evaluates to <c>true</c>;
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Then Amazon S3 returns the <c>304 Not Modified</c> response code.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
+        /// 7232</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? ModifiedSinceDate
+        {
+            get { return this._modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
+            set { this._modifiedSinceDate = value; }
+        }
+
+        // Check to see if ModifiedSinceDate property is set
+        internal bool IsSetModifiedSinceDate()
+        {
+            return this._modifiedSinceDate.HasValue; 
         }
 
         /// <summary>
@@ -659,6 +702,47 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return this._serverSideEncryptionCustomerProvidedKeyMD5 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnmodifiedSinceDate. 
+        /// <para>
+        /// Return the object only if it has not been modified since the specified time; otherwise,
+        /// return a 412 (precondition failed) error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If both of the <c>If-Match</c> and <c>If-Unmodified-Since</c> headers are present
+        /// in the request as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>If-Match</c> condition evaluates to <c>true</c>, and;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>If-Unmodified-Since</c> condition evaluates to <c>false</c>;
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Then Amazon S3 returns <c>200 OK</c> and the data requested.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
+        /// 7232</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? UnmodifiedSinceDate
+        {
+            get { return this._unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
+            set { this._unmodifiedSinceDate = value; }
+        }
+
+        // Check to see if UnmodifiedSinceDate property is set
+        internal bool IsSetUnmodifiedSinceDate()
+        {
+            return this._unmodifiedSinceDate.HasValue; 
         }
 
         /// <summary>

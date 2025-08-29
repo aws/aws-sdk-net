@@ -1427,17 +1427,102 @@ namespace ServiceClientGenerator
             public const string AccessModifierKey = "accessModifier";
             public const string InjectXmlUnmarshallCodeKey = "injectXmlUnmarshallCode";
             public const string SkipContextTestExpressionUnmarshallingLogicKey = "skipContextTestExpressionUnmarshallingLogic";
+            public const string InjectXmlIsSetCodeKey = "injectXmlIsSet";
+            public const string InjectXmlPrivateMemberAssignmentKey = "injectXmlPrivateMemberAssignment";
+            public const string InjectXmlPropertyGetterKey = "injectXmlPropertyGetter";
+            public const string InjectXmlPropertySetterKey = "injectXmlPropertySetter";
+            public const string SkipSetterKey = "skipSetter";
+
+
 
             private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
             private readonly HashSet<string> _injectXmlUnmarshallCode;
+            private readonly HashSet<string> _injectXmlIsSetCode;
+            private readonly HashSet<string> _injectXmlPrivateMemberAssignment;
+            private readonly HashSet<string> _injectXmlPropertyGetter;
+            private readonly HashSet<string> _injectedXmlPropertySetter;
+            private readonly bool _skipSetter;
+
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
                 this._modelPropertyName = modelPropertyName;
                 this._modifierData = modifierData;
                 _injectXmlUnmarshallCode = ParseInjectXmlUnmarshallCode();
+                _injectXmlIsSetCode = ParseInjectXmlIsSetCode();
+                _injectXmlPrivateMemberAssignment = ParseInjectXmlPrivateMemberAssignment();
+                _injectXmlPropertyGetter = ParseInjectXmlGetter();
+                _injectedXmlPropertySetter = ParseInjectXmlPropertySetter();
+                _skipSetter = ParseXmlSkipSetter();
             }
 
+            private bool ParseXmlSkipSetter()
+            {
+                var data = _modifierData[SkipSetterKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+
+            }
+
+            public bool SkipSetter { get { return _skipSetter; } }
+
+            private HashSet<string> ParseInjectXmlPropertySetter()
+            {
+                var data = _modifierData[InjectXmlPropertySetterKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the Setter for a property.
+            /// If this HashSet has values then the default setter will not be generated and this custom injected
+            /// code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPropertySetter { get { return _injectedXmlPropertySetter; } }
+
+            private HashSet<string> ParseInjectXmlGetter()
+            {
+                var data = _modifierData[InjectXmlPropertyGetterKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the getter for a property.
+            /// If this HashSet has values then the default getter will not be generated and this custom injected
+            /// code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPropertyGetter { get { return _injectXmlPropertyGetter; } }
+
+            private HashSet<string> ParseInjectXmlPrivateMemberAssignment()
+            {
+                var data = _modifierData[InjectXmlPrivateMemberAssignmentKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the private member assignment
+            /// for a property. If this HashSet has values then the default private member assignment will not be generated
+            /// and this custom injected code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPrivateMemberAssignment { get { return _injectXmlPrivateMemberAssignment; } }
+            
+            private HashSet<string> ParseInjectXmlIsSetCode()
+            {
+                var data = _modifierData[InjectXmlIsSetCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the IsSet() method for a property
+            /// If this HashSet has values then the default IsSet() code will not be generated and this custom injected code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlIsSetCode { get { return _injectXmlIsSetCode; } }
             /// <summary>
             /// Returns the original property name of the renamed property
             /// </summary>
