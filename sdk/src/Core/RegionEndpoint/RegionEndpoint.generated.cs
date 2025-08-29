@@ -98,6 +98,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast5 = GetEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)");
 
         /// <summary>
+        /// The Asia Pacific (New Zealand) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast6 = GetEndpoint("ap-southeast-6", "Asia Pacific (New Zealand)");
+
+        /// <summary>
         /// The Asia Pacific (Thailand) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APSoutheast7 = GetEndpoint("ap-southeast-7", "Asia Pacific (Thailand)");
