@@ -32,7 +32,7 @@ namespace Amazon.GeoMaps
     public partial class AmazonGeoMapsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Maps", "3.7.501.0");
+            InternalSDKUtils.BuildUserAgentString("Geo Maps", "3.7.501.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>

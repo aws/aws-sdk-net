@@ -1,3 +1,15 @@
+### 3.7.1113.0 (2025-08-29 18:17 UTC)
+* BedrockRuntime (3.7.504.0)
+	* Fixed stop sequence limit for converse API.
+* EC2 (3.7.509.0)
+	* Release shows new route types such as filtered and advertisement.
+* XRay (3.7.502.0)
+	* AWS X-Ray Features: Support Sampling Rate Boost On Anomaly
+* Core 3.7.500.12
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1112.0 (2025-08-28 19:43 UTC)
 * Amplify (3.7.501.0)
 	* Remove incorrect endpoint tests

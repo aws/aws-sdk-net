@@ -32,7 +32,7 @@ namespace Amazon.ApplicationDiscoveryService
     public partial class AmazonApplicationDiscoveryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Discovery Service", "3.7.501.0");
+            InternalSDKUtils.BuildUserAgentString("Application Discovery Service", "3.7.501.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>
