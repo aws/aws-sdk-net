@@ -294,6 +294,13 @@
                 },
                 {
                     "ServerSideEncryption" : {"emitPropertyName" : "ServerSideEncryptionMethod"}
+                },
+                {
+                    "ServerSideEncryptionMethod":{
+                        "injectXmlIsSet":[
+                            "return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
                 }
             ],
             "excludeFromMarshalling":[
@@ -490,17 +497,7 @@
                 {
                     "Type":{
                         "injectXmlPropertyGetter":[
-                            "get",
-                            "{",
-                            "   if (this.IsSetEmailAddress())",
-                            "       return GranteeType.Email;",
-                            "   if (this.IsSetURI())",
-                            "       return GranteeType.Group;",
-                            "   if (this.IsSetCanonicalUser())",
-                            "       return GranteeType.CanonicalUser;",
-                            "   return null;",
-                            "}"
-
+                            "get { return GranteeTypeGetter();}"
                         ],
                         "skipSetter" : true,
                         "injectXmlIsSet":[

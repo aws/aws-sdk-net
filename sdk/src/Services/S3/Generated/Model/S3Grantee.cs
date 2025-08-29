@@ -146,16 +146,7 @@ namespace Amazon.S3.Model
         [AWSProperty(Required=true)]
         public GranteeType Type
         {
-            get
-            {
-               if (this.IsSetEmailAddress())
-                   return GranteeType.Email;
-               if (this.IsSetURI())
-                   return GranteeType.Group;
-               if (this.IsSetCanonicalUser())
-                   return GranteeType.CanonicalUser;
-               return null;
-            }
+            get { return GranteeTypeGetter();}
         }
 
         // Check to see if Type property is set
