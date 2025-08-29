@@ -79,7 +79,7 @@ namespace Amazon.BedrockRuntime.Model
         /// the model to stop generating the response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4)]
+        [AWSProperty(Min=0, Max=2500)]
         public List<string> StopSequences
         {
             get { return this._stopSequences; }
