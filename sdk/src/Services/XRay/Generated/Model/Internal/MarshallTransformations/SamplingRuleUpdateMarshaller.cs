@@ -117,6 +117,17 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RuleName);
             }
 
+            if(requestObject.IsSetSamplingRateBoost())
+            {
+                context.Writer.WritePropertyName("SamplingRateBoost");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SamplingRateBoostMarshaller.Instance;
+                marshaller.Marshall(requestObject.SamplingRateBoost, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("ServiceName");

@@ -45,6 +45,7 @@ namespace Amazon.XRay.Model
         private string _resourceARN;
         private string _ruleARN;
         private string _ruleName;
+        private SamplingRateBoost _samplingRateBoost;
         private string _serviceName;
         private string _serviceType;
         private string _urlPath;
@@ -220,6 +221,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamplingRateBoost. 
+        /// <para>
+        /// Specifies the multiplier applied to the base sampling rate. This boost allows you
+        /// to temporarily increase sampling without changing the rule's configuration.
+        /// </para>
+        /// </summary>
+        public SamplingRateBoost SamplingRateBoost
+        {
+            get { return this._samplingRateBoost; }
+            set { this._samplingRateBoost = value; }
+        }
+
+        // Check to see if SamplingRateBoost property is set
+        internal bool IsSetSamplingRateBoost()
+        {
+            return this._samplingRateBoost != null;
         }
 
         /// <summary>

@@ -35,7 +35,27 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetSamplingTargetsRequest : AmazonXRayRequest
     {
+        private List<SamplingBoostStatisticsDocument> _samplingBoostStatisticsDocuments = AWSConfigs.InitializeCollections ? new List<SamplingBoostStatisticsDocument>() : null;
         private List<SamplingStatisticsDocument> _samplingStatisticsDocuments = AWSConfigs.InitializeCollections ? new List<SamplingStatisticsDocument>() : null;
+
+        /// <summary>
+        /// Gets and sets the property SamplingBoostStatisticsDocuments. 
+        /// <para>
+        /// Information about rules that the service is using to boost sampling rate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=25)]
+        public List<SamplingBoostStatisticsDocument> SamplingBoostStatisticsDocuments
+        {
+            get { return this._samplingBoostStatisticsDocuments; }
+            set { this._samplingBoostStatisticsDocuments = value; }
+        }
+
+        // Check to see if SamplingBoostStatisticsDocuments property is set
+        internal bool IsSetSamplingBoostStatisticsDocuments()
+        {
+            return this._samplingBoostStatisticsDocuments != null && (this._samplingBoostStatisticsDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property SamplingStatisticsDocuments. 

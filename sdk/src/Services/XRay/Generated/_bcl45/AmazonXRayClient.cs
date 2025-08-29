@@ -1593,9 +1593,9 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry</i>
-        /// API. The Transaction Search feature requires a CloudWatchLogs destination. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry
+        /// protocol (OTLP)</i> endpoint. The Transaction Search feature requires a CloudWatchLogs
+        /// destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
         /// Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSegmentDestination service method.</param>
@@ -1619,9 +1619,9 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry</i>
-        /// API. The Transaction Search feature requires a CloudWatchLogs destination. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+        /// Retrieves the current destination of data sent to <c>PutTraceSegments</c> and <i>OpenTelemetry
+        /// protocol (OTLP)</i> endpoint. The Transaction Search feature requires a CloudWatchLogs
+        /// destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
         /// Search</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html">OpenTelemetry</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTraceSegmentDestination service method.</param>
@@ -1819,7 +1819,7 @@ namespace Amazon.XRay
         /// 
         ///  
         /// <para>
-        /// This API does not initiate a retrieval job. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
+        /// This API does not initiate a retrieval process. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
         /// which generates the required <c>RetrievalToken</c>.
         /// </para>
         ///  
@@ -1831,14 +1831,14 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// For cross-account observability, this API can retrieve traces from linked accounts
-        /// when CloudWatch log is the destination across relevant accounts. For more details,
+        /// when CloudWatch log is set as the destination across relevant accounts. For more details,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
         /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
-        /// For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+        /// For retrieving data from X-Ray directly as opposed to the Transaction Search generated
+        /// log group, see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetrievedTraces service method.</param>
@@ -1873,7 +1873,7 @@ namespace Amazon.XRay
         /// 
         ///  
         /// <para>
-        /// This API does not initiate a retrieval job. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
+        /// This API does not initiate a retrieval process. To start a trace retrieval, use <c>StartTraceRetrieval</c>,
         /// which generates the required <c>RetrievalToken</c>.
         /// </para>
         ///  
@@ -1885,14 +1885,14 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// For cross-account observability, this API can retrieve traces from linked accounts
-        /// when CloudWatch log is the destination across relevant accounts. For more details,
+        /// when CloudWatch log is set as the destination across relevant accounts. For more details,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
         /// cross-account observability</a>.
         /// </para>
         ///  
         /// <para>
-        /// For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group,
-        /// see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
+        /// For retrieving data from X-Ray directly as opposed to the Transaction Search generated
+        /// log group, see <a href="https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html">BatchGetTraces</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRetrievedTraces service method.</param>
@@ -2402,8 +2402,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Initiates a trace retrieval process using the specified time range and for the give
-        /// trace IDs on Transaction Search generated by the CloudWatch log group. For more information,
+        /// Initiates a trace retrieval process using the specified time range and for the given
+        /// trace IDs in the Transaction Search generated CloudWatch log group. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
         /// Search</a>. 
         /// 
@@ -2451,8 +2451,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// Initiates a trace retrieval process using the specified time range and for the give
-        /// trace IDs on Transaction Search generated by the CloudWatch log group. For more information,
+        /// Initiates a trace retrieval process using the specified time range and for the given
+        /// trace IDs in the Transaction Search generated CloudWatch log group. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
         /// Search</a>. 
         /// 

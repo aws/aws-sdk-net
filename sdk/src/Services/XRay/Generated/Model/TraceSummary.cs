@@ -95,8 +95,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The length of time in seconds between the start time of the root segment and the end
-        /// time of the last segment that completed.
+        ///  The length of time in seconds between the start time of the earliest segment that
+        /// started and the end time of the last segment that completed.
         /// </para>
         /// </summary>
         public double Duration
