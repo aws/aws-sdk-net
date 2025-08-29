@@ -13,23 +13,23 @@
  * permissions and limitations under the License.
  */
 
+using Amazon;
+using Amazon.Runtime;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Runtime;
-using Amazon.S3;
-using Amazon.S3.Model;
-using AWSSDK_DotNet.IntegrationTests.Tests;
-using AWSSDK_DotNet.IntegrationTests.Tests.S3;
-using Amazon.S3.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon;
 
 namespace S3UnitTest
 {
@@ -78,6 +78,43 @@ namespace S3UnitTest
             if (!string.IsNullOrEmpty(bucketName))
                 AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void LifecycleEmptyFilterTest()
+        {
+            var s3Configuration = new LifecycleConfiguration
+            {
+                Rules = new List<LifecycleRule>
+                    {
+                        new LifecycleRule
+                        {
+                            Id = "Empty-filter-test",
+                            Filter = new LifecycleFilter{},
+                            Expiration = new LifecycleRuleExpiration
+                            {
+                                Days = 30
+                            }
+                        },
+                    }
+            };
+            Client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest
+            {
+                BucketName = bucketName,
+                Configuration = s3Configuration
+            });
+
+            var configuration = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetLifecycleConfiguration(bucketName);
+                return res.Configuration?.Rules?.Count == s3Configuration.Rules.Count ? res.Configuration : null;
+            });
+
+            Assert.AreEqual<string>(configuration.Rules.First().Id, "Empty-filter-test");
+            Assert.AreEqual<int?>(configuration.Rules.First().Expiration.Days, 30);
+        }
+
+
 
         [TestMethod]
         [TestCategory("S3")]
