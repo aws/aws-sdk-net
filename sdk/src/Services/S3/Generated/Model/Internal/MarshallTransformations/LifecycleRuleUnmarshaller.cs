@@ -70,9 +70,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Filter", targetDepth))
                     {
-                        var predicateList = LifecycleFilterPredicateListUnmarshaller.Instance.Unmarshall(context);
-                        unmarshalledObject.Filter = new LifecycleFilter();
-                        unmarshalledObject.Filter.LifecycleFilterPredicate = predicateList[0];
+                        FilterCustomUnmarshall(context, unmarshalledObject);
                         continue;
                     }
                     if (context.TestExpression("ID", targetDepth))

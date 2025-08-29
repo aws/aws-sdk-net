@@ -171,14 +171,12 @@
                             "private LifecycleRuleStatus _status = LifecycleRuleStatus.Disabled;"
                         ]
                     }
-                }
-            ],
-            "predicateListUnmarshallers":[
+                },
                 {
                     "Filter": 
                     {
-                        "predicateListUnmarshallerName": "LifecycleFilterPredicateListUnmarshaller",
-                        "filterPredicateName": "LifecycleFilterPredicate"
+                        "skipContextTestExpressionUnmarshallingLogic" : true,
+                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"]
                     }
                 }
             ]
