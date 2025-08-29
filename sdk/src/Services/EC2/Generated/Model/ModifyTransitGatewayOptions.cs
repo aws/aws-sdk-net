@@ -172,8 +172,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DefaultRouteTablePropagation. 
         /// <para>
-        /// Enable or disable automatic propagation of routes to the default propagation route
-        /// table.
+        /// Indicates whether resource attachments automatically propagate routes to the default
+        /// propagation route table. Enabled by default. If <c>defaultRouteTablePropagation</c>
+        /// is set to <c>enable</c>, Amazon Web Services Transit Gateway will create the default
+        /// transit gateway route table.
         /// </para>
         /// </summary>
         public DefaultRouteTablePropagationValue DefaultRouteTablePropagation
