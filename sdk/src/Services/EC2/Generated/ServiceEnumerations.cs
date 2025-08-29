@@ -19587,6 +19587,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Advertisement for RouteOrigin
+        /// </summary>
+        public static readonly RouteOrigin Advertisement = new RouteOrigin("Advertisement");
+        /// <summary>
         /// Constant CreateRoute for RouteOrigin
         /// </summary>
         public static readonly RouteOrigin CreateRoute = new RouteOrigin("CreateRoute");
@@ -20324,6 +20328,10 @@ namespace Amazon.EC2
         /// Constant Blackhole for RouteState
         /// </summary>
         public static readonly RouteState Blackhole = new RouteState("blackhole");
+        /// <summary>
+        /// Constant Filtered for RouteState
+        /// </summary>
+        public static readonly RouteState Filtered = new RouteState("filtered");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

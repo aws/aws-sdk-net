@@ -74,10 +74,6 @@ namespace Amazon.EC2.Model
         ///  <c>resource-configuration-group-arn</c> - The Amazon Resource Name (ARN) of the resource
         /// configuration of type GROUP.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>service-network-resource-association-id</c> - The ID of the association.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
