@@ -375,31 +375,35 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Document updateDocument;
             Expression versionExpression = null;
-            
-            var returnValues=counterConditionExpression == null ? ReturnValues.None : ReturnValues.AllNewAttributes;
 
-            if ((flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) || !storage.Config.HasVersion)
+            var updateIfNotExists = GetUpdateIfNotExistsAttributeNames(storage);
+
+            var returnValues = counterConditionExpression == null && !updateIfNotExists.Any()
+                ? ReturnValues.None
+                : ReturnValues.AllNewAttributes;
+
+            var updateItemOperationConfig = new UpdateItemOperationConfig
             {
-                updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig()
-                {
-                    ReturnValues = returnValues
-                }, counterConditionExpression);
-            }
-            else
+                ReturnValues = returnValues
+            };
+
+            if (!(flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) && storage.Config.HasVersion)
             {
-                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled); 
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
                 versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
-
-                var updateItemOperationConfig = new UpdateItemOperationConfig
-                {
-                    ReturnValues = returnValues,
-                    ConditionalExpression = versionExpression,
-                };
-                updateDocument = table.UpdateHelper(storage.Document, table.MakeKey(storage.Document), updateItemOperationConfig, counterConditionExpression);
+                updateItemOperationConfig.ConditionalExpression = versionExpression;
             }
 
-            if (counterConditionExpression == null && versionExpression == null) return;
+            updateDocument = table.UpdateHelper(
+                storage.Document,
+                table.MakeKey(storage.Document),
+                updateItemOperationConfig,
+                counterConditionExpression,
+                updateIfNotExists
+            );
+
+            if (counterConditionExpression == null && versionExpression == null && !updateIfNotExists.Any()) return;
 
             if (returnValues == ReturnValues.AllNewAttributes)
             {
@@ -427,37 +431,37 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Document updateDocument;
             Expression versionExpression = null;
+            
+            var updateIfNotExistsAttributeName = GetUpdateIfNotExistsAttributeNames(storage);
 
-            var returnValues = counterConditionExpression == null ? ReturnValues.None : ReturnValues.AllNewAttributes;
+            var returnValues = counterConditionExpression == null && !updateIfNotExistsAttributeName.Any()
+                ? ReturnValues.None
+                : ReturnValues.AllNewAttributes;
 
-            if (
-                (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
-                || !storage.Config.HasVersion)
+            var updateItemOperationConfig = new UpdateItemOperationConfig
             {
-                updateDocument = await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), new UpdateItemOperationConfig
-                {
-                    ReturnValues = returnValues
-                }, counterConditionExpression, cancellationToken).ConfigureAwait(false);
-            }
-            else
+                ReturnValues = returnValues
+            };
+
+            if (!(flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value) && storage.Config.HasVersion)
             {
-                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled); 
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
                 versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
                 SetNewVersion(storage);
-
-                updateDocument = await table.UpdateHelperAsync(
-                    storage.Document,
-                    table.MakeKey(storage.Document),
-                    new UpdateItemOperationConfig
-                    {
-                        ReturnValues = returnValues,
-                        ConditionalExpression = versionExpression
-                    }, counterConditionExpression,
-                    cancellationToken)
-                    .ConfigureAwait(false);
+                updateItemOperationConfig.ConditionalExpression = versionExpression;
             }
 
-            if (counterConditionExpression == null && versionExpression == null) return;
+            updateDocument = await table.UpdateHelperAsync(
+                storage.Document,
+                table.MakeKey(storage.Document),
+                updateItemOperationConfig,
+                counterConditionExpression,
+                cancellationToken,
+                updateIfNotExistsAttributeName
+            ).ConfigureAwait(false);
+
+
+            if (counterConditionExpression == null && versionExpression == null && !updateIfNotExistsAttributeName.Any()) return;
 
             if (returnValues == ReturnValues.AllNewAttributes)
             {
