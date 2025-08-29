@@ -1,3 +1,7 @@
+### 4.0.81.1 (2025-08-29 21:31 UTC)
+* S3 (4.0.6.12)
+	* Fix issue #3989. If an empty filter was specified, GetLifecycleConfiguration was failing. This fix allows an empty filter to be specified when retrieving lifecycle configurations via GetLifecycleConfiguration.
+
 ### 4.0.81.0 (2025-08-29 18:19 UTC)
 * BedrockRuntime (4.0.6.0)
 	* Fixed stop sequence limit for converse API.
