@@ -298,7 +298,7 @@
                 {
                     "ServerSideEncryptionMethod":{
                         "injectXmlIsSet":[
-                            "return this.serverSideEncryption != null && this.serverSideEncryption != ServerSideEncryptionMethod.None;"
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
                         ]
                     }
                 }
