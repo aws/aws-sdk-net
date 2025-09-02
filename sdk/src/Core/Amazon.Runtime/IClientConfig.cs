@@ -149,6 +149,13 @@ namespace Amazon.Runtime
         SigningAlgorithm SignatureMethod { get; }
 
         /// <summary>
+        /// Gets a value indicating whether the SignatureMethod property was explicitly set by the user.
+        /// This is used for backwards compatibility to determine when legacy SignatureMethod configuration
+        /// should take precedence over auth scheme preferences.
+        /// </summary>
+        bool IsSignatureMethodExplicitlySet { get; }
+
+        /// <summary>
         /// Gets the AuthenticationRegion property.
         /// Used in AWS4 request signing, this is an optional property; 
         /// change it only if the region cannot be determined from the 
@@ -396,6 +403,28 @@ namespace Amazon.Runtime
         /// By default it is set to <see cref="ResponseChecksumValidation.WHEN_SUPPORTED"/>.
         /// </summary>
         ResponseChecksumValidation ResponseChecksumValidation { get; }
+
+        /// <summary>
+        /// Gets the authentication scheme preference for this client configuration.
+        /// <para>
+        /// This property allows you to specify a preference list of authentication schemes
+        /// that will be used to reprioritize the supported authentication schemes for this client.
+        /// If not set, the client will use the global <see cref="AWSConfigs.AuthSchemePreference"/>
+        /// or fall back to the default model-based authentication scheme resolution.
+        /// </para>
+        /// </summary>
+        AuthSchemePreference AuthSchemePreference { get; }
+
+        /// <summary>
+        /// Gets the SigV4a signing region set configuration for this client.
+        /// <para>
+        /// This property allows you to specify the region set that will be used for SigV4a signing.
+        /// The region set determines which regions the signed request is valid for.
+        /// If not set, the client will use environment variables, configuration files,
+        /// endpoints metadata, or fall back to the client's configured region.
+        /// </para>
+        /// </summary>
+        SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; }
 
         /// <summary>
         /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
