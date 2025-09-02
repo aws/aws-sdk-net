@@ -477,7 +477,6 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	{
 				var listVariable = (variableName + member.PropertyName).Replace(".",string.Empty);
 				var listItemVariable = (variableName + member.PropertyName).Replace(".",string.Empty) + "Value";
-				var listAttributes = member.Shape.Members.Where(x => x.IsXmlAttribute);
 #>
 <#=new string(' ', level * 4)#>				var <#=listVariable#> = <#=variableName#>.<#=member.PropertyName#>;
 <#=new string(' ', level * 4)#>				if (<#=listVariable#> != null && (<#=listVariable#>.Count > 0 || !AWSConfigs.InitializeCollections)) 
