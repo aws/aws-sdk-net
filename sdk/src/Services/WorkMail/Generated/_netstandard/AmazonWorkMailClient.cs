@@ -4270,6 +4270,9 @@ namespace Amazon.WorkMail
         /// The organization must have a valid state to perform certain operations on the organization
         /// or its members.
         /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
+        /// You can't perform a write operation against a read-only directory.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual Task<RegisterToWorkMailResponse> RegisterToWorkMailAsync(RegisterToWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
