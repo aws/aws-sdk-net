@@ -42,6 +42,7 @@ namespace Amazon.Notifications.Model
         private DateTime? _creationTime;
         private string _notificationConfigurationArn;
         private NotificationEventSummary _notificationEvent;
+        private string _organizationalUnitId;
         private string _relatedAccount;
 
         /// <summary>
@@ -207,6 +208,24 @@ namespace Amazon.Notifications.Model
         internal bool IsSetNotificationEvent()
         {
             return this._notificationEvent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// The unique identifier of the organizational unit in the notification event overview.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
         /// <summary>

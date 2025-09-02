@@ -32,9 +32,8 @@ namespace Amazon.Notifications
     /// <summary>
     /// <para>Interface for accessing Notifications</para>
     ///
-    /// The <i>Amazon Web Services User Notifications API Reference</i> provides descriptions,
-    /// API request parameters, and the JSON response for each of the User Notification API
-    /// actions.
+    /// The <i>User Notifications API Reference</i> provides descriptions, API request parameters,
+    /// and the JSON response for each of the User Notifications API actions.
     /// 
     ///  
     /// <para>
@@ -55,6 +54,13 @@ namespace Amazon.Notifications
     /// is stored in each Region chosen as a <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
     /// hub</a> in addition to US East (Virginia).
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For information about descriptions, API request parameters, and the JSON response
+    /// for email contact related API actions, see the <a href="https://docs.aws.amazon.com/notificationscontacts/latest/APIReference/Welcome.html">User
+    /// Notifications Contacts API Reference Guide</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonNotifications : IAmazonService, IDisposable
     {
@@ -71,8 +77,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
-        /// the Console Mobile Application, and emails (notifications-contacts).
+        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Amazon
+        /// Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -154,7 +160,8 @@ namespace Amazon.Notifications
         /// 
         ///  
         /// <para>
-        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and emails (notifications-contacts).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAdditionalChannel service method.</param>
@@ -186,6 +193,45 @@ namespace Amazon.Notifications
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
         Task<AssociateManagedNotificationAdditionalChannelResponse> AssociateManagedNotificationAdditionalChannelAsync(AssociateManagedNotificationAdditionalChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AssociateOrganizationalUnit
+
+
+
+        /// <summary>
+        /// Associates an organizational unit with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateOrganizationalUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateOrganizationalUnit service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
+        Task<AssociateOrganizationalUnitResponse> AssociateOrganizationalUnitAsync(AssociateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -427,7 +473,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
-        /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Channels include Amazon Q Developer in chat applications, the Console Mobile Application,
+        /// and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -500,7 +547,8 @@ namespace Amazon.Notifications
         /// 
         ///  
         /// <para>
-        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and emails (notifications-contacts).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAdditionalChannel service method.</param>
@@ -526,6 +574,39 @@ namespace Amazon.Notifications
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
         Task<DisassociateManagedNotificationAdditionalChannelResponse> DisassociateManagedNotificationAdditionalChannelAsync(DisassociateManagedNotificationAdditionalChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateOrganizationalUnit
+
+
+
+        /// <summary>
+        /// Removes the association between an organizational unit and a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateOrganizationalUnit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateOrganizationalUnit service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
+        Task<DisassociateOrganizationalUnitResponse> DisassociateOrganizationalUnitAsync(DisassociateOrganizationalUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1004,6 +1085,39 @@ namespace Amazon.Notifications
 
         #endregion
                 
+        #region  ListMemberAccounts
+
+
+
+        /// <summary>
+        /// Returns a list of member accounts associated with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMemberAccounts service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        Task<ListMemberAccountsResponse> ListMemberAccountsAsync(ListMemberAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListNotificationConfigurations
 
 
@@ -1105,6 +1219,39 @@ namespace Amazon.Notifications
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationHubs">REST API Reference for ListNotificationHubs Operation</seealso>
         Task<ListNotificationHubsResponse> ListNotificationHubsAsync(ListNotificationHubsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListOrganizationalUnits
+
+
+
+        /// <summary>
+        /// Returns a list of organizational units associated with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationalUnits service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        Task<ListOrganizationalUnitsResponse> ListOrganizationalUnitsAsync(ListOrganizationalUnitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

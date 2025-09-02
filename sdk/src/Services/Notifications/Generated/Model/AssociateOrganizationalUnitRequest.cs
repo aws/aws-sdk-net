@@ -30,39 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateChannel operation.
-    /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
-    /// Channels include Amazon Q Developer in chat applications, the Console Mobile Application,
-    /// and emails (notifications-contacts).
+    /// Container for the parameters to the AssociateOrganizationalUnit operation.
+    /// Associates an organizational unit with a notification configuration.
     /// </summary>
-    public partial class DisassociateChannelRequest : AmazonNotificationsRequest
+    public partial class AssociateOrganizationalUnitRequest : AmazonNotificationsRequest
     {
-        private string _arn;
         private string _notificationConfigurationArn;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Channel to disassociate.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
+        private string _organizationalUnitId;
 
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the <c>NotificationConfiguration</c> to disassociate.
+        /// The Amazon Resource Name (ARN) of the notification configuration to associate with
+        /// the organizational unit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,6 +56,25 @@ namespace Amazon.Notifications.Model
         internal bool IsSetNotificationConfigurationArn()
         {
             return this._notificationConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// The unique identifier of the organizational unit to associate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
     }

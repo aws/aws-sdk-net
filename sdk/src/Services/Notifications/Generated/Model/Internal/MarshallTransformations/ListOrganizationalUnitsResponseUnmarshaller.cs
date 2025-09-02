@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetNotificationConfiguration operation
+    /// Response Unmarshaller for ListOrganizationalUnits operation
     /// </summary>  
-    public class GetNotificationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListOrganizationalUnitsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,22 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetNotificationConfigurationResponse response = new GetNotificationConfigurationResponse();
+            ListOrganizationalUnitsResponse response = new ListOrganizationalUnitsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregationDuration", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AggregationDuration = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("organizationalUnits", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subtype", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Subtype = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.OrganizationalUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -141,9 +111,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             return new AmazonNotificationsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetNotificationConfigurationResponseUnmarshaller _instance = new GetNotificationConfigurationResponseUnmarshaller();        
+        private static ListOrganizationalUnitsResponseUnmarshaller _instance = new ListOrganizationalUnitsResponseUnmarshaller();        
 
-        internal static GetNotificationConfigurationResponseUnmarshaller GetInstance()
+        internal static ListOrganizationalUnitsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +121,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetNotificationConfigurationResponseUnmarshaller Instance
+        public static ListOrganizationalUnitsResponseUnmarshaller Instance
         {
             get
             {

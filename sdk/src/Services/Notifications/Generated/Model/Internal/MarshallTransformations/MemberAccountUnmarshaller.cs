@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NotificationEventOverview Object
+    /// Response Unmarshaller for MemberAccount Object
     /// </summary>  
-    public class NotificationEventOverviewUnmarshaller : IUnmarshaller<NotificationEventOverview, XmlUnmarshallerContext>, IUnmarshaller<NotificationEventOverview, JsonUnmarshallerContext>
+    public class MemberAccountUnmarshaller : IUnmarshaller<MemberAccount, XmlUnmarshallerContext>, IUnmarshaller<MemberAccount, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NotificationEventOverview IUnmarshaller<NotificationEventOverview, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MemberAccount IUnmarshaller<MemberAccount, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NotificationEventOverview Unmarshall(JsonUnmarshallerContext context)
+        public MemberAccount Unmarshall(JsonUnmarshallerContext context)
         {
-            NotificationEventOverview unmarshalledObject = new NotificationEventOverview();
+            MemberAccount unmarshalledObject = new MemberAccount();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregateNotificationEventArn", targetDepth))
+                if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregateNotificationEventArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("aggregationEventType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationEventType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("aggregationSummary", targetDepth))
-                {
-                    var unmarshaller = AggregationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.AggregationSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("notificationConfigurationArn", targetDepth))
@@ -102,22 +78,22 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotificationConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("notificationEvent", targetDepth))
-                {
-                    var unmarshaller = NotificationEventSummaryUnmarshaller.Instance;
-                    unmarshalledObject.NotificationEvent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("organizationalUnitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("relatedAccount", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RelatedAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,12 +101,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         }
 
 
-        private static NotificationEventOverviewUnmarshaller _instance = new NotificationEventOverviewUnmarshaller();        
+        private static MemberAccountUnmarshaller _instance = new MemberAccountUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NotificationEventOverviewUnmarshaller Instance
+        public static MemberAccountUnmarshaller Instance
         {
             get
             {

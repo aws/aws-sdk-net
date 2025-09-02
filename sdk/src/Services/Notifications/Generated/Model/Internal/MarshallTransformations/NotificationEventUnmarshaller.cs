@@ -120,6 +120,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("organizationalUnitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

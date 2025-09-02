@@ -88,6 +88,16 @@ namespace Amazon.Notifications.Model
         IListManagedNotificationEventsPaginator ListManagedNotificationEvents(ListManagedNotificationEventsRequest request);
 
         /// <summary>
+        /// Paginator for ListMemberAccounts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMemberAccountsPaginator ListMemberAccounts(ListMemberAccountsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotificationConfigurations operation
         ///</summary>
         [AWSPaginator(
@@ -116,5 +126,15 @@ namespace Amazon.Notifications.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListNotificationHubsPaginator ListNotificationHubs(ListNotificationHubsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOrganizationalUnits operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListOrganizationalUnitsPaginator ListOrganizationalUnits(ListOrganizationalUnitsRequest request);
     }
 }

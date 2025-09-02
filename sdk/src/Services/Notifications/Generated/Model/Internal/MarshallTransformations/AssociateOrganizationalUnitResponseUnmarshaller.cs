@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetNotificationConfiguration operation
+    /// Response Unmarshaller for AssociateOrganizationalUnit operation
     /// </summary>  
-    public class GetNotificationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateOrganizationalUnitResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,55 +46,8 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetNotificationConfigurationResponse response = new GetNotificationConfigurationResponse();
+            AssociateOrganizationalUnitResponse response = new AssociateOrganizationalUnitResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("aggregationDuration", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AggregationDuration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subtype", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Subtype = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -121,6 +74,10 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -128,6 +85,10 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -141,9 +102,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             return new AmazonNotificationsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetNotificationConfigurationResponseUnmarshaller _instance = new GetNotificationConfigurationResponseUnmarshaller();        
+        private static AssociateOrganizationalUnitResponseUnmarshaller _instance = new AssociateOrganizationalUnitResponseUnmarshaller();        
 
-        internal static GetNotificationConfigurationResponseUnmarshaller GetInstance()
+        internal static AssociateOrganizationalUnitResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +112,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetNotificationConfigurationResponseUnmarshaller Instance
+        public static AssociateOrganizationalUnitResponseUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListNotificationConfigurations Request Marshaller
+    /// ListOrganizationalUnits Request Marshaller
     /// </summary>       
-    public class ListNotificationConfigurationsRequestMarshaller : IMarshaller<IRequest, ListNotificationConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListOrganizationalUnitsRequestMarshaller : IMarshaller<IRequest, ListOrganizationalUnitsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListNotificationConfigurationsRequest)input);
+            return this.Marshall((ListOrganizationalUnitsRequest)input);
         }
 
         /// <summary>
@@ -53,18 +53,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListNotificationConfigurationsRequest publicRequest)
+        public IRequest Marshall(ListOrganizationalUnitsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Notifications");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
-            
-            if (publicRequest.IsSetChannelArn())
-                request.Parameters.Add("channelArn", StringUtils.FromString(publicRequest.ChannelArn));
-            
-            if (publicRequest.IsSetEventRuleSource())
-                request.Parameters.Add("eventRuleSource", StringUtils.FromString(publicRequest.EventRuleSource));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -72,19 +66,16 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
-            if (publicRequest.IsSetStatus())
-                request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            
-            if (publicRequest.IsSetSubtype())
-                request.Parameters.Add("subtype", StringUtils.FromString(publicRequest.Subtype));
-            request.ResourcePath = "/notification-configurations";
+            if (publicRequest.IsSetNotificationConfigurationArn())
+                request.Parameters.Add("notificationConfigurationArn", StringUtils.FromString(publicRequest.NotificationConfigurationArn));
+            request.ResourcePath = "/organizational-units";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListNotificationConfigurationsRequestMarshaller _instance = new ListNotificationConfigurationsRequestMarshaller();        
+        private static ListOrganizationalUnitsRequestMarshaller _instance = new ListOrganizationalUnitsRequestMarshaller();        
 
-        internal static ListNotificationConfigurationsRequestMarshaller GetInstance()
+        internal static ListOrganizationalUnitsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -92,7 +83,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListNotificationConfigurationsRequestMarshaller Instance
+        public static ListOrganizationalUnitsRequestMarshaller Instance
         {
             get
             {

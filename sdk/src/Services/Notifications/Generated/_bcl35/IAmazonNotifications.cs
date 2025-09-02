@@ -30,9 +30,8 @@ namespace Amazon.Notifications
     /// <summary>
     /// <para>Interface for accessing Notifications</para>
     ///
-    /// The <i>Amazon Web Services User Notifications API Reference</i> provides descriptions,
-    /// API request parameters, and the JSON response for each of the User Notification API
-    /// actions.
+    /// The <i>User Notifications API Reference</i> provides descriptions, API request parameters,
+    /// and the JSON response for each of the User Notifications API actions.
     /// 
     ///  
     /// <para>
@@ -53,6 +52,13 @@ namespace Amazon.Notifications
     /// is stored in each Region chosen as a <a href="https://docs.aws.amazon.com/notifications/latest/userguide/notification-hubs.html">notification
     /// hub</a> in addition to US East (Virginia).
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For information about descriptions, API request parameters, and the JSON response
+    /// for email contact related API actions, see the <a href="https://docs.aws.amazon.com/notificationscontacts/latest/APIReference/Welcome.html">User
+    /// Notifications Contacts API Reference Guide</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonNotifications : IAmazonService, IDisposable
     {
@@ -72,8 +78,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
-        /// the Console Mobile Application, and emails (notifications-contacts).
+        /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Amazon
+        /// Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateChannel service method.</param>
         /// 
@@ -199,7 +205,8 @@ namespace Amazon.Notifications
         /// 
         ///  
         /// <para>
-        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and emails (notifications-contacts).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateManagedNotificationAdditionalChannel service method.</param>
@@ -254,6 +261,67 @@ namespace Amazon.Notifications
         /// <returns>Returns a  AssociateManagedNotificationAdditionalChannelResult from Notifications.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
         AssociateManagedNotificationAdditionalChannelResponse EndAssociateManagedNotificationAdditionalChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateOrganizationalUnit
+
+
+        /// <summary>
+        /// Associates an organizational unit with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateOrganizationalUnit service method.</param>
+        /// 
+        /// <returns>The response from the AssociateOrganizationalUnit service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
+        AssociateOrganizationalUnitResponse AssociateOrganizationalUnit(AssociateOrganizationalUnitRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateOrganizationalUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateOrganizationalUnit operation on AmazonNotificationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateOrganizationalUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
+        IAsyncResult BeginAssociateOrganizationalUnit(AssociateOrganizationalUnitRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateOrganizationalUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateOrganizationalUnit.</param>
+        /// 
+        /// <returns>Returns a  AssociateOrganizationalUnitResult from Notifications.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
+        AssociateOrganizationalUnitResponse EndAssociateOrganizationalUnit(IAsyncResult asyncResult);
 
         #endregion
         
@@ -626,7 +694,8 @@ namespace Amazon.Notifications
 
         /// <summary>
         /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
-        /// Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Channels include Amazon Q Developer in chat applications, the Console Mobile Application,
+        /// and emails (notifications-contacts).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateChannel service method.</param>
         /// 
@@ -743,7 +812,8 @@ namespace Amazon.Notifications
         /// 
         ///  
         /// <para>
-        /// Supported Channels include Chatbot, the Console Mobile Application, and emails (notifications-contacts).
+        /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and emails (notifications-contacts).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateManagedNotificationAdditionalChannel service method.</param>
@@ -792,6 +862,61 @@ namespace Amazon.Notifications
         /// <returns>Returns a  DisassociateManagedNotificationAdditionalChannelResult from Notifications.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
         DisassociateManagedNotificationAdditionalChannelResponse EndDisassociateManagedNotificationAdditionalChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateOrganizationalUnit
+
+
+        /// <summary>
+        /// Removes the association between an organizational unit and a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateOrganizationalUnit service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateOrganizationalUnit service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
+        DisassociateOrganizationalUnitResponse DisassociateOrganizationalUnit(DisassociateOrganizationalUnitRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateOrganizationalUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateOrganizationalUnit operation on AmazonNotificationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateOrganizationalUnit
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
+        IAsyncResult BeginDisassociateOrganizationalUnit(DisassociateOrganizationalUnitRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateOrganizationalUnit operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateOrganizationalUnit.</param>
+        /// 
+        /// <returns>Returns a  DisassociateOrganizationalUnitResult from Notifications.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
+        DisassociateOrganizationalUnitResponse EndDisassociateOrganizationalUnit(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1578,6 +1703,61 @@ namespace Amazon.Notifications
 
         #endregion
         
+        #region  ListMemberAccounts
+
+
+        /// <summary>
+        /// Returns a list of member accounts associated with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListMemberAccounts service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMemberAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts operation on AmazonNotificationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMemberAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMemberAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMemberAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListMemberAccountsResult from Notifications.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        ListMemberAccountsResponse EndListMemberAccounts(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListNotificationConfigurations
 
 
@@ -1745,6 +1925,61 @@ namespace Amazon.Notifications
         /// <returns>Returns a  ListNotificationHubsResult from Notifications.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationHubs">REST API Reference for ListNotificationHubs Operation</seealso>
         ListNotificationHubsResponse EndListNotificationHubs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListOrganizationalUnits
+
+
+        /// <summary>
+        /// Returns a list of organizational units associated with a notification configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnits service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationalUnits service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        ListOrganizationalUnitsResponse ListOrganizationalUnits(ListOrganizationalUnitsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOrganizationalUnits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnits operation on AmazonNotificationsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOrganizationalUnits
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        IAsyncResult BeginListOrganizationalUnits(ListOrganizationalUnitsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOrganizationalUnits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOrganizationalUnits.</param>
+        /// 
+        /// <returns>Returns a  ListOrganizationalUnitsResult from Notifications.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
+        ListOrganizationalUnitsResponse EndListOrganizationalUnits(IAsyncResult asyncResult);
 
         #endregion
         

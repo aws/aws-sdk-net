@@ -78,6 +78,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetOrganizationalUnitId())
+                request.Parameters.Add("organizationalUnitId", StringUtils.FromString(publicRequest.OrganizationalUnitId));
+            
             if (publicRequest.IsSetSource())
                 request.Parameters.Add("source", StringUtils.FromString(publicRequest.Source));
             

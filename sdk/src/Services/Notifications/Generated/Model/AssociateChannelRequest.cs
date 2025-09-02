@@ -32,8 +32,8 @@ namespace Amazon.Notifications.Model
     /// <summary>
     /// Container for the parameters to the AssociateChannel operation.
     /// Associates a delivery <a href="https://docs.aws.amazon.com/notifications/latest/userguide/managing-delivery-channels.html">Channel</a>
-    /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Chatbot,
-    /// the Console Mobile Application, and emails (notifications-contacts).
+    /// with a particular <c>NotificationConfiguration</c>. Supported Channels include Amazon
+    /// Q Developer in chat applications, the Console Mobile Application, and emails (notifications-contacts).
     /// </summary>
     public partial class AssociateChannelRequest : AmazonNotificationsRequest
     {
@@ -47,7 +47,8 @@ namespace Amazon.Notifications.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported ARNs include Chatbot, the Console Mobile Application, and notifications-contacts.
+        /// Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile
+        /// Application, and notifications-contacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
