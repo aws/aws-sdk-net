@@ -82,10 +82,11 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring
-        /// configuration.
+        /// configuration. If absent, the IAM Role Arn of AWSServiceRoleForAmazonWorkMailEvents
+        /// will be used.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
