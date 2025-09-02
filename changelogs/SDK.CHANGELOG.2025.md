@@ -1,3 +1,15 @@
+### 4.0.82.0 (2025-09-02 18:32 UTC)
+* EC2 (4.0.36.0)
+	* MaximumEbsAttachments and AttachmentLimitType fields added to DescribeInstanceTypesResponse. G6f, Gr6f, R8i, R8i-flex and p5.4xlarge instance types added to InstanceTypes enum.
+* Neptune (4.0.3.0)
+	* Removed the deprecated marker from publiclyAccessible parameter from DbInstance, CreateDbInstance and ModifyDbInstance and added relevant usage information for the parameter.
+* Notifications (4.0.2.0)
+	* Added Org support for notifications:  - `ListMemberAccounts` gets member accounts list, `AssociateOrganizationalUnit` links OU to notification configuration, `DisassociateOrganizationalUnit` removes OU from notification configuration, `ListOrganizationalUnits` shows OUs configured for notifications.
+* S3 (4.0.6.13)
+	* Fix issue #3993. PutObjectAcl was failing when Grantee's Type member was set because  the xml attribute not being written first leading to invalid xml. PutBucketAcl would also fail with the same issue if Type is set. This change writes the attributes first if they are present.
+* WorkMail (4.0.2.0)
+	* Make RoleArn an optional parameter for the PutEmailMonitoringConfiguration API, and add UnsupportedOperationException to RegisterToWorkMail.
+
 ### 4.0.81.1 (2025-08-29 21:31 UTC)
 * S3 (4.0.6.12)
 	* Fix issue #3989. If an empty filter was specified, GetLifecycleConfiguration was failing. This fix allows an empty filter to be specified when retrieving lifecycle configurations via GetLifecycleConfiguration.
