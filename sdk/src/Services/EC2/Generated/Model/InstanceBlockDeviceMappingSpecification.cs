@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name (for example, <c>/dev/sdh</c> or <c>xvdh</c>).
+        /// The device name. For available device names, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+        /// names for volumes</a>.
         /// </para>
         /// </summary>
         public string DeviceName

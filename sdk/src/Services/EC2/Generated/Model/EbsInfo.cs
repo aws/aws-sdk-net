@@ -34,10 +34,32 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EbsInfo
     {
+        private AttachmentLimitType _attachmentLimitType;
         private EbsOptimizedInfo _ebsOptimizedInfo;
         private EbsOptimizedSupport _ebsOptimizedSupport;
         private EbsEncryptionSupport _encryptionSupport;
+        private int? _maximumEbsAttachments;
         private EbsNvmeSupport _nvmeSupport;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentLimitType. 
+        /// <para>
+        /// Indicates whether the instance type features a shared or dedicated Amazon EBS volume
+        /// attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon
+        /// EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AttachmentLimitType AttachmentLimitType
+        {
+            get { return this._attachmentLimitType; }
+            set { this._attachmentLimitType = value; }
+        }
+
+        // Check to see if AttachmentLimitType property is set
+        internal bool IsSetAttachmentLimitType()
+        {
+            return this._attachmentLimitType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EbsOptimizedInfo. 
@@ -93,6 +115,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetEncryptionSupport()
         {
             return this._encryptionSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumEbsAttachments. 
+        /// <para>
+        /// Indicates the maximum number of Amazon EBS volumes that can be attached to the instance
+        /// type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon
+        /// EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int MaximumEbsAttachments
+        {
+            get { return this._maximumEbsAttachments.GetValueOrDefault(); }
+            set { this._maximumEbsAttachments = value; }
+        }
+
+        // Check to see if MaximumEbsAttachments property is set
+        internal bool IsSetMaximumEbsAttachments()
+        {
+            return this._maximumEbsAttachments.HasValue; 
         }
 
         /// <summary>
