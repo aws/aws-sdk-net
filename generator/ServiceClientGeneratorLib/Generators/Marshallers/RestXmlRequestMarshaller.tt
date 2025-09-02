@@ -332,7 +332,10 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 
 	void ProcessMembers(int level, string variableName, IEnumerable<Member> members, bool insideMap = false)
 	{
-		foreach(var member in members)
+		// members that are XML Attributes MUST be written first. If not, it will be invalid XML. 
+		var sortedMembers = members.OrderByDescending(x => x.IsXmlAttribute);
+
+		foreach(var member in sortedMembers)
 		{
 			if (this.Config.ServiceModel.Customizations.TryGetVisitorPattern(member.Shape.Name, out var visitorPattern) && !visitorPattern.Visited)
 			{
