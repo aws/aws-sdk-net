@@ -1,3 +1,16 @@
+### 3.7.1114.0 (2025-09-02 18:17 UTC)
+* EC2 (3.7.510.0)
+	* MaximumEbsAttachments and AttachmentLimitType fields added to DescribeInstanceTypesResponse. G6f, Gr6f, R8i, R8i-flex and p5.4xlarge instance types added to InstanceTypes enum.
+* Neptune (3.7.502.0)
+	* Removed the deprecated marker from publiclyAccessible parameter from DbInstance, CreateDbInstance and ModifyDbInstance and added relevant usage information for the parameter.
+* Notifications (3.7.502.0)
+	* Added Org support for notifications:  - `ListMemberAccounts` gets member accounts list, `AssociateOrganizationalUnit` links OU to notification configuration, `DisassociateOrganizationalUnit` removes OU from notification configuration, `ListOrganizationalUnits` shows OUs configured for notifications.
+* WorkMail (3.7.502.0)
+	* Make RoleArn an optional parameter for the PutEmailMonitoringConfiguration API, and add UnsupportedOperationException to RegisterToWorkMail.
+* Core 3.7.500.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1113.0 (2025-08-29 18:17 UTC)
 * BedrockRuntime (3.7.504.0)
 	* Fixed stop sequence limit for converse API.
