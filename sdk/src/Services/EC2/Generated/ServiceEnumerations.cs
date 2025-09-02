@@ -1381,6 +1381,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AttachmentLimitType.
+    /// </summary>
+    public class AttachmentLimitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dedicated for AttachmentLimitType
+        /// </summary>
+        public static readonly AttachmentLimitType Dedicated = new AttachmentLimitType("dedicated");
+        /// <summary>
+        /// Constant Shared for AttachmentLimitType
+        /// </summary>
+        public static readonly AttachmentLimitType Shared = new AttachmentLimitType("shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentLimitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentLimitType FindValue(string value)
+        {
+            return FindValue<AttachmentLimitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentLimitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttachmentStatus.
     /// </summary>
     public class AttachmentStatus : ConstantClass
@@ -10091,6 +10141,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G6eXlarge = new InstanceType("g6e.xlarge");
         /// <summary>
+        /// Constant G6f2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6f2xlarge = new InstanceType("g6f.2xlarge");
+        /// <summary>
+        /// Constant G6f4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6f4xlarge = new InstanceType("g6f.4xlarge");
+        /// <summary>
+        /// Constant G6fLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6fLarge = new InstanceType("g6f.large");
+        /// <summary>
+        /// Constant G6fXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6fXlarge = new InstanceType("g6f.xlarge");
+        /// <summary>
         /// Constant G6Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
@@ -10102,6 +10168,10 @@ namespace Amazon.EC2
         /// Constant Gr68xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Gr68xlarge = new InstanceType("gr6.8xlarge");
+        /// <summary>
+        /// Constant Gr6f4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Gr6f4xlarge = new InstanceType("gr6f.4xlarge");
         /// <summary>
         /// Constant H116xlarge for InstanceType
         /// </summary>
@@ -11439,6 +11509,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType P548xlarge = new InstanceType("p5.48xlarge");
         /// <summary>
+        /// Constant P54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P54xlarge = new InstanceType("p5.4xlarge");
+        /// <summary>
         /// Constant P5e48xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P5e48xlarge = new InstanceType("p5e.48xlarge");
@@ -12318,6 +12392,86 @@ namespace Amazon.EC2
         /// Constant R8gXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8gXlarge = new InstanceType("r8g.xlarge");
+        /// <summary>
+        /// Constant R8i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i12xlarge = new InstanceType("r8i.12xlarge");
+        /// <summary>
+        /// Constant R8i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i16xlarge = new InstanceType("r8i.16xlarge");
+        /// <summary>
+        /// Constant R8i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i24xlarge = new InstanceType("r8i.24xlarge");
+        /// <summary>
+        /// Constant R8i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i2xlarge = new InstanceType("r8i.2xlarge");
+        /// <summary>
+        /// Constant R8i32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i32xlarge = new InstanceType("r8i.32xlarge");
+        /// <summary>
+        /// Constant R8i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i48xlarge = new InstanceType("r8i.48xlarge");
+        /// <summary>
+        /// Constant R8i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i4xlarge = new InstanceType("r8i.4xlarge");
+        /// <summary>
+        /// Constant R8i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i8xlarge = new InstanceType("r8i.8xlarge");
+        /// <summary>
+        /// Constant R8i96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8i96xlarge = new InstanceType("r8i.96xlarge");
+        /// <summary>
+        /// Constant R8iFlex12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlex12xlarge = new InstanceType("r8i-flex.12xlarge");
+        /// <summary>
+        /// Constant R8iFlex16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlex16xlarge = new InstanceType("r8i-flex.16xlarge");
+        /// <summary>
+        /// Constant R8iFlex2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlex2xlarge = new InstanceType("r8i-flex.2xlarge");
+        /// <summary>
+        /// Constant R8iFlex4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlex4xlarge = new InstanceType("r8i-flex.4xlarge");
+        /// <summary>
+        /// Constant R8iFlex8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlex8xlarge = new InstanceType("r8i-flex.8xlarge");
+        /// <summary>
+        /// Constant R8iFlexLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlexLarge = new InstanceType("r8i-flex.large");
+        /// <summary>
+        /// Constant R8iFlexXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iFlexXlarge = new InstanceType("r8i-flex.xlarge");
+        /// <summary>
+        /// Constant R8iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iLarge = new InstanceType("r8i.large");
+        /// <summary>
+        /// Constant R8iMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iMetal48xl = new InstanceType("r8i.metal-48xl");
+        /// <summary>
+        /// Constant R8iMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iMetal96xl = new InstanceType("r8i.metal-96xl");
+        /// <summary>
+        /// Constant R8iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R8iXlarge = new InstanceType("r8i.xlarge");
         /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
