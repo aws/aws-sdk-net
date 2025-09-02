@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListNotificationEvents Request Marshaller
+    /// ListMemberAccounts Request Marshaller
     /// </summary>       
-    public class ListNotificationEventsRequestMarshaller : IMarshaller<IRequest, ListNotificationEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListMemberAccountsRequestMarshaller : IMarshaller<IRequest, ListMemberAccountsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListNotificationEventsRequest)input);
+            return this.Marshall((ListMemberAccountsRequest)input);
         }
 
         /// <summary>
@@ -56,47 +56,38 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListNotificationEventsRequest publicRequest)
+        public IRequest Marshall(ListMemberAccountsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Notifications");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
             
-            if (publicRequest.IsSetAggregateNotificationEventArn())
-                request.Parameters.Add("aggregateNotificationEventArn", StringUtils.FromString(publicRequest.AggregateNotificationEventArn));
-            
-            if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
-            
-            if (publicRequest.IsSetIncludeChildEvents())
-                request.Parameters.Add("includeChildEvents", StringUtils.FromBool(publicRequest.IncludeChildEvents));
-            
-            if (publicRequest.IsSetLocale())
-                request.Parameters.Add("locale", StringUtils.FromString(publicRequest.Locale));
-            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetMemberAccount())
+                request.Parameters.Add("memberAccount", StringUtils.FromString(publicRequest.MemberAccount));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetNotificationConfigurationArn())
+                request.Parameters.Add("notificationConfigurationArn", StringUtils.FromString(publicRequest.NotificationConfigurationArn));
+            
             if (publicRequest.IsSetOrganizationalUnitId())
                 request.Parameters.Add("organizationalUnitId", StringUtils.FromString(publicRequest.OrganizationalUnitId));
             
-            if (publicRequest.IsSetSource())
-                request.Parameters.Add("source", StringUtils.FromString(publicRequest.Source));
-            
-            if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
-            request.ResourcePath = "/notification-events";
+            if (publicRequest.IsSetStatus())
+                request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
+            request.ResourcePath = "/list-member-accounts";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListNotificationEventsRequestMarshaller _instance = new ListNotificationEventsRequestMarshaller();        
+        private static ListMemberAccountsRequestMarshaller _instance = new ListMemberAccountsRequestMarshaller();        
 
-        internal static ListNotificationEventsRequestMarshaller GetInstance()
+        internal static ListMemberAccountsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +95,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListNotificationEventsRequestMarshaller Instance
+        public static ListMemberAccountsRequestMarshaller Instance
         {
             get
             {

@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetNotificationConfiguration operation
+    /// Response Unmarshaller for ListMemberAccounts operation
     /// </summary>  
-    public class GetNotificationConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListMemberAccountsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,22 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetNotificationConfigurationResponse response = new GetNotificationConfigurationResponse();
+            ListMemberAccountsResponse response = new ListMemberAccountsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregationDuration", targetDepth))
+                if (context.TestExpression("memberAccounts", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AggregationDuration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<MemberAccount, MemberAccountUnmarshaller>(MemberAccountUnmarshaller.Instance);
+                    response.MemberAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("subtype", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Subtype = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -143,9 +113,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             return new AmazonNotificationsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetNotificationConfigurationResponseUnmarshaller _instance = new GetNotificationConfigurationResponseUnmarshaller();        
+        private static ListMemberAccountsResponseUnmarshaller _instance = new ListMemberAccountsResponseUnmarshaller();        
 
-        internal static GetNotificationConfigurationResponseUnmarshaller GetInstance()
+        internal static ListMemberAccountsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +123,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetNotificationConfigurationResponseUnmarshaller Instance
+        public static ListMemberAccountsResponseUnmarshaller Instance
         {
             get
             {

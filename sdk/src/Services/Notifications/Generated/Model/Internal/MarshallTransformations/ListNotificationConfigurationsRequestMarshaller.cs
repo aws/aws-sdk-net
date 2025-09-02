@@ -77,6 +77,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
+            
+            if (publicRequest.IsSetSubtype())
+                request.Parameters.Add("subtype", StringUtils.FromString(publicRequest.Subtype));
             request.ResourcePath = "/notification-configurations";
             request.UseQueryString = true;
 

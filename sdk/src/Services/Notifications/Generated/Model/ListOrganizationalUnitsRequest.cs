@@ -30,39 +30,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateChannel operation.
-    /// Disassociates a Channel from a specified <c>NotificationConfiguration</c>. Supported
-    /// Channels include Amazon Q Developer in chat applications, the Console Mobile Application,
-    /// and emails (notifications-contacts).
+    /// Container for the parameters to the ListOrganizationalUnits operation.
+    /// Returns a list of organizational units associated with a notification configuration.
     /// </summary>
-    public partial class DisassociateChannelRequest : AmazonNotificationsRequest
+    public partial class ListOrganizationalUnitsRequest : AmazonNotificationsRequest
     {
-        private string _arn;
+        private int? _maxResults;
+        private string _nextToken;
         private string _notificationConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Channel to disassociate.
+        /// The maximum number of organizational units to return in a single call. Valid values
+        /// are 1-100.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._arn != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results. Use the value returned in the previous response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property NotificationConfigurationArn. 
         /// <para>
-        /// The ARN of the <c>NotificationConfiguration</c> to disassociate.
+        /// The Amazon Resource Name (ARN) of the notification configuration used to filter the
+        /// organizational units.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

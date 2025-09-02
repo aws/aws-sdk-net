@@ -44,6 +44,7 @@ namespace Amazon.Notifications.Model
         private List<MediaElement> _media = AWSConfigs.InitializeCollections ? new List<MediaElement>() : null;
         private MessageComponents _messageComponents;
         private NotificationType _notificationType;
+        private string _organizationalUnitId;
         private SchemaVersion _schemaVersion;
         private string _sourceEventDetailUrl;
         private string _sourceEventDetailUrlDisplayText;
@@ -316,6 +317,25 @@ namespace Amazon.Notifications.Model
         internal bool IsSetNotificationType()
         {
             return this._notificationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// The unique identifier of the organizational unit associated with the notification
+        /// event.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
         /// <summary>
