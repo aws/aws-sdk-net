@@ -78,6 +78,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoApprovedChangeTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AutoApprovedChangeTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

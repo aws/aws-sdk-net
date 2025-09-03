@@ -595,6 +595,206 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AutoApprovedChangeType.
+    /// </summary>
+    public class AutoApprovedChangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD_MEMBER for AutoApprovedChangeType
+        /// </summary>
+        public static readonly AutoApprovedChangeType ADD_MEMBER = new AutoApprovedChangeType("ADD_MEMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoApprovedChangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoApprovedChangeType FindValue(string value)
+        {
+            return FindValue<AutoApprovedChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoApprovedChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeRequestStatus.
+    /// </summary>
+    public class ChangeRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ChangeRequestStatus
+        /// </summary>
+        public static readonly ChangeRequestStatus APPROVED = new ChangeRequestStatus("APPROVED");
+        /// <summary>
+        /// Constant CANCELLED for ChangeRequestStatus
+        /// </summary>
+        public static readonly ChangeRequestStatus CANCELLED = new ChangeRequestStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMMITTED for ChangeRequestStatus
+        /// </summary>
+        public static readonly ChangeRequestStatus COMMITTED = new ChangeRequestStatus("COMMITTED");
+        /// <summary>
+        /// Constant DENIED for ChangeRequestStatus
+        /// </summary>
+        public static readonly ChangeRequestStatus DENIED = new ChangeRequestStatus("DENIED");
+        /// <summary>
+        /// Constant PENDING for ChangeRequestStatus
+        /// </summary>
+        public static readonly ChangeRequestStatus PENDING = new ChangeRequestStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeRequestStatus FindValue(string value)
+        {
+            return FindValue<ChangeRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeSpecificationType.
+    /// </summary>
+    public class ChangeSpecificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEMBER for ChangeSpecificationType
+        /// </summary>
+        public static readonly ChangeSpecificationType MEMBER = new ChangeSpecificationType("MEMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeSpecificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeSpecificationType FindValue(string value)
+        {
+            return FindValue<ChangeSpecificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeSpecificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeType.
+    /// </summary>
+    public class ChangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD_MEMBER for ChangeType
+        /// </summary>
+        public static readonly ChangeType ADD_MEMBER = new ChangeType("ADD_MEMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeType FindValue(string value)
+        {
+            return FindValue<ChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CollaborationJobLogStatus.
     /// </summary>
     public class CollaborationJobLogStatus : ConstantClass

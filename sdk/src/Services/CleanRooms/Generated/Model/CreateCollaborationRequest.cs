@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     public partial class CreateCollaborationRequest : AmazonCleanRoomsRequest
     {
         private AnalyticsEngine _analyticsEngine;
+        private List<string> _autoApprovedChangeRequestTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _creatorDisplayName;
         private List<string> _creatorMemberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MLMemberAbilities _creatormlMemberAbilities;
@@ -70,6 +71,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAnalyticsEngine()
         {
             return this._analyticsEngine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoApprovedChangeRequestTypes. 
+        /// <para>
+        /// The types of change requests that are automatically approved for this collaboration.
+        /// </para>
+        /// </summary>
+        public List<string> AutoApprovedChangeRequestTypes
+        {
+            get { return this._autoApprovedChangeRequestTypes; }
+            set { this._autoApprovedChangeRequestTypes = value; }
+        }
+
+        // Check to see if AutoApprovedChangeRequestTypes property is set
+        internal bool IsSetAutoApprovedChangeRequestTypes()
+        {
+            return this._autoApprovedChangeRequestTypes != null && (this._autoApprovedChangeRequestTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

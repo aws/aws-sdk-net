@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
     {
         private AnalyticsEngine _analyticsEngine;
         private string _arn;
+        private List<string> _autoApprovedChangeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _creatorDisplayName;
@@ -92,6 +93,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoApprovedChangeTypes. 
+        /// <para>
+        /// The types of change requests that are automatically approved for this collaboration.
+        /// </para>
+        /// </summary>
+        public List<string> AutoApprovedChangeTypes
+        {
+            get { return this._autoApprovedChangeTypes; }
+            set { this._autoApprovedChangeTypes = value; }
+        }
+
+        // Check to see if AutoApprovedChangeTypes property is set
+        internal bool IsSetAutoApprovedChangeTypes()
+        {
+            return this._autoApprovedChangeTypes != null && (this._autoApprovedChangeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

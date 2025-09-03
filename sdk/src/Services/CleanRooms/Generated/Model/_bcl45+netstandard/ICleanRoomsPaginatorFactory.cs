@@ -48,6 +48,16 @@ namespace Amazon.CleanRooms.Model
         IListCollaborationAnalysisTemplatesPaginator ListCollaborationAnalysisTemplates(ListCollaborationAnalysisTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListCollaborationChangeRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCollaborationChangeRequestsPaginator ListCollaborationChangeRequests(ListCollaborationChangeRequestsRequest request);
+
+        /// <summary>
         /// Paginator for ListCollaborationConfiguredAudienceModelAssociations operation
         ///</summary>
         [AWSPaginator(
