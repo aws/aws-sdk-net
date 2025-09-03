@@ -42,7 +42,7 @@ namespace Amazon.TranscribeStreaming.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>language-code</c> 
+    ///  <c>language-code</c> or <c>identify-language</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -63,16 +63,21 @@ namespace Amazon.TranscribeStreaming.Model
         private ContentIdentificationType _contentIdentificationType;
         private ContentRedactionType _contentRedactionType;
         private bool? _enablePartialResultsStabilization;
+        private bool? _identifyLanguage;
         private CallAnalyticsLanguageCode _languageCode;
         private string _languageModelName;
+        private string _languageOptions;
         private MediaEncoding _mediaEncoding;
         private int? _mediaSampleRateHertz;
         private PartialResultsStability _partialResultsStability;
         private string _piiEntityTypes;
+        private CallAnalyticsLanguageCode _preferredLanguage;
         private string _sessionId;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
+        private string _vocabularyFilterNames;
         private string _vocabularyName;
+        private string _vocabularyNames;
 
         /// <summary>
         /// Gets and sets the property AudioStreamPublisher. 
@@ -191,6 +196,41 @@ namespace Amazon.TranscribeStreaming.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Enables automatic language identification for your Call Analytics transcription.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <c>IdentifyLanguage</c>, you must include a list of language codes,
+        /// using <c>LanguageOptions</c>, that you think may be present in your audio stream.
+        /// You must provide a minimum of two language selections.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also include a preferred language using <c>PreferredLanguage</c>. Adding a
+        /// preferred language can help Amazon Transcribe identify the language faster than if
+        /// you omit this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you must include either <c>LanguageCode</c> or <c>IdentifyLanguage</c> in
+        /// your request. If you include both parameters, your transcription job fails.
+        /// </para>
+        /// </summary>
+        public bool? IdentifyLanguage
+        {
+            get { return this._identifyLanguage; }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// Specify the language code that represents the language spoken in your audio.
@@ -201,7 +241,6 @@ namespace Amazon.TranscribeStreaming.Model
         /// languages</a> table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CallAnalyticsLanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -243,6 +282,45 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetLanguageModelName()
         {
             return this._languageModelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// Specify two or more language codes that represent the languages you think may be present
+        /// in your media.
+        /// </para>
+        ///  
+        /// <para>
+        /// Including language options can improve the accuracy of language identification.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include <c>LanguageOptions</c> in your request, you must also include <c>IdentifyLanguage</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of languages supported with Call Analytics streaming, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
+        /// languages</a> table.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can only include one language dialect per language per stream. For example, you
+        /// cannot include <c>en-US</c> and <c>en-AU</c> in the same request.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null;
         }
 
         /// <summary>
@@ -369,6 +447,29 @@ namespace Amazon.TranscribeStreaming.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredLanguage. 
+        /// <para>
+        /// Specify a preferred language from the subset of languages codes you specified in <c>LanguageOptions</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only use this parameter if you've included <c>IdentifyLanguage</c> and <c>LanguageOptions</c>
+        /// in your request.
+        /// </para>
+        /// </summary>
+        public CallAnalyticsLanguageCode PreferredLanguage
+        {
+            get { return this._preferredLanguage; }
+            set { this._preferredLanguage = value; }
+        }
+
+        // Check to see if PreferredLanguage property is set
+        internal bool IsSetPreferredLanguage()
+        {
+            return this._preferredLanguage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
         /// Specify a name for your Call Analytics transcription session. If you don't include
@@ -450,6 +551,42 @@ namespace Amazon.TranscribeStreaming.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VocabularyFilterNames. 
+        /// <para>
+        /// Specify the names of the custom vocabulary filters that you want to use when processing
+        /// your Call Analytics transcription. Note that vocabulary filter names are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// These filters serve to customize the transcript output.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter is only intended for use <b>with</b> the <c>IdentifyLanguage</c> parameter.
+        /// If you're <b>not</b> including <c>IdentifyLanguage</c> in your request and want to
+        /// use a custom vocabulary filter with your transcription, use the <c>VocabularyFilterName</c>
+        /// parameter instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
+        /// vocabulary filtering with unwanted words</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3000)]
+        public string VocabularyFilterNames
+        {
+            get { return this._vocabularyFilterNames; }
+            set { this._vocabularyFilterNames = value; }
+        }
+
+        // Check to see if VocabularyFilterNames property is set
+        internal bool IsSetVocabularyFilterNames()
+        {
+            return this._vocabularyFilterNames != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VocabularyName. 
         /// <para>
         /// Specify the name of the custom vocabulary that you want to use when processing your
@@ -477,6 +614,43 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetVocabularyName()
         {
             return this._vocabularyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VocabularyNames. 
+        /// <para>
+        /// Specify the names of the custom vocabularies that you want to use when processing
+        /// your Call Analytics transcription. Note that vocabulary names are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the custom vocabulary's language doesn't match the identified media language, it
+        /// won't be applied to the transcription.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter is only intended for use <b>with</b> the <c>IdentifyLanguage</c> parameter.
+        /// If you're <b>not</b> including <c>IdentifyLanguage</c> in your request and want to
+        /// use a custom vocabulary with your transcription, use the <c>VocabularyName</c> parameter
+        /// instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
+        /// vocabularies</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3000)]
+        public string VocabularyNames
+        {
+            get { return this._vocabularyNames; }
+            set { this._vocabularyNames = value; }
+        }
+
+        // Check to see if VocabularyNames property is set
+        internal bool IsSetVocabularyNames()
+        {
+            return this._vocabularyNames != null;
         }
 
     }

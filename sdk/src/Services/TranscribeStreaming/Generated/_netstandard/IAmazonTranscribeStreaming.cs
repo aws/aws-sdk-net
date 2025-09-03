@@ -118,7 +118,7 @@ namespace Amazon.TranscribeStreaming
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>language-code</c> 
+        ///  <c>language-code</c> or <c>identify-language</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

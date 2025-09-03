@@ -54,10 +54,14 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 response.ContentRedactionType = context.ResponseData.GetHeaderValue("x-amzn-transcribe-content-redaction-type");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-enable-partial-results-stabilization"))
                 response.EnablePartialResultsStabilization = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-enable-partial-results-stabilization"));
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-identify-language"))
+                response.IdentifyLanguage = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-identify-language"));
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-code"))
                 response.LanguageCode = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-code");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-model-name"))
                 response.LanguageModelName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-model-name");
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-language-options"))
+                response.LanguageOptions = context.ResponseData.GetHeaderValue("x-amzn-transcribe-language-options");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-media-encoding"))
                 response.MediaEncoding = context.ResponseData.GetHeaderValue("x-amzn-transcribe-media-encoding");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-sample-rate"))
@@ -66,6 +70,8 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 response.PartialResultsStability = context.ResponseData.GetHeaderValue("x-amzn-transcribe-partial-results-stability");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-pii-entity-types"))
                 response.PiiEntityTypes = context.ResponseData.GetHeaderValue("x-amzn-transcribe-pii-entity-types");
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-preferred-language"))
+                response.PreferredLanguage = context.ResponseData.GetHeaderValue("x-amzn-transcribe-preferred-language");
             if (context.ResponseData.IsHeaderPresent("x-amzn-request-id"))
                 response.RequestId = context.ResponseData.GetHeaderValue("x-amzn-request-id");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-session-id"))
@@ -74,8 +80,12 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 response.VocabularyFilterMethod = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-method");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-name"))
                 response.VocabularyFilterName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-name");
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-names"))
+                response.VocabularyFilterNames = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-names");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-name"))
                 response.VocabularyName = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-name");
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-names"))
+                response.VocabularyNames = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-names");
 
             return response;
         }

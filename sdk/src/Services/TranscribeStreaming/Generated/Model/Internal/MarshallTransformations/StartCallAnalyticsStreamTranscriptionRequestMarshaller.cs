@@ -86,6 +86,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 request.Headers["x-amzn-transcribe-enable-partial-results-stabilization"] = StringUtils.FromBool(publicRequest.EnablePartialResultsStabilization);
             }
         
+            if (publicRequest.IsSetIdentifyLanguage()) 
+            {
+                request.Headers["x-amzn-transcribe-identify-language"] = StringUtils.FromBool(publicRequest.IdentifyLanguage);
+            }
+        
             if (publicRequest.IsSetLanguageCode()) 
             {
                 request.Headers["x-amzn-transcribe-language-code"] = publicRequest.LanguageCode;
@@ -94,6 +99,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetLanguageModelName()) 
             {
                 request.Headers["x-amzn-transcribe-language-model-name"] = publicRequest.LanguageModelName;
+            }
+        
+            if (publicRequest.IsSetLanguageOptions()) 
+            {
+                request.Headers["x-amzn-transcribe-language-options"] = publicRequest.LanguageOptions;
             }
         
             if (publicRequest.IsSetMediaEncoding()) 
@@ -116,6 +126,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 request.Headers["x-amzn-transcribe-pii-entity-types"] = publicRequest.PiiEntityTypes;
             }
         
+            if (publicRequest.IsSetPreferredLanguage()) 
+            {
+                request.Headers["x-amzn-transcribe-preferred-language"] = publicRequest.PreferredLanguage;
+            }
+        
             if (publicRequest.IsSetSessionId()) 
             {
                 request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
@@ -131,9 +146,19 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 request.Headers["x-amzn-transcribe-vocabulary-filter-name"] = publicRequest.VocabularyFilterName;
             }
         
+            if (publicRequest.IsSetVocabularyFilterNames()) 
+            {
+                request.Headers["x-amzn-transcribe-vocabulary-filter-names"] = publicRequest.VocabularyFilterNames;
+            }
+        
             if (publicRequest.IsSetVocabularyName()) 
             {
                 request.Headers["x-amzn-transcribe-vocabulary-name"] = publicRequest.VocabularyName;
+            }
+        
+            if (publicRequest.IsSetVocabularyNames()) 
+            {
+                request.Headers["x-amzn-transcribe-vocabulary-names"] = publicRequest.VocabularyNames;
             }
 
             return request;

@@ -48,6 +48,8 @@ namespace Amazon.TranscribeStreaming.Model
         private bool? _isPartial;
         private List<IssueDetected> _issuesDetected = AWSConfigs.InitializeCollections ? new List<IssueDetected>() : null;
         private List<CallAnalyticsItem> _items = AWSConfigs.InitializeCollections ? new List<CallAnalyticsItem>() : null;
+        private CallAnalyticsLanguageCode _languageCode;
+        private List<CallAnalyticsLanguageWithScore> _languageIdentification = AWSConfigs.InitializeCollections ? new List<CallAnalyticsLanguageWithScore>() : null;
         private ParticipantRole _participantRole;
         private Sentiment _sentiment;
         private string _transcript;
@@ -179,6 +181,47 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetItems()
         {
             return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language code that represents the language spoken in your audio stream.
+        /// </para>
+        /// </summary>
+        public CallAnalyticsLanguageCode LanguageCode
+        {
+            get { return this._languageCode; }
+            set { this._languageCode = value; }
+        }
+
+        // Check to see if LanguageCode property is set
+        internal bool IsSetLanguageCode()
+        {
+            return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageIdentification. 
+        /// <para>
+        /// The language code of the dominant language identified in your stream.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CallAnalyticsLanguageWithScore> LanguageIdentification
+        {
+            get { return this._languageIdentification; }
+            set { this._languageIdentification = value; }
+        }
+
+        // Check to see if LanguageIdentification property is set
+        internal bool IsSetLanguageIdentification()
+        {
+            return this._languageIdentification != null && (this._languageIdentification.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
