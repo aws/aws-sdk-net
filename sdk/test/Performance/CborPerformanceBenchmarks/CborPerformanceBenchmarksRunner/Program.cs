@@ -6,11 +6,9 @@ using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
-using BenchmarkDotNet.Toolchains.InProcess.Emit;
+using CborPerformanceBenchmarksRunner.CloudWatchBenchmarks;
 using CborPerformanceBenchmarksRunner.EchoBenchmarks;
-using System.Collections.Immutable;
-using System.Reflection;
-using System.Text;
+using CborPerformanceBenchmarksRunner.SecretsManagerBenchmarks;
 
 
 var benchmarkTypes = new Type[]
@@ -20,16 +18,16 @@ var benchmarkTypes = new Type[]
             typeof(ComplexObjectBenchmarks),
             typeof(ListOfComplexObjectBenchmarks),
             typeof(VeryLargeBlobBenchmarks),
-            //typeof(PutAndGetMetricDataBenchmarks),
-            //typeof(ListMetricsBenchmarks),
-            //typeof(PutAndGetStringBenchmarks),
-            //typeof(PutAndGetBinaryBenchmarks),
-            //typeof(DescribeSecretBenchmarks),
-            //typeof(ListSecretsBenchmarks),
+            typeof(PutAndGetMetricDataBenchmarks),
+            typeof(ListMetricsBenchmarks),
+            typeof(PutAndGetStringBenchmarks),
+            typeof(PutAndGetBinaryBenchmarks),
+            typeof(DescribeSecretBenchmarks),
+            typeof(ListSecretsBenchmarks),
         };
 
 
-//await Utils.CreateSecretsManagerResources();
+await Utils.CreateSecretsManagerResources();
 
 var config = ManualConfig.Create(DefaultConfig.Instance)
     .AddColumn(StatisticColumn.P50)
@@ -62,6 +60,6 @@ var summaries = BenchmarkSwitcher.FromTypes(benchmarkTypes).Run(args, config);
 
 Utils.StoreBenchmarkSummaries(summaries);
 
-//await Utils.CleanupSecretsManagerResources();
+await Utils.CleanupSecretsManagerResources();
 
 
