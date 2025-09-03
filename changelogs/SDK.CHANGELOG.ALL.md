@@ -1,3 +1,19 @@
+### 3.7.1115.0 (2025-09-03 18:24 UTC)
+* CleanRooms (3.7.503.0)
+	* Added support for adding new data provider members to an existing collaboration.
+* CleanRoomsML (3.7.502.0)
+	* AWS Clean Rooms ML adds log sanitization for privacy-enhanced error summaries, supports new instance types for custom models providing better performance and lower costs, and deprecates P3-series instances.
+* CloudFront (3.7.503.0)
+	* Adding an optional field IpAddressType in CustomOriginConfig
+* MQ (3.7.502.0)
+	* Add CONFIG_MANAGED as a supported AuthenticationStrategy for Amazon MQ for RabbitMQ brokers. Make username and password optional on broker creation for CONFIG_MANAGED brokers.
+* RDS (3.7.503.0)
+	* This release adds support for MasterUserAuthenticationType parameter on CreateDBInstance, ModifyDBInstance, CreateDBCluster, and ModifyDBCluster operations.
+* Route53 (3.7.502.0)
+	* Amazon Route 53 now supports the Asia Pacific (New Zealand) Region (ap-southeast-6) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Route53Domains (3.7.502.0)
+	* Added new ExtraParams AU_ELIGIBILITY_TYPE, AU_POLICY_REASON, and AU_REGISTRANT_NAME
+
 ### 3.7.1114.0 (2025-09-02 18:17 UTC)
 * EC2 (3.7.510.0)
 	* MaximumEbsAttachments and AttachmentLimitType fields added to DescribeInstanceTypesResponse. G6f, Gr6f, R8i, R8i-flex and p5.4xlarge instance types added to InstanceTypes enum.
