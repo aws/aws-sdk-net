@@ -79,6 +79,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AnalyticsEngine);
             }
 
+            if(publicRequest.IsSetAutoApprovedChangeRequestTypes())
+            {
+                context.Writer.WritePropertyName("autoApprovedChangeRequestTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAutoApprovedChangeRequestTypesListValue in publicRequest.AutoApprovedChangeRequestTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestAutoApprovedChangeRequestTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCreatorDisplayName())
             {
                 context.Writer.WritePropertyName("creatorDisplayName");

@@ -53,6 +53,14 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListCollaborationChangeRequests operation
+        ///</summary>
+        public IListCollaborationChangeRequestsPaginator ListCollaborationChangeRequests(ListCollaborationChangeRequestsRequest request) 
+        {
+            return new ListCollaborationChangeRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCollaborationConfiguredAudienceModelAssociations operation
         ///</summary>
         public IListCollaborationConfiguredAudienceModelAssociationsPaginator ListCollaborationConfiguredAudienceModelAssociations(ListCollaborationConfiguredAudienceModelAssociationsRequest request) 
