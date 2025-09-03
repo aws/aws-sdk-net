@@ -864,6 +864,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
                                         xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort));                 
 
+                                    if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetIpAddressType())
+                                        xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IpAddressType));                 
+
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
                                         xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout));                 
 
