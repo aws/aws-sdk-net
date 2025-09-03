@@ -44,11 +44,12 @@ namespace Amazon.Runtime
                     return legacyPreference;
                 }
 
-                if (clientConfig?.AuthSchemePreference != null)
+                var clientAuthSchemePreference = clientConfig?.GetAuthSchemePreference();
+                if (clientAuthSchemePreference != null)
                 {
                     Logger.InfoFormat("Using auth scheme preference from client configuration: {0}", 
-                        clientConfig.AuthSchemePreference);
-                    return clientConfig.AuthSchemePreference;
+                        clientAuthSchemePreference);
+                    return clientAuthSchemePreference;
                 }
 
                 var envPreference = EnvironmentConfigurationProvider.GetAuthSchemePreference();
@@ -87,7 +88,7 @@ namespace Amazon.Runtime
         {
             return SafeConfigurationResolver.SafeResolve(() =>
             {
-                if (clientConfig?.SignatureMethod == null || !clientConfig.IsSignatureMethodExplicitlySet)
+                if (clientConfig?.SignatureMethod == null || !clientConfig.GetIsSignatureMethodExplicitlySet())
                     return null;
                 
                 bool isS3Service = clientConfig.ServiceId?.Equals("S3", StringComparison.OrdinalIgnoreCase) == true ||
@@ -160,11 +161,12 @@ namespace Amazon.Runtime
         {
             return SafeConfigurationResolver.SafeResolve(() =>
             {
-                if (clientConfig?.SigV4aRegionSetConfiguration != null)
+                var clientSigV4aConfig = clientConfig?.GetSigV4aRegionSetConfiguration();
+                if (clientSigV4aConfig != null)
                 {
                     Logger.InfoFormat("Using SigV4a region set from client configuration: {0}", 
-                        clientConfig.SigV4aRegionSetConfiguration);
-                    return clientConfig.SigV4aRegionSetConfiguration;
+                        clientSigV4aConfig);
+                    return clientSigV4aConfig;
                 }
 
                 var envRegionSetConfig = SigV4aRegionSetConfiguration.FromEnvironment();

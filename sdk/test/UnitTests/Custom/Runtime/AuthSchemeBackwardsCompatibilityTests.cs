@@ -351,10 +351,10 @@ namespace AWSSDK.UnitTests.Runtime
         /// </summary>
         private class TestClientConfig : IClientConfig
         {
-            public AuthSchemePreference AuthSchemePreference { get; set; }
-            public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
             public SigningAlgorithm SignatureMethod { get; set; }
             public bool IsSignatureMethodExplicitlySet { get; set; } = false;
+            public AuthSchemePreference AuthSchemePreference { get; set; }
+            public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
 
             // Minimal implementation of required properties for testing
             public bool IgnoreConfiguredEndpointUrls => false;
