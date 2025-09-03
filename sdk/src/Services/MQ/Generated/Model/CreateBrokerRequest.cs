@@ -543,12 +543,13 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property Users. 
         /// <para>
         /// The list of broker users (persons or applications) who can access queues and topics.
-        /// For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted
-        /// and created when a broker is first provisioned. All subsequent broker users are created
-        /// by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.
+        /// For Amazon MQ for RabbitMQ brokers, an administrative user is required if using simple
+        /// authentication and authorization. For brokers using OAuth2, this user is optional.
+        /// When provided, one and only one administrative user is accepted and created when a
+        /// broker is first provisioned. All subsequent broker users are created by making RabbitMQ
+        /// API calls directly to brokers or via the RabbitMQ web console.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<User> Users
         {
             get { return this._users; }
