@@ -1,7 +1,6 @@
 ﻿using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet.UnitTests.TestTools;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Order;
 using System.Net;
@@ -120,7 +119,7 @@ public abstract class BaseBenchmarks
     [IterationSetup(Target = nameof(Unmarshall))]
     public virtual void BeforeUnmarshallIteration()
     {
-        var webResponseData = new WebResponseData();
+        var webResponseData = new FakeWebResponseData();
         webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
         ResponseStream.Position = 0;
 #if USE_CBOR

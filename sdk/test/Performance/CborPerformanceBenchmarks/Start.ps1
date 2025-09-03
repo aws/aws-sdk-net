@@ -59,7 +59,7 @@ dotnet run --project ../../../ServiceClientGenerator/ServiceClientGenerator.cspr
 
 Write-Host "Updating aws-sdk-net-old-protocols models to use old protocols..."
 
-Set-Location "../../../../aws-sdk-net-old-protocols/generator"
+Set-Location "./../../../../../aws-sdk-net-old-protocols/generator"
 
 Update-JsonProperty -JsonFilePath "./ServiceModels//monitoring/monitoring-2010-08-01.normal.json" -PropertyPath "metadata.protocols" -Value @("query")
 Update-JsonProperty -JsonFilePath "./ServiceModels/secretsmanager/secretsmanager-2017-10-17.normal.json" -PropertyPath "metadata.protocols" -Value @("json")

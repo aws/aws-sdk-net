@@ -2,7 +2,6 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet.UnitTests.TestTools;
 using BenchmarkDotNet.Attributes;
 using System.Net;
 using System.Text;
@@ -107,7 +106,7 @@ public abstract class BaseDoubleBenchmarks : BaseBenchmarks
     [IterationSetup(Target = nameof(Unmarshall2))]
     public virtual void BeforeUnmarshallIteration2()
     {
-        var webResponseData = new WebResponseData();
+        var webResponseData = new FakeWebResponseData();
         webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
         ResponseStream2.Position = 0;
 #if USE_CBOR
