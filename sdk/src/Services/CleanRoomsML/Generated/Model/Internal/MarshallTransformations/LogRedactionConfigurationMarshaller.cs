@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LogsConfigurationPolicy Marshaller
+    /// LogRedactionConfiguration Marshaller
     /// </summary>
-    public class LogsConfigurationPolicyMarshaller : IRequestMarshaller<LogsConfigurationPolicy, JsonMarshallerContext> 
+    public class LogRedactionConfigurationMarshaller : IRequestMarshaller<LogRedactionConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,30 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LogsConfigurationPolicy requestObject, JsonMarshallerContext context)
+        public void Marshall(LogRedactionConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAllowedAccountIds())
+            if(requestObject.IsSetCustomEntityConfig())
             {
-                context.Writer.WritePropertyName("allowedAccountIds");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectAllowedAccountIdsListValue in requestObject.AllowedAccountIds)
-                {
-                        context.Writer.WriteStringValue(requestObjectAllowedAccountIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetFilterPattern())
-            {
-                context.Writer.WritePropertyName("filterPattern");
-                context.Writer.WriteStringValue(requestObject.FilterPattern);
-            }
-
-            if(requestObject.IsSetLogRedactionConfiguration())
-            {
-                context.Writer.WritePropertyName("logRedactionConfiguration");
+                context.Writer.WritePropertyName("customEntityConfig");
                 context.Writer.WriteStartObject();
 
-                var marshaller = LogRedactionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.LogRedactionConfiguration, context);
+                var marshaller = CustomEntityConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomEntityConfig, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetLogType())
+            if(requestObject.IsSetEntitiesToRedact())
             {
-                context.Writer.WritePropertyName("logType");
-                context.Writer.WriteStringValue(requestObject.LogType);
+                context.Writer.WritePropertyName("entitiesToRedact");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEntitiesToRedactListValue in requestObject.EntitiesToRedact)
+                {
+                        context.Writer.WriteStringValue(requestObjectEntitiesToRedactListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -85,7 +73,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LogsConfigurationPolicyMarshaller Instance = new LogsConfigurationPolicyMarshaller();
+        public readonly static LogRedactionConfigurationMarshaller Instance = new LogRedactionConfigurationMarshaller();
 
     }
 }

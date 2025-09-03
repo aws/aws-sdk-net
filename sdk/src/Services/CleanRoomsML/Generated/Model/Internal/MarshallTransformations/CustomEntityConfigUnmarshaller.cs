@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogsConfigurationPolicy Object
+    /// Response Unmarshaller for CustomEntityConfig Object
     /// </summary>  
-    public class LogsConfigurationPolicyUnmarshaller : IJsonUnmarshaller<LogsConfigurationPolicy, JsonUnmarshallerContext>
+    public class CustomEntityConfigUnmarshaller : IJsonUnmarshaller<CustomEntityConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogsConfigurationPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CustomEntityConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LogsConfigurationPolicy unmarshalledObject = new LogsConfigurationPolicy();
+            CustomEntityConfig unmarshalledObject = new CustomEntityConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedAccountIds", targetDepth))
+                if (context.TestExpression("customDataIdentifiers", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedAccountIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("filterPattern", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterPattern = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("logRedactionConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogRedactionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogRedactionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("logType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CustomDataIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogsConfigurationPolicyUnmarshaller _instance = new LogsConfigurationPolicyUnmarshaller();        
+        private static CustomEntityConfigUnmarshaller _instance = new CustomEntityConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogsConfigurationPolicyUnmarshaller Instance
+        public static CustomEntityConfigUnmarshaller Instance
         {
             get
             {
