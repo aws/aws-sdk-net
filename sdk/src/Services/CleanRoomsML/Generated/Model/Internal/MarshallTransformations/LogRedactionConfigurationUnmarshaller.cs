@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogsConfigurationPolicy Object
+    /// Response Unmarshaller for LogRedactionConfiguration Object
     /// </summary>  
-    public class LogsConfigurationPolicyUnmarshaller : IUnmarshaller<LogsConfigurationPolicy, XmlUnmarshallerContext>, IUnmarshaller<LogsConfigurationPolicy, JsonUnmarshallerContext>
+    public class LogRedactionConfigurationUnmarshaller : IUnmarshaller<LogRedactionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LogRedactionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogsConfigurationPolicy IUnmarshaller<LogsConfigurationPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogRedactionConfiguration IUnmarshaller<LogRedactionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogsConfigurationPolicy Unmarshall(JsonUnmarshallerContext context)
+        public LogRedactionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            LogsConfigurationPolicy unmarshalledObject = new LogsConfigurationPolicy();
+            LogRedactionConfiguration unmarshalledObject = new LogRedactionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allowedAccountIds", targetDepth))
+                if (context.TestExpression("customEntityConfig", targetDepth))
+                {
+                    var unmarshaller = CustomEntityConfigUnmarshaller.Instance;
+                    unmarshalledObject.CustomEntityConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("entitiesToRedact", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedAccountIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("filterPattern", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterPattern = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logRedactionConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogRedactionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogRedactionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntitiesToRedact = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogsConfigurationPolicyUnmarshaller _instance = new LogsConfigurationPolicyUnmarshaller();        
+        private static LogRedactionConfigurationUnmarshaller _instance = new LogRedactionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogsConfigurationPolicyUnmarshaller Instance
+        public static LogRedactionConfigurationUnmarshaller Instance
         {
             get
             {
