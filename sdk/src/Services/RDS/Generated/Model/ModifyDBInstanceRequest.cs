@@ -73,6 +73,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _licenseModel;
         private bool? _manageMasterUserPassword;
+        private MasterUserAuthenticationType _masterUserAuthenticationType;
         private string _masterUserPassword;
         private string _masterUserSecretKmsKeyId;
         private int? _maxAllocatedStorage;
@@ -1447,6 +1448,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetManageMasterUserPassword()
         {
             return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserAuthenticationType. 
+        /// <para>
+        /// Specifies the authentication type for the master user. With IAM master user authentication,
+        /// you can change the master DB user to use IAM database authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>password</c> - Use standard database authentication with a password.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam-db-auth</c> - Use IAM database authentication for the master user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.
+        /// </para>
+        /// </summary>
+        public MasterUserAuthenticationType MasterUserAuthenticationType
+        {
+            get { return this._masterUserAuthenticationType; }
+            set { this._masterUserAuthenticationType = value; }
+        }
+
+        // Check to see if MasterUserAuthenticationType property is set
+        internal bool IsSetMasterUserAuthenticationType()
+        {
+            return this._masterUserAuthenticationType != null;
         }
 
         /// <summary>
