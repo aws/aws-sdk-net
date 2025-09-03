@@ -618,5 +618,232 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         reader.ReadEndMap(); // should correctly handle 0xFF at end
     }
 
+    [Fact]
+    public void PeekState_DefiniteArrayAcrossBuffer_ReturnsEndArrayBeforeNextValue()
+    {
+        var writer = new CborWriter(allowMultipleRootLevelValues: true);
+        writer.WriteStartArray(3);
+        writer.WriteInt32(1);
+        writer.WriteTextString(new string('X', 200));
+        writer.WriteInt32(3);
+        writer.WriteEndArray();
+        writer.WriteInt32(99); // trailing value outside array
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+        Assert.Equal(1, reader.ReadInt32());
+        Assert.Equal(200, reader.ReadTextString().Length);
+        Assert.Equal(3, reader.ReadInt32());
+
+        // PeekState should return EndArray before the trailing value
+        Assert.Equal(CborReaderState.EndArray, reader.PeekState());
+
+        // Reading EndArray moves reader to the next value
+        reader.ReadEndArray();
+        Assert.Equal(CborReaderState.UnsignedInteger, reader.PeekState());
+    }
+
+    [Fact]
+    public void PeekState_DefiniteMapAcrossBuffer_ReturnsEndMapBeforeNextValue()
+    {
+        var writer = new CborWriter(allowMultipleRootLevelValues: true);
+        writer.WriteStartMap(2);
+        writer.WriteTextString("a");
+        writer.WriteInt32(1);
+        writer.WriteTextString("b");
+        writer.WriteTextString(new string('X', 200));
+        writer.WriteEndMap();
+        writer.WriteInt32(99); // trailing value outside map
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        Assert.Equal("a", reader.ReadTextString());
+        Assert.Equal(1, reader.ReadInt32());
+        Assert.Equal("b", reader.ReadTextString());
+        Assert.Equal(200, reader.ReadTextString().Length);
+
+        // PeekState should return EndMap before the trailing value
+        Assert.Equal(CborReaderState.EndMap, reader.PeekState());
+
+        // Reading EndMap moves reader to the next value
+        reader.ReadEndMap();
+        Assert.Equal(CborReaderState.UnsignedInteger, reader.PeekState());
+    }
+
+    [Fact]
+    public void PeekState_LongDefiniteArray_FitsAcrossMultipleBuffers()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartArray(100); // large array to exceed 100-byte buffer
+        for (int i = 0; i < 100; i++)
+        {
+            writer.WriteInt32(i);
+        }
+        writer.WriteEndArray();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+        for (int i = 0; i < 100; i++)
+        {
+            Assert.Equal(i, reader.ReadInt32());
+        }
+
+        // PeekState should correctly report EndArray after last element
+        Assert.Equal(CborReaderState.EndArray, reader.PeekState());
+    }
+
+    [Fact]
+    public void PeekState_LongDefiniteMap_FitsAcrossMultipleBuffers()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(25); // large map, each entry has key+value
+        for (int i = 0; i < 25; i++)
+        {
+            writer.WriteTextString("k" + i);
+            writer.WriteInt32(i);
+        }
+        writer.WriteEndMap();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+        for (int i = 0; i < 25; i++)
+        {
+            Assert.Equal("k" + i, reader.ReadTextString());
+            Assert.Equal(i, reader.ReadInt32());
+        }
+
+        // PeekState should correctly report EndMap after last entry
+        Assert.Equal(CborReaderState.EndMap, reader.PeekState());
+    }
+
+
+    [Fact]
+    public void Unmarshall_NestedContainers_UpdatesParentItemCountCorrectly()
+    {
+        var writer = new CborWriter();
+
+        writer.WriteStartMap(2);
+
+        writer.WriteTextString(new string('A', 100));
+
+        writer.WriteStartMap(1);
+        writer.WriteTextString("InnerKey");
+
+        writer.WriteStartArray(2);
+        writer.WriteTextString(new string('A', 100));
+        writer.WriteInt32(20);
+        writer.WriteEndArray();
+
+        writer.WriteEndMap();
+
+        writer.WriteTextString("Key2");
+
+        writer.WriteInt32(42);
+
+        writer.WriteEndMap();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+
+        Assert.Equal(100, reader.ReadTextString().Length);
+        reader.ReadStartMap();
+        Assert.Equal("InnerKey", reader.ReadTextString());
+        reader.ReadStartArray();
+        Assert.Equal(100, reader.ReadTextString().Length);
+        Assert.Equal(20, reader.ReadInt32());
+        reader.ReadEndArray();
+        reader.ReadEndMap();
+
+        // Key2 -> inner map
+        Assert.Equal(CborReaderState.TextString, reader.PeekState());
+        Assert.Equal("Key2", reader.ReadTextString());
+        Assert.Equal(42, reader.ReadInt32());
+        reader.ReadEndMap();
+
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Unmarshall_NestedArrays_CrossBufferBoundary_RefillsCorrectly()
+    {
+        var writer = new CborWriter();
+
+        writer.WriteStartArray(5);
+
+        writer.WriteStartArray(1);
+        writer.WriteTextString(new string('A', 50));
+        writer.WriteEndArray();
+
+        writer.WriteStartArray(1);
+        writer.WriteTextString(new string('B', 50));
+        writer.WriteEndArray();
+
+        writer.WriteStartArray(1);
+        writer.WriteTextString(new string('C', 50));
+        writer.WriteEndArray();
+
+        writer.WriteStartArray(1);
+        writer.WriteTextString(new string('D', 50));
+        writer.WriteEndArray();
+
+        writer.WriteInt32(42);
+
+        writer.WriteEndArray();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+
+        // Inner arrays
+        reader.ReadStartArray();
+        Assert.Equal(new string('A', 50), reader.ReadTextString());
+        reader.ReadEndArray();
+
+        reader.ReadStartArray();
+        Assert.Equal(new string('B', 50), reader.ReadTextString());
+        reader.ReadEndArray();
+
+        reader.ReadStartArray();
+        Assert.Equal(new string('C', 50), reader.ReadTextString());
+        reader.ReadEndArray();
+
+        reader.ReadStartArray();
+        Assert.Equal(new string('D', 50), reader.ReadTextString());
+        reader.ReadEndArray();
+
+        // PeekState should correctly indicate we are still inside the outer array
+        Assert.Equal(CborReaderState.UnsignedInteger, reader.PeekState());
+
+        // Second item in outer array
+        Assert.Equal(42, reader.ReadInt32());
+
+        reader.ReadEndArray();
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
 }
 

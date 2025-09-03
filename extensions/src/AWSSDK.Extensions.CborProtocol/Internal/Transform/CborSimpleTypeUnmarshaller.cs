@@ -56,12 +56,44 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
                 value = reader.ReadInt64();
             else if (typeof(T) == typeof(decimal) || typeof(T) == typeof(decimal?))
                 value = reader.ReadDecimal();
-            else if (typeof(T) == typeof(double) || typeof(T) == typeof(double?))
-                value = reader.ReadDouble();
             else if (typeof(T) == typeof(bool) || typeof(T) == typeof(bool?))
                 value = reader.ReadBoolean();
+            else if (typeof(T) == typeof(double) || typeof(T) == typeof(double?))
+            {
+                var state = reader.PeekState();
+                // CBOR values for doubles may sometimes be encoded as integers to save space
+                // (e.g., when the original value was a whole number).
+                if (state == CborReaderState.UnsignedInteger)
+                {
+                    value = (double)reader.ReadUInt64();
+                }
+                else if (state == CborReaderState.NegativeInteger)
+                {
+                    value = (double)reader.ReadInt64();
+                }
+                else
+                {
+                    value = reader.ReadDouble();
+                }
+            }
             else if (typeof(T) == typeof(float) || typeof(T) == typeof(float?))
-                value = reader.ReadSingle();
+            {
+                var state = reader.PeekState();
+                // CBOR values for floats may sometimes be encoded as integers to save space
+                // (e.g., when the original value was a whole number).
+                if (state == CborReaderState.UnsignedInteger)
+                {
+                    value = (float)reader.ReadUInt64();
+                }
+                else if (state == CborReaderState.NegativeInteger)
+                {
+                    value = (float)reader.ReadInt64();
+                }
+                else
+                {
+                    value = reader.ReadSingle();
+                }
+            }
             else if (typeof(T) == typeof(byte))
             {
                 int result = reader.ReadInt32();

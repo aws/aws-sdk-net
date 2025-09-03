@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Extensions.CborProtocol</id>
     <title>AWSSDK - Extensions for Cbor protocol support</title>
-    <version>4.0.0.1</version>
+    <version>4.0.0.2</version>
     <authors>Amazon Web Services</authors>
 	  <description>This package contains shared serialization and deserialization logic for services that use Cbor protocol in the AWS SDK for .NET.</description>
     <language>en-US</language>
