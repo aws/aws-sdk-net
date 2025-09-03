@@ -1221,6 +1221,10 @@ namespace Amazon.Route53Domains
     {
 
         /// <summary>
+        /// Constant AU_ELIGIBILITY_TYPE for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName AU_ELIGIBILITY_TYPE = new ExtraParamName("AU_ELIGIBILITY_TYPE");
+        /// <summary>
         /// Constant AU_ID_NUMBER for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName AU_ID_NUMBER = new ExtraParamName("AU_ID_NUMBER");
@@ -1229,9 +1233,17 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName AU_ID_TYPE = new ExtraParamName("AU_ID_TYPE");
         /// <summary>
+        /// Constant AU_POLICY_REASON for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName AU_POLICY_REASON = new ExtraParamName("AU_POLICY_REASON");
+        /// <summary>
         /// Constant AU_PRIORITY_TOKEN for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName AU_PRIORITY_TOKEN = new ExtraParamName("AU_PRIORITY_TOKEN");
+        /// <summary>
+        /// Constant AU_REGISTRANT_NAME for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName AU_REGISTRANT_NAME = new ExtraParamName("AU_REGISTRANT_NAME");
         /// <summary>
         /// Constant BIRTH_CITY for ExtraParamName
         /// </summary>
