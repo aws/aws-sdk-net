@@ -30,12 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// Contains information about a policy created by instantiating a policy template. 
-    /// 
-    ///  
-    /// <para>
-    /// This 
-    /// </para>
+    /// Contains information about a policy created by instantiating a policy template.
     /// </summary>
     public partial class TemplateLinkedPolicyDefinitionItem
     {

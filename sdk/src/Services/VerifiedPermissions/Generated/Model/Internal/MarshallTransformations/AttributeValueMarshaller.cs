@@ -54,10 +54,22 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Boolean);
             }
 
+            if(requestObject.IsSetDatetime())
+            {
+                context.Writer.WritePropertyName("datetime");
+                context.Writer.Write(requestObject.Datetime);
+            }
+
             if(requestObject.IsSetDecimal())
             {
                 context.Writer.WritePropertyName("decimal");
                 context.Writer.Write(requestObject.Decimal);
+            }
+
+            if(requestObject.IsSetDuration())
+            {
+                context.Writer.WritePropertyName("duration");
+                context.Writer.Write(requestObject.Duration);
             }
 
             if(requestObject.IsSetEntityIdentifier())
