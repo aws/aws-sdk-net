@@ -2763,6 +2763,11 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedJobWorkerComputeConfiguration.Number</property>
+    <min>4</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuery.Id</property>
     <min>36</min>
     <max>36</max>
