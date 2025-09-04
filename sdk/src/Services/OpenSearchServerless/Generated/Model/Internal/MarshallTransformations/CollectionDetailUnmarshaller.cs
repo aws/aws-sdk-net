@@ -98,6 +98,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("fipsEndpoints", targetDepth))
+                {
+                    var unmarshaller = FipsEndpointsUnmarshaller.Instance;
+                    unmarshalledObject.FipsEndpoints = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

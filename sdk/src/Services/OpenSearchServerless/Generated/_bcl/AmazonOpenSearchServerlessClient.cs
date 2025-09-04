@@ -278,8 +278,9 @@ namespace Amazon.OpenSearchServerless
 
 
         /// <summary>
-        /// Returns attributes for one or more collections, including the collection endpoint
-        /// and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// Returns attributes for one or more collections, including the collection endpoint,
+        /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
         /// and managing Amazon OpenSearch Serverless collections</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCollection service method.</param>
@@ -303,8 +304,9 @@ namespace Amazon.OpenSearchServerless
 
 
         /// <summary>
-        /// Returns attributes for one or more collections, including the collection endpoint
-        /// and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// Returns attributes for one or more collections, including the collection endpoint,
+        /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
         /// and managing Amazon OpenSearch Serverless collections</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCollection service method.</param>

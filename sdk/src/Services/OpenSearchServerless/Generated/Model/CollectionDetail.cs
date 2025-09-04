@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Details about each OpenSearch Serverless collection, including the collection endpoint
-    /// and the OpenSearch Dashboards endpoint.
+    /// Details about each OpenSearch Serverless collection, including the collection endpoint,
+    /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints for federal government
+    /// workloads.
     /// </summary>
     public partial class CollectionDetail
     {
@@ -42,6 +43,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _description;
         private string _failureCode;
         private string _failureMessage;
+        private FipsEndpoints _fipsEndpoints;
         private string _id;
         private string _kmsKeyArn;
         private long? _lastModifiedDate;
@@ -175,6 +177,26 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetFailureMessage()
         {
             return this._failureMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FipsEndpoints. 
+        /// <para>
+        /// FIPS-compliant endpoints for the collection. These endpoints use FIPS 140-3 validated
+        /// cryptographic modules and are required for federal government workloads that must
+        /// comply with FedRAMP security standards.
+        /// </para>
+        /// </summary>
+        public FipsEndpoints FipsEndpoints
+        {
+            get { return this._fipsEndpoints; }
+            set { this._fipsEndpoints = value; }
+        }
+
+        // Check to see if FipsEndpoints property is set
+        internal bool IsSetFipsEndpoints()
+        {
+            return this._fipsEndpoints != null;
         }
 
         /// <summary>
