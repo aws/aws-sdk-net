@@ -26,7 +26,6 @@ public record BenchmarkRecord(
 
 public static class Utils
 {
-
     private static List<string> secretsIds = new List<string>();
 
     private static string resultsPath;
@@ -149,7 +148,6 @@ public static class Utils
             int dimensionValue = int.Parse(jobGroup.First().BenchmarkCase.Parameters["DimensionValue"].ToString());
             var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(jobGroup.First().BenchmarkCase.Descriptor.WorkloadMethod.DeclaringType)!;
 
-
             AddMetric("TotalRequest");
             AddMetric("Marshall");
             AddMetric("Unmarshall");
@@ -164,7 +162,6 @@ public static class Utils
 
                 if (report == null)
                     return;
-
 
                 var description = report.BenchmarkCase.Descriptor.WorkloadMethod.GetCustomAttribute<BenchmarkAttribute>().Description;
 
@@ -312,7 +309,6 @@ public static class Utils
             await secretsManagerClient.DeleteSecretAsync(new DeleteSecretRequest { SecretId = secretId, ForceDeleteWithoutRecovery = true });
         }
     }
-
 }
 
 public class DebugInProcessConfigDry : DebugConfig

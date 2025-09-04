@@ -1,6 +1,6 @@
 # CBOR Performance Benchmarks for AWS SDK for .NET
 
-This project contains performance benchmarks for evaluating the CBOR protocol in the AWS SDK for .NET compared to the existing  protocols.
+This project contains performance benchmarks for evaluating the CBOR protocol in the AWS SDK for .NET compared to the existing protocols.
 
 Benchmarks are implemented using [BenchmarkDotNet](https://benchmarkdotnet.org/) and run against AWS service operations to measure request/response serialization, deserialization, and total request times.
 
