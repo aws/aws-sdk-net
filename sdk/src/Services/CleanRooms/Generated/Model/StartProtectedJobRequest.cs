@@ -35,10 +35,29 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class StartProtectedJobRequest : AmazonCleanRoomsRequest
     {
+        private ProtectedJobComputeConfiguration _computeConfiguration;
         private ProtectedJobParameters _jobParameters;
         private string _membershipIdentifier;
         private ProtectedJobResultConfigurationInput _resultConfiguration;
         private ProtectedJobType _type;
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration for the protected job.
+        /// </para>
+        /// </summary>
+        public ProtectedJobComputeConfiguration ComputeConfiguration
+        {
+            get { return this._computeConfiguration; }
+            set { this._computeConfiguration = value; }
+        }
+
+        // Check to see if ComputeConfiguration property is set
+        internal bool IsSetComputeConfiguration()
+        {
+            return this._computeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobParameters. 

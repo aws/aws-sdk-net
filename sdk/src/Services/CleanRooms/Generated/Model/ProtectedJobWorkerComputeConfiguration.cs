@@ -30,29 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The configuration of the compute resources for workers running an analysis with the
-    /// Clean Rooms SQL analytics engine.
+    /// The configuration of the compute resources for a PySpark job.
     /// </summary>
-    public partial class WorkerComputeConfiguration
+    public partial class ProtectedJobWorkerComputeConfiguration
     {
         private int? _number;
-        private WorkerComputeType _type;
+        private ProtectedJobWorkerComputeType _type;
 
         /// <summary>
         /// Gets and sets the property Number. 
         /// <para>
-        ///  The number of workers.
-        /// </para>
-        ///  
-        /// <para>
-        /// SQL queries support a minimum value of 2 and a maximum value of 400. 
-        /// </para>
-        ///  
-        /// <para>
-        /// PySpark jobs support a minimum value of 4 and a maximum value of 128.
+        /// The number of workers for a PySpark job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=400)]
+        [AWSProperty(Required=true, Min=4, Max=128)]
         public int Number
         {
             get { return this._number.GetValueOrDefault(); }
@@ -68,10 +59,11 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The worker compute configuration type.
+        /// The worker compute configuration type.
         /// </para>
         /// </summary>
-        public WorkerComputeType Type
+        [AWSProperty(Required=true)]
+        public ProtectedJobWorkerComputeType Type
         {
             get { return this._type; }
             set { this._type = value; }
