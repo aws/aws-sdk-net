@@ -13,7 +13,10 @@ var benchmarkTypes = new Type[]
             typeof(LongListOfStringsBenchmarks),
             typeof(ListOfComplexObjectBenchmarks),
             typeof(VeryLargeBlobBenchmarks),
+            typeof(PutAndGetMetricDataBenchmarks),
             typeof(ListMetricsBenchmarks),
+            typeof(PutAndGetStringBenchmarks),
+            typeof(PutAndGetBinaryBenchmarks),
             typeof(DescribeSecretBenchmarks),
             typeof(ListSecretsBenchmarks),
         };

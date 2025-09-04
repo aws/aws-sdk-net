@@ -146,11 +146,18 @@ public static class Utils
         {
             // All cases share the same DimensionValue in this sample; read from parameters
             int dimensionValue = int.Parse(jobGroup.First().BenchmarkCase.Parameters["DimensionValue"].ToString());
-            var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(jobGroup.First().BenchmarkCase.Descriptor.WorkloadMethod.DeclaringType)!;
+            var benchmarkObject = (BaseBenchmarks)Activator.CreateInstance(jobGroup.First().BenchmarkCase.Descriptor.Type)!;
 
             AddMetric("TotalRequest");
             AddMetric("Marshall");
             AddMetric("Unmarshall");
+
+            if (benchmarkObject is BaseDoubleBenchmarks benchmark2)
+            {
+                AddMetric("TotalRequest2");
+                AddMetric("Marshall2");
+                AddMetric("Unmarshall2");
+            }
 
             void AddMetric(string metricName)
             {
