@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Summaries. 
         /// <para>
         /// A list of <c>StackSetSummary</c> structures that contain information about the user's
-        /// stack sets.
+        /// StackSets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

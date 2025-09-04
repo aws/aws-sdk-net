@@ -30,15 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// [Service-managed permissions] The Organizations accounts to which StackSets deploys.
-    /// StackSets doesn't deploy stack instances to the organization management account, even
-    /// if the organization management account is in your organization or in an OU in your
-    /// organization.
+    /// Specifies the Organizations accounts where you want to create, update, or delete stack
+    /// instances. You can target either your entire organization or specific accounts using
+    /// organizational units (OUs) and account filter options.
     /// 
     ///  
     /// <para>
-    /// For update operations, you can specify either <c>Accounts</c> or <c>OrganizationalUnitIds</c>.
-    /// For create and delete operations, specify <c>OrganizationalUnitIds</c>.
+    /// CloudFormation doesn't deploy stack instances to the organization management account,
+    /// even if the organization management account is in your organization or in an OU in
+    /// your organization.
+    /// </para>
+    ///  
+    /// <para>
+    /// When performing create operations, if you specify both <c>OrganizationalUnitIds</c>
+    /// and <c>Accounts</c>, you must also specify the <c>AccountFilterType</c> property.
     /// </para>
     /// </summary>
     public partial class DeploymentTargets
@@ -51,36 +56,37 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AccountFilterType. 
         /// <para>
-        /// Limit deployment targets to individual accounts or include additional accounts with
-        /// provided OUs.
+        /// Refines which accounts will have stack operations performed on them by specifying
+        /// how to use the <c>Accounts</c> and <c>OrganizationalUnitIds</c> properties together.
         /// </para>
         ///  
         /// <para>
-        /// The following is a list of possible values for the <c>AccountFilterType</c> operation.
+        /// The following values determine how CloudFormation selects target accounts:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>INTERSECTION</c>: StackSets deploys to the accounts specified in <c>Accounts</c>
-        /// parameter. 
+        ///  <c>INTERSECTION</c>: Performs stack operations only on specific individual accounts
+        /// within the selected OUs. Only accounts that are both specified in the <c>Accounts</c>
+        /// property and belong to the specified OUs will be targeted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DIFFERENCE</c>: StackSets excludes the accounts specified in <c>Accounts</c> parameter.
-        /// This enables user to avoid certain accounts within an OU such as suspended accounts.
+        ///  <c>DIFFERENCE</c>: Performs stack operations on all accounts in the selected OUs
+        /// except for specific accounts listed in the <c>Accounts</c> property. This enables
+        /// you to exclude certain accounts within an OU, such as suspended accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UNION</c>: StackSets includes additional accounts deployment targets. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This is the default value if <c>AccountFilterType</c> is not provided. This enables
-        /// user to update an entire OU and individual accounts from a different OU in one request,
-        /// which used to be two separate requests.
+        ///  <c>UNION</c>: Performs stack operations on the specified OUs plus additional individual
+        /// accounts listed in the <c>Accounts</c> property. This is the default value if <c>AccountFilterType</c>
+        /// is not provided. This lets you target an entire OU and individual accounts from a
+        /// different OU in one request. Note that <c>UNION</c> is not supported for <c>CreateStackInstances</c>
+        /// operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c>: Deploys to all the accounts in specified organizational units (OU).
+        ///  <c>NONE</c>: Performs stack operations on all accounts in the specified organizational
+        /// units (OUs).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -99,8 +105,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Accounts. 
         /// <para>
-        /// The account IDs of the Amazon Web Services accounts. If you have many account numbers,
-        /// you can provide those accounts using the <c>AccountsUrl</c> property instead.
+        /// The Amazon Web Services account IDs where you want to perform stack operations. How
+        /// these accounts are used depends on the <c>AccountFilterType</c> property.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have many account numbers, you can provide those accounts using the <c>AccountsUrl</c>
+        /// property instead.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -128,6 +139,11 @@ namespace Amazon.CloudFormation.Model
         /// comma-separated or new-line-separated. There is currently a 10MB limit for the data
         /// (approximately 800,000 accounts).
         /// </para>
+        ///  
+        /// <para>
+        /// This property serves the same purpose as <c>Accounts</c> but allows you to specify
+        /// a large number of accounts.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]
         public string AccountsUrl
@@ -145,7 +161,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// The organization root ID or organizational unit (OU) IDs.
+        /// The organization root ID or organizational unit (OU) IDs where you want to perform
+        /// stack operations. CloudFormation will perform operations on accounts within these
+        /// OUs and their child OUs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -329,7 +329,14 @@ namespace Amazon.CloudFormation.Model
         /// <c>DO_NOTHING</c>, <c>ROLLBACK</c>, or <c>DELETE</c>. You can specify either <c>OnFailure</c>
         /// or <c>DisableRollback</c>, but not both.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Although the default setting is <c>ROLLBACK</c>, there is one exception. This exception
+        /// occurs when a StackSet attempts to deploy a stack instance and the stack instance
+        /// fails to create successfully. In this case, the <c>CreateStack</c> call overrides
+        /// the default setting and sets the value of <c>OnFailure</c> to <c>DELETE</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <c>ROLLBACK</c> 
         /// </para>

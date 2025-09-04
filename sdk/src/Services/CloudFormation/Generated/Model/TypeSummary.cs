@@ -321,7 +321,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the extension.
+        /// The ARN of the extension.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

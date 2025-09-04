@@ -30,9 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// [Service-managed permissions] Describes whether StackSets automatically deploys to
-    /// Organizations accounts that are added to a target organization or organizational unit
-    /// (OU).
+    /// Describes whether StackSets automatically deploys to Organizations accounts that are
+    /// added to a target organization or organizational unit (OU). For more information,
+    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Enable
+    /// or disable automatic deployments for StackSets in Organizations</a> in the <i>CloudFormation
+    /// User Guide</i>.
     /// </summary>
     public partial class AutoDeployment
     {

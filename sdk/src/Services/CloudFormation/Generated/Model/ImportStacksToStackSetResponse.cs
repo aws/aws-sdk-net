@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier for the stack set operation.
+        /// The unique identifier for the StackSet operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

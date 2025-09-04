@@ -40,21 +40,21 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DetailedStatus. <ul> <li> 
         /// <para>
         ///  <c>CANCELLED</c>: The operation in the specified account and Region has been canceled.
-        /// This is either because a user has stopped the stack set operation, or because the
-        /// failure tolerance of the stack set operation has been exceeded.
+        /// This is either because a user has stopped the StackSet operation, or because the failure
+        /// tolerance of the StackSet operation has been exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c>: The operation in the specified account and Region failed. If the stack
-        /// set operation fails in enough accounts within a Region, the failure tolerance for
-        /// the stack set operation as a whole might be exceeded.
+        ///  <c>FAILED</c>: The operation in the specified account and Region failed. If the StackSet
+        /// operation fails in enough accounts within a Region, the failure tolerance for the
+        /// StackSet operation as a whole might be exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>FAILED_IMPORT</c>: The import of the stack instance in the specified account and
         /// Region failed and left the stack in an unstable state. Once the issues causing the
-        /// failure are fixed, the import operation can be retried. If enough stack set operations
-        /// fail in enough accounts within a Region, the failure tolerance for the stack set operation
+        /// failure are fixed, the import operation can be retried. If enough StackSet operations
+        /// fail in enough accounts within a Region, the failure tolerance for the StackSet operation
         /// as a whole might be exceeded.
         /// </para>
         ///  </li> <li> 

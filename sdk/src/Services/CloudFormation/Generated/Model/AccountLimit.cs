@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The AccountLimit data type.
+    /// Describes the current CloudFormation limits for your account.
     /// 
     ///  
     /// <para>
@@ -50,8 +50,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about these account limits, and other CloudFormation limits,
-    /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
     /// CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>

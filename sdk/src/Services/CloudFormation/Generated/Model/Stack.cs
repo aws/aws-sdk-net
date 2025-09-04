@@ -192,7 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The detailed status of the resource or stack. If <c>CONFIGURATION_COMPLETE</c> is
         /// present, the resource or resource configuration phase has completed and the stabilization
-        /// of the resources is in progress. The stack sets <c>CONFIGURATION_COMPLETE</c> when
+        /// of the resources is in progress. The StackSets <c>CONFIGURATION_COMPLETE</c> when
         /// all of the resources in the stack have reached that event. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
         /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.

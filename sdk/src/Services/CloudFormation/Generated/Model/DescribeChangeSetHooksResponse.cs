@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Hooks. 
         /// <para>
-        /// List of hook objects.
+        /// List of Hook objects.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

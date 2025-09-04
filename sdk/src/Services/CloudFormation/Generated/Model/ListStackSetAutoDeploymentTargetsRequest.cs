@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackSetAutoDeploymentTargets operation.
-    /// Returns summary information about deployment targets for a stack set.
+    /// Returns summary information about deployment targets for a StackSet.
     /// </summary>
     public partial class ListStackSetAutoDeploymentTargetsRequest : AmazonCloudFormationRequest
     {
@@ -104,8 +104,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string that identifies the next page of stack set deployment targets that you want
-        /// to retrieve.
+        /// A string that identifies the next page of deployment targets that you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -124,7 +123,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to get automatic deployment targets
+        /// The name or unique ID of the StackSet that you want to get automatic deployment targets
         /// for.
         /// </para>
         /// </summary>

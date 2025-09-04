@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackSets operation.
-    /// Returns summary information about stack sets that are associated with the user.
+    /// Returns summary information about StackSets that are associated with the user.
     /// 
     ///  <note> 
     /// <para>
@@ -42,18 +42,18 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
     /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed
-    /// stack sets in your Amazon Web Services account.
+    /// StackSets in your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c>
     /// while signed in to the organization's management account, <c>ListStackSets</c> returns
-    /// all stack sets in the management account.
+    /// all StackSets in the management account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>DELEGATED_ADMIN</c>
-    /// while signed in to your member account, <c>ListStackSets</c> returns all stack sets
+    /// while signed in to your member account, <c>ListStackSets</c> returns all StackSets
     /// with service-managed permissions in the management account.
     /// </para>
     ///  </li> </ul>
@@ -73,7 +73,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -152,7 +152,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the stack sets that you want to get summary information about.
+        /// The status of the StackSets that you want to get summary information about.
         /// </para>
         /// </summary>
         public StackSetStatus Status
