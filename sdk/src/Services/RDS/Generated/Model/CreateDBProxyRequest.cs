@@ -38,11 +38,13 @@ namespace Amazon.RDS.Model
         private List<UserAuthConfig> _auth = AWSConfigs.InitializeCollections ? new List<UserAuthConfig>() : null;
         private string _dbProxyName;
         private bool? _debugLogging;
+        private EndpointNetworkType _endpointNetworkType;
         private EngineFamily _engineFamily;
         private int? _idleClientTimeout;
         private bool? _requireTLS;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private TargetConnectionNetworkType _targetConnectionNetworkType;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _vpcSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -107,6 +109,59 @@ namespace Amazon.RDS.Model
         internal bool IsSetDebugLogging()
         {
             return this._debugLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointNetworkType. 
+        /// <para>
+        /// The network type of the DB proxy endpoint. The network type determines the IP version
+        /// that the proxy endpoint supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy endpoint supports IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy endpoint supports IPv6 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DUAL</c> - The proxy endpoint supports both IPv4 and IPv6.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>IPV4</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify <c>IPV6</c> or <c>DUAL</c>, the VPC and all subnets must have an IPv6
+        /// CIDR block.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <c>IPV6</c> or <c>DUAL</c>, the VPC tenancy cannot be <c>dedicated</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EndpointNetworkType EndpointNetworkType
+        {
+            get { return this._endpointNetworkType; }
+            set { this._endpointNetworkType = value; }
+        }
+
+        // Check to see if EndpointNetworkType property is set
+        internal bool IsSetEndpointNetworkType()
+        {
+            return this._endpointNetworkType != null;
         }
 
         /// <summary>
@@ -209,6 +264,56 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetConnectionNetworkType. 
+        /// <para>
+        /// The network type that the proxy uses to connect to the target database. The network
+        /// type determines the IP version that the proxy uses for connections to the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy connects to the database using IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy connects to the database using IPv6 only.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>IPV4</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify <c>IPV6</c>, the database must support dual-stack mode. RDS doesn't
+        /// support IPv6-only databases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All targets registered with the proxy must be compatible with the specified network
+        /// type.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TargetConnectionNetworkType TargetConnectionNetworkType
+        {
+            get { return this._targetConnectionNetworkType; }
+            set { this._targetConnectionNetworkType = value; }
+        }
+
+        // Check to see if TargetConnectionNetworkType property is set
+        internal bool IsSetTargetConnectionNetworkType()
+        {
+            return this._targetConnectionNetworkType != null;
         }
 
         /// <summary>

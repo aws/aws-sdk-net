@@ -67,6 +67,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
+                if(publicRequest.IsSetEndpointNetworkType())
+                {
+                    request.Parameters.Add("EndpointNetworkType", StringUtils.FromString(publicRequest.EndpointNetworkType));
+                }
                 if(publicRequest.IsSetTags())
                 {
                     int publicRequestlistValueIndex = 1;

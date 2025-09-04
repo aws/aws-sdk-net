@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private string _dbProxyEndpointName;
         private string _dbProxyName;
         private string _endpoint;
+        private EndpointNetworkType _endpointNetworkType;
         private bool? _isDefault;
         private DBProxyEndpointStatus _status;
         private DBProxyEndpointTargetRole _targetRole;
@@ -146,6 +147,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointNetworkType. 
+        /// <para>
+        /// The network type of the DB proxy endpoint. The network type determines the IP version
+        /// that the proxy endpoint supports.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IPV4</c> - The proxy endpoint supports IPv4 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IPV6</c> - The proxy endpoint supports IPv6 only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DUAL</c> - The proxy endpoint supports both IPv4 and IPv6.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EndpointNetworkType EndpointNetworkType
+        {
+            get { return this._endpointNetworkType; }
+            set { this._endpointNetworkType = value; }
+        }
+
+        // Check to see if EndpointNetworkType property is set
+        internal bool IsSetEndpointNetworkType()
+        {
+            return this._endpointNetworkType != null;
         }
 
         /// <summary>

@@ -85,6 +85,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EndpointNetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointNetworkType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IsDefault", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

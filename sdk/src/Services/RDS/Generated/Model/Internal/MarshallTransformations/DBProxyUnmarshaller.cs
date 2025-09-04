@@ -96,6 +96,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EndpointNetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointNetworkType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EngineFamily", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetConnectionNetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetConnectionNetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UpdatedDate", targetDepth))
