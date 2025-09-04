@@ -49,7 +49,9 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class AttributeValue
     {
         private bool? _boolean;
+        private string _datetime;
         private string _decimal;
+        private string _duration;
         private EntityIdentifier _entityIdentifier;
         private string _ipaddr;
         private long? _long;
@@ -82,6 +84,30 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Datetime. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-datetime">datetime</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"datetime": "2024-10-15T11:35:00Z"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=10, Max=28)]
+        public string Datetime
+        {
+            get { return this._datetime; }
+            set { this._datetime = value; }
+        }
+
+        // Check to see if Datetime property is set
+        internal bool IsSetDatetime()
+        {
+            return this._datetime != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Decimal. 
         /// <para>
         /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal">decimal</a>
@@ -103,6 +129,30 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetDecimal()
         {
             return this._decimal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-duration">duration</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"duration": "1h30m"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=2, Max=100)]
+        public string Duration
+        {
+            get { return this._duration; }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration != null;
         }
 
         /// <summary>
