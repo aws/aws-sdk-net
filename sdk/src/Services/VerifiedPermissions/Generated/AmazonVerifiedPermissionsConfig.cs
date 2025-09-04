@@ -33,7 +33,7 @@ namespace Amazon.VerifiedPermissions
     public partial class AmazonVerifiedPermissionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.2.1");
+            InternalSDKUtils.BuildUserAgentString("VerifiedPermissions", "4.0.3.0");
 
         private static readonly AmazonVerifiedPermissionsEndpointResolver EndpointResolver =
             new AmazonVerifiedPermissionsEndpointResolver();

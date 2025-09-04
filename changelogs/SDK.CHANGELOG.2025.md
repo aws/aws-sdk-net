@@ -1,3 +1,17 @@
+### 4.0.84.0 (2025-09-04 18:22 UTC)
+* CleanRooms (4.0.6.0)
+	* Add support for configurable compute sizes for PySpark jobs.
+* CloudFormation (4.0.3.0)
+	* ListHookResults API now supports retrieving invocation results for all CloudFormation Hooks (previously limited to create change set and Cloud Control operations) with new optional parameters for filtering by Hook status and ARN.
+* EC2 (4.0.37.0)
+	* Add m8i, m8i-flex and i8ge instance types.
+* OpenSearchServerless (4.0.3.0)
+	* Add support for Federal Information Processing Standards (FIPS) and Federal Risk and Authorization Management Program (FedRAMP) compliance
+* RDS (4.0.8.0)
+	* Added new EndpointNetworkType and TargetConnectionNetworkType fields in Proxy APIs to support IPv6
+* VerifiedPermissions (4.0.3.0)
+	* Amazon Verified Permissions / Features : Adds support for datetime and duration attribute values.
+
 ### 4.0.83.0 (2025-09-03 18:33 UTC)
 * CleanRooms (4.0.5.0)
 	* Added support for adding new data provider members to an existing collaboration.
