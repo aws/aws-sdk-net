@@ -7,7 +7,6 @@ using System.Net;
 using System.Text;
 
 [MemoryDiagnoser]
-[Orderer(SummaryOrderPolicy.Method)]
 public abstract class BaseBenchmarks
 {
     public abstract int DimensionValue { get; set; }
@@ -47,16 +46,20 @@ public abstract class BaseBenchmarks
 #if USE_CBOR
         RequestSizeBytes = Math.Max(RequestSizeBytes, MarshalledRequest.Content.Length);
 #else
-        if (Service == "CloudWatch")
+        if (Protocol == "Query")
         {
             string queryString = Utils.GetParametersAsString(MarshalledRequest.ParameterCollection);
             var content = Encoding.UTF8.GetBytes(queryString);
 
             RequestSizeBytes = Math.Max(RequestSizeBytes, content.Length);
         }
-        else
+        else if (Protocol == "JSON")
         {
             RequestSizeBytes = Math.Max(RequestSizeBytes, MarshalledRequest.Content.Length);
+        }
+        else
+        {
+            throw new NotImplementedException();
         }
 #endif
         var record = new BenchmarkRecord(Service, TestCase, Protocol, DimensionValue, "Request payload size (bytes)", RequestSizeBytes, RequestSizeBytes, RequestSizeBytes);
