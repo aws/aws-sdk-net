@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The ID of one or more subnets to add to the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
+        [AWSProperty(Min=1)]
         public List<string> AddSubnetIds
         {
             get { return this._addSubnetIds; }
@@ -147,7 +147,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The unique identifiers of the subnets to remove from the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
+        [AWSProperty(Min=1)]
         public List<string> RemoveSubnetIds
         {
             get { return this._removeSubnetIds; }

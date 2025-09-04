@@ -107,7 +107,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The ID of one or more subnets from which you'll access OpenSearch Serverless.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
