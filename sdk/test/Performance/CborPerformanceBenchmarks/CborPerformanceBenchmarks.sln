@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecretsManager.NetSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Core\AWSSDK.Core.NetStandard.csproj", "{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Echo.NetStandard", "..\..\Services\Echo\AWSSDK.Echo.NetStandard.csproj", "{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Echo.NetStandard", "..\..\..\..\..\aws-sdk-net-old-protocols\sdk\test\Services\Echo\AWSSDK.Echo.NetStandard.csproj", "{77CADAE9-F953-5A51-1788-0521FB7E7906}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CADAE9-F953-5A51-1788-0521FB7E7906}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +85,8 @@ Global
 		{8651B417-2687-A38D-F39E-DF0D0C48A8A5} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
 		{EF094BCE-D7B0-97C9-A335-7BDFF0F3DE8F} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
 		{90C1FD54-C1B9-474A-3CD0-6E7C9BBAC59E} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
+		{12C3757A-C7C0-F7C2-4B18-626A3F60C4A0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{77CADAE9-F953-5A51-1788-0521FB7E7906} = {938A4185-962C-4ABB-A344-97BAA2B8C64A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C32806F1-F388-4C10-A94F-4BCC88584182}

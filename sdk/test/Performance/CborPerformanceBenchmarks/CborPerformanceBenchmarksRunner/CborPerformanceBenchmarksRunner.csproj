@@ -12,6 +12,7 @@
 	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
 	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj" />
 	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\..\..\..\aws-sdk-net-old-protocols\sdk\test\Services\Echo\AWSSDK.Echo.NetStandard.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(UseCbor)' == 'true'">
@@ -19,6 +20,7 @@
 	  <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
 	  <ProjectReference Include="..\..\..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetStandard.csproj" />
 	  <ProjectReference Include="..\..\..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\Services\Echo\AWSSDK.Echo.NetStandard.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

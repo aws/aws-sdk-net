@@ -50,21 +50,22 @@ Set-Location "../../../../generator"
 Update-JsonProperty -JsonFilePath "./ServiceModels/monitoring/monitoring-2010-08-01.normal.json" -PropertyPath "metadata.targetPrefix" -Value "GraniteServiceVersion20100801"
 Update-JsonProperty -JsonFilePath "./ServiceModels/monitoring/monitoring-2010-08-01.normal.json" -PropertyPath "metadata.protocols" -Value @("smithy-rpc-v2-cbor")
 Update-JsonProperty -JsonFilePath "./ServiceModels/secretsmanager/secretsmanager-2017-10-17.normal.json" -PropertyPath "metadata.protocols" -Value @("smithy-rpc-v2-cbor")
+Update-JsonProperty -JsonFilePath "./TestServiceModels/echo-service-tests-client/echo-service-2020-07-02.normal.json" -PropertyPath "metadata.protocols" -Value @("smithy-rpc-v2-cbor")
 
 
 dotnet build --configuration Release
 Set-Location "./ServiceClientGenerator/bin/Release"
-dotnet run --project ../../../ServiceClientGenerator/ServiceClientGenerator.csproj -- /sro /sm "monitoring;secretsmanager"
-
+dotnet run --project ../../../ServiceClientGenerator/ServiceClientGenerator.csproj -- /sro /sm "echo-service-tests-client;monitoring;secretsmanager"
 
 Write-Host "Updating aws-sdk-net-old-protocols models to use old protocols..."
 
 Set-Location "./../../../../../aws-sdk-net-old-protocols/generator"
 
-Update-JsonProperty -JsonFilePath "./ServiceModels//monitoring/monitoring-2010-08-01.normal.json" -PropertyPath "metadata.protocols" -Value @("query")
+Update-JsonProperty -JsonFilePath "./ServiceModels/monitoring/monitoring-2010-08-01.normal.json" -PropertyPath "metadata.protocols" -Value @("query")
 Update-JsonProperty -JsonFilePath "./ServiceModels/secretsmanager/secretsmanager-2017-10-17.normal.json" -PropertyPath "metadata.protocols" -Value @("json")
+Update-JsonProperty -JsonFilePath "./TestServiceModels/echo-service-tests-client/echo-service-2020-07-02.normal.json" -PropertyPath "metadata.protocols" -Value @("json")
 
 dotnet build --configuration Release
 Set-Location "./ServiceClientGenerator/bin/Release"
-dotnet run --project ../../../ServiceClientGenerator/ServiceClientGenerator.csproj -- /sro /sm "monitoring;secretsmanager"
+dotnet run --project ../../../ServiceClientGenerator/ServiceClientGenerator.csproj -- /sro /sm "echo-service-tests-client;monitoring;secretsmanager"
 

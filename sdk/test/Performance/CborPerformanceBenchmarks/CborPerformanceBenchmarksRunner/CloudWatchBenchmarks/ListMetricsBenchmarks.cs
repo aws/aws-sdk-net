@@ -64,7 +64,6 @@ public class ListMetricsBenchmarks : BaseBenchmarks
         };
     }
 
-
     [Benchmark(Description = "Deserialization time (ms)")]
     public override AmazonWebServiceResponse Unmarshall()
     {
@@ -74,9 +73,9 @@ public class ListMetricsBenchmarks : BaseBenchmarks
 
     public override void TotalRequestBeforeIteration()
     {
-        if (IterationCount % 50 == 0)
+        if (IterationCount % 25 == 0)
         {
-            Thread.Sleep(2000); // Sleep 2 seconds every 50 iterations to avoid throttling
+            Thread.Sleep(2000); // Sleep 2 seconds every 25 iterations to avoid throttling
         }
         base.TotalRequestBeforeIteration();
     }
