@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -134,7 +134,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeploymentTargets. 
         /// <para>
-        /// [Service-managed permissions] The Organizations accounts for which to create stack
+        /// [Service-managed permissions] The Organizations accounts in which to create stack
         /// instances in the specified Amazon Web Services Regions.
         /// </para>
         ///  
@@ -157,14 +157,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier for this stack set operation.
+        /// The unique identifier for this StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// The operation ID also functions as an idempotency token, to ensure that CloudFormation
-        /// performs the stack set operation only once, even if you retry the request multiple
-        /// times. You might retry stack set operation requests to ensure that CloudFormation
-        /// successfully received them.
+        /// performs the StackSet operation only once, even if you retry the request multiple
+        /// times. You might retry StackSet operation requests to ensure that CloudFormation successfully
+        /// received them.
         /// </para>
         ///  
         /// <para>
@@ -172,7 +172,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Repeating this stack set operation with a new operation ID retries all stack instances
+        /// Repeating this StackSet operation with a new operation ID retries all stack instances
         /// whose status is <c>OUTDATED</c>.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// Preferences for how CloudFormation performs this stack set operation.
+        /// Preferences for how CloudFormation performs this StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -210,7 +210,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ParameterOverrides. 
         /// <para>
-        /// A list of stack set parameters whose values you want to override in the selected stack
+        /// A list of StackSet parameters whose values you want to override in the selected stack
         /// instances.
         /// </para>
         ///  
@@ -232,7 +232,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To set an overridden parameter back to the value specified in the stack set, specify
+        /// To set an overridden parameter back to the value specified in the StackSet, specify
         /// a parameter list but don't include the parameter in the list.
         /// </para>
         ///  </li> <li> 
@@ -242,14 +242,14 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// During stack set updates, any parameter values overridden for a stack instance aren't
+        /// During StackSet updates, any parameter values overridden for a stack instance aren't
         /// updated, but retain their overridden value.
         /// </para>
         ///  
         /// <para>
-        /// You can only override the parameter <i>values</i> that are specified in the stack
-        /// set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-        /// to update the stack set template.
+        /// You can only override the parameter <i>values</i> that are specified in the StackSet;
+        /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to update the StackSet template.
         /// </para>
         /// </summary>
         public List<Parameter> ParameterOverrides
@@ -287,7 +287,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to create stack instances from.
+        /// The name or unique ID of the StackSet that you want to create stack instances from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

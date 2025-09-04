@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -155,7 +155,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique identifier for this stack set operation.
+        /// The unique identifier for this StackSet operation.
         /// </para>
         ///  
         /// <para>
@@ -164,13 +164,13 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// The operation ID also functions as an idempotency token, to ensure that CloudFormation
-        /// performs the stack set operation only once, even if you retry the request multiple
-        /// times. You can retry stack set operation requests to ensure that CloudFormation successfully
+        /// performs the StackSet operation only once, even if you retry the request multiple
+        /// times. You can retry StackSet operation requests to ensure that CloudFormation successfully
         /// received them.
         /// </para>
         ///  
         /// <para>
-        /// Repeating this stack set operation with a new operation ID retries all stack instances
+        /// Repeating this StackSet operation with a new operation ID retries all stack instances
         /// whose status is <c>OUTDATED</c>.
         /// </para>
         /// </summary>
@@ -190,7 +190,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// Preferences for how CloudFormation performs this stack set operation.
+        /// Preferences for how CloudFormation performs this StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -208,7 +208,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The Amazon Web Services Regions where you want to delete stack set instances.
+        /// The Amazon Web Services Regions where you want to delete StackSet instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -227,14 +227,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainStacks. 
         /// <para>
-        /// Removes the stack instances from the specified stack set, but doesn't delete the stacks.
+        /// Removes the stack instances from the specified StackSet, but doesn't delete the stacks.
         /// You can't reassociate a retained stack or add an existing, saved stack to a new stack
         /// set.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-        /// set operation options</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+        /// operation options</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -253,7 +253,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to delete stack instances for.
+        /// The name or unique ID of the StackSet that you want to delete stack instances for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

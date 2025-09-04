@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// One of the targets for the stack set. Returned by the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+    /// One of the targets for the StackSet. Returned by the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
     /// API operation.
     /// </summary>
     public partial class StackSetAutoDeploymentTargetSummary
@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
-        /// The organization root ID or organizational unit (OU) IDs where the stack set is targeted.
+        /// The organization root ID or organizational unit (OU) IDs where the StackSet is targeted.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId

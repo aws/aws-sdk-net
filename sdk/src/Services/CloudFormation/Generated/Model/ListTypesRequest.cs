@@ -31,7 +31,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTypes operation.
-    /// Returns summary information about extension that have been registered with CloudFormation.
+    /// Returns summary information about all extensions, including your private resource
+    /// types, modules, and Hooks as well as all public extensions from Amazon Web Services
+    /// and third-party publishers.
     /// </summary>
     public partial class ListTypesRequest : AmazonCloudFormationRequest
     {

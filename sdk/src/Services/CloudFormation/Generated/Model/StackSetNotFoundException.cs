@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The specified stack set doesn't exist.
+    /// The specified StackSet doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

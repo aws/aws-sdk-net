@@ -79,6 +79,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.HookFailureMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HookInvocationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookInvocationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HookInvocationPoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

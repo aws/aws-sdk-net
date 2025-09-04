@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetId. 
         /// <para>
-        /// The ID of the stack set that you're creating.
+        /// The ID of the StackSet that you're creating.
         /// </para>
         /// </summary>
         public string StackSetId

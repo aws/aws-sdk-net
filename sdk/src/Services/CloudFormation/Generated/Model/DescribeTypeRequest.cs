@@ -31,7 +31,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeType operation.
-    /// Returns detailed information about an extension that has been registered.
+    /// Returns detailed information about an extension from the CloudFormation registry in
+    /// your current account and Region.
     /// 
     ///  
     /// <para>

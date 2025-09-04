@@ -40,19 +40,19 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// When <c>true</c>, StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations. After conflicting operations finish, StackSets starts queued
-        /// operations in request order.
+        /// When <c>true</c>, CloudFormation performs non-conflicting operations concurrently
+        /// and queues conflicting operations. After conflicting operations finish, CloudFormation
+        /// starts queued operations in request order.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If there are already running or queued operations, StackSets queues all incoming operations
-        /// even if they are non-conflicting.
+        /// If there are already running or queued operations, CloudFormation queues all incoming
+        /// operations even if they are non-conflicting.
         /// </para>
         ///  
         /// <para>
-        /// You can't modify your stack set's execution configuration while there are running
-        /// or queued operations for that stack set.
+        /// You can't modify your StackSet's execution configuration while there are running or
+        /// queued operations for that StackSet.
         /// </para>
         ///  </note> 
         /// <para>

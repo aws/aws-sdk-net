@@ -69,23 +69,23 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DriftStatus. 
         /// <para>
         /// Status of the stack instance's actual configuration compared to the expected template
-        /// and parameter configuration of the stack set to which it belongs.
+        /// and parameter configuration of the StackSet it belongs to.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>DRIFTED</c>: The stack differs from the expected template and parameter configuration
-        /// of the stack set to which it belongs. A stack instance is considered to have drifted
-        /// if one or more of the resources in the associated stack have drifted.
+        /// of the StackSet it belongs to. A stack instance is considered to have drifted if one
+        /// or more of the resources in the associated stack have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked if the stack instance differs from
-        /// its expected stack set configuration.
+        /// its expected StackSet configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IN_SYNC</c>: The stack instance's actual configuration matches its expected stack
-        /// set configuration.
+        ///  <c>IN_SYNC</c>: The stack instance's actual configuration matches its expected StackSet
+        /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -109,8 +109,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LastDriftCheckTimestamp. 
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
-        /// stack instance. This value will be <c>NULL</c> for any stack instance on which drift
-        /// detection hasn't yet been performed.
+        /// stack instance. This value will be <c>NULL</c> for any stack instance that drift detection
+        /// hasn't yet been performed on.
         /// </para>
         /// </summary>
         public DateTime LastDriftCheckTimestamp
@@ -220,7 +220,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetId. 
         /// <para>
-        /// The name or unique ID of the stack set that the stack instance is associated with.
+        /// The name or unique ID of the StackSet that the stack instance is associated with.
         /// </para>
         /// </summary>
         public string StackSetId
@@ -255,7 +255,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OUTDATED</c>: The stack isn't currently up to date with the stack set because:
+        ///  <c>OUTDATED</c>: The stack isn't currently up to date with the StackSet because:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -269,7 +269,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>CURRENT</c>: The stack is currently up to date with the stack set.
+        ///  <c>CURRENT</c>: The stack is currently up to date with the StackSet.
         /// </para>
         ///  </li> </ul>
         /// </summary>

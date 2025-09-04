@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStackSetOperations operation.
-    /// Returns summary information about operations performed on a stack set.
+    /// Returns summary information about operations performed on a StackSet.
     /// 
     ///  <note> 
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -135,7 +135,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to get operation summaries for.
+        /// The name or unique ID of the StackSet that you want to get operation summaries for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// An array of summaries of the deployment targets for the stack set.
+        /// An array of summaries of the deployment targets for the StackSet.
         /// </para>
         /// </summary>
         public List<StackSetAutoDeploymentTargetSummary> Summaries

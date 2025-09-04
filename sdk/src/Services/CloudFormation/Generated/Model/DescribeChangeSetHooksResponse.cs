@@ -83,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Hooks. 
         /// <para>
-        /// List of hook objects.
+        /// List of Hook objects.
         /// </para>
         /// </summary>
         public List<ChangeSetHook> Hooks

@@ -31,8 +31,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportStacksToStackSet operation.
-    /// Import existing stacks into a new stack sets. Use the stack import operation to import
-    /// up to 10 stacks into a new stack set in the same account as the source stack or in
+    /// Import existing stacks into a new StackSets. Use the stack import operation to import
+    /// up to 10 stacks into a new StackSet in the same account as the source stack or in
     /// a different administrator account and Region, by specifying the stack ID of the stack
     /// you intend to import.
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CallAs. 
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -58,7 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For service managed stack sets, specify <c>DELEGATED_ADMIN</c>.
+        /// For service managed StackSets, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// A unique, user defined, identifier for the stack set operation.
+        /// A unique, user defined, identifier for the StackSet operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -96,13 +96,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// The user-specified preferences for how CloudFormation performs a StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// For more information about maximum concurrent accounts and failure tolerance, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
-        /// set operation options</a>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">StackSet
+        /// operation options</a>.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -120,8 +120,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OrganizationalUnitIds. 
         /// <para>
-        /// The list of OU ID's to which the stacks being imported has to be mapped as deployment
-        /// target.
+        /// The list of OU ID's to which the imported stacks must be mapped as deployment targets.
         /// </para>
         /// </summary>
         public List<string> OrganizationalUnitIds
@@ -139,8 +138,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackIds. 
         /// <para>
-        /// The IDs of the stacks you are importing into a stack set. You import up to 10 stacks
-        /// per stack set at a time.
+        /// The IDs of the stacks you are importing into a StackSet. You import up to 10 stacks
+        /// per StackSet at a time.
         /// </para>
         ///  
         /// <para>
@@ -185,8 +184,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name of the stack set. The name must be unique in the Region where you create
-        /// your stack set.
+        /// The name of the StackSet. The name must be unique in the Region where you create your
+        /// StackSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
