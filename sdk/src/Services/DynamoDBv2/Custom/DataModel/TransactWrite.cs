@@ -446,23 +446,23 @@ namespace Amazon.DynamoDBv2.DataModel
                 attributeNames.Remove(rangeKeyPropertyName);
             }
 
+            var operationConfig = new TransactWriteItemOperationConfig
+            {
+                ConditionalExpression = conditionExpression,
+                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+            };
+
             // If there are no attributes left, we need to use PutItem
             // as UpdateItem requires at least one data attribute
             if (attributeNames.Any())
             {
-                DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
-                {
-                    ConditionalExpression = conditionExpression,
-                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
-                });
+                var ifNotExistAttributeNames = DynamoDBContext.GetUpdateIfNotExistsAttributeNames(storage);
+                DocumentTransaction.AddDocumentToUpdate(storage.Document, ifNotExistAttributeNames, operationConfig);
+                
             }
             else
             {
-                DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
-                {
-                    ConditionalExpression = conditionExpression,
-                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
-                });
+                DocumentTransaction.AddDocumentToPut(storage.Document, operationConfig);
             }
         }
 
