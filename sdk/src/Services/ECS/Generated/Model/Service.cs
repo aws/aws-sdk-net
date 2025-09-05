@@ -78,6 +78,24 @@ namespace Amazon.ECS.Model
         /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
         /// Service Developer Guide</i> </i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The default behavior of <c>AvailabilityZoneRebalancing</c> differs between create
+        /// and update requests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For create service requests, when when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults the value to to <c>ENABLED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For update service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults to the existing service’s <c>AvailabilityZoneRebalancing</c> value.
+        /// If the service never had an <c>AvailabilityZoneRebalancing</c> value set, Amazon ECS
+        /// treats this as <c>DISABLED</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
         {
@@ -317,7 +335,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started.
+        /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
+        /// first started.
         /// </para>
         /// </summary>
         public int? HealthCheckGracePeriodSeconds
