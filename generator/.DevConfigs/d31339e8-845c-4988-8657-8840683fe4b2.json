@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update TransferDownloadDirectoryRequest to extend BaseDownloadRequest."
+      ]
+    }
+  ]
+}
