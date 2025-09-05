@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterNodeRecovery _nodeRecovery;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
+        private ClusterTieredStorageConfig _tieredStorageConfig;
 
         /// <summary>
         /// Gets and sets the property AutoScaling. 
@@ -191,6 +192,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRestrictedInstanceGroups()
         {
             return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TieredStorageConfig. 
+        /// <para>
+        /// Updates the configuration for managed tier checkpointing on the HyperPod cluster.
+        /// For example, you can enable or disable the feature and modify the percentage of cluster
+        /// memory allocated for checkpoint storage.
+        /// </para>
+        /// </summary>
+        public ClusterTieredStorageConfig TieredStorageConfig
+        {
+            get { return this._tieredStorageConfig; }
+            set { this._tieredStorageConfig = value; }
+        }
+
+        // Check to see if TieredStorageConfig property is set
+        internal bool IsSetTieredStorageConfig()
+        {
+            return this._tieredStorageConfig != null;
         }
 
     }

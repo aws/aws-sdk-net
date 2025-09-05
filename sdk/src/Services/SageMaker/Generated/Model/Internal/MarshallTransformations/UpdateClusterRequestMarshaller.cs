@@ -147,6 +147,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTieredStorageConfig())
+            {
+                context.Writer.WritePropertyName("TieredStorageConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterTieredStorageConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TieredStorageConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

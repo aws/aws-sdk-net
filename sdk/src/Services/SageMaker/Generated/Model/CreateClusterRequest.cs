@@ -48,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private ClusterTieredStorageConfig _tieredStorageConfig;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -253,6 +254,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TieredStorageConfig. 
+        /// <para>
+        /// The configuration for managed tier checkpointing on the HyperPod cluster. When enabled,
+        /// this feature uses a multi-tier storage approach for storing model checkpoints, providing
+        /// faster checkpoint operations and improved fault tolerance across cluster nodes.
+        /// </para>
+        /// </summary>
+        public ClusterTieredStorageConfig TieredStorageConfig
+        {
+            get { return this._tieredStorageConfig; }
+            set { this._tieredStorageConfig = value; }
+        }
+
+        // Check to see if TieredStorageConfig property is set
+        internal bool IsSetTieredStorageConfig()
+        {
+            return this._tieredStorageConfig != null;
         }
 
         /// <summary>

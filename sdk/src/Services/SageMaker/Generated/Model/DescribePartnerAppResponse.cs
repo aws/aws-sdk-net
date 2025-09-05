@@ -282,6 +282,39 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The status of the SageMaker Partner AI App.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available
+        /// during creation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available
+        /// when updating.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available
+        /// during deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Available: The partner AI app is provisioned and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed: The partner AI app is in a failed state and isn't available. SageMaker AI
+        /// is investigating the issue. For further guidance, contact Amazon Web Services Support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UpdateFailed: The partner AI app couldn't be updated but is available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted: The partner AI app is permanently deleted and not available.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PartnerAppStatus Status
         {

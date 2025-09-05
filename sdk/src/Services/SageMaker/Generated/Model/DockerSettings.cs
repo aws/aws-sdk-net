@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RootlessDocker. 
         /// <para>
-        /// Indicates whether to use rootless Docker. Default value is <c>DISABLED</c>.
+        /// Indicates whether to use rootless Docker.
         /// </para>
         /// </summary>
         public FeatureStatus RootlessDocker

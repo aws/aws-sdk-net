@@ -4061,6 +4061,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterConfigMode.
+    /// </summary>
+    public class ClusterConfigMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for ClusterConfigMode
+        /// </summary>
+        public static readonly ClusterConfigMode Disable = new ClusterConfigMode("Disable");
+        /// <summary>
+        /// Constant Enable for ClusterConfigMode
+        /// </summary>
+        public static readonly ClusterConfigMode Enable = new ClusterConfigMode("Enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterConfigMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterConfigMode FindValue(string value)
+        {
+            return FindValue<ClusterConfigMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterConfigMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterEventResourceType.
     /// </summary>
     public class ClusterEventResourceType : ConstantClass
@@ -9634,6 +9684,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IPAddressType.
+    /// </summary>
+    public class IPAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType Dualstack = new IPAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType Ipv4 = new IPAddressType("ipv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IPAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IPAddressType FindValue(string value)
+        {
+            return FindValue<IPAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IPAddressType(string value)
         {
             return FindValue(value);
         }
@@ -15434,6 +15534,10 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP548xlarge = new ProductionVariantInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP54xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlP54xlarge = new ProductionVariantInstanceType("ml.p5.4xlarge");
         /// <summary>
         /// Constant MlP5e48xlarge for ProductionVariantInstanceType
         /// </summary>
