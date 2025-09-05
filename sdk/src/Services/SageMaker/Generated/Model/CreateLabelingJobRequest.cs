@@ -179,14 +179,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
-        /// task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you
-        /// are using is not listed below, the attribute name <i>must not</i> end with "-ref".
+        /// If you are using one of the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+        /// task types</a> or one of the following, the attribute name <i>must</i> end with "-ref".
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Verification (<c>VerificationSemanticSegmentation</c>) labeling jobs for this task
-        /// type.
+        /// Image semantic segmentation (<c>SemanticSegmentation)</c> and adjustment (<c>AdjustmentSemanticSegmentation</c>)
+        /// labeling jobs for this task type. One exception is that verification (<c>VerificationSemanticSegmentation</c>)
+        /// <i>must not</i> end with -"ref".
         /// </para>
         ///  </li> <li> 
         /// <para>

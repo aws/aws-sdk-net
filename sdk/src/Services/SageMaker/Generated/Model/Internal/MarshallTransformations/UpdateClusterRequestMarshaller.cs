@@ -141,6 +141,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTieredStorageConfig())
+                {
+                    context.Writer.WritePropertyName("TieredStorageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterTieredStorageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TieredStorageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

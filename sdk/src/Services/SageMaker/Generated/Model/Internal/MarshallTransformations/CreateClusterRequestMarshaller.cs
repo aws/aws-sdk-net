@@ -163,6 +163,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetTieredStorageConfig())
+                {
+                    context.Writer.WritePropertyName("TieredStorageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterTieredStorageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TieredStorageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVpcConfig())
                 {
                     context.Writer.WritePropertyName("VpcConfig");
