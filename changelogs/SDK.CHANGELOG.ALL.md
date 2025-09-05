@@ -1,3 +1,11 @@
+### 4.0.85.0 (2025-09-05 18:25 UTC)
+* ECS (4.0.4.8)
+	* This is a documentation only release that adds additional information for Amazon ECS Availability Zone rebalancing.
+* PCS (4.0.7.2)
+	* Documentation-only update to add AccountingStorageEnforce to SlurmCustomSetting.
+* SageMaker (4.0.24.0)
+	* Release IPv6 support with dualstack in SageMaker Notebooks, Tiered Storage Checkpointing Support in SageMaker HyperPod and P5.4xlarge instance type for SageMaker Hosting.
+
 ### 4.0.84.0 (2025-09-04 18:22 UTC)
 * CleanRooms (4.0.6.0)
 	* Add support for configurable compute sizes for PySpark jobs.
