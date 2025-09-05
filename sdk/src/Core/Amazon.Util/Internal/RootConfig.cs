@@ -1,4 +1,5 @@
-﻿using Amazon.Runtime.Credentials;
+﻿using Amazon.Runtime;
+using Amazon.Runtime.Credentials;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
@@ -55,6 +56,10 @@ namespace Amazon.Util.Internal
 
         public bool DisableLegacyPersistenceStore { get; set; }
 
+        public AuthSchemePreference AuthSchemePreference { get; set; }
+
+        public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
+
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
         {
@@ -70,6 +75,12 @@ namespace Amazon.Util.Internal
             CborReaderInitialBufferSize = AWSConfigs._cborReaderInitialBufferSize;
             CorrectForClockSkew = true;
             DisableLegacyPersistenceStore = AWSConfigs._disableLegacyPersistenceStore;
+            
+            // Initialize AuthSchemePreference from environment variables
+            AuthSchemePreference = Amazon.Runtime.EnvironmentConfigurationProvider.GetAuthSchemePreference();
+            
+            // Initialize SigV4aRegionSetConfiguration from environment variables
+            SigV4aRegionSetConfiguration = Amazon.Runtime.SigV4aRegionSetConfiguration.FromEnvironment();
 
 #if NET8_0_OR_GREATER
             DisableDangerousDisablePathAndQueryCanonicalization = AWSConfigs._disableDangerousDisablePathAndQueryCanonicalization;

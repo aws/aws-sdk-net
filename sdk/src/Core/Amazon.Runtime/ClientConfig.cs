@@ -1,17 +1,17 @@
- /*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+/*
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -68,6 +68,7 @@ namespace Amazon.Runtime
         private string authServiceName = null;
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
+        private bool isSignatureMethodExplicitlySet = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
         private long progressUpdateInterval = AWSSDKUtils.DefaultProgressUpdateInterval;
@@ -135,7 +136,7 @@ namespace Amazon.Runtime
             {
                 if (credentialProfileStoreChain == null)
                 {
-                    if(Profile != null)
+                    if (Profile != null)
                     {
                         credentialProfileStoreChain = new CredentialProfileStoreChain(Profile.Location);
                     }
@@ -173,7 +174,8 @@ namespace Amazon.Runtime
                 var asUri = new Uri(value);
                 var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
 #endif
-                if (!string.IsNullOrEmpty(asUri.UserInfo)) {
+                if (!string.IsNullOrEmpty(asUri.UserInfo))
+                {
                     var userAndPass = asUri.UserInfo.Split(':');
                     parsedProxy.Credentials = new NetworkCredential(
                         userAndPass[0],
@@ -221,7 +223,20 @@ namespace Amazon.Runtime
         public SigningAlgorithm SignatureMethod
         {
             get { return this.signatureMethod; }
-            set { this.signatureMethod = value; }
+            set { 
+                this.signatureMethod = value;
+                this.isSignatureMethodExplicitlySet = true;
+            }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the SignatureMethod property was explicitly set by the user.
+        /// This is used for backwards compatibility to determine when legacy SignatureMethod configuration
+        /// should take precedence over auth scheme preferences.
+        /// </summary>
+        public bool IsSignatureMethodExplicitlySet
+        {
+            get { return this.isSignatureMethodExplicitlySet; }
         }
 
         /// <summary>
@@ -317,18 +332,18 @@ namespace Amazon.Runtime
         /// </summary>
         public string ServiceURL
         {
-            get 
+            get
             {
                 if (!didProcessServiceURL && this.serviceURL == null && IgnoreConfiguredEndpointUrls == false && ServiceId != null)
                 {
-                    
+
                     string serviceSpecificTransformedEnvironmentVariable = TransformServiceId.TransformServiceIdToEnvVariable(ServiceId);
                     string transformedConfigServiceId = TransformServiceId.TransformServiceIdToConfigVariable(ServiceId);
 
                     if (Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable) != null)
                     {
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific environment variable: {serviceSpecificTransformedEnvironmentVariable}.");
-                        this.ServiceURL = Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable);                    
+                        this.ServiceURL = Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable);
                     }
                     else if (Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE) != null)
                     {
@@ -348,7 +363,7 @@ namespace Amazon.Runtime
                         {
                             CredentialProfileStoreChain.TryGetProfile(DefaultAWSCredentialsIdentityResolver.GetProfileName(), out profile);
                         }
-                        if(profile != null)
+                        if (profile != null)
                         {
                             if (profile.NestedProperties.TryGetValue(transformedConfigServiceId, out innerDictionary))
                             {
@@ -381,8 +396,8 @@ namespace Amazon.Runtime
                         $"ServiceUrl was set last, ServiceUrl: {value} will be used to make the request and RegionEndpoint: {this.regionEndpoint} has been set to null.");
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
-                
-                if(!string.IsNullOrEmpty(value))
+
+                if (!string.IsNullOrEmpty(value))
                 {
                     // If the URL passed in only has a host name make sure there is an ending "/" to avoid signature mismatch issues.
                     // If there is a resource path do not add a "/" because the marshallers are relying on the URL to be in format without the "/".
@@ -399,7 +414,7 @@ namespace Amazon.Runtime
                             }
                         }
                     }
-                    catch(UriFormatException)
+                    catch (UriFormatException)
                     {
                         throw new AmazonClientException("Value for ServiceURL is not a valid URL: " + value);
                     }
@@ -444,7 +459,7 @@ namespace Amazon.Runtime
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
         }
-        
+
         /// <summary>
         /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
         /// The transformed value of the service ID (replace any spaces in the service ID 
@@ -540,7 +555,7 @@ namespace Amazon.Runtime
             get { return progressUpdateInterval; }
             set { progressUpdateInterval = value; }
         }
-        
+
 
         /// <summary>
         /// Flag on whether to resign requests on retry or not.
@@ -638,9 +653,9 @@ namespace Amazon.Runtime
         /// </summary>
         public ICredentials ProxyCredentials
         {
-            get 
+            get
             {
-                if(this.proxyCredentials == null &&
+                if (this.proxyCredentials == null &&
                     (!string.IsNullOrEmpty(AWSConfigs.ProxyConfig.Username) ||
                     !string.IsNullOrEmpty(AWSConfigs.ProxyConfig.Password)))
                 {
@@ -794,7 +809,7 @@ namespace Amazon.Runtime
         /// </remarks>
         public bool UseDualstackEndpoint
         {
-            get 
+            get
             {
                 if (!this.useDualstackEndpoint.HasValue)
                 {
@@ -873,10 +888,10 @@ namespace Amazon.Runtime
 
                 return this.requestMinCompressionSizeBytes.Value;
             }
-            set 
+            set
             {
                 ValidateMinCompression(value);
-                requestMinCompressionSizeBytes = value; 
+                requestMinCompressionSizeBytes = value;
             }
         }
 
@@ -902,7 +917,7 @@ namespace Amazon.Runtime
 
                 return this.clientAppId;
             }
-            set 
+            set
             {
                 ValidateClientAppId(value);
                 this.clientAppId = value;
@@ -1034,7 +1049,7 @@ namespace Amazon.Runtime
             }
             set { this.retryMode = value; }
         }
-        
+
         /// <summary>
         /// Under Adaptive retry mode, this flag determines if the client should wait for
         /// a send token to become available or don't block and fail the request immediately
@@ -1184,6 +1199,28 @@ namespace Amazon.Runtime
             get { return this.telemetryProvider; }
             set { this.telemetryProvider = value; }
         }
+
+        /// <summary>
+        /// Gets or sets the authentication scheme preference for this client configuration.
+        /// <para>
+        /// This property allows you to specify a preference list of authentication schemes
+        /// that will be used to reprioritize the supported authentication schemes for this client.
+        /// If not set, the client will use the global <see cref="AWSConfigs.AuthSchemePreference"/>
+        /// or fall back to the default model-based authentication scheme resolution.
+        /// </para>
+        /// </summary>
+        public AuthSchemePreference AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// Gets or sets the SigV4a signing region set configuration for this client.
+        /// <para>
+        /// This property allows you to specify the region set that will be used for SigV4a signing.
+        /// The region set determines which regions the signed request is valid for.
+        /// If not set, the client will use environment variables, configuration files,
+        /// endpoints metadata, or fall back to the client's configured region.
+        /// </para>
+        /// </summary>
+        public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
 
         /// <summary>
         /// Determines the behavior for calculating checksums for request payloads.
