@@ -15,6 +15,7 @@
 
 using Microsoft.Extensions.AI;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.BedrockRuntime;
 
@@ -52,5 +53,19 @@ public static class AmazonBedrockRuntimeExtensions
     public static IEmbeddingGenerator<string, Embedding<float>> AsIEmbeddingGenerator(
         this IAmazonBedrockRuntime runtime, string? defaultModelId = null, int? defaultModelDimensions = null) =>
         runtime is not null ? new BedrockEmbeddingGenerator(runtime, defaultModelId, defaultModelDimensions) :
+        throw new ArgumentNullException(nameof(runtime));
+
+    /// <summary>Gets an <see cref="IImageGenerator"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
+    /// <param name="runtime">The runtime instance to be represented as an <see cref="IImageGenerator"/>.</param>
+    /// <param name="defaultModelId">
+    /// The default model ID to use when no model is specified in a request. If not specified,
+    /// a model must be provided in the <see cref="ImageGenerationOptions.ModelId"/> passed to <see cref="IImageGenerator.GenerateAsync"/>.
+    /// </param>
+    /// <returns>An <see cref="IImageGenerator"/> instance representing the <see cref="IAmazonBedrockRuntime"/> instance.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
+    [Experimental("MEAI001")]
+    public static IImageGenerator AsIImageGenerator(
+        this IAmazonBedrockRuntime runtime, string? defaultModelId = null) =>
+        runtime is not null ? new BedrockImageGenerator(runtime, defaultModelId) :
         throw new ArgumentNullException(nameof(runtime));
 }
