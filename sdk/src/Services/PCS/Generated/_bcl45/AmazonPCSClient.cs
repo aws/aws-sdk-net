@@ -39,11 +39,11 @@ namespace Amazon.PCS
     /// <summary>
     /// <para>Implementation for accessing PCS</para>
     ///
-    /// Amazon Web Services Parallel Computing Service (Amazon Web Services PCS) is a managed
-    /// service that makes it easier for you to run and scale your high performance computing
-    /// (HPC) workloads, and build scientific and engineering models on Amazon Web Services
-    /// using Slurm. For more information, see the <a href="https://docs.aws.amazon.com/pcs/latest/userguide">Amazon
-    /// Web Services Parallel Computing Service User Guide</a>.
+    /// Parallel Computing Service (PCS) is a managed service that makes it easier for you
+    /// to run and scale your high performance computing (HPC) workloads, and build scientific
+    /// and engineering models on Amazon Web Services using Slurm. For more information, see
+    /// the <a href="https://docs.aws.amazon.com/pcs/latest/userguide">Parallel Computing
+    /// Service User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -54,21 +54,20 @@ namespace Amazon.PCS
     /// </para>
     ///  
     /// <para>
-    /// The API actions operate on Amazon Web Services PCS resources. A <i>resource</i> is
-    /// an entity in Amazon Web Services that you can work with. Amazon Web Services services
-    /// create resources when you use the features of the service. Examples of Amazon Web
-    /// Services PCS resources include clusters, compute node groups, and queues. For more
-    /// information about resources in Amazon Web Services, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-resource">Resource</a>
+    /// The API actions operate on PCS resources. A <i>resource</i> is an entity in Amazon
+    /// Web Services that you can work with. Amazon Web Services services create resources
+    /// when you use the features of the service. Examples of PCS resources include clusters,
+    /// compute node groups, and queues. For more information about resources in Amazon Web
+    /// Services, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-resource">Resource</a>
     /// in the <i>Resource Explorer User Guide</i>. 
     /// </para>
     ///  
     /// <para>
-    /// An Amazon Web Services PCS <i>compute node</i> is an Amazon EC2 instance. You don't
-    /// launch compute nodes directly. Amazon Web Services PCS uses configuration information
-    /// that you provide to launch compute nodes in your Amazon Web Services account. You
-    /// receive billing charges for your running compute nodes. Amazon Web Services PCS automatically
-    /// terminates your compute nodes when you delete the Amazon Web Services PCS resources
-    /// related to those compute nodes.
+    /// An PCS <i>compute node</i> is an Amazon EC2 instance. You don't launch compute nodes
+    /// directly. PCS uses configuration information that you provide to launch compute nodes
+    /// in your Amazon Web Services account. You receive billing charges for your running
+    /// compute nodes. PCS automatically terminates your compute nodes when you delete the
+    /// PCS resources related to those compute nodes.
     /// </para>
     /// </summary>
     public partial class AmazonPCSClient : AmazonServiceClient, IAmazonPCS
@@ -298,18 +297,18 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Creates a cluster in your account. Amazon Web Services PCS creates the cluster controller
-        /// in a service-owned account. The cluster controller communicates with the cluster resources
-        /// in your account. The subnets and security groups for the cluster must already exist
-        /// before you use this API action.
+        /// Creates a cluster in your account. PCS creates the cluster controller in a service-owned
+        /// account. The cluster controller communicates with the cluster resources in your account.
+        /// The subnets and security groups for the cluster must already exist before you use
+        /// this API action.
         /// 
         ///  <note> 
         /// <para>
-        /// It takes time for Amazon Web Services PCS to create the cluster. The cluster is in
-        /// a <c>Creating</c> state until it is ready to use. There can only be 1 cluster in a
-        /// <c>Creating</c> state per Amazon Web Services Region per Amazon Web Services account.
-        /// <c>CreateCluster</c> fails with a <c>ServiceQuotaExceededException</c> if there is
-        /// already a cluster in a <c>Creating</c> state.
+        /// It takes time for PCS to create the cluster. The cluster is in a <c>Creating</c> state
+        /// until it is ready to use. There can only be 1 cluster in a <c>Creating</c> state per
+        /// Amazon Web Services Region per Amazon Web Services account. <c>CreateCluster</c> fails
+        /// with a <c>ServiceQuotaExceededException</c> if there is already a cluster in a <c>Creating</c>
+        /// state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -369,7 +368,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ServiceQuotaExceededException">
         /// You exceeded your service quota. Service quotas, also referred to as limits, are the
@@ -438,18 +437,18 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Creates a cluster in your account. Amazon Web Services PCS creates the cluster controller
-        /// in a service-owned account. The cluster controller communicates with the cluster resources
-        /// in your account. The subnets and security groups for the cluster must already exist
-        /// before you use this API action.
+        /// Creates a cluster in your account. PCS creates the cluster controller in a service-owned
+        /// account. The cluster controller communicates with the cluster resources in your account.
+        /// The subnets and security groups for the cluster must already exist before you use
+        /// this API action.
         /// 
         ///  <note> 
         /// <para>
-        /// It takes time for Amazon Web Services PCS to create the cluster. The cluster is in
-        /// a <c>Creating</c> state until it is ready to use. There can only be 1 cluster in a
-        /// <c>Creating</c> state per Amazon Web Services Region per Amazon Web Services account.
-        /// <c>CreateCluster</c> fails with a <c>ServiceQuotaExceededException</c> if there is
-        /// already a cluster in a <c>Creating</c> state.
+        /// It takes time for PCS to create the cluster. The cluster is in a <c>Creating</c> state
+        /// until it is ready to use. There can only be 1 cluster in a <c>Creating</c> state per
+        /// Amazon Web Services Region per Amazon Web Services account. <c>CreateCluster</c> fails
+        /// with a <c>ServiceQuotaExceededException</c> if there is already a cluster in a <c>Creating</c>
+        /// state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -512,7 +511,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ServiceQuotaExceededException">
         /// You exceeded your service quota. Service quotas, also referred to as limits, are the
@@ -586,13 +585,13 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Creates a managed set of compute nodes. You associate a compute node group with a
-        /// cluster through 1 or more Amazon Web Services PCS queues or as part of the login fleet.
-        /// A compute node group includes the definition of the compute properties and lifecycle
-        /// management. Amazon Web Services PCS uses the information you provide to this API action
-        /// to launch compute nodes in your account. You can only specify subnets in the same
-        /// Amazon VPC as your cluster. You receive billing charges for the compute nodes that
-        /// Amazon Web Services PCS launches in your account. You must already have a launch template
-        /// before you call this API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
+        /// cluster through 1 or more PCS queues or as part of the login fleet. A compute node
+        /// group includes the definition of the compute properties and lifecycle management.
+        /// PCS uses the information you provide to this API action to launch compute nodes in
+        /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
+        /// You receive billing charges for the compute nodes that PCS launches in your account.
+        /// You must already have a launch template before you call this API. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide for Linux Instances</i>.
         /// </summary>
@@ -652,7 +651,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -731,13 +730,13 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Creates a managed set of compute nodes. You associate a compute node group with a
-        /// cluster through 1 or more Amazon Web Services PCS queues or as part of the login fleet.
-        /// A compute node group includes the definition of the compute properties and lifecycle
-        /// management. Amazon Web Services PCS uses the information you provide to this API action
-        /// to launch compute nodes in your account. You can only specify subnets in the same
-        /// Amazon VPC as your cluster. You receive billing charges for the compute nodes that
-        /// Amazon Web Services PCS launches in your account. You must already have a launch template
-        /// before you call this API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
+        /// cluster through 1 or more PCS queues or as part of the login fleet. A compute node
+        /// group includes the definition of the compute properties and lifecycle management.
+        /// PCS uses the information you provide to this API action to launch compute nodes in
+        /// your account. You can only specify subnets in the same Amazon VPC as your cluster.
+        /// You receive billing charges for the compute nodes that PCS launches in your account.
+        /// You must already have a launch template before you call this API. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
         /// an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide for Linux Instances</i>.
         /// </summary>
@@ -800,7 +799,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -941,7 +940,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1081,7 +1080,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1222,7 +1221,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1337,7 +1336,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1453,7 +1452,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1568,7 +1567,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1626,8 +1625,7 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Deletes a job queue. If the compute node group associated with this queue isn't associated
-        /// with any other queues, Amazon Web Services PCS terminates all the compute nodes for
-        /// this queue.
+        /// with any other queues, PCS terminates all the compute nodes for this queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -1685,7 +1683,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1739,8 +1737,7 @@ namespace Amazon.PCS
 
         /// <summary>
         /// Deletes a job queue. If the compute node group associated with this queue isn't associated
-        /// with any other queues, Amazon Web Services PCS terminates all the compute nodes for
-        /// this queue.
+        /// with any other queues, PCS terminates all the compute nodes for this queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -1801,7 +1798,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -1918,7 +1915,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2034,7 +2031,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2151,7 +2148,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2267,7 +2264,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2383,7 +2380,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2498,7 +2495,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2613,7 +2610,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2727,7 +2724,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2842,7 +2839,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -2956,7 +2953,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -3071,7 +3068,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -3185,7 +3182,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -3242,7 +3239,7 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Returns a list of all tags on an Amazon Web Services PCS resource.
+        /// Returns a list of all tags on an PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3268,7 +3265,7 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Returns a list of all tags on an Amazon Web Services PCS resource.
+        /// Returns a list of all tags on an PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3307,8 +3304,7 @@ namespace Amazon.PCS
         /// 
         ///  </important> 
         /// <para>
-        /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
-        /// in your account.
+        /// PCS uses this API action to register the compute nodes it launches in your account.
         /// </para>
         /// 
         /// </para>
@@ -3342,7 +3338,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">REST API Reference for RegisterComputeNodeGroupInstance Operation</seealso>
         public virtual RegisterComputeNodeGroupInstanceResponse RegisterComputeNodeGroupInstance(RegisterComputeNodeGroupInstanceRequest request)
@@ -3362,8 +3358,7 @@ namespace Amazon.PCS
         /// 
         ///  </important> 
         /// <para>
-        /// Amazon Web Services PCS uses this API action to register the compute nodes it launches
-        /// in your account.
+        /// PCS uses this API action to register the compute nodes it launches in your account.
         /// </para>
         /// 
         /// </para>
@@ -3400,7 +3395,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">REST API Reference for RegisterComputeNodeGroupInstance Operation</seealso>
         public virtual Task<RegisterComputeNodeGroupInstanceResponse> RegisterComputeNodeGroupInstanceAsync(RegisterComputeNodeGroupInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3418,10 +3413,10 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists of a
-        /// tag key and a tag value. The tag key and tag value are case-sensitive strings. The
-        /// tag value can be an empty (null) string. To add a tag, specify a new tag key and a
-        /// tag value. To edit a tag, specify an existing tag key and a new tag value.
+        /// Adds or edits tags on an PCS resource. Each tag consists of a tag key and a tag value.
+        /// The tag key and tag value are case-sensitive strings. The tag value can be an empty
+        /// (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag,
+        /// specify an existing tag key and a new tag value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3472,10 +3467,10 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Adds or edits tags on an Amazon Web Services PCS resource. Each tag consists of a
-        /// tag key and a tag value. The tag key and tag value are case-sensitive strings. The
-        /// tag value can be an empty (null) string. To add a tag, specify a new tag key and a
-        /// tag value. To edit a tag, specify an existing tag key and a new tag value.
+        /// Adds or edits tags on an PCS resource. Each tag consists of a tag key and a tag value.
+        /// The tag key and tag value are case-sensitive strings. The tag value can be an empty
+        /// (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag,
+        /// specify an existing tag key and a new tag value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3533,8 +3528,8 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Deletes tags from an Amazon Web Services PCS resource. To delete a tag, specify the
-        /// tag key and the Amazon Resource Name (ARN) of the Amazon Web Services PCS resource.
+        /// Deletes tags from an PCS resource. To delete a tag, specify the tag key and the Amazon
+        /// Resource Name (ARN) of the PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3560,8 +3555,8 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Deletes tags from an Amazon Web Services PCS resource. To delete a tag, specify the
-        /// tag key and the Amazon Resource Name (ARN) of the Amazon Web Services PCS resource.
+        /// Deletes tags from an PCS resource. To delete a tag, specify the tag key and the Amazon
+        /// Resource Name (ARN) of the PCS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3654,7 +3649,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -3795,7 +3790,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -3936,7 +3931,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting
@@ -4076,7 +4071,7 @@ namespace Amazon.PCS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.InternalServerException">
-        /// Amazon Web Services PCS can't process your request right now. Try again later.
+        /// PCS can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.PCS.Model.ResourceNotFoundException">
         /// The requested resource can't be found. The cluster, node group, or queue you're attempting

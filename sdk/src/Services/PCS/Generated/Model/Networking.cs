@@ -131,10 +131,10 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface
-        /// (ENI) to enable communication between managed controllers and Amazon Web Services
-        /// PCS resources. The subnet must have an available IP address, cannot reside in AWS
-        /// Outposts, AWS Wavelength, or an AWS Local Zone.
+        /// The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable
+        /// communication between managed controllers and PCS resources. The subnet must have
+        /// an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services
+        /// Local Zone.
         /// </para>
         ///  
         /// <para>

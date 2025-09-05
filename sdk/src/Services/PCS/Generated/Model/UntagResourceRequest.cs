@@ -31,8 +31,8 @@ namespace Amazon.PCS.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes tags from an Amazon Web Services PCS resource. To delete a tag, specify the
-    /// tag key and the Amazon Resource Name (ARN) of the Amazon Web Services PCS resource.
+    /// Deletes tags from an PCS resource. To delete a tag, specify the tag key and the Amazon
+    /// Resource Name (ARN) of the PCS resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPCSRequest
     {
