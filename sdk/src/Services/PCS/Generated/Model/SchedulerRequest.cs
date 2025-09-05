@@ -40,7 +40,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The software Amazon Web Services PCS uses to manage cluster scaling and job scheduling.
+        /// The software PCS uses to manage cluster scaling and job scheduling.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,9 +59,9 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the specified scheduling software that Amazon Web Services PCS uses
-        /// to manage cluster scaling and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
-        /// versions in Amazon Web Services PCS</a> in the <i>Amazon Web Services PCS User Guide</i>.
+        /// The version of the specified scheduling software that PCS uses to manage cluster scaling
+        /// and job scheduling. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
+        /// versions in PCS</a> in the <i>PCS User Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -40,7 +40,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        /// Amazon Web Services PCS supports configuration of the following Slurm parameters:
+        /// PCS supports configuration of the following Slurm parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -61,7 +61,18 @@ namespace Amazon.PCS.Model
         ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <c>SelectTypeParameters</c>
         /// </a> 
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_AccountingStorageEnforce">
+        /// <c>AccountingStorageEnforce</c> </a> 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// PCS supports a subset of the options for <c>AccountingStorageEnforce</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-accounting.html">Slurm
+        /// accounting in PCS</a> in the <i>PCS User Guide</i>.
+        /// </para>
+        ///  </important> </li> </ul> </li> <li> 
         /// <para>
         /// For <b>compute node groups</b> 
         /// </para>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// An EC2 instance configuration Amazon Web Services PCS uses to launch compute nodes.
+    /// An EC2 instance configuration PCS uses to launch compute nodes.
     /// </summary>
     public partial class InstanceConfig
     {
@@ -39,8 +39,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type that Amazon Web Services PCS can provision in the compute node
-        /// group.
+        /// The EC2 instance type that PCS can provision in the compute node group.
         /// </para>
         ///  
         /// <para>

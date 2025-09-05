@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// Amazon Web Services PCS can't process your request right now. Try again later.
+    /// PCS can't process your request right now. Try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

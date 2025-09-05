@@ -55,9 +55,8 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// The ID of the Amazon Machine Image (AMI) that Amazon Web Services PCS uses to launch
-        /// instances. If not provided, Amazon Web Services PCS uses the AMI ID specified in the
-        /// custom launch template.
+        /// The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances. If not
+        /// provided, PCS uses the AMI ID specified in the custom launch template.
         /// </para>
         /// </summary>
         public string AmiId
