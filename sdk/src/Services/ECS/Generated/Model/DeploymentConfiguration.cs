@@ -207,7 +207,7 @@ namespace Amazon.ECS.Model
         /// one-by-one — using the <c>minimumHealthyPercent</c> as a constraint — to clear up
         /// capacity to launch replacement tasks. For more information about how the scheduler
         /// replaces unhealthy tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Amazon
-        /// ECS services</a> . 
+        /// ECS services</a>. 
         /// </para>
         ///  
         /// <para>
