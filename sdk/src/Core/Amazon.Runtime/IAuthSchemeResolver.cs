@@ -14,6 +14,7 @@
  */
 
 using System.Collections.Generic;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime
 {
@@ -31,8 +32,8 @@ namespace Amazon.Runtime
         /// An ordered list of authentication schemes with preferred schemes prioritized first,
         /// followed by any remaining supported schemes. Unsupported schemes in the preference list are ignored.
         /// </returns>
-        IReadOnlyList<AuthScheme> ResolveAuthSchemes(
+        IReadOnlyList<IAuthSchemeOption> ResolveAuthSchemes(
             IClientConfig clientConfig, 
-            IReadOnlyList<AuthScheme> supportedSchemes);
+            IReadOnlyList<IAuthSchemeOption> supportedSchemes);
     }
 }

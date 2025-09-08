@@ -16,6 +16,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime
@@ -29,18 +31,6 @@ namespace Amazon.Runtime
         private readonly Logger _logger = Logger.GetLogger(typeof(DefaultAuthSchemeResolver));
 
         /// <summary>
-        /// A mapping of authentication scheme names to their corresponding AuthScheme instances.
-        /// Note: Authentication scheme names are case-sensitive per the Multi-auth specification.
-        /// </summary>
-        private static readonly Dictionary<string, AuthScheme> KnownSchemes = new Dictionary<string, AuthScheme>(StringComparer.Ordinal)
-        {
-            { AuthScheme.SigV4.Name, AuthScheme.SigV4 },
-            { AuthScheme.SigV4a.Name, AuthScheme.SigV4a },
-            { AuthScheme.HttpBearerAuth.Name, AuthScheme.HttpBearerAuth },
-            { AuthScheme.NoAuth.Name, AuthScheme.NoAuth }
-        };
-
-        /// <summary>
         /// Resolves and reprioritizes authentication schemes based on the client configuration preferences.
         /// </summary>
         /// <param name="clientConfig">The client configuration containing authentication scheme preferences.</param>
@@ -49,14 +39,14 @@ namespace Amazon.Runtime
         /// An ordered list of authentication schemes with preferred schemes prioritized first,
         /// followed by any remaining supported schemes. Unsupported schemes in the preference list are ignored.
         /// </returns>
-        public IReadOnlyList<AuthScheme> ResolveAuthSchemes(
+        public IReadOnlyList<IAuthSchemeOption> ResolveAuthSchemes(
             IClientConfig clientConfig, 
-            IReadOnlyList<AuthScheme> supportedSchemes)
+            IReadOnlyList<IAuthSchemeOption> supportedSchemes)
         {
             if (supportedSchemes == null || supportedSchemes.Count == 0)
             {
                 _logger.DebugFormat("No supported schemes provided, returning empty list");
-                return new List<AuthScheme>().AsReadOnly();
+                return new List<IAuthSchemeOption>().AsReadOnly();
             }
 
             try
@@ -68,16 +58,16 @@ namespace Amazon.Runtime
                 if (authSchemePreference == null || authSchemePreference.IsEmpty)
                 {
                     _logger.DebugFormat("No auth scheme preference configured, using default order: {0}", 
-                        string.Join(", ", supportedSchemes.Select(s => s.Name)));
+                        string.Join(", ", supportedSchemes.Select(s => s.SchemeId)));
                     return supportedSchemes;
                 }
 
                 _logger.DebugFormat("Applying auth scheme preference: {0}", authSchemePreference);
-                _logger.DebugFormat("Supported schemes: {0}", string.Join(", ", supportedSchemes.Select(s => s.Name)));
+                _logger.DebugFormat("Supported schemes: {0}", string.Join(", ", supportedSchemes.Select(s => s.SchemeId)));
 
                 var result = ReprioritizeSchemes(authSchemePreference, supportedSchemes);
 
-                _logger.InfoFormat("Resolved auth scheme order: {0}", string.Join(", ", result.Select(s => s.Name)));
+                _logger.InfoFormat("Resolved auth scheme order: {0}", string.Join(", ", result.Select(s => s.SchemeId)));
                 return result;
             }
             catch (ArgumentException ex)
@@ -98,12 +88,12 @@ namespace Amazon.Runtime
         /// <param name="preference">The authentication scheme preference.</param>
         /// <param name="supportedSchemes">The list of supported authentication schemes.</param>
         /// <returns>A reprioritized list of authentication schemes.</returns>
-        private IReadOnlyList<AuthScheme> ReprioritizeSchemes(
+        private IReadOnlyList<IAuthSchemeOption> ReprioritizeSchemes(
             AuthSchemePreference preference, 
-            IReadOnlyList<AuthScheme> supportedSchemes)
+            IReadOnlyList<IAuthSchemeOption> supportedSchemes)
         {
-            var result = new List<AuthScheme>();
-            var remainingSchemes = new List<AuthScheme>(supportedSchemes);
+            var result = new List<IAuthSchemeOption>();
+            var remainingSchemes = new List<IAuthSchemeOption>(supportedSchemes);
 
             foreach (var preferredSchemeName in preference.PreferenceList)
             {
@@ -112,7 +102,7 @@ namespace Amazon.Runtime
                 {
                     result.Add(matchingScheme);
                     remainingSchemes.Remove(matchingScheme);
-                    _logger.DebugFormat("Added preferred scheme: {0}", matchingScheme.Name);
+                    _logger.DebugFormat("Added preferred scheme: {0}", matchingScheme.SchemeId);
                 }
                 else
                 {
@@ -123,7 +113,7 @@ namespace Amazon.Runtime
             foreach (var remainingScheme in remainingSchemes)
             {
                 result.Add(remainingScheme);
-                _logger.DebugFormat("Added remaining supported scheme: {0}", remainingScheme.Name);
+                _logger.DebugFormat("Added remaining supported scheme: {0}", remainingScheme.SchemeId);
             }
 
             return result.AsReadOnly();
@@ -134,37 +124,28 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="schemeName">The name of the authentication scheme to find.</param>
         /// <param name="supportedSchemes">The list of supported authentication schemes.</param>
-        /// <returns>The matching AuthScheme if found; otherwise, null.</returns>
-        private static AuthScheme FindMatchingScheme(string schemeName, IList<AuthScheme> supportedSchemes)
+        /// <returns>The matching IAuthSchemeOption if found; otherwise, null.</returns>
+        private static IAuthSchemeOption FindMatchingScheme(string schemeName, IList<IAuthSchemeOption> supportedSchemes)
         {
             if (string.IsNullOrWhiteSpace(schemeName))
                 return null;
 
             var trimmedSchemeName = schemeName.Trim();
             
+            // First try to match by short name (e.g., "sigv4")
             var matchingScheme = supportedSchemes.FirstOrDefault(scheme => 
-                string.Equals(scheme.Name, trimmedSchemeName, StringComparison.Ordinal));
+            {
+                var shortName = AuthSchemeOption.GetNameFromSchemeId(scheme.SchemeId);
+                return string.Equals(shortName, trimmedSchemeName, StringComparison.Ordinal);
+            });
 
             if (matchingScheme != null)
                 return matchingScheme;
 
-            matchingScheme = supportedSchemes.FirstOrDefault(scheme =>
-            {
-                if (string.Equals(scheme.SchemeId, trimmedSchemeName, StringComparison.Ordinal))
-                    return true;
-                    
-                var schemeIdParts = scheme.SchemeId.Split('#');
-                if (schemeIdParts.Length == 2)
-                {
-                    var extractedName = schemeIdParts[1];
-                    if (string.Equals(extractedName, trimmedSchemeName, StringComparison.Ordinal))
-                        return true;
-                }
-                
-                return false;
-            });
-
-            return matchingScheme;
+            // If no match by short name, try matching by full scheme ID
+            // This supports specifying full IDs like "aws.auth#sigv4" in preferences
+            return supportedSchemes.FirstOrDefault(scheme => 
+                string.Equals(scheme.SchemeId, trimmedSchemeName, StringComparison.Ordinal));
         }
     }
 }

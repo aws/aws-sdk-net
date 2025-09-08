@@ -82,17 +82,55 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestMethod]
+        public void AuthSchemeOption_Name_ExtractsCorrectly()
+        {
+            // Test that the Name property correctly extracts the short name from the scheme ID
+            var sigv4Option = new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 };
+            Assert.AreEqual("sigv4", sigv4Option.Name);
+
+            var sigv4aOption = new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A };
+            Assert.AreEqual("sigv4a", sigv4aOption.Name);
+
+            var bearerOption = new AuthSchemeOption { SchemeId = AuthSchemeOption.Bearer };
+            Assert.AreEqual("httpBearerAuth", bearerOption.Name);
+
+            var noAuthOption = new AuthSchemeOption { SchemeId = AuthSchemeOption.NoAuth };
+            Assert.AreEqual("noAuth", noAuthOption.Name);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestMethod]
+        public void AuthSchemeOption_GetNameFromSchemeId_ExtractsCorrectly()
+        {
+            // Test the static GetNameFromSchemeId method
+            Assert.AreEqual("sigv4", AuthSchemeOption.GetNameFromSchemeId("aws.auth#sigv4"));
+            Assert.AreEqual("sigv4a", AuthSchemeOption.GetNameFromSchemeId("aws.auth#sigv4a"));
+            Assert.AreEqual("httpBearerAuth", AuthSchemeOption.GetNameFromSchemeId("smithy.api#httpBearerAuth"));
+            Assert.AreEqual("noAuth", AuthSchemeOption.GetNameFromSchemeId("smithy.api#noAuth"));
+            
+            // Test edge cases
+            Assert.AreEqual("simple", AuthSchemeOption.GetNameFromSchemeId("simple"));
+            Assert.AreEqual(null, AuthSchemeOption.GetNameFromSchemeId(null));
+            Assert.AreEqual("", AuthSchemeOption.GetNameFromSchemeId(""));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestMethod]
         public void AuthSchemeResolver_CanResolveSchemes()
         {
             // Test that the DefaultAuthSchemeResolver can resolve schemes
             var resolver = new DefaultAuthSchemeResolver();
-            var supportedSchemes = new List<AuthScheme> { AuthScheme.SigV4, AuthScheme.SigV4a };
+            var supportedSchemes = new List<IAuthSchemeOption> 
+            { 
+                new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
+                new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A }
+            };
             
             var result = resolver.ResolveAuthSchemes(null, supportedSchemes);
             
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(AuthScheme.SigV4, result[0]);
-            Assert.AreEqual(AuthScheme.SigV4a, result[1]);
+            Assert.AreEqual(AuthSchemeOption.SigV4, result[0].SchemeId);
+            Assert.AreEqual(AuthSchemeOption.SigV4A, result[1].SchemeId);
         }
 
         [TestCategory("UnitTest")]
