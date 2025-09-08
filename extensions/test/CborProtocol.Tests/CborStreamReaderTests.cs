@@ -845,5 +845,326 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
         Assert.Equal(CborReaderState.Finished, reader.PeekState());
     }
 
+    [Fact]
+    public void Unmarshall_NestedArrays_MixedLengthsAcrossBuffers()
+    {
+        var writer = new CborWriter();
+
+        // Outer array: 3 items (definite length)
+        writer.WriteStartArray(3);
+
+        // Item 1: long string to force buffer refill
+        writer.WriteTextString(new string('A', 150));
+
+        // Item 2: definite-length array with 2 items
+        writer.WriteStartArray(2);
+        writer.WriteInt32(100);
+        writer.WriteInt32(200);
+        writer.WriteEndArray();
+
+        // Item 3: indefinite-length array with mixed items
+        writer.WriteStartArray(null);
+        writer.WriteTextString("inner1");
+        writer.WriteTextString(new string('B', 120)); // cross buffer
+        writer.WriteEndArray();
+
+        writer.WriteEndArray(); // End outer array
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+
+        // Item 1
+        string longString = reader.ReadTextString();
+        Assert.Equal(150, longString.Length);
+
+        // Item 2: definite-length array
+        reader.ReadStartArray();
+        Assert.Equal(100, reader.ReadInt32());
+        Assert.Equal(200, reader.ReadInt32());
+        reader.ReadEndArray();
+
+        // Item 3: indefinite-length array
+        reader.ReadStartArray();
+        Assert.Equal("inner1", reader.ReadTextString());
+        string longStringB = reader.ReadTextString();
+        Assert.Equal(120, longStringB.Length);
+        reader.ReadEndArray();
+
+        reader.ReadEndArray();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Unmarshall_NestedMaps_MixedLengthsAcrossBuffers()
+    {
+        var writer = new CborWriter();
+
+        // Outer map: 2 pairs (definite length)
+        writer.WriteStartMap(2);
+
+        // Pair 1: key = "k1", value = definite-length map
+        writer.WriteTextString("k1");
+        writer.WriteStartMap(2);
+        writer.WriteTextString("innerKey1");
+        writer.WriteTextString(new string('X', 130)); // crosses buffer
+        writer.WriteTextString("innerKey2");
+        writer.WriteInt32(999);
+        writer.WriteEndMap();
+
+        // Pair 2: key = "k2", value = indefinite-length map
+        writer.WriteTextString("k2");
+        writer.WriteStartMap(null);
+        writer.WriteTextString("innerKey3");
+        writer.WriteTextString("innerVal3");
+        writer.WriteTextString("innerKey4");
+        writer.WriteTextString(new string('Y', 140)); // crosses buffer
+        writer.WriteEndMap();
+
+        writer.WriteEndMap(); // End outer map
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+
+        // Pair 1
+        Assert.Equal("k1", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("innerKey1", reader.ReadTextString());
+        string innerVal1 = reader.ReadTextString();
+        Assert.Equal(130, innerVal1.Length);
+        Assert.Equal("innerKey2", reader.ReadTextString());
+        Assert.Equal(999, reader.ReadInt32());
+        reader.ReadEndMap();
+
+        // Pair 2
+        Assert.Equal("k2", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("innerKey3", reader.ReadTextString());
+        Assert.Equal("innerVal3", reader.ReadTextString());
+        Assert.Equal("innerKey4", reader.ReadTextString());
+        string innerVal4 = reader.ReadTextString();
+        Assert.Equal(140, innerVal4.Length);
+        reader.ReadEndMap();
+
+        reader.ReadEndMap();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Unmarshall_NestedArrays_MixedDefiniteAndIndefiniteLengthsAcrossBuffers()
+    {
+        var writer = new CborWriter();
+
+        // Outer array: 3 items (definite length)
+        writer.WriteStartArray(3);
+
+        writer.WriteTextString(new string('A', 150));
+
+        // Item 2: definite-length array with 2 items
+        writer.WriteStartArray(2);
+        writer.WriteInt32(100);
+        writer.WriteInt32(200);
+        writer.WriteEndArray();
+
+        // Item 3: indefinite-length array with mixed items
+        writer.WriteStartArray(null);
+        writer.WriteTextString("inner1");
+        writer.WriteTextString(new string('B', 120));
+        writer.WriteEndArray();
+
+        writer.WriteEndArray();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+
+        // Item 1
+        string longString = reader.ReadTextString();
+        Assert.Equal(150, longString.Length);
+
+        // Item 2: definite-length array
+        reader.ReadStartArray();
+        Assert.Equal(100, reader.ReadInt32());
+        Assert.Equal(200, reader.ReadInt32());
+        reader.ReadEndArray();
+
+        // Item 3: indefinite-length array
+        reader.ReadStartArray();
+        Assert.Equal("inner1", reader.ReadTextString());
+        string longStringB = reader.ReadTextString();
+        Assert.Equal(120, longStringB.Length);
+        reader.ReadEndArray();
+
+        reader.ReadEndArray();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void Unmarshall_NestedMaps_MixedDefiniteAndIndefiniteLengthsAcrossBuffers()
+    {
+        var writer = new CborWriter();
+
+        writer.WriteStartMap(2);
+
+        // Pair 1: key = "k1", value = definite-length map
+        writer.WriteTextString("k1");
+        writer.WriteStartMap(2);
+        writer.WriteTextString("innerKey1");
+        writer.WriteTextString(new string('X', 130));
+        writer.WriteTextString("innerKey2");
+        writer.WriteInt32(999);
+        writer.WriteEndMap();
+
+        // Pair 2: key = "k2", value = indefinite-length map
+        writer.WriteTextString("k2");
+        writer.WriteStartMap(null);
+        writer.WriteTextString("innerKey3");
+        writer.WriteTextString("innerVal3");
+        writer.WriteTextString("innerKey4");
+        writer.WriteTextString(new string('Y', 140));
+        writer.WriteEndMap();
+
+        writer.WriteEndMap();
+
+        byte[] bytes = writer.Encode();
+        var stream = new MemoryStream(bytes);
+
+        using var reader = new CborStreamReader(stream);
+
+        reader.ReadStartMap();
+
+        // Pair 1
+        Assert.Equal("k1", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("innerKey1", reader.ReadTextString());
+        string innerVal1 = reader.ReadTextString();
+        Assert.Equal(130, innerVal1.Length);
+        Assert.Equal("innerKey2", reader.ReadTextString());
+        Assert.Equal(999, reader.ReadInt32());
+        reader.ReadEndMap();
+
+        // Pair 2
+        Assert.Equal("k2", reader.ReadTextString());
+        reader.ReadStartMap();
+        Assert.Equal("innerKey3", reader.ReadTextString());
+        Assert.Equal("innerVal3", reader.ReadTextString());
+        Assert.Equal("innerKey4", reader.ReadTextString());
+        string innerVal4 = reader.ReadTextString();
+        Assert.Equal(140, innerVal4.Length);
+        reader.ReadEndMap();
+
+        reader.ReadEndMap();
+
+        Assert.Equal(CborReaderState.Finished, reader.PeekState());
+    }
+
+    [Fact]
+    public void ReadNestedMixedArraysAndMaps_WithDefiniteAndIndefiniteLengthsAndLongItemsAcrossBuffers_ShouldSucceed()
+    {
+        var writer = new CborWriter();
+
+        writer.WriteStartArray(4);
+
+        writer.WriteStartArray(2);
+        writer.WriteInt32(1);
+        writer.WriteTextString(new string('a', 150));
+        writer.WriteEndArray();
+
+        writer.WriteStartArray(null);
+        writer.WriteStartArray(2);
+        writer.WriteInt32(2);
+        writer.WriteByteString(new byte[150]);
+        writer.WriteEndArray();
+        writer.WriteEndArray();
+
+        writer.WriteStartMap(2);
+
+        writer.WriteInt32(3);
+        writer.WriteStartArray(2);
+        writer.WriteTextString(new string('b', 150)); 
+        writer.WriteInt32(4);
+        writer.WriteEndArray();
+
+        writer.WriteInt32(5);
+        writer.WriteStartMap(1);
+        writer.WriteInt32(6);
+        writer.WriteByteString(new byte[150]);
+        writer.WriteEndMap();
+
+        writer.WriteEndMap();
+
+        writer.WriteStartMap(1);
+        writer.WriteInt32(7);
+        writer.WriteStartMap(null);
+        writer.WriteInt32(8);
+        writer.WriteTextString(new string('c', 150));
+        writer.WriteEndMap();
+        writer.WriteEndMap();
+
+        writer.WriteEndArray();
+
+        var encoding = writer.Encode();
+
+        using var stream = new MemoryStream(encoding);
+        var reader = new CborStreamReader(stream);
+
+        reader.ReadStartArray();
+
+        reader.ReadStartArray();
+        Assert.Equal(1, reader.ReadInt32());
+        var str1 = reader.ReadTextString();
+        Assert.Equal(new string('a', 150), str1);
+        reader.ReadEndArray();
+
+        reader.ReadStartArray();
+        reader.ReadStartArray();
+        Assert.Equal(2, reader.ReadInt32());
+        var bytes1 = reader.ReadByteString();
+        Assert.Equal(150, bytes1.Length);
+        reader.ReadEndArray();
+        reader.ReadEndArray();
+
+        reader.ReadStartMap();
+
+        Assert.Equal(3, reader.ReadInt32());
+        reader.ReadStartArray();
+        var str2 = reader.ReadTextString();
+        Assert.Equal(new string('b', 150), str2);
+        Assert.Equal(4, reader.ReadInt32());
+        reader.ReadEndArray();
+
+        Assert.Equal(5, reader.ReadInt32());
+        reader.ReadStartMap();
+        Assert.Equal(6, reader.ReadInt32());
+        var bytes2 = reader.ReadByteString();
+        Assert.Equal(150, bytes2.Length);
+        reader.ReadEndMap();
+
+        reader.ReadEndMap();
+
+        reader.ReadStartMap();
+        Assert.Equal(7, reader.ReadInt32());
+        reader.ReadStartMap();
+        Assert.Equal(8, reader.ReadInt32());
+        var str3 = reader.ReadTextString();
+        Assert.Equal(new string('c', 150), str3);
+        reader.ReadEndMap();
+        reader.ReadEndMap();
+
+        reader.ReadEndArray();
+    }
 }
 
