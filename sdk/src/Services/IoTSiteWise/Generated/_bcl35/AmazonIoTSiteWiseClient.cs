@@ -969,6 +969,13 @@ namespace Amazon.IoTSiteWise
         /// Creates an access policy that grants the specified identity (IAM Identity Center user,
         /// IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor
         /// portal or project resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Support for access policies that use an SSO Group as the identity is not supported
+        /// at this time.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// 
