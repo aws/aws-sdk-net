@@ -1,3 +1,11 @@
+### 4.0.86.0 (2025-09-08 18:49 UTC)
+* IoTSiteWise (4.0.3.0)
+	* Add ComputationModelVersion support in IoT SiteWise APIs
+* S3 (4.0.7.0)
+	* This release includes backward compatibility work on the "Expires" parameter.
+* SecurityHub (4.0.4.0)
+	* This release adds the RESOURCE_NOT_FOUND error code as a possible value in responses to the following operations: BatchGetStandardsControlAssociations, BatchUpdateStandardsControlAssociations, and BatchGetSecurityControls.
+
 ### 4.0.85.0 (2025-09-05 18:25 UTC)
 * ECS (4.0.4.8)
 	* This is a documentation only release that adds additional information for Amazon ECS Availability Zone rebalancing.
