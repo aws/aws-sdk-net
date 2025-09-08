@@ -28,11 +28,30 @@ namespace Amazon.Extensions.CborProtocol.Internal
     /// </summary>
     public class CborStreamReader : IDisposable
     {
+        /// <summary>
+        /// Represents a single container frame (map or array) within the nesting stack
+        /// of the <see cref="CborStreamReader"/>.
+        /// </summary>
         private class ContainerFrame
         {
+            /// <summary>
+            /// Gets the type of CBOR container (map or array).
+            /// </summary>
             public CborContainerType Type { get; }
+
+            /// <summary>
+            /// Gets the number of items left to be read in this container.
+            /// For indefinite-length containers, this value is <c>null</c>.
+            /// </summary>
             public int? RemainingItems { get; private set; }
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="ContainerFrame"/> class.
+            /// </summary>
+            /// <param name="type">The container type (map or array).</param>
+            /// <param name="remainingItems">
+            /// The number of items in the container, or <c>null</c> for indefinite-length containers.
+            /// </param>
             public ContainerFrame(CborContainerType type, int? remainingItems)
             {
                 Type = type;
@@ -44,6 +63,10 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 }
             }
 
+            /// <summary>
+            /// Decrements the <see cref="RemainingItems"/> count when an item is consumed.
+            /// For indefinite-length containers, this method does nothing.
+            /// </summary>
             public void ConsumeItem()
             {
                 RemainingItems = RemainingItems.HasValue ? RemainingItems.Value - 1 : (int?)null;
@@ -58,8 +81,12 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 }
             }
 
+            /// <summary>
+            /// Gets a value indicating whether this container has been fully consumed.
+            /// </summary>
             public bool IsComplete => RemainingItems == 0;
         }
+
         /// <summary>
         /// Enum to track the type of CBOR container (map or array)
         /// for state management within the CborStreamReader.
@@ -247,7 +274,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
                     // Try to refill first, maybe the break marker is in the next chunk.
                     RefillBuffer(0);
 
-                    if (IsNextByteEndOfContainer())
+                    if (!_nestingStack.Peek().RemainingItems.HasValue && IsNextByteEndOfContainer())
                     {
                         // If the next raw byte after refill is the CBOR "break" (0xFF), that indicates an
                         // indefinite-length container terminator. We must explicitly consume that break byte
