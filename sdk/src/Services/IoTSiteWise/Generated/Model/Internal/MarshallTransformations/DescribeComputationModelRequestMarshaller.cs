@@ -65,7 +65,11 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetComputationModelId())
                 throw new AmazonIoTSiteWiseException("Request object does not have required field ComputationModelId set");
             request.AddPathResource("{computationModelId}", StringUtils.FromString(publicRequest.ComputationModelId));
+            
+            if (publicRequest.IsSetComputationModelVersion())
+                request.Parameters.Add("computationModelVersion", StringUtils.FromString(publicRequest.ComputationModelVersion));
             request.ResourcePath = "/computation-models/{computationModelId}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"api.";
 

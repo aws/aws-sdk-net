@@ -1057,6 +1057,10 @@
     <pattern>^(?!00000000-0000-0000-0000-000000000000)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeComputationModelRequest.ComputationModelVersion</property>
+    <pattern>^(LATEST|ACTIVE|[1-9]{1}\d{0,9})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeComputationModelResponse.ComputationModelArn</property>
     <min>1</min>
     <max>1600</max>
