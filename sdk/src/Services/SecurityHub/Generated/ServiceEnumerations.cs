@@ -3500,6 +3500,10 @@ namespace Amazon.SecurityHub
         /// Constant NOT_FOUND for UnprocessedErrorCode
         /// </summary>
         public static readonly UnprocessedErrorCode NOT_FOUND = new UnprocessedErrorCode("NOT_FOUND");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode RESOURCE_NOT_FOUND = new UnprocessedErrorCode("RESOURCE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
