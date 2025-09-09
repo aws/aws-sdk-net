@@ -84,6 +84,10 @@ namespace Amazon.MediaPackageV2
         /// Constant DATERANGE for AdMarkerHls
         /// </summary>
         public static readonly AdMarkerHls DATERANGE = new AdMarkerHls("DATERANGE");
+        /// <summary>
+        /// Constant SCTE35_ENHANCED for AdMarkerHls
+        /// </summary>
+        public static readonly AdMarkerHls SCTE35_ENHANCED = new AdMarkerHls("SCTE35_ENHANCED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
