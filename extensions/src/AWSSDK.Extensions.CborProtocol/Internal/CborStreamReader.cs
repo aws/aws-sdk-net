@@ -29,6 +29,65 @@ namespace Amazon.Extensions.CborProtocol.Internal
     public class CborStreamReader : IDisposable
     {
         /// <summary>
+        /// Represents a single container frame (map or array) within the nesting stack
+        /// of the <see cref="CborStreamReader"/>.
+        /// </summary>
+        private class ContainerFrame
+        {
+            /// <summary>
+            /// Gets the type of CBOR container (map or array).
+            /// </summary>
+            public CborContainerType Type { get; }
+
+            /// <summary>
+            /// Gets the number of items left to be read in this container.
+            /// For indefinite-length containers, this value is <c>null</c>.
+            /// </summary>
+            public int? RemainingItems { get; private set; }
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="ContainerFrame"/> class.
+            /// </summary>
+            /// <param name="type">The container type (map or array).</param>
+            /// <param name="remainingItems">
+            /// The number of items in the container, or <c>null</c> for indefinite-length containers.
+            /// </param>
+            public ContainerFrame(CborContainerType type, int? remainingItems)
+            {
+                Type = type;
+                RemainingItems = remainingItems;
+                if (RemainingItems.HasValue && type == CborContainerType.Map)
+                {
+                    // Multiply RemainingItems by 2 for maps to account for key value pairs.
+                    RemainingItems *= 2;
+                }
+            }
+
+            /// <summary>
+            /// Decrements the <see cref="RemainingItems"/> count when an item is consumed.
+            /// For indefinite-length containers, this method does nothing.
+            /// </summary>
+            public void ConsumeItem()
+            {
+                RemainingItems = RemainingItems.HasValue ? RemainingItems.Value - 1 : (int?)null;
+
+                if (RemainingItems < 0)
+                {
+                    // This should never happen if container boundaries are respected.
+                    // It indicates that more items were read than the container declared.
+                    throw new CborContentException(
+                        $"Too many items read from {Type} container. Expected {RemainingItems + 1} more item(s)."
+                    );
+                }
+            }
+
+            /// <summary>
+            /// Gets a value indicating whether this container has been fully consumed.
+            /// </summary>
+            public bool IsComplete => RemainingItems == 0;
+        }
+
+        /// <summary>
         /// Enum to track the type of CBOR container (map or array)
         /// for state management within the CborStreamReader.
         /// </summary>
@@ -39,7 +98,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         }
 
         private static readonly ILogger _logger = Logger.GetLogger(typeof(CborStreamReader));
-        private readonly Stack<CborContainerType> _nestingStack = new Stack<CborContainerType>();
+        private readonly Stack<ContainerFrame> _nestingStack = new Stack<ContainerFrame>();
         private readonly Stream _stream;
         private byte[] _buffer;
         private CborReader _internalCborReader;
@@ -174,7 +233,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
         {
             ExecuteRead(r =>
             {
-                if (_nestingStack.Count == 0 || _nestingStack.Peek() != expectedType)
+                if (_nestingStack.Count == 0 || _nestingStack.Peek().Type != expectedType)
                     throw new CborContentException($"Unexpected end of {expectedType.ToString().ToLowerInvariant()}.");
 
                 var state = CborReaderState.Finished;
@@ -215,7 +274,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
                     // Try to refill first, maybe the break marker is in the next chunk.
                     RefillBuffer(0);
 
-                    if (IsNextByteEndOfContainer())
+                    if (!_nestingStack.Peek().RemainingItems.HasValue && IsNextByteEndOfContainer())
                     {
                         // If the next raw byte after refill is the CBOR "break" (0xFF), that indicates an
                         // indefinite-length container terminator. We must explicitly consume that break byte
@@ -230,6 +289,20 @@ namespace Amazon.Extensions.CborProtocol.Internal
                     _nestingStack.Pop();
                     return true;
                 }
+                else if (_nestingStack.Count > 0 && _nestingStack.Peek().IsComplete)
+                {
+                    // Special handling for definite-length containers that are fully consumed:
+                    // For definite-length maps/arrays, the internal CborReader does not provide an explicit
+                    // end token. Once we have read all items (tracked via the _nestingStack frame's RemainingItems),
+                    // PeekState may point to the next item rather than EndArray/EndMap. In that case, we can
+                    // safely consider the container complete, pop the frame, and continue parsing.
+                    //
+                    // This prevents throwing a CborContentException when reading end container of a large
+                    // container that spans multiple buffer chunks and ensures ReadEndContainer returns the correct
+                    // logical end of the container.
+                    _nestingStack.Pop();
+                    return true;
+                }
 
                 throw new CborContentException($"Expected end of {expectedType.ToString().ToLowerInvariant()} but could not parse it.");
             });
@@ -239,26 +312,44 @@ namespace Amazon.Extensions.CborProtocol.Internal
         public void ReadEndMap()
         {
             ReadEndContainer(CborContainerType.Map, CborReaderState.EndMap, (reader) => reader.ReadEndMap());
+            // After reading the end of a container (map/array), we need to mark it as consumed
+            // in the parent container (if any). This ensures that nested arrays/maps count as
+            // a single item in their enclosing container. Without this, the parent container
+            // would incorrectly think there are remaining items, causing PeekState and
+            // item-count tracking to become desynchronized with the actual CBOR stream.
+            if (_nestingStack.Count > 0)
+            {
+                _nestingStack.Peek().ConsumeItem();
+            }
         }
 
         public void ReadEndArray()
         {
             ReadEndContainer(CborContainerType.Array, CborReaderState.EndArray, (r) => r.ReadEndArray());
+            // After reading the end of a container (map/array), we need to mark it as consumed
+            // in the parent container (if any). This ensures that nested arrays/maps count as
+            // a single item in their enclosing container. Without this, the parent container
+            // would incorrectly think there are remaining items, causing PeekState and
+            // item-count tracking to become desynchronized with the actual CBOR stream.
+            if (_nestingStack.Count > 0)
+            {
+                _nestingStack.Peek().ConsumeItem();
+            }
         }
 
 
         public int? ReadStartMap() => ExecuteRead(reader =>
         {
-            var result = reader.ReadStartMap();
-            _nestingStack.Push(CborContainerType.Map);
-            return result;
+            var count = reader.ReadStartMap();
+            _nestingStack.Push(new ContainerFrame(CborContainerType.Map, count));
+            return count;
         });
 
         public int? ReadStartArray() => ExecuteRead(reader =>
         {
-            var result = reader.ReadStartArray();
-            _nestingStack.Push(CborContainerType.Array);
-            return result;
+            var count = reader.ReadStartArray();
+            _nestingStack.Push(new ContainerFrame(CborContainerType.Array, count));
+            return count;
         });
 
 
@@ -266,6 +357,18 @@ namespace Amazon.Extensions.CborProtocol.Internal
         {
             return ExecuteRead(r =>
             {
+                // Handle definite-length containers that silently complete
+                if (_nestingStack.Count > 0)
+                {
+                    var frame = _nestingStack.Peek();
+                    if (frame.IsComplete)
+                    {
+                        return frame.Type == CborContainerType.Map
+                            ? CborReaderState.EndMap
+                            : CborReaderState.EndArray;
+                    }
+                }
+
                 // We need to Peek twice in case the first time failed because we are near the end of the current chunk and we just need to refill.
                 for (int attempt = 0; attempt < 2; attempt++)
                 {
@@ -293,7 +396,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 // only then consider inferring the state based on container nesting.
                 if (_nestingStack.Count > 0)
                 {
-                    var inferredState = _nestingStack.Peek() == CborContainerType.Map
+                    var inferredState = _nestingStack.Peek().Type == CborContainerType.Map
                         ? CborReaderState.EndMap
                         : CborReaderState.EndArray;
 
@@ -305,17 +408,38 @@ namespace Amazon.Extensions.CborProtocol.Internal
             });
         }
 
-        public string ReadTextString() => ExecuteRead(r => r.ReadTextString());
-        public int ReadInt32() => ExecuteRead(r => r.ReadInt32());
-        public long ReadInt64() => ExecuteRead(r => r.ReadInt64());
-        public decimal ReadDecimal() => ExecuteRead(r => r.ReadDecimal());
-        public double ReadDouble() => ExecuteRead(r => r.ReadDouble());
-        public bool ReadBoolean() => ExecuteRead(r => r.ReadBoolean());
-        public float ReadSingle() => ExecuteRead(r => r.ReadSingle());
+        /// <summary>
+        /// Executes the provided CBOR read operation and automatically updates the item count
+        /// of the current container (if any) to ensure that whenever an item is read, the parent
+        /// container's RemainingItems count is decremented.
+        /// </summary>
+        private T ExecuteValueRead<T>(Func<CborReader, T> readOperation)
+        {
+            var result = ExecuteRead<T>(readOperation);
+            if (_nestingStack.Count > 0)
+            {
+                _nestingStack.Peek().ConsumeItem();
+            }
+
+            return result;
+        }
+
+        public string ReadTextString() => ExecuteValueRead(r => r.ReadTextString());
+        public int ReadInt32() => ExecuteValueRead(r => r.ReadInt32());
+        public long ReadInt64() => ExecuteValueRead(r => r.ReadInt64());
+        public ulong ReadUInt64() => ExecuteValueRead(r => r.ReadUInt64());
+        public decimal ReadDecimal() => ExecuteValueRead(r => r.ReadDecimal());
+        public double ReadDouble() => ExecuteValueRead(r => r.ReadDouble());
+        public bool ReadBoolean() => ExecuteValueRead(r => r.ReadBoolean());
+        public float ReadSingle() => ExecuteValueRead(r => r.ReadSingle());
+        public byte[] ReadByteString() => ExecuteValueRead(r => r.ReadByteString());
+        public void ReadNull() => ExecuteValueRead(r => { r.ReadNull(); return true; });
+        public void SkipValue() => ExecuteValueRead(r => { r.SkipValue(); return true; });
+
+        // Tags annotate the next CBOR item but are not themselves counted
+        // as items within a definite-length array or map. For this reason,
+        // we do not call ExecuteValueRead() and only use ExecuteRead() here.
         public CborTag ReadTag() => ExecuteRead(r => r.ReadTag());
-        public byte[] ReadByteString() => ExecuteRead(r => r.ReadByteString());
-        public void ReadNull() => ExecuteRead(r => { r.ReadNull(); return true; });
-        public void SkipValue() => ExecuteRead(r => { r.SkipValue(); return true; });
         public int CurrentDepth => _internalCborReader.CurrentDepth;
 
         public void Dispose()
