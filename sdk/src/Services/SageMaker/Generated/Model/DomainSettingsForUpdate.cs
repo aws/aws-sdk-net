@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private AmazonQSettings _amazonQSettings;
         private DockerSettings _dockerSettings;
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
+        private IPAddressType _ipAddressType;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TrustedIdentityPropagationSettings _trustedIdentityPropagationSettings;
@@ -97,6 +98,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRoleIdentityConfig()
         {
             return this._executionRoleIdentityConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the domain. Specify <c>ipv4</c> for IPv4-only connectivity
+        /// or <c>dualstack</c> for both IPv4 and IPv6 connectivity. When you specify <c>dualstack</c>,
+        /// the subnet must support IPv6 CIDR blocks.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

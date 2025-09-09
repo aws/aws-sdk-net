@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionRoleIdentityConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IpAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RStudioServerProDomainSettings", targetDepth))
                 {
                     var unmarshaller = RStudioServerProDomainSettingsUnmarshaller.Instance;
