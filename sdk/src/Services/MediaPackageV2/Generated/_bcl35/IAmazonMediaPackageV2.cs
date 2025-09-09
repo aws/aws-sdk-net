@@ -36,13 +36,13 @@ namespace Amazon.MediaPackageV2
     /// Version 2 (v2) starting from May 2023. To get started with MediaPackage v2, create
     /// your MediaPackage resources. There isn't an automated process to migrate your resources
     /// from MediaPackage v1 to MediaPackage v2. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The names of the entities that you use to access this API, like URLs and ARNs, all
-    /// have the versioning information added, like "v2", to distinguish from the prior version.
-    /// If you used MediaPackage prior to this release, you can't use the MediaPackage v2
-    /// CLI or the MediaPackage v2 API to access any MediaPackage v1 resources.
+    /// have the versioning information added, like &quot;v2&quot;, to distinguish from the
+    /// prior version. If you used MediaPackage prior to this release, you can't use the MediaPackage
+    /// v2 CLI or the MediaPackage v2 API to access any MediaPackage v1 resources.
     /// </para>
     ///  
     /// <para>
@@ -61,6 +61,8 @@ namespace Amazon.MediaPackageV2
     /// We assume that you have the IAM permissions that you need to use MediaPackage via
     /// the REST API. We also assume that you are familiar with the features and operations
     /// of MediaPackage, as described in the AWS Elemental MediaPackage User Guide.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial interface IAmazonMediaPackageV2 : IAmazonService, IDisposable
