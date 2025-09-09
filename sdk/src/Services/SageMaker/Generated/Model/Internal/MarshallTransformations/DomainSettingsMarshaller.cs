@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExecutionRoleIdentityConfig);
             }
 
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("IpAddressType");
+                context.Writer.Write(requestObject.IpAddressType);
+            }
+
             if(requestObject.IsSetRStudioServerProDomainSettings())
             {
                 context.Writer.WritePropertyName("RStudioServerProDomainSettings");

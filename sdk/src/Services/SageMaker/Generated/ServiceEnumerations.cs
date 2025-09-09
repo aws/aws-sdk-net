@@ -893,6 +893,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlP5en48xlarge = new AppInstanceType("ml.p5en.48xlarge");
         /// <summary>
+        /// Constant MlP6B20048xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP6B20048xlarge = new AppInstanceType("ml.p6-b200.48xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlR512xlarge = new AppInstanceType("ml.r5.12xlarge");
