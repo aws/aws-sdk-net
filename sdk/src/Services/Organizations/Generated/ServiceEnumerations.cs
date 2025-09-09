@@ -121,6 +121,68 @@ namespace Amazon.Organizations
 
 
     /// <summary>
+    /// Constants used for properties of type AccountState.
+    /// </summary>
+    public class AccountState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AccountState
+        /// </summary>
+        public static readonly AccountState ACTIVE = new AccountState("ACTIVE");
+        /// <summary>
+        /// Constant CLOSED for AccountState
+        /// </summary>
+        public static readonly AccountState CLOSED = new AccountState("CLOSED");
+        /// <summary>
+        /// Constant PENDING_ACTIVATION for AccountState
+        /// </summary>
+        public static readonly AccountState PENDING_ACTIVATION = new AccountState("PENDING_ACTIVATION");
+        /// <summary>
+        /// Constant PENDING_CLOSURE for AccountState
+        /// </summary>
+        public static readonly AccountState PENDING_CLOSURE = new AccountState("PENDING_CLOSURE");
+        /// <summary>
+        /// Constant SUSPENDED for AccountState
+        /// </summary>
+        public static readonly AccountState SUSPENDED = new AccountState("SUSPENDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountState FindValue(string value)
+        {
+            return FindValue<AccountState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccountStatus.
     /// </summary>
     public class AccountStatus : ConstantClass

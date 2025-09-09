@@ -16861,7 +16861,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        ///  To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
+        ///  To view the status of available policy types in the organization, use <a>ListRoots</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisablePolicyType service method.</param>
@@ -17326,7 +17326,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        ///  To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
+        ///  To view the status of available policy types in the organization, use <a>ListRoots</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisablePolicyType service method.</param>
@@ -19775,7 +19775,7 @@ namespace Amazon.Organizations
         /// <para>
         /// You can enable a policy type in a root only if that policy type is available in the
         /// organization. To view the status of available policy types in the organization, use
-        /// <a>DescribeOrganization</a>.
+        /// <a>ListRoots</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnablePolicyType service method.</param>
@@ -20240,7 +20240,7 @@ namespace Amazon.Organizations
         /// <para>
         /// You can enable a policy type in a root only if that policy type is available in the
         /// organization. To view the status of available policy types in the organization, use
-        /// <a>DescribeOrganization</a>.
+        /// <a>ListRoots</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnablePolicyType service method.</param>

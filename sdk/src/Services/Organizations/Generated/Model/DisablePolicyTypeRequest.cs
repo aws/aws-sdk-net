@@ -53,7 +53,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    ///  To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
+    ///  To view the status of available policy types in the organization, use <a>ListRoots</a>.
     /// </para>
     /// </summary>
     public partial class DisablePolicyTypeRequest : AmazonOrganizationsRequest
