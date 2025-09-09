@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeAlarmHistory Request Marshaller
+    /// DescribeAlarmContributors Request Marshaller
     /// </summary>       
-    public class DescribeAlarmHistoryRequestMarshaller : IMarshaller<IRequest, DescribeAlarmHistoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeAlarmContributorsRequestMarshaller : IMarshaller<IRequest, DescribeAlarmContributorsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeAlarmHistoryRequest)input);
+            return this.Marshall((DescribeAlarmContributorsRequest)input);
         }
     
         /// <summary>
@@ -51,61 +51,28 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeAlarmHistoryRequest publicRequest)
+        public IRequest Marshall(DescribeAlarmContributorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
-            request.Parameters.Add("Action", "DescribeAlarmHistory");
+            request.Parameters.Add("Action", "DescribeAlarmContributors");
             request.Parameters.Add("Version", "2010-08-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAlarmContributorId())
-                {
-                    request.Parameters.Add("AlarmContributorId", StringUtils.FromString(publicRequest.AlarmContributorId));
-                }
                 if(publicRequest.IsSetAlarmName())
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));
-                }
-                if(publicRequest.IsSetAlarmTypes())
-                {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
-                    {
-                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetEndDateUtc())
-                {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateUtc));
-                }
-                if(publicRequest.IsSetHistoryItemType())
-                {
-                    request.Parameters.Add("HistoryItemType", StringUtils.FromString(publicRequest.HistoryItemType));
-                }
-                if(publicRequest.IsSetMaxRecords())
-                {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
                 if(publicRequest.IsSetNextToken())
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-                if(publicRequest.IsSetScanBy())
-                {
-                    request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
-                }
-                if(publicRequest.IsSetStartDateUtc())
-                {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateUtc));
-                }
             }
             return request;
         }
-                    private static DescribeAlarmHistoryRequestMarshaller _instance = new DescribeAlarmHistoryRequestMarshaller();        
+                    private static DescribeAlarmContributorsRequestMarshaller _instance = new DescribeAlarmContributorsRequestMarshaller();        
 
-        internal static DescribeAlarmHistoryRequestMarshaller GetInstance()
+        internal static DescribeAlarmContributorsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +80,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAlarmHistoryRequestMarshaller Instance
+        public static DescribeAlarmContributorsRequestMarshaller Instance
         {
             get
             {

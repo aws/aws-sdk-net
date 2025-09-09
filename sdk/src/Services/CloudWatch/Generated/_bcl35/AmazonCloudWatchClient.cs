@@ -638,6 +638,68 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DescribeAlarmContributors
+
+        /// <summary>
+        /// Returns the information of the current alarm contributors that are in <c>ALARM</c>
+        /// state. This operation returns details about the individual time series that contribute
+        /// to the alarm's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmContributors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual DescribeAlarmContributorsResponse DescribeAlarmContributors(DescribeAlarmContributorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlarmContributorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlarmContributors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarmContributors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAlarmContributors(DescribeAlarmContributorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAlarmContributors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmContributors.</param>
+        /// 
+        /// <returns>Returns a  DescribeAlarmContributorsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual DescribeAlarmContributorsResponse EndDescribeAlarmContributors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAlarmContributorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
         /// <summary>
