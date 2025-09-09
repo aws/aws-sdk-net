@@ -265,6 +265,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, ContactSearchSummarySegmentAttributeValue> SegmentAttributes
         {
             get { return this._segmentAttributes; }

@@ -31,17 +31,69 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePredefinedAttribute operation.
-    /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
-    /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-    /// contacts to an agent or pools of agents within a queue. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+    /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
+    /// attribute</i> is made up of a name and a value.
+    /// 
+    ///  
+    /// <para>
+    /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+    /// Connect quotas</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Use cases</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Following are common uses cases for this API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Create an attribute for routing proficiency (for example, agent certification) that
+    /// has predefined values (for example, a list of possible certifications). For more information,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
     /// predefined attributes for routing contacts to agents</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create an attribute for business unit name that has a list of predefined business
+    /// unit names used in your organization. This is a use case where information for a contact
+    /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+    /// contact segment attributes</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// Connect endpoints and quotas</a>.
+    /// </para>
     /// </summary>
     public partial class CreatePredefinedAttributeRequest : AmazonConnectRequest
     {
+        private InputPredefinedAttributeConfiguration _attributeConfiguration;
         private string _instanceId;
         private string _name;
+        private List<string> _purposes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PredefinedAttributeValues _values;
+
+        /// <summary>
+        /// Gets and sets the property AttributeConfiguration. 
+        /// <para>
+        /// Custom metadata that is associated to predefined attributes to control behavior in
+        /// upstream services, such as controlling how a predefined attribute should be displayed
+        /// in the Amazon Connect admin website.
+        /// </para>
+        /// </summary>
+        public InputPredefinedAttributeConfiguration AttributeConfiguration
+        {
+            get { return this._attributeConfiguration; }
+            set { this._attributeConfiguration = value; }
+        }
+
+        // Check to see if AttributeConfiguration property is set
+        internal bool IsSetAttributeConfiguration()
+        {
+            return this._attributeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -69,7 +121,7 @@ namespace Amazon.Connect.Model
         ///  The name of the predefined attribute. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -83,12 +135,36 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Purposes. 
+        /// <para>
+        /// Values that enable you to categorize your predefined attributes. You can use them
+        /// in custom UI elements across the Amazon Connect admin website.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Purposes
+        {
+            get { return this._purposes; }
+            set { this._purposes = value; }
+        }
+
+        // Check to see if Purposes property is set
+        internal bool IsSetPurposes()
+        {
+            return this._purposes != null && (this._purposes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
         ///  The values of the predefined attribute. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PredefinedAttributeValues Values
         {
             get { return this._values; }

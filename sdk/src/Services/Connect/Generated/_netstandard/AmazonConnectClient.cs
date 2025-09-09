@@ -2309,11 +2309,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create an attribute for routing proficiency (for example, agent certification) that
+        /// has predefined values (for example, a list of possible certifications). For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -5544,11 +5574,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -9168,11 +9219,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -11178,10 +11250,31 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches predefined attributes that meet certain criteria. <i>Predefined attributes</i>
-        /// are attributes in an Amazon Connect instance that can be used to route contacts to
-        /// an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Searches predefined attributes that meet certain criteria. A <i>predefined attribute</i>
+        /// is made up of a name and a value. You can use predefined attributes for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -14560,11 +14653,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update routing proficiency (for example, agent certification) that has predefined
+        /// values (for example, a list of possible certifications). For more information, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">

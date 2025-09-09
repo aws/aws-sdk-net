@@ -218,8 +218,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently Contact Expiry is the only segment attribute which can be updated by using
-        /// the UpdateContact API.
+        /// Contact Expiry, and user-defined attributes (String - String) that are defined in
+        /// predefined attributes, can be updated by using the UpdateContact API.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
