@@ -63,6 +63,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetWaitForTransitioningInstances())
+                {
+                    request.Parameters.Add("WaitForTransitioningInstances", StringUtils.FromBool(publicRequest.WaitForTransitioningInstances));
+                }
             }
             return request;
         }
