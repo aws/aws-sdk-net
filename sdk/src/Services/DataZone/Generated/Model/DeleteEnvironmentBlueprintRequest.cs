@@ -30,28 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetGlossaryTerm operation.
-    /// Gets a business glossary term in Amazon DataZone.
-    /// 
-    ///  
-    /// <para>
-    /// Prerequisites:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Glossary term with identifier must exist in the domain. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// User must have permission on the glossary term.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Domain must be accessible and active.
-    /// </para>
-    ///  </li> </ul>
+    /// Container for the parameters to the DeleteEnvironmentBlueprint operation.
+    /// Deletes a blueprint in Amazon DataZone.
     /// </summary>
-    public partial class GetGlossaryTermRequest : AmazonDataZoneRequest
+    public partial class DeleteEnvironmentBlueprintRequest : AmazonDataZoneRequest
     {
         private string _domainIdentifier;
         private string _identifier;
@@ -59,7 +41,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The ID of the Amazon DataZone domain in which this business glossary term exists.
+        /// The ID of the Amazon DataZone domain in which the blueprint is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +60,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The ID of the business glossary term.
+        /// The ID of the blueprint that is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

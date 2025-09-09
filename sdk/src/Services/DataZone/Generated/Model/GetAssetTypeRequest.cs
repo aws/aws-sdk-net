@@ -32,6 +32,34 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the GetAssetType operation.
     /// Gets an Amazon DataZone asset type.
+    /// 
+    ///  
+    /// <para>
+    /// Asset types define the categories and characteristics of different kinds of data assets
+    /// within Amazon DataZone.. They determine what metadata fields are required, what operations
+    /// are possible, and how the asset integrates with other Amazon Web Services services.
+    /// Asset types can range from built-in types like Amazon S3 buckets and Amazon Web Services
+    /// Glue tables to custom types defined for specific organizational needs. Understanding
+    /// asset types is crucial for properly organizing and managing different kinds of data
+    /// resources.
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The asset type with identifier must exist in the domain. ResourceNotFoundException.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have the GetAssetType permission.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Ensure the domain-identifier value is correct and accessible.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetAssetTypeRequest : AmazonDataZoneRequest
     {

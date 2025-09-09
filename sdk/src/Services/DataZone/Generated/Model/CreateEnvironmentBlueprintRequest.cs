@@ -30,40 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateFormType operation.
-    /// Creates a metadata form type.
-    /// 
-    ///  
-    /// <para>
-    /// Prerequisites:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The domain must exist and be in an <c>ENABLED</c> state. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The owning project must exist and be accessible.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The name must be unique within the domain.
-    /// </para>
-    ///  </li> </ul>
+    /// Container for the parameters to the CreateEnvironmentBlueprint operation.
+    /// Creates a Amazon DataZone blueprint.
     /// </summary>
-    public partial class CreateFormTypeRequest : AmazonDataZoneRequest
+    public partial class CreateEnvironmentBlueprintRequest : AmazonDataZoneRequest
     {
         private string _description;
         private string _domainIdentifier;
-        private Model _model;
         private string _name;
-        private string _owningProjectIdentifier;
-        private FormTypeStatus _status;
+        private ProvisioningProperties _provisioningProperties;
+        private List<CustomParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<CustomParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of this Amazon DataZone metadata form type.
+        /// The description of the Amazon DataZone blueprint.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=2048)]
@@ -82,7 +63,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The ID of the Amazon DataZone domain in which this metadata form type is created.
+        /// The identifier of the domain in which this blueprint is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,31 +80,12 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Model. 
-        /// <para>
-        /// The model of this Amazon DataZone metadata form type.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public Model Model
-        {
-            get { return this._model; }
-            set { this._model = value; }
-        }
-
-        // Check to see if Model property is set
-        internal bool IsSetModel()
-        {
-            return this._model != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of this Amazon DataZone metadata form type.
+        /// The name of this Amazon DataZone blueprint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -137,40 +99,40 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OwningProjectIdentifier. 
+        /// Gets and sets the property ProvisioningProperties. 
         /// <para>
-        /// The ID of the Amazon DataZone project that owns this metadata form type.
+        /// The provisioning properties of this Amazon DataZone blueprint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string OwningProjectIdentifier
+        public ProvisioningProperties ProvisioningProperties
         {
-            get { return this._owningProjectIdentifier; }
-            set { this._owningProjectIdentifier = value; }
+            get { return this._provisioningProperties; }
+            set { this._provisioningProperties = value; }
         }
 
-        // Check to see if OwningProjectIdentifier property is set
-        internal bool IsSetOwningProjectIdentifier()
+        // Check to see if ProvisioningProperties property is set
+        internal bool IsSetProvisioningProperties()
         {
-            return this._owningProjectIdentifier != null;
+            return this._provisioningProperties != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property UserParameters. 
         /// <para>
-        /// The status of this Amazon DataZone metadata form type.
+        /// The user parameters of this Amazon DataZone blueprint.
         /// </para>
         /// </summary>
-        public FormTypeStatus Status
+        public List<CustomParameter> UserParameters
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._userParameters; }
+            set { this._userParameters = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if UserParameters property is set
+        internal bool IsSetUserParameters()
         {
-            return this._status != null;
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

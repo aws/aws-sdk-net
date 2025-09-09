@@ -32,6 +32,24 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the ListDataProductRevisions operation.
     /// Lists data product revisions.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The data product ID must exist within the domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have view permissions on the data product.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain must be in a valid and accessible state.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListDataProductRevisionsRequest : AmazonDataZoneRequest
     {

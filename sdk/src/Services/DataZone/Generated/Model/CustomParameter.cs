@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private string _fieldType;
         private bool? _isEditable;
         private bool? _isOptional;
+        private bool? _isUpdateSupported;
         private string _keyName;
 
         /// <summary>
@@ -131,6 +132,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIsOptional()
         {
             return this._isOptional.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsUpdateSupported. 
+        /// <para>
+        /// Specifies whether a parameter value can be updated after creation. 
+        /// </para>
+        /// </summary>
+        public bool IsUpdateSupported
+        {
+            get { return this._isUpdateSupported.GetValueOrDefault(); }
+            set { this._isUpdateSupported = value; }
+        }
+
+        // Check to see if IsUpdateSupported property is set
+        internal bool IsSetIsUpdateSupported()
+        {
+            return this._isUpdateSupported.HasValue; 
         }
 
         /// <summary>

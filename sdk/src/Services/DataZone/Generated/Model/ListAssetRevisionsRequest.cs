@@ -32,6 +32,29 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the ListAssetRevisions operation.
     /// Lists the revisions for the asset.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The asset must exist in the domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// There must be at least one revision of the asset (which happens automatically after
+    /// creation).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain must be valid and active.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have permissions on the asset and domain.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListAssetRevisionsRequest : AmazonDataZoneRequest
     {

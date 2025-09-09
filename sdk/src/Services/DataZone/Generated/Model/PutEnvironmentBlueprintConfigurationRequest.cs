@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintIdentifier;
         private string _environmentRolePermissionBoundary;
+        private Dictionary<string, string> _globalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _manageAccessRoleArn;
         private List<ProvisioningConfiguration> _provisioningConfigurations = AWSConfigs.InitializeCollections ? new List<ProvisioningConfiguration>() : null;
         private string _provisioningRoleArn;
@@ -117,6 +118,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentRolePermissionBoundary()
         {
             return this._environmentRolePermissionBoundary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalParameters. 
+        /// <para>
+        /// Region-agnostic environment blueprint parameters. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> GlobalParameters
+        {
+            get { return this._globalParameters; }
+            set { this._globalParameters = value; }
+        }
+
+        // Check to see if GlobalParameters property is set
+        internal bool IsSetGlobalParameters()
+        {
+            return this._globalParameters != null && (this._globalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

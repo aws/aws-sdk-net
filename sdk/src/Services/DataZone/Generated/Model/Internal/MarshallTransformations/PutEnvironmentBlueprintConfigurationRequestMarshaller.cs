@@ -90,6 +90,20 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnvironmentRolePermissionBoundary);
                 }
 
+                if(publicRequest.IsSetGlobalParameters())
+                {
+                    context.Writer.WritePropertyName("globalParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestGlobalParametersKvp in publicRequest.GlobalParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestGlobalParametersKvp.Key);
+                        var publicRequestGlobalParametersValue = publicRequestGlobalParametersKvp.Value;
+
+                            context.Writer.Write(publicRequestGlobalParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetManageAccessRoleArn())
                 {
                     context.Writer.WritePropertyName("manageAccessRoleArn");
