@@ -40,6 +40,7 @@ namespace Amazon.Organizations.Model
         private AccountJoinedMethod _joinedMethod;
         private DateTime? _joinedTimestamp;
         private string _name;
+        private AccountState _state;
         private AccountStatus _status;
 
         /// <summary>
@@ -175,10 +176,45 @@ namespace Amazon.Organizations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Each state represents a specific phase in the account lifecycle. Use this information
+        /// to manage account access, automate workflows, or trigger actions based on account
+        /// state changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor
+        /// the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AccountState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the account in the organization.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>Status</c> parameter in the <c>Account</c> object will be retired on September
+        /// 9, 2026. Although both the account <c>State</c> and account <c>Status</c> parameters
+        /// are currently available in the Organizations APIs (<c>DescribeAccount</c>, <c>ListAccounts</c>,
+        /// <c>ListAccountsForParent</c>), we recommend that you update your scripts or other
+        /// code to use the <c>State</c> parameter instead of <c>Status</c> before September 9,
+        /// 2026.
+        /// </para>
+        ///  </important>
         /// </summary>
         public AccountStatus Status
         {
