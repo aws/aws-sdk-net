@@ -35,9 +35,31 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SegmentAttributeValue
     {
+        private string _valueArn;
         private int? _valueInteger;
+        private List<SegmentAttributeValue> _valueList = AWSConfigs.InitializeCollections ? new List<SegmentAttributeValue>() : null;
         private Dictionary<string, SegmentAttributeValue> _valueMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _valueString;
+
+        /// <summary>
+        /// Gets and sets the property ValueArn. 
+        /// <para>
+        /// The value of a segment attribute that has to be a valid ARN. This is only supported
+        /// for system-defined attributes, not for user-defined attributes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ValueArn
+        {
+            get { return this._valueArn; }
+            set { this._valueArn = value; }
+        }
+
+        // Check to see if ValueArn property is set
+        internal bool IsSetValueArn()
+        {
+            return this._valueArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ValueInteger. 
@@ -55,6 +77,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetValueInteger()
         {
             return this._valueInteger.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValueList. 
+        /// <para>
+        /// The value of a segment attribute. This is only supported for system-defined attributes,
+        /// not for user-defined attributes.
+        /// </para>
+        /// </summary>
+        public List<SegmentAttributeValue> ValueList
+        {
+            get { return this._valueList; }
+            set { this._valueList = value; }
+        }
+
+        // Check to see if ValueList property is set
+        internal bool IsSetValueList()
+        {
+            return this._valueList != null && (this._valueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

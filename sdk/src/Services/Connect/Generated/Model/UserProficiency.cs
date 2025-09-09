@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// in the Amazon Connect instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -65,7 +65,7 @@ namespace Amazon.Connect.Model
         /// in the Amazon Connect instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

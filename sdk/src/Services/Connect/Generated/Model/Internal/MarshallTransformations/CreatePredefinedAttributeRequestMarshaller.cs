@@ -70,10 +70,32 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeConfiguration())
+                {
+                    context.Writer.WritePropertyName("AttributeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputPredefinedAttributeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AttributeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPurposes())
+                {
+                    context.Writer.WritePropertyName("Purposes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPurposesListValue in publicRequest.Purposes)
+                    {
+                            context.Writer.Write(publicRequestPurposesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetValues())

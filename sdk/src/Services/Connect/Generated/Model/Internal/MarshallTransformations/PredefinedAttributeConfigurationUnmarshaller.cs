@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SegmentAttributeValue Object
+    /// Response Unmarshaller for PredefinedAttributeConfiguration Object
     /// </summary>  
-    public class SegmentAttributeValueUnmarshaller : IUnmarshaller<SegmentAttributeValue, XmlUnmarshallerContext>, IUnmarshaller<SegmentAttributeValue, JsonUnmarshallerContext>
+    public class PredefinedAttributeConfigurationUnmarshaller : IUnmarshaller<PredefinedAttributeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PredefinedAttributeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SegmentAttributeValue IUnmarshaller<SegmentAttributeValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PredefinedAttributeConfiguration IUnmarshaller<PredefinedAttributeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SegmentAttributeValue Unmarshall(JsonUnmarshallerContext context)
+        public PredefinedAttributeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            SegmentAttributeValue unmarshalledObject = new SegmentAttributeValue();
+            PredefinedAttributeConfiguration unmarshalledObject = new PredefinedAttributeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ValueArn", targetDepth))
+                if (context.TestExpression("EnableValueValidationOnAssociation", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValueArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableValueValidationOnAssociation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ValueInteger", targetDepth))
+                if (context.TestExpression("IsReadOnly", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ValueInteger = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValueList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SegmentAttributeValue, SegmentAttributeValueUnmarshaller>(SegmentAttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.ValueList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValueMap", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.ValueMap = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValueString", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValueString = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static SegmentAttributeValueUnmarshaller _instance = new SegmentAttributeValueUnmarshaller();        
+        private static PredefinedAttributeConfigurationUnmarshaller _instance = new PredefinedAttributeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SegmentAttributeValueUnmarshaller Instance
+        public static PredefinedAttributeConfigurationUnmarshaller Instance
         {
             get
             {

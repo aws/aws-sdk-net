@@ -260,6 +260,7 @@ namespace Amazon.Connect.Model
         /// Set of segment attributes for a contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, ContactSearchSummarySegmentAttributeValue> SegmentAttributes
         {
             get { return this._segmentAttributes; }

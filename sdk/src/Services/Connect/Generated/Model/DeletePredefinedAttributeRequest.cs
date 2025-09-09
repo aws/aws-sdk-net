@@ -64,7 +64,7 @@ namespace Amazon.Connect.Model
         ///  The name of the predefined attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

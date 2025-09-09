@@ -48,10 +48,32 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetValueArn())
+            {
+                context.Writer.WritePropertyName("ValueArn");
+                context.Writer.Write(requestObject.ValueArn);
+            }
+
             if(requestObject.IsSetValueInteger())
             {
                 context.Writer.WritePropertyName("ValueInteger");
                 context.Writer.Write(requestObject.ValueInteger);
+            }
+
+            if(requestObject.IsSetValueList())
+            {
+                context.Writer.WritePropertyName("ValueList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectValueListListValue in requestObject.ValueList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SegmentAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectValueListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetValueMap())

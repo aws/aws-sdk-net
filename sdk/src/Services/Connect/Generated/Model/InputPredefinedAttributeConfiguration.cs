@@ -30,29 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about values of a predefined attribute.
+    /// Custom metadata that is associated to predefined attributes to control behavior in
+    /// upstream services, such as controlling how a predefined attribute should be displayed
+    /// in the Amazon Connect admin website.
     /// </summary>
-    public partial class PredefinedAttributeValues
+    public partial class InputPredefinedAttributeConfiguration
     {
-        private List<string> _stringList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _enableValueValidationOnAssociation;
 
         /// <summary>
-        /// Gets and sets the property StringList. 
+        /// Gets and sets the property EnableValueValidationOnAssociation. 
         /// <para>
-        /// Predefined attribute values of type string list.
+        /// When this parameter is set to true, Amazon Connect enforces strict validation on the
+        /// specific values, if the values are predefined in attributes. The contact will store
+        /// only valid and predefined values for the predefined attribute key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
-        public List<string> StringList
+        public bool EnableValueValidationOnAssociation
         {
-            get { return this._stringList; }
-            set { this._stringList = value; }
+            get { return this._enableValueValidationOnAssociation.GetValueOrDefault(); }
+            set { this._enableValueValidationOnAssociation = value; }
         }
 
-        // Check to see if StringList property is set
-        internal bool IsSetStringList()
+        // Check to see if EnableValueValidationOnAssociation property is set
+        internal bool IsSetEnableValueValidationOnAssociation()
         {
-            return this._stringList != null && (this._stringList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._enableValueValidationOnAssociation.HasValue; 
         }
 
     }
