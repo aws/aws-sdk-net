@@ -22,6 +22,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAlarmContributorsRequest.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmContributorId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName</property>
     <min>1</min>
     <max>255</max>
@@ -343,6 +353,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmContributor.ContributorId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmContributor.StateReason</property>
+    <min>0</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmHistoryItem.AlarmContributorId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

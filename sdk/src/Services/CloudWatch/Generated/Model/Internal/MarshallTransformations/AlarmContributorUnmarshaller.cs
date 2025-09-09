@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AlarmHistoryItem Object
+    /// Response Unmarshaller for AlarmContributor Object
     /// </summary>  
-    public class AlarmHistoryItemUnmarshaller : IXmlUnmarshaller<AlarmHistoryItem, XmlUnmarshallerContext>
+    public class AlarmContributorUnmarshaller : IXmlUnmarshaller<AlarmContributor, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AlarmHistoryItem Unmarshall(XmlUnmarshallerContext context)
+        public AlarmContributor Unmarshall(XmlUnmarshallerContext context)
         {
-            AlarmHistoryItem unmarshalledObject = new AlarmHistoryItem();
+            AlarmContributor unmarshalledObject = new AlarmContributor();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,57 +55,33 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AlarmContributorAttributes/entry", targetDepth))
+                    if (context.TestExpression("ContributorAttributes/entry", targetDepth))
                     {
                         var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
-                        if (unmarshalledObject.AlarmContributorAttributes == null)
+                        if (unmarshalledObject.ContributorAttributes == null)
                         {
-                            unmarshalledObject.AlarmContributorAttributes = new Dictionary<string, string>();
+                            unmarshalledObject.ContributorAttributes = new Dictionary<string, string>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AlarmContributorAttributes.Add(item);
+                        unmarshalledObject.ContributorAttributes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("AlarmContributorId", targetDepth))
+                    if (context.TestExpression("ContributorId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ContributorId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AlarmName", targetDepth))
+                    if (context.TestExpression("StateReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("AlarmType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AlarmType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryData", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryData = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistoryItemType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistoryItemType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("HistorySummary", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.HistorySummary = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Timestamp", targetDepth))
+                    if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -118,12 +94,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static AlarmHistoryItemUnmarshaller _instance = new AlarmHistoryItemUnmarshaller();        
+        private static AlarmContributorUnmarshaller _instance = new AlarmContributorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AlarmHistoryItemUnmarshaller Instance
+        public static AlarmContributorUnmarshaller Instance
         {
             get
             {

@@ -34,12 +34,60 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class AlarmHistoryItem
     {
+        private Dictionary<string, string> _alarmContributorAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _alarmContributorId;
         private string _alarmName;
         private AlarmType _alarmType;
         private string _historyData;
         private HistoryItemType _historyItemType;
         private string _historySummary;
         private DateTime? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property AlarmContributorAttributes. 
+        /// <para>
+        /// A map of attributes that describe the alarm contributor associated with this history
+        /// item, providing context about the contributor's characteristics at the time of the
+        /// event.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=30)]
+        public Dictionary<string, string> AlarmContributorAttributes
+        {
+            get { return this._alarmContributorAttributes; }
+            set { this._alarmContributorAttributes = value; }
+        }
+
+        // Check to see if AlarmContributorAttributes property is set
+        internal bool IsSetAlarmContributorAttributes()
+        {
+            return this._alarmContributorAttributes != null && (this._alarmContributorAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmContributorId. 
+        /// <para>
+        /// The unique identifier of the alarm contributor associated with this history item,
+        /// if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string AlarmContributorId
+        {
+            get { return this._alarmContributorId; }
+            set { this._alarmContributorId = value; }
+        }
+
+        // Check to see if AlarmContributorId property is set
+        internal bool IsSetAlarmContributorId()
+        {
+            return this._alarmContributorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AlarmName. 

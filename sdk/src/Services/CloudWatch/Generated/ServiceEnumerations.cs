@@ -359,6 +359,14 @@ namespace Amazon.CloudWatch
         /// </summary>
         public static readonly HistoryItemType Action = new HistoryItemType("Action");
         /// <summary>
+        /// Constant AlarmContributorAction for HistoryItemType
+        /// </summary>
+        public static readonly HistoryItemType AlarmContributorAction = new HistoryItemType("AlarmContributorAction");
+        /// <summary>
+        /// Constant AlarmContributorStateUpdate for HistoryItemType
+        /// </summary>
+        public static readonly HistoryItemType AlarmContributorStateUpdate = new HistoryItemType("AlarmContributorStateUpdate");
+        /// <summary>
         /// Constant ConfigurationUpdate for HistoryItemType
         /// </summary>
         public static readonly HistoryItemType ConfigurationUpdate = new HistoryItemType("ConfigurationUpdate");

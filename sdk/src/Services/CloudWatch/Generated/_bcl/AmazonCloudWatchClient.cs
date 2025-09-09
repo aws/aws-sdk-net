@@ -654,6 +654,63 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  DescribeAlarmContributors
+
+
+        /// <summary>
+        /// Returns the information of the current alarm contributors that are in <c>ALARM</c>
+        /// state. This operation returns details about the individual time series that contribute
+        /// to the alarm's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlarmContributors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual DescribeAlarmContributorsResponse DescribeAlarmContributors(DescribeAlarmContributorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlarmContributorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the information of the current alarm contributors that are in <c>ALARM</c>
+        /// state. This operation returns details about the individual time series that contribute
+        /// to the alarm's state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmContributors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlarmContributors service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
+        public virtual Task<DescribeAlarmContributorsResponse> DescribeAlarmContributorsAsync(DescribeAlarmContributorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAlarmContributorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAlarmHistory
 
 
