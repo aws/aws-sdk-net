@@ -1,3 +1,22 @@
+### 3.7.1119.0 (2025-09-09 18:26 UTC)
+* AutoScaling (3.7.501.0)
+	* Added WaitForTransitioningInstances parameter to the CancelInstanceRefresh API, allowing the caller to cancel an instance refresh without waiting for on-going launches and terminations.
+* CloudWatch (3.7.502.0)
+	* Added a new API - DescribeAlarmContributors API, to retrieve alarm contributors in ALARM state. Added support in DescribeAlarmHistory API to query alarm contributor history
+* Connect (3.7.506.0)
+	* SDK release for user defined predefined attributes.
+* DataZone (3.7.504.0)
+	* Adds support for custom blueprints
+* MediaPackageV2 (3.7.502.0)
+	* Added CUE tag SCTE output to MediaPackageV2 HLS and LL-HLS manifests.
+* Organizations (3.7.503.0)
+	* Documentation updates for AWS Organizations APIs.
+* SageMaker (3.7.511.0)
+	* Released IPv6 support with dual-stack domain options on SageMaker Studio and introduced support for p6-b200.48xlarge instance type on SageMaker Studio for JupyterLab and CodeEditor applications.
+* Core 3.7.500.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1118.0 (2025-09-08 18:49 UTC)
 * IoTSiteWise (3.7.502.0)
 	* Add ComputationModelVersion support in IoT SiteWise APIs

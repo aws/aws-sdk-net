@@ -32,7 +32,7 @@ namespace Amazon.Route53RecoveryCluster
     public partial class AmazonRoute53RecoveryClusterConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Cluster", "3.7.501.4");
+            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Cluster", "3.7.501.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>

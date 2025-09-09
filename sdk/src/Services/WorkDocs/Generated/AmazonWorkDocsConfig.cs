@@ -32,7 +32,7 @@ namespace Amazon.WorkDocs
     public partial class AmazonWorkDocsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkDocs", "3.7.501.4");
+            InternalSDKUtils.BuildUserAgentString("WorkDocs", "3.7.501.5");
 
         private string _userAgent = UserAgentString;
         ///<summary>
