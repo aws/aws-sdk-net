@@ -776,6 +776,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Cancels the metadata generation run.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The run must exist and be in a cancelable status (e.g., SUBMITTED, IN_PROGRESS). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Runs in SUCCEEDED status cannot be cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have access to the run and cancel permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMetadataGenerationRun service method.</param>
         /// 
@@ -814,6 +832,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Cancels the metadata generation run.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The run must exist and be in a cancelable status (e.g., SUBMITTED, IN_PROGRESS). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Runs in SUCCEEDED status cannot be cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have access to the run and cancel permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMetadataGenerationRun service method.</param>
         /// <param name="cancellationToken">
@@ -1031,6 +1067,52 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates an asset in Amazon DataZone catalog.
+        /// 
+        ///  
+        /// <para>
+        /// Before creating assets, make sure that the following requirements are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>--domain-identifier</c> must refer to an existing domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>--owning-project-identifier</c> must be a valid project within the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset type must be created beforehand using <c>create-asset-type</c>, or be a supported
+        /// system-defined type. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-asset-type.html">create-asset-type</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>--type-revision</c> (if used) must match a valid revision of the asset type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Form type must exist and be associated with the asset type. Use <c>create-form-type</c>
+        /// to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Form content must include all required fields as per the form schema (e.g., <c>bucketArn</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You must invoke the following pre-requisite commands before invoking this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateAssetType.html">CreateAssetType</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
         /// 
@@ -1072,6 +1154,52 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates an asset in Amazon DataZone catalog.
+        /// 
+        ///  
+        /// <para>
+        /// Before creating assets, make sure that the following requirements are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>--domain-identifier</c> must refer to an existing domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>--owning-project-identifier</c> must be a valid project within the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset type must be created beforehand using <c>create-asset-type</c>, or be a supported
+        /// system-defined type. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-asset-type.html">create-asset-type</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>--type-revision</c> (if used) must match a valid revision of the asset type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Form type must exist and be associated with the asset type. Use <c>create-form-type</c>
+        /// to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Form content must include all required fields as per the form schema (e.g., <c>bucketArn</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You must invoke the following pre-requisite commands before invoking this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateAssetType.html">CreateAssetType</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAsset service method.</param>
         /// <param name="cancellationToken">
@@ -1120,6 +1248,39 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Asset filters provide a sophisticated way to create controlled views of data assets
+        /// by selecting specific columns or applying row-level filters. This capability is crucial
+        /// for organizations that need to share data while maintaining security and privacy controls.
+        /// For example, your database might be filtered to show only non-PII fields to certain
+        /// users, or sales data might be filtered by region for different regional teams. Asset
+        /// filters enable fine-grained access control while maintaining a single source of truth.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A valid domain (<c>--domain-identifier</c>) must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A data asset (<c>--asset-identifier</c>) must already be created under that domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must have the referenced columns available in its schema for column-based
+        /// filtering.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot specify both (<c>columnConfiguration</c>, <c>rowConfiguration</c>)at the
+        /// same time.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetFilter service method.</param>
         /// 
@@ -1161,6 +1322,39 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Asset filters provide a sophisticated way to create controlled views of data assets
+        /// by selecting specific columns or applying row-level filters. This capability is crucial
+        /// for organizations that need to share data while maintaining security and privacy controls.
+        /// For example, your database might be filtered to show only non-PII fields to certain
+        /// users, or sales data might be filtered by region for different regional teams. Asset
+        /// filters enable fine-grained access control while maintaining a single source of truth.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A valid domain (<c>--domain-identifier</c>) must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A data asset (<c>--asset-identifier</c>) must already be created under that domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must have the referenced columns available in its schema for column-based
+        /// filtering.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot specify both (<c>columnConfiguration</c>, <c>rowConfiguration</c>)at the
+        /// same time.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1209,6 +1403,40 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a revision of the asset.
+        /// 
+        ///  
+        /// <para>
+        /// Asset revisions represent new versions of existing assets, capturing changes to either
+        /// the underlying data or its metadata. They maintain a historical record of how assets
+        /// evolve over time, who made changes, and when those changes occurred. This versioning
+        /// capability is crucial for governance and compliance, allowing organizations to track
+        /// changes, understand their impact, and roll back if necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Asset must already exist in the domain with identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type with correct revision must be registered in the same domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form content must include all required fields (e.g., <c>bucketArn</c> for <c>S3ObjectCollectionForm</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project of the original asset must still exist and be active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have write access to the project and domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetRevision service method.</param>
         /// 
@@ -1247,6 +1475,40 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a revision of the asset.
+        /// 
+        ///  
+        /// <para>
+        /// Asset revisions represent new versions of existing assets, capturing changes to either
+        /// the underlying data or its metadata. They maintain a historical record of how assets
+        /// evolve over time, who made changes, and when those changes occurred. This versioning
+        /// capability is crucial for governance and compliance, allowing organizations to track
+        /// changes, understand their impact, and roll back if necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Asset must already exist in the domain with identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type with correct revision must be registered in the same domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form content must include all required fields (e.g., <c>bucketArn</c> for <c>S3ObjectCollectionForm</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project of the original asset must still exist and be active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have write access to the project and domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetRevision service method.</param>
         /// <param name="cancellationToken">
@@ -1292,6 +1554,34 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a custom asset type.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type with <c>typeIdentifier</c> and <c>typeRevision</c> must exist and be
+        /// published. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have <c>CreateAssetType</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain-identifier and owning-project-identifier must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name of the asset type must be unique within the domain — duplicate names will
+        /// cause failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JSON input must be valid — incorrect formatting causes Invalid JSON errors.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetType service method.</param>
         /// 
@@ -1330,6 +1620,34 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a custom asset type.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type with <c>typeIdentifier</c> and <c>typeRevision</c> must exist and be
+        /// published. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have <c>CreateAssetType</c> permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain-identifier and owning-project-identifier must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name of the asset type must be unique within the domain — duplicate names will
+        /// cause failure.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JSON input must be valid — incorrect formatting causes Invalid JSON errors.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetType service method.</param>
         /// <param name="cancellationToken">
@@ -1466,6 +1784,42 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data product.
+        /// 
+        ///  
+        /// <para>
+        /// A data product is a comprehensive package that combines data assets with their associated
+        /// metadata, documentation, and access controls. It's designed to serve specific business
+        /// needs or use cases, making it easier for users to find and consume data appropriately.
+        /// Data products include important information about data quality, freshness, and usage
+        /// guidelines, effectively bridging the gap between data producers and consumers while
+        /// ensuring proper governance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain must exist and be accessible. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name must be unique within the domain (no existing data product with the same
+        /// name).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have create permissions for data products in the project.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must have Amazon DataZone publishing enabled.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataProduct service method.</param>
         /// 
@@ -1507,6 +1861,42 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data product.
+        /// 
+        ///  
+        /// <para>
+        /// A data product is a comprehensive package that combines data assets with their associated
+        /// metadata, documentation, and access controls. It's designed to serve specific business
+        /// needs or use cases, making it easier for users to find and consume data appropriately.
+        /// Data products include important information about data quality, freshness, and usage
+        /// guidelines, effectively bridging the gap between data producers and consumers while
+        /// ensuring proper governance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain must exist and be accessible. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name must be unique within the domain (no existing data product with the same
+        /// name).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have create permissions for data products in the project.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must have Amazon DataZone publishing enabled.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataProduct service method.</param>
         /// <param name="cancellationToken">
@@ -1555,6 +1945,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data product revision.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The original data product must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The new revision name must comply with naming constraints (if required).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataProductRevision service method.</param>
         /// 
@@ -1593,6 +2005,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a data product revision.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The original data product must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The new revision name must comply with naming constraints (if required).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataProductRevision service method.</param>
         /// <param name="cancellationToken">
@@ -2062,6 +2496,95 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateEnvironmentBlueprint
+
+
+        /// <summary>
+        /// Creates a Amazon DataZone blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentBlueprint">REST API Reference for CreateEnvironmentBlueprint Operation</seealso>
+        public virtual CreateEnvironmentBlueprintResponse CreateEnvironmentBlueprint(CreateEnvironmentBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEnvironmentBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a Amazon DataZone blueprint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentBlueprint">REST API Reference for CreateEnvironmentBlueprint Operation</seealso>
+        public virtual Task<CreateEnvironmentBlueprintResponse> CreateEnvironmentBlueprintAsync(CreateEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEnvironmentBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEnvironmentBlueprintResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEnvironmentProfile
 
 
@@ -2156,6 +2679,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a metadata form type.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain must exist and be in an <c>ENABLED</c> state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project must exist and be accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name must be unique within the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFormType service method.</param>
         /// 
@@ -2194,6 +2735,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a metadata form type.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain must exist and be in an <c>ENABLED</c> state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The owning project must exist and be accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The name must be unique within the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFormType service method.</param>
         /// <param name="cancellationToken">
@@ -2239,6 +2798,37 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates an Amazon DataZone business glossary.
+        /// 
+        ///  
+        /// <para>
+        /// Specifies that this is a create glossary policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// A glossary serves as the central repository for business terminology and definitions
+        /// within an organization. It helps establish and maintain a common language across different
+        /// departments and teams, reducing miscommunication and ensuring consistent interpretation
+        /// of business concepts. Glossaries can include hierarchical relationships between terms,
+        /// cross-references, and links to actual data assets, making them invaluable for both
+        /// business users and technical teams trying to understand and use data correctly.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain must exist and be in an active state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Owning project must exist and be accessible by the caller.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary name must be unique within the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlossary service method.</param>
         /// 
@@ -2277,6 +2867,37 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates an Amazon DataZone business glossary.
+        /// 
+        ///  
+        /// <para>
+        /// Specifies that this is a create glossary policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// A glossary serves as the central repository for business terminology and definitions
+        /// within an organization. It helps establish and maintain a common language across different
+        /// departments and teams, reducing miscommunication and ensuring consistent interpretation
+        /// of business concepts. Glossaries can include hierarchical relationships between terms,
+        /// cross-references, and links to actual data assets, making them invaluable for both
+        /// business users and technical teams trying to understand and use data correctly.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain must exist and be in an active state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Owning project must exist and be accessible by the caller.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary name must be unique within the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlossary service method.</param>
         /// <param name="cancellationToken">
@@ -2322,6 +2943,39 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a business glossary term.
+        /// 
+        ///  
+        /// <para>
+        /// A glossary term represents an individual entry within the Amazon DataZone glossary,
+        /// serving as a standardized definition for a specific business concept or data element.
+        /// Each term can include rich metadata such as detailed definitions, synonyms, related
+        /// terms, and usage examples. Glossary terms can be linked directly to data assets, providing
+        /// business context to technical data elements. This linking capability helps users understand
+        /// the business meaning of data fields and ensures consistent interpretation across different
+        /// systems and teams. Terms can also have relationships with other terms, creating a
+        /// semantic network that reflects the complexity of business concepts.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glossary must exist and be in an ENABLED state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term name must be unique within the glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure term does not conflict with existing terms in hierarchy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlossaryTerm service method.</param>
         /// 
@@ -2363,6 +3017,39 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Creates a business glossary term.
+        /// 
+        ///  
+        /// <para>
+        /// A glossary term represents an individual entry within the Amazon DataZone glossary,
+        /// serving as a standardized definition for a specific business concept or data element.
+        /// Each term can include rich metadata such as detailed definitions, synonyms, related
+        /// terms, and usage examples. Glossary terms can be linked directly to data assets, providing
+        /// business context to technical data elements. This linking capability helps users understand
+        /// the business meaning of data fields and ensures consistent interpretation across different
+        /// systems and teams. Terms can also have relationships with other terms, creating a
+        /// semantic network that reflects the complexity of business concepts.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Glossary must exist and be in an ENABLED state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term name must be unique within the glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure term does not conflict with existing terms in hierarchy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlossaryTerm service method.</param>
         /// <param name="cancellationToken">
@@ -3338,6 +4025,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset in Amazon DataZone.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// --domain-identifier must refer to a valid and existing domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --identifier must refer to an existing asset in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must not be referenced in any existing asset filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must not be linked to any draft or published data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have delete permissions for the domain and project.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAsset service method.</param>
         /// 
@@ -3376,6 +4085,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset in Amazon DataZone.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// --domain-identifier must refer to a valid and existing domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --identifier must refer to an existing asset in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must not be referenced in any existing asset filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must not be linked to any draft or published data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have delete permissions for the domain and project.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAsset service method.</param>
         /// <param name="cancellationToken">
@@ -3421,6 +4152,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset filter must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain and asset must not have been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure the --identifier refers to a valid filter ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetFilter service method.</param>
         /// 
@@ -3459,6 +4208,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset filter must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain and asset must not have been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure the --identifier refers to a valid filter ID.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetFilter service method.</param>
         /// <param name="cancellationToken">
@@ -3504,6 +4271,30 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset type must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have DeleteAssetType permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset type must not be in use (e.g., assigned to any asset). If used, deletion
+        /// will fail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You should retrieve the asset type using get-asset-type to confirm its presence before
+        /// deletion.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetType service method.</param>
         /// 
@@ -3542,6 +4333,30 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes an asset type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset type must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have DeleteAssetType permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset type must not be in use (e.g., assigned to any asset). If used, deletion
+        /// will fail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You should retrieve the asset type using get-asset-type to confirm its presence before
+        /// deletion.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAssetType service method.</param>
         /// <param name="cancellationToken">
@@ -3666,6 +4481,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a data product in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product must exist and not be deleted or archived. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have delete permissions for the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure there are no active dependencies (e.g., published links, assets using the product).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain and project must be active.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataProduct service method.</param>
         /// 
@@ -3704,6 +4541,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a data product in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product must exist and not be deleted or archived. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have delete permissions for the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure there are no active dependencies (e.g., published links, assets using the product).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain and project must be active.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataProduct service method.</param>
         /// <param name="cancellationToken">
@@ -4161,6 +5020,89 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteEnvironmentBlueprint
+
+
+        /// <summary>
+        /// Deletes a blueprint in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentBlueprint">REST API Reference for DeleteEnvironmentBlueprint Operation</seealso>
+        public virtual DeleteEnvironmentBlueprintResponse DeleteEnvironmentBlueprint(DeleteEnvironmentBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEnvironmentBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a blueprint in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentBlueprint">REST API Reference for DeleteEnvironmentBlueprint Operation</seealso>
+        public virtual Task<DeleteEnvironmentBlueprintResponse> DeleteEnvironmentBlueprintAsync(DeleteEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnvironmentBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEnvironmentBlueprintResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEnvironmentBlueprintConfiguration
 
 
@@ -4313,7 +5255,33 @@ namespace Amazon.DataZone
 
 
         /// <summary>
-        /// Delets and metadata form type in Amazon DataZone.
+        /// Deletes and metadata form type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type must not be in use by any asset types or assets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have delete permissions on the form type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any dependencies (such as linked asset types) must be removed first.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFormType service method.</param>
         /// 
@@ -4351,7 +5319,33 @@ namespace Amazon.DataZone
 
 
         /// <summary>
-        /// Delets and metadata form type in Amazon DataZone.
+        /// Deletes and metadata form type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type must not be in use by any asset types or assets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have delete permissions on the form type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any dependencies (such as linked asset types) must be removed first.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFormType service method.</param>
         /// <param name="cancellationToken">
@@ -4397,6 +5391,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The glossary must be in DISABLED state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must not have any glossary terms associated with it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must exist in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:DeleteGlossary</c> permission in the domain and
+        /// glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There should be no active assets or metadata linked to the glossary.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlossary service method.</param>
         /// 
@@ -4435,6 +5456,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The glossary must be in DISABLED state. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must not have any glossary terms associated with it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must exist in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:DeleteGlossary</c> permission in the domain and
+        /// glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There should be no active assets or metadata linked to the glossary.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlossary service method.</param>
         /// <param name="cancellationToken">
@@ -4480,6 +5528,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term must exist and be active. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term must not be linked to other assets or child terms.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Caller must have delete permissions in the domain/glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure all associations (such as to assets or parent terms) are removed before deletion.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlossaryTerm service method.</param>
         /// 
@@ -4518,6 +5588,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Deletes a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term must exist and be active. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term must not be linked to other assets or child terms.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Caller must have delete permissions in the domain/glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure all associations (such as to assets or parent terms) are removed before deletion.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlossaryTerm service method.</param>
         /// <param name="cancellationToken">
@@ -5547,6 +6639,35 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an Amazon DataZone asset.
+        /// 
+        ///  
+        /// <para>
+        /// An asset is the fundamental building block in Amazon DataZone, representing any data
+        /// resource that needs to be cataloged and managed. It can take many forms, from Amazon
+        /// S3 buckets and database tables to dashboards and machine learning models. Each asset
+        /// contains comprehensive metadata about the resource, including its location, schema,
+        /// ownership, and lineage information. Assets are essential for organizing and managing
+        /// data resources across an organization, making them discoverable and usable while maintaining
+        /// proper governance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before using the Amazon DataZone GetAsset command, ensure the following prerequisites
+        /// are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain identifier must exist and be valid
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset identifier must exist
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have the required permissions to perform the action
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAsset service method.</param>
         /// 
@@ -5582,6 +6703,35 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an Amazon DataZone asset.
+        /// 
+        ///  
+        /// <para>
+        /// An asset is the fundamental building block in Amazon DataZone, representing any data
+        /// resource that needs to be cataloged and managed. It can take many forms, from Amazon
+        /// S3 buckets and database tables to dashboards and machine learning models. Each asset
+        /// contains comprehensive metadata about the resource, including its location, schema,
+        /// ownership, and lineage information. Assets are essential for organizing and managing
+        /// data resources across an organization, making them discoverable and usable while maintaining
+        /// proper governance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before using the Amazon DataZone GetAsset command, ensure the following prerequisites
+        /// are met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain identifier must exist and be valid
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset identifier must exist
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have the required permissions to perform the action
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAsset service method.</param>
         /// <param name="cancellationToken">
@@ -5624,6 +6774,25 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain (<c>--domain-identifier</c>), asset (<c>--asset-identifier</c>), and filter
+        /// (<c>--identifier</c>) must all exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset filter should not have been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must still exist (since the filter is linked to it).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssetFilter service method.</param>
         /// 
@@ -5659,6 +6828,25 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Domain (<c>--domain-identifier</c>), asset (<c>--asset-identifier</c>), and filter
+        /// (<c>--identifier</c>) must all exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset filter should not have been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must still exist (since the filter is linked to it).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssetFilter service method.</param>
         /// <param name="cancellationToken">
@@ -5701,6 +6889,34 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an Amazon DataZone asset type.
+        /// 
+        ///  
+        /// <para>
+        /// Asset types define the categories and characteristics of different kinds of data assets
+        /// within Amazon DataZone.. They determine what metadata fields are required, what operations
+        /// are possible, and how the asset integrates with other Amazon Web Services services.
+        /// Asset types can range from built-in types like Amazon S3 buckets and Amazon Web Services
+        /// Glue tables to custom types defined for specific organizational needs. Understanding
+        /// asset types is crucial for properly organizing and managing different kinds of data
+        /// resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset type with identifier must exist in the domain. ResourceNotFoundException.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the GetAssetType permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure the domain-identifier value is correct and accessible.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssetType service method.</param>
         /// 
@@ -5736,6 +6952,34 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets an Amazon DataZone asset type.
+        /// 
+        ///  
+        /// <para>
+        /// Asset types define the categories and characteristics of different kinds of data assets
+        /// within Amazon DataZone.. They determine what metadata fields are required, what operations
+        /// are possible, and how the asset integrates with other Amazon Web Services services.
+        /// Asset types can range from built-in types like Amazon S3 buckets and Amazon Web Services
+        /// Glue tables to custom types defined for specific organizational needs. Understanding
+        /// asset types is crucial for properly organizing and managing different kinds of data
+        /// resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset type with identifier must exist in the domain. ResourceNotFoundException.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must have the GetAssetType permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Ensure the domain-identifier value is correct and accessible.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssetType service method.</param>
         /// <param name="cancellationToken">
@@ -5857,6 +7101,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets the data product.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product ID must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have read or discovery permissions for the data product.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataProduct service method.</param>
         /// 
@@ -5892,6 +7154,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets the data product.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product ID must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have read or discovery permissions for the data product.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataProduct service method.</param>
         /// <param name="cancellationToken">
@@ -6734,6 +8014,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a metadata form type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Form types define the structure and validation rules for collecting metadata about
+        /// assets in Amazon DataZone. They act as templates that ensure consistent metadata capture
+        /// across similar types of assets, while allowing for customization to meet specific
+        /// organizational needs. Form types can include required fields, validation rules, and
+        /// dependencies, helping maintain high-quality metadata that makes data assets more discoverable
+        /// and usable.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type with the specified identifier must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permission on the form type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type should not be deleted or in an invalid state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFormType service method.</param>
         /// 
@@ -6769,6 +8076,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a metadata form type in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Form types define the structure and validation rules for collecting metadata about
+        /// assets in Amazon DataZone. They act as templates that ensure consistent metadata capture
+        /// across similar types of assets, while allowing for customization to meet specific
+        /// organizational needs. Form types can include required fields, validation rules, and
+        /// dependencies, helping maintain high-quality metadata that makes data assets more discoverable
+        /// and usable.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The form type with the specified identifier must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permission on the form type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The form type should not be deleted or in an invalid state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFormType service method.</param>
         /// <param name="cancellationToken">
@@ -6811,6 +8145,20 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified glossary ID must exist and be associated with the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:GetGlossary</c> permission on the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlossary service method.</param>
         /// 
@@ -6846,6 +8194,20 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The specified glossary ID must exist and be associated with the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:GetGlossary</c> permission on the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlossary service method.</param>
         /// <param name="cancellationToken">
@@ -6888,6 +8250,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term with identifier must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permission on the glossary term.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain must be accessible and active.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlossaryTerm service method.</param>
         /// 
@@ -6923,6 +8303,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term with identifier must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permission on the glossary term.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Domain must be accessible and active.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlossaryTerm service method.</param>
         /// <param name="cancellationToken">
@@ -7435,6 +8833,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a metadata generation run in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Valid domain and run identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The metadata generation run must exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have read access to the metadata run.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetadataGenerationRun service method.</param>
         /// 
@@ -7470,6 +8886,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Gets a metadata generation run in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Valid domain and run identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The metadata generation run must exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have read access to the metadata run.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetadataGenerationRun service method.</param>
         /// <param name="cancellationToken">
@@ -8365,6 +9799,20 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists asset filters.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A valid domain and asset must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must have at least one filter created to return results. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetFilters service method.</param>
         /// 
@@ -8400,6 +9848,20 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists asset filters.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A valid domain and asset must exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must have at least one filter created to return results. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetFilters service method.</param>
         /// <param name="cancellationToken">
@@ -8442,6 +9904,29 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists the revisions for the asset.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There must be at least one revision of the asset (which happens automatically after
+        /// creation).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the asset and domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetRevisions service method.</param>
         /// 
@@ -8477,6 +9962,29 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists the revisions for the asset.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The asset must exist in the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There must be at least one revision of the asset (which happens automatically after
+        /// creation).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be valid and active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the asset and domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetRevisions service method.</param>
         /// <param name="cancellationToken">
@@ -8592,6 +10100,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists data product revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product ID must exist within the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have view permissions on the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be in a valid and accessible state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataProductRevisions service method.</param>
         /// 
@@ -8627,6 +10153,24 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists data product revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The data product ID must exist within the domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have view permissions on the data product.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The domain must be in a valid and accessible state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataProductRevisions service method.</param>
         /// <param name="cancellationToken">
@@ -9759,6 +11303,29 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists all metadata generation runs.
+        /// 
+        ///  
+        /// <para>
+        /// Metadata generation runs represent automated processes that leverage AI/ML capabilities
+        /// to create or enhance asset metadata at scale. This feature helps organizations maintain
+        /// comprehensive and consistent metadata across large numbers of assets without manual
+        /// intervention. It can automatically generate business descriptions, tags, and other
+        /// metadata elements, significantly reducing the time and effort required for metadata
+        /// management while improving consistency and completeness.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Valid domain identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have access to metadata generation runs in the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetadataGenerationRuns service method.</param>
         /// 
@@ -9794,6 +11361,29 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Lists all metadata generation runs.
+        /// 
+        ///  
+        /// <para>
+        /// Metadata generation runs represent automated processes that leverage AI/ML capabilities
+        /// to create or enhance asset metadata at scale. This feature helps organizations maintain
+        /// comprehensive and consistent metadata across large numbers of assets without manual
+        /// intervention. It can automatically generate business descriptions, tags, and other
+        /// metadata elements, significantly reducing the time and effort required for metadata
+        /// management while improving consistency and completeness.
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Valid domain identifier. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have access to metadata generation runs in the domain.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetadataGenerationRuns service method.</param>
         /// <param name="cancellationToken">
@@ -11414,6 +13004,51 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Searches for assets in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Search in Amazon DataZone is a powerful capability that enables users to discover
+        /// and explore data assets, glossary terms, and data products across their organization.
+        /// It provides both basic and advanced search functionality, allowing users to find resources
+        /// based on names, descriptions, metadata, and other attributes. Search can be scoped
+        /// to specific types of resources (like assets, glossary terms, or data products) and
+        /// can be filtered using various criteria such as creation date, owner, or status. The
+        /// search functionality is essential for making the wealth of data resources in an organization
+        /// discoverable and usable, helping users find the right data for their needs quickly
+        /// and efficiently.
+        /// </para>
+        ///  
+        /// <para>
+        /// Many search commands in Amazon DataZone are paginated, including <c>search</c> and
+        /// <c>search-types</c>. When the result set is large, Amazon DataZone returns a <c>nextToken</c>
+        /// in the response. This token can be used to retrieve the next page of results. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --search-scope must be one of: ASSET, GLOSSARY_TERM, DATA_PRODUCT, or GLOSSARY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have search permissions in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using --filters, ensure that the JSON is well-formed and that each filter includes
+        /// valid attribute and value keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For paginated results, be prepared to use --next-token to fetch additional pages.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// 
@@ -11446,6 +13081,51 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Searches for assets in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Search in Amazon DataZone is a powerful capability that enables users to discover
+        /// and explore data assets, glossary terms, and data products across their organization.
+        /// It provides both basic and advanced search functionality, allowing users to find resources
+        /// based on names, descriptions, metadata, and other attributes. Search can be scoped
+        /// to specific types of resources (like assets, glossary terms, or data products) and
+        /// can be filtered using various criteria such as creation date, owner, or status. The
+        /// search functionality is essential for making the wealth of data resources in an organization
+        /// discoverable and usable, helping users find the right data for their needs quickly
+        /// and efficiently.
+        /// </para>
+        ///  
+        /// <para>
+        /// Many search commands in Amazon DataZone are paginated, including <c>search</c> and
+        /// <c>search-types</c>. When the result set is large, Amazon DataZone returns a <c>nextToken</c>
+        /// in the response. This token can be used to retrieve the next page of results. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --search-scope must be one of: ASSET, GLOSSARY_TERM, DATA_PRODUCT, or GLOSSARY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have search permissions in the specified domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using --filters, ensure that the JSON is well-formed and that each filter includes
+        /// valid attribute and value keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For paginated results, be prepared to use --next-token to fetch additional pages.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Search service method.</param>
         /// <param name="cancellationToken">
@@ -11633,6 +13313,37 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Searches for types in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --search-scope must be one of the valid values including: ASSET_TYPE, GLOSSARY_TERM_TYPE,
+        /// DATA_PRODUCT_TYPE.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The --managed flag must be present without a value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have permissions for form or asset types in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using --filters, ensure that the JSON is valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Filters contain correct structure (attribute, value, operator).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchTypes service method.</param>
         /// 
@@ -11665,6 +13376,37 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Searches for types in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// --search-scope must be one of the valid values including: ASSET_TYPE, GLOSSARY_TERM_TYPE,
+        /// DATA_PRODUCT_TYPE.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The --managed flag must be present without a value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have permissions for form or asset types in the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using --filters, ensure that the JSON is valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Filters contain correct structure (attribute, value, operator).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchTypes service method.</param>
         /// <param name="cancellationToken">
@@ -11870,6 +13612,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Starts the metadata generation run.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Asset must be created and belong to the specified domain and project. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset type must be supported for metadata generation (e.g., Amazon Web Services Glue
+        /// table).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must have a structured schema with valid rows and columns.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have permission to run metadata generation in the domain/project.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMetadataGenerationRun service method.</param>
         /// 
@@ -11911,6 +13680,33 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Starts the metadata generation run.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Asset must be created and belong to the specified domain and project. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset type must be supported for metadata generation (e.g., Amazon Web Services Glue
+        /// table).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asset must have a structured schema with valid rows and columns.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user must have permission to run metadata generation in the domain/project.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMetadataGenerationRun service method.</param>
         /// <param name="cancellationToken">
@@ -12196,6 +13992,25 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain, asset, and asset filter identifier must all exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must contain the columns being referenced in the update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If applying a row filter, ensure the column referenced in the expression exists in
+        /// the asset schema.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssetFilter service method.</param>
         /// 
@@ -12234,6 +14049,25 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates an asset filter.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The domain, asset, and asset filter identifier must all exist. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The asset must contain the columns being referenced in the update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If applying a row filter, ensure the column referenced in the expression exists in
+        /// the asset schema.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssetFilter service method.</param>
         /// <param name="cancellationToken">
@@ -12792,6 +14626,95 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  UpdateEnvironmentBlueprint
+
+
+        /// <summary>
+        /// Updates an environment blueprint in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentBlueprint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentBlueprint">REST API Reference for UpdateEnvironmentBlueprint Operation</seealso>
+        public virtual UpdateEnvironmentBlueprintResponse UpdateEnvironmentBlueprint(UpdateEnvironmentBlueprintRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentBlueprintResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEnvironmentBlueprintResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an environment blueprint in Amazon DataZone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentBlueprint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentBlueprint service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentBlueprint">REST API Reference for UpdateEnvironmentBlueprint Operation</seealso>
+        public virtual Task<UpdateEnvironmentBlueprintResponse> UpdateEnvironmentBlueprintAsync(UpdateEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEnvironmentBlueprintRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEnvironmentBlueprintResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEnvironmentBlueprintResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateEnvironmentProfile
 
 
@@ -12886,6 +14809,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates the business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The glossary must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:UpdateGlossary</c> permission to update it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating the name, the new name must be unique within the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must not be deleted or in a terminal state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlossary service method.</param>
         /// 
@@ -12924,6 +14869,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates the business glossary in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The glossary must exist in the given domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The caller must have the <c>datazone:UpdateGlossary</c> permission to update it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When updating the name, the new name must be unique within the domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The glossary must not be deleted or in a terminal state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlossary service method.</param>
         /// <param name="cancellationToken">
@@ -12969,6 +14936,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term must exist in the specified domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// New name must not conflict with existing terms in the same glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the term.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term must not be in DELETED status.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlossaryTerm service method.</param>
         /// 
@@ -13007,6 +14996,28 @@ namespace Amazon.DataZone
 
         /// <summary>
         /// Updates a business glossary term in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// Prerequisites:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Glossary term must exist in the specified domain. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// New name must not conflict with existing terms in the same glossary.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User must have permissions on the term.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The term must not be in DELETED status.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlossaryTerm service method.</param>
         /// <param name="cancellationToken">

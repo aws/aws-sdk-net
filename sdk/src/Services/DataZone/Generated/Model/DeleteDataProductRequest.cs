@@ -32,6 +32,28 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the DeleteDataProduct operation.
     /// Deletes a data product in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The data product must exist and not be deleted or archived. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The user must have delete permissions for the data product.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Ensure there are no active dependencies (e.g., published links, assets using the product).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Domain and project must be active.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteDataProductRequest : AmazonDataZoneRequest
     {

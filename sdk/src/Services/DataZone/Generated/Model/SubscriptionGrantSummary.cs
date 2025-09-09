@@ -224,7 +224,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestampf of when the subscription grant was updated.
+        /// The timestamp of when the subscription grant was updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

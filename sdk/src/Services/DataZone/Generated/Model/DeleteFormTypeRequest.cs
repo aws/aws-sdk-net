@@ -31,7 +31,33 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFormType operation.
-    /// Delets and metadata form type in Amazon DataZone.
+    /// Deletes and metadata form type in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The form type must exist in the domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The form type must not be in use by any asset types or assets.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain must be valid and accessible.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have delete permissions on the form type.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Any dependencies (such as linked asset types) must be removed first.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteFormTypeRequest : AmazonDataZoneRequest
     {

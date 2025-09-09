@@ -32,6 +32,28 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the DeleteGlossaryTerm operation.
     /// Deletes a business glossary term in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Glossary term must exist and be active. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The term must not be linked to other assets or child terms.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Caller must have delete permissions in the domain/glossary.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Ensure all associations (such as to assets or parent terms) are removed before deletion.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteGlossaryTermRequest : AmazonDataZoneRequest
     {

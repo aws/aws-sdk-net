@@ -30,67 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateGlossary operation.
-    /// Updates the business glossary in Amazon DataZone.
-    /// 
-    ///  
-    /// <para>
-    /// Prerequisites:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// The glossary must exist in the given domain. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The caller must have the <c>datazone:UpdateGlossary</c> permission to update it.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// When updating the name, the new name must be unique within the domain.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The glossary must not be deleted or in a terminal state.
-    /// </para>
-    ///  </li> </ul>
+    /// Container for the parameters to the UpdateEnvironmentBlueprint operation.
+    /// Updates an environment blueprint in Amazon DataZone.
     /// </summary>
-    public partial class UpdateGlossaryRequest : AmazonDataZoneRequest
+    public partial class UpdateEnvironmentBlueprintRequest : AmazonDataZoneRequest
     {
-        private string _clientToken;
         private string _description;
         private string _domainIdentifier;
         private string _identifier;
-        private string _name;
-        private GlossaryStatus _status;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// A unique, case-sensitive identifier that is provided to ensure the idempotency of
-        /// the request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
+        private ProvisioningProperties _provisioningProperties;
+        private List<CustomParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<CustomParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <c>UpdateGlossary</c> action.
+        /// The description to be updated as part of the <c>UpdateEnvironmentBlueprint</c> action.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
         {
             get { return this._description; }
@@ -106,8 +62,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which a business glossary is to be
-        /// updated.
+        /// The identifier of the Amazon DataZone domain in which an environment blueprint is
+        /// to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +82,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the business glossary to be updated.
+        /// The identifier of the environment blueprint to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,40 +99,46 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ProvisioningProperties. 
         /// <para>
-        /// The name to be updated as part of the <c>UpdateGlossary</c> action.
+        /// The provisioning properties to be updated as part of the <c>UpdateEnvironmentBlueprint</c>
+        /// action.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=256)]
-        public string Name
+        public ProvisioningProperties ProvisioningProperties
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._provisioningProperties; }
+            set { this._provisioningProperties = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ProvisioningProperties property is set
+        internal bool IsSetProvisioningProperties()
         {
-            return this._name != null;
+            return this._provisioningProperties != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property UserParameters. 
         /// <para>
-        /// The status to be updated as part of the <c>UpdateGlossary</c> action.
+        /// The user parameters to be updated as part of the <c>UpdateEnvironmentBlueprint</c>
+        /// action.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public GlossaryStatus Status
+        public List<CustomParameter> UserParameters
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._userParameters; }
+            set { this._userParameters = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if UserParameters property is set
+        internal bool IsSetUserParameters()
         {
-            return this._status != null;
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
