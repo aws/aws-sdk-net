@@ -32,7 +32,7 @@ namespace Amazon.Pipes
     public partial class AmazonPipesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pipes", "3.7.501.5");
+            InternalSDKUtils.BuildUserAgentString("Pipes", "3.7.501.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>

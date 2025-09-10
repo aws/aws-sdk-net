@@ -1,3 +1,12 @@
+### 3.7.1120.0 (2025-09-10 18:18 UTC)
+* NetworkFlowMonitor (3.7.502.0)
+	* Added new enum value (AWS::Region) for type field under MonitorLocalResource and MonitorRemoteResource. Workload Insights and Monitor top contributors queries now support a new DestinationCategory (INTER_REGION).
+* PaymentCryptography (3.7.502.0)
+	* AWS Payment Cryptography Service now supports Multi-Region key replication. Customers can choose to automatically distribute keys across AWS Regions.
+* Core 3.7.500.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1119.0 (2025-09-09 18:26 UTC)
 * AutoScaling (3.7.501.0)
 	* Added WaitForTransitioningInstances parameter to the CancelInstanceRefresh API, allowing the caller to cancel an instance refresh without waiting for on-going launches and terminations.
