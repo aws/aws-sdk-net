@@ -31,7 +31,7 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// A local resource is the host where the agent is installed. Local resources can be
-    /// a a subnet, a VPC, or an Availability Zone.
+    /// a a subnet, a VPC, an Availability Zone, or an Amazon Web Services service.
     /// </summary>
     public partial class MonitorLocalResource
     {
@@ -41,7 +41,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the local resource, such as an ARN.
+        /// The identifier of the local resource. For a VPC or subnet, this identifier is the
+        /// VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier
+        /// is the AZ name, for example, us-west-2b.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +62,8 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the local resource. Valid values are <c>AWS::EC2::VPC</c> <c>AWS::AvailabilityZone</c>
-        /// or <c>AWS::EC2::Subnet</c>.
+        /// The type of the local resource. Valid values are <c>AWS::EC2::VPC</c> <c>AWS::AvailabilityZone</c>,
+        /// <c>AWS::EC2::Subnet</c>, or <c>AWS::Region</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -79,6 +79,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>INTER_REGION</c>: Top contributor network flows between Regions (to the edge of
+        /// another Region)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>INTER_VPC</c>: Top contributor network flows between VPCs
         /// </para>
         ///  </li> <li> 

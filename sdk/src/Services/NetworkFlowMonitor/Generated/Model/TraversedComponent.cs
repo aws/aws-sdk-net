@@ -42,7 +42,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property ComponentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a tranversed component.
+        /// The Amazon Resource Name (ARN) of a traversed component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

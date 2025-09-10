@@ -65,7 +65,8 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property LocalResources. 
         /// <para>
-        /// The local resources for this monitor.
+        /// The local resources to monitor. A local resource in a workload is the location of
+        /// the hosts where the Network Flow Monitor agent is installed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,7 +182,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property RemoteResources. 
         /// <para>
-        /// The remote resources for this monitor.
+        /// The remote resources to monitor. A remote resource is the other endpoint specified
+        /// for the network flow of a workload, with a local resource. For example, Amazon Dynamo
+        /// DB can be a remote resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

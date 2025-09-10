@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
-    /// A target resource in a scope. The resource is identified by a Region and a target
-    /// identifier, which includes a target ID and a target type.
+    /// A target resource in a scope. The resource is identified by a Region and an account,
+    /// defined by a target identifier. A target identifier is made up of a target ID (currently
+    /// always an account ID) and a target type (currently always <c>ACCOUNT</c>).
     /// </summary>
     public partial class TargetResource
     {
@@ -41,7 +42,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Amazon Web Services Region where the target resource is located.
+        /// The Amazon Web Services Region for the scope.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +61,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// A target identifier is a pair of identifying information for a resource that is included
-        /// in a target. A target identifier includes the target ID and the target type.
+        /// A target identifier is a pair of identifying information for a scope. A target identifier
+        /// is made up of a targetID (currently always an account ID) and a targetType (currently
+        /// always an account).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

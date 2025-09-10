@@ -292,7 +292,7 @@ namespace Amazon.NetworkFlowMonitor
         /// Create a monitor for specific network flows between local and remote resources, so
         /// that you can monitor network performance for one or several of your workloads. For
         /// each monitor, Network Flow Monitor publishes detailed end-to-end performance metrics
-        /// and a network health indicators (NHI) that informs you whether there were Amazon Web
+        /// and a network health indicator (NHI) that informs you whether there were Amazon Web
         /// Services network issues for one or more of the network flows tracked by a monitor,
         /// during a time period that you choose.
         /// </summary>
@@ -332,7 +332,7 @@ namespace Amazon.NetworkFlowMonitor
         /// Create a monitor for specific network flows between local and remote resources, so
         /// that you can monitor network performance for one or several of your workloads. For
         /// each monitor, Network Flow Monitor publishes detailed end-to-end performance metrics
-        /// and a network health indicators (NHI) that informs you whether there were Amazon Web
+        /// and a network health indicator (NHI) that informs you whether there were Amazon Web
         /// Services network issues for one or more of the network flows tracked by a monitor,
         /// during a time period that you choose.
         /// </summary>
@@ -376,16 +376,38 @@ namespace Amazon.NetworkFlowMonitor
 
 
         /// <summary>
-        /// Create a scope of resources that you want to be available for Network Flow Monitor
-        /// to generate metrics for, when you have active agents on those resources sending metrics
-        /// reports to the Network Flow Monitor backend. This call returns a scope ID to identify
-        /// the scope.
+        /// In Network Flow Monitor, you specify a scope for the service to generate metrics for.
+        /// By using the scope, Network Flow Monitor can generate a topology of all the resources
+        /// to measure performance metrics for. When you create a scope, you enable permissions
+        /// for Network Flow Monitor.
         /// 
         ///  
         /// <para>
-        /// When you create a scope, you enable permissions for Network Flow Monitor. The scope
-        /// is set to the resources for the Amazon Web Services that enables the feature.
+        /// A scope is a Region-account pair or multiple Region-account pairs. Network Flow Monitor
+        /// uses your scope to determine all the resources (the topology) where Network Flow Monitor
+        /// will gather network flow performance metrics for you. To provide performance metrics,
+        /// Network Flow Monitor uses the data that is sent by the Network Flow Monitor agents
+        /// you install on the resources.
         /// </para>
+        ///  
+        /// <para>
+        /// To define the Region-account pairs for your scope, the Network Flow Monitor API uses
+        /// the following constucts, which allow for future flexibility in defining scopes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Targets</i>, which are arrays of targetResources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Target resources</i>, which are Region-targetIdentifier pairs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Target identifiers</i>, made up of a targetID (currently always an account ID)
+        /// and a targetType (currently always an account). 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScope service method.</param>
         /// 
@@ -420,16 +442,38 @@ namespace Amazon.NetworkFlowMonitor
 
 
         /// <summary>
-        /// Create a scope of resources that you want to be available for Network Flow Monitor
-        /// to generate metrics for, when you have active agents on those resources sending metrics
-        /// reports to the Network Flow Monitor backend. This call returns a scope ID to identify
-        /// the scope.
+        /// In Network Flow Monitor, you specify a scope for the service to generate metrics for.
+        /// By using the scope, Network Flow Monitor can generate a topology of all the resources
+        /// to measure performance metrics for. When you create a scope, you enable permissions
+        /// for Network Flow Monitor.
         /// 
         ///  
         /// <para>
-        /// When you create a scope, you enable permissions for Network Flow Monitor. The scope
-        /// is set to the resources for the Amazon Web Services that enables the feature.
+        /// A scope is a Region-account pair or multiple Region-account pairs. Network Flow Monitor
+        /// uses your scope to determine all the resources (the topology) where Network Flow Monitor
+        /// will gather network flow performance metrics for you. To provide performance metrics,
+        /// Network Flow Monitor uses the data that is sent by the Network Flow Monitor agents
+        /// you install on the resources.
         /// </para>
+        ///  
+        /// <para>
+        /// To define the Region-account pairs for your scope, the Network Flow Monitor API uses
+        /// the following constucts, which allow for future flexibility in defining scopes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Targets</i>, which are arrays of targetResources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Target resources</i>, which are Region-targetIdentifier pairs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Target identifiers</i>, made up of a targetID (currently always an account ID)
+        /// and a targetType (currently always an account). 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScope service method.</param>
         /// <param name="cancellationToken">
@@ -479,6 +523,9 @@ namespace Amazon.NetworkFlowMonitor
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
         /// You don't have sufficient permission to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
+        /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.
         /// </exception>
@@ -513,6 +560,9 @@ namespace Amazon.NetworkFlowMonitor
         /// <returns>The response from the DeleteMonitor service method, as returned by NetworkFlowMonitor.</returns>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.AccessDeniedException">
         /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFlowMonitor.Model.ConflictException">
+        /// The requested resource is in use.
         /// </exception>
         /// <exception cref="Amazon.NetworkFlowMonitor.Model.InternalServerException">
         /// An internal error occurred.

@@ -174,7 +174,10 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property RemoteIdentifier. 
         /// <para>
-        /// The identifier of a remote resource.
+        /// The identifier of a remote resource. For a VPC or subnet, this identifier is the VPC
+        /// Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier
+        /// is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this
+        /// identifier is the Region name, for example, us-west-2.
         /// </para>
         /// </summary>
         public string RemoteIdentifier
