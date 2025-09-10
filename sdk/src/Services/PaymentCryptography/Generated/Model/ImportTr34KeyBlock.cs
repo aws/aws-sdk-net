@@ -130,7 +130,7 @@ namespace Amazon.PaymentCryptography.Model
         /// KDH TR-34 WrappedKeyBlock.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string SigningKeyCertificate
         {
             get { return this._signingKeyCertificate; }

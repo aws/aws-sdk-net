@@ -73,6 +73,252 @@ namespace Amazon.PaymentCryptography
         IPaymentCryptographyPaginatorFactory Paginators { get; }
 
         
+        #region  AddKeyReplicationRegions
+
+
+        /// <summary>
+        /// Adds replication Amazon Web Services Regions to an existing Amazon Web Services Payment
+        /// Cryptography key, enabling the key to be used for cryptographic operations in additional
+        /// Amazon Web Services Regions.
+        /// 
+        ///  
+        /// <para>
+        /// Multi-region keys allow you to use the same key material across multiple Amazon Web
+        /// Services Regions, providing lower latency for applications distributed across regions.
+        /// When you add Replication Regions, Amazon Web Services Payment Cryptography securely
+        /// replicates the key material to the specified Amazon Web Services Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key must be in an active state to add Replication Regions. You can add multiple
+        /// regions in a single operation, and the key will be available for use in those regions
+        /// once replication is complete.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html">RemoveKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddKeyReplicationRegions service method.</param>
+        /// 
+        /// <returns>The response from the AddKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AddKeyReplicationRegions">REST API Reference for AddKeyReplicationRegions Operation</seealso>
+        AddKeyReplicationRegionsResponse AddKeyReplicationRegions(AddKeyReplicationRegionsRequest request);
+
+
+
+        /// <summary>
+        /// Adds replication Amazon Web Services Regions to an existing Amazon Web Services Payment
+        /// Cryptography key, enabling the key to be used for cryptographic operations in additional
+        /// Amazon Web Services Regions.
+        /// 
+        ///  
+        /// <para>
+        /// Multi-region keys allow you to use the same key material across multiple Amazon Web
+        /// Services Regions, providing lower latency for applications distributed across regions.
+        /// When you add Replication Regions, Amazon Web Services Payment Cryptography securely
+        /// replicates the key material to the specified Amazon Web Services Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key must be in an active state to add Replication Regions. You can add multiple
+        /// regions in a single operation, and the key will be available for use in those regions
+        /// once replication is complete.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RemoveKeyReplicationRegions.html">RemoveKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddKeyReplicationRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AddKeyReplicationRegions">REST API Reference for AddKeyReplicationRegions Operation</seealso>
+        Task<AddKeyReplicationRegionsResponse> AddKeyReplicationRegionsAsync(AddKeyReplicationRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAlias
 
 
@@ -133,27 +379,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the CreateAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
@@ -220,27 +519,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the CreateAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -329,27 +681,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the CreateKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateKey">REST API Reference for CreateKey Operation</seealso>
         CreateKeyResponse CreateKey(CreateKeyRequest request);
@@ -438,27 +843,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the CreateKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateKey">REST API Reference for CreateKey Operation</seealso>
         Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -515,24 +973,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the DeleteAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
@@ -589,24 +1093,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the DeleteAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -669,24 +1219,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the DeleteKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         DeleteKeyResponse DeleteKey(DeleteKeyRequest request);
@@ -749,27 +1345,537 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the DeleteKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         Task<DeleteKeyResponse> DeleteKeyAsync(DeleteKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableDefaultKeyReplicationRegions
+
+
+        /// <summary>
+        /// Disables multi-region key replication settings for the specified Amazon Web Services
+        /// Regions in your account, preventing new keys from being automatically replicated to
+        /// those regions.
+        /// 
+        ///  
+        /// <para>
+        /// After disabling default replication for specific regions, new keys created in your
+        /// account will not be automatically replicated to those regions. You can still manually
+        /// add replication to those regions for individual keys using the AddKeyReplicationRegions
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation does not affect existing keys or their current replication configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDefaultKeyReplicationRegions service method.</param>
+        /// 
+        /// <returns>The response from the DisableDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisableDefaultKeyReplicationRegions">REST API Reference for DisableDefaultKeyReplicationRegions Operation</seealso>
+        DisableDefaultKeyReplicationRegionsResponse DisableDefaultKeyReplicationRegions(DisableDefaultKeyReplicationRegionsRequest request);
+
+
+
+        /// <summary>
+        /// Disables multi-region key replication settings for the specified Amazon Web Services
+        /// Regions in your account, preventing new keys from being automatically replicated to
+        /// those regions.
+        /// 
+        ///  
+        /// <para>
+        /// After disabling default replication for specific regions, new keys created in your
+        /// account will not be automatically replicated to those regions. You can still manually
+        /// add replication to those regions for individual keys using the AddKeyReplicationRegions
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation does not affect existing keys or their current replication configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDefaultKeyReplicationRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisableDefaultKeyReplicationRegions">REST API Reference for DisableDefaultKeyReplicationRegions Operation</seealso>
+        Task<DisableDefaultKeyReplicationRegionsResponse> DisableDefaultKeyReplicationRegionsAsync(DisableDefaultKeyReplicationRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableDefaultKeyReplicationRegions
+
+
+        /// <summary>
+        /// Enables multi-region key replication settings for your account, causing new keys to
+        /// be automatically replicated to the specified Amazon Web Services Regions when created.
+        /// 
+        ///  
+        /// <para>
+        /// When default Replication Regions are enabled, any new keys created in your account
+        /// will automatically be replicated to these regions unless you explicitly override this
+        /// behavior during key creation. This simplifies key management for applications that
+        /// operate across multiple regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing keys are not affected by this operation - only keys created after enabling
+        /// default replication will be automatically replicated.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDefaultKeyReplicationRegions service method.</param>
+        /// 
+        /// <returns>The response from the EnableDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/EnableDefaultKeyReplicationRegions">REST API Reference for EnableDefaultKeyReplicationRegions Operation</seealso>
+        EnableDefaultKeyReplicationRegionsResponse EnableDefaultKeyReplicationRegions(EnableDefaultKeyReplicationRegionsRequest request);
+
+
+
+        /// <summary>
+        /// Enables multi-region key replication settings for your account, causing new keys to
+        /// be automatically replicated to the specified Amazon Web Services Regions when created.
+        /// 
+        ///  
+        /// <para>
+        /// When default Replication Regions are enabled, any new keys created in your account
+        /// will automatically be replicated to these regions unless you explicitly override this
+        /// behavior during key creation. This simplifies key management for applications that
+        /// operate across multiple regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Existing keys are not affected by this operation - only keys created after enabling
+        /// default replication will be automatically replicated.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetDefaultKeyReplicationRegions.html">GetDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDefaultKeyReplicationRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/EnableDefaultKeyReplicationRegions">REST API Reference for EnableDefaultKeyReplicationRegions Operation</seealso>
+        Task<EnableDefaultKeyReplicationRegionsResponse> EnableDefaultKeyReplicationRegionsAsync(EnableDefaultKeyReplicationRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1056,24 +2162,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ExportKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportKey">REST API Reference for ExportKey Operation</seealso>
         ExportKeyResponse ExportKey(ExportKeyRequest request);
@@ -1363,24 +2515,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ExportKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportKey">REST API Reference for ExportKey Operation</seealso>
         Task<ExportKeyResponse> ExportKeyAsync(ExportKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1429,21 +2627,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetAlias">REST API Reference for GetAlias Operation</seealso>
         GetAliasResponse GetAlias(GetAliasRequest request);
@@ -1492,24 +2729,283 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetAlias">REST API Reference for GetAlias Operation</seealso>
         Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDefaultKeyReplicationRegions
+
+
+        /// <summary>
+        /// Retrieves the list of regions where default key replication is currently enabled for
+        /// your account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns the current configuration of default Replication Regions. New
+        /// keys created in your account will be automatically replicated to these regions unless
+        /// explicitly overridden during key creation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultKeyReplicationRegions service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetDefaultKeyReplicationRegions">REST API Reference for GetDefaultKeyReplicationRegions Operation</seealso>
+        GetDefaultKeyReplicationRegionsResponse GetDefaultKeyReplicationRegions(GetDefaultKeyReplicationRegionsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the list of regions where default key replication is currently enabled for
+        /// your account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns the current configuration of default Replication Regions. New
+        /// keys created in your account will be automatically replicated to these regions unless
+        /// explicitly overridden during key creation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_EnableDefaultKeyReplicationRegions.html">EnableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultKeyReplicationRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDefaultKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetDefaultKeyReplicationRegions">REST API Reference for GetDefaultKeyReplicationRegions Operation</seealso>
+        Task<GetDefaultKeyReplicationRegionsResponse> GetDefaultKeyReplicationRegionsAsync(GetDefaultKeyReplicationRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1517,8 +3013,10 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Gets the key material for an Amazon Web Services Payment Cryptography key, including
-        /// the immutable and mutable data specified when the key was created.
+        /// Gets the key metadata for an Amazon Web Services Payment Cryptography key, including
+        /// the immutable and mutable attributes specified when the key was created. Returns key
+        /// metadata including attributes, state, and timestamps, but does not return the actual
+        /// cryptographic key material.
         /// 
         ///  
         /// <para>
@@ -1551,21 +3049,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetKey">REST API Reference for GetKey Operation</seealso>
         GetKeyResponse GetKey(GetKeyRequest request);
@@ -1573,8 +3110,10 @@ namespace Amazon.PaymentCryptography
 
 
         /// <summary>
-        /// Gets the key material for an Amazon Web Services Payment Cryptography key, including
-        /// the immutable and mutable data specified when the key was created.
+        /// Gets the key metadata for an Amazon Web Services Payment Cryptography key, including
+        /// the immutable and mutable attributes specified when the key was created. Returns key
+        /// metadata including attributes, state, and timestamps, but does not return the actual
+        /// cryptographic key material.
         /// 
         ///  
         /// <para>
@@ -1610,21 +3149,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetKey">REST API Reference for GetKey Operation</seealso>
         Task<GetKeyResponse> GetKeyAsync(GetKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1672,27 +3250,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetParametersForExport service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForExport">REST API Reference for GetParametersForExport Operation</seealso>
         GetParametersForExportResponse GetParametersForExport(GetParametersForExportRequest request);
@@ -1740,27 +3371,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetParametersForExport service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForExport">REST API Reference for GetParametersForExport Operation</seealso>
         Task<GetParametersForExportResponse> GetParametersForExportAsync(GetParametersForExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1808,27 +3492,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetParametersForImport service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request);
@@ -1876,27 +3613,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetParametersForImport service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1929,21 +3719,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetPublicKeyCertificate service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetPublicKeyCertificate">REST API Reference for GetPublicKeyCertificate Operation</seealso>
         GetPublicKeyCertificateResponse GetPublicKeyCertificate(GetPublicKeyCertificateRequest request);
@@ -1976,21 +3805,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the GetPublicKeyCertificate service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetPublicKeyCertificate">REST API Reference for GetPublicKeyCertificate Operation</seealso>
         Task<GetPublicKeyCertificateResponse> GetPublicKeyCertificateAsync(GetPublicKeyCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2279,27 +4147,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ImportKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKey">REST API Reference for ImportKey Operation</seealso>
         ImportKeyResponse ImportKey(ImportKeyRequest request);
@@ -2588,27 +4509,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ImportKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKey">REST API Reference for ImportKey Operation</seealso>
         Task<ImportKeyResponse> ImportKeyAsync(ImportKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2668,21 +4642,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListAliases service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse ListAliases(ListAliasesRequest request);
@@ -2742,21 +4755,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListAliases service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListAliases">REST API Reference for ListAliases Operation</seealso>
         Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2809,21 +4861,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListKeys service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListKeys">REST API Reference for ListKeys Operation</seealso>
         ListKeysResponse ListKeys(ListKeysRequest request);
@@ -2876,21 +4967,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListKeys service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListKeys">REST API Reference for ListKeys Operation</seealso>
         Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2937,21 +5067,60 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListTagsForResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -2998,24 +5167,295 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the ListTagsForResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveKeyReplicationRegions
+
+
+        /// <summary>
+        /// Removes Replication Regions from an existing Amazon Web Services Payment Cryptography
+        /// key, disabling the key's availability for cryptographic operations in the specified
+        /// Amazon Web Services Regions.
+        /// 
+        ///  
+        /// <para>
+        /// When you remove Replication Regions, the key material is securely deleted from those
+        /// regions and can no longer be used for cryptographic operations there. This operation
+        /// is irreversible for the specified Amazon Web Services Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Ensure that no active cryptographic operations or applications depend on the key in
+        /// the regions you're removing before performing this operation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveKeyReplicationRegions service method.</param>
+        /// 
+        /// <returns>The response from the RemoveKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RemoveKeyReplicationRegions">REST API Reference for RemoveKeyReplicationRegions Operation</seealso>
+        RemoveKeyReplicationRegionsResponse RemoveKeyReplicationRegions(RemoveKeyReplicationRegionsRequest request);
+
+
+
+        /// <summary>
+        /// Removes Replication Regions from an existing Amazon Web Services Payment Cryptography
+        /// key, disabling the key's availability for cryptographic operations in the specified
+        /// Amazon Web Services Regions.
+        /// 
+        ///  
+        /// <para>
+        /// When you remove Replication Regions, the key material is securely deleted from those
+        /// regions and can no longer be used for cryptographic operations there. This operation
+        /// is irreversible for the specified Amazon Web Services Regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Ensure that no active cryptographic operations or applications depend on the key in
+        /// the regions you're removing before performing this operation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AddKeyReplicationRegions.html">AddKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisableDefaultKeyReplicationRegions.html">DisableDefaultKeyReplicationRegions</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveKeyReplicationRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveKeyReplicationRegions service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RemoveKeyReplicationRegions">REST API Reference for RemoveKeyReplicationRegions Operation</seealso>
+        Task<RemoveKeyReplicationRegionsResponse> RemoveKeyReplicationRegionsAsync(RemoveKeyReplicationRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3064,27 +5504,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the RestoreKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RestoreKey">REST API Reference for RestoreKey Operation</seealso>
         RestoreKeyResponse RestoreKey(RestoreKeyRequest request);
@@ -3136,27 +5629,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the RestoreKey service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RestoreKey">REST API Reference for RestoreKey Operation</seealso>
         Task<RestoreKeyResponse> RestoreKeyAsync(RestoreKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3191,27 +5737,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the StartKeyUsage service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StartKeyUsage">REST API Reference for StartKeyUsage Operation</seealso>
         StartKeyUsageResponse StartKeyUsage(StartKeyUsageRequest request);
@@ -3246,27 +5845,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the StartKeyUsage service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StartKeyUsage">REST API Reference for StartKeyUsage Operation</seealso>
         Task<StartKeyUsageResponse> StartKeyUsageAsync(StartKeyUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3311,27 +5963,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the StopKeyUsage service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StopKeyUsage">REST API Reference for StopKeyUsage Operation</seealso>
         StopKeyUsageResponse StopKeyUsage(StopKeyUsageRequest request);
@@ -3376,27 +6081,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the StopKeyUsage service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StopKeyUsage">REST API Reference for StopKeyUsage Operation</seealso>
         Task<StopKeyUsageResponse> StopKeyUsageAsync(StopKeyUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3448,27 +6206,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the TagResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -3520,27 +6331,80 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the TagResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
         /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3584,24 +6448,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the UntagResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -3645,24 +6555,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the UntagResource service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3715,24 +6671,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the UpdateAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         UpdateAliasResponse UpdateAlias(UpdateAliasRequest request);
@@ -3785,24 +6787,70 @@ namespace Amazon.PaymentCryptography
         /// <returns>The response from the UpdateAlias service method, as returned by PaymentCryptography.</returns>
         /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
         /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
-        /// The request was denied due to an invalid resource error.
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
         /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));

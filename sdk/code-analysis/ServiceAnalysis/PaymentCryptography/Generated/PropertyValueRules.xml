@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.AddKeyReplicationRegionsRequest.KeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.CreateAliasRequest.AliasName</property>
     <min>7</min>
     <max>256</max>
@@ -49,7 +55,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.GetParametersForExportResponse.ExportToken</property>
-    <pattern>export-token-[0-9a-zA-Z]{16,64}</pattern>
+    <pattern>(export-token-[0-9a-zA-Z]{16,64})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.GetParametersForExportResponse.SigningKeyCertificate</property>
@@ -65,7 +71,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.GetParametersForImportResponse.ImportToken</property>
-    <pattern>import-token-[0-9a-zA-Z]{16,64}</pattern>
+    <pattern>(import-token-[0-9a-zA-Z]{16,64})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.GetParametersForImportResponse.WrappingKeyCertificate</property>
@@ -153,6 +159,12 @@
     <property>Amazon.PaymentCryptography.Model.ListTagsForResourceResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.RemoveKeyReplicationRegionsRequest.KeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.RestoreKeyRequest.KeyIdentifier</property>
@@ -264,7 +276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ExportTr34KeyBlock.ExportToken</property>
-    <pattern>export-token-[0-9a-zA-Z]{16,64}</pattern>
+    <pattern>(export-token-[0-9a-zA-Z]{16,64})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ExportTr34KeyBlock.RandomNonce</property>
@@ -300,11 +312,11 @@
     <property>Amazon.PaymentCryptography.Model.ImportDiffieHellmanTr31KeyBlock.WrappedKeyBlock</property>
     <min>56</min>
     <max>9984</max>
-    <pattern>[0-9A-Z]+</pattern>
+    <pattern>[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportKeyCryptogram.ImportToken</property>
-    <pattern>import-token-[0-9a-zA-Z]{16,64}</pattern>
+    <pattern>(import-token-[0-9a-zA-Z]{16,64})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportKeyCryptogram.WrappedKeyCryptogram</property>
@@ -316,7 +328,7 @@
     <property>Amazon.PaymentCryptography.Model.ImportTr31KeyBlock.WrappedKeyBlock</property>
     <min>56</min>
     <max>9984</max>
-    <pattern>[0-9A-Z]+</pattern>
+    <pattern>[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportTr31KeyBlock.WrappingKeyIdentifier</property>
@@ -332,7 +344,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportTr34KeyBlock.ImportToken</property>
-    <pattern>import-token-[0-9a-zA-Z]{16,64}</pattern>
+    <pattern>(import-token-[0-9a-zA-Z]{16,64})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportTr34KeyBlock.RandomNonce</property>
@@ -365,6 +377,10 @@
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.Key.PrimaryRegion</property>
+    <pattern>[a-z]{2}-[a-z]{1,16}-[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.KeyBlockHeaders.KeyVersion</property>
     <min>2</min>
     <max>2</max>
@@ -380,6 +396,10 @@
     <min>4</min>
     <max>16</max>
     <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.KeySummary.PrimaryRegion</property>
+    <pattern>[a-z]{2}-[a-z]{1,16}-[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.RootCertificatePublicKey.PublicKeyCertificate</property>

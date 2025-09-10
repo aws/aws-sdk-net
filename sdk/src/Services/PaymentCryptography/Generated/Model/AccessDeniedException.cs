@@ -31,6 +31,13 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// You do not have sufficient access to perform this action.
+    /// 
+    ///  
+    /// <para>
+    /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+    /// the requested operation. Verify that your IAM policy includes the required permissions
+    /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
