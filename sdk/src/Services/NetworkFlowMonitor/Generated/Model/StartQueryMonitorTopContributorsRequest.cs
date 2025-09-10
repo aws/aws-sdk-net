@@ -74,6 +74,11 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>INTER_REGION</c>: Top contributor network flows between Regions (to the edge of
+        /// another Region)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>INTER_VPC</c>: Top contributor network flows between VPCs
         /// </para>
         ///  </li> <li> 
@@ -186,8 +191,8 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The timestamp that is the date and time beginning of the period that you want to retrieve
-        /// results for with your query.
+        /// The timestamp that is the date and time that is the beginning of the period that you
+        /// want to retrieve results for with your query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -65,7 +65,9 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property LocalResourcesToAdd. 
         /// <para>
-        /// The local resources to add, as an array of resources with identifiers and types.
+        /// Additional local resources to specify network flows for a monitor, as an array of
+        /// resources with identifiers and types. A local resource in a workload is the location
+        /// of hosts where the Network Flow Monitor agent is installed. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -130,7 +132,12 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property RemoteResourcesToAdd. 
         /// <para>
-        /// The remove resources to add, as an array of resources with identifiers and types.
+        /// The remote resources to add, as an array of resources with identifiers and types.
+        /// </para>
+        ///  
+        /// <para>
+        /// A remote resource is the other endpoint in the flow of a workload, with a local resource.
+        /// For example, Amazon Dynamo DB can be a remote resource. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -153,7 +160,12 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property RemoteResourcesToRemove. 
         /// <para>
-        /// The remove resources to remove, as an array of resources with identifiers and types.
+        /// The remote resources to remove, as an array of resources with identifiers and types.
+        /// </para>
+        ///  
+        /// <para>
+        /// A remote resource is the other endpoint specified for the network flow of a workload,
+        /// with a local resource. For example, Amazon Dynamo DB can be a remote resource. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -134,7 +134,8 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets for a scope
+        /// The targets to define the scope to be monitored. A target is an array of targetResources,
+        /// which are currently Region-account pairs, defined by targetResource constructs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
