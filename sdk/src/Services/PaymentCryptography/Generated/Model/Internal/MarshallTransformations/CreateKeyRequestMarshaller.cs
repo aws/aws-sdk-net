@@ -104,6 +104,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyCheckValueAlgorithm);
                 }
 
+                if(publicRequest.IsSetReplicationRegions())
+                {
+                    context.Writer.WritePropertyName("ReplicationRegions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReplicationRegionsListValue in publicRequest.ReplicationRegions)
+                    {
+                            context.Writer.Write(publicRequestReplicationRegionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

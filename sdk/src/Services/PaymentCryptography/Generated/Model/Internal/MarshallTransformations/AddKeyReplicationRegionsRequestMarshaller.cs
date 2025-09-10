@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImportKey Request Marshaller
+    /// AddKeyReplicationRegions Request Marshaller
     /// </summary>       
-    public class ImportKeyRequestMarshaller : IMarshaller<IRequest, ImportKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AddKeyReplicationRegionsRequestMarshaller : IMarshaller<IRequest, AddKeyReplicationRegionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ImportKeyRequest)input);
+            return this.Marshall((AddKeyReplicationRegionsRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ImportKeyRequest publicRequest)
+        public IRequest Marshall(AddKeyReplicationRegionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PaymentCryptography");
-            string target = "PaymentCryptographyControlPlane.ImportKey";
+            string target = "PaymentCryptographyControlPlane.AddKeyReplicationRegions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
@@ -69,27 +69,10 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
+                if(publicRequest.IsSetKeyIdentifier())
                 {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
-                }
-
-                if(publicRequest.IsSetKeyCheckValueAlgorithm())
-                {
-                    context.Writer.WritePropertyName("KeyCheckValueAlgorithm");
-                    context.Writer.Write(publicRequest.KeyCheckValueAlgorithm);
-                }
-
-                if(publicRequest.IsSetKeyMaterial())
-                {
-                    context.Writer.WritePropertyName("KeyMaterial");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportKeyMaterialMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.KeyMaterial, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("KeyIdentifier");
+                    context.Writer.Write(publicRequest.KeyIdentifier);
                 }
 
                 if(publicRequest.IsSetReplicationRegions())
@@ -103,22 +86,6 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -127,9 +94,9 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ImportKeyRequestMarshaller _instance = new ImportKeyRequestMarshaller();        
+        private static AddKeyReplicationRegionsRequestMarshaller _instance = new AddKeyReplicationRegionsRequestMarshaller();        
 
-        internal static ImportKeyRequestMarshaller GetInstance()
+        internal static AddKeyReplicationRegionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +104,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportKeyRequestMarshaller Instance
+        public static AddKeyReplicationRegionsRequestMarshaller Instance
         {
             get
             {

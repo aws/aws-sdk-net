@@ -106,7 +106,7 @@ namespace Amazon.PaymentCryptography.Model
         /// use within the TR-34 key block. The certificate expires in 30 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string WrappingKeyCertificate
         {
             get { return this._wrappingKeyCertificate; }
@@ -126,7 +126,7 @@ namespace Amazon.PaymentCryptography.Model
         /// signed the wrapping key certificate in PEM format (base64 encoded).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]
+        [AWSProperty(Required=true, Min=1, Max=32768)]
         public string WrappingKeyCertificateChain
         {
             get { return this._wrappingKeyCertificateChain; }

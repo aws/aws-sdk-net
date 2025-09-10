@@ -138,6 +138,24 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiRegionKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionKeyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrimaryRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicationStatus", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ReplicationStatusType, StringUnmarshaller, ReplicationStatusTypeUnmarshaller>(StringUnmarshaller.Instance, ReplicationStatusTypeUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UsageStartTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -148,6 +166,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.UsageStopTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsingDefaultReplicationRegions", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UsingDefaultReplicationRegions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

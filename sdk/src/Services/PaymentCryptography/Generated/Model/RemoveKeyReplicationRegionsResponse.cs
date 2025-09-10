@@ -30,17 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// This is the response object from the GetKey operation.
+    /// Output from removing replication regions from a key.
     /// </summary>
-    public partial class GetKeyResponse : AmazonWebServiceResponse
+    public partial class RemoveKeyReplicationRegionsResponse : AmazonWebServiceResponse
     {
         private Key _key;
 
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Contains the key metadata, including both immutable and mutable attributes for the
-        /// key, but does not include actual cryptographic key material.
+        /// The updated key metadata after removing the replication regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This reflects the current state of the key and its updated replication configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

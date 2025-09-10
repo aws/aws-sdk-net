@@ -46,8 +46,12 @@ namespace Amazon.PaymentCryptography.Model
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private KeyOrigin _keyOrigin;
         private KeyState _keyState;
+        private MultiRegionKeyType _multiRegionKeyType;
+        private string _primaryRegion;
+        private Dictionary<string, ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, ReplicationStatusType>() : null;
         private DateTime? _usageStartTimestamp;
         private DateTime? _usageStopTimestamp;
+        private bool? _usingDefaultReplicationRegions;
 
         /// <summary>
         /// Gets and sets the property CreateTimestamp. 
@@ -292,6 +296,71 @@ namespace Amazon.PaymentCryptography.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiRegionKeyType. 
+        /// <para>
+        /// Indicates whether this key is a multi-region key and its role in the multi-region
+        /// key hierarchy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Multi-region keys allow the same key material to be used across multiple Amazon Web
+        /// Services Regions. This field specifies whether the key is a primary key (which can
+        /// be replicated to other regions) or a replica key (which is a copy of a primary key
+        /// in another region).
+        /// </para>
+        /// </summary>
+        public MultiRegionKeyType MultiRegionKeyType
+        {
+            get { return this._multiRegionKeyType; }
+            set { this._multiRegionKeyType = value; }
+        }
+
+        // Check to see if MultiRegionKeyType property is set
+        internal bool IsSetMultiRegionKeyType()
+        {
+            return this._multiRegionKeyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryRegion.
+        /// </summary>
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationStatus. 
+        /// <para>
+        /// Information about the replication status of the key across different regions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field provides details about the current state of key replication, including
+        /// any status messages or operational information. It helps track the progress and health
+        /// of key replication operations.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ReplicationStatusType> ReplicationStatus
+        {
+            get { return this._replicationStatus; }
+            set { this._replicationStatus = value; }
+        }
+
+        // Check to see if ReplicationStatus property is set
+        internal bool IsSetReplicationStatus()
+        {
+            return this._replicationStatus != null && (this._replicationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property UsageStartTimestamp. 
         /// <para>
         /// The date and time after which Amazon Web Services Payment Cryptography will start
@@ -327,6 +396,30 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetUsageStopTimestamp()
         {
             return this._usageStopTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsingDefaultReplicationRegions. 
+        /// <para>
+        /// Indicates whether this key is using the account's default replication regions configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>true</c>, the key automatically replicates to the regions specified
+        /// in the account's default replication settings. When set to <c>false</c>, the key has
+        /// a custom replication configuration that overrides the account defaults.
+        /// </para>
+        /// </summary>
+        public bool UsingDefaultReplicationRegions
+        {
+            get { return this._usingDefaultReplicationRegions.GetValueOrDefault(); }
+            set { this._usingDefaultReplicationRegions = value; }
+        }
+
+        // Check to see if UsingDefaultReplicationRegions property is set
+        internal bool IsSetUsingDefaultReplicationRegions()
+        {
+            return this._usingDefaultReplicationRegions.HasValue; 
         }
 
     }

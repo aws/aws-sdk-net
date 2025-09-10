@@ -40,6 +40,8 @@ namespace Amazon.PaymentCryptography.Model
         private KeyAttributes _keyAttributes;
         private string _keyCheckValue;
         private KeyState _keyState;
+        private MultiRegionKeyType _multiRegionKeyType;
+        private string _primaryRegion;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -156,6 +158,36 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyState()
         {
             return this._keyState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionKeyType.
+        /// </summary>
+        public MultiRegionKeyType MultiRegionKeyType
+        {
+            get { return this._multiRegionKeyType; }
+            set { this._multiRegionKeyType = value; }
+        }
+
+        // Check to see if MultiRegionKeyType property is set
+        internal bool IsSetMultiRegionKeyType()
+        {
+            return this._multiRegionKeyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryRegion.
+        /// </summary>
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
         }
 
     }

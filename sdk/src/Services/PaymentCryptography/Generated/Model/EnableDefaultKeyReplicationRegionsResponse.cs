@@ -30,30 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// This is the response object from the GetKey operation.
+    /// Output from enabling default key replication regions for the account.
     /// </summary>
-    public partial class GetKeyResponse : AmazonWebServiceResponse
+    public partial class EnableDefaultKeyReplicationRegionsResponse : AmazonWebServiceResponse
     {
-        private Key _key;
+        private List<string> _enabledReplicationRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property EnabledReplicationRegions. 
         /// <para>
-        /// Contains the key metadata, including both immutable and mutable attributes for the
-        /// key, but does not include actual cryptographic key material.
+        /// The complete list of regions where default key replication is now enabled for the
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This includes both previously enabled regions and the newly added regions from this
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Key Key
+        public List<string> EnabledReplicationRegions
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._enabledReplicationRegions; }
+            set { this._enabledReplicationRegions = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if EnabledReplicationRegions property is set
+        internal bool IsSetEnabledReplicationRegions()
         {
-            return this._key != null;
+            return this._enabledReplicationRegions != null && (this._enabledReplicationRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

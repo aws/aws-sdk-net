@@ -31,8 +31,10 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// Container for the parameters to the GetKey operation.
-    /// Gets the key material for an Amazon Web Services Payment Cryptography key, including
-    /// the immutable and mutable data specified when the key was created.
+    /// Gets the key metadata for an Amazon Web Services Payment Cryptography key, including
+    /// the immutable and mutable attributes specified when the key was created. Returns key
+    /// metadata including attributes, state, and timestamps, but does not return the actual
+    /// cryptographic key material.
     /// 
     ///  
     /// <para>

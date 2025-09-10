@@ -31,6 +31,13 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// This request would cause a service quota to be exceeded.
+    /// 
+    ///  
+    /// <para>
+    /// You have reached the maximum number of keys, aliases, or other resources allowed in
+    /// your account. Review your current usage and consider deleting unused resources or
+    /// requesting a quota increase.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// The request was denied due to an invalid resource error.
+    /// The request was denied due to resource not found.
+    /// 
+    ///  
+    /// <para>
+    /// The specified key, alias, or other resource does not exist in your account or region.
+    /// Verify that the resource identifier is correct and that the resource exists in the
+    /// expected region.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -127,7 +134,12 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The string for the exception.
+        /// The identifier of the resource that was not found.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field contains the specific resource identifier (such as a key ARN or alias name)
+        /// that could not be located.
         /// </para>
         /// </summary>
         public string ResourceId

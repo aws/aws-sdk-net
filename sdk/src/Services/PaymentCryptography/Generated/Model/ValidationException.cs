@@ -31,6 +31,12 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// The request was denied due to an invalid request error.
+    /// 
+    ///  
+    /// <para>
+    /// One or more parameters in your request are invalid. Check the parameter values, formats,
+    /// and constraints specified in the API documentation.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
