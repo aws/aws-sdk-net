@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MediaPackageGroupSettings Marshaller
+    /// MediaPackageV2GroupSettings Marshaller
     /// </summary>
-    public class MediaPackageGroupSettingsMarshaller : IRequestMarshaller<MediaPackageGroupSettings, JsonMarshallerContext> 
+    public class MediaPackageV2GroupSettingsMarshaller : IRequestMarshaller<MediaPackageV2GroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MediaPackageGroupSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MediaPackageV2GroupSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDestination())
+            if(requestObject.IsSetCaptionLanguageMappings())
             {
-                context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("captionLanguageMappings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = OutputLocationRefMarshaller.Instance;
-                marshaller.Marshall(requestObject.Destination, context);
+                    var marshaller = CaptionLanguageMappingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
 
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetMediapackageV2GroupSettings())
-            {
-                context.Writer.WritePropertyName("mediapackageV2GroupSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MediaPackageV2GroupSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.MediapackageV2GroupSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -75,7 +69,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MediaPackageGroupSettingsMarshaller Instance = new MediaPackageGroupSettingsMarshaller();
+        public readonly static MediaPackageV2GroupSettingsMarshaller Instance = new MediaPackageV2GroupSettingsMarshaller();
 
     }
 }

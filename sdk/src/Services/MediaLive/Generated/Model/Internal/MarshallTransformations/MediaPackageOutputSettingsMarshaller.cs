@@ -48,6 +48,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMediaPackageV2DestinationSettings())
+            {
+                context.Writer.WritePropertyName("mediaPackageV2DestinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MediaPackageV2DestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaPackageV2DestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

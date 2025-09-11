@@ -8629,6 +8629,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type HlsAutoSelect.
+    /// </summary>
+    public class HlsAutoSelect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect NO = new HlsAutoSelect("NO");
+        /// <summary>
+        /// Constant OMIT for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect OMIT = new HlsAutoSelect("OMIT");
+        /// <summary>
+        /// Constant YES for HlsAutoSelect
+        /// </summary>
+        public static readonly HlsAutoSelect YES = new HlsAutoSelect("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsAutoSelect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsAutoSelect FindValue(string value)
+        {
+            return FindValue<HlsAutoSelect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsAutoSelect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsCaptionLanguageSetting.
     /// </summary>
     public class HlsCaptionLanguageSetting : ConstantClass
@@ -8776,6 +8830,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsCodecSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsDefault.
+    /// </summary>
+    public class HlsDefault : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault NO = new HlsDefault("NO");
+        /// <summary>
+        /// Constant OMIT for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault OMIT = new HlsDefault("OMIT");
+        /// <summary>
+        /// Constant YES for HlsDefault
+        /// </summary>
+        public static readonly HlsDefault YES = new HlsDefault("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsDefault(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsDefault FindValue(string value)
+        {
+            return FindValue<HlsDefault>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsDefault(string value)
         {
             return FindValue(value);
         }

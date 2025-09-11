@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPackageGroupSettings Object
+    /// Response Unmarshaller for MediaPackageV2DestinationSettings Object
     /// </summary>  
-    public class MediaPackageGroupSettingsUnmarshaller : IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageGroupSettings, JsonUnmarshallerContext>
+    public class MediaPackageV2DestinationSettingsUnmarshaller : IUnmarshaller<MediaPackageV2DestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageV2DestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaPackageGroupSettings IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MediaPackageV2DestinationSettings IUnmarshaller<MediaPackageV2DestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPackageGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public MediaPackageV2DestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            MediaPackageGroupSettings unmarshalledObject = new MediaPackageGroupSettings();
+            MediaPackageV2DestinationSettings unmarshalledObject = new MediaPackageV2DestinationSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("audioGroupId", targetDepth))
                 {
-                    var unmarshaller = OutputLocationRefUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("mediapackageV2GroupSettings", targetDepth))
+                if (context.TestExpression("audioRenditionSets", targetDepth))
                 {
-                    var unmarshaller = MediaPackageV2GroupSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MediapackageV2GroupSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hlsAutoSelect", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HlsAutoSelect = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hlsDefault", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HlsDefault = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +95,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPackageGroupSettingsUnmarshaller _instance = new MediaPackageGroupSettingsUnmarshaller();        
+        private static MediaPackageV2DestinationSettingsUnmarshaller _instance = new MediaPackageV2DestinationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPackageGroupSettingsUnmarshaller Instance
+        public static MediaPackageV2DestinationSettingsUnmarshaller Instance
         {
             get
             {

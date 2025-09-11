@@ -30,26 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Media Package Output Settings
+    /// Media Package V2 Group Settings
     /// </summary>
-    public partial class MediaPackageOutputSettings
+    public partial class MediaPackageV2GroupSettings
     {
-        private MediaPackageV2DestinationSettings _mediaPackageV2DestinationSettings;
+        private List<CaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CaptionLanguageMapping>() : null;
 
         /// <summary>
-        /// Gets and sets the property MediaPackageV2DestinationSettings. Optional settings for
-        /// MediaPackage V2 destinations
+        /// Gets and sets the property CaptionLanguageMappings. Mapping of up to 4 caption channels
+        /// to caption languages.
         /// </summary>
-        public MediaPackageV2DestinationSettings MediaPackageV2DestinationSettings
+        public List<CaptionLanguageMapping> CaptionLanguageMappings
         {
-            get { return this._mediaPackageV2DestinationSettings; }
-            set { this._mediaPackageV2DestinationSettings = value; }
+            get { return this._captionLanguageMappings; }
+            set { this._captionLanguageMappings = value; }
         }
 
-        // Check to see if MediaPackageV2DestinationSettings property is set
-        internal bool IsSetMediaPackageV2DestinationSettings()
+        // Check to see if CaptionLanguageMappings property is set
+        internal bool IsSetCaptionLanguageMappings()
         {
-            return this._mediaPackageV2DestinationSettings != null;
+            return this._captionLanguageMappings != null && (this._captionLanguageMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -74,8 +74,13 @@ namespace Amazon.MediaLive.Model
         private H265TreeblockSize _treeblockSize;
 
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization. Adaptive quantization. Allows intra-frame
-        /// quantizers to vary to improve visual quality.
+        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization
+        /// (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis
+        /// to produce more compression without losing quality. There are three types of adaptive
+        /// quantization: spatial, temporal, and flicker. Flicker is the only type that you can
+        /// customize. We recommend that you set the field to Auto. For more information about
+        /// all the options, see the topic about video adaptive quantization in the MediaLive
+        /// user guide.
         /// </summary>
         public H265AdaptiveQuantization AdaptiveQuantization
         {
@@ -247,8 +252,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FlickerAq. If set to enabled, adjust quantization within
-        /// each frame to reduce flicker or 'pop' on I-frames.
+        /// Gets and sets the property FlickerAq. Flicker AQ makes adjustments within each frame
+        /// to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on
+        /// the value in the Adaptive quantization field. For more information, see the topic
+        /// about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H265FlickerAq FlickerAq
         {

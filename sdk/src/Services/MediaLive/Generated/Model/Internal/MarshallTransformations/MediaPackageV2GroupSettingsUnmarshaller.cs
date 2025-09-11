@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPackageGroupSettings Object
+    /// Response Unmarshaller for MediaPackageV2GroupSettings Object
     /// </summary>  
-    public class MediaPackageGroupSettingsUnmarshaller : IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageGroupSettings, JsonUnmarshallerContext>
+    public class MediaPackageV2GroupSettingsUnmarshaller : IUnmarshaller<MediaPackageV2GroupSettings, XmlUnmarshallerContext>, IUnmarshaller<MediaPackageV2GroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MediaPackageGroupSettings IUnmarshaller<MediaPackageGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MediaPackageV2GroupSettings IUnmarshaller<MediaPackageV2GroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPackageGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public MediaPackageV2GroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            MediaPackageGroupSettings unmarshalledObject = new MediaPackageGroupSettings();
+            MediaPackageV2GroupSettings unmarshalledObject = new MediaPackageV2GroupSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("captionLanguageMappings", targetDepth))
                 {
-                    var unmarshaller = OutputLocationRefUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("mediapackageV2GroupSettings", targetDepth))
-                {
-                    var unmarshaller = MediaPackageV2GroupSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MediapackageV2GroupSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CaptionLanguageMapping, CaptionLanguageMappingUnmarshaller>(CaptionLanguageMappingUnmarshaller.Instance);
+                    unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPackageGroupSettingsUnmarshaller _instance = new MediaPackageGroupSettingsUnmarshaller();        
+        private static MediaPackageV2GroupSettingsUnmarshaller _instance = new MediaPackageV2GroupSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPackageGroupSettingsUnmarshaller Instance
+        public static MediaPackageV2GroupSettingsUnmarshaller Instance
         {
             get
             {
