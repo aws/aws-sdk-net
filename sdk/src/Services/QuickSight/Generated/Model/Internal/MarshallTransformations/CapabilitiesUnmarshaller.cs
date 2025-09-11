@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddOrRunAnomalyDetectionForAnalyses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Analysis", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Analysis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreateAndUpdateDashboardEmailReports", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateSPICEDataset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Dashboard", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Dashboard = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExportToCsv", targetDepth))

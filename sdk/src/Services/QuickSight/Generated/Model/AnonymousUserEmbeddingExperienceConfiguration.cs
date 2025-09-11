@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The type of experience you want to embed. For anonymous users, you can embed Amazon
-    /// QuickSight dashboards.
+    /// The type of experience you want to embed. For anonymous users, you can embed QuickSight
+    /// dashboards.
     /// </summary>
     public partial class AnonymousUserEmbeddingExperienceConfiguration
     {
@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Dashboard. 
         /// <para>
-        /// The type of embedding experience. In this case, Amazon QuickSight dashboards.
+        /// The type of embedding experience. In this case, QuickSight dashboards.
         /// </para>
         /// </summary>
         public AnonymousUserDashboardEmbeddingConfiguration Dashboard
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardVisual. 
         /// <para>
-        /// The type of embedding experience. In this case, Amazon QuickSight visuals.
+        /// The type of embedding experience. In this case, QuickSight visuals.
         /// </para>
         /// </summary>
         public AnonymousUserDashboardVisualEmbeddingConfiguration DashboardVisual

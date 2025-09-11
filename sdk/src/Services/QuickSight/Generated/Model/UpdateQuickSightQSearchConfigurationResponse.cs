@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property QSearchStatus. 
         /// <para>
-        /// The status of the Amazon QuickSight Q Search configuration.
+        /// The status of the QuickSight Q Search configuration.
         /// </para>
         /// </summary>
         public QSearchStatus QSearchStatus

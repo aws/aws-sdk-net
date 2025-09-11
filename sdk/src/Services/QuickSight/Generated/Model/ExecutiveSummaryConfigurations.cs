@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The executive summary settings of an embedded Amazon QuickSight console or dashboard.
+    /// The executive summary settings of an embedded QuickSight console or dashboard.
     /// </summary>
     public partial class ExecutiveSummaryConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The executive summary settings of an embedded Amazon QuickSight console or dashboard.
+        /// The executive summary settings of an embedded QuickSight console or dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

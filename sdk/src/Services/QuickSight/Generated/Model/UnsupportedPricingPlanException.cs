@@ -33,8 +33,7 @@ namespace Amazon.QuickSight.Model
     /// This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you
     /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
-    /// pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b>
-    /// page. 
+    /// pricing to QuickSight. You can do this on the <b>Manage QuickSight</b> page. 
     /// 
     ///  
     /// <para>

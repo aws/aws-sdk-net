@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The customer managed key that is registered to your Amazon QuickSight account is unavailable.
+    /// The customer managed key that is registered to your QuickSight account is unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

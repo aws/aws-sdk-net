@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the Amazon QuickSight namespace you created. 
+        /// The ARN of the QuickSight namespace you created. 
         /// </para>
         /// </summary>
         public string Arn

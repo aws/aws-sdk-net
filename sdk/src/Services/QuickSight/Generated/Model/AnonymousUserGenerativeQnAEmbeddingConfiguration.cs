@@ -39,10 +39,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InitialTopicId. 
         /// <para>
-        /// The Amazon QuickSight Q topic ID of the new reader experience topic that you want
-        /// the anonymous user to see first. This ID is included in the output URL. When the URL
-        /// in response is accessed, Amazon QuickSight renders the Generative Q&amp;A experience
-        /// with this new reader experience topic pre selected.
+        /// The QuickSight Q topic ID of the new reader experience topic that you want the anonymous
+        /// user to see first. This ID is included in the output URL. When the URL in response
+        /// is accessed, QuickSight renders the Generative Q&amp;A experience with this new reader
+        /// experience topic pre selected.
         /// </para>
         ///  
         /// <para>

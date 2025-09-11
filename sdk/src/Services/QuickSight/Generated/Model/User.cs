@@ -237,14 +237,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon Amazon QuickSight
-        /// settings.
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
-        /// Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon
-        /// Q, and can generate executive summaries from dashboards.
+        /// Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q,
+        /// and can generate executive summaries from dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -283,7 +282,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The user's user name. This value is required if you are registering a user that will
-        /// be managed in Amazon QuickSight. In the output, the value for <c>UserName</c> is <c>N/A</c>
+        /// be managed in QuickSight. In the output, the value for <c>UserName</c> is <c>N/A</c>
         /// when the value for <c>IdentityType</c> is <c>IAM</c> and the corresponding IAM user
         /// is deleted.
         /// </para>

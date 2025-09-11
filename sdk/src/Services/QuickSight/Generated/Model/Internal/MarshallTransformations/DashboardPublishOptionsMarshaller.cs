@@ -103,6 +103,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataStoriesSharingOption())
+            {
+                context.Writer.WritePropertyName("DataStoriesSharingOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataStoriesSharingOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataStoriesSharingOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetExecutiveSummaryOption())
+            {
+                context.Writer.WritePropertyName("ExecutiveSummaryOption");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExecutiveSummaryOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExecutiveSummaryOption, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExportToCSVOption())
             {
                 context.Writer.WritePropertyName("ExportToCSVOption");

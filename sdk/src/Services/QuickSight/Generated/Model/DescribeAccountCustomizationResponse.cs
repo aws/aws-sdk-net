@@ -44,8 +44,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The Amazon QuickSight customizations that exist in the current Amazon Web Services
-        /// Region. 
+        /// The QuickSight customizations that exist in the current Amazon Web Services Region.
+        /// 
         /// </para>
         /// </summary>
         public AccountCustomization AccountCustomization
@@ -101,7 +101,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that you're describing. 
+        /// The QuickSight namespace that you're describing. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

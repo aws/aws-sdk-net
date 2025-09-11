@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoleMembership operation.
-    /// Use <c>CreateRoleMembership</c> to add an existing Amazon QuickSight group to an existing
+    /// Use <c>CreateRoleMembership</c> to add an existing QuickSight group to an existing
     /// role.
     /// </summary>
     public partial class CreateRoleMembershipRequest : AmazonQuickSightRequest

@@ -105,6 +105,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FilterType);
             }
 
+            if(requestObject.IsSetNullFilter())
+            {
+                context.Writer.WritePropertyName("NullFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TopicNullFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.NullFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNumericEqualityFilter())
             {
                 context.Writer.WritePropertyName("NumericEqualityFilter");

@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSPICECapacityConfiguration operation.
-    /// Updates the SPICE capacity configuration for a Amazon QuickSight account.
+    /// Updates the SPICE capacity configuration for a QuickSight account.
     /// </summary>
     public partial class UpdateSPICECapacityConfigurationRequest : AmazonQuickSightRequest
     {

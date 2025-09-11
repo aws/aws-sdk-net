@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBrand operation.
-    /// Deletes an Amazon QuickSight brand.
+    /// Deletes an QuickSight brand.
     /// </summary>
     public partial class DeleteBrandRequest : AmazonQuickSightRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property BrandId. 
         /// <para>
-        /// The ID of the Amazon QuickSight brand.
+        /// The ID of the QuickSight brand.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

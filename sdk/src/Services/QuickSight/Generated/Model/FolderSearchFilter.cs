@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A filter to use to search an Amazon QuickSight folder.
+    /// A filter to use to search an QuickSight folder.
     /// </summary>
     public partial class FolderSearchFilter
     {

@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private string _filterName;
         private List<string> _filterSynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NamedFilterType _filterType;
+        private TopicNullFilter _nullFilter;
         private TopicNumericEqualityFilter _numericEqualityFilter;
         private TopicNumericRangeFilter _numericRangeFilter;
         private string _operandFieldName;
@@ -175,6 +176,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFilterType()
         {
             return this._filterType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NullFilter. 
+        /// <para>
+        /// The null filter.
+        /// </para>
+        /// </summary>
+        public TopicNullFilter NullFilter
+        {
+            get { return this._nullFilter; }
+            set { this._nullFilter = value; }
+        }
+
+        // Check to see if NullFilter property is set
+        internal bool IsSetNullFilter()
+        {
+            return this._nullFilter != null;
         }
 
         /// <summary>

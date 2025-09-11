@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CustomFederationProviderUrl. 
         /// <para>
         /// The URL of the custom OpenID Connect (OIDC) provider that provides identity to let
-        /// a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
+        /// a user federate into QuickSight with an associated Identity and Access Management(IAM)
         /// role. This parameter should only be used when <c>ExternalLoginFederationProviderType</c>
         /// parameter is set to <c>CUSTOM_OIDC</c>.
         /// </para>
@@ -113,19 +113,19 @@ namespace Amazon.QuickSight.Model
         ///  </li> </ul> 
         /// <para>
         /// A set of custom permissions includes any combination of these restrictions. Currently,
-        /// you need to create the profile names for custom permission sets by using the Amazon
-        /// QuickSight console. Then, you use the <c>RegisterUser</c> API operation to assign
-        /// the named set of permissions to a Amazon QuickSight user. 
+        /// you need to create the profile names for custom permission sets by using the QuickSight
+        /// console. Then, you use the <c>RegisterUser</c> API operation to assign the named set
+        /// of permissions to a QuickSight user. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon QuickSight custom permissions are applied through IAM policies. Therefore,
-        /// they override the permissions typically granted by assigning Amazon QuickSight users
-        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader).
+        /// QuickSight custom permissions are applied through IAM policies. Therefore, they override
+        /// the permissions typically granted by assigning QuickSight users to one of the default
+        /// security cohorts in QuickSight (admin, author, reader).
         /// </para>
         ///  
         /// <para>
-        /// This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
+        /// This feature is available only to QuickSight Enterprise edition subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -164,8 +164,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExternalLoginFederationProviderType. 
         /// <para>
         /// The type of supported external login provider that provides identity to let a user
-        /// federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
-        /// role. The type of supported external login provider can be one of the following.
+        /// federate into QuickSight with an associated Identity and Access Management(IAM) role.
+        /// The type of supported external login provider can be one of the following.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -257,8 +257,8 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>READER_PRO</c>: Reader Pro adds Generative BI capabilities to the Reader role.
-        /// Reader Pros have access to Amazon Q in Amazon QuickSight, can build stories with Amazon
-        /// Q, and can generate executive summaries from dashboards.
+        /// Reader Pros have access to Amazon Q in QuickSight, can build stories with Amazon Q,
+        /// and can generate executive summaries from dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -273,8 +273,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The name of the Amazon QuickSight role is invisible to the user except for the console
-        /// screens dealing with permissions.
+        /// The name of the QuickSight role is invisible to the user except for the console screens
+        /// dealing with permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

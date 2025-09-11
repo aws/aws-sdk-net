@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.KeyRegistration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QDataKey", targetDepth))
+                {
+                    var unmarshaller = QDataKeyUnmarshaller.Instance;
+                    response.QDataKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

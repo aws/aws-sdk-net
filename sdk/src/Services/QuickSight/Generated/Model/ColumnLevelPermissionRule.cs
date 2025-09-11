@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.
+        /// An array of Amazon Resource Names (ARNs) for QuickSight users or groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An entry that appears when a <c>KeyRegistration</c> update to Amazon QuickSight fails.
+    /// An entry that appears when a <c>KeyRegistration</c> update to QuickSight fails.
     /// </summary>
     public partial class FailedKeyRegistrationEntry
     {
@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// user error. If the value of this property is <c>True</c>, the error was caused by
         /// user error. If the value of this property is <c>False</c>, the error occurred on the
         /// backend. If your job continues fail and with a <c>False</c> <c>SenderFault</c> value,
-        /// contact Amazon Web ServicesSupport.
+        /// contact Amazon Web Services Support.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -108,6 +108,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NullFilter", targetDepth))
+                {
+                    var unmarshaller = TopicNullFilterUnmarshaller.Instance;
+                    unmarshalledObject.NullFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))
                 {
                     var unmarshaller = TopicNumericEqualityFilterUnmarshaller.Instance;

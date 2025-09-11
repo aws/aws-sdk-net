@@ -45,24 +45,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Your Amazon QuickSight account name.
+        /// Your QuickSight account name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The edition of Amazon QuickSight that your account is using.
+        /// The edition of QuickSight that your account is using.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The notification email address that is associated with the Amazon QuickSight account.
-        /// 
+        /// The notification email address that is associated with the QuickSight account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The authentication type of the Amazon QuickSight account.
+        /// The authentication type of the QuickSight account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The status of the Amazon QuickSight account's subscription.
+        /// The status of the QuickSight account's subscription.
         /// </para>
         ///  </li> </ul>
         /// </summary>

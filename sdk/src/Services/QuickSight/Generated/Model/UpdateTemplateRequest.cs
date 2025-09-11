@@ -111,8 +111,8 @@ namespace Amazon.QuickSight.Model
         /// template or <c>SourceAnalysis</c> for an analysis. Both of these require an Amazon
         /// Resource Name (ARN). For <c>SourceTemplate</c>, specify the ARN of the source template.
         /// For <c>SourceAnalysis</c>, specify the ARN of the source analysis. The <c>SourceTemplate</c>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
-        /// Amazon Web Services Region;. 
+        /// ARN can contain any Amazon Web Services account and any QuickSight-supported Amazon
+        /// Web Services Region;. 
         /// </para>
         ///  
         /// <para>

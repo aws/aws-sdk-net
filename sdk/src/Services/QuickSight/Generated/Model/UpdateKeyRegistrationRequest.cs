@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateKeyRegistration operation.
-    /// Updates a customer managed key in a Amazon QuickSight account.
+    /// Updates a customer managed key in a QuickSight account.
     /// </summary>
     public partial class UpdateKeyRegistrationRequest : AmazonQuickSightRequest
     {
@@ -61,8 +61,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property KeyRegistration. 
         /// <para>
-        /// A list of <c>RegisteredCustomerManagedKey</c> objects to be updated to the Amazon
-        /// QuickSight account.
+        /// A list of <c>RegisteredCustomerManagedKey</c> objects to be updated to the QuickSight
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

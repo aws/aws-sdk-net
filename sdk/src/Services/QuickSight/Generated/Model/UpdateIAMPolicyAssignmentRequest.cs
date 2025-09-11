@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// The Amazon QuickSight users, groups, or both that you want to assign the policy to.
+        /// The QuickSight users, groups, or both that you want to assign the policy to.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Identities
@@ -157,8 +157,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified
-        /// in this assignment.
+        /// The ARN for the IAM policy to apply to the QuickSight users and groups specified in
+        /// this assignment.
         /// </para>
         /// </summary>
         public string PolicyArn

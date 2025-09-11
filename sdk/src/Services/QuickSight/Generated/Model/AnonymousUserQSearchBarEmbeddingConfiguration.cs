@@ -39,9 +39,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InitialTopicId. 
         /// <para>
-        /// The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user
-        /// to see first. This ID is included in the output URL. When the URL in response is accessed,
-        /// Amazon QuickSight renders the Q search bar with this legacy topic pre-selected.
+        /// The QuickSight Q topic ID of the legacy topic that you want the anonymous user to
+        /// see first. This ID is included in the output URL. When the URL in response is accessed,
+        /// QuickSight renders the Q search bar with this legacy topic pre-selected.
         /// </para>
         ///  
         /// <para>

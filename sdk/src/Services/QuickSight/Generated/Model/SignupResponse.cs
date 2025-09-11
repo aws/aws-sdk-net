@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The name of your Amazon QuickSight account.
+        /// The name of your QuickSight account.
         /// </para>
         /// </summary>
         public string AccountName
@@ -60,8 +60,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DirectoryType. 
         /// <para>
-        /// The type of Active Directory that is being used to authenticate the Amazon QuickSight
-        /// account. Valid values are <c>SIMPLE_AD</c>, <c>AD_CONNECTOR</c>, and <c>MICROSOFT_AD</c>.
+        /// The type of Active Directory that is being used to authenticate the QuickSight account.
+        /// Valid values are <c>SIMPLE_AD</c>, <c>AD_CONNECTOR</c>, and <c>MICROSOFT_AD</c>.
         /// </para>
         /// </summary>
         public string DirectoryType
@@ -79,8 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IAMUser. 
         /// <para>
-        /// A Boolean that is <c>TRUE</c> if the Amazon QuickSight uses IAM as an authentication
-        /// method.
+        /// A Boolean that is <c>TRUE</c> if the QuickSight uses IAM as an authentication method.
         /// </para>
         /// </summary>
         public bool IAMUser
@@ -98,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserLoginName. 
         /// <para>
-        /// The user login name for your Amazon QuickSight account.
+        /// The user login name for your QuickSight account.
         /// </para>
         /// </summary>
         public string UserLoginName
