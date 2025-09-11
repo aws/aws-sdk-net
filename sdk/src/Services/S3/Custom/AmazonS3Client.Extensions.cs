@@ -677,7 +677,11 @@ namespace Amazon.S3
             var policyDocument = BuildPolicyDocument(request);
 
             string region;
-            if (!string.IsNullOrEmpty(this.Config.ServiceURL))
+            if (!string.IsNullOrEmpty(this.Config.AuthenticationRegion))
+            {
+                region = this.Config.AuthenticationRegion;
+            }
+            else if (!string.IsNullOrEmpty(this.Config.ServiceURL))
             {
                 region = AWSSDKUtils.DetermineRegion(this.Config.ServiceURL);
             }

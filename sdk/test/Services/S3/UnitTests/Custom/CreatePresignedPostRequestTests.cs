@@ -13,15 +13,15 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Threading.Tasks;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.Util;
-using Amazon.Runtime;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
@@ -363,6 +363,22 @@ namespace AWSSDK.UnitTests
             };
             var res = await client.CreatePresignedPostAsync(req);
             Assert.IsTrue(res.Url.Contains("us-west-2"));
+            var credentialField = res.Fields["x-amz-credential"];
+            Assert.IsTrue(credentialField.Contains("us-west-2"));
+
+            config.AuthenticationRegion = "us-west-1";
+            client = new AmazonS3Client(credentials, config);
+
+            req = new CreatePresignedPostRequest
+            {
+                Key = "potato",
+                BucketName = bucket,
+                Expires = DateTime.UtcNow.AddMinutes(60)
+            };
+            res = await client.CreatePresignedPostAsync(req);
+            Assert.IsTrue(res.Url.Contains("us-west-2"));
+            credentialField = res.Fields["x-amz-credential"];
+            Assert.IsTrue(credentialField.Contains("us-west-1"));
         }
     }
 }
