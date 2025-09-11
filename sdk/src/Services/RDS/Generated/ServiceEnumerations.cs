@@ -797,6 +797,56 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultAuthScheme.
+    /// </summary>
+    public class DefaultAuthScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM_AUTH for DefaultAuthScheme
+        /// </summary>
+        public static readonly DefaultAuthScheme IAM_AUTH = new DefaultAuthScheme("IAM_AUTH");
+        /// <summary>
+        /// Constant NONE for DefaultAuthScheme
+        /// </summary>
+        public static readonly DefaultAuthScheme NONE = new DefaultAuthScheme("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultAuthScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultAuthScheme FindValue(string value)
+        {
+            return FindValue<DefaultAuthScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultAuthScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointNetworkType.
     /// </summary>
     public class EndpointNetworkType : ConstantClass

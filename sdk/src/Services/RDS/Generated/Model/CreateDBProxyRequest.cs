@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private List<UserAuthConfig> _auth = AWSConfigs.InitializeCollections ? new List<UserAuthConfig>() : null;
         private string _dbProxyName;
         private bool? _debugLogging;
+        private DefaultAuthScheme _defaultAuthScheme;
         private EndpointNetworkType _endpointNetworkType;
         private EngineFamily _engineFamily;
         private int? _idleClientTimeout;
@@ -59,7 +60,7 @@ namespace Amazon.RDS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Min=0, Max=200)]
         public List<UserAuthConfig> Auth
         {
             get { return this._auth; }
@@ -114,6 +115,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetDebugLogging()
         {
             return this._debugLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthScheme. 
+        /// <para>
+        /// The default authentication scheme that the proxy uses for client connections to the
+        /// proxy and connections from the proxy to the underlying database. Valid values are
+        /// <c>NONE</c> and <c>IAM_AUTH</c>. When set to <c>IAM_AUTH</c>, the proxy uses end-to-end
+        /// IAM authentication to connect to the database. If you don't specify <c>DefaultAuthScheme</c>
+        /// or specify this parameter as <c>NONE</c>, you must specify the <c>Auth</c> option.
+        /// </para>
+        /// </summary>
+        public DefaultAuthScheme DefaultAuthScheme
+        {
+            get { return this._defaultAuthScheme; }
+            set { this._defaultAuthScheme = value; }
+        }
+
+        // Check to see if DefaultAuthScheme property is set
+        internal bool IsSetDefaultAuthScheme()
+        {
+            return this._defaultAuthScheme != null;
         }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private string _dbProxyArn;
         private string _dbProxyName;
         private bool? _debugLogging;
+        private string _defaultAuthScheme;
         private string _endpoint;
         private EndpointNetworkType _endpointNetworkType;
         private string _engineFamily;
@@ -156,6 +157,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetDebugLogging()
         {
             return this._debugLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthScheme. 
+        /// <para>
+        /// The default authentication scheme that the proxy uses for client connections to the
+        /// proxy and connections from the proxy to the underlying database. Valid values are
+        /// <c>NONE</c> and <c>IAM_AUTH</c>. When set to <c>IAM_AUTH</c>, the proxy uses end-to-end
+        /// IAM authentication to connect to the database. 
+        /// </para>
+        /// </summary>
+        public string DefaultAuthScheme
+        {
+            get { return this._defaultAuthScheme; }
+            set { this._defaultAuthScheme = value; }
+        }
+
+        // Check to see if DefaultAuthScheme property is set
+        internal bool IsSetDefaultAuthScheme()
+        {
+            return this._defaultAuthScheme != null;
         }
 
         /// <summary>
