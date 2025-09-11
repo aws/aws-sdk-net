@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DebugLogging", StringUtils.FromBool(publicRequest.DebugLogging));
                 }
+                if(publicRequest.IsSetDefaultAuthScheme())
+                {
+                    request.Parameters.Add("DefaultAuthScheme", StringUtils.FromString(publicRequest.DefaultAuthScheme));
+                }
                 if(publicRequest.IsSetIdleClientTimeout())
                 {
                     request.Parameters.Add("IdleClientTimeout", StringUtils.FromInt(publicRequest.IdleClientTimeout));
