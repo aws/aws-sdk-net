@@ -819,6 +819,61 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        DeleteScraperLoggingConfigurationResponse DeleteScraperLoggingConfiguration(DeleteScraperLoggingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScraperLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteScraperLoggingConfiguration(DeleteScraperLoggingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScraperLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteScraperLoggingConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        DeleteScraperLoggingConfigurationResponse EndDeleteScraperLoggingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteWorkspace
 
 
@@ -1214,6 +1269,58 @@ namespace Amazon.PrometheusService
         /// <returns>Returns a  DescribeScraperResult from PrometheusService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
         DescribeScraperResponse EndDescribeScraper(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        DescribeScraperLoggingConfigurationResponse DescribeScraperLoggingConfiguration(DescribeScraperLoggingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScraperLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        IAsyncResult BeginDescribeScraperLoggingConfiguration(DescribeScraperLoggingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScraperLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeScraperLoggingConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        DescribeScraperLoggingConfigurationResponse EndDescribeScraperLoggingConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2118,6 +2225,61 @@ namespace Amazon.PrometheusService
         /// <returns>Returns a  UpdateScraperResult from PrometheusService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraper">REST API Reference for UpdateScraper Operation</seealso>
         UpdateScraperResponse EndUpdateScraper(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        UpdateScraperLoggingConfigurationResponse UpdateScraperLoggingConfiguration(UpdateScraperLoggingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateScraperLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateScraperLoggingConfiguration(UpdateScraperLoggingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateScraperLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateScraperLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateScraperLoggingConfigurationResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        UpdateScraperLoggingConfigurationResponse EndUpdateScraperLoggingConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

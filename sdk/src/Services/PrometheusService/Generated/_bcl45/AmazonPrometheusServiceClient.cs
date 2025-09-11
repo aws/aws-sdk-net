@@ -1318,6 +1318,77 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        public virtual DeleteScraperLoggingConfigurationResponse DeleteScraperLoggingConfiguration(DeleteScraperLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<DeleteScraperLoggingConfigurationResponse> DeleteScraperLoggingConfigurationAsync(DeleteScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteScraperLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
 
@@ -1837,6 +1908,71 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        public virtual DescribeScraperLoggingConfigurationResponse DescribeScraperLoggingConfiguration(DescribeScraperLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<DescribeScraperLoggingConfigurationResponse> DescribeScraperLoggingConfigurationAsync(DescribeScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeScraperLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3060,6 +3196,77 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = UpdateScraperResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateScraperResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateScraperLoggingConfiguration
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        public virtual UpdateScraperLoggingConfigurationResponse UpdateScraperLoggingConfiguration(UpdateScraperLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScraperLoggingConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScraperLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateScraperLoggingConfiguration service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// The request would cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// The request references a resources that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
+        public virtual Task<UpdateScraperLoggingConfigurationResponse> UpdateScraperLoggingConfigurationAsync(UpdateScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateScraperLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

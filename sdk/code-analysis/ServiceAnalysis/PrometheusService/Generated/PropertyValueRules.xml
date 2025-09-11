@@ -48,7 +48,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -60,7 +60,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.CreateRuleGroupsNamespaceResponse.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -171,7 +171,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -194,6 +194,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DeleteScraperResponse.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteScraperLoggingConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DeleteScraperLoggingConfigurationRequest.ScraperId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
@@ -237,7 +249,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -248,6 +260,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.DescribeScraperRequest.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeScraperLoggingConfigurationRequest.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.DescribeScraperLoggingConfigurationResponse.ScraperId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
@@ -272,7 +296,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.ListRuleGroupsNamespacesRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -359,7 +383,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -371,7 +395,7 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.PutRuleGroupsNamespaceResponse.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -421,6 +445,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateScraperResponse.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateScraperLoggingConfigurationRequest.ScraperId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
@@ -503,13 +533,13 @@
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.RuleGroupsNamespaceDescription.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.RuleGroupsNamespaceSummary.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
     <pattern>.*[0-9A-Za-z][-.0-9A-Z_a-z]*.*</pattern>
   </property-value-rule>
   <property-value-rule>

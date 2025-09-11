@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRuleGroupsNamespace operation.
-    /// Returns complete information about one rule groups namespace. To retrieve a list of
-    /// rule groups namespaces, use <c>ListRuleGroupsNamespaces</c>.
+    /// The status of a scraper logging configuration.
     /// </summary>
-    public partial class DescribeRuleGroupsNamespaceRequest : AmazonPrometheusServiceRequest
+    public partial class ScraperLoggingConfigurationStatus
     {
-        private string _name;
-        private string _workspaceId;
+        private ScraperLoggingConfigurationStatusCode _statusCode;
+        private string _statusReason;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The name of the rule groups namespace that you want information for.
+        /// The status code of the scraper logging configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
+        [AWSProperty(Required=true)]
+        public ScraperLoggingConfigurationStatusCode StatusCode
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
         {
-            return this._name != null;
+            return this._statusCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The ID of the workspace containing the rule groups namespace.
+        /// The reason for the current status of the scraper logging configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        public string StatusReason
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
         {
-            return this._workspaceId != null;
+            return this._statusReason != null;
         }
 
     }

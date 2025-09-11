@@ -66,7 +66,7 @@ namespace Amazon.PrometheusService.Model
         /// namespaces with names that begin with the value that you specify are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
