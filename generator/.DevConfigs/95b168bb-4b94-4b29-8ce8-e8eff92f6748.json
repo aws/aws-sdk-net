@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Added support in AWSSDK.Extensions.NETCore.Setup package to set the MaxConnectionsPerServer property on service client config objects."
+    ]
+  }
+}

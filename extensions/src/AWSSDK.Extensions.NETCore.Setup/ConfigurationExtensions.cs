@@ -323,6 +323,15 @@ namespace Microsoft.Extensions.Configuration
 
                     options.DefaultClientConfig.ConnectTimeout = TimeSpan.FromMilliseconds(connectTimeout);
                 }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.MaxConnectionsPerServer), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var maxConnectionsPerServer))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.MaxConnectionsPerServer)}.");
+                    }
+
+                    options.DefaultClientConfig.MaxConnectionsPerServer = maxConnectionsPerServer;
+                }
 #endif
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseAlternateUserAgentHeader), StringComparison.OrdinalIgnoreCase))
                 {

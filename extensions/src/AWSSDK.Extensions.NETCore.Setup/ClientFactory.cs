@@ -342,6 +342,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.ConnectTimeout = defaultConfig.ConnectTimeout.Value;
             }
+            if (defaultConfig.MaxConnectionsPerServer.HasValue)
+            {
+                config.MaxConnectionsPerServer = defaultConfig.MaxConnectionsPerServer.Value;
+            }
 #endif
             if (defaultConfig.UseAlternateUserAgentHeader.HasValue)
             {
