@@ -66,6 +66,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("hookDetails", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.HookDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hookTargetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

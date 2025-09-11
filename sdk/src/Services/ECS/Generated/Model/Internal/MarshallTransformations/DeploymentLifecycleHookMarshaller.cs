@@ -48,6 +48,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetHookDetails())
+            {
+                context.Writer.WritePropertyName("hookDetails");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.HookDetails);
+            }
+
             if(requestObject.IsSetHookTargetArn())
             {
                 context.Writer.WritePropertyName("hookTargetArn");

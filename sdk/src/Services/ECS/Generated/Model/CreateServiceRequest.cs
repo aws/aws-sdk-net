@@ -282,8 +282,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For create service requests, when when no value is specified for <c>AvailabilityZoneRebalancing</c>,
-        /// Amazon ECS defaults the value to to <c>ENABLED</c>.
+        /// For create service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults the value to <c>ENABLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
