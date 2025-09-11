@@ -35,6 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class IamUserProfileDetails
     {
         private string _arn;
+        private string _principalId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -52,6 +53,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalId. 
+        /// <para>
+        /// Principal ID of the IAM user.
+        /// </para>
+        /// </summary>
+        public string PrincipalId
+        {
+            get { return this._principalId; }
+            set { this._principalId = value; }
+        }
+
+        // Check to see if PrincipalId property is set
+        internal bool IsSetPrincipalId()
+        {
+            return this._principalId != null;
         }
 
     }
