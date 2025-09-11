@@ -676,8 +676,18 @@ namespace Amazon.S3
             // Build the policy document
             var policyDocument = BuildPolicyDocument(request);
 
+            string region;
+            if (!string.IsNullOrEmpty(this.Config.ServiceURL))
+            {
+                region = AWSSDKUtils.DetermineRegion(this.Config.ServiceURL);
+            }
+            else
+            {
+                region = this.Config.RegionEndpoint.SystemName;
+            }
+
             // Use S3PostUploadSignedPolicy to sign the policy
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyDocument, credentials, Config.RegionEndpoint);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyDocument, credentials, region);
 
             // Build the response
             var response = new CreatePresignedPostResponse();

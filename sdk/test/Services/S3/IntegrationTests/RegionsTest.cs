@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                     .Replace("BUCKETNAME", bucketName)
                                     .Replace("MOARCONDITIONS", extraConditions);
 
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, credentials, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, credentials, region.SystemName);
 
             var req = new S3PostUploadRequest
             {

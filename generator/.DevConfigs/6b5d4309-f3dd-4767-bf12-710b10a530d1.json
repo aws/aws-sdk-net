@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix NullReferenceException creating a presigned URL with a service url"
+      ]
+    }
+  ]
+}

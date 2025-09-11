@@ -14,12 +14,14 @@
  */
 
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.Util;
+using Amazon.Runtime;
 
 namespace AWSSDK.UnitTests
 {
@@ -331,6 +333,36 @@ namespace AWSSDK.UnitTests
             
             Assert.AreEqual("public-read", condition1.ExpectedValue);
             Assert.AreEqual("private", condition2.ExpectedValue);
+        }
+
+        /// <summary>
+        /// This test is to reproduce the GitHub issue https://github.com/aws/aws-sdk-net/issues/4003
+        /// where a NRE was triggered due to assume the RegionEndpoint on the config always being set.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task EnsureRegionFromServiceUrlIsUsed()
+        {
+            var endpoint = "https://s3.us-west-2.amazonaws.com";
+            var bucket = "fooBucket";
+            var credentials = new BasicAWSCredentials("accessKeyId", "secretKey");
+
+            var config = new AmazonS3Config
+            {
+                ServiceURL = endpoint,
+                ForcePathStyle = true
+            };
+
+            IAmazonS3 client = new AmazonS3Client(credentials, config);
+
+            var req = new CreatePresignedPostRequest
+            {
+                Key = "potato",
+                BucketName = bucket,
+                Expires = DateTime.UtcNow.AddMinutes(60)
+            };
+            var res = await client.CreatePresignedPostAsync(req);
+            Assert.IsTrue(res.Url.Contains("us-west-2"));
         }
     }
 }
