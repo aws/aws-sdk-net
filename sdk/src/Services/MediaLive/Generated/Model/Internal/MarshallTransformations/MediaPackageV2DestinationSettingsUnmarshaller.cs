@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaPackageOutputSettings Object
+    /// Response Unmarshaller for MediaPackageV2DestinationSettings Object
     /// </summary>  
-    public class MediaPackageOutputSettingsUnmarshaller : IJsonUnmarshaller<MediaPackageOutputSettings, JsonUnmarshallerContext>
+    public class MediaPackageV2DestinationSettingsUnmarshaller : IJsonUnmarshaller<MediaPackageV2DestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPackageOutputSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MediaPackageV2DestinationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MediaPackageOutputSettings unmarshalledObject = new MediaPackageOutputSettings();
+            MediaPackageV2DestinationSettings unmarshalledObject = new MediaPackageV2DestinationSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mediaPackageV2DestinationSettings", targetDepth))
+                if (context.TestExpression("audioGroupId", targetDepth))
                 {
-                    var unmarshaller = MediaPackageV2DestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MediaPackageV2DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("audioRenditionSets", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("hlsAutoSelect", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HlsAutoSelect = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("hlsDefault", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HlsDefault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +85,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaPackageOutputSettingsUnmarshaller _instance = new MediaPackageOutputSettingsUnmarshaller();        
+        private static MediaPackageV2DestinationSettingsUnmarshaller _instance = new MediaPackageV2DestinationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaPackageOutputSettingsUnmarshaller Instance
+        public static MediaPackageV2DestinationSettingsUnmarshaller Instance
         {
             get
             {

@@ -79,14 +79,12 @@ namespace Amazon.MediaLive.Model
         private H264TimecodeInsertionBehavior _timecodeInsertion;
 
         /// <summary>
-        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization,
-        /// which is a technique MediaLive can apply to video on a frame-by-frame basis to produce
-        /// more compression without losing quality. There are three types of adaptive quantization:
-        /// flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended.
-        /// For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate
-        /// strength. Set a strength (a value other than Auto or Disable). This strength will
-        /// apply to any of the AQ fields that you choose to enable. Set to Disabled to disable
-        /// all types of adaptive quantization.
+        /// Gets and sets the property AdaptiveQuantization. Enables or disables adaptive quantization
+        /// (AQ), which is a technique MediaLive can apply to video on a frame-by-frame basis
+        /// to produce more compression without losing quality. There are three types of adaptive
+        /// quantization: spatial, temporal, and flicker. We recommend that you set the field
+        /// to Auto. For more information about all the options, see the topic about video adaptive
+        /// quantization in the MediaLive user guide.
         /// </summary>
         public H264AdaptiveQuantization AdaptiveQuantization
         {
@@ -258,13 +256,8 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property FlickerAq. Flicker AQ makes adjustments within each frame
         /// to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on
-        /// the value in the Adaptive quantization field: If you have set the Adaptive quantization
-        /// field to Auto, MediaLive ignores any value in this field. MediaLive will determine
-        /// if flicker AQ is appropriate and will apply the appropriate strength. If you have
-        /// set the Adaptive quantization field to a strength, you can set this field to Enabled
-        /// or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength.
-        /// Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization
-        /// to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
+        /// the value in the Adaptive quantization field. For more information, see the topic
+        /// about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264FlickerAq FlickerAq
         {
@@ -752,14 +745,8 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SpatialAq. Spatial AQ makes adjustments within each frame
         /// based on spatial variation of content complexity. The value to enter in this field
-        /// depends on the value in the Adaptive quantization field: If you have set the Adaptive
-        /// quantization field to Auto, MediaLive ignores any value in this field. MediaLive will
-        /// determine if spatial AQ is appropriate and will apply the appropriate strength. If
-        /// you have set the Adaptive quantization field to a strength, you can set this field
-        /// to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified
-        /// strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive
-        /// quantization to Disabled, MediaLive ignores any value in this field and doesn't apply
-        /// spatial AQ.
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264SpatialAq SpatialAq
         {
@@ -807,15 +794,9 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property TemporalAq. Temporal makes adjustments within each frame
-        /// based on temporal variation of content complexity. The value to enter in this field
-        /// depends on the value in the Adaptive quantization field: If you have set the Adaptive
-        /// quantization field to Auto, MediaLive ignores any value in this field. MediaLive will
-        /// determine if temporal AQ is appropriate and will apply the appropriate strength. If
-        /// you have set the Adaptive quantization field to a strength, you can set this field
-        /// to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified
-        /// strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive
-        /// quantization to Disabled, MediaLive ignores any value in this field and doesn't apply
-        /// temporal AQ.
+        /// based on variations in content complexity over time. The value to enter in this field
+        /// depends on the value in the Adaptive quantization field. For more information, see
+        /// the topic about video adaptive quantization in the MediaLive user guide.
         /// </summary>
         public H264TemporalAq TemporalAq
         {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MediaPackageOutputSettings Marshaller
+    /// MediaPackageV2DestinationSettings Marshaller
     /// </summary>
-    public class MediaPackageOutputSettingsMarshaller : IRequestMarshaller<MediaPackageOutputSettings, JsonMarshallerContext> 
+    public class MediaPackageV2DestinationSettingsMarshaller : IRequestMarshaller<MediaPackageV2DestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,19 +42,32 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MediaPackageOutputSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(MediaPackageV2DestinationSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMediaPackageV2DestinationSettings())
+            if(requestObject.IsSetAudioGroupId())
             {
-                context.Writer.WritePropertyName("mediaPackageV2DestinationSettings");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("audioGroupId");
+                context.Writer.WriteStringValue(requestObject.AudioGroupId);
+            }
 
-                var marshaller = MediaPackageV2DestinationSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.MediaPackageV2DestinationSettings, context);
+            if(requestObject.IsSetAudioRenditionSets())
+            {
+                context.Writer.WritePropertyName("audioRenditionSets");
+                context.Writer.WriteStringValue(requestObject.AudioRenditionSets);
+            }
 
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetHlsAutoSelect())
+            {
+                context.Writer.WritePropertyName("hlsAutoSelect");
+                context.Writer.WriteStringValue(requestObject.HlsAutoSelect);
+            }
+
+            if(requestObject.IsSetHlsDefault())
+            {
+                context.Writer.WritePropertyName("hlsDefault");
+                context.Writer.WriteStringValue(requestObject.HlsDefault);
             }
 
         }
@@ -62,7 +75,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MediaPackageOutputSettingsMarshaller Instance = new MediaPackageOutputSettingsMarshaller();
+        public readonly static MediaPackageV2DestinationSettingsMarshaller Instance = new MediaPackageV2DestinationSettingsMarshaller();
 
     }
 }
