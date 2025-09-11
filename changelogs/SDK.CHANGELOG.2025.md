@@ -1,3 +1,23 @@
+### 4.0.89.0 (2025-09-11 18:24 UTC)
+* DataZone (4.0.9.0)
+	* adding IAM principal id to IAM user profile details
+* ECS (4.0.5.0)
+	* This release supports hook details for Amazon ECS lifecycle hooks.
+* EMRContainers (4.0.1.0)
+	* Added nodeLabel support in container provider to aid hardware isolation support for virtual cluster and security configuration.
+* Evs (4.0.3.0)
+	* CreateEnvironment API now supports parameters (isHcxPublic & hcxNetworkAclId) for HCX migration via public internet, adding flexibility for migration scenarios. New APIs have been added for associating (AssociateEipToVlan) & disassociating (DisassociateEipFromVlan) Elastic IP (EIP) addresses.
+* GuardDuty (4.0.7.0)
+	* Updated Java SDK implementation of entity set status in GuardDuty API.
+* MediaLive (4.0.5.0)
+	* AWS Elemental MediaLive adds a new feature in MediaPackage output group that enables MediaPackage V2 users to control HLS-related parameters directly in MediaLive. These parameter settings are then reflected in MediaPackage outputs, providing more streamlined control over HLS configurations.
+* PrometheusService (4.0.4.0)
+	* Add Vended Logs APIs for Amazon Prometheus Managed Collector
+* QuickSight (4.0.6.0)
+	* This release adds support for Account level custom permissions, additional Dashboard Options, and Null support for Q&A.
+* RDS (4.0.9.0)
+	* Adds support for end-to-end IAM authentication in RDS Proxy for MySQL, MariaDB, and PostgreSQL engines.
+
 ### 4.0.88.0 (2025-09-10 18:15 UTC)
 * NetworkFlowMonitor (4.0.4.0)
 	* Added new enum value (AWS::Region) for type field under MonitorLocalResource and MonitorRemoteResource. Workload Insights and Monitor top contributors queries now support a new DestinationCategory (INTER_REGION).
