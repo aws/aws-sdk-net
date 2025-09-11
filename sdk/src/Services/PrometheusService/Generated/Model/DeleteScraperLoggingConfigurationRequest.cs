@@ -30,51 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRuleGroupsNamespace operation.
-    /// Returns complete information about one rule groups namespace. To retrieve a list of
-    /// rule groups namespaces, use <c>ListRuleGroupsNamespaces</c>.
+    /// Container for the parameters to the DeleteScraperLoggingConfiguration operation.
+    /// Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
     /// </summary>
-    public partial class DescribeRuleGroupsNamespaceRequest : AmazonPrometheusServiceRequest
+    public partial class DeleteScraperLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
-        private string _name;
-        private string _workspaceId;
+        private string _clientToken;
+        private string _scraperId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The name of the rule groups namespace that you want information for.
+        /// A unique, case-sensitive identifier that you provide to ensure the request is processed
+        /// exactly once.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
+        [AWSProperty(Min=1, Max=64)]
+        public string ClientToken
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._name != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The ID of the workspace containing the rule groups namespace.
+        /// The ID of the scraper whose logging configuration will be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        public string ScraperId
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._scraperId; }
+            set { this._scraperId = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if ScraperId property is set
+        internal bool IsSetScraperId()
         {
-            return this._workspaceId != null;
+            return this._scraperId != null;
         }
 
     }

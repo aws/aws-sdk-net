@@ -289,6 +289,126 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type ScraperComponentType.
+    /// </summary>
+    public class ScraperComponentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COLLECTOR for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType COLLECTOR = new ScraperComponentType("COLLECTOR");
+        /// <summary>
+        /// Constant EXPORTER for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType EXPORTER = new ScraperComponentType("EXPORTER");
+        /// <summary>
+        /// Constant SERVICE_DISCOVERY for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType SERVICE_DISCOVERY = new ScraperComponentType("SERVICE_DISCOVERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScraperComponentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScraperComponentType FindValue(string value)
+        {
+            return FindValue<ScraperComponentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScraperComponentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScraperLoggingConfigurationStatusCode.
+    /// </summary>
+    public class ScraperLoggingConfigurationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode ACTIVE = new ScraperLoggingConfigurationStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode CREATING = new ScraperLoggingConfigurationStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode CREATION_FAILED = new ScraperLoggingConfigurationStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode DELETING = new ScraperLoggingConfigurationStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode UPDATE_FAILED = new ScraperLoggingConfigurationStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode UPDATING = new ScraperLoggingConfigurationStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScraperLoggingConfigurationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScraperLoggingConfigurationStatusCode FindValue(string value)
+        {
+            return FindValue<ScraperLoggingConfigurationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScraperLoggingConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScraperStatusCode.
     /// </summary>
     public class ScraperStatusCode : ConstantClass

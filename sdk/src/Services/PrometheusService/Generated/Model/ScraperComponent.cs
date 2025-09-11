@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRuleGroupsNamespace operation.
-    /// Returns complete information about one rule groups namespace. To retrieve a list of
-    /// rule groups namespaces, use <c>ListRuleGroupsNamespaces</c>.
+    /// A component of a Amazon Managed Service for Prometheus scraper that can be configured
+    /// for logging.
     /// </summary>
-    public partial class DescribeRuleGroupsNamespaceRequest : AmazonPrometheusServiceRequest
+    public partial class ScraperComponent
     {
-        private string _name;
-        private string _workspaceId;
+        private ComponentConfig _config;
+        private ScraperComponentType _type;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Config. 
         /// <para>
-        /// The name of the rule groups namespace that you want information for.
+        /// The configuration settings for the scraper component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
+        public ComponentConfig Config
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._config; }
+            set { this._config = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Config property is set
+        internal bool IsSetConfig()
         {
-            return this._name != null;
+            return this._config != null;
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceId. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The ID of the workspace containing the rule groups namespace.
+        /// The type of the scraper component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string WorkspaceId
+        [AWSProperty(Required=true)]
+        public ScraperComponentType Type
         {
-            get { return this._workspaceId; }
-            set { this._workspaceId = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if WorkspaceId property is set
-        internal bool IsSetWorkspaceId()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._workspaceId != null;
+            return this._type != null;
         }
 
     }

@@ -128,7 +128,7 @@ namespace Amazon.PrometheusService.Model
         /// The name of the rule groups namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
