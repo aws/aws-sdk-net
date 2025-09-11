@@ -37,8 +37,11 @@ namespace Amazon.Evs.Model
         private string _availabilityZone;
         private string _cidr;
         private DateTime? _createdAt;
+        private List<EipAssociation> _eipAssociations = AWSConfigs.InitializeCollections ? new List<EipAssociation>() : null;
         private string _functionName;
+        private bool? _isPublic;
         private DateTime? _modifiedAt;
+        private string _networkAclId;
         private string _stateDetails;
         private string _subnetId;
         private int? _vlanId;
@@ -100,6 +103,24 @@ namespace Amazon.Evs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EipAssociations. 
+        /// <para>
+        /// An array of Elastic IP address associations.
+        /// </para>
+        /// </summary>
+        public List<EipAssociation> EipAssociations
+        {
+            get { return this._eipAssociations; }
+            set { this._eipAssociations = value; }
+        }
+
+        // Check to see if EipAssociations property is set
+        internal bool IsSetEipAssociations()
+        {
+            return this._eipAssociations != null && (this._eipAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The VMware VCF traffic type that is carried over the VLAN. For example, a VLAN with
@@ -119,6 +140,24 @@ namespace Amazon.Evs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsPublic. 
+        /// <para>
+        /// Determines if the VLAN that Amazon EVS provisions is public or private.
+        /// </para>
+        /// </summary>
+        public bool IsPublic
+        {
+            get { return this._isPublic.GetValueOrDefault(); }
+            set { this._isPublic = value; }
+        }
+
+        // Check to see if IsPublic property is set
+        internal bool IsSetIsPublic()
+        {
+            return this._isPublic.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
         ///  The date and time that the VLAN was modified.
@@ -134,6 +173,25 @@ namespace Amazon.Evs.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAclId. 
+        /// <para>
+        /// A unique ID for a network access control list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=21)]
+        public string NetworkAclId
+        {
+            get { return this._networkAclId; }
+            set { this._networkAclId = value; }
+        }
+
+        // Check to see if NetworkAclId property is set
+        internal bool IsSetNetworkAclId()
+        {
+            return this._networkAclId != null;
         }
 
         /// <summary>

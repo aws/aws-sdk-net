@@ -92,6 +92,18 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHcxNetworkAclId())
+            {
+                context.Writer.WritePropertyName("hcxNetworkAclId");
+                context.Writer.Write(requestObject.HcxNetworkAclId);
+            }
+
+            if(requestObject.IsSetIsHcxPublic())
+            {
+                context.Writer.WritePropertyName("isHcxPublic");
+                context.Writer.Write(requestObject.IsHcxPublic);
+            }
+
             if(requestObject.IsSetNsxUplink())
             {
                 context.Writer.WritePropertyName("nsxUplink");
