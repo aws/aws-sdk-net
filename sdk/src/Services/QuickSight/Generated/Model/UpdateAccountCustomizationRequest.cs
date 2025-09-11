@@ -37,10 +37,10 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// You can use customizations for your Amazon Web Services account or, if you specify
-    /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
-    /// to a namespace override customizations that apply to an Amazon Web Services account.
-    /// To find out which customizations apply, use the <c>DescribeAccountCustomization</c>
-    /// API operation. 
+    /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
+    /// override customizations that apply to an Amazon Web Services account. To find out
+    /// which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
+    /// 
     /// </para>
     /// </summary>
     public partial class UpdateAccountCustomizationRequest : AmazonQuickSightRequest
@@ -52,8 +52,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The Amazon QuickSight customizations you're updating in the current Amazon Web Services
-        /// Region. 
+        /// The QuickSight customizations you're updating in the current Amazon Web Services Region.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,8 +72,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that you want to update Amazon QuickSight
-        /// customizations for.
+        /// The ID for the Amazon Web Services account that you want to update QuickSight customizations
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -92,7 +92,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace that you want to update Amazon QuickSight customizations for.
+        /// The namespace that you want to update QuickSight customizations for.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

@@ -52,6 +52,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AddOrRunAnomalyDetectionForAnalyses);
             }
 
+            if(requestObject.IsSetAnalysis())
+            {
+                context.Writer.WritePropertyName("Analysis");
+                context.Writer.WriteStringValue(requestObject.Analysis);
+            }
+
             if(requestObject.IsSetCreateAndUpdateDashboardEmailReports())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateDashboardEmailReports");
@@ -92,6 +98,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateSPICEDataset");
                 context.Writer.WriteStringValue(requestObject.CreateSPICEDataset);
+            }
+
+            if(requestObject.IsSetDashboard())
+            {
+                context.Writer.WritePropertyName("Dashboard");
+                context.Writer.WriteStringValue(requestObject.Dashboard);
             }
 
             if(requestObject.IsSetExportToCsv())

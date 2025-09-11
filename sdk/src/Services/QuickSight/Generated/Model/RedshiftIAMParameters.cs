@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure that grants Amazon QuickSight access to your cluster and make a call to
-    /// the <c>redshift:GetClusterCredentials</c> API. For more information on the <c>redshift:GetClusterCredentials</c>
-    /// API, see <a href="https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html">
+    /// A structure that grants QuickSight access to your cluster and make a call to the <c>redshift:GetClusterCredentials</c>
+    /// API. For more information on the <c>redshift:GetClusterCredentials</c> API, see <a
+    /// href="https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html">
     /// <c>GetClusterCredentials</c> </a>.
     /// </summary>
     public partial class RedshiftIAMParameters
@@ -67,10 +67,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DatabaseGroups. 
         /// <para>
-        /// A list of groups whose permissions will be granted to Amazon QuickSight to access
-        /// the cluster. These permissions are combined with the permissions granted to Amazon
-        /// QuickSight by the <c>DatabaseUser</c>. If you choose to include this parameter, the
-        /// <c>RoleArn</c> must grant access to <c>redshift:JoinGroup</c>.
+        /// A list of groups whose permissions will be granted to QuickSight to access the cluster.
+        /// These permissions are combined with the permissions granted to QuickSight by the <c>DatabaseUser</c>.
+        /// If you choose to include this parameter, the <c>RoleArn</c> must grant access to <c>redshift:JoinGroup</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -94,11 +93,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DatabaseUser. 
         /// <para>
-        /// The user whose permissions and group memberships will be used by Amazon QuickSight
-        /// to access the cluster. If this user already exists in your database, Amazon QuickSight
-        /// is granted the same permissions that the user has. If the user doesn't exist, set
-        /// the value of <c>AutoCreateDatabaseUser</c> to <c>True</c> to create a new user with
-        /// PUBLIC permissions.
+        /// The user whose permissions and group memberships will be used by QuickSight to access
+        /// the cluster. If this user already exists in your database, QuickSight is granted the
+        /// same permissions that the user has. If the user doesn't exist, set the value of <c>AutoCreateDatabaseUser</c>
+        /// to <c>True</c> to create a new user with PUBLIC permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -117,10 +115,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Use the <c>RoleArn</c> structure to allow Amazon QuickSight to call <c>redshift:GetClusterCredentials</c>
+        /// Use the <c>RoleArn</c> structure to allow QuickSight to call <c>redshift:GetClusterCredentials</c>
         /// on your cluster. The calling principal must have <c>iam:PassRole</c> access to pass
-        /// the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight
-        /// service principal to assume the role.
+        /// the role to QuickSight. The role's trust policy must allow the QuickSight service
+        /// principal to assume the role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

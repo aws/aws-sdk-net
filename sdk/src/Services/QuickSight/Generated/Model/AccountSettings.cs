@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The Amazon QuickSight settings associated with your Amazon Web Services account.
+    /// The QuickSight settings associated with your Amazon Web Services account.
     /// </summary>
     public partial class AccountSettings
     {
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The "account name" you provided for the Amazon QuickSight subscription in your Amazon
-        /// Web Services account. You create this name when you sign up for Amazon QuickSight.
-        /// It is unique in all of Amazon Web Services and it appears only when users sign in.
+        /// The "account name" you provided for the QuickSight subscription in your Amazon Web
+        /// Services account. You create this name when you sign up for QuickSight. It is unique
+        /// in all of Amazon Web Services and it appears only when users sign in.
         /// </para>
         /// </summary>
         public string AccountName
@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default Amazon QuickSight namespace for your Amazon Web Services account. 
+        /// The default QuickSight namespace for your Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition
+        /// The edition of QuickSight that you're currently subscribed to: Enterprise edition
         /// or Standard edition.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The main notification email for your Amazon QuickSight subscription.
+        /// The main notification email for your QuickSight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail
@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PublicSharingEnabled. 
         /// <para>
-        /// A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight
+        /// A Boolean value that indicates whether public sharing is turned on for an QuickSight
         /// account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
         /// </para>
         /// </summary>
@@ -139,10 +139,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TerminationProtectionEnabled. 
         /// <para>
-        /// A boolean value that determines whether or not an Amazon QuickSight account can be
-        /// deleted. A <c>True</c> value doesn't allow the account to be deleted and results in
-        /// an error message if a user tries to make a <c>DeleteAccountSubsctiption</c> request.
-        /// A <c>False</c> value will allow the ccount to be deleted. 
+        /// A boolean value that determines whether or not an QuickSight account can be deleted.
+        /// A <c>True</c> value doesn't allow the account to be deleted and results in an error
+        /// message if a user tries to make a <c>DeleteAccountSubsctiption</c> request. A <c>False</c>
+        /// value will allow the ccount to be deleted. 
         /// </para>
         /// </summary>
         public bool? TerminationProtectionEnabled

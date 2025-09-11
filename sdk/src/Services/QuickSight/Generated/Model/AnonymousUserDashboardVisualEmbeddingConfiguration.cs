@@ -41,8 +41,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property InitialDashboardVisualId. 
         /// <para>
         /// The visual ID for the visual that you want the user to see. This ID is included in
-        /// the output URL. When the URL in response is accessed, Amazon QuickSight renders this
-        /// visual.
+        /// the output URL. When the URL in response is accessed, QuickSight renders this visual.
         /// </para>
         ///  
         /// <para>

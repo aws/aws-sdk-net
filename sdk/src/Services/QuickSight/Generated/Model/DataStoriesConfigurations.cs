@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The data story settings of an embedded Amazon QuickSight console.
+    /// The data story settings of an embedded QuickSight console.
     /// </summary>
     public partial class DataStoriesConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The data story settings of an embedded Amazon QuickSight console.
+        /// The data story settings of an embedded QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -86,6 +86,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataQAEnabledOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DataStoriesSharingOption", targetDepth))
+                {
+                    var unmarshaller = DataStoriesSharingOptionUnmarshaller.Instance;
+                    unmarshalledObject.DataStoriesSharingOption = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ExecutiveSummaryOption", targetDepth))
+                {
+                    var unmarshaller = ExecutiveSummaryOptionUnmarshaller.Instance;
+                    unmarshalledObject.ExecutiveSummaryOption = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ExportToCSVOption", targetDepth))
                 {
                     var unmarshaller = ExportToCSVOptionUnmarshaller.Instance;

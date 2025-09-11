@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
         private AwsIotAnalyticsParameters _awsIotAnalyticsParameters;
         private BigQueryParameters _bigQueryParameters;
+        private CustomConnectionParameters _customConnectionParameters;
         private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
         private ImpalaParameters _impalaParameters;
@@ -188,6 +189,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBigQueryParameters()
         {
             return this._bigQueryParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomConnectionParameters. 
+        /// <para>
+        /// The parameters for custom connectors.
+        /// </para>
+        /// </summary>
+        public CustomConnectionParameters CustomConnectionParameters
+        {
+            get { return this._customConnectionParameters; }
+            set { this._customConnectionParameters = value; }
+        }
+
+        // Check to see if CustomConnectionParameters property is set
+        internal bool IsSetCustomConnectionParameters()
+        {
+            return this._customConnectionParameters != null;
         }
 
         /// <summary>

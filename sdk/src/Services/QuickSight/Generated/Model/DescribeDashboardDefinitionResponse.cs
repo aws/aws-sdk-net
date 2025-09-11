@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>AvailabilityStatus</c> for <c>AdHocFilteringOption</c> - This status can be either
-        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon QuickSight
+        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, QuickSight
         /// disables the left filter pane on the published dashboard, which can be used for ad
         /// hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
         /// </para>
@@ -87,6 +87,19 @@ namespace Amazon.QuickSight.Model
         ///  <c>VisibilityState</c> for <c>SheetControlsOption</c> - This visibility state can
         /// be either <c>COLLAPSED</c> or <c>EXPANDED</c>. This option is <c>COLLAPSED</c> by
         /// default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>ExecutiveSummaryOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. The option to build an executive summary
+        /// is disabled when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by
+        /// default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>DataStoriesSharingOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. The option to share a data story is disabled
+        /// when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by default.
         /// </para>
         ///  </li> </ul>
         /// </summary>

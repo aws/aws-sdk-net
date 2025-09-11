@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeKeyRegistration operation.
-    /// Describes all customer managed key registrations in a Amazon QuickSight account.
+    /// Describes all customer managed key registrations in a QuickSight account.
     /// </summary>
     public partial class DescribeKeyRegistrationRequest : AmazonQuickSightRequest
     {

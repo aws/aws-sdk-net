@@ -85,9 +85,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
-        /// it allows only the domains that you include in this parameter. You can list up to
-        /// three domains or subdomains in each API call.
+        /// configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows
+        /// only the domains that you include in this parameter. You can list up to three domains
+        /// or subdomains in each API call.
         /// </para>
         ///  
         /// <para>
@@ -135,10 +135,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
-        /// The experience that you want to embed. For registered users, you can embed Amazon
-        /// QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar,
-        /// the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight
-        /// console.
+        /// The experience that you want to embed. For registered users, you can embed QuickSight
+        /// dashboards, QuickSight visuals, the QuickSight Q search bar, the QuickSight Generative
+        /// Q&amp;A experience, or the entire QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

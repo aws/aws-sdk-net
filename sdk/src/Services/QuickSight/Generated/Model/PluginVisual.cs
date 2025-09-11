@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A flexible visualization type that allows engineers to create new custom charts in
-    /// Amazon QuickSight.
+    /// QuickSight.
     /// </summary>
     public partial class PluginVisual
     {

@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnGroups. 
         /// <para>
-        /// Groupings of columns that work together in certain Amazon QuickSight features. Currently,
+        /// Groupings of columns that work together in certain QuickSight features. Currently,
         /// only geospatial hierarchy is supported.
         /// </para>
         /// <para />
@@ -209,7 +209,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderArns. 
         /// <para>
-        /// When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+        /// When you create the dataset, QuickSight adds the dataset to these folders.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

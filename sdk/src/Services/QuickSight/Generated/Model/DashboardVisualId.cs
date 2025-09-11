@@ -48,8 +48,8 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The <c>DashboardId</c>, <c>SheetId</c>, and <c>VisualId</c> can be found in the <c>IDs
     /// for developers</c> section of the <c>Embed visual</c> pane of the visual's on-visual
-    /// menu of the Amazon QuickSight console. You can also get the <c>DashboardId</c> with
-    /// a <c>ListDashboards</c> API operation.
+    /// menu of the QuickSight console. You can also get the <c>DashboardId</c> with a <c>ListDashboards</c>
+    /// API operation.
     /// </para>
     /// </summary>
     public partial class DashboardVisualId
@@ -63,8 +63,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the dashboard that has the visual that you want to embed. The <c>DashboardId</c>
         /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
-        /// of the visual's on-visual menu of the Amazon QuickSight console. You can also get
-        /// the <c>DashboardId</c> with a <c>ListDashboards</c> API operation.
+        /// of the visual's on-visual menu of the QuickSight console. You can also get the <c>DashboardId</c>
+        /// with a <c>ListDashboards</c> API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -85,7 +85,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the sheet that the has visual that you want to embed. The <c>SheetId</c>
         /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
-        /// of the visual's on-visual menu of the Amazon QuickSight console.
+        /// of the visual's on-visual menu of the QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the visual that you want to embed. The <c>VisualID</c> can be found in the
         /// <c>IDs for developers</c> section of the <c>Embed visual</c> pane of the visual's
-        /// on-visual menu of the Amazon QuickSight console.
+        /// on-visual menu of the QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

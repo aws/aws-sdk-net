@@ -32,19 +32,18 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdatePublicSharingSettings operation.
     /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
-    /// sharing settings of an Amazon QuickSight dashboard.
+    /// sharing settings of an QuickSight dashboard.
     /// 
     ///  
     /// <para>
-    /// To use this operation, turn on session capacity pricing for your Amazon QuickSight
-    /// account.
+    /// To use this operation, turn on session capacity pricing for your QuickSight account.
     /// </para>
     ///  
     /// <para>
     /// Before you can turn on public sharing on your account, make sure to give public sharing
     /// permissions to an administrative user in the Identity and Access Management (IAM)
-    /// console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-    /// Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// console. For more information on using IAM with QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+    /// QuickSight with IAM</a> in the <i>QuickSight User Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdatePublicSharingSettingsRequest : AmazonQuickSightRequest
@@ -55,7 +54,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID associated with your Amazon QuickSight subscription.
+        /// The Amazon Web Services account ID associated with your QuickSight subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -74,7 +73,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PublicSharingEnabled. 
         /// <para>
-        /// A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight
+        /// A Boolean value that indicates whether public sharing is turned on for an QuickSight
         /// account.
         /// </para>
         /// </summary>

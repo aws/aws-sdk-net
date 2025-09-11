@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A collection of Amazon Q feature configurations in an embedded Amazon QuickSight dashboard.
+    /// A collection of Amazon Q feature configurations in an embedded QuickSight dashboard.
     /// </summary>
     public partial class AmazonQInQuickSightDashboardConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExecutiveSummary. 
         /// <para>
-        /// A generated executive summary of an embedded Amazon QuickSight dashboard.
+        /// A generated executive summary of an embedded QuickSight dashboard.
         /// </para>
         /// </summary>
         public ExecutiveSummaryConfigurations ExecutiveSummary

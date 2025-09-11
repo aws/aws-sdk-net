@@ -107,8 +107,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property InitialDashboardId. 
         /// <para>
         /// The dashboard ID for the dashboard that you want the user to see first. This ID is
-        /// included in the output URL. When the URL in response is accessed, Amazon QuickSight
-        /// renders this dashboard.
+        /// included in the output URL. When the URL in response is accessed, QuickSight renders
+        /// this dashboard.
         /// </para>
         ///  
         /// <para>

@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultTheme. 
         /// <para>
-        /// The default theme for this Amazon QuickSight subscription.
+        /// The default theme for this QuickSight subscription.
         /// </para>
         /// </summary>
         public string DefaultTheme

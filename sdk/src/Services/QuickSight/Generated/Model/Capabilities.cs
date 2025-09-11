@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A set of actions that correspond to Amazon QuickSight permissions.
+    /// A set of actions that correspond to QuickSight permissions.
     /// </summary>
     public partial class Capabilities
     {
         private CapabilityState _addOrRunAnomalyDetectionForAnalyses;
+        private CapabilityState _analysis;
         private CapabilityState _createAndUpdateDashboardEmailReports;
         private CapabilityState _createAndUpdateDatasets;
         private CapabilityState _createAndUpdateDataSources;
@@ -42,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateThresholdAlerts;
         private CapabilityState _createSharedFolders;
         private CapabilityState _createSPICEDataset;
+        private CapabilityState _dashboard;
         private CapabilityState _exportToCsv;
         private CapabilityState _exportToCsvInScheduledReports;
         private CapabilityState _exportToExcel;
@@ -74,6 +76,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAddOrRunAnomalyDetectionForAnalyses()
         {
             return this._addOrRunAnomalyDetectionForAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Analysis. 
+        /// <para>
+        /// The ability to perform analysis-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Analysis
+        {
+            get { return this._analysis; }
+            set { this._analysis = value; }
+        }
+
+        // Check to see if Analysis property is set
+        internal bool IsSetAnalysis()
+        {
+            return this._analysis != null;
         }
 
         /// <summary>
@@ -200,6 +220,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateSPICEDataset()
         {
             return this._createSPICEDataset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dashboard. 
+        /// <para>
+        /// The ability to perform dashboard-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Dashboard
+        {
+            get { return this._dashboard; }
+            set { this._dashboard = value; }
+        }
+
+        // Check to see if Dashboard property is set
+        internal bool IsSetDashboard()
+        {
+            return this._dashboard != null;
         }
 
         /// <summary>

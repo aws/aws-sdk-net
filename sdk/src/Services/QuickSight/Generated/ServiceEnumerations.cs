@@ -4091,6 +4091,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType GITHUB = new DataSourceType("GITHUB");
         /// <summary>
+        /// Constant GOOGLESHEETS for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType GOOGLESHEETS = new DataSourceType("GOOGLESHEETS");
+        /// <summary>
         /// Constant JIRA for DataSourceType
         /// </summary>
         public static readonly DataSourceType JIRA = new DataSourceType("JIRA");
@@ -8005,6 +8009,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly NamedFilterType DATE_RANGE_FILTER = new NamedFilterType("DATE_RANGE_FILTER");
         /// <summary>
+        /// Constant NULL_FILTER for NamedFilterType
+        /// </summary>
+        public static readonly NamedFilterType NULL_FILTER = new NamedFilterType("NULL_FILTER");
+        /// <summary>
         /// Constant NUMERIC_EQUALITY_FILTER for NamedFilterType
         /// </summary>
         public static readonly NamedFilterType NUMERIC_EQUALITY_FILTER = new NamedFilterType("NUMERIC_EQUALITY_FILTER");
@@ -8344,6 +8352,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NullFilterOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NullFilterType.
+    /// </summary>
+    public class NullFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_VALUES for NullFilterType
+        /// </summary>
+        public static readonly NullFilterType ALL_VALUES = new NullFilterType("ALL_VALUES");
+        /// <summary>
+        /// Constant NON_NULLS_ONLY for NullFilterType
+        /// </summary>
+        public static readonly NullFilterType NON_NULLS_ONLY = new NullFilterType("NON_NULLS_ONLY");
+        /// <summary>
+        /// Constant NULLS_ONLY for NullFilterType
+        /// </summary>
+        public static readonly NullFilterType NULLS_ONLY = new NullFilterType("NULLS_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NullFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NullFilterType FindValue(string value)
+        {
+            return FindValue<NullFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NullFilterType(string value)
         {
             return FindValue(value);
         }
@@ -9586,6 +9648,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QBusinessInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QDataKeyType.
+    /// </summary>
+    public class QDataKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED for QDataKeyType
+        /// </summary>
+        public static readonly QDataKeyType AWS_OWNED = new QDataKeyType("AWS_OWNED");
+        /// <summary>
+        /// Constant CMK for QDataKeyType
+        /// </summary>
+        public static readonly QDataKeyType CMK = new QDataKeyType("CMK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QDataKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QDataKeyType FindValue(string value)
+        {
+            return FindValue<QDataKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QDataKeyType(string value)
         {
             return FindValue(value);
         }

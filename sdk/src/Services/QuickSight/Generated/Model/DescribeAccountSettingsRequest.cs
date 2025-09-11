@@ -31,8 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountSettings operation.
-    /// Describes the settings that were used when your Amazon QuickSight subscription was
-    /// first created in this Amazon Web Services account.
+    /// Describes the settings that were used when your QuickSight subscription was first
+    /// created in this Amazon Web Services account.
     /// </summary>
     public partial class DescribeAccountSettingsRequest : AmazonQuickSightRequest
     {

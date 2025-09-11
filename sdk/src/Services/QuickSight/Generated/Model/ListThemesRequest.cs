@@ -111,7 +111,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>QUICKSIGHT</c> - Display only the starting themes defined by Amazon QuickSight.
+        ///  <c>QUICKSIGHT</c> - Display only the starting themes defined by QuickSight.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -98,6 +98,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.BigQueryParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CustomConnectionParameters", targetDepth))
+                {
+                    var unmarshaller = CustomConnectionParametersUnmarshaller.Instance;
+                    unmarshalledObject.CustomConnectionParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DatabricksParameters", targetDepth))
                 {
                     var unmarshaller = DatabricksParametersUnmarshaller.Instance;

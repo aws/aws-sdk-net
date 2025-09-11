@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
-        /// it allows only the domains that you include in this parameter. You can list up to
-        /// three domains or subdomains in each API call.
+        /// configured in the Manage QuickSight menu in the QuickSight console. Instead, it allows
+        /// only the domains that you include in this parameter. You can list up to three domains
+        /// or subdomains in each API call.
         /// </para>
         ///  
         /// <para>
@@ -112,8 +112,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthorizedResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user
-        /// is authorized to access during the lifetime of the session.
+        /// The Amazon Resource Names (ARNs) for the QuickSight resources that the user is authorized
+        /// to access during the lifetime of the session.
         /// </para>
         ///  
         /// <para>
@@ -190,8 +190,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you
-        /// are not using an Amazon QuickSight custom namespace, set this to <c>default</c>.
+        /// The QuickSight namespace that the anonymous user virtually belongs to. If you are
+        /// not using an Amazon QuickSight custom namespace, set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

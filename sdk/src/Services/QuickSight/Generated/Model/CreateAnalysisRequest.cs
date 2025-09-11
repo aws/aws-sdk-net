@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderArns. 
         /// <para>
-        /// When you create the analysis, Amazon QuickSight adds the analysis to these folders.
+        /// When you create the analysis, QuickSight adds the analysis to these folders.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -141,7 +141,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive name for the analysis that you're creating. This name displays for the
-        /// analysis in the Amazon QuickSight console. 
+        /// analysis in the QuickSight console. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -260,7 +260,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ThemeArn. 
         /// <para>
         /// The ARN for the theme to apply to the analysis that you're creating. To see the theme
-        /// in the Amazon QuickSight console, make sure that you have access to it.
+        /// in the QuickSight console, make sure that you have access to it.
         /// </para>
         /// </summary>
         public string ThemeArn

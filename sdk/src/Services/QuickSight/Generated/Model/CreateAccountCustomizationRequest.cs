@@ -33,9 +33,9 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the CreateAccountCustomization operation.
     /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
     /// Currently, you can add a custom default theme by using the <c>CreateAccountCustomization</c>
-    /// or <c>UpdateAccountCustomization</c> API operation. To further customize Amazon QuickSight
-    /// by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-    /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
+    /// or <c>UpdateAccountCustomization</c> API operation. To further customize QuickSight
+    /// by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+    /// QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
     /// 
     ///  
     /// <para>
@@ -65,9 +65,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
         /// <para>
-        /// The Amazon QuickSight customizations you're adding in the current Amazon Web Services
-        /// Region. You can add these to an Amazon Web Services account and a QuickSight namespace.
-        /// 
+        /// The QuickSight customizations you're adding in the current Amazon Web Services Region.
+        /// You can add these to an Amazon Web Services account and a QuickSight namespace. 
         /// </para>
         ///  
         /// <para>
@@ -94,8 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID for the Amazon Web Services account that you want to customize Amazon QuickSight
-        /// for.
+        /// The ID for the Amazon Web Services account that you want to customize QuickSight for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -114,7 +112,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that you want to add customizations to.
+        /// The QuickSight namespace that you want to add customizations to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

@@ -123,6 +123,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCustomConnectionParameters())
+            {
+                context.Writer.WritePropertyName("CustomConnectionParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomConnectionParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomConnectionParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDatabricksParameters())
             {
                 context.Writer.WritePropertyName("DatabricksParameters");
