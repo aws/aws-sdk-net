@@ -32,7 +32,7 @@ namespace Amazon.XRay
     public partial class AmazonXRayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("XRay", "3.7.502.5");
+            InternalSDKUtils.BuildUserAgentString("XRay", "3.7.502.6");
 
         private string _userAgent = UserAgentString;
         ///<summary>
