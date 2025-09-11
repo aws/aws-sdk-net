@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// The <c>CreateEnvironmentHost</c> operation couldn't be performed because the service
-    /// is throttling requests. This exception is thrown when the <c>CreateEnvironmentHost</c>
-    /// request exceeds concurrency of 1 transaction per second (TPS).
+    /// The operation couldn't be performed because the service is throttling requests. This
+    /// exception is thrown when there are too many requests accepted concurrently from the
+    /// service endpoint.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -268,6 +268,77 @@ namespace Amazon.Evs
         #endregion
 
 
+        #region  AssociateEipToVlan
+
+
+        /// <summary>
+        /// Associates an Elastic IP address with a public HCX VLAN. This operation is only allowed
+        /// for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEipToVlan service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEipToVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/AssociateEipToVlan">REST API Reference for AssociateEipToVlan Operation</seealso>
+        public virtual AssociateEipToVlanResponse AssociateEipToVlan(AssociateEipToVlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEipToVlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEipToVlanResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEipToVlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an Elastic IP address with a public HCX VLAN. This operation is only allowed
+        /// for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEipToVlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEipToVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/AssociateEipToVlan">REST API Reference for AssociateEipToVlan Operation</seealso>
+        public virtual Task<AssociateEipToVlanResponse> AssociateEipToVlanAsync(AssociateEipToVlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateEipToVlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEipToVlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateEipToVlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEnvironment
 
 
@@ -390,9 +461,9 @@ namespace Amazon.Evs
         /// 
         /// <returns>The response from the CreateEnvironmentHost service method, as returned by Evs.</returns>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The <c>CreateEnvironmentHost</c> operation couldn't be performed because the service
-        /// is throttling requests. This exception is thrown when the <c>CreateEnvironmentHost</c>
-        /// request exceeds concurrency of 1 transaction per second (TPS).
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -443,9 +514,9 @@ namespace Amazon.Evs
         /// 
         /// <returns>The response from the CreateEnvironmentHost service method, as returned by Evs.</returns>
         /// <exception cref="Amazon.Evs.Model.ThrottlingException">
-        /// The <c>CreateEnvironmentHost</c> operation couldn't be performed because the service
-        /// is throttling requests. This exception is thrown when the <c>CreateEnvironmentHost</c>
-        /// request exceeds concurrency of 1 transaction per second (TPS).
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
         /// </exception>
         /// <exception cref="Amazon.Evs.Model.ValidationException">
         /// The input fails to satisfy the specified constraints. You will see this exception
@@ -618,6 +689,77 @@ namespace Amazon.Evs
             options.ResponseUnmarshaller = DeleteEnvironmentHostResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteEnvironmentHostResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateEipFromVlan
+
+
+        /// <summary>
+        /// Disassociates an Elastic IP address from a public HCX VLAN. This operation is only
+        /// allowed for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEipFromVlan service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEipFromVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DisassociateEipFromVlan">REST API Reference for DisassociateEipFromVlan Operation</seealso>
+        public virtual DisassociateEipFromVlanResponse DisassociateEipFromVlan(DisassociateEipFromVlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEipFromVlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEipFromVlanResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEipFromVlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates an Elastic IP address from a public HCX VLAN. This operation is only
+        /// allowed for public HCX VLANs at this time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEipFromVlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEipFromVlan service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation couldn't be performed because the service is throttling requests. This
+        /// exception is thrown when there are too many requests accepted concurrently from the
+        /// service endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DisassociateEipFromVlan">REST API Reference for DisassociateEipFromVlan Operation</seealso>
+        public virtual Task<DisassociateEipFromVlanResponse> DisassociateEipFromVlanAsync(DisassociateEipFromVlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateEipFromVlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEipFromVlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateEipFromVlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
