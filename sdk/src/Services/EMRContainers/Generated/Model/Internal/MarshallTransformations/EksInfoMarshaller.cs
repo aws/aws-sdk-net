@@ -54,6 +54,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Namespace);
             }
 
+            if(requestObject.IsSetNodeLabel())
+            {
+                context.Writer.WritePropertyName("nodeLabel");
+                context.Writer.Write(requestObject.NodeLabel);
+            }
+
         }
 
         /// <summary>

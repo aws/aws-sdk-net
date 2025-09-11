@@ -39,6 +39,7 @@ namespace Amazon.EMRContainers.Model
     public partial class CreateSecurityConfigurationRequest : AmazonEMRContainersRequest
     {
         private string _clientToken;
+        private ContainerProvider _containerProvider;
         private string _name;
         private SecurityConfigurationData _securityConfigurationData;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -60,6 +61,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerProvider. 
+        /// <para>
+        /// The container provider associated with the security configuration.
+        /// </para>
+        /// </summary>
+        public ContainerProvider ContainerProvider
+        {
+            get { return this._containerProvider; }
+            set { this._containerProvider = value; }
+        }
+
+        // Check to see if ContainerProvider property is set
+        internal bool IsSetContainerProvider()
+        {
+            return this._containerProvider != null;
         }
 
         /// <summary>

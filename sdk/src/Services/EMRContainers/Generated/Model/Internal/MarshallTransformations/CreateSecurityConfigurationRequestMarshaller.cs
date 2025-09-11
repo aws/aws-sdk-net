@@ -78,6 +78,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetContainerProvider())
+                {
+                    context.Writer.WritePropertyName("containerProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContainerProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContainerProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
