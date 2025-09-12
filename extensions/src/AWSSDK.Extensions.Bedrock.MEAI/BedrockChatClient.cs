@@ -726,7 +726,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             foreach (AITool tool in tools)
             {
-                if (tool is not AIFunction f)
+                if (tool is not AIFunctionDeclaration f)
                 {
                     continue;
                 }
