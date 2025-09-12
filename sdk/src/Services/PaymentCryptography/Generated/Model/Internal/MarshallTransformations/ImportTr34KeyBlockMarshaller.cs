@@ -84,6 +84,18 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.WrappedKeyBlock);
             }
 
+            if(requestObject.IsSetWrappingKeyCertificate())
+            {
+                context.Writer.WritePropertyName("WrappingKeyCertificate");
+                context.Writer.Write(requestObject.WrappingKeyCertificate);
+            }
+
+            if(requestObject.IsSetWrappingKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("WrappingKeyIdentifier");
+                context.Writer.Write(requestObject.WrappingKeyIdentifier);
+            }
+
         }
 
         /// <summary>

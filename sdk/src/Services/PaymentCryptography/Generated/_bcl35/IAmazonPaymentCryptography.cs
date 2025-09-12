@@ -1667,6 +1667,103 @@ namespace Amazon.PaymentCryptography
 
         #endregion
         
+        #region  GetCertificateSigningRequest
+
+
+        /// <summary>
+        /// Used to retrieve the public key for a keypair.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCertificateSigningRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetCertificateSigningRequest service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
+        GetCertificateSigningRequestResponse GetCertificateSigningRequest(GetCertificateSigningRequestRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCertificateSigningRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCertificateSigningRequest operation on AmazonPaymentCryptographyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCertificateSigningRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
+        IAsyncResult BeginGetCertificateSigningRequest(GetCertificateSigningRequestRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCertificateSigningRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCertificateSigningRequest.</param>
+        /// 
+        /// <returns>Returns a  GetCertificateSigningRequestResult from PaymentCryptography.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
+        GetCertificateSigningRequestResponse EndGetCertificateSigningRequest(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDefaultKeyReplicationRegions
 
 
