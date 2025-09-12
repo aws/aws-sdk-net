@@ -98,16 +98,18 @@ internal sealed partial class BedrockChatClient : IChatClient
                     result.Contents.Add(new TextContent(text) { RawRepresentation = content });
                 }
 
-                if (content.CitationsContent is { } citations)
+                if (content.CitationsContent is { } citations &&
+                    citations.Citations is { Count: > 0 } &&
+                    citations.Content is { Count: > 0 })
                 {
-                    int count = Math.Min(citations.Citations?.Count ?? 0, citations.Content?.Count ?? 0);
+                    int count = Math.Min(citations.Citations.Count, citations.Content.Count);
                     for (int i = 0; i < count; i++)
                     {
-                        TextContent tc = new(citations.Content![i]?.Text) { RawRepresentation = citations.Content![i] };
+                        TextContent tc = new(citations.Content[i]?.Text) { RawRepresentation = citations.Content[i] };
                         tc.Annotations = [new CitationAnnotation()
                         {
-                            Title = citations.Citations![i].Title,
-                            Snippet = citations.Citations![i].SourceContent?.Select(c => c.Text).FirstOrDefault(),
+                            Title = citations.Citations[i].Title,
+                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault(),
                         }];
                         result.Contents.Add(tc);
                     }

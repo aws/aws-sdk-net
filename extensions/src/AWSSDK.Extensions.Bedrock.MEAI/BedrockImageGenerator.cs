@@ -19,6 +19,7 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading;
@@ -103,6 +104,7 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
             if (invokeRequest.ModelId?.IndexOf("stability", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 // Stability AI models
+                // https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-stability-diffusion.html
 
                 if (invokeRequest.ModelId?.IndexOf("stable-diffusion", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
@@ -127,9 +129,13 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
             else
             {
                 // Amazon models (e.g. Titan, Nova Canvas)
+                // https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-titan.html
 
-                body["taskType"] = "TEXT_IMAGE";
-                body["textToImageParams"] = new JsonObject { ["text"] = request.Prompt ?? "" };
+                JsonObject textToImageParams = new() { ["text"] = request.Prompt ?? "" };
+                if (request.OriginalImages?.OfType<DataContent>().Where(d => d.HasTopLevelMediaType("image")).FirstOrDefault() is DataContent image)
+                {
+                    textToImageParams["conditionImage"] = image.Base64Data.ToString();
+                }
 
                 JsonObject imageGenerationConfig = new()
                 {
@@ -149,9 +155,11 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
 
                 if (numImages > 1)
                 {
-                    imageGenerationConfig["numberOfImages"] = numImages;
+                    imageGenerationConfig["numberOfImages"] = Math.Min(numImages, 5);
                 }
 
+                body["taskType"] = "TEXT_IMAGE";
+                body["textToImageParams"] = textToImageParams;
                 body["imageGenerationConfig"] = imageGenerationConfig;
             }
 
@@ -165,6 +173,8 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
         using JsonDocument doc = JsonDocument.Parse(rawResponse.Body);
         JsonElement root = doc.RootElement;
 
+        const string DefaultGeneratedImageMimeType = "image/png";
+
         if (root.TryGetProperty("artifacts", out JsonElement artifactElement) && artifactElement.ValueKind == JsonValueKind.Array)
         {
             foreach (var element in artifactElement.EnumerateArray())
@@ -172,7 +182,7 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
                 if (element.TryGetProperty("base64", out JsonElement base64Element) &&
                     base64Element.ValueKind == JsonValueKind.String)
                 {
-                    result.Contents.Add(new DataContent(Convert.FromBase64String(base64Element.GetString()!), "image/png"));
+                    result.Contents.Add(new DataContent(Convert.FromBase64String(base64Element.GetString()!), DefaultGeneratedImageMimeType));
                 }
             }
         }
@@ -182,7 +192,7 @@ internal sealed partial class BedrockImageGenerator : IImageGenerator
             {
                 if (image.ValueKind == JsonValueKind.String)
                 {
-                    result.Contents.Add(new DataContent(Convert.FromBase64String(image.GetString()!), "image/png"));
+                    result.Contents.Add(new DataContent(Convert.FromBase64String(image.GetString()!), DefaultGeneratedImageMimeType));
                 }
             }
         }
