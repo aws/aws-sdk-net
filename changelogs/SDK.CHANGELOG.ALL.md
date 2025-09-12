@@ -1,3 +1,7 @@
+### 3.7.1122.0 (2025-09-12 18:16 UTC)
+* PaymentCryptography (3.7.503.0)
+	* Add support for certificates to be signed by 3rd party certificate authorities.  New API GetCertificateSigningRequest API and support for providing certificates at run-time for tr-34 import/export
+
 ### 3.7.1121.0 (2025-09-11 18:24 UTC)
 * DataZone (3.7.505.0)
 	* adding IAM principal id to IAM user profile details
