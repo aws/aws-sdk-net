@@ -1822,6 +1822,96 @@ namespace Amazon.PaymentCryptography
         }
         #endregion
         
+        #region  GetCertificateSigningRequest
+
+        internal virtual GetCertificateSigningRequestResponse GetCertificateSigningRequest(GetCertificateSigningRequestRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateSigningRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateSigningRequestResponseUnmarshaller.Instance;
+
+            return Invoke<GetCertificateSigningRequestResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Used to retrieve the public key for a keypair.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCertificateSigningRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCertificateSigningRequest service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
+        public virtual Task<GetCertificateSigningRequestResponse> GetCertificateSigningRequestAsync(GetCertificateSigningRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCertificateSigningRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateSigningRequestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCertificateSigningRequestResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetDefaultKeyReplicationRegions
 
         internal virtual GetDefaultKeyReplicationRegionsResponse GetDefaultKeyReplicationRegions(GetDefaultKeyReplicationRegionsRequest request)

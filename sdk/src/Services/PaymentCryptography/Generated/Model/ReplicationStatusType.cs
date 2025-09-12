@@ -44,7 +44,17 @@ namespace Amazon.PaymentCryptography.Model
         private string _statusMessage;
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of key replication in this region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field indicates whether the key replication is in progress, completed successfully,
+        /// or has encountered an error. Possible values include states such as SYNCRHONIZED,
+        /// IN_PROGRESS, DELETE_IN_PROGRESS, or FAILED. This provides visibility into the replication
+        /// process for monitoring and troubleshooting purposes.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KeyReplicationState Status

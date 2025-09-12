@@ -931,6 +931,64 @@ namespace Amazon.PaymentCryptography
 
 
     /// <summary>
+    /// Constants used for properties of type SigningAlgorithmType.
+    /// </summary>
+    public class SigningAlgorithmType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHA224 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA224 = new SigningAlgorithmType("SHA224");
+        /// <summary>
+        /// Constant SHA256 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA256 = new SigningAlgorithmType("SHA256");
+        /// <summary>
+        /// Constant SHA384 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA384 = new SigningAlgorithmType("SHA384");
+        /// <summary>
+        /// Constant SHA512 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA512 = new SigningAlgorithmType("SHA512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningAlgorithmType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningAlgorithmType FindValue(string value)
+        {
+            return FindValue<SigningAlgorithmType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningAlgorithmType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SymmetricKeyAlgorithm.
     /// </summary>
     public class SymmetricKeyAlgorithm : ConstantClass
