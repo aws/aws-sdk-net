@@ -1,3 +1,11 @@
+### 4.0.90.0 (2025-09-12 18:15 UTC)
+* PaymentCryptography (4.0.4.0)
+	* Add support for certificates to be signed by 3rd party certificate authorities.  New API GetCertificateSigningRequest API and support for providing certificates at run-time for tr-34 import/export
+* S3 (4.0.7.1)
+	* Fix NullReferenceException creating a presigned URL with a service url
+* Core 4.0.0.27
+	* Added support in AWSSDK.Extensions.NETCore.Setup package to set the MaxConnectionsPerServer property on service client config objects.
+
 ### 4.0.89.0 (2025-09-11 18:24 UTC)
 * DataZone (4.0.9.0)
 	* adding IAM principal id to IAM user profile details
