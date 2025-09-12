@@ -423,7 +423,7 @@ namespace Amazon
         /// - Configuration file: auth_scheme_preference
         /// </para>
         /// </summary>
-        public static AuthSchemePreference AuthSchemePreference
+        public static string AuthSchemePreference
         {
             get { return _rootConfig.AuthSchemePreference; }
             set { _rootConfig.AuthSchemePreference = value; }
@@ -434,10 +434,10 @@ namespace Amazon
         #region SigV4a Region Set Configuration
 
         /// <summary>
-        /// Key for the SigV4aRegionSetConfiguration property.
-        /// <seealso cref="Amazon.AWSConfigs.SigV4aRegionSetConfiguration"/>
+        /// Key for the SigV4aSigningRegionSet property.
+        /// <seealso cref="Amazon.AWSConfigs.SigV4aSigningRegionSet"/>
         /// </summary>
-        public const string SigV4aRegionSetConfigurationKey = "AWSSigV4aRegionSet";
+        public const string SigV4aSigningRegionSetKey = "AWSSigV4aRegionSet";
 
         /// <summary>
         /// Gets or sets the global SigV4a signing region set configuration for all AWS service clients.
@@ -452,10 +452,10 @@ namespace Amazon
         /// - Configuration file: sigv4a_signing_region_set
         /// </para>
         /// </summary>
-        public static SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration
+        public static string SigV4aSigningRegionSet
         {
-            get { return _rootConfig.SigV4aRegionSetConfiguration; }
-            set { _rootConfig.SigV4aRegionSetConfiguration = value; }
+            get { return _rootConfig.SigV4aSigningRegionSet; }
+            set { _rootConfig.SigV4aSigningRegionSet = value; }
         }
 
         #endregion

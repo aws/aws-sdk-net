@@ -296,14 +296,55 @@ namespace Amazon.Runtime.Internal
                 return authOptions;
             }
 
+            // Resolve preference from configuration hierarchy
+            string preferenceString = ResolveAuthSchemePreference(clientConfig);
+            
+            if (string.IsNullOrWhiteSpace(preferenceString))
+            {
+                return authOptions;
+            }
+
             try
             {
-                // Use the DefaultAuthSchemeResolver to reprioritize directly
-                var resolver = new DefaultAuthSchemeResolver();
-                var reprioritizedOptions = resolver.ResolveAuthSchemes(clientConfig, authOptions);
+                // Parse the comma-separated preference list
+                var preferences = preferenceString.Split(',')
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .ToList();
 
-                // Convert back to List<IAuthSchemeOption> if needed
-                return reprioritizedOptions.ToList();
+                if (preferences.Count == 0)
+                {
+                    return authOptions;
+                }
+
+                var reordered = new List<IAuthSchemeOption>();
+                var remaining = new List<IAuthSchemeOption>(authOptions);
+
+                // Add schemes in preference order
+                foreach (var preferredName in preferences)
+                {
+                    var match = remaining.FirstOrDefault(opt =>
+                    {
+                        var shortName = AuthSchemeOption.GetNameFromSchemeId(opt.SchemeId);
+                        return string.Equals(shortName, preferredName, StringComparison.Ordinal);
+                    });
+                    
+                    if (match != null)
+                    {
+                        reordered.Add(match);
+                        remaining.Remove(match);
+                        Logger.DebugFormat("Applied preference for scheme: {0}", match.SchemeId);
+                    }
+                }
+
+                // Add any remaining schemes not in the preference list
+                foreach (var scheme in remaining)
+                {
+                    reordered.Add(scheme);
+                    Logger.DebugFormat("Added non-preferred scheme: {0}", scheme.SchemeId);
+                }
+
+                return reordered;
             }
             catch (ArgumentException ex)
             {
@@ -315,6 +356,58 @@ namespace Amazon.Runtime.Internal
                 Logger.Error(ex, "Failed to apply auth scheme preferences due to invalid operation, falling back to service-defined order");
                 return authOptions;
             }
+        }
+
+        /// <summary>
+        /// Resolves authentication scheme preference using configuration precedence hierarchy.
+        /// </summary>
+        private string ResolveAuthSchemePreference(IClientConfig clientConfig)
+        {
+            // Check for legacy SignatureMethod configuration (backwards compatibility for S3)
+            if (clientConfig?.SignatureMethod != null && clientConfig.GetIsSignatureMethodExplicitlySet())
+            {
+                bool isS3Service = clientConfig.ServiceId?.Equals("S3", StringComparison.OrdinalIgnoreCase) == true ||
+                                  clientConfig.ServiceId?.Equals("S3 Control", StringComparison.OrdinalIgnoreCase) == true;
+                
+                if (isS3Service)
+                {
+                    switch (clientConfig.SignatureMethod)
+                    {
+                        case SigningAlgorithm.HmacSHA256:
+                        case SigningAlgorithm.HmacSHA1:
+                            Logger.InfoFormat("Legacy SignatureMethod {0} detected, prioritizing SigV4 authentication", 
+                                clientConfig.SignatureMethod);
+                            return "sigv4";
+                    }
+                }
+            }
+
+            // Client configuration
+            string clientPreference = clientConfig?.GetAuthSchemePreference();
+            if (!string.IsNullOrWhiteSpace(clientPreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from client configuration: {0}", clientPreference);
+                return clientPreference;
+            }
+
+            // Environment variable
+            string envPreference = FallbackInternalConfigurationFactory.AuthSchemePreference;
+            if (!string.IsNullOrWhiteSpace(envPreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from environment/config: {0}", envPreference);
+                return envPreference;
+            }
+
+            // Global AWSConfigs
+            if (!string.IsNullOrWhiteSpace(AWSConfigs.AuthSchemePreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from global AWSConfigs: {0}", 
+                    AWSConfigs.AuthSchemePreference);
+                return AWSConfigs.AuthSchemePreference;
+            }
+
+            Logger.DebugFormat("No auth scheme preference configured, using default resolution");
+            return null;
         }
 
         private static void AddUserAgentDetails(IExecutionContext executionContext)

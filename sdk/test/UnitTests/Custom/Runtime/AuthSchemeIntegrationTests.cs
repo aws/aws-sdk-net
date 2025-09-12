@@ -49,6 +49,9 @@ namespace AWSSDK.UnitTests.Runtime
             // Clear environment variables and global config before each test
             Environment.SetEnvironmentVariable("AWS_AUTH_SCHEME_PREFERENCE", null);
             AWSConfigs.AuthSchemePreference = null;
+            
+            // Reset the configuration cache to pick up environment variable changes
+            Amazon.Runtime.Internal.FallbackInternalConfigurationFactory.Reset();
         }
 
         [TestCleanup]
@@ -89,7 +92,7 @@ namespace AWSSDK.UnitTests.Runtime
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A }
             };
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "sigv4" });
+            _clientConfig.AuthSchemePreference = "sigv4a,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -111,6 +114,7 @@ namespace AWSSDK.UnitTests.Runtime
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A }
             };
             Environment.SetEnvironmentVariable("AWS_AUTH_SCHEME_PREFERENCE", "sigv4a,sigv4");
+            Amazon.Runtime.Internal.FallbackInternalConfigurationFactory.Reset(); // Reset to pick up new env var
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -131,7 +135,7 @@ namespace AWSSDK.UnitTests.Runtime
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A }
             };
-            AWSConfigs.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "sigv4" });
+            AWSConfigs.AuthSchemePreference = "sigv4a,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -156,8 +160,8 @@ namespace AWSSDK.UnitTests.Runtime
             
             // Set multiple configuration sources
             Environment.SetEnvironmentVariable("AWS_AUTH_SCHEME_PREFERENCE", "sigv4,sigv4a");
-            AWSConfigs.AuthSchemePreference = new AuthSchemePreference(new[] { "httpBearerAuth", "sigv4" });
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "httpBearerAuth" });
+            AWSConfigs.AuthSchemePreference = "httpBearerAuth,sigv4";
+            _clientConfig.AuthSchemePreference = "sigv4a,httpBearerAuth";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -178,7 +182,7 @@ namespace AWSSDK.UnitTests.Runtime
             {
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 }
             };
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "httpBearerAuth", "sigv4" });
+            _clientConfig.AuthSchemePreference = "sigv4a,httpBearerAuth,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -198,7 +202,7 @@ namespace AWSSDK.UnitTests.Runtime
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.Bearer }
             };
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "httpBearerAuth", "sigv4" });
+            _clientConfig.AuthSchemePreference = "httpBearerAuth,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -219,7 +223,7 @@ namespace AWSSDK.UnitTests.Runtime
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
                 new AuthSchemeOption { SchemeId = AuthSchemeOption.NoAuth }
             };
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "noAuth", "sigv4" });
+            _clientConfig.AuthSchemePreference = "noAuth,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -259,7 +263,7 @@ namespace AWSSDK.UnitTests.Runtime
         {
             // Arrange
             var supportedOptions = new List<IAuthSchemeOption>();
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "sigv4" });
+            _clientConfig.AuthSchemePreference = "sigv4a,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, supportedOptions);
@@ -273,7 +277,7 @@ namespace AWSSDK.UnitTests.Runtime
         public void AuthSchemeIntegration_WithNullAuthOptions_ReturnsNull()
         {
             // Arrange
-            _clientConfig.AuthSchemePreference = new AuthSchemePreference(new[] { "sigv4a", "sigv4" });
+            _clientConfig.AuthSchemePreference = "sigv4a,sigv4";
 
             // Act
             var result = _handler.TestApplyAuthSchemePreferences(_clientConfig, null);
@@ -310,8 +314,8 @@ namespace AWSSDK.UnitTests.Runtime
         /// </summary>
         private class TestClientConfig : IClientConfig
         {
-            public AuthSchemePreference AuthSchemePreference { get; set; }
-            public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
+            public string AuthSchemePreference { get; set; }
+            public string SigV4aSigningRegionSet { get; set; }
             public bool IsSignatureMethodExplicitlySet => false;
 
             // Minimal implementation of required properties for testing

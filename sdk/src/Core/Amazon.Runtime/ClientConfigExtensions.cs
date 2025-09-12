@@ -47,15 +47,15 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets the authentication scheme preference for this client configuration.
         /// <para>
-        /// This property allows you to specify a preference list of authentication schemes
-        /// that will be used to reprioritize the supported authentication schemes for this client.
-        /// If not set, the client will use the global <see cref="AWSConfigs.AuthSchemePreference"/>
+        /// This property allows you to specify a comma-separated preference list of authentication schemes
+        /// (e.g., "sigv4a,sigv4") that will be used to reprioritize the supported authentication schemes for this client.
+        /// If not set, the client will use environment variables, configuration files,
         /// or fall back to the default model-based authentication scheme resolution.
         /// </para>
         /// </summary>
         /// <param name="clientConfig">The client configuration.</param>
-        /// <returns>The authentication scheme preference, or null if not configured.</returns>
-        public static AuthSchemePreference GetAuthSchemePreference(this IClientConfig clientConfig)
+        /// <returns>The authentication scheme preference string, or null if not configured.</returns>
+        public static string GetAuthSchemePreference(this IClientConfig clientConfig)
         {
             if (clientConfig is ClientConfig concreteConfig)
             {
@@ -66,35 +66,35 @@ namespace Amazon.Runtime
             var authSchemePreferenceProperty = clientConfig.GetType().GetProperty("AuthSchemePreference");
             if (authSchemePreferenceProperty != null)
             {
-                return (AuthSchemePreference)authSchemePreferenceProperty.GetValue(clientConfig);
+                return (string)authSchemePreferenceProperty.GetValue(clientConfig);
             }
             
             return null;
         }
 
         /// <summary>
-        /// Gets the SigV4a signing region set configuration for this client.
+        /// Gets the SigV4a signing region set for this client.
         /// <para>
-        /// This property allows you to specify the region set that will be used for SigV4a signing.
-        /// The region set determines which regions the signed request is valid for.
+        /// This property allows you to specify a comma-separated list of regions (e.g., "us-east-1,us-west-2")
+        /// that will be used for SigV4a signing. The region set determines which regions the signed request is valid for.
         /// If not set, the client will use environment variables, configuration files,
         /// endpoints metadata, or fall back to the client's configured region.
         /// </para>
         /// </summary>
         /// <param name="clientConfig">The client configuration.</param>
-        /// <returns>The SigV4a region set configuration, or null if not configured.</returns>
-        public static SigV4aRegionSetConfiguration GetSigV4aRegionSetConfiguration(this IClientConfig clientConfig)
+        /// <returns>The SigV4a signing region set string, or null if not configured.</returns>
+        public static string GetSigV4aSigningRegionSet(this IClientConfig clientConfig)
         {
             if (clientConfig is ClientConfig concreteConfig)
             {
-                return concreteConfig.SigV4aRegionSetConfiguration;
+                return concreteConfig.SigV4aSigningRegionSet;
             }
             
             // Use reflection for test mock classes or other implementations that have this property
-            var sigV4aProperty = clientConfig.GetType().GetProperty("SigV4aRegionSetConfiguration");
+            var sigV4aProperty = clientConfig.GetType().GetProperty("SigV4aSigningRegionSet");
             if (sigV4aProperty != null)
             {
-                return (SigV4aRegionSetConfiguration)sigV4aProperty.GetValue(clientConfig);
+                return (string)sigV4aProperty.GetValue(clientConfig);
             }
             
             return null;

@@ -716,6 +716,8 @@ namespace Amazon.Runtime
 
         protected virtual void Initialize()
         {
+            // Authentication scheme configuration will be resolved on-demand
+            // from environment variables and config files when needed
         }
 
         /// <summary>
@@ -1203,24 +1205,24 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets or sets the authentication scheme preference for this client configuration.
         /// <para>
-        /// This property allows you to specify a preference list of authentication schemes
-        /// that will be used to reprioritize the supported authentication schemes for this client.
-        /// If not set, the client will use the global <see cref="AWSConfigs.AuthSchemePreference"/>
+        /// This property allows you to specify a comma-separated preference list of authentication schemes
+        /// (e.g., "sigv4a,sigv4") that will be used to reprioritize the supported authentication schemes for this client.
+        /// If not set, the client will use environment variables, configuration files,
         /// or fall back to the default model-based authentication scheme resolution.
         /// </para>
         /// </summary>
-        public AuthSchemePreference AuthSchemePreference { get; set; }
+        public string AuthSchemePreference { get; set; }
 
         /// <summary>
-        /// Gets or sets the SigV4a signing region set configuration for this client.
+        /// Gets or sets the SigV4a signing region set for this client.
         /// <para>
-        /// This property allows you to specify the region set that will be used for SigV4a signing.
-        /// The region set determines which regions the signed request is valid for.
+        /// This property allows you to specify a comma-separated list of regions (e.g., "us-east-1,us-west-2")
+        /// that will be used for SigV4a signing. The region set determines which regions the signed request is valid for.
         /// If not set, the client will use environment variables, configuration files,
         /// endpoints metadata, or fall back to the client's configured region.
         /// </para>
         /// </summary>
-        public SigV4aRegionSetConfiguration SigV4aRegionSetConfiguration { get; set; }
+        public string SigV4aSigningRegionSet { get; set; }
 
         /// <summary>
         /// Determines the behavior for calculating checksums for request payloads.

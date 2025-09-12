@@ -114,32 +114,5 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual("", AuthSchemeOption.GetNameFromSchemeId(""));
         }
 
-        [TestCategory("UnitTest")]
-        [TestMethod]
-        public void AuthSchemeResolver_CanResolveSchemes()
-        {
-            // Test that the DefaultAuthSchemeResolver can resolve schemes
-            var resolver = new DefaultAuthSchemeResolver();
-            var supportedSchemes = new List<IAuthSchemeOption> 
-            { 
-                new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4 },
-                new AuthSchemeOption { SchemeId = AuthSchemeOption.SigV4A }
-            };
-            
-            var result = resolver.ResolveAuthSchemes(null, supportedSchemes);
-            
-            Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(AuthSchemeOption.SigV4, result[0].SchemeId);
-            Assert.AreEqual(AuthSchemeOption.SigV4A, result[1].SchemeId);
-        }
-
-        [TestCategory("UnitTest")]
-        [TestMethod]
-        public void AuthSchemeConfigurationResolver_CanResolvePreference()
-        {
-            // Test that the configuration resolver can resolve preferences
-            var preference = AuthSchemeConfigurationResolver.ResolveAuthSchemePreference(null);
-            Assert.IsNull(preference); // Should be null when no configuration is set
-        }
     }
 }
