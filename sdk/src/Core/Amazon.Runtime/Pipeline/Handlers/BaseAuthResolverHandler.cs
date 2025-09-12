@@ -56,6 +56,9 @@ namespace Amazon.Runtime.Internal
                 throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
 
+            // Apply authentication scheme preferences if configured
+            authOptions = ApplyAuthSchemePreferences(executionContext.RequestContext.ClientConfig, authOptions);
+
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
@@ -64,7 +67,6 @@ namespace Amazon.Runtime.Internal
                 var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
                 if (scheme == null)
                 {
-                    // Current auth scheme option is not enabled / supported, continue iterating.
                     Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
@@ -82,7 +84,6 @@ namespace Amazon.Runtime.Internal
 
                     if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
                     {
-                        // If the legacy token provider is set, we'll use it to resolve the identity.
 #if NETFRAMEWORK
                         var resolvedToken = clientConfig.AWSTokenProvider.TryResolveToken(out var token);
                         if (!resolvedToken)
@@ -113,8 +114,7 @@ namespace Amazon.Runtime.Internal
                 }
                 catch (Exception ex)
                 {
-                    // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
-                    // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
+                    // Try next auth scheme if identity resolution fails
                     var areSchemesLeft = i < authOptions.Count - 1;
                     if (areSchemesLeft)
                     {
@@ -142,6 +142,9 @@ namespace Amazon.Runtime.Internal
                 throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
 
+            // Apply authentication scheme preferences if configured
+            authOptions = ApplyAuthSchemePreferences(executionContext.RequestContext.ClientConfig, authOptions);
+
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
             var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
@@ -151,7 +154,6 @@ namespace Amazon.Runtime.Internal
                 var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOptions[i].SchemeId);
                 if (scheme == null)
                 {
-                    // Current auth scheme option is not enabled / supported, continue iterating.
                     Logger.DebugFormat($"{authOptions[i].SchemeId} scheme is not supported for {executionContext.RequestContext.RequestName}");
                     continue;
                 }
@@ -169,7 +171,6 @@ namespace Amazon.Runtime.Internal
 
                     if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
                     {
-                        // If the legacy token provider is set, we'll use it to resolve the identity.
                         var resolvedToken = await clientConfig.AWSTokenProvider
                             .TryResolveTokenAsync(cancellationToken)
                             .ConfigureAwait(false);
@@ -195,8 +196,7 @@ namespace Amazon.Runtime.Internal
                 }
                 catch (Exception ex)
                 {
-                    // If there are multiple authentication schemes and we cannot resolve the identity for some reason (e.g. the CRT is
-                    // required for SigV4A signing), we'll attempt the next option (if there are any left) before returning.
+                    // Try next auth scheme if identity resolution fails
                     var areSchemesLeft = i < authOptions.Count - 1;
                     if (areSchemesLeft)
                     {
@@ -282,6 +282,133 @@ namespace Amazon.Runtime.Internal
         /// Invokes the service auth scheme resolver to determine which auth options we should consider for this request.
         /// </summary>
         protected abstract List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext);
+
+        /// <summary>
+        /// Applies authentication scheme preferences to reprioritize the auth options based on client configuration.
+        /// </summary>
+        /// <param name="clientConfig">The client configuration containing authentication scheme preferences.</param>
+        /// <param name="authOptions">The original list of authentication scheme options from the service.</param>
+        /// <returns>A reprioritized list of authentication scheme options based on preferences.</returns>
+        protected virtual List<IAuthSchemeOption> ApplyAuthSchemePreferences(IClientConfig clientConfig, List<IAuthSchemeOption> authOptions)
+        {
+            if (authOptions == null || authOptions.Count == 0)
+            {
+                return authOptions;
+            }
+
+            // Resolve preference from configuration hierarchy
+            string preferenceString = ResolveAuthSchemePreference(clientConfig);
+            
+            if (string.IsNullOrWhiteSpace(preferenceString))
+            {
+                return authOptions;
+            }
+
+            try
+            {
+                // Parse the comma-separated preference list
+                var preferences = preferenceString.Split(',')
+                    .Select(s => s.Trim())
+                    .Where(s => !string.IsNullOrWhiteSpace(s))
+                    .ToList();
+
+                if (preferences.Count == 0)
+                {
+                    return authOptions;
+                }
+
+                var reordered = new List<IAuthSchemeOption>();
+                var remaining = new List<IAuthSchemeOption>(authOptions);
+
+                // Add schemes in preference order
+                foreach (var preferredName in preferences)
+                {
+                    var match = remaining.FirstOrDefault(opt =>
+                    {
+                        var shortName = AuthSchemeOption.GetNameFromSchemeId(opt.SchemeId);
+                        return string.Equals(shortName, preferredName, StringComparison.Ordinal);
+                    });
+                    
+                    if (match != null)
+                    {
+                        reordered.Add(match);
+                        remaining.Remove(match);
+                        Logger.DebugFormat("Applied preference for scheme: {0}", match.SchemeId);
+                    }
+                }
+
+                // Add any remaining schemes not in the preference list
+                foreach (var scheme in remaining)
+                {
+                    reordered.Add(scheme);
+                    Logger.DebugFormat("Added non-preferred scheme: {0}", scheme.SchemeId);
+                }
+
+                return reordered;
+            }
+            catch (ArgumentException ex)
+            {
+                Logger.Error(ex, "Failed to apply auth scheme preferences due to invalid argument, falling back to service-defined order");
+                return authOptions;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Logger.Error(ex, "Failed to apply auth scheme preferences due to invalid operation, falling back to service-defined order");
+                return authOptions;
+            }
+        }
+
+        /// <summary>
+        /// Resolves authentication scheme preference using configuration precedence hierarchy.
+        /// </summary>
+        private string ResolveAuthSchemePreference(IClientConfig clientConfig)
+        {
+            // Check for legacy SignatureMethod configuration (backwards compatibility for S3)
+            if (clientConfig?.SignatureMethod != null && clientConfig.GetIsSignatureMethodExplicitlySet())
+            {
+                bool isS3Service = clientConfig.ServiceId?.Equals("S3", StringComparison.OrdinalIgnoreCase) == true ||
+                                  clientConfig.ServiceId?.Equals("S3 Control", StringComparison.OrdinalIgnoreCase) == true;
+                
+                if (isS3Service)
+                {
+                    switch (clientConfig.SignatureMethod)
+                    {
+                        case SigningAlgorithm.HmacSHA256:
+                        case SigningAlgorithm.HmacSHA1:
+                            Logger.InfoFormat("Legacy SignatureMethod {0} detected, prioritizing SigV4 authentication", 
+                                clientConfig.SignatureMethod);
+                            return "sigv4";
+                    }
+                }
+            }
+
+            // Client configuration
+            string clientPreference = clientConfig?.GetAuthSchemePreference();
+            if (!string.IsNullOrWhiteSpace(clientPreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from client configuration: {0}", clientPreference);
+                return clientPreference;
+            }
+
+            // Environment variable
+            string envPreference = FallbackInternalConfigurationFactory.AuthSchemePreference;
+            if (!string.IsNullOrWhiteSpace(envPreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from environment/config: {0}", envPreference);
+                return envPreference;
+            }
+
+            // Global AWSConfigs
+            if (!string.IsNullOrWhiteSpace(AWSConfigs.AuthSchemePreference))
+            {
+                Logger.InfoFormat("Using auth scheme preference from global AWSConfigs: {0}", 
+                    AWSConfigs.AuthSchemePreference);
+                return AWSConfigs.AuthSchemePreference;
+            }
+
+            Logger.DebugFormat("No auth scheme preference configured, using default resolution");
+            return null;
+        }
 
         private static void AddUserAgentDetails(IExecutionContext executionContext)
         {

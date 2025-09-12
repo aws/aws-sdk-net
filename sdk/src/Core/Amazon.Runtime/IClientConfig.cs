@@ -148,6 +148,7 @@ namespace Amazon.Runtime
         /// </summary>
         SigningAlgorithm SignatureMethod { get; }
 
+
         /// <summary>
         /// Gets the AuthenticationRegion property.
         /// Used in AWS4 request signing, this is an optional property; 
@@ -396,6 +397,8 @@ namespace Amazon.Runtime
         /// By default it is set to <see cref="ResponseChecksumValidation.WHEN_SUPPORTED"/>.
         /// </summary>
         ResponseChecksumValidation ResponseChecksumValidation { get; }
+
+
 
         /// <summary>
         /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic

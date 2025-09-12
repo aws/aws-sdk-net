@@ -1,0 +1,13 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Implement multi-auth SEP with authentication scheme preference and SigV4a region set configuration",
+      "Add AuthScheme, AuthSchemePreference, and related configuration classes",
+      "Add DefaultAuthSchemeResolver and configuration resolution logic",
+      "Update ClientConfig to support new authentication scheme properties",
+      "Add environment and configuration file support for auth scheme settings"
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}

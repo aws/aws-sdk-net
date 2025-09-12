@@ -114,6 +114,16 @@ namespace Amazon.Runtime.Internal
         /// Determines the behavior for validating checksums on response payloads.
         /// </summary>
         public ResponseChecksumValidation? ResponseChecksumValidation { get; set; }
+
+        /// <summary>
+        /// Comma-separated list of authentication scheme preferences (e.g., "sigv4a,sigv4").
+        /// </summary>
+        public string AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// Comma-separated list of regions for SigV4a signing (e.g., "us-east-1,us-west-2").
+        /// </summary>
+        public string SigV4aSigningRegionSet { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -140,6 +150,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION = "AWS_REQUEST_CHECKSUM_CALCULATION";
         public const string ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION = "AWS_RESPONSE_CHECKSUM_VALIDATION";
+        public const string ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE = "AWS_AUTH_SCHEME_PREFERENCE";
+        public const string ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET = "AWS_SIGV4A_SIGNING_REGION_SET";
         public const int AWS_SDK_UA_APP_ID_MAX_LENGTH = 50;
 
         /// <summary>
@@ -165,6 +177,8 @@ namespace Amazon.Runtime.Internal
             RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
             ResponseChecksumValidation = GetEnvironmentVariable<ResponseChecksumValidation>(ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION);
             ClientAppId = GetClientAppIdEnvironmentVariable();
+            AuthSchemePreference = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE);
+            SigV4aSigningRegionSet = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET);
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -285,6 +299,18 @@ namespace Amazon.Runtime.Internal
 
             return rawValue;
         }
+
+        /// <summary>
+        /// Gets a simple string value from an environment variable.
+        /// </summary>
+        private string GetStringEnvironmentVariable(string name)
+        {
+            if (!TryGetEnvironmentVariable(name, out var value))
+            {
+                return null;
+            }
+            return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+        }
     }
 
     /// <summary>
@@ -340,6 +366,16 @@ namespace Amazon.Runtime.Internal
                 AccountIdEndpointMode = profile.AccountIdEndpointMode;
                 RequestChecksumCalculation = profile.RequestChecksumCalculation;
                 ResponseChecksumValidation = profile.ResponseChecksumValidation;
+                
+                // Auth scheme properties are stored in the Properties dictionary
+                if (profile.Properties.TryGetValue("auth_scheme_preference", out string authSchemePreference))
+                {
+                    AuthSchemePreference = string.IsNullOrWhiteSpace(authSchemePreference) ? null : authSchemePreference.Trim();
+                }
+                if (profile.Properties.TryGetValue("sigv4a_signing_region_set", out string sigv4aRegionSet))
+                {
+                    SigV4aSigningRegionSet = string.IsNullOrWhiteSpace(sigv4aRegionSet) ? null : sigv4aRegionSet.Trim();
+                }
             }
             else
             {
@@ -365,6 +401,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode),
                 new KeyValuePair<string, object>("request_checksum_calculation", profile.RequestChecksumCalculation),
                 new KeyValuePair<string, object>("response_checksum_validation", profile.ResponseChecksumValidation),
+                new KeyValuePair<string, object>("auth_scheme_preference", AuthSchemePreference),
+                new KeyValuePair<string, object>("sigv4a_signing_region_set", SigV4aSigningRegionSet),
             };
 
             foreach(var item in items)
@@ -436,6 +474,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators,(c) => c.AccountIdEndpointMode);
             _cachedConfiguration.RequestChecksumCalculation = SeekValue(standardGenerators, (c) => c.RequestChecksumCalculation);
             _cachedConfiguration.ResponseChecksumValidation = SeekValue(standardGenerators, (c) => c.ResponseChecksumValidation);
+            _cachedConfiguration.AuthSchemePreference = SeekString(standardGenerators, (c) => c.AuthSchemePreference, defaultValue: null);
+            _cachedConfiguration.SigV4aSigningRegionSet = SeekString(standardGenerators, (c) => c.SigV4aSigningRegionSet, defaultValue: null);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -632,6 +672,28 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.ResponseChecksumValidation;
+            }
+        }
+
+        /// <summary>
+        /// Gets the authentication scheme preference from environment or config files.
+        /// </summary>
+        public static string AuthSchemePreference
+        {
+            get
+            {
+                return _cachedConfiguration.AuthSchemePreference;
+            }
+        }
+
+        /// <summary>
+        /// Gets the SigV4a signing region set from environment or config files.
+        /// </summary>
+        public static string SigV4aSigningRegionSet
+        {
+            get
+            {
+                return _cachedConfiguration.SigV4aSigningRegionSet;
             }
         }
     }

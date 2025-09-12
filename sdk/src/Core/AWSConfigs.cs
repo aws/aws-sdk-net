@@ -402,6 +402,64 @@ namespace Amazon
 
         #endregion
 
+        #region Authentication Scheme Preference
+
+        /// <summary>
+        /// Key for the AuthSchemePreference property.
+        /// <seealso cref="Amazon.AWSConfigs.AuthSchemePreference"/>
+        /// </summary>
+        public const string AuthSchemePreferenceKey = "AWSAuthSchemePreference";
+
+        /// <summary>
+        /// Gets or sets the global authentication scheme preference for all AWS service clients.
+        /// <para>
+        /// This property allows you to specify a preference list of authentication schemes
+        /// that will be used to reprioritize the supported authentication schemes globally.
+        /// Individual client configurations can override this global setting.
+        /// </para>
+        /// <para>
+        /// This setting can be configured through environment variables or configuration files:
+        /// - Environment variable: AWS_AUTH_SCHEME_PREFERENCE
+        /// - Configuration file: auth_scheme_preference
+        /// </para>
+        /// </summary>
+        public static string AuthSchemePreference
+        {
+            get { return _rootConfig.AuthSchemePreference; }
+            set { _rootConfig.AuthSchemePreference = value; }
+        }
+
+        #endregion
+
+        #region SigV4a Region Set Configuration
+
+        /// <summary>
+        /// Key for the SigV4aSigningRegionSet property.
+        /// <seealso cref="Amazon.AWSConfigs.SigV4aSigningRegionSet"/>
+        /// </summary>
+        public const string SigV4aSigningRegionSetKey = "AWSSigV4aRegionSet";
+
+        /// <summary>
+        /// Gets or sets the global SigV4a signing region set configuration for all AWS service clients.
+        /// <para>
+        /// This property allows you to specify the region set that will be used for SigV4a signing globally.
+        /// The region set determines which regions the signed request is valid for.
+        /// Individual client configurations can override this global setting.
+        /// </para>
+        /// <para>
+        /// This setting can be configured through environment variables or configuration files:
+        /// - Environment variable: AWS_SIGV4A_SIGNING_REGION_SET
+        /// - Configuration file: sigv4a_signing_region_set
+        /// </para>
+        /// </summary>
+        public static string SigV4aSigningRegionSet
+        {
+            get { return _rootConfig.SigV4aSigningRegionSet; }
+            set { _rootConfig.SigV4aSigningRegionSet = value; }
+        }
+
+        #endregion
+
         #region AWS Config Sections
 
         /// <summary>
