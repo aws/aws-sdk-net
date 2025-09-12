@@ -4,6 +4,7 @@
     "MaxErrorRetry": 6,
     "Timeout": 1000,
     "ConnectTimeout": 500,
+    "MaxConnectionsPerServer": 5,
     "AuthenticationRegion": "us-east-1",
     "Region": "us-west-2",
     "DefaultsMode": "Standard",

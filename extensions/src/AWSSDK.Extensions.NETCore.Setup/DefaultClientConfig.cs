@@ -221,6 +221,11 @@ namespace Amazon.Extensions.NETCore.Setup
         /// connection timeout for the HttpClient infinite waiting period.
         /// </summary>
         public TimeSpan? ConnectTimeout { get; set; }
+
+        /// <summary>
+        /// This property is used to set the MaxConnectionsPerServer on the matching property on the underlying HttpClient to make service calls.
+        /// </summary>
+        public int? MaxConnectionsPerServer { get; set; }
 #endif
 
         /// <summary>

@@ -131,6 +131,9 @@ namespace NETCore.SetupTests
 #if NET8_0_OR_GREATER
             Assert.Equal(TimeSpan.FromMilliseconds(500), options.DefaultClientConfig.ConnectTimeout);
             Assert.Equal(TimeSpan.FromMilliseconds(500), clientConfig.ConnectTimeout);
+
+            Assert.Equal(5, options.DefaultClientConfig.MaxConnectionsPerServer);
+            Assert.Equal(5, clientConfig.MaxConnectionsPerServer);
 #endif
         }
 
