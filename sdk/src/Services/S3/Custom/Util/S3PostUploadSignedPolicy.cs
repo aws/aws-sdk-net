@@ -100,7 +100,7 @@ namespace Amazon.S3.Util
         /// <param name="credentials">Credentials to sign the policy with</param>
         /// <param name="region">Service region endpoint.</param>
         /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
+        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, string region)
         {
             ImmutableCredentials iCreds = credentials.GetCredentials();
             return GetSignedPolicy(policy, iCreds, region);
@@ -113,14 +113,14 @@ namespace Amazon.S3.Util
         /// <param name="iCreds">Immutable credentials to sign the policy with</param>
         /// <param name="region">Service region endpoint.</param>
         /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        internal static S3PostUploadSignedPolicy GetSignedPolicy(string policy, ImmutableCredentials iCreds, RegionEndpoint region)
+        internal static S3PostUploadSignedPolicy GetSignedPolicy(string policy, ImmutableCredentials iCreds, string region)
         {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
             var algorithm = "AWS4-HMAC-SHA256";
             var dateStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
             var dateTimeStamp = Runtime.Internal.Auth.AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat);
-            var credentialString = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}/", iCreds.AccessKey, dateStamp, region.SystemName, "s3", Runtime.Internal.Auth.AWS4Signer.Terminator);
+            var credentialString = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}/", iCreds.AccessKey, dateStamp, region, "s3", Runtime.Internal.Auth.AWS4Signer.Terminator);
 
             Dictionary<string, string> extraConditions = new Dictionary<string, string> {
                 { S3Constants.PostFormDataXAmzCredential, credentialString },
@@ -133,7 +133,7 @@ namespace Amazon.S3.Util
 
             var base64Policy = Convert.ToBase64String(policyBytes);
 
-            var signingKey = Runtime.Internal.Auth.AWS4Signer.ComposeSigningKey(iCreds.SecretKey, region.SystemName, dateStamp, "s3");
+            var signingKey = Runtime.Internal.Auth.AWS4Signer.ComposeSigningKey(iCreds.SecretKey, region, dateStamp, "s3");
 
             var signature = AWSSDKUtils.ToHex(Runtime.Internal.Auth.AWS4Signer.ComputeKeyedHash(SigningAlgorithm.HmacSHA256, signingKey, base64Policy), true);
 
