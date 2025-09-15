@@ -1,3 +1,18 @@
+### 3.7.1123.0 (2025-09-15 18:34 UTC)
+* CostExplorer (3.7.502.0)
+	* Added endpoint support for eusc-de-east-1 region.
+* MedicalImaging (3.7.502.0)
+	* Added support for OpenID Connect (OIDC) custom authorizer
+* ObservabilityAdmin (3.7.503.0)
+	* CloudWatch Observability Admin adds the ability to enable telemetry centralization in customers' Organizations. The release introduces new APIs to manage centralization rules, which define settings to replicate telemetry data to a central destination in the customers' Organization.
+* S3Control (3.7.502.0)
+	* Introduce three new encryption filters: EncryptionType (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, NOT-SSE), KmsKeyArn (for SSE-KMS and DSSE-KMS), and BucketKeyEnabled (for SSE-KMS).
+* ServerMigrationService (Removed)
+	* AWS Server Migration Service has been removed from the SDK because it has been discontinued.
+* Core 3.7.500.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1122.0 (2025-09-12 18:16 UTC)
 * PaymentCryptography (3.7.503.0)
 	* Add support for certificates to be signed by 3rd party certificate authorities.  New API GetCertificateSigningRequest API and support for providing certificates at run-time for tr-34 import/export
