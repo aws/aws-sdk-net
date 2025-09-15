@@ -1524,6 +1524,12 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.DSSEKMSFilter.KmsKeyArn</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.JobDescriptor.Description</property>
     <min>1</min>
     <max>256</max>
@@ -2024,6 +2030,12 @@
     <property>Amazon.S3Control.Model.SSEKMSEncryption.KeyId</property>
     <min>1</min>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.SSEKMSFilter.KmsKeyArn</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>arn:aws[a-zA-Z0-9-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensAwsOrg.Arn</property>
