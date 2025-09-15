@@ -176,7 +176,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1,actualResult.Filter.ToConditions().Count);
             Assert.IsNull(actualResult.FilterExpression);
             Assert.IsNotNull(actualResult.AttributesToGet);
-            Assert.AreEqual(5,actualResult.AttributesToGet.Count);
+            Assert.AreEqual(typeof(TestEntity).GetProperties().Length,actualResult.AttributesToGet.Count);
         }
 
         [TestMethod]
