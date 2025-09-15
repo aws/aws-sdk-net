@@ -28,6 +28,16 @@ namespace Amazon.ObservabilityAdmin.Model
     {
 
         /// <summary>
+        /// Paginator for ListCentralizationRulesForOrganization operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCentralizationRulesForOrganizationPaginator ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceTelemetry operation
         ///</summary>
         [AWSPaginator(

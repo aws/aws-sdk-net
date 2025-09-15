@@ -37,6 +37,14 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListCentralizationRulesForOrganization operation
+        ///</summary>
+        public IListCentralizationRulesForOrganizationPaginator ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request) 
+        {
+            return new ListCentralizationRulesForOrganizationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResourceTelemetry operation
         ///</summary>
         public IListResourceTelemetryPaginator ListResourceTelemetry(ListResourceTelemetryRequest request) 
