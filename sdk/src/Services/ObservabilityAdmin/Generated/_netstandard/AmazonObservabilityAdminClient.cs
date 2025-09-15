@@ -276,6 +276,65 @@ namespace Amazon.ObservabilityAdmin
         #endregion
 
 
+        #region  CreateCentralizationRuleForOrganization
+
+        internal virtual CreateCentralizationRuleForOrganizationResponse CreateCentralizationRuleForOrganization(CreateCentralizationRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCentralizationRuleForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a centralization rule that applies across an Amazon Web Services Organization.
+        /// This operation can only be called by the organization's management account or a delegated
+        /// administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCentralizationRuleForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCentralizationRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateCentralizationRuleForOrganization">REST API Reference for CreateCentralizationRuleForOrganization Operation</seealso>
+        public virtual Task<CreateCentralizationRuleForOrganizationResponse> CreateCentralizationRuleForOrganizationAsync(CreateCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateTelemetryRule
 
         internal virtual CreateTelemetryRuleResponse CreateTelemetryRule(CreateTelemetryRuleRequest request)
@@ -395,6 +454,59 @@ namespace Amazon.ObservabilityAdmin
         }
         #endregion
         
+        #region  DeleteCentralizationRuleForOrganization
+
+        internal virtual DeleteCentralizationRuleForOrganizationResponse DeleteCentralizationRuleForOrganization(DeleteCentralizationRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCentralizationRuleForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an organization-wide centralization rule. This operation can only be called
+        /// by the organization's management account or a delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCentralizationRuleForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCentralizationRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteCentralizationRuleForOrganization">REST API Reference for DeleteCentralizationRuleForOrganization Operation</seealso>
+        public virtual Task<DeleteCentralizationRuleForOrganizationResponse> DeleteCentralizationRuleForOrganizationAsync(DeleteCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteTelemetryRule
 
         internal virtual DeleteTelemetryRuleResponse DeleteTelemetryRule(DeleteTelemetryRuleRequest request)
@@ -498,6 +610,60 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = DeleteTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTelemetryRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCentralizationRuleForOrganization
+
+        internal virtual GetCentralizationRuleForOrganizationResponse GetCentralizationRuleForOrganization(GetCentralizationRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCentralizationRuleForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific organization centralization rule. This operation
+        /// can only be called by the organization's management account or a delegated administrator
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCentralizationRuleForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCentralizationRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetCentralizationRuleForOrganization">REST API Reference for GetCentralizationRuleForOrganization Operation</seealso>
+        public virtual Task<GetCentralizationRuleForOrganizationResponse> GetCentralizationRuleForOrganizationAsync(GetCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -703,6 +869,56 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = GetTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTelemetryRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCentralizationRulesForOrganization
+
+        internal virtual ListCentralizationRulesForOrganizationResponse ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCentralizationRulesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCentralizationRulesForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListCentralizationRulesForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all centralization rules in your organization. This operation can only be called
+        /// by the organization's management account or a delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCentralizationRulesForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCentralizationRulesForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListCentralizationRulesForOrganization">REST API Reference for ListCentralizationRulesForOrganization Operation</seealso>
+        public virtual Task<ListCentralizationRulesForOrganizationResponse> ListCentralizationRulesForOrganizationAsync(ListCentralizationRulesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCentralizationRulesForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCentralizationRulesForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCentralizationRulesForOrganizationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1264,6 +1480,64 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateCentralizationRuleForOrganization
+
+        internal virtual UpdateCentralizationRuleForOrganizationResponse UpdateCentralizationRuleForOrganization(UpdateCentralizationRuleForOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCentralizationRuleForOrganizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing centralization rule that applies across an Amazon Web Services
+        /// Organization. This operation can only be called by the organization's management account
+        /// or a delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCentralizationRuleForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCentralizationRuleForOrganization service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateCentralizationRuleForOrganization">REST API Reference for UpdateCentralizationRuleForOrganization Operation</seealso>
+        public virtual Task<UpdateCentralizationRuleForOrganizationResponse> UpdateCentralizationRuleForOrganizationAsync(UpdateCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCentralizationRuleForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
         }
         #endregion
         
