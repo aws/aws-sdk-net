@@ -1335,11 +1335,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_SIGNER"
   },
   {
-    "service_id": "SMS",
-    "services_section_name": "sms",
-    "service_envvar_name": "AWS_ENDPOINT_URL_SMS"
-  },
-  {
     "service_id": "Pinpoint SMS Voice",
     "services_section_name": "pinpoint_sms_voice",
     "service_envvar_name": "AWS_ENDPOINT_URL_PINPOINT_SMS_VOICE"
