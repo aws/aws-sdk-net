@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "minor",
-    "changeLogMessages": [
-      "Migrates the self service model option of the generator to use V4"
-    ]
-  }
-}
