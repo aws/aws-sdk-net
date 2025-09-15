@@ -38,6 +38,7 @@ namespace Amazon.S3Control.Model
         private DateTime? _createdBefore;
         private bool? _eligibleForReplication;
         private KeyNameConstraint _keyNameConstraint;
+        private List<ObjectEncryptionFilter> _matchAnyObjectEncryption = AWSConfigs.InitializeCollections ? new List<ObjectEncryptionFilter>() : null;
         private List<string> _matchAnyStorageClass = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _objectReplicationStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _objectSizeGreaterThanBytes;
@@ -118,6 +119,29 @@ namespace Amazon.S3Control.Model
         internal bool IsSetKeyNameConstraint()
         {
             return this._keyNameConstraint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchAnyObjectEncryption. 
+        /// <para>
+        /// If provided, the generated object list includes only source bucket objects with the
+        /// indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).
+        /// If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results
+        /// by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally
+        /// further filter your results by Bucket Key enabled status.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<ObjectEncryptionFilter> MatchAnyObjectEncryption
+        {
+            get { return this._matchAnyObjectEncryption; }
+            set { this._matchAnyObjectEncryption = value; }
+        }
+
+        // Check to see if MatchAnyObjectEncryption property is set
+        internal bool IsSetMatchAnyObjectEncryption()
+        {
+            return this._matchAnyObjectEncryption != null && (this._matchAnyObjectEncryption.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

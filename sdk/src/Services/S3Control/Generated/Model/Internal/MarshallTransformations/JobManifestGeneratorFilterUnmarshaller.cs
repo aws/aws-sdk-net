@@ -80,6 +80,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.KeyNameConstraint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MatchAnyObjectEncryption/ObjectEncryption", targetDepth))
+                    {
+                        if (unmarshalledObject.MatchAnyObjectEncryption == null)
+                        {
+                            unmarshalledObject.MatchAnyObjectEncryption = new List<ObjectEncryptionFilter>();
+                        }
+                        var unmarshaller = ObjectEncryptionFilterUnmarshaller.Instance;
+                        unmarshalledObject.MatchAnyObjectEncryption.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                     if (context.TestExpression("MatchAnyStorageClass/member", targetDepth))
                     {
                         if (unmarshalledObject.MatchAnyStorageClass == null)
