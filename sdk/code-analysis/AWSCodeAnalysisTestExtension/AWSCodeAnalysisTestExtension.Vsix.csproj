@@ -1204,10 +1204,6 @@
       <Project>{99488826-6CBA-4B65-8AA6-2010CC820D84}</Project>
       <Name>AWSSDK.ServerlessApplicationRepository.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/ServerMigrationService/AWSSDK.ServerMigrationService.CodeAnalysis.csproj">
-      <Project>{9666D877-77CE-4E18-B8AB-7DA494412B8F}</Project>
-      <Name>AWSSDK.ServerMigrationService.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj">
       <Project>{AB07D44F-564C-4626-A665-592885634016}</Project>
       <Name>AWSSDK.ServiceCatalog.CodeAnalysis</Name>

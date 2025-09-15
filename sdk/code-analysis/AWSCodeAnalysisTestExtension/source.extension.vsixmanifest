@@ -591,8 +591,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SecurityToken.CodeAnalysis" Path="|AWSSDK.SecurityToken.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServerlessApplicationRepository.CodeAnalysis" Path="|AWSSDK.ServerlessApplicationRepository.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServerlessApplicationRepository.CodeAnalysis" Path="|AWSSDK.ServerlessApplicationRepository.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServerMigrationService.CodeAnalysis" Path="|AWSSDK.ServerMigrationService.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServerMigrationService.CodeAnalysis" Path="|AWSSDK.ServerMigrationService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServiceCatalog.CodeAnalysis" Path="|AWSSDK.ServiceCatalog.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServiceCatalog.CodeAnalysis" Path="|AWSSDK.ServiceCatalog.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ServiceDiscovery.CodeAnalysis" Path="|AWSSDK.ServiceDiscovery.CodeAnalysis|"/>
