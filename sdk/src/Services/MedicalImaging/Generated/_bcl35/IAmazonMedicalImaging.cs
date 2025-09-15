@@ -126,6 +126,9 @@ namespace Amazon.MedicalImaging
         /// <exception cref="Amazon.MedicalImaging.Model.InternalServerException">
         /// An unexpected error occurred during processing of the request.
         /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.ResourceNotFoundException">
+        /// The request references a resource which does not exist.
+        /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ServiceQuotaExceededException">
         /// The request caused a service quota to be exceeded.
         /// </exception>

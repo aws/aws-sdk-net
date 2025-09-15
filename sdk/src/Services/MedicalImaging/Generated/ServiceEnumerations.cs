@@ -175,6 +175,18 @@ namespace Amazon.MedicalImaging
         /// </summary>
         public static readonly ImageSetWorkflowStatus DELETING = new ImageSetWorkflowStatus("DELETING");
         /// <summary>
+        /// Constant IMPORT_FAILED for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORT_FAILED = new ImageSetWorkflowStatus("IMPORT_FAILED");
+        /// <summary>
+        /// Constant IMPORTED for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORTED = new ImageSetWorkflowStatus("IMPORTED");
+        /// <summary>
+        /// Constant IMPORTING for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORTING = new ImageSetWorkflowStatus("IMPORTING");
+        /// <summary>
         /// Constant UPDATE_FAILED for ImageSetWorkflowStatus
         /// </summary>
         public static readonly ImageSetWorkflowStatus UPDATE_FAILED = new ImageSetWorkflowStatus("UPDATE_FAILED");

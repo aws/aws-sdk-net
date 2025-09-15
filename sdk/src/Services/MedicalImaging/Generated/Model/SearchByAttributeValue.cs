@@ -143,7 +143,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM study ID for search.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=16)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMStudyId
         {
             get { return this._dicomStudyId; }
