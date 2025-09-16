@@ -88,6 +88,8 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _applyOnTransformedLogs;
         private string _destinationArn;
         private Distribution _distribution;
+        private List<string> _emitSystemFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _fieldSelectionCriteria;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -184,6 +186,54 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDistribution()
         {
             return this._distribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmitSystemFields. 
+        /// <para>
+        /// A list of system fields to include in the log events sent to the subscription destination.
+        /// Valid values are <c>@aws.account</c> and <c>@aws.region</c>. These fields provide
+        /// source information for centralized log data in the forwarded payload.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EmitSystemFields
+        {
+            get { return this._emitSystemFields; }
+            set { this._emitSystemFields = value; }
+        }
+
+        // Check to see if EmitSystemFields property is set
+        internal bool IsSetEmitSystemFields()
+        {
+            return this._emitSystemFields != null && (this._emitSystemFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldSelectionCriteria. 
+        /// <para>
+        /// A filter expression that specifies which log events should be processed by this subscription
+        /// filter based on system fields such as source account and source region. Uses selection
+        /// criteria syntax with operators like <c>=</c>, <c>!=</c>, <c>AND</c>, <c>OR</c>, <c>IN</c>,
+        /// <c>NOT IN</c>. Example: <c>@aws.region NOT IN ["cn-north-1"]</c> or <c>@aws.account
+        /// = "123456789012" AND @aws.region = "us-east-1"</c>. Maximum length: 2000 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public string FieldSelectionCriteria
+        {
+            get { return this._fieldSelectionCriteria; }
+            set { this._fieldSelectionCriteria = value; }
+        }
+
+        // Check to see if FieldSelectionCriteria property is set
+        internal bool IsSetFieldSelectionCriteria()
+        {
+            return this._fieldSelectionCriteria != null;
         }
 
         /// <summary>
