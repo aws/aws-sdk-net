@@ -37,6 +37,22 @@ namespace Amazon.OSIS.Model
         }
 
         /// <summary>
+        /// Paginator for ListPipelineEndpointConnections operation
+        ///</summary>
+        public IListPipelineEndpointConnectionsPaginator ListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request) 
+        {
+            return new ListPipelineEndpointConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPipelineEndpoints operation
+        ///</summary>
+        public IListPipelineEndpointsPaginator ListPipelineEndpoints(ListPipelineEndpointsRequest request) 
+        {
+            return new ListPipelineEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPipelines operation
         ///</summary>
         public IListPipelinesPaginator ListPipelines(ListPipelinesRequest request) 

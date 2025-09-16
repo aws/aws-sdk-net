@@ -267,8 +267,8 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property PipelineRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that provides the required permissions
-        /// for a pipeline to read from the source and write to the sink.
+        /// The Amazon Resource Name (ARN) of the IAM role that the pipeline uses to access AWS
+        /// resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

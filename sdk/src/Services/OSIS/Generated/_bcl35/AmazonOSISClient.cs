@@ -344,6 +344,80 @@ namespace Amazon.OSIS
 
         #endregion
         
+        #region  CreatePipelineEndpoint
+
+        /// <summary>
+        /// Creates a VPC endpoint for an OpenSearch Ingestion pipeline. Pipeline endpoints allow
+        /// you to ingest data from your VPC into pipelines that you have access to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipelineEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreatePipelineEndpoint service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
+        public virtual CreatePipelineEndpointResponse CreatePipelineEndpoint(CreatePipelineEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePipelineEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePipelineEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipelineEndpoint operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipelineEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreatePipelineEndpoint(CreatePipelineEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePipelineEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePipelineEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreatePipelineEndpointResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
+        public virtual CreatePipelineEndpointResponse EndCreatePipelineEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePipelineEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePipeline
 
         /// <summary>
@@ -414,6 +488,146 @@ namespace Amazon.OSIS
         public virtual DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePipelineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePipelineEndpoint
+
+        /// <summary>
+        /// Deletes a VPC endpoint for an OpenSearch Ingestion pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipelineEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeletePipelineEndpoint service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
+        public virtual DeletePipelineEndpointResponse DeletePipelineEndpoint(DeletePipelineEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePipelineEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePipelineEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipelineEndpoint operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipelineEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeletePipelineEndpoint(DeletePipelineEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePipelineEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePipelineEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeletePipelineEndpointResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
+        public virtual DeletePipelineEndpointResponse EndDeletePipelineEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePipelineEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes a resource-based policy from an OpenSearch Ingestion resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -639,6 +853,79 @@ namespace Amazon.OSIS
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to an OpenSearch Ingestion resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPipelineBlueprints
 
         /// <summary>
@@ -707,6 +994,146 @@ namespace Amazon.OSIS
         public virtual ListPipelineBlueprintsResponse EndListPipelineBlueprints(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPipelineBlueprintsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPipelineEndpointConnections
+
+        /// <summary>
+        /// Lists the pipeline endpoints connected to pipelines in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpointConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListPipelineEndpointConnections service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
+        public virtual ListPipelineEndpointConnectionsResponse ListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineEndpointConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineEndpointConnectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPipelineEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpointConnections operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelineEndpointConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
+        public virtual IAsyncResult BeginListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineEndpointConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPipelineEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelineEndpointConnections.</param>
+        /// 
+        /// <returns>Returns a  ListPipelineEndpointConnectionsResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
+        public virtual ListPipelineEndpointConnectionsResponse EndListPipelineEndpointConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPipelineEndpointConnectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPipelineEndpoints
+
+        /// <summary>
+        /// Lists all pipeline endpoints in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListPipelineEndpoints service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
+        public virtual ListPipelineEndpointsResponse ListPipelineEndpoints(ListPipelineEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPipelineEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineEndpoints operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelineEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListPipelineEndpoints(ListPipelineEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPipelineEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelineEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListPipelineEndpointsResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
+        public virtual ListPipelineEndpointsResponse EndListPipelineEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPipelineEndpointsResponse>(asyncResult);
         }
 
         #endregion
@@ -851,6 +1278,150 @@ namespace Amazon.OSIS
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Attaches a resource-based policy to an OpenSearch Ingestion resource. Resource-based
+        /// policies grant permissions to principals to perform actions on the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ResourceNotFoundException">
+        /// You attempted to access or delete a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RevokePipelineEndpointConnections
+
+        /// <summary>
+        /// Revokes pipeline endpoints from specified endpoint IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokePipelineEndpointConnections service method.</param>
+        /// 
+        /// <returns>The response from the RevokePipelineEndpointConnections service method, as returned by OSIS.</returns>
+        /// <exception cref="Amazon.OSIS.Model.AccessDeniedException">
+        /// You don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.DisabledOperationException">
+        /// Exception is thrown when an operation has been disabled.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.InternalException">
+        /// The request failed because of an unknown error, exception, or failure (the failure
+        /// is internal to the service).
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.LimitExceededException">
+        /// You attempted to create more than the allowed number of tags.
+        /// </exception>
+        /// <exception cref="Amazon.OSIS.Model.ValidationException">
+        /// An exception for missing or invalid input fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
+        public virtual RevokePipelineEndpointConnectionsResponse RevokePipelineEndpointConnections(RevokePipelineEndpointConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokePipelineEndpointConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokePipelineEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<RevokePipelineEndpointConnectionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokePipelineEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokePipelineEndpointConnections operation on AmazonOSISClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokePipelineEndpointConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
+        public virtual IAsyncResult BeginRevokePipelineEndpointConnections(RevokePipelineEndpointConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokePipelineEndpointConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokePipelineEndpointConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokePipelineEndpointConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokePipelineEndpointConnections.</param>
+        /// 
+        /// <returns>Returns a  RevokePipelineEndpointConnectionsResult from OSIS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
+        public virtual RevokePipelineEndpointConnectionsResponse EndRevokePipelineEndpointConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokePipelineEndpointConnectionsResponse>(asyncResult);
         }
 
         #endregion

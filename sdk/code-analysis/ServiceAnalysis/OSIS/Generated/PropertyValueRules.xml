@@ -26,10 +26,40 @@
     <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b|aws\-iso\-e|aws\-iso\-f):iam::[0-9]+:role\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OSIS.Model.CreatePipelineEndpointRequest.PipelineArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.CreatePipelineEndpointResponse.EndpointId</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.CreatePipelineEndpointResponse.PipelineArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OSIS.Model.DeletePipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.DeletePipelineEndpointRequest.EndpointId</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.GetPipelineRequest.PipelineName</property>
@@ -46,6 +76,57 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.GetResourcePolicyResponse.Policy</property>
+    <min>2</min>
+    <max>204800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.GetResourcePolicyResponse.ResourceArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointConnectionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointConnectionsRequest.NextToken</property>
+    <min>0</min>
+    <max>3000</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointConnectionsResponse.NextToken</property>
+    <min>0</min>
+    <max>3000</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointsRequest.NextToken</property>
+    <min>0</min>
+    <max>3000</max>
+    <pattern>^([\s\S]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.ListPipelineEndpointsResponse.NextToken</property>
+    <min>0</min>
+    <max>3000</max>
+    <pattern>^([\s\S]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.ListPipelinesRequest.MaxResults</property>
@@ -66,6 +147,40 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.ListTagsForResourceRequest.Arn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PutResourcePolicyRequest.Policy</property>
+    <min>2</min>
+    <max>204800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PutResourcePolicyRequest.ResourceArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PutResourcePolicyResponse.Policy</property>
+    <min>2</min>
+    <max>204800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PutResourcePolicyResponse.ResourceArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.RevokePipelineEndpointConnectionsRequest.PipelineArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.RevokePipelineEndpointConnectionsResponse.PipelineArn</property>
     <min>46</min>
     <max>76</max>
     <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
@@ -140,6 +255,36 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b|aws\-iso\-e|aws\-iso\-f):iam::[0-9]+:role\/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PipelineEndpoint.EndpointId</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PipelineEndpoint.PipelineArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PipelineEndpointConnection.EndpointId</property>
+    <min>3</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PipelineEndpointConnection.PipelineArn</property>
+    <min>46</min>
+    <max>76</max>
+    <pattern>^arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):osis:.+:pipeline\/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OSIS.Model.PipelineEndpointConnection.VpcEndpointOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.PipelineSummary.MaxUnits</property>
