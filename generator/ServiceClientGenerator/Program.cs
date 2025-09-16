@@ -92,10 +92,10 @@ namespace ServiceClientGenerator
                     var serviceConfig = new ServiceConfiguration
                     {
                         ModelPath = options.SelfServiceModel,
-                        ServiceFileVersion = "3.1.0.0"
+                        ServiceFileVersion = "4.0.0.0"
                     };
                     serviceConfig.ModelName = Path.GetFileName(serviceConfig.ModelPath);
-                    serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "3.1.0.0"} };
+                    serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "4.0.0.18"} };
                     serviceConfig.GenerateConstructors = true;
 
 
