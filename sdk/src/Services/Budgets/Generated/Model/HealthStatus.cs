@@ -91,6 +91,11 @@ namespace Amazon.Budgets.Model
         ///  <c>FILTER_INVALID</c>: The filter contains reference to an account you do not have
         /// access to.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MULTI_YEAR_HISTORICAL_DATA_DISABLED</c>: The budget is not being updated. Enable
+        /// multi-year historical data in your Cost Management preferences.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public HealthStatusReason StatusReason
