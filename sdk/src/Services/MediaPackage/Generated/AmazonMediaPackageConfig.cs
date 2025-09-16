@@ -32,7 +32,7 @@ namespace Amazon.MediaPackage
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MediaPackage", "3.7.501.10");
+            InternalSDKUtils.BuildUserAgentString("MediaPackage", "3.7.501.11");
 
         private string _userAgent = UserAgentString;
         ///<summary>

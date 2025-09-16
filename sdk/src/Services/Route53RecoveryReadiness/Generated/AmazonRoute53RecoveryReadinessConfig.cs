@@ -32,7 +32,7 @@ namespace Amazon.Route53RecoveryReadiness
     public partial class AmazonRoute53RecoveryReadinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Readiness", "3.7.501.10");
+            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Readiness", "3.7.501.11");
 
         private string _userAgent = UserAgentString;
         ///<summary>
