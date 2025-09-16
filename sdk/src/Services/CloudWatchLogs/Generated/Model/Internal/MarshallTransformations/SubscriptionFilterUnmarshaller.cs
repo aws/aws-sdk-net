@@ -90,6 +90,18 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Distribution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("emitSystemFields", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EmitSystemFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fieldSelectionCriteria", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FieldSelectionCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -2217,8 +2217,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns a list of field indexes listed in the field index policies of one or more
-        /// log groups. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// Returns a list of custom and default field indexes which are discovered in log data.
+        /// For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFieldIndexes service method.</param>
         /// 
@@ -2273,8 +2273,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns the field index policies of one or more log groups. For more information about
-        /// field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// Returns the field index policies of the specified log group. For more information
+        /// about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
         /// 
         ///  
         /// <para>
@@ -2856,7 +2856,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log stream name, or a log stream name prefix that matches mutltiple log streams
+        /// The log stream name, or a log stream name prefix that matches multiple log streams
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4356,6 +4356,34 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// CloudWatch Logs provides default field indexes for all log groups in the Standard
+        /// log class. Default field indexes are automatically available for the following fields:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>@aws.region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.account</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@source.log</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>traceId</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default field indexes are in addition to any custom field indexes you define within
+        /// your policy. Default field indexes are not counted towards your field index quota.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// You can also set up a transformer at the log-group level. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
         /// If there is both a log-group level transformer created with <c>PutTransformer</c>
@@ -5096,6 +5124,34 @@ namespace Amazon.CloudWatchLogs
         /// CloudWatch Logs Insights query on that log group that includes <c>requestId = <i>value</i>
         /// </c> or <c>requestId IN [<i>value</i>, <i>value</i>, ...]</c> will process fewer log
         /// events to reduce costs, and have improved performance.
+        /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch Logs provides default field indexes for all log groups in the Standard
+        /// log class. Default field indexes are automatically available for the following fields:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>@aws.region</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@aws.account</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>@source.log</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>traceId</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default field indexes are in addition to any custom field indexes you define within
+        /// your policy. Default field indexes are not counted towards your field index quota.
+        /// 
         /// </para>
         ///  
         /// <para>

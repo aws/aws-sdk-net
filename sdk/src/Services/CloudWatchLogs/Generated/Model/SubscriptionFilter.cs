@@ -38,6 +38,8 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _creationTime;
         private string _destinationArn;
         private Distribution _distribution;
+        private List<string> _emitSystemFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _fieldSelectionCriteria;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -119,6 +121,47 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDistribution()
         {
             return this._distribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmitSystemFields. 
+        /// <para>
+        /// The list of system fields that are included in the log events sent to the subscription
+        /// destination. Returns the <c>emitSystemFields</c> value if it was specified when the
+        /// subscription filter was created.
+        /// </para>
+        /// </summary>
+        public List<string> EmitSystemFields
+        {
+            get { return this._emitSystemFields; }
+            set { this._emitSystemFields = value; }
+        }
+
+        // Check to see if EmitSystemFields property is set
+        internal bool IsSetEmitSystemFields()
+        {
+            return this._emitSystemFields != null && (this._emitSystemFields.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldSelectionCriteria. 
+        /// <para>
+        /// The filter expression that specifies which log events are processed by this subscription
+        /// filter based on system fields. Returns the <c>fieldSelectionCriteria</c> value if
+        /// it was specified when the subscription filter was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public string FieldSelectionCriteria
+        {
+            get { return this._fieldSelectionCriteria; }
+            set { this._fieldSelectionCriteria = value; }
+        }
+
+        // Check to see if FieldSelectionCriteria property is set
+        internal bool IsSetFieldSelectionCriteria()
+        {
+            return this._fieldSelectionCriteria != null;
         }
 
         /// <summary>

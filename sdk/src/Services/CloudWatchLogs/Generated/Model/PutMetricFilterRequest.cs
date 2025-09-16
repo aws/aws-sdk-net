@@ -77,6 +77,8 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PutMetricFilterRequest : AmazonCloudWatchLogsRequest
     {
         private bool? _applyOnTransformedLogs;
+        private List<string> _emitSystemFieldDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _fieldSelectionCriteria;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -125,6 +127,50 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetApplyOnTransformedLogs()
         {
             return this._applyOnTransformedLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmitSystemFieldDimensions. 
+        /// <para>
+        /// A list of system fields to emit as additional dimensions in the generated metrics.
+        /// Valid values are <c>@aws.account</c> and <c>@aws.region</c>. These dimensions help
+        /// identify the source of centralized log data and count toward the total dimension limit
+        /// for metric filters.
+        /// </para>
+        /// </summary>
+        public List<string> EmitSystemFieldDimensions
+        {
+            get { return this._emitSystemFieldDimensions; }
+            set { this._emitSystemFieldDimensions = value; }
+        }
+
+        // Check to see if EmitSystemFieldDimensions property is set
+        internal bool IsSetEmitSystemFieldDimensions()
+        {
+            return this._emitSystemFieldDimensions != null && (this._emitSystemFieldDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldSelectionCriteria. 
+        /// <para>
+        /// A filter expression that specifies which log events should be processed by this metric
+        /// filter based on system fields such as source account and source region. Uses selection
+        /// criteria syntax with operators like <c>=</c>, <c>!=</c>, <c>AND</c>, <c>OR</c>, <c>IN</c>,
+        /// <c>NOT IN</c>. Example: <c>@aws.region = "us-east-1"</c> or <c>@aws.account IN ["123456789012",
+        /// "987654321098"]</c>. Maximum length: 2000 characters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2000)]
+        public string FieldSelectionCriteria
+        {
+            get { return this._fieldSelectionCriteria; }
+            set { this._fieldSelectionCriteria = value; }
+        }
+
+        // Check to see if FieldSelectionCriteria property is set
+        internal bool IsSetFieldSelectionCriteria()
+        {
+            return this._fieldSelectionCriteria != null;
         }
 
         /// <summary>

@@ -87,6 +87,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Distribution);
                 }
 
+                if(publicRequest.IsSetEmitSystemFields())
+                {
+                    context.Writer.WritePropertyName("emitSystemFields");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEmitSystemFieldsListValue in publicRequest.EmitSystemFields)
+                    {
+                            context.Writer.Write(publicRequestEmitSystemFieldsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetFieldSelectionCriteria())
+                {
+                    context.Writer.WritePropertyName("fieldSelectionCriteria");
+                    context.Writer.Write(publicRequest.FieldSelectionCriteria);
+                }
+
                 if(publicRequest.IsSetFilterName())
                 {
                     context.Writer.WritePropertyName("filterName");
