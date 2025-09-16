@@ -638,6 +638,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GridConfiguration.ParticipantOrderAttribute</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.IngestConfiguration.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -868,6 +874,12 @@
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.PipConfiguration.GridGap</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.ParticipantOrderAttribute</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.PipConfiguration.PipHeight</property>

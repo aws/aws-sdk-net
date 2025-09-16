@@ -38,6 +38,7 @@ namespace Amazon.IVSRealTime.Model
         private string _featuredParticipantAttribute;
         private int? _gridGap;
         private bool? _omitStoppedVideo;
+        private string _participantOrderAttribute;
         private PipBehavior _pipBehavior;
         private int? _pipHeight;
         private int? _pipOffset;
@@ -103,6 +104,27 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetOmitStoppedVideo()
         {
             return this._omitStoppedVideo.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipantOrderAttribute. 
+        /// <para>
+        /// Attribute name in <a>ParticipantTokenConfiguration</a> identifying the participant
+        /// ordering key. Participants with <c>participantOrderAttribute</c> set to <c>""</c>
+        /// or not specified are ordered based on their arrival time into the stage.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string ParticipantOrderAttribute
+        {
+            get { return this._participantOrderAttribute; }
+            set { this._participantOrderAttribute = value; }
+        }
+
+        // Check to see if ParticipantOrderAttribute property is set
+        internal bool IsSetParticipantOrderAttribute()
+        {
+            return this._participantOrderAttribute != null;
         }
 
         /// <summary>

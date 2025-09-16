@@ -84,6 +84,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("participantOrderAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParticipantOrderAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
