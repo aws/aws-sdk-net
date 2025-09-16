@@ -216,7 +216,14 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { ExternalID, MfaSerial, RoleArn, SourceProfile, RoleSessionName, AwsAccountId, SsoSession, SsoRegion, SsoRegistrationScopes, SsoStartUrl },
                     } 
                 },
-                { CredentialProfileType.SSO, new List<HashSet<string>>() { new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession } } },
+                { 
+                    CredentialProfileType.SSO, new List<HashSet<string>>() 
+                    { 
+                        new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession },
+                        new HashSet<string> { SsoRegion, SsoRegistrationScopes, SsoStartUrl, SsoSession },
+                        new HashSet<string> { SsoRegion, SsoSession, SsoStartUrl }
+                    } 
+                },
                 { 
                     CredentialProfileType.AssumeRoleMFASessionName, new List<HashSet<string>>() 
                     { 

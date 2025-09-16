@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fix: Update SSO credential profile type to include smaller subset of CredentialProfileOptions for token auth services which do not use accountId or SsoRoleName."
+    ]
+  }
+}
