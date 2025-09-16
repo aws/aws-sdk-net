@@ -64,6 +64,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.OmitStoppedVideo.Value);
             }
 
+            if(requestObject.IsSetParticipantOrderAttribute())
+            {
+                context.Writer.WritePropertyName("participantOrderAttribute");
+                context.Writer.WriteStringValue(requestObject.ParticipantOrderAttribute);
+            }
+
             if(requestObject.IsSetVideoAspectRatio())
             {
                 context.Writer.WritePropertyName("videoAspectRatio");
