@@ -742,6 +742,10 @@ namespace Amazon.Budgets
         /// Constant FILTER_INVALID for HealthStatusReason
         /// </summary>
         public static readonly HealthStatusReason FILTER_INVALID = new HealthStatusReason("FILTER_INVALID");
+        /// <summary>
+        /// Constant MULTI_YEAR_HISTORICAL_DATA_DISABLED for HealthStatusReason
+        /// </summary>
+        public static readonly HealthStatusReason MULTI_YEAR_HISTORICAL_DATA_DISABLED = new HealthStatusReason("MULTI_YEAR_HISTORICAL_DATA_DISABLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1186,6 +1190,10 @@ namespace Amazon.Budgets
         /// Constant ANNUALLY for TimeUnit
         /// </summary>
         public static readonly TimeUnit ANNUALLY = new TimeUnit("ANNUALLY");
+        /// <summary>
+        /// Constant CUSTOM for TimeUnit
+        /// </summary>
+        public static readonly TimeUnit CUSTOM = new TimeUnit("CUSTOM");
         /// <summary>
         /// Constant DAILY for TimeUnit
         /// </summary>
