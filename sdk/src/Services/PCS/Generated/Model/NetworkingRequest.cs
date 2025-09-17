@@ -78,9 +78,9 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The list of subnet IDs where Amazon Web Services PCS creates an Elastic Network Interface
-        /// (ENI) to enable communication between managed controllers and Amazon Web Services
-        /// PCS resources. Subnet IDs have the form <c>subnet-0123456789abcdef0</c>.
+        /// The list of subnet IDs where PCS creates an Elastic Network Interface (ENI) to enable
+        /// communication between managed controllers and PCS resources. Subnet IDs have the form
+        /// <c>subnet-0123456789abcdef0</c>.
         /// </para>
         ///  
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.PCS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services PCS currently supports only 1 subnet in this list.
+        /// PCS currently supports only 1 subnet in this list.
         /// </para>
         ///  </note>
         /// </summary>
