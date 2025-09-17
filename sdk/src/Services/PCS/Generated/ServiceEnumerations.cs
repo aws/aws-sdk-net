@@ -341,6 +341,10 @@ namespace Amazon.PCS
     {
 
         /// <summary>
+        /// Constant CAPACITY_BLOCK for PurchaseOption
+        /// </summary>
+        public static readonly PurchaseOption CAPACITY_BLOCK = new PurchaseOption("CAPACITY_BLOCK");
+        /// <summary>
         /// Constant ONDEMAND for PurchaseOption
         /// </summary>
         public static readonly PurchaseOption ONDEMAND = new PurchaseOption("ONDEMAND");
