@@ -1186,6 +1186,28 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Gets or sets the authentication scheme preference for this client configuration.
+        /// <para>
+        /// This property allows you to specify a comma-separated preference list of authentication schemes
+        /// (e.g., "sigv4a,sigv4") that will be used to reprioritize the supported authentication schemes for this client.
+        /// If not set, the client will use environment variables, configuration files,
+        /// or fall back to the default model-based authentication scheme resolution.
+        /// </para>
+        /// </summary>
+        public string AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// Gets or sets the SigV4a signing region set for this client.
+        /// <para>
+        /// This property allows you to specify a comma-separated list of regions (e.g., "us-east-1,us-west-2")
+        /// that will be used for SigV4a signing. The region set determines which regions the signed request is valid for.
+        /// If not set, the client will use environment variables, configuration files,
+        /// endpoints metadata, or fall back to the client's configured region.
+        /// </para>
+        /// </summary>
+        public string SigV4aSigningRegionSet { get; set; }
+
+        /// <summary>
         /// Determines the behavior for calculating checksums for request payloads.
         /// By default it is set to <see cref="RequestChecksumCalculation.WHEN_SUPPORTED"/>.
         /// </summary>

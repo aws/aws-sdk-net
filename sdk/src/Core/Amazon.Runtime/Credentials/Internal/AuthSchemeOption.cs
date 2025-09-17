@@ -23,10 +23,32 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc/>
         public string SchemeId { get; set; }
 
+        /// <summary>
+        /// Gets the short name of the authentication scheme (e.g., "sigv4" from "aws.auth#sigv4").
+        /// This is used for configuration purposes.
+        /// </summary>
+        public string Name => GetNameFromSchemeId(SchemeId);
+
         internal const string SigV4 = "aws.auth#sigv4";
         internal const string SigV4A = "aws.auth#sigv4a";
         internal const string Bearer = "smithy.api#httpBearerAuth";
         internal const string NoAuth = "smithy.api#noAuth";
+
+        /// <summary>
+        /// Extracts the short name from a fully qualified scheme ID.
+        /// </summary>
+        /// <param name="schemeId">The fully qualified scheme ID (e.g., "aws.auth#sigv4").</param>
+        /// <returns>The short name (e.g., "sigv4") or the original schemeId if no '#' is present.</returns>
+        public static string GetNameFromSchemeId(string schemeId)
+        {
+            if (string.IsNullOrEmpty(schemeId))
+                return schemeId;
+
+            int hashIndex = schemeId.IndexOf('#');
+            return hashIndex >= 0 && hashIndex < schemeId.Length - 1
+                ? schemeId.Substring(hashIndex + 1)
+                : schemeId;
+        }
 
         /// <summary>
         /// Default auth scheme options for services / operations that only support SigV4.
