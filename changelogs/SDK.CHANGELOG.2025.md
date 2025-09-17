@@ -1,3 +1,11 @@
+### 3.7.1125.0 (2025-09-17 18:38 UTC)
+* EC2 (3.7.512.0)
+	* Add mac-m4.metal and mac-m4pro.metal instance types.
+* NetworkFirewall (3.7.502.0)
+	* Network Firewall now prevents TLS handshakes with the target server until after the Server Name Indication (SNI) has been seen and verified. The monitoring dashboard now provides deeper insights into PrivateLink endpoint candidates and offers filters based on IP addresses and protocol.
+* PCS (3.7.504.0)
+	* Add support for Amazon EC2 Capacity Blocks for ML
+
 ### 3.7.1124.0 (2025-09-16 18:30 UTC)
 * Budgets (3.7.503.0)
 	* Add support for custom time periods in budget configuration
