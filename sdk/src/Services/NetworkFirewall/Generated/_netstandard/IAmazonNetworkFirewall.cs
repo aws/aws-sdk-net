@@ -902,7 +902,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  <important> 
         /// <para>
-        /// After you delete a transit gateway attachment, raffic will no longer flow through
+        /// After you delete a transit gateway attachment, traffic will no longer flow through
         /// the firewall endpoints.
         /// </para>
         ///  </important> 
@@ -2409,8 +2409,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
-        /// flow through the firewall endpoints for this attachment.
+        /// Only the transit gateway owner can reject the attachment. After rejection, no traffic
+        /// will flow through the firewall endpoints for this attachment.
         /// </para>
         ///  
         /// <para>

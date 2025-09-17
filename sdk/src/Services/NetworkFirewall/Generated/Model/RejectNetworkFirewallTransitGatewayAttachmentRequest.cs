@@ -37,8 +37,8 @@ namespace Amazon.NetworkFirewall.Model
     /// 
     ///  
     /// <para>
-    /// Only the firewall owner can reject the attachment. After rejection, no traffic will
-    /// flow through the firewall endpoints for this attachment.
+    /// Only the transit gateway owner can reject the attachment. After rejection, no traffic
+    /// will flow through the firewall endpoints for this attachment.
     /// </para>
     ///  
     /// <para>

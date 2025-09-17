@@ -46,6 +46,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnableTLSSessionHolding())
+            {
+                context.Writer.WritePropertyName("EnableTLSSessionHolding");
+                context.Writer.WriteBooleanValue(requestObject.EnableTLSSessionHolding.Value);
+            }
+
             if(requestObject.IsSetPolicyVariables())
             {
                 context.Writer.WritePropertyName("PolicyVariables");
