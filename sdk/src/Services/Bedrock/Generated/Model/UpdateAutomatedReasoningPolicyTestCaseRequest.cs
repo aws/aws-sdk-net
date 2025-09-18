@@ -40,7 +40,6 @@ namespace Amazon.Bedrock.Model
         private double? _confidenceThreshold;
         private AutomatedReasoningCheckResult _expectedAggregatedFindingsResult;
         private string _guardContent;
-        private string _kmsKeyArn;
         private DateTime? _lastUpdatedAt;
         private string _policyArn;
         private string _queryContent;
@@ -123,26 +122,6 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetGuardContent()
         {
             return this._guardContent != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
-        /// <para>
-        /// The KMS key ARN for encrypting the test at rest. If not provided, the key will not
-        /// be updated. Use <c>DISCARD</c> to remove the key.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string KmsKeyArn
-        {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
-        }
-
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
-        {
-            return this._kmsKeyArn != null;
         }
 
         /// <summary>

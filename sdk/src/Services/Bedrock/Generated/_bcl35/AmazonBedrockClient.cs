@@ -2012,6 +2012,11 @@ namespace Amazon.Bedrock
         /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
         /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
         /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
         /// Resource Name (ARN) and try your request again.

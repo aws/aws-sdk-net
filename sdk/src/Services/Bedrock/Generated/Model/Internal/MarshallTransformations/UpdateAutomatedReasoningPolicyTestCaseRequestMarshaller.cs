@@ -109,12 +109,6 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GuardContent);
                 }
 
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("kmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
                 if(publicRequest.IsSetLastUpdatedAt())
                 {
                     context.Writer.WritePropertyName("lastUpdatedAt");

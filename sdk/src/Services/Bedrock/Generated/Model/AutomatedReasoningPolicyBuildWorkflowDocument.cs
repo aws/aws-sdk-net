@@ -47,7 +47,7 @@ namespace Amazon.Bedrock.Model
         /// rules and concepts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4500000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5000000)]
         public MemoryStream Document
         {
             get { return this._document; }
