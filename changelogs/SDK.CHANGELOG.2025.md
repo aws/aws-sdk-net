@@ -1,3 +1,13 @@
+### 4.0.94.0 (2025-09-18 18:27 UTC)
+* Bedrock (4.0.11.0)
+	* Release includes an increase to the maximum policy build document size, an update to DeleteAutomatedReasoningPolicyBuildWorkflow to add ResourceInUseException, and corrections to UpdateAutomatedReasoningPolicyTestCaseRequest.
+* Budgets (4.0.5.0)
+	* Added BillingViewHealthStatus Exception which is thrown when a Budget is created or updated with a Billing View that is not in the HEALTHY status
+* ChimeSDKMessaging (4.0.1.0)
+	* Amazon Chime SDK Messaging GetMessagingSessionEndpoint API now returns dual-stack WebSocket endpoints supporting IPv4/IPv6.
+* EC2 (4.0.39.0)
+	* Allowed AMIs adds support for four new parameters - marketplaceProductCodes, deprecationTimeCondition, creationDateCondition and imageNames
+
 ### 4.0.93.0 (2025-09-17 18:36 UTC)
 * EC2 (4.0.38.0)
 	* Add mac-m4.metal and mac-m4pro.metal instance types.
