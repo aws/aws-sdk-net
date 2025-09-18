@@ -2008,12 +2008,6 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Bedrock.Model.UpdateAutomatedReasoningPolicyTestCaseRequest.KmsKeyArn</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Bedrock.Model.UpdateAutomatedReasoningPolicyTestCaseRequest.PolicyArn</property>
     <min>1</min>
     <max>2048</max>
@@ -2209,7 +2203,7 @@
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyBuildWorkflowDocument.Document</property>
     <min>1</min>
-    <max>4500000</max>
+    <max>5000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyBuildWorkflowDocument.DocumentDescription</property>
