@@ -1891,19 +1891,17 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
-        /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for
-        /// the snapshot copy operation. By default, encrypted snapshot copies use the default
-        /// KMS key; however, you can specify a different KMS key. To copy an encrypted snapshot
-        /// that has been shared from another account, you must have permissions for the KMS key
-        /// used to encrypt the snapshot.
+        /// When copying snapshots to a Region, the encryption outcome for the snapshot copy depends
+        /// on the Amazon EBS encryption by default setting for the destination Region, the encryption
+        /// status of the source snapshot, and the encryption parameters you specify in the request.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html#creating-encrypted-snapshots">
+        /// Encryption and snapshot copying</a>.
         /// </para>
         ///  
         /// <para>
-        /// Snapshots copied to an Outpost are encrypted by default using the default encryption
-        /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-        /// Outposts do not support unencrypted snapshots. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
-        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
+        /// Snapshots copied to an Outpost must be encrypted. Unencrypted snapshots are not supported
+        /// on Outposts. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#considerations">
+        /// Amazon EBS local snapshots on Outposts</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2395,8 +2393,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The create operation is asynchronous. To verify that the AFI is ready for use, check
-        /// the output logs.
+        /// The create operation is asynchronous. To verify that the AFI was successfully created
+        /// and is ready for use, check the output logs.
         /// </para>
         ///  
         /// <para>
@@ -12482,13 +12480,6 @@ namespace Amazon.EC2
         /// from your account. With the restriction removed, you can publicly share your AMIs
         /// in the specified Amazon Web Services Region.
         /// 
-        ///  
-        /// <para>
-        /// The API can take up to 10 minutes to configure this setting. During this time, if
-        /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
-        /// the response will be <c>block-new-sharing</c>. When the API has completed the configuration,
-        /// the response will be <c>unblocked</c>.
-        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block

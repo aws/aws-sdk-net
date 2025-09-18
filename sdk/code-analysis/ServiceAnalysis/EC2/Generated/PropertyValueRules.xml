@@ -972,6 +972,26 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreationDateCondition.MaximumDaysSinceCreated</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreationDateConditionRequest.MaximumDaysSinceCreated</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DeprecationTimeCondition.MaximumDaysSinceDeprecated</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DeprecationTimeConditionRequest.MaximumDaysSinceDeprecated</property>
+    <min>0</min>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.Ec2InstanceConnectEndpoint.InstanceConnectEndpointArn</property>
     <min>1</min>
     <max>1283</max>

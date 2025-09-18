@@ -72,6 +72,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          int publicRequestlistValueIndex = 1;
                          foreach(var publicRequestlistValue in publicRequest.ImageCriteria)
                          {
+                            if(publicRequestlistValue.IsSetCreationDateCondition())
+                            {
+                                if(publicRequestlistValue.CreationDateCondition.IsSetMaximumDaysSinceCreated())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "CreationDateCondition" + "." + "MaximumDaysSinceCreated", StringUtils.FromInt(publicRequestlistValue.CreationDateCondition.MaximumDaysSinceCreated));
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetDeprecationTimeCondition())
+                            {
+                                if(publicRequestlistValue.DeprecationTimeCondition.IsSetMaximumDaysSinceDeprecated())
+                                {
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "DeprecationTimeCondition" + "." + "MaximumDaysSinceDeprecated", StringUtils.FromInt(publicRequestlistValue.DeprecationTimeCondition.MaximumDaysSinceDeprecated));
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetImageNames())
+                            {
+                                if (publicRequestlistValue.ImageNames.Count == 0)
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageName", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageNames)
+                                     {
+                                         request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageName" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
                             if(publicRequestlistValue.IsSetImageProviders())
                             {
                                 if (publicRequestlistValue.ImageProviders.Count == 0)
@@ -82,6 +110,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                      foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageProviders)
                                      {
                                          request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageProvider" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetMarketplaceProductCodes())
+                            {
+                                if (publicRequestlistValue.MarketplaceProductCodes.Count == 0)
+                                    request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "MarketplaceProductCode", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MarketplaceProductCodes)
+                                     {
+                                         request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "MarketplaceProductCode" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                          publicRequestlistValuelistValueIndex++;
                                      }
                                 }

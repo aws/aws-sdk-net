@@ -626,13 +626,14 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>platform-details</c> - The platform (<c>Linux/UNIX</c> | <c>Red Hat BYOL Linux</c>
         /// | <c> Red Hat Enterprise Linux</c> | <c>Red Hat Enterprise Linux with HA</c> | <c>Red
-        /// Hat Enterprise Linux with SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux
-        /// with SQL Server Enterprise and HA</c> | <c>Red Hat Enterprise Linux with SQL Server
-        /// Standard</c> | <c>Red Hat Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise
-        /// Linux with SQL Server Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server
-        /// Standard</c> | <c>SQL Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c>
-        /// | <c>Windows BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with
-        /// SQL Server Standard</c> | <c>Windows with SQL Server Web</c>).
+        /// Hat Enterprise Linux with High Availability</c> | <c>Red Hat Enterprise Linux with
+        /// SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Enterprise
+        /// and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Standard</c> | <c>Red Hat
+        /// Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise Linux with SQL Server
+        /// Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server Standard</c> | <c>SQL
+        /// Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c> | <c>Windows
+        /// BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with SQL Server
+        /// Standard</c> | <c>Windows with SQL Server Web</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
