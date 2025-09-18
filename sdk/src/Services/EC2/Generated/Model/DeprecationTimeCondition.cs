@@ -30,20 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableImageBlockPublicAccess operation.
-    /// Disables <i>block public access for AMIs</i> at the account level in the specified
-    /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
-    /// from your account. With the restriction removed, you can publicly share your AMIs
-    /// in the specified Amazon Web Services Region.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
-    /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
-    /// </para>
+    /// The maximum period since deprecation for allowed images.
     /// </summary>
-    public partial class DisableImageBlockPublicAccessRequest : AmazonEC2Request
+    public partial class DeprecationTimeCondition
     {
+        private int? _maximumDaysSinceDeprecated;
+
+        /// <summary>
+        /// Gets and sets the property MaximumDaysSinceDeprecated. 
+        /// <para>
+        /// The maximum number of days that have elapsed since the image was deprecated. When
+        /// set to <c>0</c>, no deprecated images are allowed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int MaximumDaysSinceDeprecated
+        {
+            get { return this._maximumDaysSinceDeprecated.GetValueOrDefault(); }
+            set { this._maximumDaysSinceDeprecated = value; }
+        }
+
+        // Check to see if MaximumDaysSinceDeprecated property is set
+        internal bool IsSetMaximumDaysSinceDeprecated()
+        {
+            return this._maximumDaysSinceDeprecated.HasValue; 
+        }
 
     }
 }

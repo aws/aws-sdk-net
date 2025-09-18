@@ -64,12 +64,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.ImageCriteria)
                     {
+                        if(publicRequestlistValue.IsSetCreationDateCondition())
+                        {
+                            if(publicRequestlistValue.CreationDateCondition.IsSetMaximumDaysSinceCreated())
+                            {
+                                request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "CreationDateCondition" + "." + "MaximumDaysSinceCreated", StringUtils.FromInt(publicRequestlistValue.CreationDateCondition.MaximumDaysSinceCreated));
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetDeprecationTimeCondition())
+                        {
+                            if(publicRequestlistValue.DeprecationTimeCondition.IsSetMaximumDaysSinceDeprecated())
+                            {
+                                request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "DeprecationTimeCondition" + "." + "MaximumDaysSinceDeprecated", StringUtils.FromInt(publicRequestlistValue.DeprecationTimeCondition.MaximumDaysSinceDeprecated));
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetImageNames())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageNames)
+                            {
+                                request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageName" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         if(publicRequestlistValue.IsSetImageProviders())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ImageProviders)
                             {
                                 request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "ImageProvider" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetMarketplaceProductCodes())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MarketplaceProductCodes)
+                            {
+                                request.Parameters.Add("ImageCriterion" + "." + publicRequestlistValueIndex + "." + "MarketplaceProductCode" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

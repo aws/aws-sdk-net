@@ -30,20 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableImageBlockPublicAccess operation.
-    /// Disables <i>block public access for AMIs</i> at the account level in the specified
-    /// Amazon Web Services Region. This removes the <i>block public access</i> restriction
-    /// from your account. With the restriction removed, you can publicly share your AMIs
-    /// in the specified Amazon Web Services Region.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-to-amis.html">Block
-    /// public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
-    /// </para>
+    /// The maximum age for allowed images.
     /// </summary>
-    public partial class DisableImageBlockPublicAccessRequest : AmazonEC2Request
+    public partial class CreationDateConditionRequest
     {
+        private int? _maximumDaysSinceCreated;
+
+        /// <summary>
+        /// Gets and sets the property MaximumDaysSinceCreated. 
+        /// <para>
+        /// The maximum number of days that have elapsed since the image was created. For example,
+        /// a value of <c>300</c> allows images that were created within the last 300 days.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int MaximumDaysSinceCreated
+        {
+            get { return this._maximumDaysSinceCreated.GetValueOrDefault(); }
+            set { this._maximumDaysSinceCreated = value; }
+        }
+
+        // Check to see if MaximumDaysSinceCreated property is set
+        internal bool IsSetMaximumDaysSinceCreated()
+        {
+            return this._maximumDaysSinceCreated.HasValue; 
+        }
 
     }
 }

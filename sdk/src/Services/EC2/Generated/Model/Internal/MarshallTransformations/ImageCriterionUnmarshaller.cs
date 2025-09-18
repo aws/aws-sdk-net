@@ -55,6 +55,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("creationDateCondition", targetDepth))
+                    {
+                        var unmarshaller = CreationDateConditionUnmarshaller.Instance;
+                        unmarshalledObject.CreationDateCondition = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("deprecationTimeCondition", targetDepth))
+                    {
+                        var unmarshaller = DeprecationTimeConditionUnmarshaller.Instance;
+                        unmarshalledObject.DeprecationTimeCondition = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageNameSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ImageNames == null)
+                        {
+                            unmarshalledObject.ImageNames = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ImageNames.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("imageProviderSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -64,6 +87,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ImageProviders.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("marketplaceProductCodeSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MarketplaceProductCodes == null)
+                        {
+                            unmarshalledObject.MarketplaceProductCodes = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MarketplaceProductCodes.Add(item);
                         continue;
                     }
                 }
