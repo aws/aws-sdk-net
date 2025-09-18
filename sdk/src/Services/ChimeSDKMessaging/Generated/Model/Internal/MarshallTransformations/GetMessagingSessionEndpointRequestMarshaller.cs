@@ -62,7 +62,11 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetNetworkType())
+                request.Parameters.Add("network-type", StringUtils.FromString(publicRequest.NetworkType));
             request.ResourcePath = "/endpoints/messaging-session";
+            request.UseQueryString = true;
 
             return request;
         }

@@ -35,7 +35,7 @@ namespace Amazon.ChimeSDKMessaging
     /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks
     /// provided by the Amazon Chime SDK identity APIs. For more information about the messaging
-    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
+    /// APIs, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
     /// Chime SDK messaging</a>.
     /// </summary>
     public partial interface IAmazonChimeSDKMessaging : IAmazonService, IDisposable
@@ -341,7 +341,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </li> </ol> <note> 
         /// <para>
         /// Channel flows don't process Control or System messages. For more information about
-        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/using-the-messaging-sdk.html#msg-types">Message
         /// types</a> in the <i>Amazon Chime developer guide</i>.
         /// </para>
         ///  </note>
@@ -1550,7 +1550,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </note> 
         /// <para>
         /// If you want to list the channels to which a specific app instance user belongs, see
-        /// the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+        /// the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
         /// API.
         /// </para>
         /// </summary>
@@ -2091,8 +2091,8 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Redacts message content, but not metadata. The message exists in the back end, but
-        /// the action returns null content, and the state shows as redacted.
+        /// Redacts message content and metadata. The message exists in the back end, but the
+        /// action returns null content, and the state shows as redacted.
         /// 
         ///  <note> 
         /// <para>
@@ -2148,6 +2148,12 @@ namespace Amazon.ChimeSDKMessaging
         /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
         /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation isn't supported for <c>AppInstanceUsers</c> with a large number of
+        /// memberships.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchChannels service method.</param>
         /// <param name="cancellationToken">
