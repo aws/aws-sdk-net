@@ -142,6 +142,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
         /// </exception>
@@ -198,6 +202,10 @@ namespace Amazon.Budgets
         /// <returns>The response from the CreateBudget service method, as returned by Budgets.</returns>
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.CreationLimitExceededException">
         /// You've exceeded the notification or subscriber limit.
@@ -1731,6 +1739,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
+        /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -1779,6 +1791,10 @@ namespace Amazon.Budgets
         /// <returns>The response from the UpdateBudget service method, as returned by Budgets.</returns>
         /// <exception cref="Amazon.Budgets.Model.AccessDeniedException">
         /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.BillingViewHealthStatusException">
+        /// The billing view status must be HEALTHY to perform this action. Try again when the
+        /// status is HEALTHY.
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InternalErrorException">
         /// An error on the server occurred during the processing of your request. Try again later.
