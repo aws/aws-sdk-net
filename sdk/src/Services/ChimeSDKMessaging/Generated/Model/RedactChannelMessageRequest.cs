@@ -31,8 +31,8 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the RedactChannelMessage operation.
-    /// Redacts message content, but not metadata. The message exists in the back end, but
-    /// the action returns null content, and the state shows as redacted.
+    /// Redacts message content and metadata. The message exists in the back end, but the
+    /// action returns null content, and the state shows as redacted.
     /// 
     ///  <note> 
     /// <para>

@@ -82,7 +82,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelId. 
         /// <para>
-        /// The ID of the channel in the request.
+        /// An ID for the channel being created. If you do not specify an ID, a UUID will be created
+        /// for the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]
