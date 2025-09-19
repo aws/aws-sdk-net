@@ -564,6 +564,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
+        /// </para>
+        ///  
+        /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average
         /// queue abandon time</a> 
         /// </para>
@@ -1115,11 +1119,30 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average
         /// queue answer time</a> 
         /// </para>
+        ///  
+        /// <para>
+        /// Valid metric level filters: <c>INITIATION_METHOD</c>, <c>FEATURE</c>, <c>DISCONNECT_REASON</c>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_RESPONSE_TIME_AGENT</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect, Agent Hierarchy
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg.
+        /// queue answer time - customer first callback</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_RESPONSE_TIME_AGENT</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -1237,6 +1260,20 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average
         /// wait time after customer connection</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect, Agent Hierarchy
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg.
+        /// wait time after customer connection - customer first callback</a> 
         /// </para>
         ///  </dd> <dt>AVG_WEIGHTED_EVALUATION_SCORE</dt> <dd> 
         /// <para>
@@ -1465,8 +1502,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API
-        /// contacts handled</a> 
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts
+        /// handled</a> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2228,7 +2265,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid metric filter key: <c>INITIATION_METHOD</c>. This metric only supports the following
         /// filter keys as <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c> | <c>CALLBACK</c>
-        /// | <c>API</c> 
+        /// | <c>API</c> | <c>CALLBACK_CUSTOMER_FIRST_DIALED</c> 
         /// </para>
         ///  
         /// <para>
@@ -2253,8 +2290,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Valid values: <c>API</c>| <c>Incoming</c> | <c>Outbound</c> | <c>Transfer</c> | <c>Callback</c>
-        /// | <c>Queue_Transfer</c>| <c>Disconnect</c> 
+        /// Valid values: <c>API</c>| <c>INCOMING</c> | <c>OUTBOUND</c> | <c>TRANSFER</c> | <c>CALLBACK</c>
+        /// | <c>QUEUE_TRANSFER</c>| <c>Disconnect</c> | <c>CALLBACK_CUSTOMER_FIRST_DIALED</c>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>

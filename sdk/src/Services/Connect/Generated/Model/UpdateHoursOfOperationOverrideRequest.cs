@@ -103,7 +103,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EffectiveTill. 
         /// <para>
-        /// The date till when the hours of operation override would be effective.
+        /// The date until the hours of operation override is effective.
         /// </para>
         /// </summary>
         public string EffectiveTill

@@ -6858,6 +6858,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Disassociates a set of queues from a routing profile.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 queue references can be disassociated in a single API call. More than 10
+        /// queue references results in a single call results in an InvalidParameterException.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRoutingProfileQueues service method.</param>
         /// <param name="cancellationToken">
@@ -7212,7 +7218,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets the real-time metrics of the specified contact.
+        /// Retrieves the position of the contact in the queue.
         /// 
         ///  
         /// <para>
@@ -7220,11 +7226,37 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Following are common uses cases for this API:
+        /// Following are common uses cases for position in queue:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can use this API to retrieve the position of the contact in the queue.
+        /// Understand the expected wait experience of a contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inform customers of their position in queue and potentially offer a callback.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make data-driven routing decisions between primary and alternative queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The only way to retrieve the position of the contact in queue is by using this API.
+        /// You can't retrieve the position by using flows and attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
+        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

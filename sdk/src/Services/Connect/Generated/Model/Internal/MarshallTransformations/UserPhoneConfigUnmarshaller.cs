@@ -84,6 +84,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeskPhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PersistentConnection", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PersistentConnection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PhoneType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
