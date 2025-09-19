@@ -64,6 +64,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DeskPhoneNumber);
             }
 
+            if(requestObject.IsSetPersistentConnection())
+            {
+                context.Writer.WritePropertyName("PersistentConnection");
+                context.Writer.WriteBooleanValue(requestObject.PersistentConnection.Value);
+            }
+
             if(requestObject.IsSetPhoneType())
             {
                 context.Writer.WritePropertyName("PhoneType");
