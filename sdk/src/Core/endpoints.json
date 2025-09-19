@@ -10326,6 +10326,7 @@
             ]
           },
           "endpoints": {
+            "ap-east-1": {},
             "ap-east-2": {},
             "ap-northeast-1": {
               "hostname": "datazone.ap-northeast-1.api.aws"
@@ -10378,6 +10379,7 @@
             "eu-central-1": {
               "hostname": "datazone.eu-central-1.api.aws"
             },
+            "eu-central-2": {},
             "eu-north-1": {
               "hostname": "datazone.eu-north-1.api.aws"
             },
@@ -27223,6 +27225,7 @@
           "endpoints": {
             "af-south-1": {},
             "ap-east-1": {},
+            "ap-east-2": {},
             "ap-northeast-1": {},
             "ap-northeast-2": {},
             "ap-south-1": {},
@@ -31424,6 +31427,7 @@
                 }
               ]
             },
+            "ap-southeast-6": {},
             "ap-southeast-7": {
               "variants": [
                 {
