@@ -130,6 +130,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
+            if(requestObject.IsSetMinBitrate())
+            {
+                context.Writer.WritePropertyName("minBitrate");
+                context.Writer.WriteNumberValue(requestObject.MinBitrate.Value);
+            }
+
             if(requestObject.IsSetMinIInterval())
             {
                 context.Writer.WritePropertyName("minIInterval");

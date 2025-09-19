@@ -893,6 +893,11 @@
     <max>12000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.MinBitrate</property>
+    <min>0</min>
+    <max>8000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Av1Settings.MinIInterval</property>
     <min>0</min>
     <max>30</max>
@@ -1710,6 +1715,10 @@
     <min>1000</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H264Settings.MinBitrate</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.H264Settings.MinIInterval</property>
     <min>0</min>
     <max>30</max>
@@ -1771,8 +1780,18 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.GopNumBFrames</property>
+    <min>0</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.H265Settings.MaxBitrate</property>
     <min>100000</min>
+    <max>40000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MinBitrate</property>
+    <min>0</min>
     <max>40000000</max>
   </property-value-rule>
   <property-value-rule>
