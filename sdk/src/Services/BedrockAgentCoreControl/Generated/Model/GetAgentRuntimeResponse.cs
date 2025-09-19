@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class GetAgentRuntimeResponse : AmazonWebServiceResponse
     {
         private string _agentRuntimeArn;
-        private AgentArtifact _agentRuntimeArtifact;
+        private AgentRuntimeArtifact _agentRuntimeArtifact;
         private string _agentRuntimeId;
         private string _agentRuntimeName;
         private string _agentRuntimeVersion;
@@ -46,14 +46,15 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _lastUpdatedAt;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
+        private RequestHeaderConfiguration _requestHeaderConfiguration;
         private string _roleArn;
-        private AgentStatus _status;
+        private AgentRuntimeStatus _status;
         private WorkloadIdentityDetails _workloadIdentityDetails;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,10 +73,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeArtifact. 
         /// <para>
-        /// The artifact of the agent runtime.
+        /// The artifact of the AgentCore Runtime.
         /// </para>
         /// </summary>
-        public AgentArtifact AgentRuntimeArtifact
+        public AgentRuntimeArtifact AgentRuntimeArtifact
         {
             get { return this._agentRuntimeArtifact; }
             set { this._agentRuntimeArtifact = value; }
@@ -90,7 +91,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime.
+        /// The unique identifier of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -109,7 +110,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeName. 
         /// <para>
-        /// The name of the agent runtime.
+        /// The name of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,7 +129,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The version of the agent runtime.
+        /// The version of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -147,7 +148,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the agent runtime.
+        /// The authorizer configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -165,7 +166,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime was created.
+        /// The timestamp when the AgentCore Runtime was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,7 +185,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the agent runtime.
+        /// The description of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -203,7 +204,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// Environment variables set in the agent runtime environment.
+        /// Environment variables set in the AgentCore Runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=50)]
@@ -222,7 +223,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime was last updated.
+        /// The timestamp when the AgentCore Runtime was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -241,7 +242,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The network configuration for the agent runtime.
+        /// The network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -273,9 +274,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestHeaderConfiguration. 
+        /// <para>
+        /// Configuration for HTTP request headers that will be passed through to the runtime.
+        /// </para>
+        /// </summary>
+        public RequestHeaderConfiguration RequestHeaderConfiguration
+        {
+            get { return this._requestHeaderConfiguration; }
+            set { this._requestHeaderConfiguration = value; }
+        }
+
+        // Check to see if RequestHeaderConfiguration property is set
+        internal bool IsSetRequestHeaderConfiguration()
+        {
+            return this._requestHeaderConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN that provides permissions for the agent runtime.
+        /// The IAM role ARN that provides permissions for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -294,11 +313,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime.
+        /// The current status of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -313,7 +332,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the agent runtime.
+        /// The workload identity details for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMemory operation.
-    /// Creates a new memory.
+    /// Creates a new Amazon Bedrock AgentCore Memory resource.
     /// </summary>
     public partial class CreateMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {

@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Contains information about an agent runtime. An agent runtime is the execution environment
     /// for a Amazon Bedrock Agent.
     /// </summary>
-    public partial class Agent
+    public partial class AgentRuntime
     {
         private string _agentRuntimeArn;
         private string _agentRuntimeId;
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _agentRuntimeVersion;
         private string _description;
         private DateTime? _lastUpdatedAt;
-        private AgentStatus _status;
+        private AgentRuntimeStatus _status;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
@@ -164,7 +164,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

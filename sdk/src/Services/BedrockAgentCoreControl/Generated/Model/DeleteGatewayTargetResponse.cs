@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Gateway.
+        /// The Amazon Resource Name (ARN) of the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Gateway Target deletion.
+        /// The current status of the gateway target deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// The reasons for the current status of the Gateway Target deletion.
+        /// The reasons for the current status of the gateway target deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -99,7 +99,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier of the deleted Gateway Target.
+        /// The unique identifier of the deleted gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,18 +38,12 @@ namespace Amazon.BedrockAgentCoreControl
     ///
     /// <note> 
     /// <para>
-    /// Amazon Bedrock AgentCore is in preview release and is subject to change.
+    ///  is in preview release and is subject to change.
     /// 
     ///  </note> 
     /// <para>
-    /// Amazon Bedrock Agent Core Control is a service that enables you to manage memory resources
-    /// for your Amazon Bedrock agents.
-    /// </para>
-    ///  
-    /// <para>
-    /// Use this API to create, retrieve, update, and delete memory resources and their associated
-    /// memory strategies. Memory resources enable your agents to store and retrieve information
-    /// from conversations and interactions.
+    /// Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane
+    /// actions configure, create, modify, and monitor Amazon Web Services resources.
     /// </para>
     /// 
     /// </para>
@@ -283,7 +277,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  CreateAgentRuntime
 
         /// <summary>
-        /// Creates an Amazon Secure Agent.
+        /// Creates an Amazon Bedrock AgentCore Runtime.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentRuntime service method.</param>
         /// 
@@ -355,7 +349,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  CreateAgentRuntimeEndpoint
 
         /// <summary>
-        /// Creates an Amazon Secure AgentEndpoint.
+        /// Creates an AgentCore Runtime endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentRuntimeEndpoint service method.</param>
         /// 
@@ -743,11 +737,6 @@ namespace Amazon.BedrockAgentCoreControl
         /// <summary>
         /// Creates a target for a gateway. A target defines an endpoint that the gateway can
         /// connect to.
-        /// 
-        ///  
-        /// <para>
-        /// To create a target, you must specify the gateway identifier and target configuration.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGatewayTarget service method.</param>
         /// 
@@ -822,7 +811,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  CreateMemory
 
         /// <summary>
-        /// Creates a new memory.
+        /// Creates a new Amazon Bedrock AgentCore Memory resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMemory service method.</param>
         /// 
@@ -1058,7 +1047,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  DeleteAgentRuntime
 
         /// <summary>
-        /// Deletes an Amazon Secure Agent.
+        /// Deletes an Amazon Bedrock AgentCore Runtime.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntime service method.</param>
         /// 
@@ -1127,7 +1116,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  DeleteAgentRuntimeEndpoint
 
         /// <summary>
-        /// Deletes an Amazon Secure AgentEndpoint.
+        /// Deletes an AAgentCore Runtime endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntimeEndpoint service method.</param>
         /// 
@@ -1419,7 +1408,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  DeleteGateway
 
         /// <summary>
-        /// Deletes a Gateway.
+        /// Deletes a gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
         /// 
@@ -1491,7 +1480,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  DeleteGatewayTarget
 
         /// <summary>
-        /// Deletes a Gateway Target.
+        /// Deletes a gateway target.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayTarget service method.</param>
         /// 
@@ -1563,7 +1552,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  DeleteMemory
 
         /// <summary>
-        /// Deletes a memory.
+        /// Deletes an Amazon Bedrock AgentCore Memory resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemory service method.</param>
         /// 
@@ -1778,7 +1767,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  GetAgentRuntime
 
         /// <summary>
-        /// Gets an Amazon Secure Agent.
+        /// Gets an Amazon Bedrock AgentCore Runtime.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAgentRuntime service method.</param>
         /// 
@@ -2199,7 +2188,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  GetGatewayTarget
 
         /// <summary>
-        /// Retrieves information about a specific Gateway Target.
+        /// Retrieves information about a specific gateway target.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGatewayTarget service method.</param>
         /// 
@@ -2268,7 +2257,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  GetMemory
 
         /// <summary>
-        /// Retrieve an existing memory.
+        /// Retrieve an existing Amazon Bedrock AgentCore Memory resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemory service method.</param>
         /// 
@@ -2965,7 +2954,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  ListGateways
 
         /// <summary>
-        /// Lists all Gateways in the account.
+        /// Lists all gateways in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGateways service method.</param>
         /// 
@@ -3031,7 +3020,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  ListGatewayTargets
 
         /// <summary>
-        /// Lists all targets for a specific Gateway.
+        /// Lists all targets for a specific gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGatewayTargets service method.</param>
         /// 
@@ -3097,7 +3086,8 @@ namespace Amazon.BedrockAgentCoreControl
         #region  ListMemories
 
         /// <summary>
-        /// Lists the memory present.
+        /// Lists the available Amazon Bedrock AgentCore Memory resources in the current Amazon
+        /// Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemories service method.</param>
         /// 
@@ -3232,6 +3222,75 @@ namespace Amazon.BedrockAgentCoreControl
         public virtual ListOauth2CredentialProvidersResponse EndListOauth2CredentialProviders(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOauth2CredentialProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists the tags associated with the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -3385,6 +3444,149 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Associates the specified tags to a resource with the specified resourceArn. If existing
+        /// tags on a resource are not specified in the request parameters, they are not changed.
+        /// When a resource is deleted, the tags associated with that resource are also deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateAgentRuntime
 
         /// <summary>
@@ -3463,7 +3665,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  UpdateAgentRuntimeEndpoint
 
         /// <summary>
-        /// Updates an existing Amazon Secure AgentEndpoint.
+        /// Updates an existing Amazon Bedrock AgentCore Runtime endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentRuntimeEndpoint service method.</param>
         /// 
@@ -3623,7 +3825,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  UpdateGateway
 
         /// <summary>
-        /// Updates an existing Gateway.
+        /// Updates an existing gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGateway service method.</param>
         /// 
@@ -3698,7 +3900,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  UpdateGatewayTarget
 
         /// <summary>
-        /// Updates an existing Gateway Target.
+        /// Updates an existing gateway target.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayTarget service method.</param>
         /// 
@@ -3773,7 +3975,7 @@ namespace Amazon.BedrockAgentCoreControl
         #region  UpdateMemory
 
         /// <summary>
-        /// Update memory.
+        /// Update an Amazon Bedrock AgentCore Memory resource memory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemory service method.</param>
         /// 

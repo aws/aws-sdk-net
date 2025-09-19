@@ -75,7 +75,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("agentRuntimeArtifact");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = AgentArtifactMarshaller.Instance;
+                    var marshaller = AgentRuntimeArtifactMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AgentRuntimeArtifact, context);
 
                     context.Writer.WriteObjectEnd();
@@ -141,6 +141,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                     var marshaller = ProtocolConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ProtocolConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRequestHeaderConfiguration())
+                {
+                    context.Writer.WritePropertyName("requestHeaderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RequestHeaderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RequestHeaderConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AgentArtifact Marshaller
+    /// RequestHeaderConfiguration Marshaller
     /// </summary>
-    public class AgentArtifactMarshaller : IRequestMarshaller<AgentArtifact, JsonMarshallerContext> 
+    public class RequestHeaderConfigurationMarshaller : IRequestMarshaller<RequestHeaderConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,19 +44,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AgentArtifact requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestHeaderConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetContainerConfiguration())
+            if(requestObject.IsSetRequestHeaderAllowlist())
             {
-                context.Writer.WritePropertyName("containerConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ContainerConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ContainerConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("requestHeaderAllowlist");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRequestHeaderAllowlistListValue in requestObject.RequestHeaderAllowlist)
+                {
+                        context.Writer.Write(requestObjectRequestHeaderAllowlistListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AgentArtifactMarshaller Instance = new AgentArtifactMarshaller();
+        public readonly static RequestHeaderConfigurationMarshaller Instance = new RequestHeaderConfigurationMarshaller();
 
     }
 }

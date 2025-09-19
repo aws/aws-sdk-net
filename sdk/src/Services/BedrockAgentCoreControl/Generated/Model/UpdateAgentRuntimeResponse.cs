@@ -39,13 +39,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _agentRuntimeVersion;
         private DateTime? _createdAt;
         private DateTime? _lastUpdatedAt;
-        private AgentStatus _status;
+        private AgentRuntimeStatus _status;
         private WorkloadIdentityDetails _workloadIdentityDetails;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the updated agent runtime.
+        /// The Amazon Resource Name (ARN) of the updated AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the updated agent runtime.
+        /// The unique identifier of the updated AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeVersion. 
         /// <para>
-        /// The version of the updated agent runtime.
+        /// The version of the updated AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -102,7 +102,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime was created.
+        /// The timestamp when the AgentCore Runtime was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +121,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime was last updated.
+        /// The timestamp when the AgentCore Runtime was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,11 +140,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the updated agent runtime.
+        /// The current status of the updated AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -159,7 +159,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the updated agent runtime.
+        /// The workload identity details for the updated AgentCore Runtime.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

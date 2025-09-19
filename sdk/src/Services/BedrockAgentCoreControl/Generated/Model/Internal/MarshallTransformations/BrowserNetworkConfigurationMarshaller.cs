@@ -54,6 +54,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NetworkMode);
             }
 
+            if(requestObject.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("vpcConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

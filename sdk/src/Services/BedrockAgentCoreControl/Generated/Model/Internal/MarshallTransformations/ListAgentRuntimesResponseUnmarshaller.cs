@@ -54,7 +54,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("agentRuntimes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Agent, AgentUnmarshaller>(AgentUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<AgentRuntime, AgentRuntimeUnmarshaller>(AgentRuntimeUnmarshaller.Instance);
                     response.AgentRuntimes = unmarshaller.Unmarshall(context);
                     continue;
                 }

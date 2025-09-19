@@ -34,17 +34,17 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class ListAgentRuntimeVersionsResponse : AmazonWebServiceResponse
     {
-        private List<Agent> _agentRuntimes = AWSConfigs.InitializeCollections ? new List<Agent>() : null;
+        private List<AgentRuntime> _agentRuntimes = AWSConfigs.InitializeCollections ? new List<AgentRuntime>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimes. 
         /// <para>
-        /// The list of agent runtime versions.
+        /// The list of AgentCore Runtime versions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<Agent> AgentRuntimes
+        public List<AgentRuntime> AgentRuntimes
         {
             get { return this._agentRuntimes; }
             set { this._agentRuntimes = value; }

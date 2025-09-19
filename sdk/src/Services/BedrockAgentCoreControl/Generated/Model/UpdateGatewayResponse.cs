@@ -55,7 +55,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The updated authorizer configuration for the Gateway.
+        /// The updated authorizer configuration for the gateway.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerType. 
         /// <para>
-        /// The updated authorizer type for the Gateway.
+        /// The updated authorizer type for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,7 +92,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the Gateway was created.
+        /// The timestamp when the gateway was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,7 +111,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the Gateway.
+        /// The updated description of the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -130,10 +130,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
-        /// The verbosity of exception messages. Use DEBUG mode to see granular exception messages
-        /// from a Gateway. If this parameter is not set, exception messages are by default sanitized
-        /// for presentation to end users.
+        /// The level of detail in error messages returned when invoking the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>DEBUG</c>, granular exception messages are returned to help a user
+        /// debug the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is omitted, a generic error message is returned to the end user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExceptionLevel ExceptionLevel
         {
@@ -150,7 +158,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the updated Gateway.
+        /// The Amazon Resource Name (ARN) of the updated gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,7 +177,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The unique identifier of the updated Gateway.
+        /// The unique identifier of the updated gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -188,7 +196,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayUrl. 
         /// <para>
-        /// An endpoint for invoking the updated Gateway.
+        /// An endpoint for invoking the updated gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -207,7 +215,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The updated ARN of the KMS key used to encrypt the Gateway.
+        /// The updated ARN of the KMS key used to encrypt the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -226,7 +234,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The updated name of the Gateway.
+        /// The name of the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -260,7 +268,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The updated protocol type for the Gateway.
+        /// The updated protocol type for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -279,7 +287,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The updated IAM role ARN that provides permissions for the Gateway.
+        /// The updated IAM role ARN that provides permissions for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -298,7 +306,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the updated Gateway.
+        /// The current status of the updated gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -317,7 +325,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// The reasons for the current status of the updated Gateway.
+        /// The reasons for the current status of the updated gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -336,7 +344,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when the Gateway was last updated.
+        /// The timestamp when the gateway was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -355,7 +363,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the updated Gateway.
+        /// The workload identity details for the updated gateway.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

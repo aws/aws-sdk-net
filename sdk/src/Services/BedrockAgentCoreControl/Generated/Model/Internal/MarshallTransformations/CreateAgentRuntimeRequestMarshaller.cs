@@ -72,7 +72,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("agentRuntimeArtifact");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = AgentArtifactMarshaller.Instance;
+                    var marshaller = AgentRuntimeArtifactMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AgentRuntimeArtifact, context);
 
                     context.Writer.WriteObjectEnd();
@@ -148,10 +148,35 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRequestHeaderConfiguration())
+                {
+                    context.Writer.WritePropertyName("requestHeaderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RequestHeaderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RequestHeaderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");
                     context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

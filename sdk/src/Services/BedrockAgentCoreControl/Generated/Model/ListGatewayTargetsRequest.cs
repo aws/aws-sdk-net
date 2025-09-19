@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGatewayTargets operation.
-    /// Lists all targets for a specific Gateway.
+    /// Lists all targets for a specific gateway.
     /// </summary>
     public partial class ListGatewayTargetsRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -42,8 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The identifier of the gateway to list targets for. This can be either the gateway
-        /// ID or the gateway ARN.
+        /// The identifier of the gateway to list targets for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +61,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. The default value is 10.
-        /// The maximum value is 50.
+        /// The maximum number of results to return in the response. If the total number of results
+        /// is greater than this value, use the token returned in the response in the <c>nextToken</c>
+        /// field when making another request to return the next batch of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -82,8 +82,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results.
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, enter the token returned in the <c>nextToken</c> field in the response
+        /// in this field to return the next batch of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

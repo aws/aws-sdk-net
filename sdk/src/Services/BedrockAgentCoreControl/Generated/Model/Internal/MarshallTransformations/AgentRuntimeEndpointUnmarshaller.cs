@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Agent Object
+    /// Response Unmarshaller for AgentRuntimeEndpoint Object
     /// </summary>  
-    public class AgentUnmarshaller : IUnmarshaller<Agent, XmlUnmarshallerContext>, IUnmarshaller<Agent, JsonUnmarshallerContext>
+    public class AgentRuntimeEndpointUnmarshaller : IUnmarshaller<AgentRuntimeEndpoint, XmlUnmarshallerContext>, IUnmarshaller<AgentRuntimeEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Agent IUnmarshaller<Agent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentRuntimeEndpoint IUnmarshaller<AgentRuntimeEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Agent Unmarshall(JsonUnmarshallerContext context)
+        public AgentRuntimeEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
-            Agent unmarshalledObject = new Agent();
+            AgentRuntimeEndpoint unmarshalledObject = new AgentRuntimeEndpoint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,22 +72,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentRuntimeArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeId", targetDepth))
+                if (context.TestExpression("agentRuntimeEndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentRuntimeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentRuntimeEndpointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeName", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentRuntimeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("agentRuntimeVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentRuntimeVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
@@ -96,10 +90,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("liveVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LiveVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -108,17 +120,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
 
 
-        private static AgentUnmarshaller _instance = new AgentUnmarshaller();        
+        private static AgentRuntimeEndpointUnmarshaller _instance = new AgentRuntimeEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentUnmarshaller Instance
+        public static AgentRuntimeEndpointUnmarshaller Instance
         {
             get
             {

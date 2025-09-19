@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewayTarget operation.
-    /// Updates an existing Gateway Target.
+    /// Updates an existing gateway target.
     /// </summary>
     public partial class UpdateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CredentialProviderConfigurations. 
         /// <para>
-        /// The updated credential provider configurations for the Gateway Target.
+        /// The updated credential provider configurations for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description for the Gateway Target.
+        /// The updated description for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=200)]
@@ -83,7 +83,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The unique identifier of the Gateway associated with the target.
+        /// The unique identifier of the gateway associated with the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The updated name for the Gateway Target.
+        /// The updated name for the gateway target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -137,7 +137,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier of the Gateway Target to update.
+        /// The unique identifier of the gateway target to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentArtifact Object
+    /// Response Unmarshaller for RequestHeaderConfiguration Object
     /// </summary>  
-    public class AgentArtifactUnmarshaller : IUnmarshaller<AgentArtifact, XmlUnmarshallerContext>, IUnmarshaller<AgentArtifact, JsonUnmarshallerContext>
+    public class RequestHeaderConfigurationUnmarshaller : IUnmarshaller<RequestHeaderConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RequestHeaderConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AgentArtifact IUnmarshaller<AgentArtifact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RequestHeaderConfiguration IUnmarshaller<RequestHeaderConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentArtifact Unmarshall(JsonUnmarshallerContext context)
+        public RequestHeaderConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AgentArtifact unmarshalledObject = new AgentArtifact();
+            RequestHeaderConfiguration unmarshalledObject = new RequestHeaderConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerConfiguration", targetDepth))
+                if (context.TestExpression("requestHeaderAllowlist", targetDepth))
                 {
-                    var unmarshaller = ContainerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequestHeaderAllowlist = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -77,12 +77,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentArtifactUnmarshaller _instance = new AgentArtifactUnmarshaller();        
+        private static RequestHeaderConfigurationUnmarshaller _instance = new RequestHeaderConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentArtifactUnmarshaller Instance
+        public static RequestHeaderConfigurationUnmarshaller Instance
         {
             get
             {

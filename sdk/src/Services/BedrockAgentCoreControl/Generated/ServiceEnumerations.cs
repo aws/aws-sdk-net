@@ -25,35 +25,35 @@ namespace Amazon.BedrockAgentCoreControl
 {
 
     /// <summary>
-    /// Constants used for properties of type AgentEndpointStatus.
+    /// Constants used for properties of type AgentRuntimeEndpointStatus.
     /// </summary>
-    public class AgentEndpointStatus : ConstantClass
+    public class AgentRuntimeEndpointStatus : ConstantClass
     {
 
         /// <summary>
-        /// Constant CREATE_FAILED for AgentEndpointStatus
+        /// Constant CREATE_FAILED for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus CREATE_FAILED = new AgentEndpointStatus("CREATE_FAILED");
+        public static readonly AgentRuntimeEndpointStatus CREATE_FAILED = new AgentRuntimeEndpointStatus("CREATE_FAILED");
         /// <summary>
-        /// Constant CREATING for AgentEndpointStatus
+        /// Constant CREATING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus CREATING = new AgentEndpointStatus("CREATING");
+        public static readonly AgentRuntimeEndpointStatus CREATING = new AgentRuntimeEndpointStatus("CREATING");
         /// <summary>
-        /// Constant DELETING for AgentEndpointStatus
+        /// Constant DELETING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus DELETING = new AgentEndpointStatus("DELETING");
+        public static readonly AgentRuntimeEndpointStatus DELETING = new AgentRuntimeEndpointStatus("DELETING");
         /// <summary>
-        /// Constant READY for AgentEndpointStatus
+        /// Constant READY for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus READY = new AgentEndpointStatus("READY");
+        public static readonly AgentRuntimeEndpointStatus READY = new AgentRuntimeEndpointStatus("READY");
         /// <summary>
-        /// Constant UPDATE_FAILED for AgentEndpointStatus
+        /// Constant UPDATE_FAILED for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus UPDATE_FAILED = new AgentEndpointStatus("UPDATE_FAILED");
+        public static readonly AgentRuntimeEndpointStatus UPDATE_FAILED = new AgentRuntimeEndpointStatus("UPDATE_FAILED");
         /// <summary>
-        /// Constant UPDATING for AgentEndpointStatus
+        /// Constant UPDATING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentEndpointStatus UPDATING = new AgentEndpointStatus("UPDATING");
+        public static readonly AgentRuntimeEndpointStatus UPDATING = new AgentRuntimeEndpointStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public AgentEndpointStatus(string value)
+        public AgentRuntimeEndpointStatus(string value)
             : base(value)
         {
         }
@@ -73,9 +73,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static AgentEndpointStatus FindValue(string value)
+        public static AgentRuntimeEndpointStatus FindValue(string value)
         {
-            return FindValue<AgentEndpointStatus>(value);
+            return FindValue<AgentRuntimeEndpointStatus>(value);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator AgentEndpointStatus(string value)
+        public static implicit operator AgentRuntimeEndpointStatus(string value)
         {
             return FindValue(value);
         }
@@ -91,35 +91,35 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
-    /// Constants used for properties of type AgentStatus.
+    /// Constants used for properties of type AgentRuntimeStatus.
     /// </summary>
-    public class AgentStatus : ConstantClass
+    public class AgentRuntimeStatus : ConstantClass
     {
 
         /// <summary>
-        /// Constant CREATE_FAILED for AgentStatus
+        /// Constant CREATE_FAILED for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus CREATE_FAILED = new AgentStatus("CREATE_FAILED");
+        public static readonly AgentRuntimeStatus CREATE_FAILED = new AgentRuntimeStatus("CREATE_FAILED");
         /// <summary>
-        /// Constant CREATING for AgentStatus
+        /// Constant CREATING for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus CREATING = new AgentStatus("CREATING");
+        public static readonly AgentRuntimeStatus CREATING = new AgentRuntimeStatus("CREATING");
         /// <summary>
-        /// Constant DELETING for AgentStatus
+        /// Constant DELETING for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus DELETING = new AgentStatus("DELETING");
+        public static readonly AgentRuntimeStatus DELETING = new AgentRuntimeStatus("DELETING");
         /// <summary>
-        /// Constant READY for AgentStatus
+        /// Constant READY for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus READY = new AgentStatus("READY");
+        public static readonly AgentRuntimeStatus READY = new AgentRuntimeStatus("READY");
         /// <summary>
-        /// Constant UPDATE_FAILED for AgentStatus
+        /// Constant UPDATE_FAILED for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus UPDATE_FAILED = new AgentStatus("UPDATE_FAILED");
+        public static readonly AgentRuntimeStatus UPDATE_FAILED = new AgentRuntimeStatus("UPDATE_FAILED");
         /// <summary>
-        /// Constant UPDATING for AgentStatus
+        /// Constant UPDATING for AgentRuntimeStatus
         /// </summary>
-        public static readonly AgentStatus UPDATING = new AgentStatus("UPDATING");
+        public static readonly AgentRuntimeStatus UPDATING = new AgentRuntimeStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -129,7 +129,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public AgentStatus(string value)
+        public AgentRuntimeStatus(string value)
             : base(value)
         {
         }
@@ -139,9 +139,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static AgentStatus FindValue(string value)
+        public static AgentRuntimeStatus FindValue(string value)
         {
-            return FindValue<AgentStatus>(value);
+            return FindValue<AgentRuntimeStatus>(value);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator AgentStatus(string value)
+        public static implicit operator AgentRuntimeStatus(string value)
         {
             return FindValue(value);
         }
@@ -262,6 +262,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PUBLIC for BrowserNetworkMode
         /// </summary>
         public static readonly BrowserNetworkMode PUBLIC = new BrowserNetworkMode("PUBLIC");
+        /// <summary>
+        /// Constant VPC for BrowserNetworkMode
+        /// </summary>
+        public static readonly BrowserNetworkMode VPC = new BrowserNetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -378,6 +382,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SANDBOX for CodeInterpreterNetworkMode
         /// </summary>
         public static readonly CodeInterpreterNetworkMode SANDBOX = new CodeInterpreterNetworkMode("SANDBOX");
+        /// <summary>
+        /// Constant VPC for CodeInterpreterNetworkMode
+        /// </summary>
+        public static readonly CodeInterpreterNetworkMode VPC = new CodeInterpreterNetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -992,6 +1000,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PUBLIC for NetworkMode
         /// </summary>
         public static readonly NetworkMode PUBLIC = new NetworkMode("PUBLIC");
+        /// <summary>
+        /// Constant VPC for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode VPC = new NetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

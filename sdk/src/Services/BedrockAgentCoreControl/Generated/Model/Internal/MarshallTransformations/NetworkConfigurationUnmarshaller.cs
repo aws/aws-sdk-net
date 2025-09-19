@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkModeConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.NetworkModeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

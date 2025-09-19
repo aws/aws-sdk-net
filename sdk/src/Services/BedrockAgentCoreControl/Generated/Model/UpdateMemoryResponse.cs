@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The updated memory details.
+        /// The updated AgentCore Memory resource details.
         /// </para>
         /// </summary>
         public Memory Memory

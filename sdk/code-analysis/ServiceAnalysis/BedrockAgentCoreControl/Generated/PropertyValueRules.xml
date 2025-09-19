@@ -823,6 +823,12 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:(?:[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:([a-z-]+/[^/]+)(?:/[a-z-]+/[^/]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ListWorkloadIdentitiesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -838,6 +844,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:(?:[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:([a-z-]+/[^/]+)(?:/[a-z-]+/[^/]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:(?:[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:([a-z-]+/[^/]+)(?:/[a-z-]+/[^/]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdateAgentRuntimeRequest.AgentRuntimeId</property>
@@ -1091,57 +1109,57 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.Agent.AgentRuntimeArn</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntime.AgentRuntimeArn</property>
     <pattern>arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:agent/[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}:([0-9]{0,4}[1-9][0-9]{0,4})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.Agent.AgentRuntimeId</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntime.AgentRuntimeId</property>
     <pattern>[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.Agent.AgentRuntimeName</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntime.AgentRuntimeName</property>
     <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.Agent.AgentRuntimeVersion</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntime.AgentRuntimeVersion</property>
     <min>1</min>
     <max>5</max>
     <pattern>([1-9][0-9]{0,4})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.Agent.Description</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntime.Description</property>
     <min>1</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.AgentRuntimeArn</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.AgentRuntimeArn</property>
     <pattern>arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:agent/[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}:([0-9]{0,4}[1-9][0-9]{0,4})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.AgentRuntimeEndpointArn</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.AgentRuntimeEndpointArn</property>
     <pattern>arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:agentEndpoint/[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.Description</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.Description</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.Id</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.Id</property>
     <pattern>[a-zA-Z][a-zA-Z0-9_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.LiveVersion</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.LiveVersion</property>
     <min>1</min>
     <max>5</max>
     <pattern>([1-9][0-9]{0,4})</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.Name</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.Name</property>
     <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgentCoreControl.Model.AgentEndpoint.TargetVersion</property>
+    <property>Amazon.BedrockAgentCoreControl.Model.AgentRuntimeEndpoint.TargetVersion</property>
     <min>1</min>
     <max>5</max>
     <pattern>([1-9][0-9]{0,4})</pattern>
@@ -1208,7 +1226,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.ContainerConfiguration.ContainerUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>\d{12}\.dkr\.ecr\.([a-z0-9-]+)\.amazonaws\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)([:@]\S+)</pattern>
+    <pattern>([0-9]{12})\.dkr\.ecr\.([a-z0-9-]+)\.amazonaws\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CustomJWTAuthorizerConfiguration.DiscoveryUrl</property>

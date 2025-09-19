@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class ListAgentRuntimeEndpointsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<AgentEndpoint> _runtimeEndpoints = AWSConfigs.InitializeCollections ? new List<AgentEndpoint>() : null;
+        private List<AgentRuntimeEndpoint> _runtimeEndpoints = AWSConfigs.InitializeCollections ? new List<AgentRuntimeEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -59,11 +59,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RuntimeEndpoints. 
         /// <para>
-        /// The list of agent runtime endpoints.
+        /// The list of AgentCore Runtime endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<AgentEndpoint> RuntimeEndpoints
+        public List<AgentRuntimeEndpoint> RuntimeEndpoints
         {
             get { return this._runtimeEndpoints; }
             set { this._runtimeEndpoints = value; }

@@ -31,11 +31,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentRuntime operation.
-    /// Creates an Amazon Secure Agent.
+    /// Creates an Amazon Bedrock AgentCore Runtime.
     /// </summary>
     public partial class CreateAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
-        private AgentArtifact _agentRuntimeArtifact;
+        private AgentRuntimeArtifact _agentRuntimeArtifact;
         private string _agentRuntimeName;
         private AuthorizerConfiguration _authorizerConfiguration;
         private string _clientToken;
@@ -43,16 +43,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
+        private RequestHeaderConfiguration _requestHeaderConfiguration;
         private string _roleArn;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArtifact. 
         /// <para>
-        /// The artifact of the agent.
+        /// The artifact of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentArtifact AgentRuntimeArtifact
+        public AgentRuntimeArtifact AgentRuntimeArtifact
         {
             get { return this._agentRuntimeArtifact; }
             set { this._agentRuntimeArtifact = value; }
@@ -67,7 +69,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeName. 
         /// <para>
-        /// The name of the secure agent.
+        /// The name of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +88,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the agent runtime.
+        /// The authorizer configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -123,7 +125,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the agent runtime.
+        /// The description of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -142,7 +144,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// Environment variables to set in the agent runtime environment.
+        /// Environment variables to set in the AgentCore Runtime environment.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=50)]
@@ -161,7 +163,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The network configuration for the agent runtime.
+        /// The network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,9 +195,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestHeaderConfiguration. 
+        /// <para>
+        /// Configuration for HTTP request headers that will be passed through to the runtime.
+        /// </para>
+        /// </summary>
+        public RequestHeaderConfiguration RequestHeaderConfiguration
+        {
+            get { return this._requestHeaderConfiguration; }
+            set { this._requestHeaderConfiguration = value; }
+        }
+
+        // Check to see if RequestHeaderConfiguration property is set
+        internal bool IsSetRequestHeaderConfiguration()
+        {
+            return this._requestHeaderConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN that provides permissions for the agent runtime.
+        /// The IAM role ARN that provides permissions for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -209,6 +229,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize
+        /// your resources in different ways, for example, by purpose, owner, or environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
