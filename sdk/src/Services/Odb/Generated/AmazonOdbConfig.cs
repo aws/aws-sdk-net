@@ -32,7 +32,7 @@ namespace Amazon.Odb
     public partial class AmazonOdbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("odb", "3.7.500.20");
+            InternalSDKUtils.BuildUserAgentString("odb", "3.7.500.21");
 
         private string _userAgent = UserAgentString;
         ///<summary>
