@@ -34,6 +34,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Enumerable containing all of the RuntimeEndpoints
         /// </summary>
-        IPaginatedEnumerable<AgentEndpoint> RuntimeEndpoints { get; }
+        IPaginatedEnumerable<AgentRuntimeEndpoint> RuntimeEndpoints { get; }
     }
 }

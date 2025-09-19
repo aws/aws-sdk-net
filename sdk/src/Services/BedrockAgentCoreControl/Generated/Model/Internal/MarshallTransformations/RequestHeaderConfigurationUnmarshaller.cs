@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentArtifact Object
+    /// Response Unmarshaller for RequestHeaderConfiguration Object
     /// </summary>  
-    public class AgentArtifactUnmarshaller : IJsonUnmarshaller<AgentArtifact, JsonUnmarshallerContext>
+    public class RequestHeaderConfigurationUnmarshaller : IJsonUnmarshaller<RequestHeaderConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentArtifact Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RequestHeaderConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AgentArtifact unmarshalledObject = new AgentArtifact();
+            RequestHeaderConfiguration unmarshalledObject = new RequestHeaderConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containerConfiguration", targetDepth))
+                if (context.TestExpression("requestHeaderAllowlist", targetDepth))
                 {
-                    var unmarshaller = ContainerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequestHeaderAllowlist = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +67,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentArtifactUnmarshaller _instance = new AgentArtifactUnmarshaller();        
+        private static RequestHeaderConfigurationUnmarshaller _instance = new RequestHeaderConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentArtifactUnmarshaller Instance
+        public static RequestHeaderConfigurationUnmarshaller Instance
         {
             get
             {

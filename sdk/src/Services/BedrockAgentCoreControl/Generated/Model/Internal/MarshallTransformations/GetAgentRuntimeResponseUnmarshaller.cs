@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("agentRuntimeArtifact", targetDepth))
                 {
-                    var unmarshaller = AgentArtifactUnmarshaller.Instance;
+                    var unmarshaller = AgentRuntimeArtifactUnmarshaller.Instance;
                     response.AgentRuntimeArtifact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
@@ -122,6 +122,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProtocolConfigurationUnmarshaller.Instance;
                     response.ProtocolConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("requestHeaderConfiguration", targetDepth))
+                {
+                    var unmarshaller = RequestHeaderConfigurationUnmarshaller.Instance;
+                    response.RequestHeaderConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

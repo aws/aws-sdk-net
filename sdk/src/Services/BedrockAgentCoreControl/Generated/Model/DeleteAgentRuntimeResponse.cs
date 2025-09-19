@@ -34,16 +34,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class DeleteAgentRuntimeResponse : AmazonWebServiceResponse
     {
-        private AgentStatus _status;
+        private AgentRuntimeStatus _status;
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime deletion.
+        /// The current status of the AgentCore Runtime deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentStatus Status
+        public AgentRuntimeStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

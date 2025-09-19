@@ -33,7 +33,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Contains information about an agent runtime endpoint. An endpoint provides a way to
     /// connect to and interact with an agent runtime.
     /// </summary>
-    public partial class AgentEndpoint
+    public partial class AgentRuntimeEndpoint
     {
         private string _agentRuntimeArn;
         private string _agentRuntimeEndpointArn;
@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _lastUpdatedAt;
         private string _liveVersion;
         private string _name;
-        private AgentEndpointStatus _status;
+        private AgentRuntimeEndpointStatus _status;
         private string _targetVersion;
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentEndpointStatus Status
+        public AgentRuntimeEndpointStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

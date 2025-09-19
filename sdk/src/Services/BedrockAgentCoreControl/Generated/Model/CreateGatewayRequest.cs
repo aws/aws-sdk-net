@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the Gateway.
+        /// The authorizer configuration for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,9 +94,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier to ensure that the operation completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request but does not return an error.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, the service ignores the request,
+        /// but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -134,10 +135,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
-        /// The verbosity of exception messages. Use DEBUG mode to see granular exception messages
-        /// from a Gateway. If this parameter is not set, exception messages are by default sanitized
-        /// for presentation to end users.
+        /// The level of detail in error messages returned when invoking the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>DEBUG</c>, granular exception messages are returned to help a user
+        /// debug the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is omitted, a generic error message is returned to the end user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExceptionLevel ExceptionLevel
         {
@@ -193,7 +202,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProtocolConfiguration. 
         /// <para>
-        /// The configuration settings for the protocol specified in the protocolType parameter.
+        /// The configuration settings for the protocol specified in the <c>protocolType</c> parameter.
         /// </para>
         /// </summary>
         public GatewayProtocolConfiguration ProtocolConfiguration
@@ -211,7 +220,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The protocol type for the gateway. Currently supports MCP (Model Context Protocol).
+        /// The protocol type for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

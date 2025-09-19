@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The artifact of the agent.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags associated with the specified resource.
     /// </summary>
-    public partial class AgentArtifact
+    public partial class ListTagsForResourceRequest : AmazonBedrockAgentCoreControlRequest
     {
-        private ContainerConfiguration _containerConfiguration;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ContainerConfiguration. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The container configuration for the agent artifact.
+        /// The Amazon Resource Name (ARN) of the resource for which you want to list tags.
         /// </para>
         /// </summary>
-        public ContainerConfiguration ContainerConfiguration
+        [AWSProperty(Required=true, Min=20, Max=1011)]
+        public string ResourceArn
         {
-            get { return this._containerConfiguration; }
-            set { this._containerConfiguration = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ContainerConfiguration property is set
-        internal bool IsSetContainerConfiguration()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._containerConfiguration != null;
+            return this._resourceArn != null;
         }
 
     }

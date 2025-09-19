@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _createdAt;
         private string _description;
         private string _executionRoleArn;
+        private string _failureReason;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private BrowserNetworkConfiguration _networkConfiguration;
@@ -138,6 +139,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for failure if the browser is in a failed state.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>

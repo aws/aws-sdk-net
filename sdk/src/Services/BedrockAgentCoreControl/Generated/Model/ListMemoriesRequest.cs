@@ -31,7 +31,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemories operation.
-    /// Lists the memory present.
+    /// Lists the available Amazon Bedrock AgentCore Memory resources in the current Amazon
+    /// Web Services Region.
     /// </summary>
     public partial class ListMemoriesRequest : AmazonBedrockAgentCoreControlRequest
     {

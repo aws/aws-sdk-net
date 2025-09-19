@@ -35,7 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class UpdateAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
-        private AgentArtifact _agentRuntimeArtifact;
+        private AgentRuntimeArtifact _agentRuntimeArtifact;
         private string _agentRuntimeId;
         private AuthorizerConfiguration _authorizerConfiguration;
         private string _clientToken;
@@ -43,16 +43,17 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
+        private RequestHeaderConfiguration _requestHeaderConfiguration;
         private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArtifact. 
         /// <para>
-        /// The updated artifact of the agent runtime.
+        /// The updated artifact of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentArtifact AgentRuntimeArtifact
+        public AgentRuntimeArtifact AgentRuntimeArtifact
         {
             get { return this._agentRuntimeArtifact; }
             set { this._agentRuntimeArtifact = value; }
@@ -67,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeId. 
         /// <para>
-        /// The unique identifier of the agent runtime to update.
+        /// The unique identifier of the AgentCore Runtime to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +87,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The updated authorizer configuration for the agent runtime.
+        /// The updated authorizer configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -123,7 +124,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the agent runtime.
+        /// The updated description of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -142,7 +143,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// Updated environment variables to set in the agent runtime environment.
+        /// Updated environment variables to set in the AgentCore Runtime environment.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -166,7 +167,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The updated network configuration for the agent runtime.
+        /// The updated network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,9 +199,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestHeaderConfiguration. 
+        /// <para>
+        /// The updated configuration for HTTP request headers that will be passed through to
+        /// the runtime.
+        /// </para>
+        /// </summary>
+        public RequestHeaderConfiguration RequestHeaderConfiguration
+        {
+            get { return this._requestHeaderConfiguration; }
+            set { this._requestHeaderConfiguration = value; }
+        }
+
+        // Check to see if RequestHeaderConfiguration property is set
+        internal bool IsSetRequestHeaderConfiguration()
+        {
+            return this._requestHeaderConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The updated IAM role ARN that provides permissions for the agent runtime.
+        /// The updated IAM role ARN that provides permissions for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

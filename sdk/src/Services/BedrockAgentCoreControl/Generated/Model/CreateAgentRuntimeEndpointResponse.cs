@@ -37,13 +37,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _agentRuntimeArn;
         private string _agentRuntimeEndpointArn;
         private DateTime? _createdAt;
-        private AgentEndpointStatus _status;
+        private AgentRuntimeEndpointStatus _status;
         private string _targetVersion;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeEndpointArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent runtime endpoint.
+        /// The Amazon Resource Name (ARN) of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the agent runtime endpoint was created.
+        /// The timestamp when the AgentCore Runtime endpoint was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,11 +100,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the agent runtime endpoint.
+        /// The current status of the AgentCore Runtime endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentEndpointStatus Status
+        public AgentRuntimeEndpointStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -119,7 +119,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetVersion. 
         /// <para>
-        /// The target version of the agent runtime for the endpoint.
+        /// The target version of the AgentCore Runtime for the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
