@@ -37,6 +37,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _failureMessage;
         private IdentityProvider _identityProvider;
         private string _identityProviderArn;
+        private string _ownerAccountId;
         private string _product;
         private Settings _settings;
         private string _status;
@@ -94,6 +95,24 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetIdentityProviderArn()
         {
             return this._identityProviderArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The AWS Account ID of the owner of this resource.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

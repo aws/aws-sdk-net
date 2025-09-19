@@ -84,6 +84,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsSharedActiveDirectory", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSharedActiveDirectory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

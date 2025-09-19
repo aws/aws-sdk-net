@@ -2,27 +2,27 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.CreateLicenseServerEndpointRequest.IdentityProviderArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.CreateLicenseServerEndpointResponse.IdentityProviderArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.CreateLicenseServerEndpointResponse.LicenseServerEndpointArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.DeleteLicenseServerEndpointRequest.LicenseServerEndpointArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.DeregisterIdentityProviderRequest.IdentityProviderArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.DisassociateUserRequest.InstanceUserArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.ListLicenseServerEndpointsRequest.MaxResults</property>
@@ -31,43 +31,43 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})$</pattern>
+    <pattern>arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.StopProductSubscriptionRequest.ProductUserArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})$</pattern>
+    <pattern>arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})$</pattern>
+    <pattern>arn:([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,63}):([a-z0-9-\.]{1,510})/([a-z0-9-\.]{1,510})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.UpdateIdentityProviderSettingsRequest.IdentityProviderArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.ActiveDirectoryIdentityProvider.DirectoryId</property>
-    <pattern>^(d|sd)-[0-9a-f]{10}$</pattern>
+    <pattern>(d|sd)-[0-9a-f]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.IdentityProviderSummary.IdentityProviderArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.InstanceUserSummary.InstanceUserArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.LicenseServerEndpoint.LicenseServerEndpointArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.ProductUserSummary.ProductUserArn</property>
-    <pattern>^arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}$</pattern>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{1,63}:[a-zA-Z0-9-\.]{1,510}/[a-zA-Z0-9-\.]{1,510}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.SecretsManagerCredentialsProvider.SecretId</property>
@@ -77,12 +77,12 @@
     <property>Amazon.LicenseManagerUserSubscriptions.Model.Settings.SecurityGroupId</property>
     <min>5</min>
     <max>200</max>
-    <pattern>^sg-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+    <pattern>sg-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManagerUserSubscriptions.Model.UpdateSettings.SecurityGroupId</property>
     <min>5</min>
     <max>200</max>
-    <pattern>^sg-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
+    <pattern>sg-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
 </property-value-rules>

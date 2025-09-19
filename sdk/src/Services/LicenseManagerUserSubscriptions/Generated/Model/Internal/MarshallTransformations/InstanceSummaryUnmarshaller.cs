@@ -66,6 +66,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("IdentityProvider", targetDepth))
+                {
+                    var unmarshaller = IdentityProviderUnmarshaller.Instance;
+                    unmarshalledObject.IdentityProvider = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastStatusCheckDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Products", targetDepth))

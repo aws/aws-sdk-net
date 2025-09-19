@@ -37,6 +37,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private ActiveDirectorySettings _activeDirectorySettings;
         private ActiveDirectoryType _activeDirectoryType;
         private string _directoryId;
+        private bool? _isSharedActiveDirectory;
 
         /// <summary>
         /// Gets and sets the property ActiveDirectorySettings. 
@@ -93,6 +94,25 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSharedActiveDirectory. 
+        /// <para>
+        /// Whether this directory is shared from an Amazon Web Services Managed Active Directory.
+        /// The default value is false.
+        /// </para>
+        /// </summary>
+        public bool IsSharedActiveDirectory
+        {
+            get { return this._isSharedActiveDirectory.GetValueOrDefault(); }
+            set { this._isSharedActiveDirectory = value; }
+        }
+
+        // Check to see if IsSharedActiveDirectory property is set
+        internal bool IsSetIsSharedActiveDirectory()
+        {
+            return this._isSharedActiveDirectory.HasValue; 
         }
 
     }
