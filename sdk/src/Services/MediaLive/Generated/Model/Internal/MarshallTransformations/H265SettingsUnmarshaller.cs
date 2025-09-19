@@ -144,10 +144,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gopBReference", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GopBReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gopClosedCadence", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("gopNumBFrames", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GopNumBFrames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gopSize", targetDepth))
@@ -178,6 +190,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MaxBitrate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("minBitrate", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minIInterval", targetDepth))
@@ -250,6 +268,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Slices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subgopLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubgopLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tier", targetDepth))

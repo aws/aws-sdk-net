@@ -47,12 +47,15 @@ namespace Amazon.MediaLive.Model
         private H265FlickerAq _flickerAq;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
+        private H265GopBReference _gopBReference;
         private int? _gopClosedCadence;
+        private int? _gopNumBFrames;
         private double? _gopSize;
         private H265GopSizeUnits _gopSizeUnits;
         private H265Level _level;
         private H265LookAheadRateControl _lookAheadRateControl;
         private int? _maxBitrate;
+        private int? _minBitrate;
         private int? _minIInterval;
         private int? _minQp;
         private H265MvOverPictureBoundaries _mvOverPictureBoundaries;
@@ -65,6 +68,7 @@ namespace Amazon.MediaLive.Model
         private H265ScanType _scanType;
         private H265SceneChangeDetect _sceneChangeDetect;
         private int? _slices;
+        private H265SubGopLength _subgopLength;
         private H265Tier _tier;
         private int? _tileHeight;
         private H265TilePadding _tilePadding;
@@ -303,6 +307,24 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GopBReference. Allows the encoder to use a B-Frame as a
+        /// reference frame as well.ENABLED: B-frames will also serve as reference frames.DISABLED:
+        /// B-frames won't be reference frames.Must be DISABLED if resolution is greater than
+        /// 1080p or when using tiled hevc encoding.
+        /// </summary>
+        public H265GopBReference GopBReference
+        {
+            get { return this._gopBReference; }
+            set { this._gopBReference = value; }
+        }
+
+        // Check to see if GopBReference property is set
+        internal bool IsSetGopBReference()
+        {
+            return this._gopBReference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GopClosedCadence. Frequency of closed GOPs. In streaming
         /// applications, it is recommended that this be set to 1 so a decoder joining mid-stream
         /// will receive an IDR frame as quickly as possible. Setting this value to 0 will break
@@ -319,6 +341,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetGopClosedCadence()
         {
             return this._gopClosedCadence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GopNumBFrames. Sets the number of B-frames between reference
+        /// frames.Set to 2 if resolution is greater than 1080p or when using tiled hevc encoding.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public int GopNumBFrames
+        {
+            get { return this._gopNumBFrames.GetValueOrDefault(); }
+            set { this._gopNumBFrames = value; }
+        }
+
+        // Check to see if GopNumBFrames property is set
+        internal bool IsSetGopNumBFrames()
+        {
+            return this._gopNumBFrames.HasValue; 
         }
 
         /// <summary>
@@ -402,6 +441,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMaxBitrate()
         {
             return this._maxBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinBitrate. Used for QVBR rate control mode only.Optional.Enter
+        /// a minimum bitrate if you want to keep the output bitrate about a threshold, in order
+        /// to prevent the downstream system from de-allocating network bandwidth for this output.
+        /// </summary>
+        [AWSProperty(Min=0, Max=40000000)]
+        public int MinBitrate
+        {
+            get { return this._minBitrate.GetValueOrDefault(); }
+            set { this._minBitrate = value; }
+        }
+
+        // Check to see if MinBitrate property is set
+        internal bool IsSetMinBitrate()
+        {
+            return this._minBitrate.HasValue; 
         }
 
         /// <summary>
@@ -617,6 +674,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSlices()
         {
             return this._slices.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubgopLength. Sets the number of B-frames in each sub-GOP.FIXED:
+        /// Use the value in Num B-frames.DYNAMIC: Optimizes the number of B-frames in each sub-GOP
+        /// to improve visual quality.Must be FIXED if resolution is greater than 1080p or when
+        /// using tiled hevc encoding.
+        /// </summary>
+        public H265SubGopLength SubgopLength
+        {
+            get { return this._subgopLength; }
+            set { this._subgopLength = value; }
+        }
+
+        // Check to see if SubgopLength property is set
+        internal bool IsSetSubgopLength()
+        {
+            return this._subgopLength != null;
         }
 
         /// <summary>

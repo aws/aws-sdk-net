@@ -46,6 +46,7 @@ namespace Amazon.MediaLive.Model
         private Av1Level _level;
         private Av1LookAheadRateControl _lookAheadRateControl;
         private int? _maxBitrate;
+        private int? _minBitrate;
         private int? _minIInterval;
         private int? _parDenominator;
         private int? _parNumerator;
@@ -252,6 +253,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMaxBitrate()
         {
             return this._maxBitrate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinBitrate. Used for QVBR rate control mode only.Optional.Enter
+        /// a minimum bitrate if you want to keep the output bitrate about a threshold, in order
+        /// to prevent the downstream system from de-allocating network bandwidth for this output.
+        /// </summary>
+        [AWSProperty(Min=0, Max=8000000)]
+        public int MinBitrate
+        {
+            get { return this._minBitrate.GetValueOrDefault(); }
+            set { this._minBitrate = value; }
+        }
+
+        // Check to see if MinBitrate property is set
+        internal bool IsSetMinBitrate()
+        {
+            return this._minBitrate.HasValue; 
         }
 
         /// <summary>

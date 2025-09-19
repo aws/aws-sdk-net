@@ -138,6 +138,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minBitrate", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinBitrate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("minIInterval", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

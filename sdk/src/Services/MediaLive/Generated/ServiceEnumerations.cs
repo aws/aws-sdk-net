@@ -7819,6 +7819,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type H265GopBReference.
+    /// </summary>
+    public class H265GopBReference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265GopBReference
+        /// </summary>
+        public static readonly H265GopBReference DISABLED = new H265GopBReference("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265GopBReference
+        /// </summary>
+        public static readonly H265GopBReference ENABLED = new H265GopBReference("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265GopBReference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265GopBReference FindValue(string value)
+        {
+            return FindValue<H265GopBReference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265GopBReference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265GopSizeUnits.
     /// </summary>
     public class H265GopSizeUnits : ConstantClass
@@ -8318,6 +8368,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265SceneChangeDetect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265SubGopLength.
+    /// </summary>
+    public class H265SubGopLength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for H265SubGopLength
+        /// </summary>
+        public static readonly H265SubGopLength DYNAMIC = new H265SubGopLength("DYNAMIC");
+        /// <summary>
+        /// Constant FIXED for H265SubGopLength
+        /// </summary>
+        public static readonly H265SubGopLength FIXED = new H265SubGopLength("FIXED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265SubGopLength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265SubGopLength FindValue(string value)
+        {
+            return FindValue<H265SubGopLength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265SubGopLength(string value)
         {
             return FindValue(value);
         }
