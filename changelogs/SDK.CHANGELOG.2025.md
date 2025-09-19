@@ -1,3 +1,19 @@
+### 4.0.95.0 (2025-09-19 18:45 UTC)
+* BedrockAgentCoreControl (4.0.2.0)
+	* Add tagging and VPC support to AgentCore Runtime, Code Interpreter, and Browser resources. Add support for configuring request headers in Runtime. Fix AgentCore Runtime shape names.
+* ConfigService (4.0.3.0)
+	* Add UNKNOWN state to RemediationExecutionState and add IN_PROGRESS/EXITED/UNKNOWN states to RemediationExecutionStepState.
+* Connect (4.0.11.0)
+	* This release adds a persistent connection field to UserPhoneConfig that maintains agent's softphone media connection for faster call connections.
+* KendraRanking (4.0.0.23)
+	* Model whitespace change - no client difference
+* LicenseManagerUserSubscriptions (4.0.2.0)
+	* Added support for cross-account Active Directories.
+* MediaLive (4.0.6.0)
+	* Add MinBitrate for QVBR mode under H264/H265/AV1 output codec. Add GopBReference, GopNumBFrames, SubGopLength fields under H265 output codec.
+* SQS (4.0.1.4)
+	* Update invalid character handling documentation for SQS SendMessage API
+
 ### 4.0.94.0 (2025-09-18 18:27 UTC)
 * Bedrock (4.0.11.0)
 	* Release includes an increase to the maximum policy build document size, an update to DeleteAutomatedReasoningPolicyBuildWorkflow to add ResourceInUseException, and corrections to UpdateAutomatedReasoningPolicyTestCaseRequest.
