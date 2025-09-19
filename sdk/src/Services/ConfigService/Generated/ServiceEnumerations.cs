@@ -1638,6 +1638,10 @@ namespace Amazon.ConfigService
         /// Constant SUCCEEDED for RemediationExecutionState
         /// </summary>
         public static readonly RemediationExecutionState SUCCEEDED = new RemediationExecutionState("SUCCEEDED");
+        /// <summary>
+        /// Constant UNKNOWN for RemediationExecutionState
+        /// </summary>
+        public static readonly RemediationExecutionState UNKNOWN = new RemediationExecutionState("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1681,9 +1685,17 @@ namespace Amazon.ConfigService
     {
 
         /// <summary>
+        /// Constant EXITED for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState EXITED = new RemediationExecutionStepState("EXITED");
+        /// <summary>
         /// Constant FAILED for RemediationExecutionStepState
         /// </summary>
         public static readonly RemediationExecutionStepState FAILED = new RemediationExecutionStepState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState IN_PROGRESS = new RemediationExecutionStepState("IN_PROGRESS");
         /// <summary>
         /// Constant PENDING for RemediationExecutionStepState
         /// </summary>
@@ -1692,6 +1704,10 @@ namespace Amazon.ConfigService
         /// Constant SUCCEEDED for RemediationExecutionStepState
         /// </summary>
         public static readonly RemediationExecutionStepState SUCCEEDED = new RemediationExecutionStepState("SUCCEEDED");
+        /// <summary>
+        /// Constant UNKNOWN for RemediationExecutionStepState
+        /// </summary>
+        public static readonly RemediationExecutionStepState UNKNOWN = new RemediationExecutionStepState("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
