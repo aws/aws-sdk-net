@@ -428,16 +428,15 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         foreach (ChatMessage chatMessage in chatMessages)
         {
-            if (chatMessage.Role == ChatRole.System)
+            if (chatMessage.Role != ChatRole.System &&
+                CreateContents(chatMessage) is { Count: > 0 } contents)
             {
-                continue;
+                messages.Add(new()
+                {
+                    Role = chatMessage.Role == ChatRole.Assistant ? ConversationRole.Assistant : ConversationRole.User,
+                    Content = contents,
+                });
             }
-
-            messages.Add(new()
-            {
-                Role = chatMessage.Role == ChatRole.Assistant ? ConversationRole.Assistant : ConversationRole.User,
-                Content = CreateContents(chatMessage),
-            });
         }
 
         return messages;
@@ -453,7 +452,18 @@ internal sealed partial class BedrockChatClient : IChatClient
             switch (content)
             {
                 case TextContent tc:
-                    contents.Add(new() { Text = tc.Text });
+                    if (message.Role == ChatRole.Assistant)
+                    {
+                        string text = tc.Text.TrimEnd();
+                        if (text.Length != 0)
+                        {
+                            contents.Add(new() { Text = text });
+                        }
+                    }
+                    else
+                    {
+                        contents.Add(new() { Text = tc.Text });
+                    }
                     break;
 
                 case TextReasoningContent trc:
