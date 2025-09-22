@@ -232,11 +232,16 @@ namespace Amazon.Runtime.Internal.Util
         {
             var trailer = new StringBuilder();
 
-            // End the data chunk
-            trailer.Append(STREAM_NEWLINE);
+            // Avoid adding an empty chunk for an empty stream. Adding the empty chunk for an empty stream will trigger
+            // service error for malformed trailing headers.
+            if (_baseStream.Length > 0)
+            {
+                // End the data chunk
+                trailer.Append(STREAM_NEWLINE);
 
-            // Append a chunk of size 0
-            trailer.Append(EMPTY_CHUNK);
+                // Append a chunk of size 0
+                trailer.Append(EMPTY_CHUNK);
+            }
 
             // Append trailing headers, including special handling for the checksum.
             // The order here must match the order of keys sent already in the X-Amz-Trailer header.
@@ -319,11 +324,16 @@ namespace Amazon.Runtime.Internal.Util
                 }
             }
 
+            var emptyChunkTotalLength = NEWLINE_LENGTH + EMPTY_CHUNK_LENGTH;
+            if (baseStreamLength == 0) // Empty chunk is only added when the baseStream isn't empty
+            {
+                emptyChunkTotalLength = 0;
+            }
+
             return prefixLength +
                    NEWLINE_LENGTH +
                    baseStreamLength +
-                   NEWLINE_LENGTH +
-                   EMPTY_CHUNK_LENGTH +
+                   emptyChunkTotalLength +
                    trailingHeaderLength +
                    NEWLINE_LENGTH;
         }
