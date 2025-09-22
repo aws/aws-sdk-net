@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeRepairConfig Object
+    /// Response Unmarshaller for NodeRepairConfigOverrides Object
     /// </summary>  
-    public class NodeRepairConfigUnmarshaller : IUnmarshaller<NodeRepairConfig, XmlUnmarshallerContext>, IUnmarshaller<NodeRepairConfig, JsonUnmarshallerContext>
+    public class NodeRepairConfigOverridesUnmarshaller : IUnmarshaller<NodeRepairConfigOverrides, XmlUnmarshallerContext>, IUnmarshaller<NodeRepairConfigOverrides, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NodeRepairConfig IUnmarshaller<NodeRepairConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NodeRepairConfigOverrides IUnmarshaller<NodeRepairConfigOverrides, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeRepairConfig Unmarshall(JsonUnmarshallerContext context)
+        public NodeRepairConfigOverrides Unmarshall(JsonUnmarshallerContext context)
         {
-            NodeRepairConfig unmarshalledObject = new NodeRepairConfig();
+            NodeRepairConfigOverrides unmarshalledObject = new NodeRepairConfigOverrides();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,28 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("maxParallelNodesRepairedCount", targetDepth))
+                if (context.TestExpression("minRepairWaitTimeMins", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxParallelNodesRepairedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinRepairWaitTimeMins = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxParallelNodesRepairedPercentage", targetDepth))
+                if (context.TestExpression("nodeMonitoringCondition", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxParallelNodesRepairedPercentage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeMonitoringCondition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxUnhealthyNodeThresholdCount", targetDepth))
+                if (context.TestExpression("nodeUnhealthyReason", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxUnhealthyNodeThresholdCount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeUnhealthyReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxUnhealthyNodeThresholdPercentage", targetDepth))
+                if (context.TestExpression("repairAction", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxUnhealthyNodeThresholdPercentage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodeRepairConfigOverrides", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<NodeRepairConfigOverrides, NodeRepairConfigOverridesUnmarshaller>(NodeRepairConfigOverridesUnmarshaller.Instance);
-                    unmarshalledObject.NodeRepairConfigOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RepairAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static NodeRepairConfigUnmarshaller _instance = new NodeRepairConfigUnmarshaller();        
+        private static NodeRepairConfigOverridesUnmarshaller _instance = new NodeRepairConfigOverridesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeRepairConfigUnmarshaller Instance
+        public static NodeRepairConfigOverridesUnmarshaller Instance
         {
             get
             {

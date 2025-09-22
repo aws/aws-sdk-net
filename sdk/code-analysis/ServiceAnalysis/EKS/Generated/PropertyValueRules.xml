@@ -166,6 +166,28 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxParallelNodesRepairedCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxParallelNodesRepairedPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxUnhealthyNodeThresholdCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxUnhealthyNodeThresholdPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfigOverrides.MinRepairWaitTimeMins</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.Taint.Key</property>
     <min>1</min>
     <max>63</max>

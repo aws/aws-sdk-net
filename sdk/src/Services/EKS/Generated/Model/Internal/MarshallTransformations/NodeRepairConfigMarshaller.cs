@@ -54,6 +54,46 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
+            if(requestObject.IsSetMaxParallelNodesRepairedCount())
+            {
+                context.Writer.WritePropertyName("maxParallelNodesRepairedCount");
+                context.Writer.Write(requestObject.MaxParallelNodesRepairedCount);
+            }
+
+            if(requestObject.IsSetMaxParallelNodesRepairedPercentage())
+            {
+                context.Writer.WritePropertyName("maxParallelNodesRepairedPercentage");
+                context.Writer.Write(requestObject.MaxParallelNodesRepairedPercentage);
+            }
+
+            if(requestObject.IsSetMaxUnhealthyNodeThresholdCount())
+            {
+                context.Writer.WritePropertyName("maxUnhealthyNodeThresholdCount");
+                context.Writer.Write(requestObject.MaxUnhealthyNodeThresholdCount);
+            }
+
+            if(requestObject.IsSetMaxUnhealthyNodeThresholdPercentage())
+            {
+                context.Writer.WritePropertyName("maxUnhealthyNodeThresholdPercentage");
+                context.Writer.Write(requestObject.MaxUnhealthyNodeThresholdPercentage);
+            }
+
+            if(requestObject.IsSetNodeRepairConfigOverrides())
+            {
+                context.Writer.WritePropertyName("nodeRepairConfigOverrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNodeRepairConfigOverridesListValue in requestObject.NodeRepairConfigOverrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeRepairConfigOverridesMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNodeRepairConfigOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
