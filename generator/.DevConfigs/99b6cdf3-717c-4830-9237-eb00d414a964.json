@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Skip adding extra empty chunk for empty streams in TrailingHeadersWrapperStream."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
