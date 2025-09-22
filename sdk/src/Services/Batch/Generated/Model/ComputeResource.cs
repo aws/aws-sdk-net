@@ -638,6 +638,11 @@ namespace Amazon.Batch.Model
         /// the <c>spotIamFleetRole</c> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
         /// EC2 spot fleet role</a> in the <i>Batch User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Multi-node parallel jobs aren't supported on Spot Instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public CRType Type
