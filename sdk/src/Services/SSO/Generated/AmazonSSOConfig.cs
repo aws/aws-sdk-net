@@ -32,7 +32,7 @@ namespace Amazon.SSO
     public partial class AmazonSSOConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO", "3.7.501.10");
+            InternalSDKUtils.BuildUserAgentString("SSO", "3.7.501.11");
 
         private string _userAgent = UserAgentString;
         ///<summary>

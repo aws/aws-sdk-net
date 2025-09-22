@@ -1,3 +1,16 @@
+### 3.7.1128.0 (2025-09-22 18:22 UTC)
+* Batch (3.7.500.25)
+	* Starting in JAN 2026, AWS Batch will change the default AMI for new Amazon ECS compute environments from Amazon Linux 2 to Amazon Linux 2023. We recommend migrating AWS Batch Amazon ECS compute environments to Amazon Linux 2023 to maintain optimal performance and security.
+* EKS (3.7.504.0)
+	* Adds support for RepairConfig overrides and configurations in EKS Managed Node Groups.
+* Imagebuilder (3.7.502.0)
+	* Version ARNs are no longer required for the EC2 Image Builder list-image-build-version, list-component-build-version, and list-workflow-build-version APIs. Calling these APIs without the ARN returns all build versions for the given resource type in the requesting account.
+* S3 (3.7.501.7)
+	* Fixed a bug where PutObject was failing when sending zero-byte InputStream with DisablePayloadSigning set to true.
+* Core 3.7.500.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1127.0 (2025-09-19 18:43 UTC)
 * BedrockAgentCoreControl (3.7.502.0)
 	* Add tagging and VPC support to AgentCore Runtime, Code Interpreter, and Browser resources. Add support for configuring request headers in Runtime. Fix AgentCore Runtime shape names.
