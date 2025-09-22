@@ -333,6 +333,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             VerifyPut(testContent, request);
         }
 
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [DataRow(false, false)]
+        [DataRow(true, false)]
+        [DataRow(false, true)]
+        [DataRow(true, true)]
+        public void PutObjectWithEmptyInputStream(bool disablePayloadSigning, bool disableDefaultChecksumValidation)
+        {
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "inputStreamPut" + random.Next(),
+                InputStream = new MemoryStream(),
+                DisableDefaultChecksumValidation = disableDefaultChecksumValidation,
+                DisablePayloadSigning = disablePayloadSigning,
+            };
+            PutObjectResponse response = Client.PutObject(request);
+
+            Assert.IsTrue(response.ETag.Length > 0);
+        }
+
         [TestMethod]
         [TestCategory("S3")]
         public void PutObject_SigV4()

@@ -1,0 +1,12 @@
+
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed a bug where PutObject was failing when sending zero-byte InputStream with DisablePayloadSigning set to true."
+      ]
+    }
+  ]
+}
