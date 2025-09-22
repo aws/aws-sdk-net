@@ -91,7 +91,6 @@ namespace Amazon.Imagebuilder.Model
         /// The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImageVersionArn
         {
             get { return this._imageVersionArn; }

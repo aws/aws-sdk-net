@@ -85,7 +85,6 @@ namespace Amazon.Imagebuilder.Model
         /// build versions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string WorkflowVersionArn
         {
             get { return this._workflowVersionArn; }

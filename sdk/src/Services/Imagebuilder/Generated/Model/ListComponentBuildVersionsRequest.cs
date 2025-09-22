@@ -46,7 +46,6 @@ namespace Amazon.Imagebuilder.Model
         /// The component version Amazon Resource Name (ARN) whose versions you want to list.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ComponentVersionArn
         {
             get { return this._componentVersionArn; }
