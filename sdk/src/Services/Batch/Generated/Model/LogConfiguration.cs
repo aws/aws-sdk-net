@@ -47,8 +47,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// The supported log drivers are <c>awslogs</c>, <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>,
-        /// <c>journald</c>, <c>logentries</c>, <c>syslog</c>, and <c>splunk</c>.
+        /// The supported log drivers are <c>awsfirelens</c>, <c>awslogs</c>, <c>fluentd</c>,
+        /// <c>gelf</c>, <c>json-file</c>, <c>journald</c>, <c>logentries</c>, <c>syslog</c>,
+        /// and <c>splunk</c>.
         /// </para>
         ///  <note> 
         /// <para>
