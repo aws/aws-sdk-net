@@ -52,6 +52,46 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetMaxParallelNodesRepairedCount())
+            {
+                context.Writer.WritePropertyName("maxParallelNodesRepairedCount");
+                context.Writer.WriteNumberValue(requestObject.MaxParallelNodesRepairedCount.Value);
+            }
+
+            if(requestObject.IsSetMaxParallelNodesRepairedPercentage())
+            {
+                context.Writer.WritePropertyName("maxParallelNodesRepairedPercentage");
+                context.Writer.WriteNumberValue(requestObject.MaxParallelNodesRepairedPercentage.Value);
+            }
+
+            if(requestObject.IsSetMaxUnhealthyNodeThresholdCount())
+            {
+                context.Writer.WritePropertyName("maxUnhealthyNodeThresholdCount");
+                context.Writer.WriteNumberValue(requestObject.MaxUnhealthyNodeThresholdCount.Value);
+            }
+
+            if(requestObject.IsSetMaxUnhealthyNodeThresholdPercentage())
+            {
+                context.Writer.WritePropertyName("maxUnhealthyNodeThresholdPercentage");
+                context.Writer.WriteNumberValue(requestObject.MaxUnhealthyNodeThresholdPercentage.Value);
+            }
+
+            if(requestObject.IsSetNodeRepairConfigOverrides())
+            {
+                context.Writer.WritePropertyName("nodeRepairConfigOverrides");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNodeRepairConfigOverridesListValue in requestObject.NodeRepairConfigOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NodeRepairConfigOverridesMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNodeRepairConfigOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>
