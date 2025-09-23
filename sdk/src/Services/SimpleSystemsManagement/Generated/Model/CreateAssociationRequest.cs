@@ -568,6 +568,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// accounts where you want to run the association. Use this action to create an association
         /// in multiple Regions and multiple accounts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>IncludeChildOrganizationUnits</c> parameter is not supported by State Manager.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public List<TargetLocation> TargetLocations

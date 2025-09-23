@@ -92,6 +92,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnapshotId);
                 }
 
+                if(publicRequest.IsSetUseS3DualStackEndpoint())
+                {
+                    context.Writer.WritePropertyName("UseS3DualStackEndpoint");
+                    context.Writer.Write(publicRequest.UseS3DualStackEndpoint);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

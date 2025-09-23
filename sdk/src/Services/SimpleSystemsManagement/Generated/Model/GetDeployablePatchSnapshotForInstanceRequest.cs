@@ -52,6 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private BaselineOverride _baselineOverride;
         private string _instanceId;
         private string _snapshotId;
+        private bool? _useS3DualStackEndpoint;
 
         /// <summary>
         /// Gets and sets the property BaselineOverride. 
@@ -107,6 +108,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseS3DualStackEndpoint. 
+        /// <para>
+        /// Specifies whether to use S3 dualstack endpoints for the patch snapshot download URL.
+        /// Set to <c>true</c> to receive a presigned URL that supports both IPv4 and IPv6 connectivity.
+        /// Set to <c>false</c> to use standard IPv4-only endpoints. Default is <c>false</c>.
+        /// This parameter is required for managed nodes in IPv6-only environments. 
+        /// </para>
+        /// </summary>
+        public bool UseS3DualStackEndpoint
+        {
+            get { return this._useS3DualStackEndpoint.GetValueOrDefault(); }
+            set { this._useS3DualStackEndpoint = value; }
+        }
+
+        // Check to see if UseS3DualStackEndpoint property is set
+        internal bool IsSetUseS3DualStackEndpoint()
+        {
+            return this._useS3DualStackEndpoint.HasValue; 
         }
 
     }
