@@ -230,10 +230,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The list of scopes for which authorization is requested. The access token that is
-        /// issued is limited to the scopes that are granted. If this value is not specified,
-        /// IAM Identity Center authorizes all scopes that are configured for the client during
-        /// the call to <a>RegisterClient</a>.
+        /// The list of scopes for which authorization is requested. This parameter has no effect;
+        /// the access token will always include all scopes configured during client registration.
         /// </para>
         /// </summary>
         public List<string> Scope

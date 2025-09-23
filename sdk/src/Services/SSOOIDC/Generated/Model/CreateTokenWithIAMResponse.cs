@@ -66,9 +66,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property AwsAdditionalDetails. 
         /// <para>
-        /// A structure containing information from the <c>idToken</c>. Only the <c>identityContext</c>
-        /// is in it, which is a value extracted from the <c>idToken</c>. This provides direct
-        /// access to identity information without requiring JWT parsing.
+        /// A structure containing information from IAM Identity Center managed user and group
+        /// information.
         /// </para>
         /// </summary>
         public AwsAdditionalDetails AwsAdditionalDetails
