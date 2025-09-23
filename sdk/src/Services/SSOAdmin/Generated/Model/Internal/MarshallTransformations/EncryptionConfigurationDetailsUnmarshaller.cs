@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceMetadata Object
+    /// Response Unmarshaller for EncryptionConfigurationDetails Object
     /// </summary>  
-    public class InstanceMetadataUnmarshaller : IUnmarshaller<InstanceMetadata, XmlUnmarshallerContext>, IUnmarshaller<InstanceMetadata, JsonUnmarshallerContext>
+    public class EncryptionConfigurationDetailsUnmarshaller : IUnmarshaller<EncryptionConfigurationDetails, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfigurationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InstanceMetadata IUnmarshaller<InstanceMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EncryptionConfigurationDetails IUnmarshaller<EncryptionConfigurationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InstanceMetadata Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            InstanceMetadata unmarshalledObject = new InstanceMetadata();
+            EncryptionConfigurationDetails unmarshalledObject = new EncryptionConfigurationDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,28 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityStoreId", targetDepth))
+                if (context.TestExpression("EncryptionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityStoreId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceArn", targetDepth))
+                if (context.TestExpression("EncryptionStatusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionStatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("KeyType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OwnerAccountId", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +95,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceMetadataUnmarshaller _instance = new InstanceMetadataUnmarshaller();        
+        private static EncryptionConfigurationDetailsUnmarshaller _instance = new EncryptionConfigurationDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceMetadataUnmarshaller Instance
+        public static EncryptionConfigurationDetailsUnmarshaller Instance
         {
             get
             {

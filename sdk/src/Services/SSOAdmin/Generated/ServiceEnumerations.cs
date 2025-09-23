@@ -25,6 +25,52 @@ namespace Amazon.SSOAdmin
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessDeniedExceptionReason.
+    /// </summary>
+    public class AccessDeniedExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_AccessDeniedException for AccessDeniedExceptionReason
+        /// </summary>
+        public static readonly AccessDeniedExceptionReason KMS_AccessDeniedException = new AccessDeniedExceptionReason("KMS_AccessDeniedException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessDeniedExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessDeniedExceptionReason FindValue(string value)
+        {
+            return FindValue<AccessDeniedExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessDeniedExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationStatus.
     /// </summary>
     public class ApplicationStatus : ConstantClass
@@ -343,6 +389,10 @@ namespace Amazon.SSOAdmin
         /// </summary>
         public static readonly InstanceStatus ACTIVE = new InstanceStatus("ACTIVE");
         /// <summary>
+        /// Constant CREATE_FAILED for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus CREATE_FAILED = new InstanceStatus("CREATE_FAILED");
+        /// <summary>
         /// Constant CREATE_IN_PROGRESS for InstanceStatus
         /// </summary>
         public static readonly InstanceStatus CREATE_IN_PROGRESS = new InstanceStatus("CREATE_IN_PROGRESS");
@@ -426,6 +476,110 @@ namespace Amazon.SSOAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JwksRetrievalOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KmsKeyStatus.
+    /// </summary>
+    public class KmsKeyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for KmsKeyStatus
+        /// </summary>
+        public static readonly KmsKeyStatus ENABLED = new KmsKeyStatus("ENABLED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for KmsKeyStatus
+        /// </summary>
+        public static readonly KmsKeyStatus UPDATE_FAILED = new KmsKeyStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for KmsKeyStatus
+        /// </summary>
+        public static readonly KmsKeyStatus UPDATING = new KmsKeyStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KmsKeyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KmsKeyStatus FindValue(string value)
+        {
+            return FindValue<KmsKeyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KmsKeyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KmsKeyType.
+    /// </summary>
+    public class KmsKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KMS_KEY for KmsKeyType
+        /// </summary>
+        public static readonly KmsKeyType AWS_OWNED_KMS_KEY = new KmsKeyType("AWS_OWNED_KMS_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KEY for KmsKeyType
+        /// </summary>
+        public static readonly KmsKeyType CUSTOMER_MANAGED_KEY = new KmsKeyType("CUSTOMER_MANAGED_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KmsKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KmsKeyType FindValue(string value)
+        {
+            return FindValue<KmsKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KmsKeyType(string value)
         {
             return FindValue(value);
         }
@@ -583,6 +737,52 @@ namespace Amazon.SSOAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceNotFoundExceptionReason.
+    /// </summary>
+    public class ResourceNotFoundExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_NotFoundException for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason KMS_NotFoundException = new ResourceNotFoundExceptionReason("KMS_NotFoundException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceNotFoundExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceNotFoundExceptionReason FindValue(string value)
+        {
+            return FindValue<ResourceNotFoundExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceNotFoundExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SignInOrigin.
     /// </summary>
     public class SignInOrigin : ConstantClass
@@ -733,6 +933,52 @@ namespace Amazon.SSOAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type ThrottlingExceptionReason.
+    /// </summary>
+    public class ThrottlingExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_ThrottlingException for ThrottlingExceptionReason
+        /// </summary>
+        public static readonly ThrottlingExceptionReason KMS_ThrottlingException = new ThrottlingExceptionReason("KMS_ThrottlingException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThrottlingExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThrottlingExceptionReason FindValue(string value)
+        {
+            return FindValue<ThrottlingExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThrottlingExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TrustedTokenIssuerType.
     /// </summary>
     public class TrustedTokenIssuerType : ConstantClass
@@ -822,6 +1068,60 @@ namespace Amazon.SSOAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserBackgroundSessionApplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_DisabledException for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_DisabledException = new ValidationExceptionReason("KMS_DisabledException");
+        /// <summary>
+        /// Constant KMS_InvalidKeyUsageException for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_InvalidKeyUsageException = new ValidationExceptionReason("KMS_InvalidKeyUsageException");
+        /// <summary>
+        /// Constant KMS_InvalidStateException for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_InvalidStateException = new ValidationExceptionReason("KMS_InvalidStateException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

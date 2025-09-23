@@ -40,6 +40,7 @@ namespace Amazon.SSOAdmin.Model
         private string _name;
         private string _ownerAccountId;
         private InstanceStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -154,6 +155,28 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Provides additional context about the current status of the IAM Identity Center instance.
+        /// This field is particularly useful when an instance is in a non-ACTIVE state, such
+        /// as CREATE_FAILED. When an instance creation fails, this field contains information
+        /// about the cause, which may include issues with KMS key configuration or insufficient
+        /// permissions. 
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

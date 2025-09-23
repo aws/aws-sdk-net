@@ -429,6 +429,10 @@
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.StatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
@@ -1431,6 +1435,22 @@
     <pattern>(http|https):\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfiguration.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-[bcd]):kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfigurationDetails.EncryptionStatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfigurationDetails.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-[bcd]):kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.InstanceMetadata.IdentityStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -1453,6 +1473,10 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.InstanceMetadata.StatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsFilter.AccountId</property>
