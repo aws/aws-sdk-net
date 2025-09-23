@@ -33,7 +33,7 @@ namespace Amazon.Deadline
     public partial class AmazonDeadlineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("deadline", "4.0.9.2");
+            InternalSDKUtils.BuildUserAgentString("deadline", "4.0.9.3");
 
         private static readonly AmazonDeadlineEndpointResolver EndpointResolver =
             new AmazonDeadlineEndpointResolver();

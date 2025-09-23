@@ -33,7 +33,7 @@ namespace Amazon.MailManager
     public partial class AmazonMailManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MailManager", "4.0.2.8");
+            InternalSDKUtils.BuildUserAgentString("MailManager", "4.0.2.9");
 
         private static readonly AmazonMailManagerEndpointResolver EndpointResolver =
             new AmazonMailManagerEndpointResolver();

@@ -33,7 +33,7 @@ namespace Amazon.DevOpsGuru
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DevOps Guru", "4.0.0.22");
+            InternalSDKUtils.BuildUserAgentString("DevOps Guru", "4.0.0.23");
 
         private static readonly AmazonDevOpsGuruEndpointResolver EndpointResolver =
             new AmazonDevOpsGuruEndpointResolver();

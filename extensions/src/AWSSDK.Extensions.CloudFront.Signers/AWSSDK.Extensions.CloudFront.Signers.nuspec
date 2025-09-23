@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<package> 
-  <metadata> 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
     <id>AWSSDK.Extensions.CloudFront.Signers</id>
     <title>AWSSDK - Extensions for AWS CloudFront</title>
-    <version>4.0.0.1</version>
+    <version>4.0.0.2</version>
     <authors>Amazon Web Services</authors>
-	<description>This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.</description>
+    <description>This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
@@ -13,41 +13,37 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net472">
-        <dependency id="AWSSDK.Core" version="4.0.0.0" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.0.0" />
+        <dependency id="AWSSDK.Core" version="4.0.0.29" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.5.2" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="4.0.0.0" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.0.0" />
+        <dependency id="AWSSDK.Core" version="4.0.0.29" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.5.2" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="netcoreapp3.1">
-        <dependency id="AWSSDK.Core" version="4.0.0.0" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.0.0" />
+        <dependency id="AWSSDK.Core" version="4.0.0.29" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.5.2" />
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
       <group targetFramework="net8.0">
-        <dependency id="AWSSDK.Core" version="4.0.0.0" />
-        <dependency id="AWSSDK.CloudFront" version="4.0.0.0" />
+        <dependency id="AWSSDK.Core" version="4.0.0.29" />
+        <dependency id="AWSSDK.CloudFront" version="4.0.5.2" />
       </group>
     </dependencies>
-  </metadata> 
+  </metadata>
   <files>
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
-
     <file src=".\bin\Release\net472\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\net472" />
     <file src=".\bin\Release\net472\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\net472" />
     <file src=".\bin\Release\net472\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\net472" />
-
-    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\netstandard2.0"/>
-    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\netstandard2.0"/>
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\netstandard2.0" />
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\netstandard2.0" />
-
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\netcoreapp3.1" />
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\netcoreapp3.1" />
     <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\netcoreapp3.1" />
-    
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.dll" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.pdb" target="lib\net8.0" />
     <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CloudFront.Signers.xml" target="lib\net8.0" />

@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceEntitlementService
     public partial class AmazonMarketplaceEntitlementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Entitlement Service", "4.0.1.3");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Entitlement Service", "4.0.1.4");
 
         private static readonly AmazonMarketplaceEntitlementServiceEndpointResolver EndpointResolver =
             new AmazonMarketplaceEntitlementServiceEndpointResolver();

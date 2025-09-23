@@ -33,7 +33,7 @@ namespace Amazon.SSOAdmin
     public partial class AmazonSSOAdminConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSO Admin", "4.0.2.5");
+            InternalSDKUtils.BuildUserAgentString("SSO Admin", "4.0.3.0");
 
         private static readonly AmazonSSOAdminEndpointResolver EndpointResolver =
             new AmazonSSOAdminEndpointResolver();

@@ -1,3 +1,33 @@
+### 4.0.97.0 (2025-09-23 18:23 UTC)
+* CleanRooms (4.0.7.0)
+	* Added support for running incremental ID mapping for rule-based workflows.
+* EC2 (4.0.40.0)
+	* Add Amazon EC2 R8gn instance types
+* EntityResolution (4.0.4.0)
+	* Support incremental id mapping workflow for AWS Entity Resolution
+* SimpleSystemsManagement (4.0.4.0)
+	* Added Dualstack support to GetDeployablePatchSnapshotForInstance
+* SSOAdmin (4.0.3.0)
+	* Add support for encryption at rest with Customer Managed KMS Key in AWS IAM Identity Center
+* SSOOIDC (4.0.2.0)
+	* This release includes exception definition and documentation updates.
+* Extension Extensions.Bedrock.MEAI (4.0.3.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CborProtocol (4.0.0.3)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CloudFront.Signers (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.CrtIntegration (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.EC2.DecryptPassword (4.0.0.2)
+	* Updating AssemblyFileVersion.
+* Extension Extensions.NETCore.Setup (4.0.3.1)
+	* Updating AssemblyFileVersion.
+* Core 4.0.0.29
+	* Skip adding extra empty chunk for empty streams in TrailingHeadersWrapperStream.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 4.0.96.0 (2025-09-22 18:22 UTC)
 * Batch (4.0.2.11)
 	* Starting in JAN 2026, AWS Batch will change the default AMI for new Amazon ECS compute environments from Amazon Linux 2 to Amazon Linux 2023. We recommend migrating AWS Batch Amazon ECS compute environments to Amazon Linux 2023 to maintain optimal performance and security.
