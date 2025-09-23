@@ -62,8 +62,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
     <ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj"/>
+    <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
