@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobMetrics Object
+    /// Response Unmarshaller for IdMappingIncrementalRunConfig Object
     /// </summary>  
-    public class JobMetricsUnmarshaller : IJsonUnmarshaller<JobMetrics, JsonUnmarshallerContext>
+    public class IdMappingIncrementalRunConfigUnmarshaller : IJsonUnmarshaller<IdMappingIncrementalRunConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IdMappingIncrementalRunConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            JobMetrics unmarshalledObject = new JobMetrics();
+            IdMappingIncrementalRunConfig unmarshalledObject = new IdMappingIncrementalRunConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deleteRecordsProcessed", targetDepth))
+                if (context.TestExpression("incrementalRunType", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DeleteRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("inputRecords", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("matchIDs", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MatchIDs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recordsNotProcessed", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("totalRecordsProcessed", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IncrementalRunType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +67,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobMetricsUnmarshaller _instance = new JobMetricsUnmarshaller();        
+        private static IdMappingIncrementalRunConfigUnmarshaller _instance = new IdMappingIncrementalRunConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobMetricsUnmarshaller Instance
+        public static IdMappingIncrementalRunConfigUnmarshaller Instance
         {
             get
             {

@@ -37,8 +37,8 @@ namespace Amazon.EntityResolution.Model
     /// 
     ///  <important> 
     /// <para>
-    /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
-    /// not supported. 
+    /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+    /// incremental processing is not supported. 
     /// </para>
     ///  </important>
     /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c>, incremental processing
-        /// is not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+        /// incremental processing is not supported. 
         /// </para>
         ///  </important>
         /// </summary>

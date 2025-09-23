@@ -64,6 +64,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     response.IdMappingTechniques = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("incrementalRunConfig", targetDepth))
+                {
+                    var unmarshaller = IdMappingIncrementalRunConfigUnmarshaller.Instance;
+                    response.IncrementalRunConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("inputSourceConfig", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdMappingWorkflowInputSource, IdMappingWorkflowInputSourceUnmarshaller>(IdMappingWorkflowInputSourceUnmarshaller.Instance);

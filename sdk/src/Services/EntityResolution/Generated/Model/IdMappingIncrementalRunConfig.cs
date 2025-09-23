@@ -30,35 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// Optional. An object that defines the incremental run type. This object contains only
-    /// the <c>incrementalRunType</c> field, which appears as "Automatic" in the console.
-    /// 
-    /// 
-    ///  <important> 
-    /// <para>
-    /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-    /// incremental processing is not supported. 
-    /// </para>
-    ///  </important>
+    /// Incremental run configuration for an ID mapping workflow.
     /// </summary>
-    public partial class IncrementalRunConfig
+    public partial class IdMappingIncrementalRunConfig
     {
-        private IncrementalRunType _incrementalRunType;
+        private IdMappingIncrementalRunType _incrementalRunType;
 
         /// <summary>
         /// Gets and sets the property IncrementalRunType. 
         /// <para>
-        /// The type of incremental run. The only valid value is <c>IMMEDIATE</c>. This appears
-        /// as "Automatic" in the console.
+        ///  The incremental run type for an ID mapping workflow.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-        /// incremental processing is not supported. 
+        /// It takes only one value: <c>ON_DEMAND</c>. This setting runs the ID mapping workflow
+        /// when it's manually triggered through the <c>StartIdMappingJob</c> API.
         /// </para>
-        ///  </important>
         /// </summary>
-        public IncrementalRunType IncrementalRunType
+        public IdMappingIncrementalRunType IncrementalRunType
         {
             get { return this._incrementalRunType; }
             set { this._incrementalRunType = value; }
