@@ -72,6 +72,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("Reason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

@@ -6482,6 +6482,9 @@ namespace Amazon.SSOAdmin
         /// The request processing has failed because of an unknown error, exception, or failure
         /// with an internal server.
         /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
         /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
         /// Indicates that the principal has crossed the throttling limits of the API operations.
         /// </exception>
@@ -6521,6 +6524,9 @@ namespace Amazon.SSOAdmin
         /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure
         /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
         /// </exception>
         /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
         /// Indicates that the principal has crossed the throttling limits of the API operations.

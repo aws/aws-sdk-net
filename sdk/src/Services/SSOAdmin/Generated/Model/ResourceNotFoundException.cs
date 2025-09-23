@@ -37,6 +37,7 @@ namespace Amazon.SSOAdmin.Model
     #endif
     public partial class ResourceNotFoundException : AmazonSSOAdminException
     {
+        private ResourceNotFoundExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.SSOAdmin.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ResourceNotFoundExceptionReason)info.GetValue("Reason", typeof(ResourceNotFoundExceptionReason));
         }
 
         /// <summary>
@@ -113,8 +115,27 @@ namespace Amazon.SSOAdmin.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the resource not found exception.
+        /// </para>
+        /// </summary>
+        public ResourceNotFoundExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }
