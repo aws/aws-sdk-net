@@ -56,6 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public IRequest Marshall(PopulateIdMappingTableRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CleanRooms");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-02-17";
             request.HttpMethod = "POST";
 
@@ -66,6 +67,23 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/idmappingtables/{idMappingTableIdentifier}/populate";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetJobType())
+                {
+                    context.Writer.WritePropertyName("jobType");
+                    context.Writer.Write(publicRequest.JobType);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }
