@@ -1,3 +1,21 @@
+### 3.7.1129.0 (2025-09-23 18:26 UTC)
+* CleanRooms (3.7.505.0)
+	* Added support for running incremental ID mapping for rule-based workflows.
+* EC2 (3.7.514.0)
+	* Add Amazon EC2 R8gn instance types
+* EntityResolution (3.7.502.0)
+	* Support incremental id mapping workflow for AWS Entity Resolution
+* SimpleSystemsManagement (3.7.502.0)
+	* Added Dualstack support to GetDeployablePatchSnapshotForInstance
+* SSOAdmin (3.7.502.0)
+	* Add support for encryption at rest with Customer Managed KMS Key in AWS IAM Identity Center
+* SSOOIDC (3.7.502.0)
+	* This release includes exception definition and documentation updates.
+* Core 3.7.500.23
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1128.0 (2025-09-22 18:22 UTC)
 * Batch (3.7.500.25)
 	* Starting in JAN 2026, AWS Batch will change the default AMI for new Amazon ECS compute environments from Amazon Linux 2 to Amazon Linux 2023. We recommend migrating AWS Batch Amazon ECS compute environments to Amazon Linux 2023 to maintain optimal performance and security.
