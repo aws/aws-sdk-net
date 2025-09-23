@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     public partial class PopulateIdMappingTableRequest : AmazonCleanRoomsRequest
     {
         private string _idMappingTableIdentifier;
+        private JobType _jobType;
         private string _membershipIdentifier;
 
         /// <summary>
@@ -55,6 +56,47 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetIdMappingTableIdentifier()
         {
             return this._idMappingTableIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The job type of the rule-based ID mapping job. Valid values include:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>INCREMENTAL</c>: Processes only new or changed data since the last job run. This
+        /// is the default job type if the ID mapping workflow was created in Entity Resolution
+        /// with <c>incrementalRunConfig</c> specified.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>BATCH</c>: Processes all data from the input source, regardless of previous job
+        /// runs. This is the default job type if the ID mapping workflow was created in Entity
+        /// Resolution but <c>incrementalRunConfig</c> wasn't specified.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>DELETE_ONLY</c>: Processes only deletion requests from <c>BatchDeleteUniqueId</c>,
+        /// which is set in Entity Resolution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about <c>incrementalRunConfig</c> and <c>BatchDeleteUniqueId</c>,
+        /// see the <a href="https://docs.aws.amazon.com/entityresolution/latest/apireference/Welcome.html">Entity
+        /// Resolution API Reference</a>.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
         /// <summary>

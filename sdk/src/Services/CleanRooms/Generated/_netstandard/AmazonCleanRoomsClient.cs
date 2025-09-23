@@ -1052,6 +1052,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
