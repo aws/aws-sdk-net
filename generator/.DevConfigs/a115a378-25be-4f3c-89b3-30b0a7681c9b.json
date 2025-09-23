@@ -1,0 +1,46 @@
+{
+    "extensions": [
+        {
+            "extensionName": "Extensions.Bedrock.MEAI",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        },
+        {
+            "extensionName": "Extensions.CborProtocol",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        },        
+        {
+            "extensionName": "Extensions.CloudFront.Signers",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        },
+        {
+            "extensionName": "Extensions.CrtIntegration",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        },
+        {
+            "extensionName": "Extensions.EC2.DecryptPassword",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        },
+        {
+            "extensionName": "Extensions.NETCore.Setup",
+            "type": "patch",
+            "changeLogMessages": [
+                "Updating AssemblyFileVersion."
+            ]
+        }
+    ]
+}

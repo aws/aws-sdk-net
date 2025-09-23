@@ -1141,21 +1141,23 @@ namespace ServiceClientGenerator
             // as a dependency
             var awsDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
 
-            if (Configuration.ServiceDependencies != null)
+            if (Configuration.SdkDependencies != null)
             {
-                var dependencies = Configuration.ServiceDependencies;
+                var dependencies = Configuration.SdkDependencies;
                 foreach (var kvp in dependencies)
                 {
-                    var service = kvp.Key;
+                    var sdkDependency = kvp.Key;
                     var version = kvp.Value;
-                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + service, StringComparison.InvariantCultureIgnoreCase));
+                    var dependentService = GenerationManifest.ServiceConfigurations.FirstOrDefault(x => string.Equals(x.Namespace, "Amazon." + sdkDependency, StringComparison.InvariantCultureIgnoreCase));
+                    var dependentExtension = GenerationManifest.ExtensionConfigurations.FirstOrDefault(x => string.Equals(x.Name, sdkDependency, StringComparison.InvariantCultureIgnoreCase));
 
                     string previewFlag;
-                    if (dependentService != null && dependentService.InPreview)
+                    if ((dependentService != null && dependentService.InPreview) 
+                        || (dependentExtension != null && dependentExtension.InPreview))
                     {
                         previewFlag = GenerationManifest.PreviewLabel;
                     }
-                    else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
+                    else if (string.Equals(sdkDependency, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
                         previewFlag = GenerationManifest.PreviewLabel;
                     }
@@ -1167,13 +1169,8 @@ namespace ServiceClientGenerator
                     var verTokens = version.Split('.');
                     var versionRange = string.Format("[{0}{2}, {1}.0{2})", version, int.Parse(verTokens[0]) + 1, previewFlag);
 
-                    awsDependencies.Add(string.Format("AWSSDK.{0}", service), versionRange);
+                    awsDependencies.Add(string.Format("AWSSDK.{0}", sdkDependency), versionRange);
                 }
-            }
-
-            if (Configuration.ServiceModel.Type == ServiceType.Cbor)
-            {
-                awsDependencies.Add(string.Format("AWSSDK.Extensions.CborProtocol"), "[4.0.0.2, 5.0)");
             }
 
             var nugetAssemblyName = Configuration.AssemblyTitle;

@@ -47,8 +47,12 @@ namespace ServiceClientGenerator
                     
                     GeneratorDriver.GenerateCoreProjects(generationManifest, options);
                     GeneratorDriver.GeneratePartitions(options);
-                    Console.WriteLine($"Setting MaxDegreeOfParallelism = {Environment.ProcessorCount * 2}");
-                    Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount * 2 }, (serviceConfig, state) =>
+
+                    var maxDegreeOfParallelism = Environment.ProcessorCount * 2;
+                    Console.WriteLine($"Setting MaxDegreeOfParallelism = {maxDegreeOfParallelism}");
+
+                    // Process services
+                    Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }, (serviceConfig, state) =>
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
                         {
@@ -72,6 +76,17 @@ namespace ServiceClientGenerator
                         }                        
                     });
 
+                    // Process extensions
+                    Parallel.ForEach(generationManifest.ExtensionConfigurations, new ParallelOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism }, (extensionConfig, state) =>
+                    {
+                        Console.WriteLine("Processing extension: {0} ({1})", extensionConfig.Id,
+                            extensionConfig.Path);
+
+                        var driver = new GeneratorExtensionsDriver(extensionConfig, options);
+                        driver.Execute();
+                    });
+
+                    // Post processing services and extensions
                     var files = new HashSet<string>(generatedFiles.Keys);
                     var testFiles = new HashSet<string>(generatedUnitTestFiles.Keys);
 
@@ -95,7 +110,7 @@ namespace ServiceClientGenerator
                         ServiceFileVersion = "4.0.0.0"
                     };
                     serviceConfig.ModelName = Path.GetFileName(serviceConfig.ModelPath);
-                    serviceConfig.ServiceDependencies = new Dictionary<string, string> { {"Core", "4.0.0.18"} };
+                    serviceConfig.SdkDependencies = new Dictionary<string, string> { {"Core", "4.0.0.18"} };
                     serviceConfig.GenerateConstructors = true;
 
 

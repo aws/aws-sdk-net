@@ -3332,5 +3332,74 @@
             "InPreview"               : false
         }
     },
+    "ExtensionVersions"     : {
+        "Extensions.Bedrock.MEAI" : {
+            "Version" : "4.0.3.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.28",
+                "BedrockRuntime" : "4.0.6.1"
+            },
+            "InPreview"               : false
+        },
+        "Extensions.CborProtocol" : {
+            "Version" : "4.0.0.2",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.25"                
+            },
+            "InPreview"               : false
+        },        
+        "Extensions.CloudFront.Signers" : {
+            "Version" : "4.0.0.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0",
+                "CloudFront" : "4.0.0.0"
+            },
+            "InPreview"               : false
+        },
+        "Extensions.CrtIntegration" : {
+            "Version" : "4.0.0.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "Extensions.EC2.DecryptPassword" : {
+            "Version" : "4.0.0.1",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0",
+                "EC2" : "4.0.0.0"
+            },
+            "InPreview"               : false
+        },        
+        "Extensions.Logging.ILoggerAdaptor" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "Extensions.Logging.Log4NetAdaptor" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.0"                
+            },
+            "InPreview"               : false
+        },        
+        "Extensions.NETCore.Setup" : {
+            "Version" : "4.0.3.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+                "Core" : "4.0.0.26"              
+            },
+            "InPreview"               : false
+        }
+    },
     "DefaultAssemblyVersion" : "4.0"
 }

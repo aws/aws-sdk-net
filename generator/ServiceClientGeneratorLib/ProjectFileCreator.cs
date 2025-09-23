@@ -110,15 +110,43 @@ namespace ServiceClientGenerator
                 if (projectFileConfiguration.Template.Equals("VS2017ProjectFile", StringComparison.InvariantCultureIgnoreCase))
                 {
                     var projectReferenceList = new List<ProjectReference>();
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies.Keys)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies.Keys)
                     {
                         if (string.Equals(dependency, "Core", StringComparison.InvariantCultureIgnoreCase))
                             continue;
 
-                        projectReferenceList.Add(new ProjectReference
+                        if (dependency.StartsWith("Extensions."))
                         {
-                            IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
-                        });
+                            var projectRef = new ProjectReference
+                            {
+                                IncludePath =
+                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", $"AWSSDK.{dependency}", $"AWSSDK.{dependency}.{projectType}.csproj")
+                            };
+
+                            if(!File.Exists(projectRef.IncludePath))
+                            {
+                                // These extensions do not have projectType targets in the csproj filename with a NetFramework or NetStandard value. They cannot be
+                                // dependencies of a service at this time. In these cases the extension doesn't support NetFramework. This can be adjusted if we find
+                                // a case where a feature of a service that depends on the extension doesn't need NetFramework support. The other option is to adjust
+                                // the extension to support NetFramework as well.
+                                //
+                                // Extensions:
+                                // * AWSSDK.Extensions.Logging.ILoggerAdaptor
+                                // * AWSSDK.Extensions.Logging.Log4NetAdaptor
+                                // * AWSSDK.Extensions.NETCore.Setup
+
+                                throw new Exception($"Extension project AWSSDK.{dependency} cannot be a dependency at this time as it lacks projectType for both NetFramework and NetStandard. Services support both.");
+                            }
+
+                            projectReferenceList.Add(projectRef);
+                        }
+                        else
+                        {
+                            projectReferenceList.Add(new ProjectReference
+                            {
+                                IncludePath = Utils.PathCombineAlt("..", "..", "Services", dependency, $"AWSSDK.{dependency}.{projectType}.csproj")
+                            });
+                        }
                     }
 
                     projectReferenceList.Add(new ProjectReference
@@ -127,15 +155,6 @@ namespace ServiceClientGenerator
                             ? Utils.PathCombineAlt("..", "..", "..", "src", "Core", $"AWSSDK.Core.{projectType}.csproj")
                             : Utils.PathCombineAlt("..", "..", "Core", $"AWSSDK.Core.{projectType}.csproj")
                     });
-
-                    if (serviceConfiguration.ServiceModel.Type == ServiceType.Cbor)
-                    {
-                        projectReferenceList.Add(new ProjectReference
-                        {
-                            IncludePath =
-                                Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", "AWSSDK.Extensions.CborProtocol", $"AWSSDK.Extensions.CborProtocol.{projectType}.csproj")
-                        });
-                    }
 
                     GenerateVS2017ProjectFile(serviceFilesRoot, serviceConfiguration, projectFileConfiguration, projectReferenceList);
                     continue;
@@ -184,9 +203,9 @@ namespace ServiceClientGenerator
                 var projectReferences = new List<ProjectReference>();
 
 
-                if (serviceConfiguration.ServiceDependencies != null)
+                if (serviceConfiguration.SdkDependencies != null)
                 {
-                    foreach (var dependency in serviceConfiguration.ServiceDependencies)
+                    foreach (var dependency in serviceConfiguration.SdkDependencies)
                     {
                         var dependencyProjectName = "AWSSDK." + dependency.Key + "." + projectType;
                         string dependencyProject;
