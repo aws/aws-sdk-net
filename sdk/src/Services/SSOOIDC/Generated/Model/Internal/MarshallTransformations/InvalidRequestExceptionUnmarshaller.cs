@@ -84,6 +84,12 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                         unmarshalledObject.Error_description = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+                    if (context.TestExpression("reason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           
