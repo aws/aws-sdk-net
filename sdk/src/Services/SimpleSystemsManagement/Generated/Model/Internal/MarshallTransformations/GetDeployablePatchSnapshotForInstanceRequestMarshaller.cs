@@ -98,6 +98,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SnapshotId);
             }
 
+            if(publicRequest.IsSetUseS3DualStackEndpoint())
+            {
+                context.Writer.WritePropertyName("UseS3DualStackEndpoint");
+                context.Writer.WriteBooleanValue(publicRequest.UseS3DualStackEndpoint.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
