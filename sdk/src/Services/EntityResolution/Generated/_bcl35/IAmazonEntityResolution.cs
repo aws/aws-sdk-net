@@ -80,7 +80,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -88,7 +88,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -140,7 +140,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -183,6 +183,12 @@ namespace Amazon.EntityResolution
         /// Creates an <c>IdMappingWorkflow</c> object which stores the configuration of the data
         /// processing job to be run. Each <c>IdMappingWorkflow</c> must have a unique workflow
         /// name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Incremental processing is not supported for ID mapping workflows. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingWorkflow service method.</param>
         /// 
@@ -191,7 +197,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -254,7 +260,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -312,8 +318,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
-        /// not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+        /// incremental processing is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -324,7 +330,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -387,7 +393,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -449,7 +455,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -559,7 +565,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -616,7 +622,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -624,7 +630,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -679,7 +685,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -751,7 +757,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -807,7 +813,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -862,7 +868,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -917,7 +923,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -961,7 +967,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns the corresponding Match ID of a customer record if the record has been processed
-        /// in a rule-based matching workflow or ML matching workflow.
+        /// in a rule-based matching workflow.
         /// 
         ///  
         /// <para>
@@ -979,7 +985,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1035,7 +1041,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1090,7 +1096,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1145,7 +1151,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1200,7 +1206,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1255,7 +1261,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1310,7 +1316,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1470,7 +1476,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1682,7 +1688,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -1731,7 +1737,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1739,7 +1745,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1792,7 +1798,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1804,7 +1810,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1857,7 +1863,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1869,7 +1875,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1930,7 +1936,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -1980,7 +1986,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -2020,6 +2026,12 @@ namespace Amazon.EntityResolution
         /// Updates an existing <c>IdMappingWorkflow</c>. This method is identical to CreateIdMappingWorkflow,
         /// except it uses an HTTP <c>PUT</c> request instead of a <c>POST</c> request, and the
         /// <c>IdMappingWorkflow</c> must already exist for the method to succeed.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Incremental processing is not supported for ID mapping workflows. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingWorkflow service method.</param>
         /// 
@@ -2031,7 +2043,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2086,7 +2098,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2134,8 +2146,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
-        /// not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+        /// incremental processing is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2149,7 +2161,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2208,7 +2220,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -2216,7 +2228,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.

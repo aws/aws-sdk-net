@@ -37,6 +37,7 @@ namespace Amazon.EntityResolution.Model
         private DateTime? _createdAt;
         private string _description;
         private IdMappingTechniques _idMappingTechniques;
+        private IdMappingIncrementalRunConfig _incrementalRunConfig;
         private List<IdMappingWorkflowInputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowInputSource>() : null;
         private List<IdMappingWorkflowOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowOutputSource>() : null;
         private string _roleArn;
@@ -100,6 +101,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetIdMappingTechniques()
         {
             return this._idMappingTechniques != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalRunConfig. 
+        /// <para>
+        ///  The incremental run configuration for the ID mapping workflow.
+        /// </para>
+        /// </summary>
+        public IdMappingIncrementalRunConfig IncrementalRunConfig
+        {
+            get { return this._incrementalRunConfig; }
+            set { this._incrementalRunConfig = value; }
+        }
+
+        // Check to see if IncrementalRunConfig property is set
+        internal bool IsSetIncrementalRunConfig()
+        {
+            return this._incrementalRunConfig != null;
         }
 
         /// <summary>

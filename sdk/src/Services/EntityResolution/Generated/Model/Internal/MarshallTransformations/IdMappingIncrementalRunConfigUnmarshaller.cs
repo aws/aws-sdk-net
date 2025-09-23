@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobMetrics Object
+    /// Response Unmarshaller for IdMappingIncrementalRunConfig Object
     /// </summary>  
-    public class JobMetricsUnmarshaller : IUnmarshaller<JobMetrics, XmlUnmarshallerContext>, IUnmarshaller<JobMetrics, JsonUnmarshallerContext>
+    public class IdMappingIncrementalRunConfigUnmarshaller : IUnmarshaller<IdMappingIncrementalRunConfig, XmlUnmarshallerContext>, IUnmarshaller<IdMappingIncrementalRunConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobMetrics IUnmarshaller<JobMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IdMappingIncrementalRunConfig IUnmarshaller<IdMappingIncrementalRunConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobMetrics Unmarshall(JsonUnmarshallerContext context)
+        public IdMappingIncrementalRunConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            JobMetrics unmarshalledObject = new JobMetrics();
+            IdMappingIncrementalRunConfig unmarshalledObject = new IdMappingIncrementalRunConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("deleteRecordsProcessed", targetDepth))
+                if (context.TestExpression("incrementalRunType", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DeleteRecordsProcessed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputRecords", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("matchIDs", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MatchIDs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordsNotProcessed", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalRecordsProcessed", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IncrementalRunType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobMetricsUnmarshaller _instance = new JobMetricsUnmarshaller();        
+        private static IdMappingIncrementalRunConfigUnmarshaller _instance = new IdMappingIncrementalRunConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobMetricsUnmarshaller Instance
+        public static IdMappingIncrementalRunConfigUnmarshaller Instance
         {
             get
             {

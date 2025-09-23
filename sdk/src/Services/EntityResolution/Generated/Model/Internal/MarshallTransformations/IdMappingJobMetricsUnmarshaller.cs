@@ -66,10 +66,58 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("deleteRecordsProcessed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DeleteRecordsProcessed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputRecords", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mappedRecordsRemoved", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MappedRecordsRemoved = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mappedSourceRecordsRemoved", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MappedSourceRecordsRemoved = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mappedTargetRecordsRemoved", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MappedTargetRecordsRemoved = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("newMappedRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NewMappedRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("newMappedSourceRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NewMappedSourceRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("newMappedTargetRecords", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NewMappedTargetRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("newUniqueRecordsLoaded", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NewUniqueRecordsLoaded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recordsNotProcessed", targetDepth))

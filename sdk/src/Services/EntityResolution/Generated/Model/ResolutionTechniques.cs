@@ -60,9 +60,21 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionType. 
         /// <para>
-        /// The type of matching. There are three types of matching: <c>RULE_MATCHING</c>, <c>ML_MATCHING</c>,
-        /// and <c>PROVIDER</c>.
+        /// The type of matching workflow to create. Specify one of the following types: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RULE_MATCHING</c>: Match records using configurable rule-based criteria 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ML_MATCHING</c>: Match records using machine learning models 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PROVIDER</c>: Match records using a third-party matching provider
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResolutionType ResolutionType

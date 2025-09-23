@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// The resource could not be found.
+    /// The resource couldn't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
