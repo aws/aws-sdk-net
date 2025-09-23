@@ -8,7 +8,7 @@ try
 {
     while (true)
     {
-        if (devConfig.Core != null || devConfig.Services.Any())
+        if (devConfig.Core != null || devConfig.Services.Any() || devConfig.Extensions.Any())
         {
             var table = new Table();
             table.ShowRowSeparators = true;
@@ -26,6 +26,11 @@ try
                 table.AddRow(service.FormattedNameColumn(), service.Type, service.FormattedMessagesColumn());
             }
 
+            foreach (var extension in devConfig.Extensions)
+            {
+                table.AddRow(extension.FormattedNameColumn(), extension.Type, extension.FormattedMessagesColumn());
+            }
+
             AnsiConsole.Write(table);
         }
 
@@ -33,7 +38,7 @@ try
             new SelectionPrompt<string>()
                 .Title("What type of change was made?")
                 .AddChoices(new[] {
-                "Core", "Generator", "Service", "Save DevConfigFile", "Exit Without Saving"
+                "Core", "Generator", "Service", "Extension", "Save DevConfigFile", "Exit Without Saving"
                 }));
 
         switch (changeType)
@@ -46,6 +51,9 @@ try
                 break;
             case "Service":
                 ServiceChange();
+                break;
+            case "Extension":
+                ExtensionChange();
                 break;
             case "Save DevConfigFile":
                 WriteDevConfigFile();
@@ -173,6 +181,35 @@ void ServiceChange()
     service.Messages.Add(change);
 
     service.Type = AskChangeType(service.Type);
+}
+
+void ExtensionChange()
+{
+    var extensionsNames = new List<string>();
+    foreach (var extensionDirectory in Directory.GetDirectories(Path.Combine(FindRepoRoot(), "extensions", "src")))
+    {
+        extensionsNames.Add(new DirectoryInfo(extensionDirectory).Name.Replace("AWSSDK.", string.Empty));
+    }
+
+    var extensionName = AnsiConsole.Prompt(
+    new SelectionPrompt<string>()
+        .AddChoices(extensionsNames));
+
+    var extension = devConfig.Extensions.FirstOrDefault(x => x.Name == extensionName);
+
+    // Check to see if this is the first change log entry for this extension being added to the dev config.
+    // If so add the extension to the list of extensions being changed.
+    if (extension == null)
+    {
+        extension = new Extension { Name = extensionName };
+        devConfig.Extensions.Add(extension);
+    }
+
+
+    var change = AnsiConsole.Prompt(new TextPrompt<string>($"Enter the change message for [green]{extensionName}[/] change:"));
+    extension.Messages.Add(change);
+
+    extension.Type = AskChangeType(extension.Type);
 }
 
 static string AskChangeType(string defaultValue)
