@@ -2161,15 +2161,16 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         ///  <c>Decrypt</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
-        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves</a> and NitroTPM, which provide attested environments
+        /// in Amazon EC2. To call <c>Decrypt</c> for a Nitro enclave or NitroTPM, use the <a
+        /// href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
-        /// data, the response includes the plaintext data encrypted with the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>). For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of the plaintext data, the response includes the plaintext data encrypted with the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5001,17 +5002,16 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKey</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKey</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKey</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKey</c>
         /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
         /// instead of a plaintext copy of the data key, the response includes a copy of the data
         /// key encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5266,18 +5266,17 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave,
-        /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave
+        /// or NitroTPM, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. <c>GenerateDataKeyPair</c>
+        /// parameter to provide the attestation document for the attested environment. <c>GenerateDataKeyPair</c>
         /// returns the public data key and a copy of the private data key encrypted under the
         /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
         /// (<c>PrivateKeyPlaintext</c>), the response includes a copy of the private data key
         /// encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>..
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6045,14 +6044,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6168,14 +6168,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
         /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave or NitroTPM, use the
+        /// <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
         /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
-        /// parameter to provide the attestation document for the enclave. Instead of plaintext
-        /// bytes, the response includes the plaintext bytes encrypted under the public key from
-        /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
-        /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// parameter to provide the attestation document for the attested environment. Instead
+        /// of plaintext bytes, the response includes the plaintext bytes encrypted under the
+        /// public key from the attestation document (<c>CiphertextForRecipient</c>). For information
+        /// about the interaction between KMS and Amazon Web Services Nitro Enclaves or Amazon
+        /// Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

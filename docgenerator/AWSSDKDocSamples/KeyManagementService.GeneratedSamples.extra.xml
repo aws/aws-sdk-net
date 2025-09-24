@@ -352,12 +352,12 @@
         <value>
             <example>
                 <para>
-                    The following Decrypt example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning the decrypted data in plaintext (Plaintext), the operation returns the decrypted data encrypted by the public key from the attestation document (CiphertextForRecipient).
+                    The following Decrypt example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave or NitroTPM. Instead of returning the decrypted data in plaintext (Plaintext), the operation returns the decrypted data encrypted by the public key from the attestation document (CiphertextForRecipient).
                 </para>
                 <code
-                    title="To decrypt data for a Nitro enclave"
+                    title="To decrypt data for a Nitro enclave or NitroTPM"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-decrypt-data-for-a-nitro-enclave-2" />
+                    region="to-decrypt-data-for-attestation-2" />
             </example>
         </value>
     </doc>
@@ -434,6 +434,25 @@
                     title="To derive a shared secret"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-derive-a-shared-secret-1718381818754" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DeriveSharedSecret(Amazon.KeyManagementService.Model.DeriveSharedSecretRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DeriveSharedSecret(Amazon.KeyManagementService.Model.DeriveSharedSecretRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DeriveSharedSecretRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DeriveSharedSecretResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave or NitroTPM. Instead of returning a plaintext shared secret, DeriveSharedSecret returns the shared secret encrypted by the public key from the attestation document.
+                </para>
+                <code
+                    title="To derive a shared secret for a Nitro enclave or NitroTPM"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-derive-a-shared-secret-for-attestation-2" />
             </example>
         </value>
     </doc>
@@ -789,12 +808,12 @@
         <value>
             <example>
                 <para>
-                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a copy of the data key encrypted by the KMS key and a plaintext copy of the data key, GenerateDataKey returns one copy of the data key encrypted by the KMS key (CiphertextBlob) and one copy of the data key encrypted by the public key from the attestation document (CiphertextForRecipient). The operation doesn't return a plaintext data key. 
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave or NitroTPM. Instead of returning a copy of the data key encrypted by the KMS key and a plaintext copy of the data key, GenerateDataKey returns one copy of the data key encrypted by the KMS key (CiphertextBlob) and one copy of the data key encrypted by the public key from the attestation document (CiphertextForRecipient). The operation doesn't return a plaintext data key. 
                 </para>
                 <code
-                    title="To generate a data key pair for a Nitro enclave"
+                    title="To generate a data key for a Nitro enclave or NitroTPM"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-a-data-key-for-a-nitro-enclave-2" />
+                    region="to-generate-a-data-key-for-attestation-2" />
             </example>
         </value>
     </doc>
@@ -827,12 +846,12 @@
         <value>
             <example>
                 <para>
-                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a plaintext copy of the private data key, GenerateDataKeyPair returns a copy of the private data key encrypted by the public key from the attestation document (CiphertextForRecipient). It returns the public data key (PublicKey) and a copy of private data key encrypted under the specified KMS key (PrivateKeyCiphertextBlob), as usual, but plaintext private data key field (PrivateKeyPlaintext) is null or empty. 
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave or NitroTPM. Instead of returning a plaintext copy of the private data key, GenerateDataKeyPair returns a copy of the private data key encrypted by the public key from the attestation document (CiphertextForRecipient). It returns the public data key (PublicKey) and a copy of private data key encrypted under the specified KMS key (PrivateKeyCiphertextBlob), as usual, but plaintext private data key field (PrivateKeyPlaintext) is null or empty. 
                 </para>
                 <code
-                    title="To generate a data key pair for a Nitro enclave"
+                    title="To generate a data key pair for a Nitro enclave or NitroTPM"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-a-data-key-pair-for-a-nitro-enclave-2" />
+                    region="to-generate-a-data-key-pair-for-attestation-2" />
             </example>
         </value>
     </doc>
@@ -922,12 +941,12 @@
         <value>
             <example>
                 <para>
-                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a plaintext (unencrypted) byte string, GenerateRandom returns the byte string encrypted by the public key from the enclave's attestation document.
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave or NitroTPM. Instead of returning a plaintext (unencrypted) byte string, GenerateRandom returns the byte string encrypted by the public key from the attestation document.
                 </para>
                 <code
-                    title="To generate random data"
+                    title="To generate random data for a Nitro enclave or NitroTPM"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-random-data-2" />
+                    region="to-generate-random-data-for-attestation-2" />
             </example>
         </value>
     </doc>

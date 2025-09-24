@@ -333,35 +333,37 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Recipient. 
         /// <para>
         /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
-        /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
-        /// to use with the enclave's public key. The only valid encryption algorithm is <c>RSAES_OAEP_SHA_256</c>.
-        /// 
+        /// document</a> from an Amazon Web Services Nitro enclave or NitroTPM, and the encryption
+        /// algorithm to use with the public key in the attestation document. The only valid encryption
+        /// algorithm is <c>RSAES_OAEP_SHA_256</c>. 
         /// </para>
         ///  
         /// <para>
-        /// This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves.
-        /// To call DeriveSharedSecret for an Amazon Web Services Nitro Enclaves, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-        /// Web Services Nitro Enclaves SDK</a> to generate the attestation document and then
-        /// use the Recipient parameter from any Amazon Web Services SDK to provide the attestation
-        /// document for the enclave.
+        /// This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM. To call DeriveSharedSecret generate an attestation
+        /// document use either <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> for an Amazon Web Services Nitro Enclaves or <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/attestation-get-doc.html">Amazon
+        /// Web Services NitroTPM tools</a> for Amazon Web Services NitroTPM. Then use the Recipient
+        /// parameter from any Amazon Web Services SDK to provide the attestation document for
+        /// the attested environment.
         /// </para>
         ///  
         /// <para>
         /// When you use this parameter, instead of returning a plaintext copy of the shared secret,
         /// KMS encrypts the plaintext shared secret under the public key in the attestation document,
         /// and returns the resulting ciphertext in the <c>CiphertextForRecipient</c> field in
-        /// the response. This ciphertext can be decrypted only with the private key in the enclave.
-        /// The <c>CiphertextBlob</c> field in the response contains the encrypted shared secret
-        /// derived from the KMS key specified by the <c>KeyId</c> parameter and public key specified
-        /// by the <c>PublicKey</c> parameter. The <c>SharedSecret</c> field in the response is
-        /// null or empty.
+        /// the response. This ciphertext can be decrypted only with the private key in the attested
+        /// environment. The <c>CiphertextBlob</c> field in the response contains the encrypted
+        /// shared secret derived from the KMS key specified by the <c>KeyId</c> parameter and
+        /// public key specified by the <c>PublicKey</c> parameter. The <c>SharedSecret</c> field
+        /// in the response is null or empty.
         /// </para>
         ///  
         /// <para>
-        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves
+        /// or Amazon Web Services NitroTPM, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/cryptographic-attestation.html">Cryptographic
+        /// attestation support in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public RecipientInfo Recipient
