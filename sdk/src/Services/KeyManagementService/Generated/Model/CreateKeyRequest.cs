@@ -561,7 +561,10 @@ namespace Amazon.KeyManagementService.Model
         /// Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
         /// operations</a> for which you can use the KMS key. The default value is <c>ENCRYPT_DECRYPT</c>.
         /// This parameter is optional when you are creating a symmetric encryption KMS key; otherwise,
-        /// it is required. You can't change the <c>KeyUsage</c> value after the KMS key is created.
+        /// it is required. You can't change the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#key-usage">
+        /// <c>KeyUsage</c> </a> value after the KMS key is created. Each KMS key can have only
+        /// one key usage. This follows key usage best practices according to <a href="https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final">NIST
+        /// SP 800-57 Recommendations for Key Management</a>, section 5.2, Key usage.
         /// </para>
         ///  
         /// <para>
