@@ -60,15 +60,15 @@ public class DevConfigWriter
         {
             writer.WriteStartArray("extensions");
 
-            foreach (var service in config.Extensions)
+            foreach (var extension in config.Extensions)
             {
                 writer.WriteStartObject();
-                writer.WriteString("extensionName", service.Name);
-                ValidateType(service.Type);
-                writer.WriteString("type", service.Type);
+                writer.WriteString("extensionName", extension.Name);
+                ValidateType(extension.Type);
+                writer.WriteString("type", extension.Type);
 
                 writer.WriteStartArray("changeLogMessages");
-                foreach (var message in service.Messages)
+                foreach (var message in extension.Messages)
                 {
                     writer.WriteStringValue(message);
                 }

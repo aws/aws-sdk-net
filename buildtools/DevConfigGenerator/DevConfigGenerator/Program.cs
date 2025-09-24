@@ -188,6 +188,10 @@ void ExtensionChange()
     var extensionsNames = new List<string>();
     foreach (var extensionDirectory in Directory.GetDirectories(Path.Combine(FindRepoRoot(), "extensions", "src")))
     {
+        if (!Directory.GetFiles(extensionDirectory, "*.nuspec").Any())
+        {
+            continue;
+        }
         extensionsNames.Add(new DirectoryInfo(extensionDirectory).Name.Replace("AWSSDK.", string.Empty));
     }
 
