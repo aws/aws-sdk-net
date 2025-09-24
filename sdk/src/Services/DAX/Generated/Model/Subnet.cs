@@ -37,6 +37,7 @@ namespace Amazon.DAX.Model
     {
         private string _subnetAvailabilityZone;
         private string _subnetIdentifier;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
@@ -72,6 +73,26 @@ namespace Amazon.DAX.Model
         internal bool IsSetSubnetIdentifier()
         {
             return this._subnetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by this subnet. Returns an array of strings that can include
+        /// <c>ipv4</c>, <c>ipv6</c>, or both, indicating whether the subnet supports IPv4 only,
+        /// IPv6 only, or dual-stack deployments.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

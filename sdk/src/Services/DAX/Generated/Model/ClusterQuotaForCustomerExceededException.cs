@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DAX.Model
 {
     /// <summary>
-    /// You have attempted to exceed the maximum number of DAX clusters for your AWS account.
+    /// You have attempted to exceed the maximum number of DAX clusters for your Amazon Web
+    /// Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

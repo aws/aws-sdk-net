@@ -39,7 +39,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// A description of the DAX cluster. with its new replication factor.
+        /// A description of the DAX cluster, with its new replication factor.
         /// </para>
         /// </summary>
         public Cluster Cluster

@@ -33,9 +33,9 @@ namespace Amazon.DAX
     /// DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically
     /// speeds up database reads by caching frequently-accessed data from DynamoDB, so applications
     /// can access that data with sub-millisecond latency. You can create a DAX cluster easily,
-    /// using the AWS Management Console. With a few simple modifications to your code, your
-    /// application can begin taking advantage of the DAX cluster and realize significant
-    /// improvements in read performance.
+    /// using the Amazon Web Services Management Console. With a few simple modifications
+    /// to your code, your application can begin taking advantage of the DAX cluster and realize
+    /// significant improvements in read performance.
     /// </summary>
     public partial interface IAmazonDAX : IAmazonService, IDisposable
     {
@@ -57,7 +57,8 @@ namespace Amazon.DAX
         /// You already have a DAX cluster with the given identifier.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ClusterQuotaForCustomerExceededException">
-        /// You have attempted to exceed the maximum number of DAX clusters for your AWS account.
+        /// You have attempted to exceed the maximum number of DAX clusters for your Amazon Web
+        /// Services account.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.InsufficientClusterCapacityException">
         /// There are not enough system resources to create the cluster you requested (or to resize
@@ -82,7 +83,8 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of nodes for a DAX cluster.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.NodeQuotaForCustomerExceededException">
-        /// You have attempted to exceed the maximum number of nodes for your AWS account.
+        /// You have attempted to exceed the maximum number of nodes for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
@@ -92,8 +94,8 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceQuotaExceededException">
         /// You have reached the maximum number of x509 certificates that can be created for encrypted
-        /// clusters in a 30 day period. Contact AWS customer support to discuss options for continuing
-        /// to create encrypted clusters.
+        /// clusters in a 30 day period. Contact Amazon Web Services customer support to discuss
+        /// options for continuing to create encrypted clusters.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
@@ -212,6 +214,13 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.SubnetGroupQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of subnets
         /// in a subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetNotAllowedException">
+        /// The specified subnet can't be used for the requested network type. This error occurs
+        /// when either there aren't enough subnets of the required network type to create the
+        /// cluster, or when you try to use a subnet that doesn't support the requested network
+        /// type (for example, trying to create a dual-stack cluster with a subnet that doesn't
+        /// have IPv6 CIDR).
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of subnets
@@ -847,7 +856,8 @@ namespace Amazon.DAX
         /// You have attempted to exceed the maximum number of nodes for a DAX cluster.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.NodeQuotaForCustomerExceededException">
-        /// You have attempted to exceed the maximum number of nodes for your AWS account.
+        /// You have attempted to exceed the maximum number of nodes for your Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
@@ -952,7 +962,7 @@ namespace Amazon.DAX
         ///  <note> 
         /// <para>
         ///  <c>RebootNode</c> restarts the DAX engine process and does not remove the contents
-        /// of the cache. 
+        /// of the cache.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1270,6 +1280,13 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetInUseException">
         /// The requested subnet is being used by another subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.SubnetNotAllowedException">
+        /// The specified subnet can't be used for the requested network type. This error occurs
+        /// when either there aren't enough subnets of the required network type to create the
+        /// cluster, or when you try to use a subnet that doesn't support the requested network
+        /// type (for example, trying to create a dual-stack cluster with a subnet that doesn't
+        /// have IPv6 CIDR).
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetQuotaExceededException">
         /// The request cannot be processed because it would exceed the allowed number of subnets

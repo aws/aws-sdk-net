@@ -37,7 +37,7 @@ namespace Amazon.DAX.Model
     ///  <note> 
     /// <para>
     ///  <c>RebootNode</c> restarts the DAX engine process and does not remove the contents
-    /// of the cache. 
+    /// of the cache.
     /// </para>
     ///  </note>
     /// </summary>

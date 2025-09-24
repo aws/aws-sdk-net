@@ -41,6 +41,7 @@ namespace Amazon.DAX.Model
         private string _clusterName;
         private string _description;
         private string _iamRoleArn;
+        private NetworkType _networkType;
         private List<string> _nodeIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Node> _nodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
         private string _nodeType;
@@ -188,6 +189,37 @@ namespace Amazon.DAX.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP address type of the cluster. Values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> - IPv4 addresses only
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> - IPv6 addresses only
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>dual_stack</c> - Both IPv4 and IPv6 addresses
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

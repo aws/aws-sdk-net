@@ -47,6 +47,7 @@ namespace Amazon.DAX.Model
         private string _description;
         private string _subnetGroupName;
         private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -101,6 +102,26 @@ namespace Amazon.DAX.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The network types supported by this subnet. Returns an array of strings that can include
+        /// <c>ipv4</c>, <c>ipv6</c>, or both, indicating whether the subnet group supports IPv4
+        /// only, IPv6 only, or dual-stack deployments. 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

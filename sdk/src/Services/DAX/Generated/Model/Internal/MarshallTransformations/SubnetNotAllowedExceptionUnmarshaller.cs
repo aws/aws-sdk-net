@@ -35,66 +35,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DAX.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Subnet Object
+    /// Response Unmarshaller for SubnetNotAllowedException Object
     /// </summary>  
-    public class SubnetUnmarshaller : IUnmarshaller<Subnet, XmlUnmarshallerContext>, IUnmarshaller<Subnet, JsonUnmarshallerContext>
+    public class SubnetNotAllowedExceptionUnmarshaller : IErrorResponseUnmarshaller<SubnetNotAllowedException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Subnet IUnmarshaller<Subnet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public SubnetNotAllowedException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public Subnet Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public SubnetNotAllowedException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            Subnet unmarshalledObject = new Subnet();
-            if (context.IsEmptyResponse)
-                return null;
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            SubnetNotAllowedException unmarshalledObject = new SubnetNotAllowedException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SupportedNetworkTypes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedNetworkTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static SubnetUnmarshaller _instance = new SubnetUnmarshaller();        
+        private static SubnetNotAllowedExceptionUnmarshaller _instance = new SubnetNotAllowedExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubnetUnmarshaller Instance
+        public static SubnetNotAllowedExceptionUnmarshaller Instance
         {
             get
             {
