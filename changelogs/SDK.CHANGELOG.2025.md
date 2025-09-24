@@ -1,3 +1,15 @@
+### 3.7.1130.0 (2025-09-24 18:22 UTC)
+* AppStream (3.7.501.15)
+	* G6f instance support for AppStream 2.0
+* CloudWatch (3.7.503.0)
+	* Fix default dualstack FIPS endpoints in AWS GovCloud(US) regions
+* DAX (3.7.501.0)
+	* This release adds support for IPv6-only, DUAL_STACK DAX instances
+* KeyManagementService (3.7.501.13)
+	* Documentation only updates for KMS.
+* Neptune (3.7.502.11)
+	* Doc-only update to address customer use.
+
 ### 3.7.1129.0 (2025-09-23 18:26 UTC)
 * CleanRooms (3.7.505.0)
 	* Added support for running incremental ID mapping for rule-based workflows.
