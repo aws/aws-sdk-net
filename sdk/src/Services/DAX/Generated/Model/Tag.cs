@@ -35,9 +35,9 @@ namespace Amazon.DAX.Model
     /// 
     ///  
     /// <para>
-    /// AWS-assigned tag names and values are automatically assigned the <c>aws:</c> prefix,
-    /// which the user cannot assign. AWS-assigned tag names do not count towards the tag
-    /// limit of 50. User-assigned tag names have the prefix <c>user:</c>.
+    /// Amazon Web Services-assigned tag names and values are automatically assigned the <c>aws:</c>
+    /// prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not
+    /// count towards the tag limit of 50. User-assigned tag names have the prefix <c>user:</c>.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag. Tag values are case-sensitive and can be null. 
+        /// The value of the tag. Tag values are case-sensitive and can be null.
         /// </para>
         /// </summary>
         public string Value
