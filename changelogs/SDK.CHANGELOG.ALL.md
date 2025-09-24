@@ -1,3 +1,15 @@
+### 4.0.98.0 (2025-09-24 18:25 UTC)
+* AppStream (4.0.1.4)
+	* G6f instance support for AppStream 2.0
+* CloudWatch (4.0.4.0)
+	* Fix default dualstack FIPS endpoints in AWS GovCloud(US) regions
+* DAX (4.0.1.0)
+	* This release adds support for IPv6-only, DUAL_STACK DAX instances
+* KeyManagementService (4.0.4.4)
+	* Documentation only updates for KMS.
+* Neptune (4.0.3.3)
+	* Doc-only update to address customer use.
+
 ### 4.0.97.0 (2025-09-23 18:23 UTC)
 * CleanRooms (4.0.7.0)
 	* Added support for running incremental ID mapping for rule-based workflows.
