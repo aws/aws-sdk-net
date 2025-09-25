@@ -57,6 +57,8 @@ namespace Amazon.Runtime.Internal.Settings
         public const string Services = "services";
         public const string EndpointUrl = "endpoint_url";
         public const string AwsAccountId = "aws_account_id";
+        public const string AuthSchemePreference = "auth_scheme_preference";
+        public const string SigV4aSigningRegionSet = "sigv4a_signing_region_set";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

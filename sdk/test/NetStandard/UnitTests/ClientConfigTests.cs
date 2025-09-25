@@ -26,6 +26,8 @@ namespace UnitTests
             "UseHttp",
             "AuthenticationRegion",
             "AuthenticationServiceName",
+            "AuthSchemePreference",
+            "SigV4aSigningRegionSet",
             "MaxErrorRetry",
             "LogResponse",
             "AWSTokenProvider",
