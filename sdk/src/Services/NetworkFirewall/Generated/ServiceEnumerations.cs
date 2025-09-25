@@ -413,6 +413,10 @@ namespace Amazon.NetworkFirewall
     {
 
         /// <summary>
+        /// Constant ALERTLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType ALERTLIST = new GeneratedRulesType("ALERTLIST");
+        /// <summary>
         /// Constant ALLOWLIST for GeneratedRulesType
         /// </summary>
         public static readonly GeneratedRulesType ALLOWLIST = new GeneratedRulesType("ALLOWLIST");
@@ -420,6 +424,10 @@ namespace Amazon.NetworkFirewall
         /// Constant DENYLIST for GeneratedRulesType
         /// </summary>
         public static readonly GeneratedRulesType DENYLIST = new GeneratedRulesType("DENYLIST");
+        /// <summary>
+        /// Constant REJECTLIST for GeneratedRulesType
+        /// </summary>
+        public static readonly GeneratedRulesType REJECTLIST = new GeneratedRulesType("REJECTLIST");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
