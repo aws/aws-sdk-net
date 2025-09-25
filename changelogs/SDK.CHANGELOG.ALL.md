@@ -1,3 +1,11 @@
+### 4.0.99.0 (2025-09-25 18:20 UTC)
+* Glue (4.0.17.0)
+	* Update GetConnection(s) API to return KmsKeyArn & Add 63 missing connection types
+* Lightsail (4.0.3.0)
+	* Attribute HTTP binding update for Get/Delete operations
+* NetworkFirewall (4.0.7.0)
+	* Network Firewall now introduces Reject and Alert action support for stateful domain list rule groups, providing customers with more granular control over their network traffic.
+
 ### 4.0.98.0 (2025-09-24 18:25 UTC)
 * AppStream (4.0.1.4)
 	* G6f instance support for AppStream 2.0
