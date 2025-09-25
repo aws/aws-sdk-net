@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Expand sso profile types to allow only more combinations of credential profile options"
+    ]
+  }
+}
