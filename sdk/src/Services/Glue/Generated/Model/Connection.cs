@@ -169,9 +169,9 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>JDBC_ENFORCE_SSL</c> - A Boolean string (true, false) specifying whether Secure
-        /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on
-        /// the client. The default is false.
+        ///  <c>JDBC_ENFORCE_SSL</c> - A case-insensitive Boolean string (true, false) specifying
+        /// whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC
+        /// connection on the client. The default is false.
         /// </para>
         ///  </li> <li> 
         /// <para>
