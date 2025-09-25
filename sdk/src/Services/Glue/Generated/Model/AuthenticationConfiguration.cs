@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class AuthenticationConfiguration
     {
         private AuthenticationType _authenticationType;
+        private string _kmsKeyArn;
         private OAuth2Properties _oAuth2Properties;
         private string _secretArn;
 
@@ -54,6 +55,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication
+        /// information. This key is used to protect credentials and other sensitive data stored
+        /// within the authentication configuration.
+        /// </para>
+        /// </summary>
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>
