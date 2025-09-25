@@ -56,6 +56,30 @@ public class DevConfigWriter
             writer.WriteEndArray();
         }
 
+        if (config.Extensions.Any())
+        {
+            writer.WriteStartArray("extensions");
+
+            foreach (var extension in config.Extensions)
+            {
+                writer.WriteStartObject();
+                writer.WriteString("extensionName", extension.Name);
+                ValidateType(extension.Type);
+                writer.WriteString("type", extension.Type);
+
+                writer.WriteStartArray("changeLogMessages");
+                foreach (var message in extension.Messages)
+                {
+                    writer.WriteStringValue(message);
+                }
+                writer.WriteEndArray();
+
+                writer.WriteEndObject();
+            }
+
+            writer.WriteEndArray();
+        }
+
         writer.WriteEndObject();
     }
 
