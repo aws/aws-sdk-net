@@ -39,6 +39,7 @@ namespace Amazon.Connect.Model
         private string _defaultOutboundQueueId;
         private string _description;
         private string _instanceId;
+        private List<RoutingProfileManualAssignmentQueueConfig> _manualAssignmentQueueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileManualAssignmentQueueConfig>() : null;
         private List<MediaConcurrency> _mediaConcurrencies = AWSConfigs.InitializeCollections ? new List<MediaConcurrency>() : null;
         private string _name;
         private List<RoutingProfileQueueConfig> _queueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfig>() : null;
@@ -120,6 +121,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualAssignmentQueueConfigs. 
+        /// <para>
+        /// The manual assignment queues associated with the routing profile. If no queue is added,
+        /// agents and supervisors can't pick or assign any contacts from this routing profile.
+        /// The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig
+        /// objects that can be passed during a CreateRoutingProfile API request. It is different
+        /// from the quota of 50 queues per routing profile per instance that is listed in Amazon
+        /// Connect service quotas.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs
+        {
+            get { return this._manualAssignmentQueueConfigs; }
+            set { this._manualAssignmentQueueConfigs = value; }
+        }
+
+        // Check to see if ManualAssignmentQueueConfigs property is set
+        internal bool IsSetManualAssignmentQueueConfigs()
+        {
+            return this._manualAssignmentQueueConfigs != null && (this._manualAssignmentQueueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

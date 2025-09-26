@@ -72,6 +72,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentAvailabilityTimer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociatedManualAssignmentQueueIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssociatedManualAssignmentQueueIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AssociatedQueueIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -124,6 +130,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfAssociatedManualAssignmentQueues", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfAssociatedManualAssignmentQueues = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfAssociatedQueues", targetDepth))

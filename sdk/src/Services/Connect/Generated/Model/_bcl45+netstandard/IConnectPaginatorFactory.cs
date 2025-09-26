@@ -358,6 +358,16 @@ namespace Amazon.Connect.Model
         IListRealtimeContactAnalysisSegmentsV2Paginator ListRealtimeContactAnalysisSegmentsV2(ListRealtimeContactAnalysisSegmentsV2Request request);
 
         /// <summary>
+        /// Paginator for ListRoutingProfileManualAssignmentQueues operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRoutingProfileManualAssignmentQueuesPaginator ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request);
+
+        /// <summary>
         /// Paginator for ListRoutingProfileQueues operation
         ///</summary>
         [AWSPaginator(

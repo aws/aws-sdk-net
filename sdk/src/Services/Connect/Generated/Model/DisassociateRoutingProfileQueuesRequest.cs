@@ -42,6 +42,7 @@ namespace Amazon.Connect.Model
     public partial class DisassociateRoutingProfileQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
+        private List<RoutingProfileQueueReference> _manualAssignmentQueueReferences = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueReference>() : null;
         private List<RoutingProfileQueueReference> _queueReferences = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueReference>() : null;
         private string _routingProfileId;
 
@@ -66,12 +67,29 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualAssignmentQueueReferences. 
+        /// <para>
+        /// The manual assignment queues to disassociate with this routing profile.
+        /// </para>
+        /// </summary>
+        public List<RoutingProfileQueueReference> ManualAssignmentQueueReferences
+        {
+            get { return this._manualAssignmentQueueReferences; }
+            set { this._manualAssignmentQueueReferences = value; }
+        }
+
+        // Check to see if ManualAssignmentQueueReferences property is set
+        internal bool IsSetManualAssignmentQueueReferences()
+        {
+            return this._manualAssignmentQueueReferences != null && (this._manualAssignmentQueueReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueReferences. 
         /// <para>
         /// The queues to disassociate from this routing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<RoutingProfileQueueReference> QueueReferences
         {
             get { return this._queueReferences; }

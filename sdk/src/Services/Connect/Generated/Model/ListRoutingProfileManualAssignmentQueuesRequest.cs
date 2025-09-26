@@ -30,14 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateRoutingProfileQueues operation.
-    /// Associates a set of queues with a routing profile.
+    /// Container for the parameters to the ListRoutingProfileManualAssignmentQueues operation.
+    /// Lists the manual assignment queues associated with a routing profile.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Use cases</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Following are common uses cases for this API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// This API returns list of queues where contacts can be manually assigned or picked.
+    /// The user can additionally filter on queues, if they have access to those queues (otherwise
+    /// a invalid request exception will be thrown).
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about how manual contact assignment works in the agent workspace,
+    /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+    /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+    /// Administrator Guide</i>. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Important things to know</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// This API only returns the manual assignment queues associated with a routing profile.
+    /// Use the ListRoutingProfileQueues API to list the auto assignment queues for the routing
+    /// profile.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// Connect endpoints and quotas</a>.
+    /// </para>
     /// </summary>
-    public partial class AssociateRoutingProfileQueuesRequest : AmazonConnectRequest
+    public partial class ListRoutingProfileManualAssignmentQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private List<RoutingProfileManualAssignmentQueueConfig> _manualAssignmentQueueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileManualAssignmentQueueConfig>() : null;
-        private List<RoutingProfileQueueConfig> _queueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfig>() : null;
+        private int? _maxResults;
+        private string _nextToken;
         private string _routingProfileId;
 
         /// <summary>
@@ -61,41 +98,41 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ManualAssignmentQueueConfigs. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The manual assignment queues to associate with this routing profile.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._manualAssignmentQueueConfigs; }
-            set { this._manualAssignmentQueueConfigs = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if ManualAssignmentQueueConfigs property is set
-        internal bool IsSetManualAssignmentQueueConfigs()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._manualAssignmentQueueConfigs != null && (this._manualAssignmentQueueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property QueueConfigs. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The queues to associate with this routing profile.
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<RoutingProfileQueueConfig> QueueConfigs
+        public string NextToken
         {
-            get { return this._queueConfigs; }
-            set { this._queueConfigs = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if QueueConfigs property is set
-        internal bool IsSetQueueConfigs()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._queueConfigs != null && (this._queueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._nextToken != null;
         }
 
         /// <summary>

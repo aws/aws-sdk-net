@@ -36,7 +36,26 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ContactSearchSummarySegmentAttributeValue
     {
+        private Dictionary<string, SegmentAttributeValue> _valueMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _valueString;
+
+        /// <summary>
+        /// Gets and sets the property ValueMap. 
+        /// <para>
+        /// The key and value of a segment attribute.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> ValueMap
+        {
+            get { return this._valueMap; }
+            set { this._valueMap = value; }
+        }
+
+        // Check to see if ValueMap property is set
+        internal bool IsSetValueMap()
+        {
+            return this._valueMap != null && (this._valueMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ValueString. 

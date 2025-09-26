@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssociateRoutingProfileQueues Request Marshaller
+    /// AssociateContactWithUser Request Marshaller
     /// </summary>       
-    public class AssociateRoutingProfileQueuesRequestMarshaller : IMarshaller<IRequest, AssociateRoutingProfileQueuesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateContactWithUserRequestMarshaller : IMarshaller<IRequest, AssociateContactWithUserRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AssociateRoutingProfileQueuesRequest)input);
+            return this.Marshall((AssociateContactWithUserRequest)input);
         }
 
         /// <summary>
@@ -53,56 +53,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AssociateRoutingProfileQueuesRequest publicRequest)
+        public IRequest Marshall(AssociateContactWithUserRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "POST";
 
+            if (!publicRequest.IsSetContactId())
+                throw new AmazonConnectException("Request object does not have required field ContactId set");
+            request.AddPathResource("{ContactId}", StringUtils.FromString(publicRequest.ContactId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            if (!publicRequest.IsSetRoutingProfileId())
-                throw new AmazonConnectException("Request object does not have required field RoutingProfileId set");
-            request.AddPathResource("{RoutingProfileId}", StringUtils.FromString(publicRequest.RoutingProfileId));
-            request.ResourcePath = "/routing-profiles/{InstanceId}/{RoutingProfileId}/associate-queues";
+            request.ResourcePath = "/contacts/{InstanceId}/{ContactId}/associate-user";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetManualAssignmentQueueConfigs())
+                if(publicRequest.IsSetUserId())
                 {
-                    context.Writer.WritePropertyName("ManualAssignmentQueueConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestManualAssignmentQueueConfigsListValue in publicRequest.ManualAssignmentQueueConfigs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RoutingProfileManualAssignmentQueueConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestManualAssignmentQueueConfigsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetQueueConfigs())
-                {
-                    context.Writer.WritePropertyName("QueueConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestQueueConfigsListValue in publicRequest.QueueConfigs)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RoutingProfileQueueConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestQueueConfigsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("UserId");
+                    context.Writer.Write(publicRequest.UserId);
                 }
 
                 writer.WriteObjectEnd();
@@ -113,9 +87,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static AssociateRoutingProfileQueuesRequestMarshaller _instance = new AssociateRoutingProfileQueuesRequestMarshaller();        
+        private static AssociateContactWithUserRequestMarshaller _instance = new AssociateContactWithUserRequestMarshaller();        
 
-        internal static AssociateRoutingProfileQueuesRequestMarshaller GetInstance()
+        internal static AssociateContactWithUserRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +97,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateRoutingProfileQueuesRequestMarshaller Instance
+        public static AssociateContactWithUserRequestMarshaller Instance
         {
             get
             {

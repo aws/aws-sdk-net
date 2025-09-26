@@ -48,6 +48,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalTimeRange())
+            {
+                context.Writer.WritePropertyName("AdditionalTimeRange");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SearchContactsAdditionalTimeRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalTimeRange, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAgentHierarchyGroups())
             {
                 context.Writer.WritePropertyName("AgentHierarchyGroups");
@@ -103,6 +114,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NameCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.Name, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueueIds())
             {
                 context.Writer.WritePropertyName("QueueIds");
@@ -112,6 +134,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectQueueIdsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRoutingCriteria())
+            {
+                context.Writer.WritePropertyName("RoutingCriteria");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SearchableRoutingCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.RoutingCriteria, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSearchableContactAttributes())

@@ -88,6 +88,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetManualAssignmentQueueConfigs())
+                {
+                    context.Writer.WritePropertyName("ManualAssignmentQueueConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestManualAssignmentQueueConfigsListValue in publicRequest.ManualAssignmentQueueConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingProfileManualAssignmentQueueConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestManualAssignmentQueueConfigsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMediaConcurrencies())
                 {
                     context.Writer.WritePropertyName("MediaConcurrencies");

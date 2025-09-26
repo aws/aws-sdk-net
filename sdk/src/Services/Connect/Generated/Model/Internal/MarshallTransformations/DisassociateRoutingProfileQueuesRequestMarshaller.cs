@@ -73,6 +73,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetManualAssignmentQueueReferences())
+                {
+                    context.Writer.WritePropertyName("ManualAssignmentQueueReferences");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestManualAssignmentQueueReferencesListValue in publicRequest.ManualAssignmentQueueReferences)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoutingProfileQueueReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestManualAssignmentQueueReferencesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetQueueReferences())
                 {
                     context.Writer.WritePropertyName("QueueReferences");

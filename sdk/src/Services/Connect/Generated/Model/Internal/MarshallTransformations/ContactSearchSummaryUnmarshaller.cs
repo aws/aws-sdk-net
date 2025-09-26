@@ -114,6 +114,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.InitiationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreviousContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ContactSearchSummaryQueueInfoUnmarshaller.Instance;
                     unmarshalledObject.QueueInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingCriteria", targetDepth))
+                {
+                    var unmarshaller = RoutingCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.RoutingCriteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScheduledTimestamp", targetDepth))
