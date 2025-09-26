@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeInputField Object
+    /// Response Unmarshaller for NodeInputExecutionChainItem Object
     /// </summary>  
-    public class NodeInputFieldUnmarshaller : IUnmarshaller<NodeInputField, XmlUnmarshallerContext>, IUnmarshaller<NodeInputField, JsonUnmarshallerContext>
+    public class NodeInputExecutionChainItemUnmarshaller : IUnmarshaller<NodeInputExecutionChainItem, XmlUnmarshallerContext>, IUnmarshaller<NodeInputExecutionChainItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NodeInputField IUnmarshaller<NodeInputField, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NodeInputExecutionChainItem IUnmarshaller<NodeInputExecutionChainItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeInputField Unmarshall(JsonUnmarshallerContext context)
+        public NodeInputExecutionChainItem Unmarshall(JsonUnmarshallerContext context)
         {
-            NodeInputField unmarshalledObject = new NodeInputField();
+            NodeInputExecutionChainItem unmarshalledObject = new NodeInputExecutionChainItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("category", targetDepth))
+                if (context.TestExpression("index", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nodeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("content", targetDepth))
-                {
-                    var unmarshaller = NodeExecutionContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("executionChain", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<NodeInputExecutionChainItem, NodeInputExecutionChainItemUnmarshaller>(NodeInputExecutionChainItemUnmarshaller.Instance);
-                    unmarshalledObject.ExecutionChain = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source", targetDepth))
-                {
-                    var unmarshaller = NodeInputSourceUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -107,12 +89,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static NodeInputFieldUnmarshaller _instance = new NodeInputFieldUnmarshaller();        
+        private static NodeInputExecutionChainItemUnmarshaller _instance = new NodeInputExecutionChainItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeInputFieldUnmarshaller Instance
+        public static NodeInputExecutionChainItemUnmarshaller Instance
         {
             get
             {

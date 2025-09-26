@@ -46,6 +46,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         private FlowFailureEvent _flowFailureEvent;
         private FlowExecutionInputEvent _flowInputEvent;
         private FlowExecutionOutputEvent _flowOutputEvent;
+        private NodeActionEvent _nodeActionEvent;
+        private NodeDependencyEvent _nodeDependencyEvent;
         private NodeFailureEvent _nodeFailureEvent;
         private NodeInputEvent _nodeInputEvent;
         private NodeOutputEvent _nodeOutputEvent;
@@ -125,6 +127,44 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFlowOutputEvent()
         {
             return this._flowOutputEvent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeActionEvent. 
+        /// <para>
+        /// Contains information about an action (operation) called by a node during execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public NodeActionEvent NodeActionEvent
+        {
+            get { return this._nodeActionEvent; }
+            set { this._nodeActionEvent = value; }
+        }
+
+        // Check to see if NodeActionEvent property is set
+        internal bool IsSetNodeActionEvent()
+        {
+            return this._nodeActionEvent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeDependencyEvent. 
+        /// <para>
+        /// Contains information about an internal trace of a specific node during execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public NodeDependencyEvent NodeDependencyEvent
+        {
+            get { return this._nodeDependencyEvent; }
+            set { this._nodeDependencyEvent = value; }
+        }
+
+        // Check to see if NodeDependencyEvent property is set
+        internal bool IsSetNodeDependencyEvent()
+        {
+            return this._nodeDependencyEvent != null;
         }
 
         /// <summary>

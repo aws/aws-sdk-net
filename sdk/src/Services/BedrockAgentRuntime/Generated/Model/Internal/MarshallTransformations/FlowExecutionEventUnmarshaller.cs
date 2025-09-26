@@ -90,6 +90,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.FlowOutputEvent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nodeActionEvent", targetDepth))
+                {
+                    var unmarshaller = NodeActionEventUnmarshaller.Instance;
+                    unmarshalledObject.NodeActionEvent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nodeDependencyEvent", targetDepth))
+                {
+                    var unmarshaller = NodeDependencyEventUnmarshaller.Instance;
+                    unmarshalledObject.NodeDependencyEvent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nodeFailureEvent", targetDepth))
                 {
                     var unmarshaller = NodeFailureEventUnmarshaller.Instance;

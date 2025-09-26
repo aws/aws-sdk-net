@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FlowTrace Object
+    /// Response Unmarshaller for TraceElements Object
     /// </summary>  
-    public class FlowTraceUnmarshaller : IUnmarshaller<FlowTrace, XmlUnmarshallerContext>, IUnmarshaller<FlowTrace, JsonUnmarshallerContext>
+    public class TraceElementsUnmarshaller : IUnmarshaller<TraceElements, XmlUnmarshallerContext>, IUnmarshaller<TraceElements, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FlowTrace IUnmarshaller<FlowTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TraceElements IUnmarshaller<TraceElements, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FlowTrace Unmarshall(JsonUnmarshallerContext context)
+        public TraceElements Unmarshall(JsonUnmarshallerContext context)
         {
-            FlowTrace unmarshalledObject = new FlowTrace();
+            TraceElements unmarshalledObject = new TraceElements();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conditionNodeResultTrace", targetDepth))
+                if (context.TestExpression("agentTraces", targetDepth))
                 {
-                    var unmarshaller = FlowTraceConditionNodeResultEventUnmarshaller.Instance;
-                    unmarshalledObject.ConditionNodeResultTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodeActionTrace", targetDepth))
-                {
-                    var unmarshaller = FlowTraceNodeActionEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeActionTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodeDependencyTrace", targetDepth))
-                {
-                    var unmarshaller = FlowTraceDependencyEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeDependencyTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodeInputTrace", targetDepth))
-                {
-                    var unmarshaller = FlowTraceNodeInputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeInputTrace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nodeOutputTrace", targetDepth))
-                {
-                    var unmarshaller = FlowTraceNodeOutputEventUnmarshaller.Instance;
-                    unmarshalledObject.NodeOutputTrace = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TracePart, TracePartUnmarshaller>(TracePartUnmarshaller.Instance);
+                    unmarshalledObject.AgentTraces = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static FlowTraceUnmarshaller _instance = new FlowTraceUnmarshaller();        
+        private static TraceElementsUnmarshaller _instance = new TraceElementsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FlowTraceUnmarshaller Instance
+        public static TraceElementsUnmarshaller Instance
         {
             get
             {

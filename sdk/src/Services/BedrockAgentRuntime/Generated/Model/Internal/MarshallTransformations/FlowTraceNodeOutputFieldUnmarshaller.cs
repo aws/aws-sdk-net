@@ -72,10 +72,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("next", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FlowTraceNodeOutputNext, FlowTraceNodeOutputNextUnmarshaller>(FlowTraceNodeOutputNextUnmarshaller.Instance);
+                    unmarshalledObject.Next = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nodeOutputName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeOutputName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
