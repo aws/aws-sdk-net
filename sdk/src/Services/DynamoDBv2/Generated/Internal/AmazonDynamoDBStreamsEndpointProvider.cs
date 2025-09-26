@@ -47,10 +47,10 @@ namespace Amazon.DynamoDBv2.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -68,6 +68,34 @@ namespace Amazon.DynamoDBv2.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams-dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -76,49 +104,21 @@ namespace Amazon.DynamoDBv2.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
-                            {
-                                return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
                             return new Endpoint(Interpolate(@"https://streams.dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
                             return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
-                    }
-                    if (Equals(refs["Region"], "local"))
-                    {
-                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws-cn", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws-iso", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.c2s.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals("aws-iso-b", GetAttr(refs["PartitionResult"], "name")))
-                    {
-                        return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.sc2s.sgov.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     return new Endpoint(Interpolate(@"https://streams.dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
