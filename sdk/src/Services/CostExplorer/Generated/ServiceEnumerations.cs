@@ -961,6 +961,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension OPERATION = new Dimension("OPERATION");
         /// <summary>
+        /// Constant PAYER_ACCOUNT for Dimension
+        /// </summary>
+        public static readonly Dimension PAYER_ACCOUNT = new Dimension("PAYER_ACCOUNT");
+        /// <summary>
         /// Constant PAYMENT_OPTION for Dimension
         /// </summary>
         public static readonly Dimension PAYMENT_OPTION = new Dimension("PAYMENT_OPTION");
