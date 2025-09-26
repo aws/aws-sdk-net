@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioExtractionCategory Object
+    /// Response Unmarshaller for TranscriptConfiguration Object
     /// </summary>  
-    public class AudioExtractionCategoryUnmarshaller : IUnmarshaller<AudioExtractionCategory, XmlUnmarshallerContext>, IUnmarshaller<AudioExtractionCategory, JsonUnmarshallerContext>
+    public class TranscriptConfigurationUnmarshaller : IUnmarshaller<TranscriptConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TranscriptConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioExtractionCategory IUnmarshaller<AudioExtractionCategory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TranscriptConfiguration IUnmarshaller<TranscriptConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioExtractionCategory Unmarshall(JsonUnmarshallerContext context)
+        public TranscriptConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AudioExtractionCategory unmarshalledObject = new AudioExtractionCategory();
+            TranscriptConfiguration unmarshalledObject = new TranscriptConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("channelLabeling", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ChannelLabelingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ChannelLabeling = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("typeConfiguration", targetDepth))
+                if (context.TestExpression("speakerLabeling", targetDepth))
                 {
-                    var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SpeakerLabelingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SpeakerLabeling = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioExtractionCategoryUnmarshaller _instance = new AudioExtractionCategoryUnmarshaller();        
+        private static TranscriptConfigurationUnmarshaller _instance = new TranscriptConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioExtractionCategoryUnmarshaller Instance
+        public static TranscriptConfigurationUnmarshaller Instance
         {
             get
             {

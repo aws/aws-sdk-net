@@ -30,13 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
-    /// Category of Audio Extraction
+    /// Speaker labeling configuration
     /// </summary>
-    public partial class AudioExtractionCategory
+    public partial class SpeakerLabelingConfiguration
     {
         private State _state;
-        private AudioExtractionCategoryTypeConfiguration _typeConfiguration;
-        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property State.
@@ -52,36 +50,6 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetState()
         {
             return this._state != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TypeConfiguration.
-        /// </summary>
-        public AudioExtractionCategoryTypeConfiguration TypeConfiguration
-        {
-            get { return this._typeConfiguration; }
-            set { this._typeConfiguration = value; }
-        }
-
-        // Check to see if TypeConfiguration property is set
-        internal bool IsSetTypeConfiguration()
-        {
-            return this._typeConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Types.
-        /// </summary>
-        public List<string> Types
-        {
-            get { return this._types; }
-            set { this._types = value; }
-        }
-
-        // Check to see if Types property is set
-        internal bool IsSetTypes()
-        {
-            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

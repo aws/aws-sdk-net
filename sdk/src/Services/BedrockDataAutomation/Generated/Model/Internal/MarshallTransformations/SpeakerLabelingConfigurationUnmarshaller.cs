@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioExtractionCategory Object
+    /// Response Unmarshaller for SpeakerLabelingConfiguration Object
     /// </summary>  
-    public class AudioExtractionCategoryUnmarshaller : IUnmarshaller<AudioExtractionCategory, XmlUnmarshallerContext>, IUnmarshaller<AudioExtractionCategory, JsonUnmarshallerContext>
+    public class SpeakerLabelingConfigurationUnmarshaller : IUnmarshaller<SpeakerLabelingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SpeakerLabelingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioExtractionCategory IUnmarshaller<AudioExtractionCategory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SpeakerLabelingConfiguration IUnmarshaller<SpeakerLabelingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioExtractionCategory Unmarshall(JsonUnmarshallerContext context)
+        public SpeakerLabelingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AudioExtractionCategory unmarshalledObject = new AudioExtractionCategory();
+            SpeakerLabelingConfiguration unmarshalledObject = new SpeakerLabelingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,29 +72,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("typeConfiguration", targetDepth))
-                {
-                    var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static AudioExtractionCategoryUnmarshaller _instance = new AudioExtractionCategoryUnmarshaller();        
+        private static SpeakerLabelingConfigurationUnmarshaller _instance = new SpeakerLabelingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioExtractionCategoryUnmarshaller Instance
+        public static SpeakerLabelingConfigurationUnmarshaller Instance
         {
             get
             {
