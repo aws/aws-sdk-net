@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeOutputField Object
+    /// Response Unmarshaller for FlowTraceDependencyEvent Object
     /// </summary>  
-    public class NodeOutputFieldUnmarshaller : IJsonUnmarshaller<NodeOutputField, JsonUnmarshallerContext>
+    public class FlowTraceDependencyEventUnmarshaller : IJsonUnmarshaller<FlowTraceDependencyEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeOutputField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FlowTraceDependencyEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            NodeOutputField unmarshalledObject = new NodeOutputField();
+            FlowTraceDependencyEvent unmarshalledObject = new FlowTraceDependencyEvent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
-                {
-                    var unmarshaller = NodeExecutionContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("nodeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("next", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<NodeOutputNext, NodeOutputNextUnmarshaller>(NodeOutputNextUnmarshaller.Instance);
-                    unmarshalledObject.Next = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("traceElements", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TraceElementsUnmarshaller.Instance;
+                    unmarshalledObject.TraceElements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static NodeOutputFieldUnmarshaller _instance = new NodeOutputFieldUnmarshaller();        
+        private static FlowTraceDependencyEventUnmarshaller _instance = new FlowTraceDependencyEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeOutputFieldUnmarshaller Instance
+        public static FlowTraceDependencyEventUnmarshaller Instance
         {
             get
             {

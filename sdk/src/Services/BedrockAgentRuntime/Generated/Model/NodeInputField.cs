@@ -34,8 +34,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class NodeInputField
     {
+        private FlowNodeInputCategory _category;
         private NodeExecutionContent _content;
+        private List<NodeInputExecutionChainItem> _executionChain = AWSConfigs.InitializeCollections ? new List<NodeInputExecutionChainItem>() : null;
         private string _name;
+        private NodeInputSource _source;
+        private FlowNodeIODataType _type;
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category of the input field.
+        /// </para>
+        /// </summary>
+        public FlowNodeInputCategory Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -57,6 +79,29 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionChain. 
+        /// <para>
+        /// The execution path through nested nodes like iterators and loops.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NodeInputExecutionChainItem> ExecutionChain
+        {
+            get { return this._executionChain; }
+            set { this._executionChain = value; }
+        }
+
+        // Check to see if ExecutionChain property is set
+        internal bool IsSetExecutionChain()
+        {
+            return this._executionChain != null && (this._executionChain.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the input field as defined in the node's input schema.
@@ -73,6 +118,42 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source node that provides input data to this field.
+        /// </para>
+        /// </summary>
+        public NodeInputSource Source
+        {
+            get { return this._source; }
+            set { this._source = value; }
+        }
+
+        // Check to see if Source property is set
+        internal bool IsSetSource()
+        {
+            return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The data type of the input field for compatibility validation.
+        /// </para>
+        /// </summary>
+        public FlowNodeIODataType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

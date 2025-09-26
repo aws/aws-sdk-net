@@ -42,6 +42,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private NodeExecutionContent _content;
         private string _name;
+        private List<NodeOutputNext> _next = AWSConfigs.InitializeCollections ? new List<NodeOutputNext>() : null;
+        private FlowNodeIODataType _type;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -79,6 +81,47 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Next. 
+        /// <para>
+        /// The next node that receives output data from this field.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NodeOutputNext> Next
+        {
+            get { return this._next; }
+            set { this._next = value; }
+        }
+
+        // Check to see if Next property is set
+        internal bool IsSetNext()
+        {
+            return this._next != null && (this._next.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The data type of the output field for compatibility validation.
+        /// </para>
+        /// </summary>
+        public FlowNodeIODataType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeOutputField Object
+    /// Response Unmarshaller for FlowTraceNodeInputExecutionChainItem Object
     /// </summary>  
-    public class NodeOutputFieldUnmarshaller : IJsonUnmarshaller<NodeOutputField, JsonUnmarshallerContext>
+    public class FlowTraceNodeInputExecutionChainItemUnmarshaller : IJsonUnmarshaller<FlowTraceNodeInputExecutionChainItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeOutputField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FlowTraceNodeInputExecutionChainItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            NodeOutputField unmarshalledObject = new NodeOutputField();
+            FlowTraceNodeInputExecutionChainItem unmarshalledObject = new FlowTraceNodeInputExecutionChainItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("index", targetDepth))
                 {
-                    var unmarshaller = NodeExecutionContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("nodeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("next", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<NodeOutputNext, NodeOutputNextUnmarshaller>(NodeOutputNextUnmarshaller.Instance);
-                    unmarshalledObject.Next = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NodeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -85,12 +79,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static NodeOutputFieldUnmarshaller _instance = new NodeOutputFieldUnmarshaller();        
+        private static FlowTraceNodeInputExecutionChainItemUnmarshaller _instance = new FlowTraceNodeInputExecutionChainItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeOutputFieldUnmarshaller Instance
+        public static FlowTraceNodeInputExecutionChainItemUnmarshaller Instance
         {
             get
             {

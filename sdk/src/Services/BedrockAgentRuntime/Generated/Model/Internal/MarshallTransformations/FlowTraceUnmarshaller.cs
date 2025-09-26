@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodeActionTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nodeDependencyTrace", targetDepth))
+                {
+                    var unmarshaller = FlowTraceDependencyEventUnmarshaller.Instance;
+                    unmarshalledObject.NodeDependencyTrace = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("nodeInputTrace", targetDepth))
                 {
                     var unmarshaller = FlowTraceNodeInputEventUnmarshaller.Instance;

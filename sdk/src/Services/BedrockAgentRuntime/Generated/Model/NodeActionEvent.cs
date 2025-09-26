@@ -30,11 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an action (operation) called by a node in an Amazon Bedrock
-    /// flow. The service generates action events for calls made by prompt nodes, agent nodes,
-    /// and Amazon Web Services Lambda nodes.
+    /// Contains information about an action (operation) called by a node during execution.
     /// </summary>
-    public partial class FlowTraceNodeActionEvent
+    public partial class NodeActionEvent
     {
         private string _nodeName;
         private string _operationName;
