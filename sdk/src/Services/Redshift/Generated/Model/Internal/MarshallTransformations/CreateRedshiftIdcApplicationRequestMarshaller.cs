@@ -163,6 +163,41 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetSsoTagKeys())
+                {
+                    if (publicRequest.SsoTagKeys.Count == 0)
+                        request.Parameters.Add("SsoTagKeys", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SsoTagKeys)
+                         {
+                             request.Parameters.Add("SsoTagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
             }
             return request;
         }
