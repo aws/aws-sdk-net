@@ -38,10 +38,15 @@ namespace Amazon.Billing.Model
         private BillingViewType _billingViewType;
         private DateTime? _createdAt;
         private Expression _dataFilterExpression;
+        private int? _derivedViewCount;
         private string _description;
+        private BillingViewHealthStatus _healthStatus;
         private string _name;
         private string _ownerAccountId;
+        private string _sourceAccountId;
+        private int? _sourceViewCount;
         private DateTime? _updatedAt;
+        private DateTime? _viewDefinitionLastUpdatedAt;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -118,6 +123,24 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DerivedViewCount. 
+        /// <para>
+        ///  The number of billing views that use this billing view as a source. 
+        /// </para>
+        /// </summary>
+        public int DerivedViewCount
+        {
+            get { return this._derivedViewCount.GetValueOrDefault(); }
+            set { this._derivedViewCount = value; }
+        }
+
+        // Check to see if DerivedViewCount property is set
+        internal bool IsSetDerivedViewCount()
+        {
+            return this._derivedViewCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         ///  The description of the billing view. 
@@ -134,6 +157,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        ///  The current health status of the billing view. 
+        /// </para>
+        /// </summary>
+        public BillingViewHealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
         }
 
         /// <summary>
@@ -174,6 +215,43 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceAccountId. 
+        /// <para>
+        ///  The Amazon Web Services account ID that owns the source billing view, if this is
+        /// a derived billing view. 
+        /// </para>
+        /// </summary>
+        public string SourceAccountId
+        {
+            get { return this._sourceAccountId; }
+            set { this._sourceAccountId = value; }
+        }
+
+        // Check to see if SourceAccountId property is set
+        internal bool IsSetSourceAccountId()
+        {
+            return this._sourceAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceViewCount. 
+        /// <para>
+        ///  The number of source views associated with this billing view. 
+        /// </para>
+        /// </summary>
+        public int SourceViewCount
+        {
+            get { return this._sourceViewCount.GetValueOrDefault(); }
+            set { this._sourceViewCount = value; }
+        }
+
+        // Check to see if SourceViewCount property is set
+        internal bool IsSetSourceViewCount()
+        {
+            return this._sourceViewCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The time when the billing view was last updated. 
@@ -189,6 +267,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewDefinitionLastUpdatedAt. 
+        /// <para>
+        ///  The timestamp of when the billing view definition was last updated. 
+        /// </para>
+        /// </summary>
+        public DateTime ViewDefinitionLastUpdatedAt
+        {
+            get { return this._viewDefinitionLastUpdatedAt.GetValueOrDefault(); }
+            set { this._viewDefinitionLastUpdatedAt = value; }
+        }
+
+        // Check to see if ViewDefinitionLastUpdatedAt property is set
+        internal bool IsSetViewDefinitionLastUpdatedAt()
+        {
+            return this._viewDefinitionLastUpdatedAt.HasValue; 
         }
 
     }

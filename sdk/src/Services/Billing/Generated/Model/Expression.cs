@@ -37,6 +37,7 @@ namespace Amazon.Billing.Model
     {
         private DimensionValues _dimensions;
         private TagValues _tags;
+        private TimeRange _timeRange;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -72,6 +73,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetTags()
         {
             return this._tags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        ///  Specifies a time range filter for the billing view data. 
+        /// </para>
+        /// </summary>
+        public TimeRange TimeRange
+        {
+            get { return this._timeRange; }
+            set { this._timeRange = value; }
+        }
+
+        // Check to see if TimeRange property is set
+        internal bool IsSetTimeRange()
+        {
+            return this._timeRange != null;
         }
 
     }

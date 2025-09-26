@@ -75,6 +75,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

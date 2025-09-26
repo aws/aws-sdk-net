@@ -274,6 +274,88 @@ namespace Amazon.Billing
         #endregion
 
 
+        #region  AssociateSourceViews
+
+        /// <summary>
+        /// Associates one or more source billing views with an existing billing view. This allows
+        /// creating aggregate billing views that combine data from multiple sources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceViews service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
+        /// You've reached the limit of resources you can create, or exceeded the size of an
+        /// individual resource.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        public virtual AssociateSourceViewsResponse AssociateSourceViews(AssociateSourceViewsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceViewsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSourceViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceViews operation on AmazonBillingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSourceViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSourceViews(AssociateSourceViewsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSourceViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSourceViews.</param>
+        /// 
+        /// <returns>Returns a  AssociateSourceViewsResult from Billing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
+        public virtual AssociateSourceViewsResponse EndAssociateSourceViews(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSourceViewsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBillingView
 
         /// <summary>
@@ -285,12 +367,19 @@ namespace Amazon.Billing
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.InternalServerException">
         /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ServiceQuotaExceededException">
         /// You've reached the limit of resources you can create, or exceeded the size of an
@@ -414,6 +503,84 @@ namespace Amazon.Billing
         public virtual DeleteBillingViewResponse EndDeleteBillingView(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBillingViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateSourceViews
+
+        /// <summary>
+        /// Removes the association between one or more source billing views and an existing
+        /// billing view. This allows modifying the composition of aggregate billing views.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceViews service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceViews service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        public virtual DisassociateSourceViewsResponse DisassociateSourceViews(DisassociateSourceViewsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSourceViewsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSourceViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceViews operation on AmazonBillingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSourceViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSourceViews(DisassociateSourceViewsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSourceViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSourceViews.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSourceViewsResult from Billing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
+        public virtual DisassociateSourceViewsResponse EndDisassociateSourceViews(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSourceViewsResponse>(asyncResult);
         }
 
         #endregion
@@ -919,6 +1086,10 @@ namespace Amazon.Billing
         /// <returns>The response from the UpdateBillingView service method, as returned by Billing.</returns>
         /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.Billing.Model.ConflictException">
         /// The requested operation would cause a conflict with the current state of a service

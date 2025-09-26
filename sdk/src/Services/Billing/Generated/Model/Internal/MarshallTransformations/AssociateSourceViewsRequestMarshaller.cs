@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListBillingViews Request Marshaller
+    /// AssociateSourceViews Request Marshaller
     /// </summary>       
-    public class ListBillingViewsRequestMarshaller : IMarshaller<IRequest, ListBillingViewsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateSourceViewsRequestMarshaller : IMarshaller<IRequest, AssociateSourceViewsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListBillingViewsRequest)input);
+            return this.Marshall((AssociateSourceViewsRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListBillingViewsRequest publicRequest)
+        public IRequest Marshall(AssociateSourceViewsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Billing");
-            string target = "AWSBilling.ListBillingViews";
+            string target = "AWSBilling.AssociateSourceViews";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-09-07";
@@ -69,61 +69,21 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActiveTimeRange())
+                if(publicRequest.IsSetArn())
                 {
-                    context.Writer.WritePropertyName("activeTimeRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ActiveTimeRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ActiveTimeRange, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("arn");
+                    context.Writer.Write(publicRequest.Arn);
                 }
 
-                if(publicRequest.IsSetArns())
+                if(publicRequest.IsSetSourceViews())
                 {
-                    context.Writer.WritePropertyName("arns");
+                    context.Writer.WritePropertyName("sourceViews");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestArnsListValue in publicRequest.Arns)
+                    foreach(var publicRequestSourceViewsListValue in publicRequest.SourceViews)
                     {
-                            context.Writer.Write(publicRequestArnsListValue);
+                            context.Writer.Write(publicRequestSourceViewsListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetBillingViewTypes())
-                {
-                    context.Writer.WritePropertyName("billingViewTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBillingViewTypesListValue in publicRequest.BillingViewTypes)
-                    {
-                            context.Writer.Write(publicRequestBillingViewTypesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetOwnerAccountId())
-                {
-                    context.Writer.WritePropertyName("ownerAccountId");
-                    context.Writer.Write(publicRequest.OwnerAccountId);
-                }
-
-                if(publicRequest.IsSetSourceAccountId())
-                {
-                    context.Writer.WritePropertyName("sourceAccountId");
-                    context.Writer.Write(publicRequest.SourceAccountId);
                 }
 
                 writer.WriteObjectEnd();
@@ -134,9 +94,9 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListBillingViewsRequestMarshaller _instance = new ListBillingViewsRequestMarshaller();        
+        private static AssociateSourceViewsRequestMarshaller _instance = new AssociateSourceViewsRequestMarshaller();        
 
-        internal static ListBillingViewsRequestMarshaller GetInstance()
+        internal static AssociateSourceViewsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +104,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListBillingViewsRequestMarshaller Instance
+        public static AssociateSourceViewsRequestMarshaller Instance
         {
             get
             {

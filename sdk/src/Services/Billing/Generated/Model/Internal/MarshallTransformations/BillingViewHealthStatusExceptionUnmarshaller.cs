@@ -35,66 +35,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Expression Object
+    /// Response Unmarshaller for BillingViewHealthStatusException Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class BillingViewHealthStatusExceptionUnmarshaller : IErrorResponseUnmarshaller<BillingViewHealthStatusException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Expression IUnmarshaller<Expression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public BillingViewHealthStatusException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public BillingViewHealthStatusException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            Expression unmarshalledObject = new Expression();
-            if (context.IsEmptyResponse)
-                return null;
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            BillingViewHealthStatusException unmarshalledObject = new BillingViewHealthStatusException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dimensions", targetDepth))
-                {
-                    var unmarshaller = DimensionValuesUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = TagValuesUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeRange", targetDepth))
-                {
-                    var unmarshaller = TimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static ExpressionUnmarshaller _instance = new ExpressionUnmarshaller();        
+        private static BillingViewHealthStatusExceptionUnmarshaller _instance = new BillingViewHealthStatusExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpressionUnmarshaller Instance
+        public static BillingViewHealthStatusExceptionUnmarshaller Instance
         {
             get
             {

@@ -30,52 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBillingView operation.
-    /// Deletes the specified billing view.
+    /// Represents the health status of a billing view, including a status code and optional
+    /// reasons for the status.
     /// </summary>
-    public partial class DeleteBillingViewRequest : AmazonBillingRequest
+    public partial class BillingViewHealthStatus
     {
-        private string _arn;
-        private bool? _force;
+        private BillingViewStatus _statusCode;
+        private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property StatusCode. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that can be used to uniquely identify the billing
-        /// view. 
+        /// The current health status code of the billing view.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
+        public BillingViewStatus StatusCode
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
         {
-            return this._arn != null;
+            return this._statusCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Force. 
+        /// Gets and sets the property StatusReasons. 
         /// <para>
-        ///  If set to true, forces deletion of the billing view even if it has derived resources
-        /// (e.g. other billing views or budgets). Use with caution as this may break dependent
-        /// resources. 
+        /// A list of reasons explaining the current health status, if applicable.
         /// </para>
         /// </summary>
-        public bool Force
+        public List<string> StatusReasons
         {
-            get { return this._force.GetValueOrDefault(); }
-            set { this._force = value; }
+            get { return this._statusReasons; }
+            set { this._statusReasons = value; }
         }
 
-        // Check to see if Force property is set
-        internal bool IsSetForce()
+        // Check to see if StatusReasons property is set
+        internal bool IsSetStatusReasons()
         {
-            return this._force.HasValue; 
+            return this._statusReasons != null && (this._statusReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

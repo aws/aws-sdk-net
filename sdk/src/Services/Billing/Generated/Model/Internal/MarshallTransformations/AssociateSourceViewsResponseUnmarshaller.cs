@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateBillingView operation
+    /// Response Unmarshaller for AssociateSourceViews operation
     /// </summary>  
-    public class CreateBillingViewResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateSourceViewsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateBillingViewResponse response = new CreateBillingViewResponse();
+            AssociateSourceViewsResponse response = new AssociateSourceViewsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -56,12 +56,6 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -123,9 +117,9 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             return new AmazonBillingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateBillingViewResponseUnmarshaller _instance = new CreateBillingViewResponseUnmarshaller();        
+        private static AssociateSourceViewsResponseUnmarshaller _instance = new AssociateSourceViewsResponseUnmarshaller();        
 
-        internal static CreateBillingViewResponseUnmarshaller GetInstance()
+        internal static AssociateSourceViewsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +127,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBillingViewResponseUnmarshaller Instance
+        public static AssociateSourceViewsResponseUnmarshaller Instance
         {
             get
             {

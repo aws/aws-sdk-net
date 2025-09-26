@@ -30,52 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBillingView operation.
-    /// Deletes the specified billing view.
+    /// Specifies a time range with inclusive begin and end dates.
     /// </summary>
-    public partial class DeleteBillingViewRequest : AmazonBillingRequest
+    public partial class TimeRange
     {
-        private string _arn;
-        private bool? _force;
+        private DateTime? _beginDateInclusive;
+        private DateTime? _endDateInclusive;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property BeginDateInclusive. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that can be used to uniquely identify the billing
-        /// view. 
+        ///  The inclusive start date of the time range. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
+        public DateTime BeginDateInclusive
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._beginDateInclusive.GetValueOrDefault(); }
+            set { this._beginDateInclusive = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if BeginDateInclusive property is set
+        internal bool IsSetBeginDateInclusive()
         {
-            return this._arn != null;
+            return this._beginDateInclusive.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Force. 
+        /// Gets and sets the property EndDateInclusive. 
         /// <para>
-        ///  If set to true, forces deletion of the billing view even if it has derived resources
-        /// (e.g. other billing views or budgets). Use with caution as this may break dependent
-        /// resources. 
+        ///  The inclusive end date of the time range. 
         /// </para>
         /// </summary>
-        public bool Force
+        public DateTime EndDateInclusive
         {
-            get { return this._force.GetValueOrDefault(); }
-            set { this._force = value; }
+            get { return this._endDateInclusive.GetValueOrDefault(); }
+            set { this._endDateInclusive = value; }
         }
 
-        // Check to see if Force property is set
-        internal bool IsSetForce()
+        // Check to see if EndDateInclusive property is set
+        internal bool IsSetEndDateInclusive()
         {
-            return this._force.HasValue; 
+            return this._endDateInclusive.HasValue; 
         }
 
     }

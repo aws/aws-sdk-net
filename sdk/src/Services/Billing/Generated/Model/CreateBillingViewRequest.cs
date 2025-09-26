@@ -146,7 +146,7 @@ namespace Amazon.Billing.Model
         /// A list of billing views used as the data source for the custom billing view.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> SourceViews
         {
             get { return this._sourceViews; }

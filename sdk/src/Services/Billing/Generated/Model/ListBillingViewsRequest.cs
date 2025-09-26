@@ -49,6 +49,7 @@ namespace Amazon.Billing.Model
         private int? _maxResults;
         private string _nextToken;
         private string _ownerAccountId;
+        private string _sourceAccountId;
 
         /// <summary>
         /// Gets and sets the property ActiveTimeRange. 
@@ -163,6 +164,25 @@ namespace Amazon.Billing.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccountId. 
+        /// <para>
+        ///  Filters the results to include only billing views that use the specified account
+        /// as a source. 
+        /// </para>
+        /// </summary>
+        public string SourceAccountId
+        {
+            get { return this._sourceAccountId; }
+            set { this._sourceAccountId = value; }
+        }
+
+        // Check to see if SourceAccountId property is set
+        internal bool IsSetSourceAccountId()
+        {
+            return this._sourceAccountId != null;
         }
 
     }

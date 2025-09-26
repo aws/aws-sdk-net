@@ -25,6 +25,138 @@ namespace Amazon.Billing
 {
 
     /// <summary>
+    /// Constants used for properties of type BillingViewStatus.
+    /// </summary>
+    public class BillingViewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for BillingViewStatus
+        /// </summary>
+        public static readonly BillingViewStatus CREATING = new BillingViewStatus("CREATING");
+        /// <summary>
+        /// Constant HEALTHY for BillingViewStatus
+        /// </summary>
+        public static readonly BillingViewStatus HEALTHY = new BillingViewStatus("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for BillingViewStatus
+        /// </summary>
+        public static readonly BillingViewStatus UNHEALTHY = new BillingViewStatus("UNHEALTHY");
+        /// <summary>
+        /// Constant UPDATING for BillingViewStatus
+        /// </summary>
+        public static readonly BillingViewStatus UPDATING = new BillingViewStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingViewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingViewStatus FindValue(string value)
+        {
+            return FindValue<BillingViewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingViewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingViewStatusReason.
+    /// </summary>
+    public class BillingViewStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGGREGATE_SOURCE for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason AGGREGATE_SOURCE = new BillingViewStatusReason("AGGREGATE_SOURCE");
+        /// <summary>
+        /// Constant CYCLIC_DEPENDENCY for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason CYCLIC_DEPENDENCY = new BillingViewStatusReason("CYCLIC_DEPENDENCY");
+        /// <summary>
+        /// Constant SOURCE_VIEW_ACCESS_DENIED for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason SOURCE_VIEW_ACCESS_DENIED = new BillingViewStatusReason("SOURCE_VIEW_ACCESS_DENIED");
+        /// <summary>
+        /// Constant SOURCE_VIEW_DEPTH_EXCEEDED for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason SOURCE_VIEW_DEPTH_EXCEEDED = new BillingViewStatusReason("SOURCE_VIEW_DEPTH_EXCEEDED");
+        /// <summary>
+        /// Constant SOURCE_VIEW_NOT_FOUND for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason SOURCE_VIEW_NOT_FOUND = new BillingViewStatusReason("SOURCE_VIEW_NOT_FOUND");
+        /// <summary>
+        /// Constant SOURCE_VIEW_UNHEALTHY for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason SOURCE_VIEW_UNHEALTHY = new BillingViewStatusReason("SOURCE_VIEW_UNHEALTHY");
+        /// <summary>
+        /// Constant SOURCE_VIEW_UPDATING for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason SOURCE_VIEW_UPDATING = new BillingViewStatusReason("SOURCE_VIEW_UPDATING");
+        /// <summary>
+        /// Constant VIEW_OWNER_NOT_MANAGEMENT_ACCOUNT for BillingViewStatusReason
+        /// </summary>
+        public static readonly BillingViewStatusReason VIEW_OWNER_NOT_MANAGEMENT_ACCOUNT = new BillingViewStatusReason("VIEW_OWNER_NOT_MANAGEMENT_ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingViewStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingViewStatusReason FindValue(string value)
+        {
+            return FindValue<BillingViewStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingViewStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BillingViewType.
     /// </summary>
     public class BillingViewType : ConstantClass

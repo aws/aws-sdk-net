@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Expression Object
+    /// Response Unmarshaller for TimeRange Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class TimeRangeUnmarshaller : IUnmarshaller<TimeRange, XmlUnmarshallerContext>, IUnmarshaller<TimeRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Expression IUnmarshaller<Expression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeRange IUnmarshaller<TimeRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context)
+        public TimeRange Unmarshall(JsonUnmarshallerContext context)
         {
-            Expression unmarshalledObject = new Expression();
+            TimeRange unmarshalledObject = new TimeRange();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dimensions", targetDepth))
+                if (context.TestExpression("beginDateInclusive", targetDepth))
                 {
-                    var unmarshaller = DimensionValuesUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.BeginDateInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("endDateInclusive", targetDepth))
                 {
-                    var unmarshaller = TagValuesUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeRange", targetDepth))
-                {
-                    var unmarshaller = TimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndDateInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExpressionUnmarshaller _instance = new ExpressionUnmarshaller();        
+        private static TimeRangeUnmarshaller _instance = new TimeRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpressionUnmarshaller Instance
+        public static TimeRangeUnmarshaller Instance
         {
             get
             {

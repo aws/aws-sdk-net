@@ -30,36 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// This is the response object from the ListSourceViewsForBillingView operation.
+    /// Container for the parameters to the DisassociateSourceViews operation.
+    /// Removes the association between one or more source billing views and an existing
+    /// billing view. This allows modifying the composition of aggregate billing views.
     /// </summary>
-    public partial class ListSourceViewsForBillingViewResponse : AmazonWebServiceResponse
+    public partial class DisassociateSourceViewsRequest : AmazonBillingRequest
     {
-        private string _nextToken;
+        private string _arn;
         private List<string> _sourceViews = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        ///  The pagination token that is used on subsequent calls to list billing views. 
+        ///  The Amazon Resource Name (ARN) of the billing view to disassociate source views from.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public string Arn
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._nextToken != null;
+            return this._arn != null;
         }
 
         /// <summary>
         /// Gets and sets the property SourceViews. 
         /// <para>
-        /// A list of billing views used as the data source for the custom billing view. 
+        ///  A list of ARNs of the source billing views to disassociate. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

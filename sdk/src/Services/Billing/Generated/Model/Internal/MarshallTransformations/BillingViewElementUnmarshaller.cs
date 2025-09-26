@@ -90,10 +90,22 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataFilterExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("derivedViewCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.DerivedViewCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("healthStatus", targetDepth))
+                {
+                    var unmarshaller = BillingViewHealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -108,10 +120,28 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceViewCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SourceViewCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("viewDefinitionLastUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ViewDefinitionLastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

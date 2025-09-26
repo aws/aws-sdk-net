@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.AssociateSourceViews(Amazon.Billing.Model.AssociateSourceViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.AssociateSourceViews(Amazon.Billing.Model.AssociateSourceViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.AssociateSourceViewsRequest" />
+            <member name="T:Amazon.Billing.Model.AssociateSourceViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke AssociateSourceViews"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Billing.IAmazonBilling.CreateBillingView(Amazon.Billing.Model.CreateBillingViewRequest)" />
             <member name="M:Amazon.Billing.AmazonBillingClient.CreateBillingView(Amazon.Billing.Model.CreateBillingViewRequest)" />
             <member name="T:Amazon.Billing.Model.CreateBillingViewRequest" />
@@ -33,6 +52,25 @@
                 </para>
                 <code
                     title="Invoke DeleteBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.DisassociateSourceViews(Amazon.Billing.Model.DisassociateSourceViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.DisassociateSourceViews(Amazon.Billing.Model.DisassociateSourceViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.DisassociateSourceViewsRequest" />
+            <member name="T:Amazon.Billing.Model.DisassociateSourceViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke DisassociateSourceViews"
                     source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
                     region="example-1" />
             </example>
