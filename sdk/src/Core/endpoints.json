@@ -50712,6 +50712,11 @@
             "us-iso-east-1": {}
           }
         },
+        "kinesisvideo": {
+          "endpoints": {
+            "us-iso-east-1": {}
+          }
+        },
         "kms": {
           "endpoints": {
             "ProdFips": {
