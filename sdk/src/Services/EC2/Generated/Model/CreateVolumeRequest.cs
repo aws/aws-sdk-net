@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>. Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> must be specified, but not both.</param>
-        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c>: 1 - 16,384 GiB </li> <li>  <c>gp3</c>: 1 - 65,536 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int? size)
         {
             _availabilityZone = availabilityZone;
@@ -231,7 +231,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
+        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -390,7 +390,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
+        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>gp3</c>: 1 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -467,7 +471,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+        /// The throughput to provision for a volume, with a maximum of 2,000 MiB/s.
         /// </para>
         ///  
         /// <para>
@@ -475,7 +479,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
         /// </para>
         /// </summary>
         public int? Throughput

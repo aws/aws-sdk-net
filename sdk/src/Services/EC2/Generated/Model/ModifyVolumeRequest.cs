@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
+        ///  <c>gp3</c>: 3,000 - 80,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -172,7 +172,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
+        ///  <c>gp2</c>: 1 - 16,384 GiB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>gp3</c>: 1 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,7 +215,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Throughput. 
         /// <para>
         /// The target throughput of the volume, in MiB/s. This parameter is valid only for <c>gp3</c>
-        /// volumes. The maximum value is 1,000.
+        /// volumes. The maximum value is 2,000.
         /// </para>
         ///  
         /// <para>
@@ -220,7 +224,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// Valid Range: Minimum value of 125. Maximum value of 2,000.
         /// </para>
         /// </summary>
         public int? Throughput
