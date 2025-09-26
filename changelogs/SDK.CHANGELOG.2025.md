@@ -1,3 +1,24 @@
+### 3.7.1132.0 (2025-09-26 18:30 UTC)
+* BedrockAgentRuntime (3.7.502.0)
+	* This release enhances the information provided through Flow Traces. New information includes source/next node tracking, execution chains for complex nodes, dependency action (operation) details, and dependency traces.
+* BedrockDataAutomation (3.7.501.0)
+	* Added support for configurable Speaker Labeling and Channel Labeling features for Audio modality.
+* Billing (3.7.503.0)
+	* Add ability to combine custom billing views to create new consolidated views.
+* Connect (3.7.508.0)
+	* Adds supports for manual contact picking (WorkList) operations on Routing Profiles, Agent Management and SearchContacts APIs.
+* CostExplorer (3.7.503.0)
+	* Support for payer account dimension and billing view health status.
+* DynamoDBv2 (3.7.505.0)
+	* Added support for IPv6 compatible endpoints for DynamoDB Streams.
+* EC2 (3.7.514.2)
+	* This release includes documentation updates for Amazon EBS General Purpose SSD (gp3) volumes with larger size and higher IOPS and throughput.
+* Redshift (3.7.502.0)
+	* Support tagging and tag propagation to IAM Identity Center for Redshift Idc Applications
+* Core 3.7.500.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1131.0 (2025-09-25 18:20 UTC)
 * Glue (3.7.506.0)
 	* Update GetConnection(s) API to return KmsKeyArn & Add 63 missing connection types

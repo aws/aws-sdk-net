@@ -32,7 +32,7 @@ namespace Amazon.BCMDashboards
     public partial class AmazonBCMDashboardsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Dashboards", "3.7.500.17");
+            InternalSDKUtils.BuildUserAgentString("BCM Dashboards", "3.7.500.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>
