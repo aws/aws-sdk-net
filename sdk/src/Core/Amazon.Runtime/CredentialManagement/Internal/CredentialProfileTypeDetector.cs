@@ -221,7 +221,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     { 
                         new HashSet<string> { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession },
                         new HashSet<string> { SsoRegion, SsoRegistrationScopes, SsoStartUrl, SsoSession },
-                        new HashSet<string> { SsoRegion, SsoSession, SsoStartUrl }
+                        new HashSet<string> { SsoRegion, SsoSession, SsoStartUrl },
+                        new HashSet<string> { SsoRegion, SsoStartUrl},
+                        new HashSet<string> { SsoRegion, SsoStartUrl, SsoRegistrationScopes },
+                        new HashSet<string> { SsoSession }
                     } 
                 },
                 { 
