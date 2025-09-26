@@ -30,61 +30,60 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Expression Object
+    /// Response Unmarshaller for BillingViewHealthStatusException Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IJsonUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class BillingViewHealthStatusExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<BillingViewHealthStatusException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="reader"></param>
-        /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        /// <returns></returns>
+        public BillingViewHealthStatusException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Expression unmarshalledObject = new Expression();
-            if (context.IsEmptyResponse)
-                return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+        }
 
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public BillingViewHealthStatusException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        {
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("dimensions", targetDepth))
+                context.Read(ref reader);
+            }
+
+            BillingViewHealthStatusException unmarshalledObject = new BillingViewHealthStatusException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
+            int targetDepth = context.CurrentDepth;
+            if (context.Stream.Length > 0)
+            {
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = DimensionValuesUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = TagValuesUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("timeRange", targetDepth))
-                {
-                    var unmarshaller = TimeRangeUnmarshaller.Instance;
-                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
                 }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static ExpressionUnmarshaller _instance = new ExpressionUnmarshaller();        
+        private static BillingViewHealthStatusExceptionUnmarshaller _instance = new BillingViewHealthStatusExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpressionUnmarshaller Instance
+        public static BillingViewHealthStatusExceptionUnmarshaller Instance
         {
             get
             {

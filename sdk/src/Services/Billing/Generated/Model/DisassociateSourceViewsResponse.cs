@@ -30,19 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBillingView operation.
-    /// Deletes the specified billing view.
+    /// This is the response object from the DisassociateSourceViews operation.
     /// </summary>
-    public partial class DeleteBillingViewRequest : AmazonBillingRequest
+    public partial class DisassociateSourceViewsResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) that can be used to uniquely identify the billing
-        /// view. 
+        ///  The ARN of the billing view that the source views were disassociated from. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -56,26 +53,6 @@ namespace Amazon.Billing.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Force. 
-        /// <para>
-        ///  If set to true, forces deletion of the billing view even if it has derived resources
-        /// (e.g. other billing views or budgets). Use with caution as this may break dependent
-        /// resources. 
-        /// </para>
-        /// </summary>
-        public bool? Force
-        {
-            get { return this._force; }
-            set { this._force = value; }
-        }
-
-        // Check to see if Force property is set
-        internal bool IsSetForce()
-        {
-            return this._force.HasValue; 
         }
 
     }

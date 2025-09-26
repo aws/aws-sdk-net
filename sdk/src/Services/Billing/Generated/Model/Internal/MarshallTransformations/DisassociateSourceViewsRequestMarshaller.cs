@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteBillingView Request Marshaller
+    /// DisassociateSourceViews Request Marshaller
     /// </summary>       
-    public class DeleteBillingViewRequestMarshaller : IMarshaller<IRequest, DeleteBillingViewRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateSourceViewsRequestMarshaller : IMarshaller<IRequest, DisassociateSourceViewsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteBillingViewRequest)input);
+            return this.Marshall((DisassociateSourceViewsRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteBillingViewRequest publicRequest)
+        public IRequest Marshall(DisassociateSourceViewsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Billing");
-            string target = "AWSBilling.DeleteBillingView";
+            string target = "AWSBilling.DisassociateSourceViews";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-09-07";
@@ -81,10 +81,15 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Arn);
             }
 
-            if(publicRequest.IsSetForce())
+            if(publicRequest.IsSetSourceViews())
             {
-                context.Writer.WritePropertyName("force");
-                context.Writer.WriteBooleanValue(publicRequest.Force.Value);
+                context.Writer.WritePropertyName("sourceViews");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourceViewsListValue in publicRequest.SourceViews)
+                {
+                        context.Writer.WriteStringValue(publicRequestSourceViewsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -100,9 +105,9 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteBillingViewRequestMarshaller _instance = new DeleteBillingViewRequestMarshaller();        
+        private static DisassociateSourceViewsRequestMarshaller _instance = new DisassociateSourceViewsRequestMarshaller();        
 
-        internal static DeleteBillingViewRequestMarshaller GetInstance()
+        internal static DisassociateSourceViewsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +115,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteBillingViewRequestMarshaller Instance
+        public static DisassociateSourceViewsRequestMarshaller Instance
         {
             get
             {

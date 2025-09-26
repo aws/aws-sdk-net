@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateBillingView operation
+    /// Response Unmarshaller for DisassociateSourceViews operation
     /// </summary>  
-    public class UpdateBillingViewResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DisassociateSourceViewsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateBillingViewResponse response = new UpdateBillingViewResponse();
+            DisassociateSourceViewsResponse response = new DisassociateSourceViewsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -56,12 +56,6 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,10 +103,6 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -125,9 +115,9 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             return new AmazonBillingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateBillingViewResponseUnmarshaller _instance = new UpdateBillingViewResponseUnmarshaller();        
+        private static DisassociateSourceViewsResponseUnmarshaller _instance = new DisassociateSourceViewsResponseUnmarshaller();        
 
-        internal static UpdateBillingViewResponseUnmarshaller GetInstance()
+        internal static DisassociateSourceViewsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +125,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateBillingViewResponseUnmarshaller Instance
+        public static DisassociateSourceViewsResponseUnmarshaller Instance
         {
             get
             {

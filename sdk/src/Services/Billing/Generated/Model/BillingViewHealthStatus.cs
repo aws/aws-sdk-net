@@ -30,36 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// This is the response object from the ListSourceViewsForBillingView operation.
+    /// Represents the health status of a billing view, including a status code and optional
+    /// reasons for the status.
     /// </summary>
-    public partial class ListSourceViewsForBillingViewResponse : AmazonWebServiceResponse
+    public partial class BillingViewHealthStatus
     {
-        private string _nextToken;
-        private List<string> _sourceViews = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private BillingViewStatus _statusCode;
+        private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property StatusCode. 
         /// <para>
-        ///  The pagination token that is used on subsequent calls to list billing views. 
+        /// The current health status code of the billing view.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
-        public string NextToken
+        public BillingViewStatus StatusCode
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._statusCode; }
+            set { this._statusCode = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if StatusCode property is set
+        internal bool IsSetStatusCode()
         {
-            return this._nextToken != null;
+            return this._statusCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SourceViews. 
+        /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// A list of billing views used as the data source for the custom billing view. 
+        /// A list of reasons explaining the current health status, if applicable.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,17 +67,16 @@ namespace Amazon.Billing.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> SourceViews
+        public List<string> StatusReasons
         {
-            get { return this._sourceViews; }
-            set { this._sourceViews = value; }
+            get { return this._statusReasons; }
+            set { this._statusReasons = value; }
         }
 
-        // Check to see if SourceViews property is set
-        internal bool IsSetSourceViews()
+        // Check to see if StatusReasons property is set
+        internal bool IsSetStatusReasons()
         {
-            return this._sourceViews != null && (this._sourceViews.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._statusReasons != null && (this._statusReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

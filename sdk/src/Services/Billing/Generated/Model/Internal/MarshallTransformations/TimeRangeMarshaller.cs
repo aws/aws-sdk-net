@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Billing.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Expression Marshaller
+    /// TimeRange Marshaller
     /// </summary>
-    public class ExpressionMarshaller : IRequestMarshaller<Expression, JsonMarshallerContext> 
+    public class TimeRangeMarshaller : IRequestMarshaller<TimeRange, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,20 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Expression requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeRange requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDimensions())
+            if(requestObject.IsSetBeginDateInclusive())
             {
-                context.Writer.WritePropertyName("dimensions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DimensionValuesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Dimensions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("beginDateInclusive");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.BeginDateInclusive.Value)));
             }
 
-            if(requestObject.IsSetTags())
+            if(requestObject.IsSetEndDateInclusive())
             {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TagValuesMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tags, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTimeRange())
-            {
-                context.Writer.WritePropertyName("timeRange");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TimeRangeMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimeRange, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("endDateInclusive");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDateInclusive.Value)));
             }
 
         }
@@ -84,7 +63,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ExpressionMarshaller Instance = new ExpressionMarshaller();
+        public readonly static TimeRangeMarshaller Instance = new TimeRangeMarshaller();
 
     }
 }
