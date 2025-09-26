@@ -138,6 +138,31 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetSsoTagKeys())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SsoTagKeys)
+                    {
+                        request.Parameters.Add("SsoTagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    {
+                        if(publicRequestlistValue.IsSetKey())
+                        {
+                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
             }
             return request;
         }

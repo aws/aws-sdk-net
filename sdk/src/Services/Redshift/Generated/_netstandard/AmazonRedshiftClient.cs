@@ -1758,11 +1758,17 @@ namespace Amazon.Redshift
         /// Your request cannot be completed because a dependent internal service is temporarily
         /// unavailable. Wait 30 to 60 seconds and try again.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationAlreadyExistsException">
         /// The application you attempted to add already exists.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.RedshiftIdcApplicationQuotaExceededException">
         /// The maximum number of Redshift IAM Identity Center applications was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
