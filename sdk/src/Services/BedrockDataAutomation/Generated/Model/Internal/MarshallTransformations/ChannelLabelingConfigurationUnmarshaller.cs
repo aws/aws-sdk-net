@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioExtractionCategory Object
+    /// Response Unmarshaller for ChannelLabelingConfiguration Object
     /// </summary>  
-    public class AudioExtractionCategoryUnmarshaller : IJsonUnmarshaller<AudioExtractionCategory, JsonUnmarshallerContext>
+    public class ChannelLabelingConfigurationUnmarshaller : IJsonUnmarshaller<ChannelLabelingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioExtractionCategory Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ChannelLabelingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AudioExtractionCategory unmarshalledObject = new AudioExtractionCategory();
+            ChannelLabelingConfiguration unmarshalledObject = new ChannelLabelingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -62,29 +62,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeConfiguration", targetDepth))
-                {
-                    var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static AudioExtractionCategoryUnmarshaller _instance = new AudioExtractionCategoryUnmarshaller();        
+        private static ChannelLabelingConfigurationUnmarshaller _instance = new ChannelLabelingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioExtractionCategoryUnmarshaller Instance
+        public static ChannelLabelingConfigurationUnmarshaller Instance
         {
             get
             {

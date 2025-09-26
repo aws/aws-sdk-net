@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AudioExtractionCategory Marshaller
+    /// AudioExtractionCategoryTypeConfiguration Marshaller
     /// </summary>
-    public class AudioExtractionCategoryMarshaller : IRequestMarshaller<AudioExtractionCategory, JsonMarshallerContext> 
+    public class AudioExtractionCategoryTypeConfigurationMarshaller : IRequestMarshaller<AudioExtractionCategoryTypeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,36 +42,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AudioExtractionCategory requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioExtractionCategoryTypeConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetState())
+            if(requestObject.IsSetTranscript())
             {
-                context.Writer.WritePropertyName("state");
-                context.Writer.WriteStringValue(requestObject.State);
-            }
-
-            if(requestObject.IsSetTypeConfiguration())
-            {
-                context.Writer.WritePropertyName("typeConfiguration");
+                context.Writer.WritePropertyName("transcript");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AudioExtractionCategoryTypeConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TypeConfiguration, context);
+                var marshaller = TranscriptConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Transcript, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTypes())
-            {
-                context.Writer.WritePropertyName("types");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectTypesListValue in requestObject.Types)
-                {
-                        context.Writer.WriteStringValue(requestObjectTypesListValue);
-                }
-                context.Writer.WriteEndArray();
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AudioExtractionCategoryMarshaller Instance = new AudioExtractionCategoryMarshaller();
+        public readonly static AudioExtractionCategoryTypeConfigurationMarshaller Instance = new AudioExtractionCategoryTypeConfigurationMarshaller();
 
     }
 }

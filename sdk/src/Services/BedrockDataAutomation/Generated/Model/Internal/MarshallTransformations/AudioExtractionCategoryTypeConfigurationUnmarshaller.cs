@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioExtractionCategory Object
+    /// Response Unmarshaller for AudioExtractionCategoryTypeConfiguration Object
     /// </summary>  
-    public class AudioExtractionCategoryUnmarshaller : IJsonUnmarshaller<AudioExtractionCategory, JsonUnmarshallerContext>
+    public class AudioExtractionCategoryTypeConfigurationUnmarshaller : IJsonUnmarshaller<AudioExtractionCategoryTypeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioExtractionCategory Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AudioExtractionCategoryTypeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AudioExtractionCategory unmarshalledObject = new AudioExtractionCategory();
+            AudioExtractionCategoryTypeConfiguration unmarshalledObject = new AudioExtractionCategoryTypeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("transcript", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("typeConfiguration", targetDepth))
-                {
-                    var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("types", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Types = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TranscriptConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioExtractionCategoryUnmarshaller _instance = new AudioExtractionCategoryUnmarshaller();        
+        private static AudioExtractionCategoryTypeConfigurationUnmarshaller _instance = new AudioExtractionCategoryTypeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioExtractionCategoryUnmarshaller Instance
+        public static AudioExtractionCategoryTypeConfigurationUnmarshaller Instance
         {
             get
             {
