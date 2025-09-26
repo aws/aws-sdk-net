@@ -97,10 +97,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 1
-        /// </para>
-        ///  
-        /// <para>
         /// Possible values: Integers from 1 to 64
         /// </para>
         /// </summary>

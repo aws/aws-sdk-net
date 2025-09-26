@@ -47,11 +47,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        ///  The number of elastic inference accelerators to attach to the instance. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 1
+        /// The number of elastic inference accelerators to attach to the instance. 
         /// </para>
         /// </summary>
         public int Count
@@ -69,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large,
+        /// The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large,
         /// and eia1.xlarge. 
         /// </para>
         /// </summary>
