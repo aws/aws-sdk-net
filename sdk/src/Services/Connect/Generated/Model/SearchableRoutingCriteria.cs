@@ -30,19 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The value of a segment attribute. This is structured as a map with a single key-value
-    /// pair. The key 'valueString' indicates that the attribute type is a string, and its
-    /// corresponding value is the actual string value of the segment attribute.
+    /// Routing criteria of the contact to match on.
     /// </summary>
-    public partial class ContactSearchSummarySegmentAttributeValue
+    public partial class SearchableRoutingCriteria
     {
-        private Dictionary<string, SegmentAttributeValue> _valueMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
-        private string _valueString;
+        private List<SearchableRoutingCriteriaStep> _steps = AWSConfigs.InitializeCollections ? new List<SearchableRoutingCriteriaStep>() : null;
 
         /// <summary>
-        /// Gets and sets the property ValueMap. 
+        /// Gets and sets the property Steps. 
         /// <para>
-        /// The key and value of a segment attribute.
+        /// The list of Routing criteria steps of the contact routing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -50,35 +47,16 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public Dictionary<string, SegmentAttributeValue> ValueMap
+        public List<SearchableRoutingCriteriaStep> Steps
         {
-            get { return this._valueMap; }
-            set { this._valueMap = value; }
+            get { return this._steps; }
+            set { this._steps = value; }
         }
 
-        // Check to see if ValueMap property is set
-        internal bool IsSetValueMap()
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
         {
-            return this._valueMap != null && (this._valueMap.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ValueString. 
-        /// <para>
-        /// The value of a segment attribute represented as a string.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string ValueString
-        {
-            get { return this._valueString; }
-            set { this._valueString = value; }
-        }
-
-        // Check to see if ValueString property is set
-        internal bool IsSetValueString()
-        {
-            return this._valueString != null;
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

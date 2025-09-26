@@ -42,8 +42,10 @@ namespace Amazon.Connect.Model
         private string _initialContactId;
         private ContactInitiationMethod _initiationMethod;
         private DateTime? _initiationTimestamp;
+        private string _name;
         private string _previousContactId;
         private ContactSearchSummaryQueueInfo _queueInfo;
+        private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, ContactSearchSummarySegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, ContactSearchSummarySegmentAttributeValue>() : null;
 
@@ -200,6 +202,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Indicates name of the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreviousContactId. 
         /// <para>
         /// If this contact is not the first contact, this is the ID of the previous contact.
@@ -234,6 +255,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueInfo()
         {
             return this._queueInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingCriteria.
+        /// </summary>
+        public RoutingCriteria RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
         }
 
         /// <summary>

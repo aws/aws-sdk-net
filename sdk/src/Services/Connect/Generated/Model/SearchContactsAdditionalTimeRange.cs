@@ -30,19 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The value of a segment attribute. This is structured as a map with a single key-value
-    /// pair. The key 'valueString' indicates that the attribute type is a string, and its
-    /// corresponding value is the actual string value of the segment attribute.
+    /// Time range that you additionally want to filter on.
     /// </summary>
-    public partial class ContactSearchSummarySegmentAttributeValue
+    public partial class SearchContactsAdditionalTimeRange
     {
-        private Dictionary<string, SegmentAttributeValue> _valueMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
-        private string _valueString;
+        private List<SearchContactsAdditionalTimeRangeCriteria> _criteria = AWSConfigs.InitializeCollections ? new List<SearchContactsAdditionalTimeRangeCriteria>() : null;
+        private SearchContactsMatchType _matchType;
 
         /// <summary>
-        /// Gets and sets the property ValueMap. 
+        /// Gets and sets the property Criteria. 
         /// <para>
-        /// The key and value of a segment attribute.
+        /// List of criteria of the time range to additionally filter on.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -50,35 +48,36 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public Dictionary<string, SegmentAttributeValue> ValueMap
+        [AWSProperty(Required=true)]
+        public List<SearchContactsAdditionalTimeRangeCriteria> Criteria
         {
-            get { return this._valueMap; }
-            set { this._valueMap = value; }
+            get { return this._criteria; }
+            set { this._criteria = value; }
         }
 
-        // Check to see if ValueMap property is set
-        internal bool IsSetValueMap()
+        // Check to see if Criteria property is set
+        internal bool IsSetCriteria()
         {
-            return this._valueMap != null && (this._valueMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._criteria != null && (this._criteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property ValueString. 
+        /// Gets and sets the property MatchType. 
         /// <para>
-        /// The value of a segment attribute represented as a string.
+        /// The match type combining multiple time range filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string ValueString
+        [AWSProperty(Required=true)]
+        public SearchContactsMatchType MatchType
         {
-            get { return this._valueString; }
-            set { this._valueString = value; }
+            get { return this._matchType; }
+            set { this._matchType = value; }
         }
 
-        // Check to see if ValueString property is set
-        internal bool IsSetValueString()
+        // Check to see if MatchType property is set
+        internal bool IsSetMatchType()
         {
-            return this._valueString != null;
+            return this._matchType != null;
         }
 
     }

@@ -6478,6 +6478,14 @@ namespace Amazon.Connect
         /// Constant MATCH_ANY for SearchContactsMatchType
         /// </summary>
         public static readonly SearchContactsMatchType MATCH_ANY = new SearchContactsMatchType("MATCH_ANY");
+        /// <summary>
+        /// Constant MATCH_EXACT for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_EXACT = new SearchContactsMatchType("MATCH_EXACT");
+        /// <summary>
+        /// Constant MATCH_NONE for SearchContactsMatchType
+        /// </summary>
+        public static readonly SearchContactsMatchType MATCH_NONE = new SearchContactsMatchType("MATCH_NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6515,6 +6523,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type SearchContactsTimeRangeConditionType.
+    /// </summary>
+    public class SearchContactsTimeRangeConditionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_EXISTS for SearchContactsTimeRangeConditionType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeConditionType NOT_EXISTS = new SearchContactsTimeRangeConditionType("NOT_EXISTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchContactsTimeRangeConditionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchContactsTimeRangeConditionType FindValue(string value)
+        {
+            return FindValue<SearchContactsTimeRangeConditionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchContactsTimeRangeConditionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SearchContactsTimeRangeType.
     /// </summary>
     public class SearchContactsTimeRangeType : ConstantClass
@@ -6528,6 +6582,10 @@ namespace Amazon.Connect
         /// Constant DISCONNECT_TIMESTAMP for SearchContactsTimeRangeType
         /// </summary>
         public static readonly SearchContactsTimeRangeType DISCONNECT_TIMESTAMP = new SearchContactsTimeRangeType("DISCONNECT_TIMESTAMP");
+        /// <summary>
+        /// Constant ENQUEUE_TIMESTAMP for SearchContactsTimeRangeType
+        /// </summary>
+        public static readonly SearchContactsTimeRangeType ENQUEUE_TIMESTAMP = new SearchContactsTimeRangeType("ENQUEUE_TIMESTAMP");
         /// <summary>
         /// Constant INITIATION_TIMESTAMP for SearchContactsTimeRangeType
         /// </summary>
@@ -6732,6 +6790,10 @@ namespace Amazon.Connect
         /// Constant DISCONNECT_TIMESTAMP for SortableFieldName
         /// </summary>
         public static readonly SortableFieldName DISCONNECT_TIMESTAMP = new SortableFieldName("DISCONNECT_TIMESTAMP");
+        /// <summary>
+        /// Constant EXPIRY_TIMESTAMP for SortableFieldName
+        /// </summary>
+        public static readonly SortableFieldName EXPIRY_TIMESTAMP = new SortableFieldName("EXPIRY_TIMESTAMP");
         /// <summary>
         /// Constant INITIATION_METHOD for SortableFieldName
         /// </summary>

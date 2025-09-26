@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     public partial class AssociateRoutingProfileQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
+        private List<RoutingProfileManualAssignmentQueueConfig> _manualAssignmentQueueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileManualAssignmentQueueConfig>() : null;
         private List<RoutingProfileQueueConfig> _queueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfig>() : null;
         private string _routingProfileId;
 
@@ -60,6 +61,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualAssignmentQueueConfigs. 
+        /// <para>
+        /// The manual assignment queues to associate with this routing profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs
+        {
+            get { return this._manualAssignmentQueueConfigs; }
+            set { this._manualAssignmentQueueConfigs = value; }
+        }
+
+        // Check to see if ManualAssignmentQueueConfigs property is set
+        internal bool IsSetManualAssignmentQueueConfigs()
+        {
+            return this._manualAssignmentQueueConfigs != null && (this._manualAssignmentQueueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueConfigs. 
         /// <para>
         /// The queues to associate with this routing profile.
@@ -70,7 +95,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=10)]
         public List<RoutingProfileQueueConfig> QueueConfigs
         {
             get { return this._queueConfigs; }

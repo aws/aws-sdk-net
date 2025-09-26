@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class RoutingProfile
     {
         private AgentAvailabilityTimer _agentAvailabilityTimer;
+        private List<string> _associatedManualAssignmentQueueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _associatedQueueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultOutboundQueueId;
         private string _description;
@@ -44,6 +45,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastModifiedTime;
         private List<MediaConcurrency> _mediaConcurrencies = AWSConfigs.InitializeCollections ? new List<MediaConcurrency>() : null;
         private string _name;
+        private long? _numberOfAssociatedManualAssignmentQueues;
         private long? _numberOfAssociatedQueues;
         private long? _numberOfAssociatedUsers;
         private string _routingProfileArn;
@@ -68,6 +70,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetAgentAvailabilityTimer()
         {
             return this._agentAvailabilityTimer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedManualAssignmentQueueIds. 
+        /// <para>
+        /// The IDs of the associated manual assignment queues.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AssociatedManualAssignmentQueueIds
+        {
+            get { return this._associatedManualAssignmentQueueIds; }
+            set { this._associatedManualAssignmentQueueIds = value; }
+        }
+
+        // Check to see if AssociatedManualAssignmentQueueIds property is set
+        internal bool IsSetAssociatedManualAssignmentQueueIds()
+        {
+            return this._associatedManualAssignmentQueueIds != null && (this._associatedManualAssignmentQueueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,6 +270,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociatedManualAssignmentQueues. 
+        /// <para>
+        /// The number of associated manual assignment queues in routing profile.
+        /// </para>
+        /// </summary>
+        public long? NumberOfAssociatedManualAssignmentQueues
+        {
+            get { return this._numberOfAssociatedManualAssignmentQueues; }
+            set { this._numberOfAssociatedManualAssignmentQueues = value; }
+        }
+
+        // Check to see if NumberOfAssociatedManualAssignmentQueues property is set
+        internal bool IsSetNumberOfAssociatedManualAssignmentQueues()
+        {
+            return this._numberOfAssociatedManualAssignmentQueues.HasValue; 
         }
 
         /// <summary>

@@ -34,14 +34,35 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SearchCriteria
     {
+        private SearchContactsAdditionalTimeRange _additionalTimeRange;
         private AgentHierarchyGroups _agentHierarchyGroups;
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactAnalysis _contactAnalysis;
         private List<string> _initiationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private NameCriteria _name;
         private List<string> _queueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SearchableRoutingCriteria _routingCriteria;
         private SearchableContactAttributes _searchableContactAttributes;
         private SearchableSegmentAttributes _searchableSegmentAttributes;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalTimeRange. 
+        /// <para>
+        /// Additional TimeRange used to filter contacts.
+        /// </para>
+        /// </summary>
+        public SearchContactsAdditionalTimeRange AdditionalTimeRange
+        {
+            get { return this._additionalTimeRange; }
+            set { this._additionalTimeRange = value; }
+        }
+
+        // Check to see if AdditionalTimeRange property is set
+        internal bool IsSetAdditionalTimeRange()
+        {
+            return this._additionalTimeRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentHierarchyGroups. 
@@ -150,6 +171,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of the contact.
+        /// </para>
+        /// </summary>
+        public NameCriteria Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueIds. 
         /// <para>
         /// The list of queue IDs associated with contacts.
@@ -171,6 +210,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueueIds()
         {
             return this._queueIds != null && (this._queueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingCriteria. 
+        /// <para>
+        /// Routing criteria for the contact.
+        /// </para>
+        /// </summary>
+        public SearchableRoutingCriteria RoutingCriteria
+        {
+            get { return this._routingCriteria; }
+            set { this._routingCriteria = value; }
+        }
+
+        // Check to see if RoutingCriteria property is set
+        internal bool IsSetRoutingCriteria()
+        {
+            return this._routingCriteria != null;
         }
 
         /// <summary>

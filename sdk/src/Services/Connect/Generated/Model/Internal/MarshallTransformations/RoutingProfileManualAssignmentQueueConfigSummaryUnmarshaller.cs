@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContactSearchSummarySegmentAttributeValue Object
+    /// Response Unmarshaller for RoutingProfileManualAssignmentQueueConfigSummary Object
     /// </summary>  
-    public class ContactSearchSummarySegmentAttributeValueUnmarshaller : IJsonUnmarshaller<ContactSearchSummarySegmentAttributeValue, JsonUnmarshallerContext>
+    public class RoutingProfileManualAssignmentQueueConfigSummaryUnmarshaller : IJsonUnmarshaller<RoutingProfileManualAssignmentQueueConfigSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContactSearchSummarySegmentAttributeValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RoutingProfileManualAssignmentQueueConfigSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ContactSearchSummarySegmentAttributeValue unmarshalledObject = new ContactSearchSummarySegmentAttributeValue();
+            RoutingProfileManualAssignmentQueueConfigSummary unmarshalledObject = new RoutingProfileManualAssignmentQueueConfigSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ValueMap", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.ValueMap = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ValueString", targetDepth))
+                if (context.TestExpression("Channel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValueString = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("QueueArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueueArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("QueueId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueueId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("QueueName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueueName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContactSearchSummarySegmentAttributeValueUnmarshaller _instance = new ContactSearchSummarySegmentAttributeValueUnmarshaller();        
+        private static RoutingProfileManualAssignmentQueueConfigSummaryUnmarshaller _instance = new RoutingProfileManualAssignmentQueueConfigSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContactSearchSummarySegmentAttributeValueUnmarshaller Instance
+        public static RoutingProfileManualAssignmentQueueConfigSummaryUnmarshaller Instance
         {
             get
             {

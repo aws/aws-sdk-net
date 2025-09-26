@@ -301,6 +301,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListRoutingProfileManualAssignmentQueues operation
+        ///</summary>
+        public IListRoutingProfileManualAssignmentQueuesPaginator ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request) 
+        {
+            return new ListRoutingProfileManualAssignmentQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoutingProfileQueues operation
         ///</summary>
         public IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request) 

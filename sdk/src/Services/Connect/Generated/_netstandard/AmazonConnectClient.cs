@@ -513,6 +513,115 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  AssociateContactWithUser
+
+        internal virtual AssociateContactWithUserResponse AssociateContactWithUser(AssociateContactWithUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateContactWithUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContactWithUserResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContactWithUserResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a queued contact with an agent.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Custom contact routing. You can build custom contact routing mechanisms beyond the
+        /// default system routing in Amazon Connect. You can create tailored contact distribution
+        /// logic that offers queued contacts directly to specific agents.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manual contact assignment. You can programmatically assign queued contacts to available
+        /// users. This provides flexibility to contact centers that require manual oversight
+        /// or specialized routing workflows outside of standard queue management.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how manual contact assignment works in the agent workspace,
+        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use this API chat/SMS, email, and task contacts. It does not support voice contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use it to associate contacts with users regardless of their current state, including
+        /// custom states. Ensure your application logic accounts for user availability before
+        /// making associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It honors the IAM context key <c>connect:PreferredUserArn</c> to prevent unauthorized
+        /// contact associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
+        /// controls and prevent unauthorized contact associations. Verify that your IAM policies
+        /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateContactWithUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">REST API Reference for AssociateContactWithUser Operation</seealso>
+        public virtual Task<AssociateContactWithUserResponse> AssociateContactWithUserAsync(AssociateContactWithUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateContactWithUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateContactWithUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateContactWithUserResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AssociateDefaultVocabulary
 
         internal virtual AssociateDefaultVocabularyResponse AssociateDefaultVocabulary(AssociateDefaultVocabularyRequest request)
@@ -9575,6 +9684,91 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListRoutingProfileManualAssignmentQueues
+
+        internal virtual ListRoutingProfileManualAssignmentQueuesResponse ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileManualAssignmentQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileManualAssignmentQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingProfileManualAssignmentQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the manual assignment queues associated with a routing profile.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns list of queues where contacts can be manually assigned or picked.
+        /// The user can additionally filter on queues, if they have access to those queues (otherwise
+        /// a invalid request exception will be thrown).
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how manual contact assignment works in the agent workspace,
+        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API only returns the manual assignment queues associated with a routing profile.
+        /// Use the ListRoutingProfileQueues API to list the auto assignment queues for the routing
+        /// profile.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoutingProfileManualAssignmentQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">REST API Reference for ListRoutingProfileManualAssignmentQueues Operation</seealso>
+        public virtual Task<ListRoutingProfileManualAssignmentQueuesResponse> ListRoutingProfileManualAssignmentQueuesAsync(ListRoutingProfileManualAssignmentQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRoutingProfileManualAssignmentQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRoutingProfileManualAssignmentQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoutingProfileManualAssignmentQueuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRoutingProfileQueues
 
         internal virtual ListRoutingProfileQueuesResponse ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request)
@@ -12831,8 +13025,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat or Task contacts.
+        /// The contact with the specified ID is not active or does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
