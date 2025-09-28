@@ -1665,6 +1665,22 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestMethod]
+        public void SsoToolkitScenario()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SsoSplitConfigFile))
+            {
+                var options = new CredentialProfileOptions
+                {
+                    SsoSession = "idcProfileNew"
+                };
+                var ssoSessionOnlyProfile = new CredentialProfile("mainToolkitProfile", options);
+                tester.CredentialsFile.RegisterProfile(ssoSessionOnlyProfile);
+                tester.CredentialsFile.TryGetProfile("mainToolkitProfile", out var combinedProfile);
+                Assert.IsTrue(combinedProfile.ProfileType == CredentialProfileType.SSO);
+            }
+        }
+
         private static void Create2Profiles(SharedCredentialsFileTestFixture tester)
         {
             var options1 = new CredentialProfileOptions
