@@ -36,7 +36,7 @@ namespace Amazon.S3.Transfer
     /// <summary>
     /// Request object for downloading a directory with the TransferUtility.
     /// </summary>
-    public class TransferUtilityDownloadDirectoryRequest : BaseDownloadRequest
+    public class TransferUtilityDownloadDirectoryRequest : BaseTransferRequest
     {
         private string s3Directory;
         private string localDirectory;

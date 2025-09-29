@@ -29,7 +29,7 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class OpenStreamCommand : BaseCommand
+    internal partial class OpenStreamCommand : BaseDownloadCommand
     {
         IAmazonS3 _s3Client;
         TransferUtilityOpenStreamRequest _request;

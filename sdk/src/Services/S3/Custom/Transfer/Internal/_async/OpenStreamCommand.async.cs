@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class OpenStreamCommand : BaseCommand
+    internal partial class OpenStreamCommand : BaseDownloadCommand
     {
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {

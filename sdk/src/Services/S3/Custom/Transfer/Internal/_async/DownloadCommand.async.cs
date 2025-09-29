@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal partial class DownloadCommand : BaseCommand
+    internal partial class DownloadCommand : BaseDownloadCommand
     {
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {

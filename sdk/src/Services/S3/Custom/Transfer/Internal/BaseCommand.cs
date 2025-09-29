@@ -37,33 +37,6 @@ namespace Amazon.S3.Transfer.Internal
             get { return null; }
         }
 
-        protected GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
-        {
-            GetObjectRequest getRequest = new GetObjectRequest()
-            {
-                BucketName = request.BucketName,
-                Key = request.Key,
-                VersionId = request.VersionId
-            };
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getRequest).AddBeforeRequestHandler(this.RequestEventHandler);
-
-            if (request.IsSetModifiedSinceDate())
-            {
-                getRequest.ModifiedSinceDate = request.ModifiedSinceDate;
-            }
-            if (request.IsSetUnmodifiedSinceDate())
-            {
-                getRequest.UnmodifiedSinceDate = request.UnmodifiedSinceDate;
-            }
-
-            getRequest.ServerSideEncryptionCustomerMethod = request.ServerSideEncryptionCustomerMethod;
-            getRequest.ServerSideEncryptionCustomerProvidedKey = request.ServerSideEncryptionCustomerProvidedKey;
-            getRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = request.ServerSideEncryptionCustomerProvidedKeyMD5;
-            getRequest.ChecksumMode = request.ChecksumMode;
-            getRequest.RequestPayer = request.RequestPayer;
-
-            return getRequest;
-        }
 
         protected void RequestEventHandler(object sender, RequestEventArgs args)
         {
