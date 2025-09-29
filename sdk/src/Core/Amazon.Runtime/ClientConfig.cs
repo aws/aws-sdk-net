@@ -66,6 +66,8 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
+        private string authSchemePreference = null;
+        private string sigV4aSigningRegionSet = null;
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool logResponse = false;
@@ -443,6 +445,46 @@ namespace Amazon.Runtime
         {
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the AuthSchemePreference property.
+        /// A comma-separated list of authentication scheme names to use in order of preference.
+        /// For example: "sigv4a,sigv4" to prefer SigV4a over SigV4.
+        /// </summary>
+        public string AuthSchemePreference
+        {
+            get 
+            { 
+                if (!string.IsNullOrEmpty(this.authSchemePreference))
+                    return this.authSchemePreference;
+                
+                // Use FallbackInternalConfigurationFactory which follows SEP hierarchy:
+                // 1. Environment variable: AWS_AUTH_SCHEME_PREFERENCE
+                // 2. Config file: auth_scheme_preference
+                return FallbackInternalConfigurationFactory.AuthSchemePreference;
+            }
+            set { this.authSchemePreference = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the SigV4aSigningRegionSet property.
+        /// A comma-separated list of regions that a SigV4a signature will be valid for.
+        /// Use "*" to indicate all regions.
+        /// </summary>
+        public string SigV4aSigningRegionSet
+        {
+            get 
+            { 
+                if (!string.IsNullOrEmpty(this.sigV4aSigningRegionSet))
+                    return this.sigV4aSigningRegionSet;
+                
+                // Use FallbackInternalConfigurationFactory which follows SEP hierarchy:
+                // 1. Environment variable: AWS_SIGV4A_SIGNING_REGION_SET
+                // 2. Config file: sigv4a_signing_region_set
+                return FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
+            }
+            set { this.sigV4aSigningRegionSet = value; }
         }
         
         /// <summary>

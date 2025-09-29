@@ -193,6 +193,18 @@ namespace Amazon.Runtime.CredentialManagement
         public AccountIdEndpointMode? AccountIdEndpointMode { get; set; }
 
         /// <summary>
+        /// Preference list of authentication schemes to use when multiple schemes are available.
+        /// This is a comma-separated list of auth scheme names like "sigv4,sigv4a,bearer".
+        /// </summary>
+        public string AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// The region set to use for SigV4a signing. This can be a single region,
+        /// a comma-separated list of regions, or "*" for all regions.
+        /// </summary>
+        public string SigV4aSigningRegionSet { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

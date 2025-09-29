@@ -114,6 +114,18 @@ namespace Amazon.Runtime.Internal
         /// Determines the behavior for validating checksums on response payloads.
         /// </summary>
         public ResponseChecksumValidation? ResponseChecksumValidation { get; set; }
+        
+        /// <summary>
+        /// Preference list of authentication schemes to use when multiple schemes are available.
+        /// This is a comma-separated list of auth scheme names like "sigv4,sigv4a,bearer".
+        /// </summary>
+        public string AuthSchemePreference { get; set; }
+        
+        /// <summary>
+        /// The region set to use for SigV4a signing. This can be a single region,
+        /// a comma-separated list of regions, or "*" for all regions.
+        /// </summary>
+        public string SigV4aSigningRegionSet { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -140,6 +152,8 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION = "AWS_REQUEST_CHECKSUM_CALCULATION";
         public const string ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION = "AWS_RESPONSE_CHECKSUM_VALIDATION";
+        public const string ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE = "AWS_AUTH_SCHEME_PREFERENCE";
+        public const string ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET = "AWS_SIGV4A_SIGNING_REGION_SET";
         public const int AWS_SDK_UA_APP_ID_MAX_LENGTH = 50;
 
         /// <summary>
@@ -165,6 +179,8 @@ namespace Amazon.Runtime.Internal
             RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
             ResponseChecksumValidation = GetEnvironmentVariable<ResponseChecksumValidation>(ENVIRONMENT_VARIABLE_AWS_RESPONSE_CHECKSUM_VALIDATION);
             ClientAppId = GetClientAppIdEnvironmentVariable();
+            AuthSchemePreference = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_AUTH_SCHEME_PREFERENCE);
+            SigV4aSigningRegionSet = GetStringEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_SIGV4A_SIGNING_REGION_SET);
         }
 
         private bool GetEnvironmentVariable(string name, bool defaultValue)
@@ -267,6 +283,20 @@ namespace Amazon.Runtime.Internal
         }       
 
         /// <summary>
+        /// Loads a string value from an environment variable.
+        /// </summary>
+        /// <returns>The environment variable value or null if not set</returns>
+        private string GetStringEnvironmentVariable(string environmentVariableName)
+        {
+            if (!TryGetEnvironmentVariable(environmentVariableName, out var rawValue))
+            {
+                return null;
+            }
+            
+            return rawValue;
+        }
+        
+        /// <summary>
         /// Loads client app id from the environment variable.
         /// Throws an exception if the length of client app id is longer than 50.
         /// </summary>
@@ -340,6 +370,8 @@ namespace Amazon.Runtime.Internal
                 AccountIdEndpointMode = profile.AccountIdEndpointMode;
                 RequestChecksumCalculation = profile.RequestChecksumCalculation;
                 ResponseChecksumValidation = profile.ResponseChecksumValidation;
+                AuthSchemePreference = profile.AuthSchemePreference;
+                SigV4aSigningRegionSet = profile.SigV4aSigningRegionSet;
             }
             else
             {
@@ -365,6 +397,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode),
                 new KeyValuePair<string, object>("request_checksum_calculation", profile.RequestChecksumCalculation),
                 new KeyValuePair<string, object>("response_checksum_validation", profile.ResponseChecksumValidation),
+                new KeyValuePair<string, object>("auth_scheme_preference", profile.AuthSchemePreference),
+                new KeyValuePair<string, object>("sigv4a_signing_region_set", profile.SigV4aSigningRegionSet),
             };
 
             foreach(var item in items)
@@ -436,6 +470,8 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators,(c) => c.AccountIdEndpointMode);
             _cachedConfiguration.RequestChecksumCalculation = SeekValue(standardGenerators, (c) => c.RequestChecksumCalculation);
             _cachedConfiguration.ResponseChecksumValidation = SeekValue(standardGenerators, (c) => c.ResponseChecksumValidation);
+            _cachedConfiguration.AuthSchemePreference = SeekString(standardGenerators, (c) => c.AuthSchemePreference, defaultValue: null);
+            _cachedConfiguration.SigV4aSigningRegionSet = SeekString(standardGenerators, (c) => c.SigV4aSigningRegionSet, defaultValue: null);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -632,6 +668,30 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.ResponseChecksumValidation;
+            }
+        }
+
+        /// <summary>
+        /// Preference list of authentication schemes to use when multiple schemes are available.
+        /// This is a comma-separated list of auth scheme names like "sigv4,sigv4a,bearer".
+        /// </summary>
+        public static string AuthSchemePreference
+        {
+            get
+            {
+                return _cachedConfiguration.AuthSchemePreference;
+            }
+        }
+
+        /// <summary>
+        /// The region set to use for SigV4a signing. This can be a single region,
+        /// a comma-separated list of regions, or "*" for all regions.
+        /// </summary>
+        public static string SigV4aSigningRegionSet
+        {
+            get
+            {
+                return _cachedConfiguration.SigV4aSigningRegionSet;
             }
         }
     }

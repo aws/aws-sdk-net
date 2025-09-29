@@ -338,6 +338,13 @@ namespace Amazon.Runtime.Internal
         string AuthenticationRegion { get; set; }
 
         /// <summary>
+        /// The signing region set to use for SigV4a requests.
+        /// Contains a comma-separated list of regions for multi-region signing.
+        /// Set from Config.SigV4aSigningRegionSet or endpoints metadata.
+        /// </summary>
+        string SigV4aSigningRegionSet { get; set; }
+
+        /// <summary>
         /// The region in which the service request was signed.
         /// </summary>
         string DeterminedSigningRegion { get; set; }

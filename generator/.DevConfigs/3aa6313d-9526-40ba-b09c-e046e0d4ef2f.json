@@ -1,0 +1,10 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added ability to configure authentication scheme preferences (e.g., prioritize SigV4a over SigV4)",
+      "Added support for AWS_AUTH_SCHEME_PREFERENCE environment variable and auth_scheme_preference configuration file setting"
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}

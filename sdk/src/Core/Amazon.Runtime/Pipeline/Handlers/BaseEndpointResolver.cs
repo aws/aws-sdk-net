@@ -88,6 +88,25 @@ namespace Amazon.Runtime.Internal
             {
                 requestContext.Request.AuthenticationRegion = config.AuthenticationRegion;
             }
+            
+            // Set SigV4a region set if configured (either from endpoint metadata or explicit config)
+            if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
+            {
+                // Explicit configuration takes precedence
+                if (!string.IsNullOrEmpty(config.SigV4aSigningRegionSet))
+                {
+                    requestContext.Request.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
+                    requestContext.SigV4aSigningRegionSet = config.SigV4aSigningRegionSet;
+                }
+                else if (!string.IsNullOrEmpty(requestContext.Request.AuthenticationRegion))
+                {
+                    // AuthenticationRegion was set from endpoint metadata - use it for SigV4a
+                    requestContext.Request.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
+                    requestContext.SigV4aSigningRegionSet = requestContext.Request.AuthenticationRegion;
+                    // Clear AuthenticationRegion to avoid confusion with SigV4 single-region
+                    requestContext.Request.AuthenticationRegion = null;
+                }
+            }
         }
 
         public virtual Endpoint GetEndpoint(IExecutionContext executionContext)

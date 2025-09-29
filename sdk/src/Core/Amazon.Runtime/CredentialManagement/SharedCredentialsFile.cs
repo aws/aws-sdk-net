@@ -71,6 +71,8 @@ namespace Amazon.Runtime.CredentialManagement
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
         private const string RequestChecksumCalculationField = "request_checksum_calculation";
         private const string ResponseChecksumValidationField = "response_checksum_validation";
+        private const string AuthSchemePreferenceField = "auth_scheme_preference";
+        private const string SigV4aSigningRegionSetField = "sigv4a_signing_region_set";
         private const string AwsAccountIdField = "aws_account_id";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
@@ -106,6 +108,8 @@ namespace Amazon.Runtime.CredentialManagement
             AccountIdEndpointModeField,
             RequestChecksumCalculationField,
             ResponseChecksumValidationField,
+            AuthSchemePreferenceField,
+            SigV4aSigningRegionSetField,
             AwsAccountIdField,
         };
 
@@ -859,6 +863,19 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                     responseChecksumValidation = responseChecksumValidationTemp;
                 }
+
+                string authSchemePreference = null;
+                if (reservedProperties.TryGetValue(AuthSchemePreferenceField, out var authSchemePrefString))
+                {
+                    authSchemePreference = authSchemePrefString;
+                }
+
+                string sigV4aSigningRegionSet = null;
+                if (reservedProperties.TryGetValue(SigV4aSigningRegionSetField, out var sigV4aRegionSetString))
+                {
+                    sigV4aSigningRegionSet = sigV4aRegionSetString;
+                }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -886,6 +903,8 @@ namespace Amazon.Runtime.CredentialManagement
                     AccountIdEndpointMode = accountIdEndpointMode,
                     RequestChecksumCalculation = requestChecksumCalculation,
                     ResponseChecksumValidation = responseChecksumValidation,
+                    AuthSchemePreference = authSchemePreference,
+                    SigV4aSigningRegionSet = sigV4aSigningRegionSet,
                     Services = servicesSection
                     };
 

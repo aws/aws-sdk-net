@@ -56,6 +56,9 @@ namespace Amazon.Runtime.Internal
                 throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
 
+            // Apply auth scheme preference if configured
+            authOptions = ApplyAuthSchemePreference(authOptions, executionContext.RequestContext.ClientConfig);
+
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var defaultCredentials = executionContext.RequestContext.ExplicitAWSCredentials ?? clientConfig.DefaultAWSCredentials;
 
@@ -141,6 +144,9 @@ namespace Amazon.Runtime.Internal
             {
                 throw new AmazonClientException($"No valid authentication schemes defined for {executionContext.RequestContext.RequestName}");
             }
+
+            // Apply auth scheme preference if configured
+            authOptions = ApplyAuthSchemePreference(authOptions, executionContext.RequestContext.ClientConfig);
 
             var clientConfig = executionContext.RequestContext.ClientConfig;
             var cancellationToken = executionContext.RequestContext.CancellationToken;
@@ -282,6 +288,95 @@ namespace Amazon.Runtime.Internal
         /// Invokes the service auth scheme resolver to determine which auth options we should consider for this request.
         /// </summary>
         protected abstract List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext);
+
+        /// <summary>
+        /// Applies the configured auth scheme preference to reorder the auth options.
+        /// </summary>
+        private static List<IAuthSchemeOption> ApplyAuthSchemePreference(List<IAuthSchemeOption> authOptions, IClientConfig clientConfig)
+        {
+            var preferenceList = clientConfig.AuthSchemePreference;
+            if (string.IsNullOrEmpty(preferenceList))
+            {
+                return authOptions;
+            }
+
+            // Parse the preference list (comma-separated, trimming spaces and tabs between names)
+            var preferences = preferenceList
+                .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => s.Trim(' ', '\t'))  // Trim spaces and tabs between auth scheme names
+                .Where(s => !string.IsNullOrEmpty(s))
+                .ToList();
+
+            if (preferences.Count == 0)
+            {
+                return authOptions;
+            }
+
+            // Reorder auth options based on preferences
+            var reorderedOptions = new List<IAuthSchemeOption>();
+            
+            // First, add options that match the preference order
+            foreach (var preferredScheme in preferences)
+            {
+                // Convert short name to full scheme ID (e.g., "sigv4" -> "aws.auth#sigv4")
+                var fullSchemeId = GetFullSchemeId(preferredScheme);
+                
+                foreach (var option in authOptions)
+                {
+                    if (option.SchemeId == fullSchemeId && !reorderedOptions.Contains(option))
+                    {
+                        reorderedOptions.Add(option);
+                    }
+                }
+            }
+
+            // Then add any remaining options that weren't in the preference list
+            foreach (var option in authOptions)
+            {
+                if (!reorderedOptions.Contains(option))
+                {
+                    reorderedOptions.Add(option);
+                }
+            }
+
+            // CRITICAL: Ensure NoAuth/Anonymous is always last in the list (SEP security requirement)
+            // This prevents unauthenticated requests when authentication is available
+            var noAuthOption = reorderedOptions.FirstOrDefault(o => 
+                o.SchemeId == "smithy.api#noAuth" || 
+                o.SchemeId.EndsWith("#noAuth") || 
+                o is AnonymousAuthSchemeOption);
+            
+            if (noAuthOption != null)
+            {
+                reorderedOptions.Remove(noAuthOption);
+                reorderedOptions.Add(noAuthOption);
+            }
+
+            return reorderedOptions;
+        }
+
+        /// <summary>
+        /// Converts a short auth scheme name to its full scheme ID.
+        /// </summary>
+        private static string GetFullSchemeId(string schemeName)
+        {
+            // Handle common auth scheme names (case-sensitive as per specification)
+            if (schemeName == "sigv4")
+                return "aws.auth#sigv4";
+            if (schemeName == "sigv4a")
+                return "aws.auth#sigv4a";
+            if (schemeName == "httpBearerAuth" || schemeName == "bearer")
+                return "smithy.api#httpBearerAuth";
+            if (schemeName == "noAuth")
+                return "smithy.api#noAuth";
+            
+            // If it already looks like a full ID (contains #), return as-is
+            if (schemeName.Contains("#"))
+                return schemeName;
+                
+            // Otherwise, assume it's an AWS auth scheme
+            return $"aws.auth#{schemeName}";
+        }
 
         private static void AddUserAgentDetails(IExecutionContext executionContext)
         {
