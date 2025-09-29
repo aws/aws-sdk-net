@@ -32,7 +32,7 @@ namespace Amazon.Detective
     public partial class AmazonDetectiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Detective", "3.7.501.17");
+            InternalSDKUtils.BuildUserAgentString("Detective", "3.7.501.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>

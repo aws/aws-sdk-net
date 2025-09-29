@@ -1,3 +1,17 @@
+### 3.7.1133.0 (2025-09-29 18:17 UTC)
+* Bedrock (3.7.504.0)
+	* Release for fixing GetFoundationModel API behavior. Imported and custom models have their own exclusive API and GetFM should not accept those ARNS as input
+* BedrockRuntime (3.7.505.0)
+	* New stop reason for Converse and ConverseStream
+* Imagebuilder (3.7.503.0)
+	* This release introduces several new features and improvements to enhance pipeline management, logging, and resource configuration.
+* VPCLattice (3.7.502.0)
+	* Adds support for specifying the number of IPv4 addresses in each ENI for the resource gateway for VPC Lattice.
+* Core 3.7.500.26
+	* Add user agent header to list of headers to ignore during signing
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1132.0 (2025-09-26 18:30 UTC)
 * BedrockAgentRuntime (3.7.502.0)
 	* This release enhances the information provided through Flow Traces. New information includes source/next node tracking, execution chains for complex nodes, dependency action (operation) details, and dependency traces.
