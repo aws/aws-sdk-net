@@ -30,36 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Contains settings for the Systems Manager agent on your build instance.
+    /// The logging configuration that's defined for the image. Image Builder uses the defined
+    /// settings to direct execution log output during image creation.
     /// </summary>
-    public partial class SystemsManagerAgent
+    public partial class ImageLoggingConfiguration
     {
-        private bool? _uninstallAfterBuild;
+        private string _logGroupName;
 
         /// <summary>
-        /// Gets and sets the property UninstallAfterBuild. 
+        /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// Controls whether the Systems Manager agent is removed from your final build image,
-        /// prior to creating the new AMI. If this is set to true, then the agent is removed from
-        /// the final image. If it's set to false, then the agent is left in, so that it is included
-        /// in the new AMI. default value is false.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default behavior of uninstallAfterBuild is to remove the SSM Agent if it was installed
-        /// by EC2 Image Builder
+        /// The log group name that Image Builder uses for image creation. If not specified, the
+        /// log group name defaults to <c>/aws/imagebuilder/image-name</c>.
         /// </para>
         /// </summary>
-        public bool? UninstallAfterBuild
+        [AWSProperty(Min=1, Max=512)]
+        public string LogGroupName
         {
-            get { return this._uninstallAfterBuild; }
-            set { this._uninstallAfterBuild = value; }
+            get { return this._logGroupName; }
+            set { this._logGroupName = value; }
         }
 
-        // Check to see if UninstallAfterBuild property is set
-        internal bool IsSetUninstallAfterBuild()
+        // Check to see if LogGroupName property is set
+        internal bool IsSetLogGroupName()
         {
-            return this._uninstallAfterBuild.HasValue; 
+            return this._logGroupName != null;
         }
 
     }

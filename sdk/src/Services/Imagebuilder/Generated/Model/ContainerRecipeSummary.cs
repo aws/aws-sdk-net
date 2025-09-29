@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
         private string _arn;
         private ContainerType _containerType;
         private string _dateCreated;
+        private string _instanceImage;
         private string _name;
         private string _owner;
         private string _parentImage;
@@ -95,6 +96,31 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDateCreated()
         {
             return this._dateCreated != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceImage. 
+        /// <para>
+        /// The base image for a container build and test instance. This can contain an AMI ID
+        /// or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter,
+        /// prefixed by <c>ssm:</c>, followed by the parameter name or ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string InstanceImage
+        {
+            get { return this._instanceImage; }
+            set { this._instanceImage = value; }
+        }
+
+        // Check to see if InstanceImage property is set
+        internal bool IsSetInstanceImage()
+        {
+            return this._instanceImage != null;
         }
 
         /// <summary>

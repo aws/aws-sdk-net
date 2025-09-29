@@ -48,6 +48,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private string _clientToken;
         private string _description;
+        private ImageLoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _osVersion;
         private Platform _platform;
@@ -93,6 +94,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Define logging configuration for the image build process.
+        /// </para>
+        /// </summary>
+        public ImageLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

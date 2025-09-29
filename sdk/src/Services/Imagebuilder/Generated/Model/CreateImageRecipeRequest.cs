@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class CreateImageRecipeRequest : AmazonImagebuilderRequest
     {
         private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
+        private Dictionary<string, string> _amiTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private string _clientToken;
         private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
@@ -63,6 +64,31 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAdditionalInstanceConfiguration()
         {
             return this._additionalInstanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmiTags. 
+        /// <para>
+        /// Tags that are applied to the AMI that Image Builder creates during the Build phase
+        /// prior to image distribution.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> AmiTags
+        {
+            get { return this._amiTags; }
+            set { this._amiTags = value; }
+        }
+
+        // Check to see if AmiTags property is set
+        internal bool IsSetAmiTags()
+        {
+            return this._amiTags != null && (this._amiTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

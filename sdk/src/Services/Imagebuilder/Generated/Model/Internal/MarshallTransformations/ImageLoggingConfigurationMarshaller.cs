@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Schedule Marshaller
+    /// ImageLoggingConfiguration Marshaller
     /// </summary>
-    public class ScheduleMarshaller : IRequestMarshaller<Schedule, JsonMarshallerContext> 
+    public class ImageLoggingConfigurationMarshaller : IRequestMarshaller<ImageLoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Schedule requestObject, JsonMarshallerContext context)
+        public void Marshall(ImageLoggingConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoDisablePolicy())
+            if(requestObject.IsSetLogGroupName())
             {
-                context.Writer.WritePropertyName("autoDisablePolicy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutoDisablePolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoDisablePolicy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPipelineExecutionStartCondition())
-            {
-                context.Writer.WritePropertyName("pipelineExecutionStartCondition");
-                context.Writer.WriteStringValue(requestObject.PipelineExecutionStartCondition);
-            }
-
-            if(requestObject.IsSetScheduleExpression())
-            {
-                context.Writer.WritePropertyName("scheduleExpression");
-                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
-            }
-
-            if(requestObject.IsSetTimezone())
-            {
-                context.Writer.WritePropertyName("timezone");
-                context.Writer.WriteStringValue(requestObject.Timezone);
+                context.Writer.WritePropertyName("logGroupName");
+                context.Writer.WriteStringValue(requestObject.LogGroupName);
             }
 
         }
@@ -80,7 +57,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ScheduleMarshaller Instance = new ScheduleMarshaller();
+        public readonly static ImageLoggingConfigurationMarshaller Instance = new ImageLoggingConfigurationMarshaller();
 
     }
 }

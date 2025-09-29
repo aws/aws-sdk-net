@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Schedule Object
+    /// Response Unmarshaller for AutoDisablePolicy Object
     /// </summary>  
-    public class ScheduleUnmarshaller : IJsonUnmarshaller<Schedule, JsonUnmarshallerContext>
+    public class AutoDisablePolicyUnmarshaller : IJsonUnmarshaller<AutoDisablePolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Schedule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutoDisablePolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Schedule unmarshalledObject = new Schedule();
+            AutoDisablePolicy unmarshalledObject = new AutoDisablePolicy();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoDisablePolicy", targetDepth))
+                if (context.TestExpression("failureCount", targetDepth))
                 {
-                    var unmarshaller = AutoDisablePolicyUnmarshaller.Instance;
-                    unmarshalledObject.AutoDisablePolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("pipelineExecutionStartCondition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionStartCondition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("scheduleExpression", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("timezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.FailureCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleUnmarshaller _instance = new ScheduleUnmarshaller();        
+        private static AutoDisablePolicyUnmarshaller _instance = new AutoDisablePolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleUnmarshaller Instance
+        public static AutoDisablePolicyUnmarshaller Instance
         {
             get
             {
