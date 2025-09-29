@@ -33,7 +33,7 @@ namespace Amazon.Tnb
     public partial class AmazonTnbConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("tnb", "4.0.1.3");
+            InternalSDKUtils.BuildUserAgentString("tnb", "4.0.1.4");
 
         private static readonly AmazonTnbEndpointResolver EndpointResolver =
             new AmazonTnbEndpointResolver();

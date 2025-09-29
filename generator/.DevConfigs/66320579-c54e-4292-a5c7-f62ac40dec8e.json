@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Expand sso profile types to allow more combinations of credential profile options. It is valid to have a profile contain only the SsoSession option and point to an sso-session section."
-    ]
-  }
-}

@@ -1,3 +1,16 @@
+### 4.0.101.0 (2025-09-29 18:18 UTC)
+* Bedrock (4.0.12.0)
+	* Release for fixing GetFoundationModel API behavior. Imported and custom models have their own exclusive API and GetFM should not accept those ARNS as input
+* BedrockRuntime (4.0.7.0)
+	* New stop reason for Converse and ConverseStream
+* Imagebuilder (4.0.3.0)
+	* This release introduces several new features and improvements to enhance pipeline management, logging, and resource configuration.
+* VPCLattice (4.0.2.0)
+	* Adds support for specifying the number of IPv4 addresses in each ENI for the resource gateway for VPC Lattice.
+* Core 4.0.0.30
+	* Expand sso profile types to allow more combinations of credential profile options. It is valid to have a profile contain only the SsoSession option and point to an sso-session section.
+	* All services packages updated to require new Core
+
 ### 4.0.100.0 (2025-09-26 18:36 UTC)
 * BedrockAgentRuntime (4.0.6.0)
 	* This release enhances the information provided through Flow Traces. New information includes source/next node tracking, execution chains for complex nodes, dependency action (operation) details, and dependency traces.
