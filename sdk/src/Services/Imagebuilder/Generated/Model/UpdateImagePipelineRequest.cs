@@ -56,6 +56,7 @@ namespace Amazon.Imagebuilder.Model
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
+        private PipelineLoggingConfiguration _loggingConfiguration;
         private Schedule _schedule;
         private PipelineStatus _status;
         private List<WorkflowConfiguration> _workflows = AWSConfigs.InitializeCollections ? new List<WorkflowConfiguration>() : null;
@@ -269,6 +270,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInfrastructureConfigurationArn()
         {
             return this._infrastructureConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Update logging configuration for the output image that's created when the pipeline
+        /// runs.
+        /// </para>
+        /// </summary>
+        public PipelineLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Schedule Marshaller
+    /// AutoDisablePolicy Marshaller
     /// </summary>
-    public class ScheduleMarshaller : IRequestMarshaller<Schedule, JsonMarshallerContext> 
+    public class AutoDisablePolicyMarshaller : IRequestMarshaller<AutoDisablePolicy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,37 +44,14 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Schedule requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoDisablePolicy requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAutoDisablePolicy())
+            if(requestObject.IsSetFailureCount())
             {
-                context.Writer.WritePropertyName("autoDisablePolicy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AutoDisablePolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.AutoDisablePolicy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPipelineExecutionStartCondition())
-            {
-                context.Writer.WritePropertyName("pipelineExecutionStartCondition");
-                context.Writer.Write(requestObject.PipelineExecutionStartCondition);
-            }
-
-            if(requestObject.IsSetScheduleExpression())
-            {
-                context.Writer.WritePropertyName("scheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
-            }
-
-            if(requestObject.IsSetTimezone())
-            {
-                context.Writer.WritePropertyName("timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WritePropertyName("failureCount");
+                context.Writer.Write(requestObject.FailureCount);
             }
 
         }
@@ -82,7 +59,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ScheduleMarshaller Instance = new ScheduleMarshaller();
+        public readonly static AutoDisablePolicyMarshaller Instance = new AutoDisablePolicyMarshaller();
 
     }
 }

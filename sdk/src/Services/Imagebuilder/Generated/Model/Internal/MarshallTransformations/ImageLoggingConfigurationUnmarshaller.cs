@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Schedule Object
+    /// Response Unmarshaller for ImageLoggingConfiguration Object
     /// </summary>  
-    public class ScheduleUnmarshaller : IUnmarshaller<Schedule, XmlUnmarshallerContext>, IUnmarshaller<Schedule, JsonUnmarshallerContext>
+    public class ImageLoggingConfigurationUnmarshaller : IUnmarshaller<ImageLoggingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ImageLoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Schedule IUnmarshaller<Schedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageLoggingConfiguration IUnmarshaller<ImageLoggingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Schedule Unmarshall(JsonUnmarshallerContext context)
+        public ImageLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Schedule unmarshalledObject = new Schedule();
+            ImageLoggingConfiguration unmarshalledObject = new ImageLoggingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("autoDisablePolicy", targetDepth))
-                {
-                    var unmarshaller = AutoDisablePolicyUnmarshaller.Instance;
-                    unmarshalledObject.AutoDisablePolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineExecutionStartCondition", targetDepth))
+                if (context.TestExpression("logGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionStartCondition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scheduleExpression", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleUnmarshaller _instance = new ScheduleUnmarshaller();        
+        private static ImageLoggingConfigurationUnmarshaller _instance = new ImageLoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleUnmarshaller Instance
+        public static ImageLoggingConfigurationUnmarshaller Instance
         {
             get
             {

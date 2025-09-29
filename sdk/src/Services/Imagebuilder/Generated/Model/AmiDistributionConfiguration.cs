@@ -83,7 +83,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier used to encrypt the distributed image.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt
+        /// the distributed image. This can be either the Key ARN or the Alias ARN. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

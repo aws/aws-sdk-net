@@ -148,6 +148,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InfrastructureConfigurationArn);
                 }
 
+                if(publicRequest.IsSetLoggingConfiguration())
+                {
+                    context.Writer.WritePropertyName("loggingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineLoggingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoggingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSchedule())
                 {
                     context.Writer.WritePropertyName("schedule");

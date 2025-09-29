@@ -30,36 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Contains settings for the Systems Manager agent on your build instance.
+    /// Defines the rules by which an image pipeline is automatically disabled when it fails.
     /// </summary>
-    public partial class SystemsManagerAgent
+    public partial class AutoDisablePolicy
     {
-        private bool? _uninstallAfterBuild;
+        private int? _failureCount;
 
         /// <summary>
-        /// Gets and sets the property UninstallAfterBuild. 
+        /// Gets and sets the property FailureCount. 
         /// <para>
-        /// Controls whether the Systems Manager agent is removed from your final build image,
-        /// prior to creating the new AMI. If this is set to true, then the agent is removed from
-        /// the final image. If it's set to false, then the agent is left in, so that it is included
-        /// in the new AMI. default value is false.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default behavior of uninstallAfterBuild is to remove the SSM Agent if it was installed
-        /// by EC2 Image Builder
+        /// The number of consecutive scheduled image pipeline executions that must fail before
+        /// Image Builder automatically disables the pipeline.
         /// </para>
         /// </summary>
-        public bool UninstallAfterBuild
+        [AWSProperty(Required=true, Min=1, Max=10)]
+        public int FailureCount
         {
-            get { return this._uninstallAfterBuild.GetValueOrDefault(); }
-            set { this._uninstallAfterBuild = value; }
+            get { return this._failureCount.GetValueOrDefault(); }
+            set { this._failureCount = value; }
         }
 
-        // Check to see if UninstallAfterBuild property is set
-        internal bool IsSetUninstallAfterBuild()
+        // Check to see if FailureCount property is set
+        internal bool IsSetFailureCount()
         {
-            return this._uninstallAfterBuild.HasValue; 
+            return this._failureCount.HasValue; 
         }
 
     }

@@ -150,6 +150,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.LifecycleExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loggingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ImageLoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

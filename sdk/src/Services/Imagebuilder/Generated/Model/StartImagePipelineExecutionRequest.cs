@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private string _clientToken;
         private string _imagePipelineArn;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -76,6 +77,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetImagePipelineArn()
         {
             return this._imagePipelineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Specify tags for Image Builder to apply to the image resource that's created When
+        /// it starts pipeline execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

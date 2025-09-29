@@ -78,6 +78,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAmiTags())
+                {
+                    context.Writer.WritePropertyName("amiTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAmiTagsKvp in publicRequest.AmiTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAmiTagsKvp.Key);
+                        var publicRequestAmiTagsValue = publicRequestAmiTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestAmiTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
                     context.Writer.WritePropertyName("blockDeviceMappings");

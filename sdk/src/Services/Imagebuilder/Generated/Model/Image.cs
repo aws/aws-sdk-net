@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// An Image Builder image. You must specify exactly one recipe for the image – either
-    /// a container recipe (<c>containerRecipe</c>), which creates a container image, or an
-    /// image recipe (<c>imageRecipe</c>), which creates an AMI.
+    /// An Image Builder image resource that keeps track of all of the settings used to create,
+    /// configure, and distribute output for that image. You must specify exactly one recipe
+    /// for the image – either a container recipe (<c>containerRecipe</c>), which creates
+    /// a container image, or an image recipe (<c>imageRecipe</c>), which creates an AMI.
     /// </summary>
     public partial class Image
     {
@@ -50,6 +51,7 @@ namespace Amazon.Imagebuilder.Model
         private ImageTestsConfiguration _imageTestsConfiguration;
         private InfrastructureConfiguration _infrastructureConfiguration;
         private string _lifecycleExecutionId;
+        private ImageLoggingConfiguration _loggingConfiguration;
         private string _name;
         private string _osVersion;
         private OutputResources _outputResources;
@@ -360,6 +362,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetLifecycleExecutionId()
         {
             return this._lifecycleExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// The logging configuration that's defined for the image. Image Builder uses the defined
+        /// settings to direct execution log output during image creation.
+        /// </para>
+        /// </summary>
+        public ImageLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

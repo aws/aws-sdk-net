@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImageRecipe
     {
         private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
+        private Dictionary<string, string> _amiTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _arn;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
@@ -68,6 +69,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAdditionalInstanceConfiguration()
         {
             return this._additionalInstanceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmiTags. 
+        /// <para>
+        /// Tags that are applied to the AMI that Image Builder creates during the Build phase
+        /// prior to image distribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> AmiTags
+        {
+            get { return this._amiTags; }
+            set { this._amiTags = value; }
+        }
+
+        // Check to see if AmiTags property is set
+        internal bool IsSetAmiTags()
+        {
+            return this._amiTags != null && (this._amiTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

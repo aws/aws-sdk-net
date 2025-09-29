@@ -41,7 +41,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipeSummaryList. 
         /// <para>
-        /// The list of image pipelines.
+        /// A list of <c>ImageRecipeSummary</c> objects that contain identifying characteristics
+        /// for the image recipe, such as the name, the Amazon Resource Name (ARN), and the date
+        /// created, along with other key details.
         /// </para>
         /// </summary>
         public List<ImageRecipeSummary> ImageRecipeSummaryList
