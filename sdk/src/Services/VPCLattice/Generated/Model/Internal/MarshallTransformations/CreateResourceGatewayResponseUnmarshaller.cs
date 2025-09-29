@@ -70,6 +70,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ipv4AddressesPerEni", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.Ipv4AddressesPerEni = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

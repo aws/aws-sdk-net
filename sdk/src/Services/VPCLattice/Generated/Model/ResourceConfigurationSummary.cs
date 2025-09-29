@@ -224,7 +224,8 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GROUP</c> - A group of resources.
+        ///  <c>GROUP</c> - A group of resources. You must create a group resource configuration
+        /// before you create a child resource configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>

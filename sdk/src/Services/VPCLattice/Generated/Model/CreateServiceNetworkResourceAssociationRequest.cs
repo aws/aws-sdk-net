@@ -105,7 +105,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the association.
+        /// A key-value pair to associate with a resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
