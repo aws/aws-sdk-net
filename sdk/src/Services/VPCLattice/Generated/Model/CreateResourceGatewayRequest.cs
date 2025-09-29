@@ -31,12 +31,16 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceGateway operation.
-    /// Creates a resource gateway.
+    /// A resource gateway is a point of ingress into the VPC where a resource resides. It
+    /// spans multiple Availability Zones. For your resource to be accessible from all Availability
+    /// Zones, you should create your resource gateways to span as many Availability Zones
+    /// as possible. A VPC can have multiple resource gateways.
     /// </summary>
     public partial class CreateResourceGatewayRequest : AmazonVPCLatticeRequest
     {
         private string _clientToken;
         private ResourceGatewayIpAddressType _ipAddressType;
+        private int? _ipv4AddressesPerEni;
         private string _name;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -68,7 +72,32 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used by the resource gateway.
+        /// A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type
+        /// of a resource gateway must be compatible with the subnets of the resource gateway
+        /// and the IP address type of the resource, as described here: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4</b>Assign IPv4 addresses to your resource gateway network interfaces. This
+        /// option is supported only if all selected subnets have IPv4 address ranges, and the
+        /// resource also has an IPv4 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces. This
+        /// option is supported only if all selected subnets are IPv6 only subnets, and the resource
+        /// also has an IPv6 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dualstack</b>Assign both IPv4 and IPv6 addresses to your resource gateway network
+        /// interfaces. This option is supported only if all selected subnets have both IPv4 and
+        /// IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The IP address type of the resource gateway is independent of the IP address type
+        /// of the client or the VPC endpoint through which the resource is accessed.
         /// </para>
         /// </summary>
         public ResourceGatewayIpAddressType IpAddressType
@@ -81,6 +110,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4AddressesPerEni. 
+        /// <para>
+        /// The number of IPv4 addresses in each ENI for the resource gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=62)]
+        public int Ipv4AddressesPerEni
+        {
+            get { return this._ipv4AddressesPerEni.GetValueOrDefault(); }
+            set { this._ipv4AddressesPerEni = value; }
+        }
+
+        // Check to see if Ipv4AddressesPerEni property is set
+        internal bool IsSetIpv4AddressesPerEni()
+        {
+            return this._ipv4AddressesPerEni.HasValue; 
         }
 
         /// <summary>
@@ -128,7 +176,6 @@ namespace Amazon.VPCLattice.Model
         /// The IDs of the VPC subnets in which to create the resource gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }
@@ -166,7 +213,7 @@ namespace Amazon.VPCLattice.Model
         /// The ID of the VPC for the resource gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=50)]
+        [AWSProperty(Min=5, Max=50)]
         public string VpcIdentifier
         {
             get { return this._vpcIdentifier; }

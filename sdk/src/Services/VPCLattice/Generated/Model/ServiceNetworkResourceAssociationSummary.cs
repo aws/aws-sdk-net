@@ -316,7 +316,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the service network associated with the resource configuration.
+        /// The status of the service network’s association with the resource configuration. If
+        /// the deletion fails, try to delete again. 
         /// </para>
         /// </summary>
         public ServiceNetworkResourceAssociationStatus Status

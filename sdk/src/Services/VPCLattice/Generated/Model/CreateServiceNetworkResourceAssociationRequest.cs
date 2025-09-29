@@ -105,7 +105,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the association.
+        /// A key-value pair to associate with a resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

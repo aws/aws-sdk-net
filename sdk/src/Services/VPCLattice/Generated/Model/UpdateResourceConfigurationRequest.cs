@@ -81,8 +81,23 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationDefinition. 
         /// <para>
-        /// The resource configuration.
+        /// Identifies the resource configuration in one of the following ways:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned
+        /// by Amazon Web Services services, such as RDS databases, can be identified by their
+        /// ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Domain name</b> - Any domain name that is publicly resolvable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationDefinition ResourceConfigurationDefinition
         {

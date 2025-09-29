@@ -84,6 +84,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IpAddressType);
                 }
 
+                if(publicRequest.IsSetIpv4AddressesPerEni())
+                {
+                    context.Writer.WritePropertyName("ipv4AddressesPerEni");
+                    context.Writer.Write(publicRequest.Ipv4AddressesPerEni);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

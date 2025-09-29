@@ -75,7 +75,7 @@ namespace Amazon.VPCLattice.Model
         /// The rules for the specified listener.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<RuleUpdate> Rules
         {
             get { return this._rules; }

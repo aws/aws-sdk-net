@@ -643,7 +643,10 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Creates a resource gateway.
+        /// A resource gateway is a point of ingress into the VPC where a resource resides. It
+        /// spans multiple Availability Zones. For your resource to be accessible from all Availability
+        /// Zones, you should create your resource gateways to span as many Availability Zones
+        /// as possible. A VPC can have multiple resource gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway service method.</param>
         /// 
@@ -682,7 +685,10 @@ namespace Amazon.VPCLattice
 
 
         /// <summary>
-        /// Creates a resource gateway.
+        /// A resource gateway is a point of ingress into the VPC where a resource resides. It
+        /// spans multiple Availability Zones. For your resource to be accessible from all Availability
+        /// Zones, you should create your resource gateways to span as many Availability Zones
+        /// as possible. A VPC can have multiple resource gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceGateway service method.</param>
         /// <param name="cancellationToken">
@@ -5242,6 +5248,10 @@ namespace Amazon.VPCLattice
         /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
         /// The user does not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.
         /// </exception>
@@ -5276,6 +5286,10 @@ namespace Amazon.VPCLattice
         /// <returns>The response from the UpdateResourceGateway service method, as returned by VPCLattice.</returns>
         /// <exception cref="Amazon.VPCLattice.Model.AccessDeniedException">
         /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VPCLattice.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Updating or deleting
+        /// a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.VPCLattice.Model.InternalServerException">
         /// An unexpected error occurred while processing the request.

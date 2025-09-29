@@ -90,6 +90,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipv4AddressesPerEni", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Ipv4AddressesPerEni = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

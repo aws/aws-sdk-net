@@ -150,8 +150,23 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationDefinition. 
         /// <para>
-        /// (SINGLE, CHILD, ARN) The resource configuration.
+        /// Identifies the resource configuration in one of the following ways:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned
+        /// by Amazon Web Services services, such as RDS databases, can be identified by their
+        /// ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Domain name</b> - Any domain name that is publicly resolvable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationDefinition ResourceConfigurationDefinition
         {
@@ -168,8 +183,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationGroupIdentifier. 
         /// <para>
-        /// (CHILD) The ID or ARN of the parent resource configuration (type is <c>GROUP</c>).
-        /// This is used to associate a child resource configuration with a group resource configuration.
+        /// (CHILD) The ID or ARN of the parent resource configuration of type <c>GROUP</c>. This
+        /// is used to associate a child resource configuration with a group resource configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -228,24 +243,25 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource configuration.
+        /// The type of resource configuration. A resource configuration can be one of the following
+        /// types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>SINGLE</c> - A single resource.
+        ///  <b>SINGLE</b> - A single resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GROUP</c> - A group of resources. You must create a group resource configuration
+        ///  <b>GROUP</b> - A group of resources. You must create a group resource configuration
         /// before you create a child resource configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CHILD</c> - A single resource that is part of a group resource configuration.
+        ///  <b>CHILD</b> - A single resource that is part of a group resource configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ARN</c> - An Amazon Web Services resource.
+        ///  <b>ARN</b> - An Amazon Web Services resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

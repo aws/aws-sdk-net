@@ -81,7 +81,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationGroupIdentifier. 
         /// <para>
-        /// The ID of the group resource configuration.
+        /// The ID of the resource configuration of type <c>Group</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
