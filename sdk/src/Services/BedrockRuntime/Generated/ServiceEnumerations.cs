@@ -1735,6 +1735,10 @@ namespace Amazon.BedrockRuntime
         /// </summary>
         public static readonly StopReason Max_tokens = new StopReason("max_tokens");
         /// <summary>
+        /// Constant Model_context_window_exceeded for StopReason
+        /// </summary>
+        public static readonly StopReason Model_context_window_exceeded = new StopReason("model_context_window_exceeded");
+        /// <summary>
         /// Constant Stop_sequence for StopReason
         /// </summary>
         public static readonly StopReason Stop_sequence = new StopReason("stop_sequence");
