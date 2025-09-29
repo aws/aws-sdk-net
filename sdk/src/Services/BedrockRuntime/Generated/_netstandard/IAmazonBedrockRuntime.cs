@@ -81,6 +81,10 @@ namespace Amazon.BedrockRuntime
         /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
         /// service quotas</a>. You can resubmit your request later.
         /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+        /// in the Amazon Bedrock User Guide
+        /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
         /// Your request was denied due to exceeding the account quotas for <i>Amazon Bedrock</i>.
         /// For troubleshooting this error, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
