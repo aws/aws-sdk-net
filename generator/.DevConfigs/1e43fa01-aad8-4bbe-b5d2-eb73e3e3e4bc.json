@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add user agent header to list of headers to ignore during signing"
+    ]
+  }
+}
