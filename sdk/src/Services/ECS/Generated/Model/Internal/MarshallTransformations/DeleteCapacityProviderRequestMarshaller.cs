@@ -75,6 +75,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CapacityProvider);
                 }
 
+                if(publicRequest.IsSetCluster())
+                {
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -640,7 +640,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property VolumeConfigurations. 
         /// <para>
         /// The details of the volume that was <c>configuredAtLaunch</c>. You can configure the
-        /// size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+        /// size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
         /// The <c>name</c> of the volume must match the <c>name</c> from the task definition.
         /// </para>
         /// </summary>

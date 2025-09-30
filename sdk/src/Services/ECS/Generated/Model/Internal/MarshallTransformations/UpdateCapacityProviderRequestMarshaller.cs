@@ -80,6 +80,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCluster())
+                {
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
+                }
+
+                if(publicRequest.IsSetManagedInstancesProvider())
+                {
+                    context.Writer.WritePropertyName("managedInstancesProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateManagedInstancesProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManagedInstancesProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

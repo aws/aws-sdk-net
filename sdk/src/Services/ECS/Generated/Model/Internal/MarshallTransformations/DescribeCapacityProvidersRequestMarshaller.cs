@@ -80,6 +80,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCluster())
+                {
+                    context.Writer.WritePropertyName("cluster");
+                    context.Writer.Write(publicRequest.Cluster);
+                }
+
                 if(publicRequest.IsSetInclude())
                 {
                     context.Writer.WritePropertyName("include");

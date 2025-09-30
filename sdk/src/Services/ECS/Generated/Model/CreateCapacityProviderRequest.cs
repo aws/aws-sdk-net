@@ -31,21 +31,16 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCapacityProvider operation.
-    /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-    /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-    /// scaling.
-    /// 
-    ///  
-    /// <para>
-    /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-    /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-    /// These providers are available to all accounts in the Amazon Web Services Regions that
-    /// Fargate supports.
-    /// </para>
+    /// Creates a capacity provider. Capacity providers are associated with a cluster and
+    /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+    /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+    /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
     /// </summary>
     public partial class CreateCapacityProviderRequest : AmazonECSRequest
     {
         private AutoScalingGroupProvider _autoScalingGroupProvider;
+        private string _cluster;
+        private CreateManagedInstancesProviderConfiguration _managedInstancesProvider;
         private string _name;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -55,7 +50,6 @@ namespace Amazon.ECS.Model
         /// The details of the Auto Scaling group for the capacity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AutoScalingGroupProvider AutoScalingGroupProvider
         {
             get { return this._autoScalingGroupProvider; }
@@ -66,6 +60,46 @@ namespace Amazon.ECS.Model
         internal bool IsSetAutoScalingGroupProvider()
         {
             return this._autoScalingGroupProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The name of the cluster to associate with the capacity provider. When you create a
+        /// capacity provider with Amazon ECS Managed Instances, it becomes available only within
+        /// the specified cluster.
+        /// </para>
+        /// </summary>
+        public string Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedInstancesProvider. 
+        /// <para>
+        /// The configuration for the Amazon ECS Managed Instances provider. This configuration
+        /// specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the
+        /// infrastructure role, instance launch template, and tag propagation settings.
+        /// </para>
+        /// </summary>
+        public CreateManagedInstancesProviderConfiguration ManagedInstancesProvider
+        {
+            get { return this._managedInstancesProvider; }
+            set { this._managedInstancesProvider = value; }
+        }
+
+        // Check to see if ManagedInstancesProvider property is set
+        internal bool IsSetManagedInstancesProvider()
+        {
+            return this._managedInstancesProvider != null;
         }
 
         /// <summary>
