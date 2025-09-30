@@ -359,9 +359,17 @@ namespace Amazon.ConnectCases
         /// </summary>
         public static readonly RelatedItemType Comment = new RelatedItemType("Comment");
         /// <summary>
+        /// Constant ConnectCase for RelatedItemType
+        /// </summary>
+        public static readonly RelatedItemType ConnectCase = new RelatedItemType("ConnectCase");
+        /// <summary>
         /// Constant Contact for RelatedItemType
         /// </summary>
         public static readonly RelatedItemType Contact = new RelatedItemType("Contact");
+        /// <summary>
+        /// Constant Custom for RelatedItemType
+        /// </summary>
+        public static readonly RelatedItemType Custom = new RelatedItemType("Custom");
         /// <summary>
         /// Constant File for RelatedItemType
         /// </summary>
