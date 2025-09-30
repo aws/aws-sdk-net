@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// There should be no active assets or metadata linked to the glossary.
+    /// Glossary should not be linked to any active metadata forms.
     /// </para>
     ///  </li> </ul>
     /// </summary>

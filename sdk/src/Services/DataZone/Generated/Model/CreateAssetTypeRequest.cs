@@ -39,8 +39,8 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The form type with <c>typeIdentifier</c> and <c>typeRevision</c> must exist and be
-    /// published. 
+    /// The <c>formsInput</c> field is required, however, can be passed as empty (e.g. <c>-forms-input
+    /// {})</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>

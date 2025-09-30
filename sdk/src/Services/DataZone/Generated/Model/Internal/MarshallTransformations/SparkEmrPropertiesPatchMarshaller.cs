@@ -72,6 +72,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LogUri);
             }
 
+            if(requestObject.IsSetManagedEndpointArn())
+            {
+                context.Writer.WritePropertyName("managedEndpointArn");
+                context.Writer.Write(requestObject.ManagedEndpointArn);
+            }
+
             if(requestObject.IsSetPythonVirtualEnv())
             {
                 context.Writer.WritePropertyName("pythonVirtualEnv");

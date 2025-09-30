@@ -56,8 +56,8 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Form type must exist and be associated with the asset type. Use <c>create-form-type</c>
-    /// to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
+    ///  <c>formsInput</c> is required when it is associated as required in the <c>asset-type</c>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
