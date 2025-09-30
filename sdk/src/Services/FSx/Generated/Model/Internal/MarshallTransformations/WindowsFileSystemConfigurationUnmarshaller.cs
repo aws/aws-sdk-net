@@ -126,6 +126,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreferredFileServerIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreferredFileServerIpv6", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PreferredFileServerIpv6 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreferredSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

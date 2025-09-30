@@ -96,6 +96,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointIpAddressRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointIpv6AddressRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointIpv6AddressRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Endpoints", targetDepth))
                 {
                     var unmarshaller = FileSystemEndpointsUnmarshaller.Instance;

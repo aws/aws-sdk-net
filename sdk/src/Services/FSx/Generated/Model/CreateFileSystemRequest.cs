@@ -232,8 +232,8 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The network type of the Amazon FSx file system that you are creating. Valid values
         /// are <c>IPV4</c> (which supports IPv4 only) and <c>DUAL</c> (for dual-stack mode, which
-        /// supports both IPv4 and IPv6). The default is <c>IPV4</c>. Supported only for Amazon
-        /// FSx for OpenZFS file systems.
+        /// supports both IPv4 and IPv6). The default is <c>IPV4</c>. Supported for FSx for OpenZFS,
+        /// FSx for ONTAP, and FSx for Windows File Server file systems.
         /// </para>
         /// </summary>
         public NetworkType NetworkType

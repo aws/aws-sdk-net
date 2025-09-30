@@ -43,6 +43,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly ActiveDirectoryErrorType INVALID_DOMAIN_STAGE = new ActiveDirectoryErrorType("INVALID_DOMAIN_STAGE");
         /// <summary>
+        /// Constant INVALID_NETWORK_TYPE for ActiveDirectoryErrorType
+        /// </summary>
+        public static readonly ActiveDirectoryErrorType INVALID_NETWORK_TYPE = new ActiveDirectoryErrorType("INVALID_NETWORK_TYPE");
+        /// <summary>
         /// Constant WRONG_VPC for ActiveDirectoryErrorType
         /// </summary>
         public static readonly ActiveDirectoryErrorType WRONG_VPC = new ActiveDirectoryErrorType("WRONG_VPC");

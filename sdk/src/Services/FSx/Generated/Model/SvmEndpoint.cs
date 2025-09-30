@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
     {
         private string _dnsName;
         private List<string> _ipAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DNSName.
@@ -59,7 +60,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property IpAddresses. 
         /// <para>
-        /// The SVM endpoint's IP addresses.
+        /// The SVM endpoint's IPv4 addresses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
@@ -73,6 +74,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetIpAddresses()
         {
             return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The SVM endpoint's IPv6 addresses.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

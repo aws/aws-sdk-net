@@ -83,6 +83,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndpointIpAddressRange);
             }
 
+            if(requestObject.IsSetEndpointIpv6AddressRange())
+            {
+                context.Writer.WritePropertyName("EndpointIpv6AddressRange");
+                context.Writer.Write(requestObject.EndpointIpv6AddressRange);
+            }
+
             if(requestObject.IsSetFsxAdminPassword())
             {
                 context.Writer.WritePropertyName("FsxAdminPassword");
