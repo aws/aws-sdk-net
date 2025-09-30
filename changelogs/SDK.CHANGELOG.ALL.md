@@ -1,3 +1,37 @@
+### 3.7.1134.0 (2025-09-30 18:37 UTC)
+* ApplicationSignals (3.7.502.0)
+	* Amazon CloudWatch Application Signals is introducing the Application Map to give users a more comprehensive view of their service health. Users will now be able to group services, track their latest deployments, and view automated audit findings concerning service performance.
+* BedrockAgentCoreControl (3.7.503.0)
+	* Tagging support for AgentCore Gateway
+* ChimeSDKVoice (3.7.502.0)
+	* Added support for IPv4-only and dual-stack network configurations for VoiceConnector and CreateVoiceConnector API.
+* ConnectCases (3.7.502.0)
+	* This release adds support for two new related item types: ConnectCase for linking Amazon Connect cases and Custom for user-defined related items with configurable fields.
+* CustomerProfiles (3.7.502.0)
+	* This release introduces ListProfileHistoryRecords and GetProfileHistoryRecord APIs for comprehensive profile history tracking with complete audit trails of creation, updates, merges, deletions, and data ingestion events.
+* DataSync (3.7.502.0)
+	* Added support for FIPS VPC endpoints in FIPS-enabled AWS Regions.
+* DataZone (3.7.506.0)
+	* This release adds support for creation of EMR on EKS Connections in Amazon DataZone.
+* DirectoryService (3.7.503.0)
+	* AWS Directory service now supports IPv6-native and dual-stack configurations for AWS Managed Microsoft AD, AD Connector, and Simple AD (dual-stack only). Additionally, AWS Managed Microsoft AD Standard Edition directories can be upgraded to Enterprise Edition directories through a single API call.
+* ECS (3.7.502.0)
+	* This release adds support for Managed Instances on Amazon ECS.
+* FSx (3.7.503.0)
+	* Add Dual-Stack support for Amazon FSx for NetApp ONTAP and Windows File Server
+* MediaTailor (3.7.502.0)
+	* Adding TPS Traffic Shaping to Prefetch Schedules
+* QuickSight (3.7.503.9)
+	* added warnings to a few CLI pages
+* RDS (3.7.506.0)
+	* Enhanced RDS error handling: Added DBProxyEndpointNotFoundFault, DBShardGroupNotFoundFault, KMSKeyNotAccessibleFault for snapshots/restores/backups, NetworkTypeNotSupported, StorageTypeNotSupportedFault for restores, and granular state validation faults. Changed DBInstanceNotReadyFault to HTTP 400.
+* Transfer (3.7.502.0)
+	* Add support for updating server identity provider type
+* Core 3.7.500.27
+	* Update code generator to use fully qualified name for InvokeOptions to avoid name collisions
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1133.0 (2025-09-29 18:17 UTC)
 * Bedrock (3.7.504.0)
 	* Release for fixing GetFoundationModel API behavior. Imported and custom models have their own exclusive API and GetFM should not accept those ARNS as input

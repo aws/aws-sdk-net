@@ -32,7 +32,7 @@ namespace Amazon.SocialMessaging
     public partial class AmazonSocialMessagingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "3.7.501.15");
+            InternalSDKUtils.BuildUserAgentString("SocialMessaging", "3.7.501.16");
 
         private string _userAgent = UserAgentString;
         ///<summary>
