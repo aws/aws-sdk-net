@@ -81,6 +81,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CapacityProvider);
             }
 
+            if(publicRequest.IsSetCluster())
+            {
+                context.Writer.WritePropertyName("cluster");
+                context.Writer.WriteStringValue(publicRequest.Cluster);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

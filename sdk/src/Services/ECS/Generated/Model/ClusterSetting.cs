@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster setting. The value is <c>containerInsights</c>.
+        /// The name of the cluster setting. The value is <c>containerInsights</c> .
         /// </para>
         /// </summary>
         public ClusterSettingName Name

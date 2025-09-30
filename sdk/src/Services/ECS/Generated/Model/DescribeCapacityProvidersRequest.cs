@@ -36,6 +36,7 @@ namespace Amazon.ECS.Model
     public partial class DescribeCapacityProvidersRequest : AmazonECSRequest
     {
         private List<string> _capacityProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _cluster;
         private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
@@ -62,6 +63,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCapacityProviders()
         {
             return this._capacityProviders != null && (this._capacityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The name of the cluster to describe capacity providers for. When specified, only capacity
+        /// providers associated with this cluster are returned, including Amazon ECS Managed
+        /// Instances capacity providers.
+        /// </para>
+        /// </summary>
+        public string Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
         }
 
         /// <summary>

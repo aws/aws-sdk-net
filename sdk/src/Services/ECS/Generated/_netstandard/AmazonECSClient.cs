@@ -299,17 +299,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-        /// scaling.
-        /// 
-        ///  
-        /// <para>
-        /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-        /// These providers are available to all accounts in the Amazon Web Services Regions that
-        /// Fargate supports.
-        /// </para>
+        /// Creates a capacity provider. Capacity providers are associated with a cluster and
+        /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+        /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+        /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -321,6 +314,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -336,6 +333,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
@@ -935,6 +935,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -946,6 +950,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -994,6 +1001,12 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsCapacityProviderException">
+        /// The cluster contains one or more capacity providers that prevent the requested operation.
+        /// This exception occurs when you try to delete a cluster that still has active capacity
+        /// providers, including Amazon ECS Managed Instances capacity providers. You must first
+        /// delete all capacity providers from the cluster before you can delete the cluster itself.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -1462,6 +1475,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1473,6 +1490,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         public virtual Task<DescribeCapacityProvidersResponse> DescribeCapacityProvidersAsync(DescribeCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2974,6 +2994,12 @@ namespace Amazon.ECS
         /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS Managed Instances doesn't support this, because when you create a capacity
+        /// provider with Amazon ECS Managed Instances, it becomes available only within the specified
+        /// cluster.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
         /// <param name="cancellationToken">
@@ -3690,6 +3716,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies the parameters for a capacity provider.
+        /// 
+        ///  
+        /// <para>
+        /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+        /// existing ones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -3702,6 +3734,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -3713,6 +3749,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         public virtual Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
