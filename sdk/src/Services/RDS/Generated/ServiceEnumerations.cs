@@ -459,6 +459,10 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly ClusterScalabilityType Limitless = new ClusterScalabilityType("limitless");
         /// <summary>
+        /// Constant Scaleout for ClusterScalabilityType
+        /// </summary>
+        public static readonly ClusterScalabilityType Scaleout = new ClusterScalabilityType("scaleout");
+        /// <summary>
         /// Constant Standard for ClusterScalabilityType
         /// </summary>
         public static readonly ClusterScalabilityType Standard = new ClusterScalabilityType("standard");
@@ -1557,9 +1561,17 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
         /// <summary>
+        /// Constant DbShardGroup for SourceType
+        /// </summary>
+        public static readonly SourceType DbShardGroup = new SourceType("db-shard-group");
+        /// <summary>
         /// Constant DbSnapshot for SourceType
         /// </summary>
         public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
+        /// <summary>
+        /// Constant ZeroEtl for SourceType
+        /// </summary>
+        public static readonly SourceType ZeroEtl = new SourceType("zero-etl");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1668,6 +1680,10 @@ namespace Amazon.RDS
         /// Constant PENDING_PROXY_CAPACITY for TargetHealthReason
         /// </summary>
         public static readonly TargetHealthReason PENDING_PROXY_CAPACITY = new TargetHealthReason("PENDING_PROXY_CAPACITY");
+        /// <summary>
+        /// Constant PROMOTED for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason PROMOTED = new TargetHealthReason("PROMOTED");
         /// <summary>
         /// Constant UNREACHABLE for TargetHealthReason
         /// </summary>
@@ -1780,6 +1796,10 @@ namespace Amazon.RDS
         /// Constant UNAVAILABLE for TargetState
         /// </summary>
         public static readonly TargetState UNAVAILABLE = new TargetState("UNAVAILABLE");
+        /// <summary>
+        /// Constant UNUSED for TargetState
+        /// </summary>
+        public static readonly TargetState UNUSED = new TargetState("UNUSED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -1292,6 +1292,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }

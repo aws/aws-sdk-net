@@ -120,6 +120,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }

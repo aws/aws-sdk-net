@@ -1985,6 +1985,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -2797,6 +2798,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

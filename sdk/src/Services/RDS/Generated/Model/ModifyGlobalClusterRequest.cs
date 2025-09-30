@@ -151,6 +151,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }
@@ -190,6 +191,7 @@ namespace Amazon.RDS.Model
         /// Example: <c>my-cluster2</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string NewGlobalClusterIdentifier
         {
             get { return this._newGlobalClusterIdentifier; }

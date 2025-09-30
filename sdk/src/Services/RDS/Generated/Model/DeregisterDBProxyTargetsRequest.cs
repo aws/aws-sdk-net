@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model
         /// The identifier of the <c>DBProxy</c> that is associated with the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -102,6 +102,7 @@ namespace Amazon.RDS.Model
         /// The identifier of the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string TargetGroupName
         {
             get { return this._targetGroupName; }

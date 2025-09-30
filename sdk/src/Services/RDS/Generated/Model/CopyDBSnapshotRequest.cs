@@ -246,6 +246,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }
@@ -324,18 +325,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the source snapshot is in a different Amazon Web Services Region than the copy,
-        /// specify a valid DB snapshot ARN. For example, you might specify <c>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</c>.
-        /// </para>
-        ///  
-        /// <para>
         /// If you are copying from a shared manual DB snapshot, this parameter must be the Amazon
         /// Resource Name (ARN) of the shared DB snapshot.
         /// </para>
         ///  
         /// <para>
-        /// If you are copying an encrypted snapshot this parameter must be in the ARN format
-        /// for the source Amazon Web Services Region.
+        /// If the source snapshot is in a different Amazon Web Services Region than the copy,
+        /// specify a valid DB snapshot ARN. You can also specify an ARN of a snapshot that is
+        /// in a different account and a different Amazon Web Services Region. For example, you
+        /// might specify <c>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</c>.
         /// </para>
         ///  
         /// <para>
@@ -343,7 +341,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must specify a valid system snapshot in the "available" state.
+        /// Must specify a valid source snapshot in the "available" state.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -1165,6 +1165,7 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }
@@ -1420,6 +1421,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -1885,6 +1887,7 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }

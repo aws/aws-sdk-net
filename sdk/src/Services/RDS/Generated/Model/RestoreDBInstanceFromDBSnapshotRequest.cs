@@ -1508,6 +1508,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

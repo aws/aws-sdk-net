@@ -208,6 +208,7 @@ namespace Amazon.RDS.Model
         /// unique key that identifies a global database cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }

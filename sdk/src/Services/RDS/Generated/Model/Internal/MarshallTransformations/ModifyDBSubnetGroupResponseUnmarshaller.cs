@@ -125,6 +125,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBSubnetQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBSubnetGroupStateFault"))
+                {
+                    return InvalidDBSubnetGroupStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
                 {
                     return InvalidSubnetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
