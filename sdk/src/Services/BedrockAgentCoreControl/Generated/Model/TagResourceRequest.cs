@@ -34,6 +34,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Associates the specified tags to a resource with the specified resourceArn. If existing
     /// tags on a resource are not specified in the request parameters, they are not changed.
     /// When a resource is deleted, the tags associated with that resource are also deleted.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+    /// tool, and Gateway.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagResourceRequest : AmazonBedrockAgentCoreControlRequest
     {

@@ -3431,6 +3431,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Lists the tags associated with the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3463,6 +3470,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Lists the tags associated with the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3668,6 +3682,13 @@ namespace Amazon.BedrockAgentCoreControl
         /// Associates the specified tags to a resource with the specified resourceArn. If existing
         /// tags on a resource are not specified in the request parameters, they are not changed.
         /// When a resource is deleted, the tags associated with that resource are also deleted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3705,6 +3726,13 @@ namespace Amazon.BedrockAgentCoreControl
         /// Associates the specified tags to a resource with the specified resourceArn. If existing
         /// tags on a resource are not specified in the request parameters, they are not changed.
         /// When a resource is deleted, the tags associated with that resource are also deleted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3747,6 +3775,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Removes the specified tags from the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3779,6 +3814,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Removes the specified tags from the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+        /// tool, and Gateway.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

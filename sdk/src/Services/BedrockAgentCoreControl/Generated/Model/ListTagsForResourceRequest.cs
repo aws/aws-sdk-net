@@ -32,6 +32,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists the tags associated with the specified resource.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
+    /// tool, and Gateway.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonBedrockAgentCoreControlRequest
     {
