@@ -80,6 +80,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TrafficShapingTpsConfiguration", targetDepth))
+                {
+                    var unmarshaller = TrafficShapingTpsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TrafficShapingTpsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrafficShapingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
