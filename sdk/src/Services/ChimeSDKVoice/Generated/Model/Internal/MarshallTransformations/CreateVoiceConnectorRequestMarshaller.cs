@@ -85,6 +85,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
                 if(publicRequest.IsSetRequireEncryption())
                 {
                     context.Writer.WritePropertyName("RequireEncryption");

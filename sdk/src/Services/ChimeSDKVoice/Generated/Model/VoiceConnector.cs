@@ -39,6 +39,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _createdTimestamp;
         private VoiceConnectorIntegrationType _integrationType;
         private string _name;
+        private NetworkType _networkType;
         private string _outboundHostName;
         private bool? _requireEncryption;
         private DateTime? _updatedTimestamp;
@@ -116,6 +117,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of network of the Voice Connector. Either IPv4 only or dual-stack (IPv4 and
+        /// IPv6).
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

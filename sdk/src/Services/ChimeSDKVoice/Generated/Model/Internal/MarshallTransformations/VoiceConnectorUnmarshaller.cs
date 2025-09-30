@@ -90,6 +90,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutboundHostName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
