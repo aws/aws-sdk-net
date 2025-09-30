@@ -277,7 +277,7 @@ namespace Amazon.S3Tables
 
         internal virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         public virtual Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -338,7 +338,7 @@ namespace Amazon.S3Tables
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.S3Tables
 
         internal virtual CreateTableBucketResponse CreateTableBucket(CreateTableBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableBucketResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CreateTableBucket">REST API Reference for CreateTableBucket Operation</seealso>
         public virtual Task<CreateTableBucketResponse> CreateTableBucketAsync(CreateTableBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableBucketResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -598,7 +598,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteTableBucketResponse DeleteTableBucket(DeleteTableBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketResponseUnmarshaller.Instance;
 
@@ -646,7 +646,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucket">REST API Reference for DeleteTableBucket Operation</seealso>
         public virtual Task<DeleteTableBucketResponse> DeleteTableBucketAsync(DeleteTableBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketResponseUnmarshaller.Instance;
 
@@ -658,7 +658,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteTableBucketEncryptionResponse DeleteTableBucketEncryption(DeleteTableBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -705,7 +705,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketEncryption">REST API Reference for DeleteTableBucketEncryption Operation</seealso>
         public virtual Task<DeleteTableBucketEncryptionResponse> DeleteTableBucketEncryptionAsync(DeleteTableBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -717,7 +717,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteTableBucketPolicyResponse DeleteTableBucketPolicy(DeleteTableBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTableBucketPolicy">REST API Reference for DeleteTableBucketPolicy Operation</seealso>
         public virtual Task<DeleteTableBucketPolicyResponse> DeleteTableBucketPolicyAsync(DeleteTableBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.S3Tables
 
         internal virtual DeleteTablePolicyResponse DeleteTablePolicy(DeleteTablePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTablePolicyResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/DeleteTablePolicy">REST API Reference for DeleteTablePolicy Operation</seealso>
         public virtual Task<DeleteTablePolicyResponse> DeleteTablePolicyAsync(DeleteTablePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTablePolicyResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetNamespaceResponse GetNamespace(GetNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
@@ -887,7 +887,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         public virtual Task<GetNamespaceResponse> GetNamespaceAsync(GetNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTable">REST API Reference for GetTable Operation</seealso>
         public virtual Task<GetTableResponse> GetTableAsync(GetTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -961,7 +961,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableBucketResponse GetTableBucket(GetTableBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucket">REST API Reference for GetTableBucket Operation</seealso>
         public virtual Task<GetTableBucketResponse> GetTableBucketAsync(GetTableBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableBucketEncryptionResponse GetTableBucketEncryption(GetTableBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -1071,7 +1071,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketEncryption">REST API Reference for GetTableBucketEncryption Operation</seealso>
         public virtual Task<GetTableBucketEncryptionResponse> GetTableBucketEncryptionAsync(GetTableBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableBucketMaintenanceConfigurationResponse GetTableBucketMaintenanceConfiguration(GetTableBucketMaintenanceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketMaintenanceConfiguration">REST API Reference for GetTableBucketMaintenanceConfiguration Operation</seealso>
         public virtual Task<GetTableBucketMaintenanceConfigurationResponse> GetTableBucketMaintenanceConfigurationAsync(GetTableBucketMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1144,7 +1144,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableBucketPolicyResponse GetTableBucketPolicy(GetTableBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketPolicy">REST API Reference for GetTableBucketPolicy Operation</seealso>
         public virtual Task<GetTableBucketPolicyResponse> GetTableBucketPolicyAsync(GetTableBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1204,7 +1204,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableEncryptionResponse GetTableEncryption(GetTableEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableEncryptionResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableEncryption">REST API Reference for GetTableEncryption Operation</seealso>
         public virtual Task<GetTableEncryptionResponse> GetTableEncryptionAsync(GetTableEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableEncryptionResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableMaintenanceConfigurationResponse GetTableMaintenanceConfiguration(GetTableMaintenanceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMaintenanceConfiguration">REST API Reference for GetTableMaintenanceConfiguration Operation</seealso>
         public virtual Task<GetTableMaintenanceConfigurationResponse> GetTableMaintenanceConfigurationAsync(GetTableMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1327,7 +1327,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableMaintenanceJobStatusResponse GetTableMaintenanceJobStatus(GetTableMaintenanceJobStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMaintenanceJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMaintenanceJobStatusResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMaintenanceJobStatus">REST API Reference for GetTableMaintenanceJobStatus Operation</seealso>
         public virtual Task<GetTableMaintenanceJobStatusResponse> GetTableMaintenanceJobStatusAsync(GetTableMaintenanceJobStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMaintenanceJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMaintenanceJobStatusResponseUnmarshaller.Instance;
 
@@ -1387,7 +1387,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTableMetadataLocationResponse GetTableMetadataLocation(GetTableMetadataLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataLocationResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMetadataLocation">REST API Reference for GetTableMetadataLocation Operation</seealso>
         public virtual Task<GetTableMetadataLocationResponse> GetTableMetadataLocationAsync(GetTableMetadataLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataLocationResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.S3Tables
 
         internal virtual GetTablePolicyResponse GetTablePolicy(GetTablePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTablePolicyResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTablePolicy">REST API Reference for GetTablePolicy Operation</seealso>
         public virtual Task<GetTablePolicyResponse> GetTablePolicyAsync(GetTablePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTablePolicyResponseUnmarshaller.Instance;
 
@@ -1506,7 +1506,7 @@ namespace Amazon.S3Tables
 
         internal virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -1557,7 +1557,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.S3Tables
 
         internal virtual ListTableBucketsResponse ListTableBuckets(ListTableBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableBucketsResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTableBuckets">REST API Reference for ListTableBuckets Operation</seealso>
         public virtual Task<ListTableBucketsResponse> ListTableBucketsAsync(ListTableBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableBucketsResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.S3Tables
 
         internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.S3Tables
 
         internal virtual PutTableBucketEncryptionResponse PutTableBucketEncryption(PutTableBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -1745,7 +1745,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketEncryption">REST API Reference for PutTableBucketEncryption Operation</seealso>
         public virtual Task<PutTableBucketEncryptionResponse> PutTableBucketEncryptionAsync(PutTableBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.S3Tables
 
         internal virtual PutTableBucketMaintenanceConfigurationResponse PutTableBucketMaintenanceConfiguration(PutTableBucketMaintenanceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1806,7 +1806,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketMaintenanceConfiguration">REST API Reference for PutTableBucketMaintenanceConfiguration Operation</seealso>
         public virtual Task<PutTableBucketMaintenanceConfigurationResponse> PutTableBucketMaintenanceConfigurationAsync(PutTableBucketMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1818,7 +1818,7 @@ namespace Amazon.S3Tables
 
         internal virtual PutTableBucketPolicyResponse PutTableBucketPolicy(PutTableBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1867,7 +1867,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketPolicy">REST API Reference for PutTableBucketPolicy Operation</seealso>
         public virtual Task<PutTableBucketPolicyResponse> PutTableBucketPolicyAsync(PutTableBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.S3Tables
 
         internal virtual PutTableMaintenanceConfigurationResponse PutTableMaintenanceConfiguration(PutTableMaintenanceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableMaintenanceConfiguration">REST API Reference for PutTableMaintenanceConfiguration Operation</seealso>
         public virtual Task<PutTableMaintenanceConfigurationResponse> PutTableMaintenanceConfigurationAsync(PutTableMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTableMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTableMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.S3Tables
 
         internal virtual PutTablePolicyResponse PutTablePolicy(PutTablePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTablePolicyResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTablePolicy">REST API Reference for PutTablePolicy Operation</seealso>
         public virtual Task<PutTablePolicyResponse> PutTablePolicyAsync(PutTablePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTablePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTablePolicyResponseUnmarshaller.Instance;
 
@@ -2001,7 +2001,7 @@ namespace Amazon.S3Tables
 
         internal virtual RenameTableResponse RenameTable(RenameTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameTableResponseUnmarshaller.Instance;
 
@@ -2048,7 +2048,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/RenameTable">REST API Reference for RenameTable Operation</seealso>
         public virtual Task<RenameTableResponse> RenameTableAsync(RenameTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameTableResponseUnmarshaller.Instance;
 
@@ -2060,7 +2060,7 @@ namespace Amazon.S3Tables
 
         internal virtual UpdateTableMetadataLocationResponse UpdateTableMetadataLocation(UpdateTableMetadataLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableMetadataLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableMetadataLocationResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.S3Tables
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UpdateTableMetadataLocation">REST API Reference for UpdateTableMetadataLocation Operation</seealso>
         public virtual Task<UpdateTableMetadataLocationResponse> UpdateTableMetadataLocationAsync(UpdateTableMetadataLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableMetadataLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableMetadataLocationResponseUnmarshaller.Instance;
 

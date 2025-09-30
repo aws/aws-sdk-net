@@ -322,7 +322,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
         public virtual ApplyArchiveRuleResponse ApplyArchiveRule(ApplyArchiveRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyArchiveRuleResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule">REST API Reference for ApplyArchiveRule Operation</seealso>
         public virtual Task<ApplyArchiveRuleResponse> ApplyArchiveRuleAsync(ApplyArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyArchiveRuleResponseUnmarshaller.Instance;
             
@@ -391,7 +391,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyGeneration">REST API Reference for CancelPolicyGeneration Operation</seealso>
         public virtual CancelPolicyGenerationResponse CancelPolicyGeneration(CancelPolicyGenerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPolicyGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPolicyGenerationResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyGeneration">REST API Reference for CancelPolicyGeneration Operation</seealso>
         public virtual Task<CancelPolicyGenerationResponse> CancelPolicyGenerationAsync(CancelPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPolicyGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPolicyGenerationResponseUnmarshaller.Instance;
             
@@ -462,7 +462,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckAccessNotGranted">REST API Reference for CheckAccessNotGranted Operation</seealso>
         public virtual CheckAccessNotGrantedResponse CheckAccessNotGranted(CheckAccessNotGrantedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckAccessNotGrantedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckAccessNotGrantedResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckAccessNotGranted">REST API Reference for CheckAccessNotGranted Operation</seealso>
         public virtual Task<CheckAccessNotGrantedResponse> CheckAccessNotGrantedAsync(CheckAccessNotGrantedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckAccessNotGrantedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckAccessNotGrantedResponseUnmarshaller.Instance;
             
@@ -549,7 +549,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoNewAccess">REST API Reference for CheckNoNewAccess Operation</seealso>
         public virtual CheckNoNewAccessResponse CheckNoNewAccess(CheckNoNewAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckNoNewAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckNoNewAccessResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoNewAccess">REST API Reference for CheckNoNewAccess Operation</seealso>
         public virtual Task<CheckNoNewAccessResponse> CheckNoNewAccessAsync(CheckNoNewAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckNoNewAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckNoNewAccessResponseUnmarshaller.Instance;
             
@@ -637,7 +637,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
         public virtual CheckNoPublicAccessResponse CheckNoPublicAccess(CheckNoPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckNoPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckNoPublicAccessResponseUnmarshaller.Instance;
 
@@ -676,7 +676,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoPublicAccess">REST API Reference for CheckNoPublicAccess Operation</seealso>
         public virtual Task<CheckNoPublicAccessResponse> CheckNoPublicAccessAsync(CheckNoPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckNoPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckNoPublicAccessResponseUnmarshaller.Instance;
             
@@ -719,7 +719,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview">REST API Reference for CreateAccessPreview Operation</seealso>
         public virtual CreateAccessPreviewResponse CreateAccessPreview(CreateAccessPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPreviewResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview">REST API Reference for CreateAccessPreview Operation</seealso>
         public virtual Task<CreateAccessPreviewResponse> CreateAccessPreviewAsync(CreateAccessPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPreviewResponseUnmarshaller.Instance;
             
@@ -800,7 +800,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">REST API Reference for CreateAnalyzer Operation</seealso>
         public virtual CreateAnalyzerResponse CreateAnalyzer(CreateAnalyzerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalyzerResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">REST API Reference for CreateAnalyzer Operation</seealso>
         public virtual Task<CreateAnalyzerResponse> CreateAnalyzerAsync(CreateAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalyzerResponseUnmarshaller.Instance;
             
@@ -887,7 +887,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">REST API Reference for CreateArchiveRule Operation</seealso>
         public virtual CreateArchiveRuleResponse CreateArchiveRule(CreateArchiveRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveRuleResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">REST API Reference for CreateArchiveRule Operation</seealso>
         public virtual Task<CreateArchiveRuleResponse> CreateArchiveRuleAsync(CreateArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveRuleResponseUnmarshaller.Instance;
             
@@ -973,7 +973,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteAnalyzer">REST API Reference for DeleteAnalyzer Operation</seealso>
         public virtual DeleteAnalyzerResponse DeleteAnalyzer(DeleteAnalyzerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalyzerResponseUnmarshaller.Instance;
 
@@ -1010,7 +1010,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteAnalyzer">REST API Reference for DeleteAnalyzer Operation</seealso>
         public virtual Task<DeleteAnalyzerResponse> DeleteAnalyzerAsync(DeleteAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalyzerResponseUnmarshaller.Instance;
             
@@ -1046,7 +1046,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteArchiveRule">REST API Reference for DeleteArchiveRule Operation</seealso>
         public virtual DeleteArchiveRuleResponse DeleteArchiveRule(DeleteArchiveRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveRuleResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteArchiveRule">REST API Reference for DeleteArchiveRule Operation</seealso>
         public virtual Task<DeleteArchiveRuleResponse> DeleteArchiveRuleAsync(DeleteArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveRuleResponseUnmarshaller.Instance;
             
@@ -1114,7 +1114,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
         public virtual GenerateFindingRecommendationResponse GenerateFindingRecommendation(GenerateFindingRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateFindingRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateFindingRecommendationResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GenerateFindingRecommendation">REST API Reference for GenerateFindingRecommendation Operation</seealso>
         public virtual Task<GenerateFindingRecommendationResponse> GenerateFindingRecommendationAsync(GenerateFindingRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateFindingRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateFindingRecommendationResponseUnmarshaller.Instance;
             
@@ -1182,7 +1182,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview">REST API Reference for GetAccessPreview Operation</seealso>
         public virtual GetAccessPreviewResponse GetAccessPreview(GetAccessPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPreviewResponseUnmarshaller.Instance;
 
@@ -1217,7 +1217,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview">REST API Reference for GetAccessPreview Operation</seealso>
         public virtual Task<GetAccessPreviewResponse> GetAccessPreviewAsync(GetAccessPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPreviewResponseUnmarshaller.Instance;
             
@@ -1253,7 +1253,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">REST API Reference for GetAnalyzedResource Operation</seealso>
         public virtual GetAnalyzedResourceResponse GetAnalyzedResource(GetAnalyzedResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalyzedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalyzedResourceResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">REST API Reference for GetAnalyzedResource Operation</seealso>
         public virtual Task<GetAnalyzedResourceResponse> GetAnalyzedResourceAsync(GetAnalyzedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalyzedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalyzedResourceResponseUnmarshaller.Instance;
             
@@ -1324,7 +1324,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzer">REST API Reference for GetAnalyzer Operation</seealso>
         public virtual GetAnalyzerResponse GetAnalyzer(GetAnalyzerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalyzerResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzer">REST API Reference for GetAnalyzer Operation</seealso>
         public virtual Task<GetAnalyzerResponse> GetAnalyzerAsync(GetAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalyzerResponseUnmarshaller.Instance;
             
@@ -1401,7 +1401,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRule">REST API Reference for GetArchiveRule Operation</seealso>
         public virtual GetArchiveRuleResponse GetArchiveRule(GetArchiveRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetArchiveRuleResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRule">REST API Reference for GetArchiveRule Operation</seealso>
         public virtual Task<GetArchiveRuleResponse> GetArchiveRuleAsync(GetArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetArchiveRuleResponseUnmarshaller.Instance;
             
@@ -1481,7 +1481,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFinding">REST API Reference for GetFinding Operation</seealso>
         public virtual GetFindingResponse GetFinding(GetFindingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingResponseUnmarshaller.Instance;
 
@@ -1519,7 +1519,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFinding">REST API Reference for GetFinding Operation</seealso>
         public virtual Task<GetFindingResponse> GetFindingAsync(GetFindingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingResponseUnmarshaller.Instance;
             
@@ -1555,7 +1555,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
         public virtual GetFindingRecommendationResponse GetFindingRecommendation(GetFindingRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingRecommendationResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRecommendation">REST API Reference for GetFindingRecommendation Operation</seealso>
         public virtual Task<GetFindingRecommendationResponse> GetFindingRecommendationAsync(GetFindingRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingRecommendationResponseUnmarshaller.Instance;
             
@@ -1627,7 +1627,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         public virtual GetFindingsStatisticsResponse GetFindingsStatistics(GetFindingsStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
 
@@ -1663,7 +1663,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         public virtual Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(GetFindingsStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
             
@@ -1702,7 +1702,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingV2">REST API Reference for GetFindingV2 Operation</seealso>
         public virtual GetFindingV2Response GetFindingV2(GetFindingV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingV2ResponseUnmarshaller.Instance;
 
@@ -1740,7 +1740,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingV2">REST API Reference for GetFindingV2 Operation</seealso>
         public virtual Task<GetFindingV2Response> GetFindingV2Async(GetFindingV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingV2ResponseUnmarshaller.Instance;
             
@@ -1773,7 +1773,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy">REST API Reference for GetGeneratedPolicy Operation</seealso>
         public virtual GetGeneratedPolicyResponse GetGeneratedPolicy(GetGeneratedPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeneratedPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeneratedPolicyResponseUnmarshaller.Instance;
 
@@ -1805,7 +1805,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy">REST API Reference for GetGeneratedPolicy Operation</seealso>
         public virtual Task<GetGeneratedPolicyResponse> GetGeneratedPolicyAsync(GetGeneratedPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeneratedPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeneratedPolicyResponseUnmarshaller.Instance;
             
@@ -1844,7 +1844,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings">REST API Reference for ListAccessPreviewFindings Operation</seealso>
         public virtual ListAccessPreviewFindingsResponse ListAccessPreviewFindings(ListAccessPreviewFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPreviewFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPreviewFindingsResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings">REST API Reference for ListAccessPreviewFindings Operation</seealso>
         public virtual Task<ListAccessPreviewFindingsResponse> ListAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPreviewFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPreviewFindingsResponseUnmarshaller.Instance;
             
@@ -1918,7 +1918,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews">REST API Reference for ListAccessPreviews Operation</seealso>
         public virtual ListAccessPreviewsResponse ListAccessPreviews(ListAccessPreviewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPreviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPreviewsResponseUnmarshaller.Instance;
 
@@ -1953,7 +1953,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews">REST API Reference for ListAccessPreviews Operation</seealso>
         public virtual Task<ListAccessPreviewsResponse> ListAccessPreviewsAsync(ListAccessPreviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPreviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPreviewsResponseUnmarshaller.Instance;
             
@@ -1990,7 +1990,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">REST API Reference for ListAnalyzedResources Operation</seealso>
         public virtual ListAnalyzedResourcesResponse ListAnalyzedResources(ListAnalyzedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzedResourcesResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">REST API Reference for ListAnalyzedResources Operation</seealso>
         public virtual Task<ListAnalyzedResourcesResponse> ListAnalyzedResourcesAsync(ListAnalyzedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzedResourcesResponseUnmarshaller.Instance;
             
@@ -2059,7 +2059,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzers">REST API Reference for ListAnalyzers Operation</seealso>
         public virtual ListAnalyzersResponse ListAnalyzers(ListAnalyzersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzersResponseUnmarshaller.Instance;
 
@@ -2091,7 +2091,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzers">REST API Reference for ListAnalyzers Operation</seealso>
         public virtual Task<ListAnalyzersResponse> ListAnalyzersAsync(ListAnalyzersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzersResponseUnmarshaller.Instance;
             
@@ -2124,7 +2124,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListArchiveRules">REST API Reference for ListArchiveRules Operation</seealso>
         public virtual ListArchiveRulesResponse ListArchiveRules(ListArchiveRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchiveRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchiveRulesResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListArchiveRules">REST API Reference for ListArchiveRules Operation</seealso>
         public virtual Task<ListArchiveRulesResponse> ListArchiveRulesAsync(ListArchiveRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchiveRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchiveRulesResponseUnmarshaller.Instance;
             
@@ -2202,7 +2202,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
@@ -2247,7 +2247,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
             
@@ -2293,7 +2293,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindingsV2">REST API Reference for ListFindingsV2 Operation</seealso>
         public virtual ListFindingsV2Response ListFindingsV2(ListFindingsV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsV2ResponseUnmarshaller.Instance;
 
@@ -2338,7 +2338,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindingsV2">REST API Reference for ListFindingsV2 Operation</seealso>
         public virtual Task<ListFindingsV2Response> ListFindingsV2Async(ListFindingsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsV2ResponseUnmarshaller.Instance;
             
@@ -2371,7 +2371,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
         public virtual ListPolicyGenerationsResponse ListPolicyGenerations(ListPolicyGenerationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
         public virtual Task<ListPolicyGenerationsResponse> ListPolicyGenerationsAsync(ListPolicyGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyGenerationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
             
@@ -2439,7 +2439,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2474,7 +2474,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2513,7 +2513,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
         public virtual StartPolicyGenerationResponse StartPolicyGeneration(StartPolicyGenerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
 
@@ -2551,7 +2551,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
         public virtual Task<StartPolicyGenerationResponse> StartPolicyGenerationAsync(StartPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPolicyGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
             
@@ -2587,7 +2587,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
         public virtual StartResourceScanResponse StartResourceScan(StartResourceScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
         public virtual Task<StartResourceScanResponse> StartResourceScanAsync(StartResourceScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
             
@@ -2658,7 +2658,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2729,7 +2729,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2764,7 +2764,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2803,7 +2803,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
         public virtual UpdateAnalyzerResponse UpdateAnalyzer(UpdateAnalyzerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalyzerResponseUnmarshaller.Instance;
 
@@ -2841,7 +2841,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">REST API Reference for UpdateAnalyzer Operation</seealso>
         public virtual Task<UpdateAnalyzerResponse> UpdateAnalyzerAsync(UpdateAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalyzerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalyzerResponseUnmarshaller.Instance;
             
@@ -2877,7 +2877,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRule">REST API Reference for UpdateArchiveRule Operation</seealso>
         public virtual UpdateArchiveRuleResponse UpdateArchiveRule(UpdateArchiveRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveRuleResponseUnmarshaller.Instance;
 
@@ -2912,7 +2912,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRule">REST API Reference for UpdateArchiveRule Operation</seealso>
         public virtual Task<UpdateArchiveRuleResponse> UpdateArchiveRuleAsync(UpdateArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveRuleResponseUnmarshaller.Instance;
             
@@ -2948,7 +2948,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateFindings">REST API Reference for UpdateFindings Operation</seealso>
         public virtual UpdateFindingsResponse UpdateFindings(UpdateFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
 
@@ -2983,7 +2983,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateFindings">REST API Reference for UpdateFindings Operation</seealso>
         public virtual Task<UpdateFindingsResponse> UpdateFindingsAsync(UpdateFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFindingsResponseUnmarshaller.Instance;
             
@@ -3018,7 +3018,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">REST API Reference for ValidatePolicy Operation</seealso>
         public virtual ValidatePolicyResponse ValidatePolicy(ValidatePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePolicyResponseUnmarshaller.Instance;
 
@@ -3052,7 +3052,7 @@ namespace Amazon.AccessAnalyzer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy">REST API Reference for ValidatePolicy Operation</seealso>
         public virtual Task<ValidatePolicyResponse> ValidatePolicyAsync(ValidatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePolicyResponseUnmarshaller.Instance;
             

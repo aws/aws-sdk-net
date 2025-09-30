@@ -289,7 +289,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         public virtual DeleteKeyResponse DeleteKey(DeleteKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         public virtual Task<DeleteKeyResponse> DeleteKeyAsync(DeleteKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
             
@@ -360,7 +360,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
         public virtual DescribeKeyValueStoreResponse DescribeKeyValueStore(DescribeKeyValueStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
         public virtual Task<DescribeKeyValueStoreResponse> DescribeKeyValueStoreAsync(DescribeKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
             
@@ -425,7 +425,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/GetKey">REST API Reference for GetKey Operation</seealso>
         public virtual GetKeyResponse GetKey(GetKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/GetKey">REST API Reference for GetKey Operation</seealso>
         public virtual Task<GetKeyResponse> GetKeyAsync(GetKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyResponseUnmarshaller.Instance;
             
@@ -493,7 +493,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -528,7 +528,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
             
@@ -567,7 +567,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKey">REST API Reference for PutKey Operation</seealso>
         public virtual PutKeyResponse PutKey(PutKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeyResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/PutKey">REST API Reference for PutKey Operation</seealso>
         public virtual Task<PutKeyResponse> PutKeyAsync(PutKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeyResponseUnmarshaller.Instance;
             
@@ -644,7 +644,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/UpdateKeys">REST API Reference for UpdateKeys Operation</seealso>
         public virtual UpdateKeysResponse UpdateKeys(UpdateKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeysResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-keyvaluestore-2022-07-26/UpdateKeys">REST API Reference for UpdateKeys Operation</seealso>
         public virtual Task<UpdateKeysResponse> UpdateKeysAsync(UpdateKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeysResponseUnmarshaller.Instance;
             

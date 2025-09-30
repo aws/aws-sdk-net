@@ -306,7 +306,7 @@ namespace Amazon.PI
 
         internal virtual CreatePerformanceAnalysisReportResponse CreatePerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">REST API Reference for CreatePerformanceAnalysisReport Operation</seealso>
         public virtual Task<CreatePerformanceAnalysisReportResponse> CreatePerformanceAnalysisReportAsync(CreatePerformanceAnalysisReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.PI
 
         internal virtual DeletePerformanceAnalysisReportResponse DeletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">REST API Reference for DeletePerformanceAnalysisReport Operation</seealso>
         public virtual Task<DeletePerformanceAnalysisReportResponse> DeletePerformanceAnalysisReportAsync(DeletePerformanceAnalysisReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -390,7 +390,7 @@ namespace Amazon.PI
 
         internal virtual DescribeDimensionKeysResponse DescribeDimensionKeys(DescribeDimensionKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDimensionKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DescribeDimensionKeys">REST API Reference for DescribeDimensionKeys Operation</seealso>
         public virtual Task<DescribeDimensionKeysResponse> DescribeDimensionKeysAsync(DescribeDimensionKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDimensionKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDimensionKeysResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.PI
 
         internal virtual GetDimensionKeyDetailsResponse GetDimensionKeyDetails(GetDimensionKeyDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDimensionKeyDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDimensionKeyDetailsResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">REST API Reference for GetDimensionKeyDetails Operation</seealso>
         public virtual Task<GetDimensionKeyDetailsResponse> GetDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDimensionKeyDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDimensionKeyDetailsResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.PI
 
         internal virtual GetPerformanceAnalysisReportResponse GetPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">REST API Reference for GetPerformanceAnalysisReport Operation</seealso>
         public virtual Task<GetPerformanceAnalysisReportResponse> GetPerformanceAnalysisReportAsync(GetPerformanceAnalysisReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPerformanceAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPerformanceAnalysisReportResponseUnmarshaller.Instance;
 
@@ -531,7 +531,7 @@ namespace Amazon.PI
 
         internal virtual GetResourceMetadataResponse GetResourceMetadata(GetResourceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceMetadataResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetadata">REST API Reference for GetResourceMetadata Operation</seealso>
         public virtual Task<GetResourceMetadataResponse> GetResourceMetadataAsync(GetResourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceMetadataResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.PI
 
         internal virtual GetResourceMetricsResponse GetResourceMetrics(GetResourceMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
 
@@ -613,7 +613,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics">REST API Reference for GetResourceMetrics Operation</seealso>
         public virtual Task<GetResourceMetricsResponse> GetResourceMetricsAsync(GetResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceMetricsResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.PI
 
         internal virtual ListAvailableResourceDimensionsResponse ListAvailableResourceDimensions(ListAvailableResourceDimensionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableResourceDimensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableResourceDimensionsResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListAvailableResourceDimensions">REST API Reference for ListAvailableResourceDimensions Operation</seealso>
         public virtual Task<ListAvailableResourceDimensionsResponse> ListAvailableResourceDimensionsAsync(ListAvailableResourceDimensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableResourceDimensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableResourceDimensionsResponseUnmarshaller.Instance;
 
@@ -668,7 +668,7 @@ namespace Amazon.PI
 
         internal virtual ListAvailableResourceMetricsResponse ListAvailableResourceMetrics(ListAvailableResourceMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableResourceMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableResourceMetricsResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListAvailableResourceMetrics">REST API Reference for ListAvailableResourceMetrics Operation</seealso>
         public virtual Task<ListAvailableResourceMetricsResponse> ListAvailableResourceMetricsAsync(ListAvailableResourceMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableResourceMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableResourceMetricsResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.PI
 
         internal virtual ListPerformanceAnalysisReportsResponse ListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPerformanceAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPerformanceAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">REST API Reference for ListPerformanceAnalysisReports Operation</seealso>
         public virtual Task<ListPerformanceAnalysisReportsResponse> ListPerformanceAnalysisReportsAsync(ListPerformanceAnalysisReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPerformanceAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPerformanceAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.PI
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.PI
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.PI
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.PI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

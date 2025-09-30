@@ -249,7 +249,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         internal virtual GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
@@ -281,7 +281,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
@@ -294,7 +294,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         [Obsolete("This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
         internal virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSupportDataExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         [Obsolete("This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
         public virtual Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSupportDataExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 

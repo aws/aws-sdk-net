@@ -392,7 +392,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">REST API Reference for AcceptEngagementInvitation Operation</seealso>
         public virtual AcceptEngagementInvitationResponse AcceptEngagementInvitation(AcceptEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AcceptEngagementInvitation">REST API Reference for AcceptEngagementInvitation Operation</seealso>
         public virtual Task<AcceptEngagementInvitationResponse> AcceptEngagementInvitationAsync(AcceptEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -554,7 +554,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunity">REST API Reference for AssignOpportunity Operation</seealso>
         public virtual AssignOpportunityResponse AssignOpportunity(AssignOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignOpportunityResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssignOpportunity">REST API Reference for AssignOpportunity Operation</seealso>
         public virtual Task<AssignOpportunityResponse> AssignOpportunityAsync(AssignOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignOpportunityResponseUnmarshaller.Instance;
             
@@ -751,7 +751,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">REST API Reference for AssociateOpportunity Operation</seealso>
         public virtual AssociateOpportunityResponse AssociateOpportunity(AssociateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOpportunityResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">REST API Reference for AssociateOpportunity Operation</seealso>
         public virtual Task<AssociateOpportunityResponse> AssociateOpportunityAsync(AssociateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOpportunityResponseUnmarshaller.Instance;
             
@@ -951,7 +951,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">REST API Reference for CreateEngagement Operation</seealso>
         public virtual CreateEngagementResponse CreateEngagement(CreateEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagement">REST API Reference for CreateEngagement Operation</seealso>
         public virtual Task<CreateEngagementResponse> CreateEngagementAsync(CreateEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementResponseUnmarshaller.Instance;
             
@@ -1115,7 +1115,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">REST API Reference for CreateEngagementInvitation Operation</seealso>
         public virtual CreateEngagementInvitationResponse CreateEngagementInvitation(CreateEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementInvitation">REST API Reference for CreateEngagementInvitation Operation</seealso>
         public virtual Task<CreateEngagementInvitationResponse> CreateEngagementInvitationAsync(CreateEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -1305,7 +1305,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">REST API Reference for CreateOpportunity Operation</seealso>
         public virtual CreateOpportunityResponse CreateOpportunity(CreateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOpportunityResponseUnmarshaller.Instance;
 
@@ -1414,7 +1414,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">REST API Reference for CreateOpportunity Operation</seealso>
         public virtual Task<CreateOpportunityResponse> CreateOpportunityAsync(CreateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOpportunityResponseUnmarshaller.Instance;
             
@@ -1497,7 +1497,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshot">REST API Reference for CreateResourceSnapshot Operation</seealso>
         public virtual CreateResourceSnapshotResponse CreateResourceSnapshot(CreateResourceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshot">REST API Reference for CreateResourceSnapshot Operation</seealso>
         public virtual Task<CreateResourceSnapshotResponse> CreateResourceSnapshotAsync(CreateResourceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotResponseUnmarshaller.Instance;
             
@@ -1663,7 +1663,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">REST API Reference for CreateResourceSnapshotJob Operation</seealso>
         public virtual CreateResourceSnapshotJobResponse CreateResourceSnapshotJob(CreateResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -1746,7 +1746,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateResourceSnapshotJob">REST API Reference for CreateResourceSnapshotJob Operation</seealso>
         public virtual Task<CreateResourceSnapshotJobResponse> CreateResourceSnapshotJobAsync(CreateResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -1817,7 +1817,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">REST API Reference for DeleteResourceSnapshotJob Operation</seealso>
         public virtual DeleteResourceSnapshotJobResponse DeleteResourceSnapshotJob(DeleteResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -1887,7 +1887,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DeleteResourceSnapshotJob">REST API Reference for DeleteResourceSnapshotJob Operation</seealso>
         public virtual Task<DeleteResourceSnapshotJobResponse> DeleteResourceSnapshotJobAsync(DeleteResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -1969,7 +1969,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">REST API Reference for DisassociateOpportunity Operation</seealso>
         public virtual DisassociateOpportunityResponse DisassociateOpportunity(DisassociateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOpportunityResponseUnmarshaller.Instance;
 
@@ -2050,7 +2050,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">REST API Reference for DisassociateOpportunity Operation</seealso>
         public virtual Task<DisassociateOpportunityResponse> DisassociateOpportunityAsync(DisassociateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOpportunityResponseUnmarshaller.Instance;
             
@@ -2123,7 +2123,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummary">REST API Reference for GetAwsOpportunitySummary Operation</seealso>
         public virtual GetAwsOpportunitySummaryResponse GetAwsOpportunitySummary(GetAwsOpportunitySummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsOpportunitySummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsOpportunitySummaryResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetAwsOpportunitySummary">REST API Reference for GetAwsOpportunitySummary Operation</seealso>
         public virtual Task<GetAwsOpportunitySummaryResponse> GetAwsOpportunitySummaryAsync(GetAwsOpportunitySummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsOpportunitySummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsOpportunitySummaryResponseUnmarshaller.Instance;
             
@@ -2255,7 +2255,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">REST API Reference for GetEngagement Operation</seealso>
         public virtual GetEngagementResponse GetEngagement(GetEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementResponseUnmarshaller.Instance;
 
@@ -2314,7 +2314,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagement">REST API Reference for GetEngagement Operation</seealso>
         public virtual Task<GetEngagementResponse> GetEngagementAsync(GetEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementResponseUnmarshaller.Instance;
             
@@ -2387,7 +2387,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagementInvitation">REST API Reference for GetEngagementInvitation Operation</seealso>
         public virtual GetEngagementInvitationResponse GetEngagementInvitation(GetEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -2459,7 +2459,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagementInvitation">REST API Reference for GetEngagementInvitation Operation</seealso>
         public virtual Task<GetEngagementInvitationResponse> GetEngagementInvitationAsync(GetEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -2535,7 +2535,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">REST API Reference for GetOpportunity Operation</seealso>
         public virtual GetOpportunityResponse GetOpportunity(GetOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpportunityResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetOpportunity">REST API Reference for GetOpportunity Operation</seealso>
         public virtual Task<GetOpportunityResponse> GetOpportunityAsync(GetOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpportunityResponseUnmarshaller.Instance;
             
@@ -2670,7 +2670,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">REST API Reference for GetResourceSnapshot Operation</seealso>
         public virtual GetResourceSnapshotResponse GetResourceSnapshot(GetResourceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotResponseUnmarshaller.Instance;
 
@@ -2729,7 +2729,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshot">REST API Reference for GetResourceSnapshot Operation</seealso>
         public virtual Task<GetResourceSnapshotResponse> GetResourceSnapshotAsync(GetResourceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotResponseUnmarshaller.Instance;
             
@@ -2789,7 +2789,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">REST API Reference for GetResourceSnapshotJob Operation</seealso>
         public virtual GetResourceSnapshotJobResponse GetResourceSnapshotJob(GetResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -2848,7 +2848,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetResourceSnapshotJob">REST API Reference for GetResourceSnapshotJob Operation</seealso>
         public virtual Task<GetResourceSnapshotJobResponse> GetResourceSnapshotJobAsync(GetResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -2909,7 +2909,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettings">REST API Reference for GetSellingSystemSettings Operation</seealso>
         public virtual GetSellingSystemSettingsResponse GetSellingSystemSettings(GetSellingSystemSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSellingSystemSettingsResponseUnmarshaller.Instance;
 
@@ -2969,7 +2969,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetSellingSystemSettings">REST API Reference for GetSellingSystemSettings Operation</seealso>
         public virtual Task<GetSellingSystemSettingsResponse> GetSellingSystemSettingsAsync(GetSellingSystemSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSellingSystemSettingsResponseUnmarshaller.Instance;
             
@@ -3030,7 +3030,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">REST API Reference for ListEngagementByAcceptingInvitationTasks Operation</seealso>
         public virtual ListEngagementByAcceptingInvitationTasksResponse ListEngagementByAcceptingInvitationTasks(ListEngagementByAcceptingInvitationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementByAcceptingInvitationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementByAcceptingInvitationTasksResponseUnmarshaller.Instance;
 
@@ -3090,7 +3090,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementByAcceptingInvitationTasks">REST API Reference for ListEngagementByAcceptingInvitationTasks Operation</seealso>
         public virtual Task<ListEngagementByAcceptingInvitationTasksResponse> ListEngagementByAcceptingInvitationTasksAsync(ListEngagementByAcceptingInvitationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementByAcceptingInvitationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementByAcceptingInvitationTasksResponseUnmarshaller.Instance;
             
@@ -3151,7 +3151,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">REST API Reference for ListEngagementFromOpportunityTasks Operation</seealso>
         public virtual ListEngagementFromOpportunityTasksResponse ListEngagementFromOpportunityTasks(ListEngagementFromOpportunityTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementFromOpportunityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementFromOpportunityTasksResponseUnmarshaller.Instance;
 
@@ -3211,7 +3211,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementFromOpportunityTasks">REST API Reference for ListEngagementFromOpportunityTasks Operation</seealso>
         public virtual Task<ListEngagementFromOpportunityTasksResponse> ListEngagementFromOpportunityTasksAsync(ListEngagementFromOpportunityTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementFromOpportunityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementFromOpportunityTasksResponseUnmarshaller.Instance;
             
@@ -3283,7 +3283,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementInvitations">REST API Reference for ListEngagementInvitations Operation</seealso>
         public virtual ListEngagementInvitationsResponse ListEngagementInvitations(ListEngagementInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementInvitationsResponseUnmarshaller.Instance;
 
@@ -3354,7 +3354,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementInvitations">REST API Reference for ListEngagementInvitations Operation</seealso>
         public virtual Task<ListEngagementInvitationsResponse> ListEngagementInvitationsAsync(ListEngagementInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementInvitationsResponseUnmarshaller.Instance;
             
@@ -3417,7 +3417,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">REST API Reference for ListEngagementMembers Operation</seealso>
         public virtual ListEngagementMembersResponse ListEngagementMembers(ListEngagementMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementMembersResponseUnmarshaller.Instance;
 
@@ -3479,7 +3479,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementMembers">REST API Reference for ListEngagementMembers Operation</seealso>
         public virtual Task<ListEngagementMembersResponse> ListEngagementMembersAsync(ListEngagementMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementMembersResponseUnmarshaller.Instance;
             
@@ -3540,7 +3540,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">REST API Reference for ListEngagementResourceAssociations Operation</seealso>
         public virtual ListEngagementResourceAssociationsResponse ListEngagementResourceAssociations(ListEngagementResourceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementResourceAssociationsResponseUnmarshaller.Instance;
 
@@ -3600,7 +3600,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagementResourceAssociations">REST API Reference for ListEngagementResourceAssociations Operation</seealso>
         public virtual Task<ListEngagementResourceAssociationsResponse> ListEngagementResourceAssociationsAsync(ListEngagementResourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementResourceAssociationsResponseUnmarshaller.Instance;
             
@@ -3662,7 +3662,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual ListEngagementsResponse ListEngagements(ListEngagementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
 
@@ -3723,7 +3723,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual Task<ListEngagementsResponse> ListEngagementsAsync(ListEngagementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
             
@@ -3823,7 +3823,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">REST API Reference for ListOpportunities Operation</seealso>
         public virtual ListOpportunitiesResponse ListOpportunities(ListOpportunitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpportunitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpportunitiesResponseUnmarshaller.Instance;
 
@@ -3922,7 +3922,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">REST API Reference for ListOpportunities Operation</seealso>
         public virtual Task<ListOpportunitiesResponse> ListOpportunitiesAsync(ListOpportunitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpportunitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpportunitiesResponseUnmarshaller.Instance;
             
@@ -3984,7 +3984,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobs">REST API Reference for ListResourceSnapshotJobs Operation</seealso>
         public virtual ListResourceSnapshotJobsResponse ListResourceSnapshotJobs(ListResourceSnapshotJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotJobsResponseUnmarshaller.Instance;
 
@@ -4045,7 +4045,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshotJobs">REST API Reference for ListResourceSnapshotJobs Operation</seealso>
         public virtual Task<ListResourceSnapshotJobsResponse> ListResourceSnapshotJobsAsync(ListResourceSnapshotJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotJobsResponseUnmarshaller.Instance;
             
@@ -4128,7 +4128,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">REST API Reference for ListResourceSnapshots Operation</seealso>
         public virtual ListResourceSnapshotsResponse ListResourceSnapshots(ListResourceSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotsResponseUnmarshaller.Instance;
 
@@ -4210,7 +4210,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListResourceSnapshots">REST API Reference for ListResourceSnapshots Operation</seealso>
         public virtual Task<ListResourceSnapshotsResponse> ListResourceSnapshotsAsync(ListResourceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSnapshotsResponseUnmarshaller.Instance;
             
@@ -4272,7 +4272,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual ListSolutionsResponse ListSolutions(ListSolutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
 
@@ -4333,7 +4333,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual Task<ListSolutionsResponse> ListSolutionsAsync(ListSolutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
             
@@ -4403,7 +4403,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4472,7 +4472,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4533,7 +4533,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/PutSellingSystemSettings">REST API Reference for PutSellingSystemSettings Operation</seealso>
         public virtual PutSellingSystemSettingsResponse PutSellingSystemSettings(PutSellingSystemSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSellingSystemSettingsResponseUnmarshaller.Instance;
 
@@ -4593,7 +4593,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/PutSellingSystemSettings">REST API Reference for PutSellingSystemSettings Operation</seealso>
         public virtual Task<PutSellingSystemSettingsResponse> PutSellingSystemSettingsAsync(PutSellingSystemSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSellingSystemSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSellingSystemSettingsResponseUnmarshaller.Instance;
             
@@ -4675,7 +4675,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/RejectEngagementInvitation">REST API Reference for RejectEngagementInvitation Operation</seealso>
         public virtual RejectEngagementInvitationResponse RejectEngagementInvitation(RejectEngagementInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEngagementInvitationResponseUnmarshaller.Instance;
 
@@ -4756,7 +4756,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/RejectEngagementInvitation">REST API Reference for RejectEngagementInvitation Operation</seealso>
         public virtual Task<RejectEngagementInvitationResponse> RejectEngagementInvitationAsync(RejectEngagementInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEngagementInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEngagementInvitationResponseUnmarshaller.Instance;
             
@@ -4851,7 +4851,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementByAcceptingInvitationTask">REST API Reference for StartEngagementByAcceptingInvitationTask Operation</seealso>
         public virtual StartEngagementByAcceptingInvitationTaskResponse StartEngagementByAcceptingInvitationTask(StartEngagementByAcceptingInvitationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementByAcceptingInvitationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementByAcceptingInvitationTaskResponseUnmarshaller.Instance;
 
@@ -4945,7 +4945,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementByAcceptingInvitationTask">REST API Reference for StartEngagementByAcceptingInvitationTask Operation</seealso>
         public virtual Task<StartEngagementByAcceptingInvitationTaskResponse> StartEngagementByAcceptingInvitationTaskAsync(StartEngagementByAcceptingInvitationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementByAcceptingInvitationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementByAcceptingInvitationTaskResponseUnmarshaller.Instance;
             
@@ -5042,7 +5042,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">REST API Reference for StartEngagementFromOpportunityTask Operation</seealso>
         public virtual StartEngagementFromOpportunityTaskResponse StartEngagementFromOpportunityTask(StartEngagementFromOpportunityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementFromOpportunityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementFromOpportunityTaskResponseUnmarshaller.Instance;
 
@@ -5138,7 +5138,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementFromOpportunityTask">REST API Reference for StartEngagementFromOpportunityTask Operation</seealso>
         public virtual Task<StartEngagementFromOpportunityTaskResponse> StartEngagementFromOpportunityTaskAsync(StartEngagementFromOpportunityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementFromOpportunityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementFromOpportunityTaskResponseUnmarshaller.Instance;
             
@@ -5198,7 +5198,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">REST API Reference for StartResourceSnapshotJob Operation</seealso>
         public virtual StartResourceSnapshotJobResponse StartResourceSnapshotJob(StartResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -5257,7 +5257,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartResourceSnapshotJob">REST API Reference for StartResourceSnapshotJob Operation</seealso>
         public virtual Task<StartResourceSnapshotJobResponse> StartResourceSnapshotJobAsync(StartResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -5317,7 +5317,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">REST API Reference for StopResourceSnapshotJob Operation</seealso>
         public virtual StopResourceSnapshotJobResponse StopResourceSnapshotJob(StopResourceSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceSnapshotJobResponseUnmarshaller.Instance;
 
@@ -5376,7 +5376,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StopResourceSnapshotJob">REST API Reference for StopResourceSnapshotJob Operation</seealso>
         public virtual Task<StopResourceSnapshotJobResponse> StopResourceSnapshotJobAsync(StopResourceSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceSnapshotJobResponseUnmarshaller.Instance;
             
@@ -5449,7 +5449,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SubmitOpportunity">REST API Reference for SubmitOpportunity Operation</seealso>
         public virtual SubmitOpportunityResponse SubmitOpportunity(SubmitOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitOpportunityResponseUnmarshaller.Instance;
 
@@ -5521,7 +5521,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SubmitOpportunity">REST API Reference for SubmitOpportunity Operation</seealso>
         public virtual Task<SubmitOpportunityResponse> SubmitOpportunityAsync(SubmitOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitOpportunityResponseUnmarshaller.Instance;
             
@@ -5601,7 +5601,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5680,7 +5680,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5760,7 +5760,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5839,7 +5839,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -5930,7 +5930,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateOpportunity">REST API Reference for UpdateOpportunity Operation</seealso>
         public virtual UpdateOpportunityResponse UpdateOpportunity(UpdateOpportunityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOpportunityResponseUnmarshaller.Instance;
 
@@ -6020,7 +6020,7 @@ namespace Amazon.PartnerCentralSelling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateOpportunity">REST API Reference for UpdateOpportunity Operation</seealso>
         public virtual Task<UpdateOpportunityResponse> UpdateOpportunityAsync(UpdateOpportunityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOpportunityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOpportunityResponseUnmarshaller.Instance;
             

@@ -297,7 +297,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual AddNotificationChannelsResponse AddNotificationChannels(AddNotificationChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AddNotificationChannels">REST API Reference for AddNotificationChannels Operation</seealso>
         public virtual Task<AddNotificationChannelsResponse> AddNotificationChannelsAsync(AddNotificationChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -351,7 +351,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual BatchGetFrameMetricDataResponse BatchGetFrameMetricData(BatchGetFrameMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFrameMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFrameMetricDataResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/BatchGetFrameMetricData">REST API Reference for BatchGetFrameMetricData Operation</seealso>
         public virtual Task<BatchGetFrameMetricDataResponse> BatchGetFrameMetricDataAsync(BatchGetFrameMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFrameMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFrameMetricDataResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual ConfigureAgentResponse ConfigureAgent(ConfigureAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureAgentResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent">REST API Reference for ConfigureAgent Operation</seealso>
         public virtual Task<ConfigureAgentResponse> ConfigureAgentAsync(ConfigureAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureAgentResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual CreateProfilingGroupResponse CreateProfilingGroup(CreateProfilingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfilingGroupResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup">REST API Reference for CreateProfilingGroup Operation</seealso>
         public virtual Task<CreateProfilingGroupResponse> CreateProfilingGroupAsync(CreateProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfilingGroupResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual DeleteProfilingGroupResponse DeleteProfilingGroup(DeleteProfilingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfilingGroupResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup">REST API Reference for DeleteProfilingGroup Operation</seealso>
         public virtual Task<DeleteProfilingGroupResponse> DeleteProfilingGroupAsync(DeleteProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfilingGroupResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual DescribeProfilingGroupResponse DescribeProfilingGroup(DescribeProfilingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProfilingGroupResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup">REST API Reference for DescribeProfilingGroup Operation</seealso>
         public virtual Task<DescribeProfilingGroupResponse> DescribeProfilingGroupAsync(DescribeProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProfilingGroupResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual GetFindingsReportAccountSummaryResponse GetFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsReportAccountSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsReportAccountSummaryResponseUnmarshaller.Instance;
 
@@ -623,7 +623,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetFindingsReportAccountSummary">REST API Reference for GetFindingsReportAccountSummary Operation</seealso>
         public virtual Task<GetFindingsReportAccountSummaryResponse> GetFindingsReportAccountSummaryAsync(GetFindingsReportAccountSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsReportAccountSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsReportAccountSummaryResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -668,7 +668,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetNotificationConfiguration">REST API Reference for GetNotificationConfiguration Operation</seealso>
         public virtual Task<GetNotificationConfigurationResponse> GetNotificationConfigurationAsync(GetNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -680,7 +680,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -801,7 +801,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
         public virtual Task<GetRecommendationsResponse> GetRecommendationsAsync(GetRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationsResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual ListFindingsReportsResponse ListFindingsReports(ListFindingsReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsReportsResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListFindingsReports">REST API Reference for ListFindingsReports Operation</seealso>
         public virtual Task<ListFindingsReportsResponse> ListFindingsReportsAsync(ListFindingsReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsReportsResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual ListProfileTimesResponse ListProfileTimes(ListProfileTimesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileTimesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileTimesResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimes">REST API Reference for ListProfileTimes Operation</seealso>
         public virtual Task<ListProfileTimesResponse> ListProfileTimesAsync(ListProfileTimesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileTimesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileTimesResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual ListProfilingGroupsResponse ListProfilingGroups(ListProfilingGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilingGroupsResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">REST API Reference for ListProfilingGroups Operation</seealso>
         public virtual Task<ListProfilingGroupsResponse> ListProfilingGroupsAsync(ListProfilingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilingGroupsResponseUnmarshaller.Instance;
 
@@ -981,7 +981,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1011,7 +1011,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual PostAgentProfileResponse PostAgentProfile(PostAgentProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostAgentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostAgentProfileResponseUnmarshaller.Instance;
 
@@ -1058,7 +1058,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile">REST API Reference for PostAgentProfile Operation</seealso>
         public virtual Task<PostAgentProfileResponse> PostAgentProfileAsync(PostAgentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostAgentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostAgentProfileResponseUnmarshaller.Instance;
 
@@ -1070,7 +1070,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual PutPermissionResponse PutPermission(PutPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
@@ -1124,7 +1124,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual Task<PutPermissionResponse> PutPermissionAsync(PutPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
@@ -1136,7 +1136,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual RemoveNotificationChannelResponse RemoveNotificationChannel(RemoveNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemoveNotificationChannel">REST API Reference for RemoveNotificationChannel Operation</seealso>
         public virtual Task<RemoveNotificationChannelResponse> RemoveNotificationChannelAsync(RemoveNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1181,7 +1181,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -1225,7 +1225,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual SubmitFeedbackResponse SubmitFeedback(SubmitFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitFeedbackResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
         public virtual Task<SubmitFeedbackResponse> SubmitFeedbackAsync(SubmitFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitFeedbackResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1355,7 +1355,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.CodeGuruProfiler
 
         internal virtual UpdateProfilingGroupResponse UpdateProfilingGroup(UpdateProfilingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfilingGroupResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.CodeGuruProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">REST API Reference for UpdateProfilingGroup Operation</seealso>
         public virtual Task<UpdateProfilingGroupResponse> UpdateProfilingGroupAsync(UpdateProfilingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfilingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfilingGroupResponseUnmarshaller.Instance;
 

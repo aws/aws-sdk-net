@@ -331,7 +331,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
             
@@ -416,7 +416,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual GetAttributeValuesResponse GetAttributeValues(GetAttributeValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual Task<GetAttributeValuesResponse> GetAttributeValuesAsync(GetAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
             
@@ -507,7 +507,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
         public virtual GetPriceListFileUrlResponse GetPriceListFileUrl(GetPriceListFileUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPriceListFileUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPriceListFileUrlResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
         public virtual Task<GetPriceListFileUrlResponse> GetPriceListFileUrlAsync(GetPriceListFileUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPriceListFileUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPriceListFileUrlResponseUnmarshaller.Instance;
             
@@ -595,7 +595,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual GetProductsResponse GetProducts(GetProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProductsResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual Task<GetProductsResponse> GetProductsAsync(GetProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProductsResponseUnmarshaller.Instance;
             
@@ -693,7 +693,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
         public virtual ListPriceListsResponse ListPriceLists(ListPriceListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPriceListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPriceListsResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
         public virtual Task<ListPriceListsResponse> ListPriceListsAsync(ListPriceListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPriceListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPriceListsResponseUnmarshaller.Instance;
             

@@ -247,7 +247,7 @@ namespace Amazon.QueryCompatibleRpcV2Protocol
 
         internal virtual QueryCompatibleOperationResponse QueryCompatibleOperation(QueryCompatibleOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryCompatibleOperationResponseUnmarshaller.Instance;
 
@@ -274,7 +274,7 @@ namespace Amazon.QueryCompatibleRpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-compatible-rpcv2-protocol-2025-06-20/QueryCompatibleOperation">REST API Reference for QueryCompatibleOperation Operation</seealso>
         public virtual Task<QueryCompatibleOperationResponse> QueryCompatibleOperationAsync(QueryCompatibleOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryCompatibleOperationResponseUnmarshaller.Instance;
 

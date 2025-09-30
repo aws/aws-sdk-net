@@ -314,7 +314,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateAccounts">REST API Reference for AssociateAccounts Operation</seealso>
         public virtual AssociateAccountsResponse AssociateAccounts(AssociateAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccountsResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateAccounts">REST API Reference for AssociateAccounts Operation</seealso>
         public virtual Task<AssociateAccountsResponse> AssociateAccountsAsync(AssociateAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccountsResponseUnmarshaller.Instance;
             
@@ -401,7 +401,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociatePricingRules">REST API Reference for AssociatePricingRules Operation</seealso>
         public virtual AssociatePricingRulesResponse AssociatePricingRules(AssociatePricingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePricingRulesResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociatePricingRules">REST API Reference for AssociatePricingRules Operation</seealso>
         public virtual Task<AssociatePricingRulesResponse> AssociatePricingRulesAsync(AssociatePricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePricingRulesResponseUnmarshaller.Instance;
             
@@ -485,7 +485,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchAssociateResourcesToCustomLineItem">REST API Reference for BatchAssociateResourcesToCustomLineItem Operation</seealso>
         public virtual BatchAssociateResourcesToCustomLineItemResponse BatchAssociateResourcesToCustomLineItem(BatchAssociateResourcesToCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateResourcesToCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateResourcesToCustomLineItemResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchAssociateResourcesToCustomLineItem">REST API Reference for BatchAssociateResourcesToCustomLineItem Operation</seealso>
         public virtual Task<BatchAssociateResourcesToCustomLineItemResponse> BatchAssociateResourcesToCustomLineItemAsync(BatchAssociateResourcesToCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateResourcesToCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateResourcesToCustomLineItemResponseUnmarshaller.Instance;
             
@@ -565,7 +565,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchDisassociateResourcesFromCustomLineItem">REST API Reference for BatchDisassociateResourcesFromCustomLineItem Operation</seealso>
         public virtual BatchDisassociateResourcesFromCustomLineItemResponse BatchDisassociateResourcesFromCustomLineItem(BatchDisassociateResourcesFromCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateResourcesFromCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateResourcesFromCustomLineItemResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BatchDisassociateResourcesFromCustomLineItem">REST API Reference for BatchDisassociateResourcesFromCustomLineItem Operation</seealso>
         public virtual Task<BatchDisassociateResourcesFromCustomLineItemResponse> BatchDisassociateResourcesFromCustomLineItemAsync(BatchDisassociateResourcesFromCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateResourcesFromCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateResourcesFromCustomLineItemResponseUnmarshaller.Instance;
             
@@ -643,7 +643,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         public virtual CreateBillingGroupResponse CreateBillingGroup(CreateBillingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
         public virtual Task<CreateBillingGroupResponse> CreateBillingGroupAsync(CreateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
             
@@ -723,7 +723,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">REST API Reference for CreateCustomLineItem Operation</seealso>
         public virtual CreateCustomLineItemResponse CreateCustomLineItem(CreateCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomLineItemResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateCustomLineItem">REST API Reference for CreateCustomLineItem Operation</seealso>
         public virtual Task<CreateCustomLineItemResponse> CreateCustomLineItemAsync(CreateCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomLineItemResponseUnmarshaller.Instance;
             
@@ -806,7 +806,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingPlan">REST API Reference for CreatePricingPlan Operation</seealso>
         public virtual CreatePricingPlanResponse CreatePricingPlan(CreatePricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePricingPlanResponseUnmarshaller.Instance;
 
@@ -848,7 +848,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingPlan">REST API Reference for CreatePricingPlan Operation</seealso>
         public virtual Task<CreatePricingPlanResponse> CreatePricingPlanAsync(CreatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePricingPlanResponseUnmarshaller.Instance;
             
@@ -887,7 +887,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingRule">REST API Reference for CreatePricingRule Operation</seealso>
         public virtual CreatePricingRuleResponse CreatePricingRule(CreatePricingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePricingRuleResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreatePricingRule">REST API Reference for CreatePricingRule Operation</seealso>
         public virtual Task<CreatePricingRuleResponse> CreatePricingRuleAsync(CreatePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePricingRuleResponseUnmarshaller.Instance;
             
@@ -958,7 +958,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         public virtual DeleteBillingGroupResponse DeleteBillingGroup(DeleteBillingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
         public virtual Task<DeleteBillingGroupResponse> DeleteBillingGroupAsync(DeleteBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
             
@@ -1027,7 +1027,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteCustomLineItem">REST API Reference for DeleteCustomLineItem Operation</seealso>
         public virtual DeleteCustomLineItemResponse DeleteCustomLineItem(DeleteCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomLineItemResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeleteCustomLineItem">REST API Reference for DeleteCustomLineItem Operation</seealso>
         public virtual Task<DeleteCustomLineItemResponse> DeleteCustomLineItemAsync(DeleteCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomLineItemResponseUnmarshaller.Instance;
             
@@ -1100,7 +1100,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingPlan">REST API Reference for DeletePricingPlan Operation</seealso>
         public virtual DeletePricingPlanResponse DeletePricingPlan(DeletePricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePricingPlanResponseUnmarshaller.Instance;
 
@@ -1136,7 +1136,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingPlan">REST API Reference for DeletePricingPlan Operation</seealso>
         public virtual Task<DeletePricingPlanResponse> DeletePricingPlanAsync(DeletePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePricingPlanResponseUnmarshaller.Instance;
             
@@ -1172,7 +1172,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">REST API Reference for DeletePricingRule Operation</seealso>
         public virtual DeletePricingRuleResponse DeletePricingRule(DeletePricingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePricingRuleResponseUnmarshaller.Instance;
 
@@ -1207,7 +1207,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DeletePricingRule">REST API Reference for DeletePricingRule Operation</seealso>
         public virtual Task<DeletePricingRuleResponse> DeletePricingRuleAsync(DeletePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePricingRuleResponseUnmarshaller.Instance;
             
@@ -1246,7 +1246,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateAccounts">REST API Reference for DisassociateAccounts Operation</seealso>
         public virtual DisassociateAccountsResponse DisassociateAccounts(DisassociateAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAccountsResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateAccounts">REST API Reference for DisassociateAccounts Operation</seealso>
         public virtual Task<DisassociateAccountsResponse> DisassociateAccountsAsync(DisassociateAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAccountsResponseUnmarshaller.Instance;
             
@@ -1323,7 +1323,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         public virtual DisassociatePricingRulesResponse DisassociatePricingRules(DisassociatePricingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePricingRulesResponseUnmarshaller.Instance;
 
@@ -1361,7 +1361,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociatePricingRules">REST API Reference for DisassociatePricingRules Operation</seealso>
         public virtual Task<DisassociatePricingRulesResponse> DisassociatePricingRulesAsync(DisassociatePricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePricingRulesResponseUnmarshaller.Instance;
             
@@ -1398,7 +1398,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
         public virtual GetBillingGroupCostReportResponse GetBillingGroupCostReport(GetBillingGroupCostReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingGroupCostReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingGroupCostReportResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport">REST API Reference for GetBillingGroupCostReport Operation</seealso>
         public virtual Task<GetBillingGroupCostReportResponse> GetBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingGroupCostReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingGroupCostReportResponseUnmarshaller.Instance;
             
@@ -1473,7 +1473,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
         public virtual ListAccountAssociationsResponse ListAccountAssociations(ListAccountAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssociationsResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociations">REST API Reference for ListAccountAssociations Operation</seealso>
         public virtual Task<ListAccountAssociationsResponse> ListAccountAssociationsAsync(ListAccountAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssociationsResponseUnmarshaller.Instance;
             
@@ -1549,7 +1549,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">REST API Reference for ListBillingGroupCostReports Operation</seealso>
         public virtual ListBillingGroupCostReportsResponse ListBillingGroupCostReports(ListBillingGroupCostReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingGroupCostReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingGroupCostReportsResponseUnmarshaller.Instance;
 
@@ -1586,7 +1586,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReports">REST API Reference for ListBillingGroupCostReports Operation</seealso>
         public virtual Task<ListBillingGroupCostReportsResponse> ListBillingGroupCostReportsAsync(ListBillingGroupCostReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingGroupCostReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingGroupCostReportsResponseUnmarshaller.Instance;
             
@@ -1623,7 +1623,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         public virtual ListBillingGroupsResponse ListBillingGroups(ListBillingGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
         public virtual Task<ListBillingGroupsResponse> ListBillingGroupsAsync(ListBillingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
             
@@ -1696,7 +1696,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">REST API Reference for ListCustomLineItems Operation</seealso>
         public virtual ListCustomLineItemsResponse ListCustomLineItems(ListCustomLineItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomLineItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomLineItemsResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItems">REST API Reference for ListCustomLineItems Operation</seealso>
         public virtual Task<ListCustomLineItemsResponse> ListCustomLineItemsAsync(ListCustomLineItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomLineItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomLineItemsResponseUnmarshaller.Instance;
             
@@ -1765,7 +1765,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
         public virtual ListCustomLineItemVersionsResponse ListCustomLineItemVersions(ListCustomLineItemVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomLineItemVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomLineItemVersionsResponseUnmarshaller.Instance;
 
@@ -1797,7 +1797,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
         public virtual Task<ListCustomLineItemVersionsResponse> ListCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomLineItemVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomLineItemVersionsResponseUnmarshaller.Instance;
             
@@ -1831,7 +1831,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">REST API Reference for ListPricingPlans Operation</seealso>
         public virtual ListPricingPlansResponse ListPricingPlans(ListPricingPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingPlansResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlans">REST API Reference for ListPricingPlans Operation</seealso>
         public virtual Task<ListPricingPlansResponse> ListPricingPlansAsync(ListPricingPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingPlansResponseUnmarshaller.Instance;
             
@@ -1900,7 +1900,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">REST API Reference for ListPricingPlansAssociatedWithPricingRule Operation</seealso>
         public virtual ListPricingPlansAssociatedWithPricingRuleResponse ListPricingPlansAssociatedWithPricingRule(ListPricingPlansAssociatedWithPricingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingPlansAssociatedWithPricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingPlansAssociatedWithPricingRuleResponseUnmarshaller.Instance;
 
@@ -1935,7 +1935,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingPlansAssociatedWithPricingRule">REST API Reference for ListPricingPlansAssociatedWithPricingRule Operation</seealso>
         public virtual Task<ListPricingPlansAssociatedWithPricingRuleResponse> ListPricingPlansAssociatedWithPricingRuleAsync(ListPricingPlansAssociatedWithPricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingPlansAssociatedWithPricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingPlansAssociatedWithPricingRuleResponseUnmarshaller.Instance;
             
@@ -1969,7 +1969,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">REST API Reference for ListPricingRules Operation</seealso>
         public virtual ListPricingRulesResponse ListPricingRules(ListPricingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingRulesResponseUnmarshaller.Instance;
 
@@ -2002,7 +2002,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRules">REST API Reference for ListPricingRules Operation</seealso>
         public virtual Task<ListPricingRulesResponse> ListPricingRulesAsync(ListPricingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingRulesResponseUnmarshaller.Instance;
             
@@ -2038,7 +2038,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">REST API Reference for ListPricingRulesAssociatedToPricingPlan Operation</seealso>
         public virtual ListPricingRulesAssociatedToPricingPlanResponse ListPricingRulesAssociatedToPricingPlan(ListPricingRulesAssociatedToPricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingRulesAssociatedToPricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingRulesAssociatedToPricingPlanResponseUnmarshaller.Instance;
 
@@ -2073,7 +2073,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListPricingRulesAssociatedToPricingPlan">REST API Reference for ListPricingRulesAssociatedToPricingPlan Operation</seealso>
         public virtual Task<ListPricingRulesAssociatedToPricingPlanResponse> ListPricingRulesAssociatedToPricingPlanAsync(ListPricingRulesAssociatedToPricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPricingRulesAssociatedToPricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPricingRulesAssociatedToPricingPlanResponseUnmarshaller.Instance;
             
@@ -2109,7 +2109,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">REST API Reference for ListResourcesAssociatedToCustomLineItem Operation</seealso>
         public virtual ListResourcesAssociatedToCustomLineItemResponse ListResourcesAssociatedToCustomLineItem(ListResourcesAssociatedToCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesAssociatedToCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesAssociatedToCustomLineItemResponseUnmarshaller.Instance;
 
@@ -2144,7 +2144,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItem">REST API Reference for ListResourcesAssociatedToCustomLineItem Operation</seealso>
         public virtual Task<ListResourcesAssociatedToCustomLineItemResponse> ListResourcesAssociatedToCustomLineItemAsync(ListResourcesAssociatedToCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesAssociatedToCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesAssociatedToCustomLineItemResponseUnmarshaller.Instance;
             
@@ -2180,7 +2180,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2215,7 +2215,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2253,7 +2253,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2290,7 +2290,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2326,7 +2326,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2400,7 +2400,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         public virtual UpdateBillingGroupResponse UpdateBillingGroup(UpdateBillingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
 
@@ -2438,7 +2438,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
         public virtual Task<UpdateBillingGroupResponse> UpdateBillingGroupAsync(UpdateBillingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
             
@@ -2474,7 +2474,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItem">REST API Reference for UpdateCustomLineItem Operation</seealso>
         public virtual UpdateCustomLineItemResponse UpdateCustomLineItem(UpdateCustomLineItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomLineItemResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItem">REST API Reference for UpdateCustomLineItem Operation</seealso>
         public virtual Task<UpdateCustomLineItemResponse> UpdateCustomLineItemAsync(UpdateCustomLineItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomLineItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomLineItemResponseUnmarshaller.Instance;
             
@@ -2548,7 +2548,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         public virtual UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
 
@@ -2586,7 +2586,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         public virtual Task<UpdatePricingPlanResponse> UpdatePricingPlanAsync(UpdatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
             
@@ -2625,7 +2625,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingRule">REST API Reference for UpdatePricingRule Operation</seealso>
         public virtual UpdatePricingRuleResponse UpdatePricingRule(UpdatePricingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingRuleResponseUnmarshaller.Instance;
 
@@ -2663,7 +2663,7 @@ namespace Amazon.BillingConductor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdatePricingRule">REST API Reference for UpdatePricingRule Operation</seealso>
         public virtual Task<UpdatePricingRuleResponse> UpdatePricingRuleAsync(UpdatePricingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingRuleResponseUnmarshaller.Instance;
             

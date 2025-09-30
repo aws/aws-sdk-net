@@ -279,7 +279,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual GetReportDefinitionResponse GetReportDefinition(GetReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportDefinitionResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/GetReportDefinition">REST API Reference for GetReportDefinition Operation</seealso>
         public virtual Task<GetReportDefinitionResponse> GetReportDefinitionAsync(GetReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportDefinitionResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual ImportApplicationUsageResponse ImportApplicationUsage(ImportApplicationUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApplicationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApplicationUsageResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ImportApplicationUsage">REST API Reference for ImportApplicationUsage Operation</seealso>
         public virtual Task<ImportApplicationUsageResponse> ImportApplicationUsageAsync(ImportApplicationUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApplicationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApplicationUsageResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual ListReportDefinitionsResponse ListReportDefinitions(ListReportDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportDefinitionsResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ListReportDefinitions">REST API Reference for ListReportDefinitions Operation</seealso>
         public virtual Task<ListReportDefinitionsResponse> ListReportDefinitionsAsync(ListReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportDefinitionsResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.ApplicationCostProfiler
 
         internal virtual UpdateReportDefinitionResponse UpdateReportDefinition(UpdateReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReportDefinitionResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.ApplicationCostProfiler
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/UpdateReportDefinition">REST API Reference for UpdateReportDefinition Operation</seealso>
         public virtual Task<UpdateReportDefinitionResponse> UpdateReportDefinitionAsync(UpdateReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReportDefinitionResponseUnmarshaller.Instance;
 

@@ -304,7 +304,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
         public virtual BatchCreateAttendeeResponse BatchCreateAttendee(BatchCreateAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateAttendeeResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
         public virtual Task<BatchCreateAttendeeResponse> BatchCreateAttendeeAsync(BatchCreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateAttendeeResponseUnmarshaller.Instance;
             
@@ -444,7 +444,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
         public virtual BatchUpdateAttendeeCapabilitiesExceptResponse BatchUpdateAttendeeCapabilitiesExcept(BatchUpdateAttendeeCapabilitiesExceptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
         public virtual Task<BatchUpdateAttendeeCapabilitiesExceptResponse> BatchUpdateAttendeeCapabilitiesExceptAsync(BatchUpdateAttendeeCapabilitiesExceptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
             
@@ -584,7 +584,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateAttendee">REST API Reference for CreateAttendee Operation</seealso>
         public virtual CreateAttendeeResponse CreateAttendee(CreateAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttendeeResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateAttendee">REST API Reference for CreateAttendee Operation</seealso>
         public virtual Task<CreateAttendeeResponse> CreateAttendeeAsync(CreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttendeeResponseUnmarshaller.Instance;
             
@@ -682,7 +682,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeeting">REST API Reference for CreateMeeting Operation</seealso>
         public virtual CreateMeetingResponse CreateMeeting(CreateMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeeting">REST API Reference for CreateMeeting Operation</seealso>
         public virtual Task<CreateMeetingResponse> CreateMeetingAsync(CreateMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingResponseUnmarshaller.Instance;
             
@@ -779,7 +779,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeetingWithAttendees">REST API Reference for CreateMeetingWithAttendees Operation</seealso>
         public virtual CreateMeetingWithAttendeesResponse CreateMeetingWithAttendees(CreateMeetingWithAttendeesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingWithAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingWithAttendeesResponseUnmarshaller.Instance;
 
@@ -827,7 +827,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeetingWithAttendees">REST API Reference for CreateMeetingWithAttendees Operation</seealso>
         public virtual Task<CreateMeetingWithAttendeesResponse> CreateMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingWithAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingWithAttendeesResponseUnmarshaller.Instance;
             
@@ -872,7 +872,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">REST API Reference for DeleteAttendee Operation</seealso>
         public virtual DeleteAttendeeResponse DeleteAttendee(DeleteAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttendeeResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">REST API Reference for DeleteAttendee Operation</seealso>
         public virtual Task<DeleteAttendeeResponse> DeleteAttendeeAsync(DeleteAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttendeeResponseUnmarshaller.Instance;
             
@@ -961,7 +961,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">REST API Reference for DeleteMeeting Operation</seealso>
         public virtual DeleteMeetingResponse DeleteMeeting(DeleteMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeetingResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">REST API Reference for DeleteMeeting Operation</seealso>
         public virtual Task<DeleteMeetingResponse> DeleteMeetingAsync(DeleteMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeetingResponseUnmarshaller.Instance;
             
@@ -1049,7 +1049,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">REST API Reference for GetAttendee Operation</seealso>
         public virtual GetAttendeeResponse GetAttendee(GetAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttendeeResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">REST API Reference for GetAttendee Operation</seealso>
         public virtual Task<GetAttendeeResponse> GetAttendeeAsync(GetAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttendeeResponseUnmarshaller.Instance;
             
@@ -1136,7 +1136,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">REST API Reference for GetMeeting Operation</seealso>
         public virtual GetMeetingResponse GetMeeting(GetMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMeetingResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">REST API Reference for GetMeeting Operation</seealso>
         public virtual Task<GetMeetingResponse> GetMeetingAsync(GetMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMeetingResponseUnmarshaller.Instance;
             
@@ -1223,7 +1223,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">REST API Reference for ListAttendees Operation</seealso>
         public virtual ListAttendeesResponse ListAttendees(ListAttendeesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttendeesResponseUnmarshaller.Instance;
 
@@ -1266,7 +1266,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">REST API Reference for ListAttendees Operation</seealso>
         public virtual Task<ListAttendeesResponse> ListAttendeesAsync(ListAttendeesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttendeesResponseUnmarshaller.Instance;
             
@@ -1311,7 +1311,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1355,7 +1355,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1430,7 +1430,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
         public virtual StartMeetingTranscriptionResponse StartMeetingTranscription(StartMeetingTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
         public virtual Task<StartMeetingTranscriptionResponse> StartMeetingTranscriptionAsync(StartMeetingTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
             
@@ -1568,7 +1568,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
         public virtual StopMeetingTranscriptionResponse StopMeetingTranscription(StopMeetingTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
 
@@ -1631,7 +1631,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
         public virtual Task<StopMeetingTranscriptionResponse> StopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
             
@@ -1679,7 +1679,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1726,7 +1726,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1805,7 +1805,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1883,7 +1883,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1973,7 +1973,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
         public virtual UpdateAttendeeCapabilitiesResponse UpdateAttendeeCapabilities(UpdateAttendeeCapabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
         public virtual Task<UpdateAttendeeCapabilitiesResponse> UpdateAttendeeCapabilitiesAsync(UpdateAttendeeCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
             

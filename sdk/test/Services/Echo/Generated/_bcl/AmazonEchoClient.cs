@@ -254,7 +254,7 @@ namespace Amazon.Echo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/echo-2020-07-02/EchoOperation">REST API Reference for EchoOperation Operation</seealso>
         public virtual EchoOperationResponse EchoOperation(EchoOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EchoOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EchoOperationResponseUnmarshaller.Instance;
 
@@ -274,7 +274,7 @@ namespace Amazon.Echo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/echo-2020-07-02/EchoOperation">REST API Reference for EchoOperation Operation</seealso>
         public virtual Task<EchoOperationResponse> EchoOperationAsync(EchoOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EchoOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EchoOperationResponseUnmarshaller.Instance;
             

@@ -303,7 +303,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">REST API Reference for CancelImageCreation Operation</seealso>
         public virtual CancelImageCreationResponse CancelImageCreation(CancelImageCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageCreationResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">REST API Reference for CancelImageCreation Operation</seealso>
         public virtual Task<CancelImageCreationResponse> CancelImageCreationAsync(CancelImageCreationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageCreationResponseUnmarshaller.Instance;
             
@@ -401,7 +401,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">REST API Reference for CancelLifecycleExecution Operation</seealso>
         public virtual CancelLifecycleExecutionResponse CancelLifecycleExecution(CancelLifecycleExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLifecycleExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLifecycleExecutionResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution">REST API Reference for CancelLifecycleExecution Operation</seealso>
         public virtual Task<CancelLifecycleExecutionResponse> CancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLifecycleExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLifecycleExecutionResponseUnmarshaller.Instance;
             
@@ -523,7 +523,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual CreateComponentResponse CreateComponent(CreateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
             
@@ -657,7 +657,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">REST API Reference for CreateContainerRecipe Operation</seealso>
         public virtual CreateContainerRecipeResponse CreateContainerRecipe(CreateContainerRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerRecipeResponseUnmarshaller.Instance;
 
@@ -717,7 +717,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">REST API Reference for CreateContainerRecipe Operation</seealso>
         public virtual Task<CreateContainerRecipeResponse> CreateContainerRecipeAsync(CreateContainerRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerRecipeResponseUnmarshaller.Instance;
             
@@ -779,7 +779,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">REST API Reference for CreateDistributionConfiguration Operation</seealso>
         public virtual CreateDistributionConfigurationResponse CreateDistributionConfiguration(CreateDistributionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionConfigurationResponseUnmarshaller.Instance;
 
@@ -840,7 +840,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">REST API Reference for CreateDistributionConfiguration Operation</seealso>
         public virtual Task<CreateDistributionConfigurationResponse> CreateDistributionConfigurationAsync(CreateDistributionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionConfigurationResponseUnmarshaller.Instance;
             
@@ -896,7 +896,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual CreateImageResponse CreateImage(CreateImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
             
@@ -1009,7 +1009,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">REST API Reference for CreateImagePipeline Operation</seealso>
         public virtual CreateImagePipelineResponse CreateImagePipeline(CreateImagePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImagePipelineResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">REST API Reference for CreateImagePipeline Operation</seealso>
         public virtual Task<CreateImagePipelineResponse> CreateImagePipelineAsync(CreateImagePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImagePipelineResponseUnmarshaller.Instance;
             
@@ -1127,7 +1127,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">REST API Reference for CreateImageRecipe Operation</seealso>
         public virtual CreateImageRecipeResponse CreateImageRecipe(CreateImageRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageRecipeResponseUnmarshaller.Instance;
 
@@ -1187,7 +1187,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">REST API Reference for CreateImageRecipe Operation</seealso>
         public virtual Task<CreateImageRecipeResponse> CreateImageRecipeAsync(CreateImageRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageRecipeResponseUnmarshaller.Instance;
             
@@ -1245,7 +1245,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">REST API Reference for CreateInfrastructureConfiguration Operation</seealso>
         public virtual CreateInfrastructureConfigurationResponse CreateInfrastructureConfiguration(CreateInfrastructureConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInfrastructureConfigurationResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">REST API Reference for CreateInfrastructureConfiguration Operation</seealso>
         public virtual Task<CreateInfrastructureConfigurationResponse> CreateInfrastructureConfigurationAsync(CreateInfrastructureConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInfrastructureConfigurationResponseUnmarshaller.Instance;
             
@@ -1359,7 +1359,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual CreateLifecyclePolicyResponse CreateLifecyclePolicy(CreateLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual Task<CreateLifecyclePolicyResponse> CreateLifecyclePolicyAsync(CreateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -1476,7 +1476,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
             
@@ -1581,7 +1581,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual DeleteComponentResponse DeleteComponent(DeleteComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
@@ -1625,7 +1625,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
             
@@ -1670,7 +1670,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">REST API Reference for DeleteContainerRecipe Operation</seealso>
         public virtual DeleteContainerRecipeResponse DeleteContainerRecipe(DeleteContainerRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerRecipeResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">REST API Reference for DeleteContainerRecipe Operation</seealso>
         public virtual Task<DeleteContainerRecipeResponse> DeleteContainerRecipeAsync(DeleteContainerRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerRecipeResponseUnmarshaller.Instance;
             
@@ -1759,7 +1759,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">REST API Reference for DeleteDistributionConfiguration Operation</seealso>
         public virtual DeleteDistributionConfigurationResponse DeleteDistributionConfiguration(DeleteDistributionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionConfigurationResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">REST API Reference for DeleteDistributionConfiguration Operation</seealso>
         public virtual Task<DeleteDistributionConfigurationResponse> DeleteDistributionConfigurationAsync(DeleteDistributionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionConfigurationResponseUnmarshaller.Instance;
             
@@ -1868,7 +1868,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual DeleteImageResponse DeleteImage(DeleteImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
 
@@ -1932,7 +1932,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage">REST API Reference for DeleteImage Operation</seealso>
         public virtual Task<DeleteImageResponse> DeleteImageAsync(DeleteImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageResponseUnmarshaller.Instance;
             
@@ -1977,7 +1977,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">REST API Reference for DeleteImagePipeline Operation</seealso>
         public virtual DeleteImagePipelineResponse DeleteImagePipeline(DeleteImagePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImagePipelineResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">REST API Reference for DeleteImagePipeline Operation</seealso>
         public virtual Task<DeleteImagePipelineResponse> DeleteImagePipelineAsync(DeleteImagePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImagePipelineResponseUnmarshaller.Instance;
             
@@ -2066,7 +2066,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">REST API Reference for DeleteImageRecipe Operation</seealso>
         public virtual DeleteImageRecipeResponse DeleteImageRecipe(DeleteImageRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageRecipeResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">REST API Reference for DeleteImageRecipe Operation</seealso>
         public virtual Task<DeleteImageRecipeResponse> DeleteImageRecipeAsync(DeleteImageRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageRecipeResponseUnmarshaller.Instance;
             
@@ -2155,7 +2155,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">REST API Reference for DeleteInfrastructureConfiguration Operation</seealso>
         public virtual DeleteInfrastructureConfigurationResponse DeleteInfrastructureConfiguration(DeleteInfrastructureConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInfrastructureConfigurationResponseUnmarshaller.Instance;
 
@@ -2199,7 +2199,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">REST API Reference for DeleteInfrastructureConfiguration Operation</seealso>
         public virtual Task<DeleteInfrastructureConfigurationResponse> DeleteInfrastructureConfigurationAsync(DeleteInfrastructureConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInfrastructureConfigurationResponseUnmarshaller.Instance;
             
@@ -2244,7 +2244,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -2288,7 +2288,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -2333,7 +2333,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -2377,7 +2377,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
             
@@ -2418,7 +2418,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual GetComponentResponse GetComponent(GetComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
             
@@ -2497,7 +2497,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">REST API Reference for GetComponentPolicy Operation</seealso>
         public virtual GetComponentPolicyResponse GetComponentPolicy(GetComponentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentPolicyResponseUnmarshaller.Instance;
 
@@ -2535,7 +2535,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">REST API Reference for GetComponentPolicy Operation</seealso>
         public virtual Task<GetComponentPolicyResponse> GetComponentPolicyAsync(GetComponentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentPolicyResponseUnmarshaller.Instance;
             
@@ -2576,7 +2576,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">REST API Reference for GetContainerRecipe Operation</seealso>
         public virtual GetContainerRecipeResponse GetContainerRecipe(GetContainerRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerRecipeResponseUnmarshaller.Instance;
 
@@ -2616,7 +2616,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">REST API Reference for GetContainerRecipe Operation</seealso>
         public virtual Task<GetContainerRecipeResponse> GetContainerRecipeAsync(GetContainerRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerRecipeResponseUnmarshaller.Instance;
             
@@ -2655,7 +2655,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">REST API Reference for GetContainerRecipePolicy Operation</seealso>
         public virtual GetContainerRecipePolicyResponse GetContainerRecipePolicy(GetContainerRecipePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerRecipePolicyResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">REST API Reference for GetContainerRecipePolicy Operation</seealso>
         public virtual Task<GetContainerRecipePolicyResponse> GetContainerRecipePolicyAsync(GetContainerRecipePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerRecipePolicyResponseUnmarshaller.Instance;
             
@@ -2734,7 +2734,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">REST API Reference for GetDistributionConfiguration Operation</seealso>
         public virtual GetDistributionConfigurationResponse GetDistributionConfiguration(GetDistributionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionConfigurationResponseUnmarshaller.Instance;
 
@@ -2774,7 +2774,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">REST API Reference for GetDistributionConfiguration Operation</seealso>
         public virtual Task<GetDistributionConfigurationResponse> GetDistributionConfigurationAsync(GetDistributionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionConfigurationResponseUnmarshaller.Instance;
             
@@ -2815,7 +2815,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">REST API Reference for GetImage Operation</seealso>
         public virtual GetImageResponse GetImage(GetImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageResponseUnmarshaller.Instance;
 
@@ -2855,7 +2855,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">REST API Reference for GetImage Operation</seealso>
         public virtual Task<GetImageResponse> GetImageAsync(GetImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageResponseUnmarshaller.Instance;
             
@@ -2896,7 +2896,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">REST API Reference for GetImagePipeline Operation</seealso>
         public virtual GetImagePipelineResponse GetImagePipeline(GetImagePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagePipelineResponseUnmarshaller.Instance;
 
@@ -2936,7 +2936,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">REST API Reference for GetImagePipeline Operation</seealso>
         public virtual Task<GetImagePipelineResponse> GetImagePipelineAsync(GetImagePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagePipelineResponseUnmarshaller.Instance;
             
@@ -2975,7 +2975,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">REST API Reference for GetImagePolicy Operation</seealso>
         public virtual GetImagePolicyResponse GetImagePolicy(GetImagePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagePolicyResponseUnmarshaller.Instance;
 
@@ -3013,7 +3013,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">REST API Reference for GetImagePolicy Operation</seealso>
         public virtual Task<GetImagePolicyResponse> GetImagePolicyAsync(GetImagePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagePolicyResponseUnmarshaller.Instance;
             
@@ -3054,7 +3054,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">REST API Reference for GetImageRecipe Operation</seealso>
         public virtual GetImageRecipeResponse GetImageRecipe(GetImageRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageRecipeResponseUnmarshaller.Instance;
 
@@ -3094,7 +3094,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">REST API Reference for GetImageRecipe Operation</seealso>
         public virtual Task<GetImageRecipeResponse> GetImageRecipeAsync(GetImageRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageRecipeResponseUnmarshaller.Instance;
             
@@ -3133,7 +3133,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">REST API Reference for GetImageRecipePolicy Operation</seealso>
         public virtual GetImageRecipePolicyResponse GetImageRecipePolicy(GetImageRecipePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageRecipePolicyResponseUnmarshaller.Instance;
 
@@ -3171,7 +3171,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">REST API Reference for GetImageRecipePolicy Operation</seealso>
         public virtual Task<GetImageRecipePolicyResponse> GetImageRecipePolicyAsync(GetImageRecipePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageRecipePolicyResponseUnmarshaller.Instance;
             
@@ -3212,7 +3212,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">REST API Reference for GetInfrastructureConfiguration Operation</seealso>
         public virtual GetInfrastructureConfigurationResponse GetInfrastructureConfiguration(GetInfrastructureConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInfrastructureConfigurationResponseUnmarshaller.Instance;
 
@@ -3252,7 +3252,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">REST API Reference for GetInfrastructureConfiguration Operation</seealso>
         public virtual Task<GetInfrastructureConfigurationResponse> GetInfrastructureConfigurationAsync(GetInfrastructureConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInfrastructureConfigurationResponseUnmarshaller.Instance;
             
@@ -3294,7 +3294,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">REST API Reference for GetLifecycleExecution Operation</seealso>
         public virtual GetLifecycleExecutionResponse GetLifecycleExecution(GetLifecycleExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleExecutionResponseUnmarshaller.Instance;
 
@@ -3335,7 +3335,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution">REST API Reference for GetLifecycleExecution Operation</seealso>
         public virtual Task<GetLifecycleExecutionResponse> GetLifecycleExecutionAsync(GetLifecycleExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleExecutionResponseUnmarshaller.Instance;
             
@@ -3376,7 +3376,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -3416,7 +3416,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -3459,7 +3459,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
         public virtual GetMarketplaceResourceResponse GetMarketplaceResource(GetMarketplaceResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
 
@@ -3501,7 +3501,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
         public virtual Task<GetMarketplaceResourceResponse> GetMarketplaceResourceAsync(GetMarketplaceResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMarketplaceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMarketplaceResourceResponseUnmarshaller.Instance;
             
@@ -3542,7 +3542,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -3582,7 +3582,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
             
@@ -3624,7 +3624,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">REST API Reference for GetWorkflowExecution Operation</seealso>
         public virtual GetWorkflowExecutionResponse GetWorkflowExecution(GetWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3665,7 +3665,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">REST API Reference for GetWorkflowExecution Operation</seealso>
         public virtual Task<GetWorkflowExecutionResponse> GetWorkflowExecutionAsync(GetWorkflowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowExecutionResponseUnmarshaller.Instance;
             
@@ -3707,7 +3707,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">REST API Reference for GetWorkflowStepExecution Operation</seealso>
         public virtual GetWorkflowStepExecutionResponse GetWorkflowStepExecution(GetWorkflowStepExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepExecutionResponseUnmarshaller.Instance;
 
@@ -3748,7 +3748,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">REST API Reference for GetWorkflowStepExecution Operation</seealso>
         public virtual Task<GetWorkflowStepExecutionResponse> GetWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepExecutionResponseUnmarshaller.Instance;
             
@@ -3804,7 +3804,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">REST API Reference for ImportComponent Operation</seealso>
         public virtual ImportComponentResponse ImportComponent(ImportComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportComponentResponseUnmarshaller.Instance;
 
@@ -3859,7 +3859,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">REST API Reference for ImportComponent Operation</seealso>
         public virtual Task<ImportComponentResponse> ImportComponentAsync(ImportComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportComponentResponseUnmarshaller.Instance;
             
@@ -3898,7 +3898,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
         public virtual ImportDiskImageResponse ImportDiskImage(ImportDiskImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDiskImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDiskImageResponseUnmarshaller.Instance;
 
@@ -3936,7 +3936,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
         public virtual Task<ImportDiskImageResponse> ImportDiskImageAsync(ImportDiskImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDiskImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDiskImageResponseUnmarshaller.Instance;
             
@@ -3979,7 +3979,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
         public virtual ImportVmImageResponse ImportVmImage(ImportVmImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVmImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVmImageResponseUnmarshaller.Instance;
 
@@ -4021,7 +4021,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportVmImage">REST API Reference for ImportVmImage Operation</seealso>
         public virtual Task<ImportVmImageResponse> ImportVmImageAsync(ImportVmImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVmImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVmImageResponseUnmarshaller.Instance;
             
@@ -4066,7 +4066,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">REST API Reference for ListComponentBuildVersions Operation</seealso>
         public virtual ListComponentBuildVersionsResponse ListComponentBuildVersions(ListComponentBuildVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentBuildVersionsResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponentBuildVersions">REST API Reference for ListComponentBuildVersions Operation</seealso>
         public virtual Task<ListComponentBuildVersionsResponse> ListComponentBuildVersionsAsync(ListComponentBuildVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentBuildVersionsResponseUnmarshaller.Instance;
             
@@ -4170,7 +4170,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -4229,7 +4229,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
             
@@ -4273,7 +4273,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">REST API Reference for ListContainerRecipes Operation</seealso>
         public virtual ListContainerRecipesResponse ListContainerRecipes(ListContainerRecipesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerRecipesResponseUnmarshaller.Instance;
 
@@ -4316,7 +4316,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">REST API Reference for ListContainerRecipes Operation</seealso>
         public virtual Task<ListContainerRecipesResponse> ListContainerRecipesAsync(ListContainerRecipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerRecipesResponseUnmarshaller.Instance;
             
@@ -4360,7 +4360,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">REST API Reference for ListDistributionConfigurations Operation</seealso>
         public virtual ListDistributionConfigurationsResponse ListDistributionConfigurations(ListDistributionConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionConfigurationsResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListDistributionConfigurations">REST API Reference for ListDistributionConfigurations Operation</seealso>
         public virtual Task<ListDistributionConfigurationsResponse> ListDistributionConfigurationsAsync(ListDistributionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionConfigurationsResponseUnmarshaller.Instance;
             
@@ -4447,7 +4447,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">REST API Reference for ListImageBuildVersions Operation</seealso>
         public virtual ListImageBuildVersionsResponse ListImageBuildVersions(ListImageBuildVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageBuildVersionsResponseUnmarshaller.Instance;
 
@@ -4490,7 +4490,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">REST API Reference for ListImageBuildVersions Operation</seealso>
         public virtual Task<ListImageBuildVersionsResponse> ListImageBuildVersionsAsync(ListImageBuildVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageBuildVersionsResponseUnmarshaller.Instance;
             
@@ -4538,7 +4538,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">REST API Reference for ListImagePackages Operation</seealso>
         public virtual ListImagePackagesResponse ListImagePackages(ListImagePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePackagesResponseUnmarshaller.Instance;
 
@@ -4585,7 +4585,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePackages">REST API Reference for ListImagePackages Operation</seealso>
         public virtual Task<ListImagePackagesResponse> ListImagePackagesAsync(ListImagePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePackagesResponseUnmarshaller.Instance;
             
@@ -4632,7 +4632,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">REST API Reference for ListImagePipelineImages Operation</seealso>
         public virtual ListImagePipelineImagesResponse ListImagePipelineImages(ListImagePipelineImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePipelineImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePipelineImagesResponseUnmarshaller.Instance;
 
@@ -4678,7 +4678,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelineImages">REST API Reference for ListImagePipelineImages Operation</seealso>
         public virtual Task<ListImagePipelineImagesResponse> ListImagePipelineImagesAsync(ListImagePipelineImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePipelineImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePipelineImagesResponseUnmarshaller.Instance;
             
@@ -4722,7 +4722,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelines">REST API Reference for ListImagePipelines Operation</seealso>
         public virtual ListImagePipelinesResponse ListImagePipelines(ListImagePipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePipelinesResponseUnmarshaller.Instance;
 
@@ -4765,7 +4765,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImagePipelines">REST API Reference for ListImagePipelines Operation</seealso>
         public virtual Task<ListImagePipelinesResponse> ListImagePipelinesAsync(ListImagePipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagePipelinesResponseUnmarshaller.Instance;
             
@@ -4809,7 +4809,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">REST API Reference for ListImageRecipes Operation</seealso>
         public virtual ListImageRecipesResponse ListImageRecipes(ListImageRecipesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageRecipesResponseUnmarshaller.Instance;
 
@@ -4852,7 +4852,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">REST API Reference for ListImageRecipes Operation</seealso>
         public virtual Task<ListImageRecipesResponse> ListImageRecipesAsync(ListImageRecipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageRecipesResponseUnmarshaller.Instance;
             
@@ -4897,7 +4897,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">REST API Reference for ListImages Operation</seealso>
         public virtual ListImagesResponse ListImages(ListImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
 
@@ -4941,7 +4941,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">REST API Reference for ListImages Operation</seealso>
         public virtual Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
             
@@ -5011,7 +5011,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">REST API Reference for ListImageScanFindingAggregations Operation</seealso>
         public virtual ListImageScanFindingAggregationsResponse ListImageScanFindingAggregations(ListImageScanFindingAggregationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageScanFindingAggregationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageScanFindingAggregationsResponseUnmarshaller.Instance;
 
@@ -5080,7 +5080,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">REST API Reference for ListImageScanFindingAggregations Operation</seealso>
         public virtual Task<ListImageScanFindingAggregationsResponse> ListImageScanFindingAggregationsAsync(ListImageScanFindingAggregationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageScanFindingAggregationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageScanFindingAggregationsResponseUnmarshaller.Instance;
             
@@ -5124,7 +5124,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">REST API Reference for ListImageScanFindings Operation</seealso>
         public virtual ListImageScanFindingsResponse ListImageScanFindings(ListImageScanFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageScanFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageScanFindingsResponseUnmarshaller.Instance;
 
@@ -5167,7 +5167,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">REST API Reference for ListImageScanFindings Operation</seealso>
         public virtual Task<ListImageScanFindingsResponse> ListImageScanFindingsAsync(ListImageScanFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageScanFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageScanFindingsResponseUnmarshaller.Instance;
             
@@ -5211,7 +5211,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">REST API Reference for ListInfrastructureConfigurations Operation</seealso>
         public virtual ListInfrastructureConfigurationsResponse ListInfrastructureConfigurations(ListInfrastructureConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInfrastructureConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInfrastructureConfigurationsResponseUnmarshaller.Instance;
 
@@ -5254,7 +5254,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">REST API Reference for ListInfrastructureConfigurations Operation</seealso>
         public virtual Task<ListInfrastructureConfigurationsResponse> ListInfrastructureConfigurationsAsync(ListInfrastructureConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInfrastructureConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInfrastructureConfigurationsResponseUnmarshaller.Instance;
             
@@ -5299,7 +5299,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources">REST API Reference for ListLifecycleExecutionResources Operation</seealso>
         public virtual ListLifecycleExecutionResourcesResponse ListLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecycleExecutionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecycleExecutionResourcesResponseUnmarshaller.Instance;
 
@@ -5343,7 +5343,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources">REST API Reference for ListLifecycleExecutionResources Operation</seealso>
         public virtual Task<ListLifecycleExecutionResourcesResponse> ListLifecycleExecutionResourcesAsync(ListLifecycleExecutionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecycleExecutionResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecycleExecutionResourcesResponseUnmarshaller.Instance;
             
@@ -5387,7 +5387,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions">REST API Reference for ListLifecycleExecutions Operation</seealso>
         public virtual ListLifecycleExecutionsResponse ListLifecycleExecutions(ListLifecycleExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecycleExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecycleExecutionsResponseUnmarshaller.Instance;
 
@@ -5430,7 +5430,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions">REST API Reference for ListLifecycleExecutions Operation</seealso>
         public virtual Task<ListLifecycleExecutionsResponse> ListLifecycleExecutionsAsync(ListLifecycleExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecycleExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecycleExecutionsResponseUnmarshaller.Instance;
             
@@ -5474,7 +5474,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
         public virtual ListLifecyclePoliciesResponse ListLifecyclePolicies(ListLifecyclePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
 
@@ -5517,7 +5517,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
         public virtual Task<ListLifecyclePoliciesResponse> ListLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
             
@@ -5547,7 +5547,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5576,7 +5576,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5621,7 +5621,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps">REST API Reference for ListWaitingWorkflowSteps Operation</seealso>
         public virtual ListWaitingWorkflowStepsResponse ListWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWaitingWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWaitingWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -5665,7 +5665,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps">REST API Reference for ListWaitingWorkflowSteps Operation</seealso>
         public virtual Task<ListWaitingWorkflowStepsResponse> ListWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWaitingWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWaitingWorkflowStepsResponseUnmarshaller.Instance;
             
@@ -5709,7 +5709,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions">REST API Reference for ListWorkflowBuildVersions Operation</seealso>
         public virtual ListWorkflowBuildVersionsResponse ListWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowBuildVersionsResponseUnmarshaller.Instance;
 
@@ -5752,7 +5752,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions">REST API Reference for ListWorkflowBuildVersions Operation</seealso>
         public virtual Task<ListWorkflowBuildVersionsResponse> ListWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowBuildVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowBuildVersionsResponseUnmarshaller.Instance;
             
@@ -5797,7 +5797,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions">REST API Reference for ListWorkflowExecutions Operation</seealso>
         public virtual ListWorkflowExecutionsResponse ListWorkflowExecutions(ListWorkflowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -5841,7 +5841,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions">REST API Reference for ListWorkflowExecutions Operation</seealso>
         public virtual Task<ListWorkflowExecutionsResponse> ListWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowExecutionsResponseUnmarshaller.Instance;
             
@@ -5885,7 +5885,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -5928,7 +5928,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
             
@@ -5973,7 +5973,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions">REST API Reference for ListWorkflowStepExecutions Operation</seealso>
         public virtual ListWorkflowStepExecutionsResponse ListWorkflowStepExecutions(ListWorkflowStepExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepExecutionsResponseUnmarshaller.Instance;
 
@@ -6017,7 +6017,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions">REST API Reference for ListWorkflowStepExecutions Operation</seealso>
         public virtual Task<ListWorkflowStepExecutionsResponse> ListWorkflowStepExecutionsAsync(ListWorkflowStepExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepExecutionsResponseUnmarshaller.Instance;
             
@@ -6068,7 +6068,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">REST API Reference for PutComponentPolicy Operation</seealso>
         public virtual PutComponentPolicyResponse PutComponentPolicy(PutComponentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutComponentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutComponentPolicyResponseUnmarshaller.Instance;
 
@@ -6118,7 +6118,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">REST API Reference for PutComponentPolicy Operation</seealso>
         public virtual Task<PutComponentPolicyResponse> PutComponentPolicyAsync(PutComponentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutComponentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutComponentPolicyResponseUnmarshaller.Instance;
             
@@ -6170,7 +6170,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">REST API Reference for PutContainerRecipePolicy Operation</seealso>
         public virtual PutContainerRecipePolicyResponse PutContainerRecipePolicy(PutContainerRecipePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContainerRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContainerRecipePolicyResponseUnmarshaller.Instance;
 
@@ -6221,7 +6221,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">REST API Reference for PutContainerRecipePolicy Operation</seealso>
         public virtual Task<PutContainerRecipePolicyResponse> PutContainerRecipePolicyAsync(PutContainerRecipePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContainerRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContainerRecipePolicyResponseUnmarshaller.Instance;
             
@@ -6272,7 +6272,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">REST API Reference for PutImagePolicy Operation</seealso>
         public virtual PutImagePolicyResponse PutImagePolicy(PutImagePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImagePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImagePolicyResponseUnmarshaller.Instance;
 
@@ -6322,7 +6322,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">REST API Reference for PutImagePolicy Operation</seealso>
         public virtual Task<PutImagePolicyResponse> PutImagePolicyAsync(PutImagePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImagePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImagePolicyResponseUnmarshaller.Instance;
             
@@ -6373,7 +6373,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">REST API Reference for PutImageRecipePolicy Operation</seealso>
         public virtual PutImageRecipePolicyResponse PutImageRecipePolicy(PutImageRecipePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageRecipePolicyResponseUnmarshaller.Instance;
 
@@ -6423,7 +6423,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">REST API Reference for PutImageRecipePolicy Operation</seealso>
         public virtual Task<PutImageRecipePolicyResponse> PutImageRecipePolicyAsync(PutImageRecipePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageRecipePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageRecipePolicyResponseUnmarshaller.Instance;
             
@@ -6479,7 +6479,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction">REST API Reference for SendWorkflowStepAction Operation</seealso>
         public virtual SendWorkflowStepActionResponse SendWorkflowStepAction(SendWorkflowStepActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWorkflowStepActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWorkflowStepActionResponseUnmarshaller.Instance;
 
@@ -6534,7 +6534,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction">REST API Reference for SendWorkflowStepAction Operation</seealso>
         public virtual Task<SendWorkflowStepActionResponse> SendWorkflowStepActionAsync(SendWorkflowStepActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWorkflowStepActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWorkflowStepActionResponseUnmarshaller.Instance;
             
@@ -6586,7 +6586,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">REST API Reference for StartImagePipelineExecution Operation</seealso>
         public virtual StartImagePipelineExecutionResponse StartImagePipelineExecution(StartImagePipelineExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImagePipelineExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImagePipelineExecutionResponseUnmarshaller.Instance;
 
@@ -6637,7 +6637,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">REST API Reference for StartImagePipelineExecution Operation</seealso>
         public virtual Task<StartImagePipelineExecutionResponse> StartImagePipelineExecutionAsync(StartImagePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImagePipelineExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImagePipelineExecutionResponseUnmarshaller.Instance;
             
@@ -6690,7 +6690,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">REST API Reference for StartResourceStateUpdate Operation</seealso>
         public virtual StartResourceStateUpdateResponse StartResourceStateUpdate(StartResourceStateUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceStateUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceStateUpdateResponseUnmarshaller.Instance;
 
@@ -6742,7 +6742,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate">REST API Reference for StartResourceStateUpdate Operation</seealso>
         public virtual Task<StartResourceStateUpdateResponse> StartResourceStateUpdateAsync(StartResourceStateUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceStateUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceStateUpdateResponseUnmarshaller.Instance;
             
@@ -6772,7 +6772,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6801,7 +6801,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -6831,7 +6831,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6860,7 +6860,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -6914,7 +6914,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">REST API Reference for UpdateDistributionConfiguration Operation</seealso>
         public virtual UpdateDistributionConfigurationResponse UpdateDistributionConfiguration(UpdateDistributionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionConfigurationResponseUnmarshaller.Instance;
 
@@ -6967,7 +6967,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">REST API Reference for UpdateDistributionConfiguration Operation</seealso>
         public virtual Task<UpdateDistributionConfigurationResponse> UpdateDistributionConfigurationAsync(UpdateDistributionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionConfigurationResponseUnmarshaller.Instance;
             
@@ -7026,7 +7026,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">REST API Reference for UpdateImagePipeline Operation</seealso>
         public virtual UpdateImagePipelineResponse UpdateImagePipeline(UpdateImagePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImagePipelineResponseUnmarshaller.Instance;
 
@@ -7084,7 +7084,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">REST API Reference for UpdateImagePipeline Operation</seealso>
         public virtual Task<UpdateImagePipelineResponse> UpdateImagePipelineAsync(UpdateImagePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImagePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImagePipelineResponseUnmarshaller.Instance;
             
@@ -7134,7 +7134,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">REST API Reference for UpdateInfrastructureConfiguration Operation</seealso>
         public virtual UpdateInfrastructureConfigurationResponse UpdateInfrastructureConfiguration(UpdateInfrastructureConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInfrastructureConfigurationResponseUnmarshaller.Instance;
 
@@ -7183,7 +7183,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">REST API Reference for UpdateInfrastructureConfiguration Operation</seealso>
         public virtual Task<UpdateInfrastructureConfigurationResponse> UpdateInfrastructureConfigurationAsync(UpdateInfrastructureConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInfrastructureConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInfrastructureConfigurationResponseUnmarshaller.Instance;
             
@@ -7236,7 +7236,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual UpdateLifecyclePolicyResponse UpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -7288,7 +7288,7 @@ namespace Amazon.Imagebuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
             

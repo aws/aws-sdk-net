@@ -271,7 +271,7 @@ namespace Amazon.Lightsail
 
         internal virtual AllocateStaticIpResponse AllocateStaticIp(AllocateStaticIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         public virtual Task<AllocateStaticIpResponse> AllocateStaticIpAsync(AllocateStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.Lightsail
 
         internal virtual AttachCertificateToDistributionResponse AttachCertificateToDistribution(AttachCertificateToDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachCertificateToDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachCertificateToDistributionResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution">REST API Reference for AttachCertificateToDistribution Operation</seealso>
         public virtual Task<AttachCertificateToDistributionResponse> AttachCertificateToDistributionAsync(AttachCertificateToDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachCertificateToDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachCertificateToDistributionResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.Lightsail
 
         internal virtual AttachDiskResponse AttachDisk(AttachDiskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
         public virtual Task<AttachDiskResponse> AttachDiskAsync(AttachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.Lightsail
 
         internal virtual AttachInstancesToLoadBalancerResponse AttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
         public virtual Task<AttachInstancesToLoadBalancerResponse> AttachInstancesToLoadBalancerAsync(AttachInstancesToLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
@@ -581,7 +581,7 @@ namespace Amazon.Lightsail
 
         internal virtual AttachLoadBalancerTlsCertificateResponse AttachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<AttachLoadBalancerTlsCertificateResponse> AttachLoadBalancerTlsCertificateAsync(AttachLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.Lightsail
 
         internal virtual AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
@@ -723,7 +723,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         public virtual Task<AttachStaticIpResponse> AttachStaticIpAsync(AttachStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.Lightsail
 
         internal virtual CloseInstancePublicPortsResponse CloseInstancePublicPorts(CloseInstancePublicPortsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         public virtual Task<CloseInstancePublicPortsResponse> CloseInstancePublicPortsAsync(CloseInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.Lightsail
 
         internal virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateBucketResponse CreateBucket(CreateBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
         public virtual Task<CreateBucketResponse> CreateBucketAsync(CreateBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateBucketAccessKeyResponse CreateBucketAccessKey(CreateBucketAccessKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketAccessKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketAccessKeyResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateBucketAccessKey">REST API Reference for CreateBucketAccessKey Operation</seealso>
         public virtual Task<CreateBucketAccessKeyResponse> CreateBucketAccessKeyAsync(CreateBucketAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketAccessKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketAccessKeyResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateCertificateResponse CreateCertificate(CreateCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCertificateResponseUnmarshaller.Instance;
 
@@ -1110,7 +1110,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate">REST API Reference for CreateCertificate Operation</seealso>
         public virtual Task<CreateCertificateResponse> CreateCertificateAsync(CreateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCertificateResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateCloudFormationStackResponse CreateCloudFormationStack(CreateCloudFormationStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationStackResponseUnmarshaller.Instance;
 
@@ -1190,7 +1190,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">REST API Reference for CreateCloudFormationStack Operation</seealso>
         public virtual Task<CreateCloudFormationStackResponse> CreateCloudFormationStackAsync(CreateCloudFormationStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationStackResponseUnmarshaller.Instance;
 
@@ -1202,7 +1202,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateContactMethodResponse CreateContactMethod(CreateContactMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactMethodResponseUnmarshaller.Instance;
 
@@ -1265,7 +1265,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">REST API Reference for CreateContactMethod Operation</seealso>
         public virtual Task<CreateContactMethodResponse> CreateContactMethodAsync(CreateContactMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactMethodResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateContainerServiceResponse CreateContainerService(CreateContainerServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerService">REST API Reference for CreateContainerService Operation</seealso>
         public virtual Task<CreateContainerServiceResponse> CreateContainerServiceAsync(CreateContainerServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateContainerServiceDeploymentResponse CreateContainerServiceDeployment(CreateContainerServiceDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceDeploymentResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceDeployment">REST API Reference for CreateContainerServiceDeployment Operation</seealso>
         public virtual Task<CreateContainerServiceDeploymentResponse> CreateContainerServiceDeploymentAsync(CreateContainerServiceDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceDeploymentResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateContainerServiceRegistryLoginResponse CreateContainerServiceRegistryLogin(CreateContainerServiceRegistryLoginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceRegistryLoginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceRegistryLoginResponseUnmarshaller.Instance;
 
@@ -1502,7 +1502,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContainerServiceRegistryLogin">REST API Reference for CreateContainerServiceRegistryLogin Operation</seealso>
         public virtual Task<CreateContainerServiceRegistryLoginResponse> CreateContainerServiceRegistryLoginAsync(CreateContainerServiceRegistryLoginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerServiceRegistryLoginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerServiceRegistryLoginResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDiskResponse CreateDisk(CreateDiskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
         public virtual Task<CreateDiskResponse> CreateDiskAsync(CreateDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
@@ -1591,7 +1591,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDiskFromSnapshotResponse CreateDiskFromSnapshot(CreateDiskFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
@@ -1658,7 +1658,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
         public virtual Task<CreateDiskFromSnapshotResponse> CreateDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
@@ -1670,7 +1670,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDiskSnapshotResponse CreateDiskSnapshot(CreateDiskSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -1758,7 +1758,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
         public virtual Task<CreateDiskSnapshotResponse> CreateDiskSnapshotAsync(CreateDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateDomainEntryResponse CreateDomainEntry(CreateDomainEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
@@ -1982,7 +1982,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         public virtual Task<CreateDomainEntryResponse> CreateDomainEntryAsync(CreateDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateGUISessionAccessDetailsResponse CreateGUISessionAccessDetails(CreateGUISessionAccessDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGUISessionAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance;
 
@@ -2052,7 +2052,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails">REST API Reference for CreateGUISessionAccessDetails Operation</seealso>
         public virtual Task<CreateGUISessionAccessDetailsResponse> CreateGUISessionAccessDetailsAsync(CreateGUISessionAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGUISessionAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance;
 
@@ -2064,7 +2064,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateInstancesResponse CreateInstances(CreateInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
@@ -2128,7 +2128,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         public virtual Task<CreateInstancesResponse> CreateInstancesAsync(CreateInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
@@ -2140,7 +2140,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateInstancesFromSnapshotResponse CreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2205,7 +2205,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         public virtual Task<CreateInstancesFromSnapshotResponse> CreateInstancesFromSnapshotAsync(CreateInstancesFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2217,7 +2217,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateInstanceSnapshotResponse CreateInstanceSnapshot(CreateInstanceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -2282,7 +2282,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         public virtual Task<CreateInstanceSnapshotResponse> CreateInstanceSnapshotAsync(CreateInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -2294,7 +2294,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -2364,7 +2364,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -2376,7 +2376,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
@@ -2449,7 +2449,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
@@ -2461,7 +2461,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateLoadBalancerTlsCertificateResponse CreateLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -2530,7 +2530,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<CreateLoadBalancerTlsCertificateResponse> CreateLoadBalancerTlsCertificateAsync(CreateLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -2542,7 +2542,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateRelationalDatabaseResponse CreateRelationalDatabase(CreateRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -2606,7 +2606,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">REST API Reference for CreateRelationalDatabase Operation</seealso>
         public virtual Task<CreateRelationalDatabaseResponse> CreateRelationalDatabaseAsync(CreateRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -2618,7 +2618,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateRelationalDatabaseFromSnapshotResponse CreateRelationalDatabaseFromSnapshot(CreateRelationalDatabaseFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2689,7 +2689,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">REST API Reference for CreateRelationalDatabaseFromSnapshot Operation</seealso>
         public virtual Task<CreateRelationalDatabaseFromSnapshotResponse> CreateRelationalDatabaseFromSnapshotAsync(CreateRelationalDatabaseFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2701,7 +2701,7 @@ namespace Amazon.Lightsail
 
         internal virtual CreateRelationalDatabaseSnapshotResponse CreateRelationalDatabaseSnapshot(CreateRelationalDatabaseSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -2766,7 +2766,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">REST API Reference for CreateRelationalDatabaseSnapshot Operation</seealso>
         public virtual Task<CreateRelationalDatabaseSnapshotResponse> CreateRelationalDatabaseSnapshotAsync(CreateRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -2778,7 +2778,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteAlarmResponse DeleteAlarm(DeleteAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">REST API Reference for DeleteAlarm Operation</seealso>
         public virtual Task<DeleteAlarmResponse> DeleteAlarmAsync(DeleteAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmResponseUnmarshaller.Instance;
 
@@ -2851,7 +2851,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteAutoSnapshotResponse DeleteAutoSnapshot(DeleteAutoSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoSnapshotResponseUnmarshaller.Instance;
 
@@ -2906,7 +2906,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">REST API Reference for DeleteAutoSnapshot Operation</seealso>
         public virtual Task<DeleteAutoSnapshotResponse> DeleteAutoSnapshotAsync(DeleteAutoSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoSnapshotResponseUnmarshaller.Instance;
 
@@ -2918,7 +2918,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2975,7 +2975,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2987,7 +2987,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteBucketAccessKeyResponse DeleteBucketAccessKey(DeleteBucketAccessKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAccessKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAccessKeyResponseUnmarshaller.Instance;
 
@@ -3048,7 +3048,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteBucketAccessKey">REST API Reference for DeleteBucketAccessKey Operation</seealso>
         public virtual Task<DeleteBucketAccessKeyResponse> DeleteBucketAccessKeyAsync(DeleteBucketAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAccessKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAccessKeyResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -3118,7 +3118,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -3130,7 +3130,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteContactMethodResponse DeleteContactMethod(DeleteContactMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactMethodResponseUnmarshaller.Instance;
 
@@ -3193,7 +3193,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">REST API Reference for DeleteContactMethod Operation</seealso>
         public virtual Task<DeleteContactMethodResponse> DeleteContactMethodAsync(DeleteContactMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactMethodResponseUnmarshaller.Instance;
 
@@ -3205,7 +3205,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteContainerImageResponse DeleteContainerImage(DeleteContainerImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerImageResponseUnmarshaller.Instance;
 
@@ -3255,7 +3255,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerImage">REST API Reference for DeleteContainerImage Operation</seealso>
         public virtual Task<DeleteContainerImageResponse> DeleteContainerImageAsync(DeleteContainerImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerImageResponseUnmarshaller.Instance;
 
@@ -3267,7 +3267,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteContainerServiceResponse DeleteContainerService(DeleteContainerServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerServiceResponseUnmarshaller.Instance;
 
@@ -3317,7 +3317,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContainerService">REST API Reference for DeleteContainerService Operation</seealso>
         public virtual Task<DeleteContainerServiceResponse> DeleteContainerServiceAsync(DeleteContainerServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerServiceResponseUnmarshaller.Instance;
 
@@ -3329,7 +3329,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
@@ -3399,7 +3399,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
         public virtual Task<DeleteDiskResponse> DeleteDiskAsync(DeleteDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
@@ -3411,7 +3411,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteDiskSnapshotResponse DeleteDiskSnapshot(DeleteDiskSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -3484,7 +3484,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
         public virtual Task<DeleteDiskSnapshotResponse> DeleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -3496,7 +3496,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
@@ -3545,7 +3545,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
@@ -3557,7 +3557,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -3634,7 +3634,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteDomainEntryResponse DeleteDomainEntry(DeleteDomainEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
@@ -3699,7 +3699,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         public virtual Task<DeleteDomainEntryResponse> DeleteDomainEntryAsync(DeleteDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
@@ -3711,7 +3711,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -3776,7 +3776,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -3788,7 +3788,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteInstanceSnapshotResponse DeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -3853,7 +3853,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         public virtual Task<DeleteInstanceSnapshotResponse> DeleteInstanceSnapshotAsync(DeleteInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -3865,7 +3865,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -3939,7 +3939,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteKnownHostKeysResponse DeleteKnownHostKeys(DeleteKnownHostKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
 
@@ -4019,7 +4019,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">REST API Reference for DeleteKnownHostKeys Operation</seealso>
         public virtual Task<DeleteKnownHostKeysResponse> DeleteKnownHostKeysAsync(DeleteKnownHostKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKnownHostKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKnownHostKeysResponseUnmarshaller.Instance;
 
@@ -4031,7 +4031,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
@@ -4098,7 +4098,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteLoadBalancerTlsCertificateResponse DeleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -4175,7 +4175,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
         public virtual Task<DeleteLoadBalancerTlsCertificateResponse> DeleteLoadBalancerTlsCertificateAsync(DeleteLoadBalancerTlsCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
@@ -4187,7 +4187,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteRelationalDatabaseResponse DeleteRelationalDatabase(DeleteRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -4252,7 +4252,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">REST API Reference for DeleteRelationalDatabase Operation</seealso>
         public virtual Task<DeleteRelationalDatabaseResponse> DeleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -4264,7 +4264,7 @@ namespace Amazon.Lightsail
 
         internal virtual DeleteRelationalDatabaseSnapshotResponse DeleteRelationalDatabaseSnapshot(DeleteRelationalDatabaseSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -4329,7 +4329,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">REST API Reference for DeleteRelationalDatabaseSnapshot Operation</seealso>
         public virtual Task<DeleteRelationalDatabaseSnapshotResponse> DeleteRelationalDatabaseSnapshotAsync(DeleteRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -4341,7 +4341,7 @@ namespace Amazon.Lightsail
 
         internal virtual DetachCertificateFromDistributionResponse DetachCertificateFromDistribution(DetachCertificateFromDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachCertificateFromDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachCertificateFromDistributionResponseUnmarshaller.Instance;
 
@@ -4397,7 +4397,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution">REST API Reference for DetachCertificateFromDistribution Operation</seealso>
         public virtual Task<DetachCertificateFromDistributionResponse> DetachCertificateFromDistributionAsync(DetachCertificateFromDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachCertificateFromDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachCertificateFromDistributionResponseUnmarshaller.Instance;
 
@@ -4409,7 +4409,7 @@ namespace Amazon.Lightsail
 
         internal virtual DetachDiskResponse DetachDisk(DetachDiskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
@@ -4476,7 +4476,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         public virtual Task<DetachDiskResponse> DetachDiskAsync(DetachDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
@@ -4488,7 +4488,7 @@ namespace Amazon.Lightsail
 
         internal virtual DetachInstancesFromLoadBalancerResponse DetachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
@@ -4558,7 +4558,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
         public virtual Task<DetachInstancesFromLoadBalancerResponse> DetachInstancesFromLoadBalancerAsync(DetachInstancesFromLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
@@ -4570,7 +4570,7 @@ namespace Amazon.Lightsail
 
         internal virtual DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
@@ -4627,7 +4627,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         public virtual Task<DetachStaticIpResponse> DetachStaticIpAsync(DetachStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
@@ -4639,7 +4639,7 @@ namespace Amazon.Lightsail
 
         internal virtual DisableAddOnResponse DisableAddOn(DisableAddOnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddOnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddOnResponseUnmarshaller.Instance;
 
@@ -4694,7 +4694,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DisableAddOn">REST API Reference for DisableAddOn Operation</seealso>
         public virtual Task<DisableAddOnResponse> DisableAddOnAsync(DisableAddOnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddOnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddOnResponseUnmarshaller.Instance;
 
@@ -4706,7 +4706,7 @@ namespace Amazon.Lightsail
 
         internal virtual DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
@@ -4769,7 +4769,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         public virtual Task<DownloadDefaultKeyPairResponse> DownloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
@@ -4781,7 +4781,7 @@ namespace Amazon.Lightsail
 
         internal virtual EnableAddOnResponse EnableAddOn(EnableAddOnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddOnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddOnResponseUnmarshaller.Instance;
 
@@ -4836,7 +4836,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/EnableAddOn">REST API Reference for EnableAddOn Operation</seealso>
         public virtual Task<EnableAddOnResponse> EnableAddOnAsync(EnableAddOnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddOnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddOnResponseUnmarshaller.Instance;
 
@@ -4848,7 +4848,7 @@ namespace Amazon.Lightsail
 
         internal virtual ExportSnapshotResponse ExportSnapshot(ExportSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSnapshotResponseUnmarshaller.Instance;
 
@@ -4930,7 +4930,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">REST API Reference for ExportSnapshot Operation</seealso>
         public virtual Task<ExportSnapshotResponse> ExportSnapshotAsync(ExportSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSnapshotResponseUnmarshaller.Instance;
 
@@ -4942,7 +4942,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetActiveNamesResponse GetActiveNames(GetActiveNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
@@ -4999,7 +4999,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         public virtual Task<GetActiveNamesResponse> GetActiveNamesAsync(GetActiveNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
@@ -5011,7 +5011,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetAlarmsResponse GetAlarms(GetAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlarmsResponseUnmarshaller.Instance;
 
@@ -5074,7 +5074,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">REST API Reference for GetAlarms Operation</seealso>
         public virtual Task<GetAlarmsResponse> GetAlarmsAsync(GetAlarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlarmsResponseUnmarshaller.Instance;
 
@@ -5086,7 +5086,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetAutoSnapshotsResponse GetAutoSnapshots(GetAutoSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoSnapshotsResponseUnmarshaller.Instance;
 
@@ -5141,7 +5141,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">REST API Reference for GetAutoSnapshots Operation</seealso>
         public virtual Task<GetAutoSnapshotsResponse> GetAutoSnapshotsAsync(GetAutoSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoSnapshotsResponseUnmarshaller.Instance;
 
@@ -5153,7 +5153,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
@@ -5222,7 +5222,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         public virtual Task<GetBlueprintsResponse> GetBlueprintsAsync(GetBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
@@ -5234,7 +5234,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBucketAccessKeysResponse GetBucketAccessKeys(GetBucketAccessKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccessKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccessKeysResponseUnmarshaller.Instance;
 
@@ -5292,7 +5292,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketAccessKeys">REST API Reference for GetBucketAccessKeys Operation</seealso>
         public virtual Task<GetBucketAccessKeysResponse> GetBucketAccessKeysAsync(GetBucketAccessKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccessKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccessKeysResponseUnmarshaller.Instance;
 
@@ -5304,7 +5304,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBucketBundlesResponse GetBucketBundles(GetBucketBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketBundlesResponseUnmarshaller.Instance;
 
@@ -5362,7 +5362,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketBundles">REST API Reference for GetBucketBundles Operation</seealso>
         public virtual Task<GetBucketBundlesResponse> GetBucketBundlesAsync(GetBucketBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketBundlesResponseUnmarshaller.Instance;
 
@@ -5374,7 +5374,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBucketMetricDataResponse GetBucketMetricData(GetBucketMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricDataResponseUnmarshaller.Instance;
 
@@ -5431,7 +5431,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBucketMetricData">REST API Reference for GetBucketMetricData Operation</seealso>
         public virtual Task<GetBucketMetricDataResponse> GetBucketMetricDataAsync(GetBucketMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricDataResponseUnmarshaller.Instance;
 
@@ -5443,7 +5443,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBucketsResponse GetBuckets(GetBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketsResponseUnmarshaller.Instance;
 
@@ -5501,7 +5501,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBuckets">REST API Reference for GetBuckets Operation</seealso>
         public virtual Task<GetBucketsResponse> GetBucketsAsync(GetBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketsResponseUnmarshaller.Instance;
 
@@ -5513,7 +5513,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetBundlesResponse GetBundles(GetBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
@@ -5583,7 +5583,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         public virtual Task<GetBundlesResponse> GetBundlesAsync(GetBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
@@ -5595,7 +5595,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetCertificatesResponse GetCertificates(GetCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCertificatesResponseUnmarshaller.Instance;
 
@@ -5653,7 +5653,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates">REST API Reference for GetCertificates Operation</seealso>
         public virtual Task<GetCertificatesResponse> GetCertificatesAsync(GetCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCertificatesResponseUnmarshaller.Instance;
 
@@ -5665,7 +5665,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetCloudFormationStackRecordsResponse GetCloudFormationStackRecords(GetCloudFormationStackRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFormationStackRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFormationStackRecordsResponseUnmarshaller.Instance;
 
@@ -5729,7 +5729,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords">REST API Reference for GetCloudFormationStackRecords Operation</seealso>
         public virtual Task<GetCloudFormationStackRecordsResponse> GetCloudFormationStackRecordsAsync(GetCloudFormationStackRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFormationStackRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFormationStackRecordsResponseUnmarshaller.Instance;
 
@@ -5741,7 +5741,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContactMethodsResponse GetContactMethods(GetContactMethodsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactMethodsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactMethodsResponseUnmarshaller.Instance;
 
@@ -5805,7 +5805,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">REST API Reference for GetContactMethods Operation</seealso>
         public virtual Task<GetContactMethodsResponse> GetContactMethodsAsync(GetContactMethodsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactMethodsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactMethodsResponseUnmarshaller.Instance;
 
@@ -5817,7 +5817,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerAPIMetadataResponse GetContainerAPIMetadata(GetContainerAPIMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerAPIMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerAPIMetadataResponseUnmarshaller.Instance;
 
@@ -5853,7 +5853,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerAPIMetadata">REST API Reference for GetContainerAPIMetadata Operation</seealso>
         public virtual Task<GetContainerAPIMetadataResponse> GetContainerAPIMetadataAsync(GetContainerAPIMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerAPIMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerAPIMetadataResponseUnmarshaller.Instance;
 
@@ -5865,7 +5865,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerImagesResponse GetContainerImages(GetContainerImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerImagesResponseUnmarshaller.Instance;
 
@@ -5924,7 +5924,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerImages">REST API Reference for GetContainerImages Operation</seealso>
         public virtual Task<GetContainerImagesResponse> GetContainerImagesAsync(GetContainerImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerImagesResponseUnmarshaller.Instance;
 
@@ -5936,7 +5936,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerLogResponse GetContainerLog(GetContainerLogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerLogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerLogResponseUnmarshaller.Instance;
 
@@ -6000,7 +6000,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerLog">REST API Reference for GetContainerLog Operation</seealso>
         public virtual Task<GetContainerLogResponse> GetContainerLogAsync(GetContainerLogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerLogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerLogResponseUnmarshaller.Instance;
 
@@ -6012,7 +6012,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerServiceDeploymentsResponse GetContainerServiceDeployments(GetContainerServiceDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -6080,7 +6080,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceDeployments">REST API Reference for GetContainerServiceDeployments Operation</seealso>
         public virtual Task<GetContainerServiceDeploymentsResponse> GetContainerServiceDeploymentsAsync(GetContainerServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -6092,7 +6092,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerServiceMetricDataResponse GetContainerServiceMetricData(GetContainerServiceMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServiceMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServiceMetricDataResponseUnmarshaller.Instance;
 
@@ -6148,7 +6148,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServiceMetricData">REST API Reference for GetContainerServiceMetricData Operation</seealso>
         public virtual Task<GetContainerServiceMetricDataResponse> GetContainerServiceMetricDataAsync(GetContainerServiceMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServiceMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServiceMetricDataResponseUnmarshaller.Instance;
 
@@ -6160,7 +6160,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerServicePowersResponse GetContainerServicePowers(GetContainerServicePowersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServicePowersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServicePowersResponseUnmarshaller.Instance;
 
@@ -6217,7 +6217,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServicePowers">REST API Reference for GetContainerServicePowers Operation</seealso>
         public virtual Task<GetContainerServicePowersResponse> GetContainerServicePowersAsync(GetContainerServicePowersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServicePowersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServicePowersResponseUnmarshaller.Instance;
 
@@ -6229,7 +6229,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetContainerServicesResponse GetContainerServices(GetContainerServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServicesResponseUnmarshaller.Instance;
 
@@ -6279,7 +6279,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContainerServices">REST API Reference for GetContainerServices Operation</seealso>
         public virtual Task<GetContainerServicesResponse> GetContainerServicesAsync(GetContainerServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerServicesResponseUnmarshaller.Instance;
 
@@ -6291,7 +6291,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetCostEstimateResponse GetCostEstimate(GetCostEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimateResponseUnmarshaller.Instance;
 
@@ -6342,7 +6342,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate">REST API Reference for GetCostEstimate Operation</seealso>
         public virtual Task<GetCostEstimateResponse> GetCostEstimateAsync(GetCostEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimateResponseUnmarshaller.Instance;
 
@@ -6354,7 +6354,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDiskResponse GetDisk(GetDiskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskResponseUnmarshaller.Instance;
 
@@ -6411,7 +6411,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
         public virtual Task<GetDiskResponse> GetDiskAsync(GetDiskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskResponseUnmarshaller.Instance;
 
@@ -6423,7 +6423,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDisksResponse GetDisks(GetDisksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDisksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDisksResponseUnmarshaller.Instance;
 
@@ -6480,7 +6480,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
         public virtual Task<GetDisksResponse> GetDisksAsync(GetDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDisksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDisksResponseUnmarshaller.Instance;
 
@@ -6492,7 +6492,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDiskSnapshotResponse GetDiskSnapshot(GetDiskSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -6549,7 +6549,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
         public virtual Task<GetDiskSnapshotResponse> GetDiskSnapshotAsync(GetDiskSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
@@ -6561,7 +6561,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDiskSnapshotsResponse GetDiskSnapshots(GetDiskSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
@@ -6619,7 +6619,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
         public virtual Task<GetDiskSnapshotsResponse> GetDiskSnapshotsAsync(GetDiskSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
@@ -6631,7 +6631,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDistributionBundlesResponse GetDistributionBundles(GetDistributionBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionBundlesResponseUnmarshaller.Instance;
 
@@ -6687,7 +6687,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles">REST API Reference for GetDistributionBundles Operation</seealso>
         public virtual Task<GetDistributionBundlesResponse> GetDistributionBundlesAsync(GetDistributionBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionBundlesResponseUnmarshaller.Instance;
 
@@ -6699,7 +6699,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDistributionLatestCacheResetResponse GetDistributionLatestCacheReset(GetDistributionLatestCacheResetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionLatestCacheResetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionLatestCacheResetResponseUnmarshaller.Instance;
 
@@ -6749,7 +6749,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset">REST API Reference for GetDistributionLatestCacheReset Operation</seealso>
         public virtual Task<GetDistributionLatestCacheResetResponse> GetDistributionLatestCacheResetAsync(GetDistributionLatestCacheResetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionLatestCacheResetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionLatestCacheResetResponseUnmarshaller.Instance;
 
@@ -6761,7 +6761,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDistributionMetricDataResponse GetDistributionMetricData(GetDistributionMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionMetricDataResponseUnmarshaller.Instance;
 
@@ -6818,7 +6818,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData">REST API Reference for GetDistributionMetricData Operation</seealso>
         public virtual Task<GetDistributionMetricDataResponse> GetDistributionMetricDataAsync(GetDistributionMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionMetricDataResponseUnmarshaller.Instance;
 
@@ -6830,7 +6830,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDistributionsResponse GetDistributions(GetDistributionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionsResponseUnmarshaller.Instance;
 
@@ -6880,7 +6880,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions">REST API Reference for GetDistributions Operation</seealso>
         public virtual Task<GetDistributionsResponse> GetDistributionsAsync(GetDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionsResponseUnmarshaller.Instance;
 
@@ -6892,7 +6892,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -6949,7 +6949,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -6961,7 +6961,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetDomainsResponse GetDomains(GetDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
@@ -7018,7 +7018,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         public virtual Task<GetDomainsResponse> GetDomainsAsync(GetDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
@@ -7030,7 +7030,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetExportSnapshotRecordsResponse GetExportSnapshotRecords(GetExportSnapshotRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportSnapshotRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportSnapshotRecordsResponseUnmarshaller.Instance;
 
@@ -7095,7 +7095,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">REST API Reference for GetExportSnapshotRecords Operation</seealso>
         public virtual Task<GetExportSnapshotRecordsResponse> GetExportSnapshotRecordsAsync(GetExportSnapshotRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportSnapshotRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportSnapshotRecordsResponseUnmarshaller.Instance;
 
@@ -7107,7 +7107,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
@@ -7165,7 +7165,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
@@ -7177,7 +7177,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceAccessDetailsResponse GetInstanceAccessDetails(GetInstanceAccessDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
@@ -7243,7 +7243,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         public virtual Task<GetInstanceAccessDetailsResponse> GetInstanceAccessDetailsAsync(GetInstanceAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
@@ -7255,7 +7255,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceMetricDataResponse GetInstanceMetricData(GetInstanceMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
@@ -7320,7 +7320,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         public virtual Task<GetInstanceMetricDataResponse> GetInstanceMetricDataAsync(GetInstanceMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
@@ -7332,7 +7332,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstancePortStatesResponse GetInstancePortStates(GetInstancePortStatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstancePortStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
@@ -7390,7 +7390,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         public virtual Task<GetInstancePortStatesResponse> GetInstancePortStatesAsync(GetInstancePortStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstancePortStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
@@ -7402,7 +7402,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstancesResponse GetInstances(GetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
@@ -7459,7 +7459,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         public virtual Task<GetInstancesResponse> GetInstancesAsync(GetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
@@ -7471,7 +7471,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceSnapshotResponse GetInstanceSnapshot(GetInstanceSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -7528,7 +7528,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         public virtual Task<GetInstanceSnapshotResponse> GetInstanceSnapshotAsync(GetInstanceSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
@@ -7540,7 +7540,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceSnapshotsResponse GetInstanceSnapshots(GetInstanceSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
@@ -7597,7 +7597,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         public virtual Task<GetInstanceSnapshotsResponse> GetInstanceSnapshotsAsync(GetInstanceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
@@ -7609,7 +7609,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetInstanceStateResponse GetInstanceState(GetInstanceStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
@@ -7666,7 +7666,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         public virtual Task<GetInstanceStateResponse> GetInstanceStateAsync(GetInstanceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
@@ -7678,7 +7678,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetKeyPairResponse GetKeyPair(GetKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
@@ -7735,7 +7735,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         public virtual Task<GetKeyPairResponse> GetKeyPairAsync(GetKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
@@ -7747,7 +7747,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetKeyPairsResponse GetKeyPairs(GetKeyPairsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
@@ -7804,7 +7804,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         public virtual Task<GetKeyPairsResponse> GetKeyPairsAsync(GetKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
@@ -7816,7 +7816,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetLoadBalancerResponse GetLoadBalancer(GetLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
@@ -7873,7 +7873,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
         public virtual Task<GetLoadBalancerResponse> GetLoadBalancerAsync(GetLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
@@ -7885,7 +7885,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetLoadBalancerMetricDataResponse GetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
@@ -7949,7 +7949,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
         public virtual Task<GetLoadBalancerMetricDataResponse> GetLoadBalancerMetricDataAsync(GetLoadBalancerMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
@@ -7961,7 +7961,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetLoadBalancersResponse GetLoadBalancers(GetLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
@@ -8018,7 +8018,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
         public virtual Task<GetLoadBalancersResponse> GetLoadBalancersAsync(GetLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
@@ -8030,7 +8030,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetLoadBalancerTlsCertificatesResponse GetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
@@ -8098,7 +8098,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
         public virtual Task<GetLoadBalancerTlsCertificatesResponse> GetLoadBalancerTlsCertificatesAsync(GetLoadBalancerTlsCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
@@ -8110,7 +8110,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetLoadBalancerTlsPoliciesResponse GetLoadBalancerTlsPolicies(GetLoadBalancerTlsPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerTlsPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerTlsPoliciesResponseUnmarshaller.Instance;
 
@@ -8168,7 +8168,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsPolicies">REST API Reference for GetLoadBalancerTlsPolicies Operation</seealso>
         public virtual Task<GetLoadBalancerTlsPoliciesResponse> GetLoadBalancerTlsPoliciesAsync(GetLoadBalancerTlsPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoadBalancerTlsPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoadBalancerTlsPoliciesResponseUnmarshaller.Instance;
 
@@ -8180,7 +8180,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
@@ -8238,7 +8238,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
@@ -8250,7 +8250,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetOperationsResponse GetOperations(GetOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
@@ -8314,7 +8314,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         public virtual Task<GetOperationsResponse> GetOperationsAsync(GetOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
@@ -8326,7 +8326,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetOperationsForResourceResponse GetOperationsForResource(GetOperationsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
@@ -8383,7 +8383,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         public virtual Task<GetOperationsForResourceResponse> GetOperationsForResourceAsync(GetOperationsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
@@ -8395,7 +8395,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRegionsResponse GetRegions(GetRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
@@ -8453,7 +8453,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         public virtual Task<GetRegionsResponse> GetRegionsAsync(GetRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
@@ -8465,7 +8465,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseResponse GetRelationalDatabase(GetRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -8522,7 +8522,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase">REST API Reference for GetRelationalDatabase Operation</seealso>
         public virtual Task<GetRelationalDatabaseResponse> GetRelationalDatabaseAsync(GetRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -8534,7 +8534,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseBlueprintsResponse GetRelationalDatabaseBlueprints(GetRelationalDatabaseBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseBlueprintsResponseUnmarshaller.Instance;
 
@@ -8598,7 +8598,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints">REST API Reference for GetRelationalDatabaseBlueprints Operation</seealso>
         public virtual Task<GetRelationalDatabaseBlueprintsResponse> GetRelationalDatabaseBlueprintsAsync(GetRelationalDatabaseBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseBlueprintsResponseUnmarshaller.Instance;
 
@@ -8610,7 +8610,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseBundlesResponse GetRelationalDatabaseBundles(GetRelationalDatabaseBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseBundlesResponseUnmarshaller.Instance;
 
@@ -8673,7 +8673,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles">REST API Reference for GetRelationalDatabaseBundles Operation</seealso>
         public virtual Task<GetRelationalDatabaseBundlesResponse> GetRelationalDatabaseBundlesAsync(GetRelationalDatabaseBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseBundlesResponseUnmarshaller.Instance;
 
@@ -8685,7 +8685,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseEventsResponse GetRelationalDatabaseEvents(GetRelationalDatabaseEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseEventsResponseUnmarshaller.Instance;
 
@@ -8742,7 +8742,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents">REST API Reference for GetRelationalDatabaseEvents Operation</seealso>
         public virtual Task<GetRelationalDatabaseEventsResponse> GetRelationalDatabaseEventsAsync(GetRelationalDatabaseEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseEventsResponseUnmarshaller.Instance;
 
@@ -8754,7 +8754,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseLogEventsResponse GetRelationalDatabaseLogEvents(GetRelationalDatabaseLogEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseLogEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseLogEventsResponseUnmarshaller.Instance;
 
@@ -8811,7 +8811,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents">REST API Reference for GetRelationalDatabaseLogEvents Operation</seealso>
         public virtual Task<GetRelationalDatabaseLogEventsResponse> GetRelationalDatabaseLogEventsAsync(GetRelationalDatabaseLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseLogEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseLogEventsResponseUnmarshaller.Instance;
 
@@ -8823,7 +8823,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseLogStreamsResponse GetRelationalDatabaseLogStreams(GetRelationalDatabaseLogStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseLogStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseLogStreamsResponseUnmarshaller.Instance;
 
@@ -8880,7 +8880,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams">REST API Reference for GetRelationalDatabaseLogStreams Operation</seealso>
         public virtual Task<GetRelationalDatabaseLogStreamsResponse> GetRelationalDatabaseLogStreamsAsync(GetRelationalDatabaseLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseLogStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseLogStreamsResponseUnmarshaller.Instance;
 
@@ -8892,7 +8892,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseMasterUserPasswordResponse GetRelationalDatabaseMasterUserPassword(GetRelationalDatabaseMasterUserPasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseMasterUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseMasterUserPasswordResponseUnmarshaller.Instance;
 
@@ -8956,7 +8956,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword">REST API Reference for GetRelationalDatabaseMasterUserPassword Operation</seealso>
         public virtual Task<GetRelationalDatabaseMasterUserPasswordResponse> GetRelationalDatabaseMasterUserPasswordAsync(GetRelationalDatabaseMasterUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseMasterUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseMasterUserPasswordResponseUnmarshaller.Instance;
 
@@ -8968,7 +8968,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseMetricDataResponse GetRelationalDatabaseMetricData(GetRelationalDatabaseMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseMetricDataResponseUnmarshaller.Instance;
 
@@ -9032,7 +9032,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData">REST API Reference for GetRelationalDatabaseMetricData Operation</seealso>
         public virtual Task<GetRelationalDatabaseMetricDataResponse> GetRelationalDatabaseMetricDataAsync(GetRelationalDatabaseMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseMetricDataResponseUnmarshaller.Instance;
 
@@ -9044,7 +9044,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseParametersResponse GetRelationalDatabaseParameters(GetRelationalDatabaseParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseParametersResponseUnmarshaller.Instance;
 
@@ -9109,7 +9109,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters">REST API Reference for GetRelationalDatabaseParameters Operation</seealso>
         public virtual Task<GetRelationalDatabaseParametersResponse> GetRelationalDatabaseParametersAsync(GetRelationalDatabaseParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseParametersResponseUnmarshaller.Instance;
 
@@ -9121,7 +9121,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabasesResponse GetRelationalDatabases(GetRelationalDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabasesResponseUnmarshaller.Instance;
 
@@ -9178,7 +9178,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases">REST API Reference for GetRelationalDatabases Operation</seealso>
         public virtual Task<GetRelationalDatabasesResponse> GetRelationalDatabasesAsync(GetRelationalDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabasesResponseUnmarshaller.Instance;
 
@@ -9190,7 +9190,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseSnapshotResponse GetRelationalDatabaseSnapshot(GetRelationalDatabaseSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -9247,7 +9247,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot">REST API Reference for GetRelationalDatabaseSnapshot Operation</seealso>
         public virtual Task<GetRelationalDatabaseSnapshotResponse> GetRelationalDatabaseSnapshotAsync(GetRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
 
@@ -9259,7 +9259,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetRelationalDatabaseSnapshotsResponse GetRelationalDatabaseSnapshots(GetRelationalDatabaseSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseSnapshotsResponseUnmarshaller.Instance;
 
@@ -9316,7 +9316,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots">REST API Reference for GetRelationalDatabaseSnapshots Operation</seealso>
         public virtual Task<GetRelationalDatabaseSnapshotsResponse> GetRelationalDatabaseSnapshotsAsync(GetRelationalDatabaseSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRelationalDatabaseSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRelationalDatabaseSnapshotsResponseUnmarshaller.Instance;
 
@@ -9328,7 +9328,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetSetupHistoryResponse GetSetupHistory(GetSetupHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSetupHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSetupHistoryResponseUnmarshaller.Instance;
 
@@ -9379,7 +9379,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory">REST API Reference for GetSetupHistory Operation</seealso>
         public virtual Task<GetSetupHistoryResponse> GetSetupHistoryAsync(GetSetupHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSetupHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSetupHistoryResponseUnmarshaller.Instance;
 
@@ -9391,7 +9391,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetStaticIpResponse GetStaticIp(GetStaticIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
@@ -9448,7 +9448,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         public virtual Task<GetStaticIpResponse> GetStaticIpAsync(GetStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
@@ -9460,7 +9460,7 @@ namespace Amazon.Lightsail
 
         internal virtual GetStaticIpsResponse GetStaticIps(GetStaticIpsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticIpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
@@ -9517,7 +9517,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         public virtual Task<GetStaticIpsResponse> GetStaticIpsAsync(GetStaticIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticIpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
@@ -9529,7 +9529,7 @@ namespace Amazon.Lightsail
 
         internal virtual ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -9586,7 +9586,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -9598,7 +9598,7 @@ namespace Amazon.Lightsail
 
         internal virtual IsVpcPeeredResponse IsVpcPeered(IsVpcPeeredRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsVpcPeeredRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
@@ -9655,7 +9655,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         public virtual Task<IsVpcPeeredResponse> IsVpcPeeredAsync(IsVpcPeeredRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsVpcPeeredRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
@@ -9667,7 +9667,7 @@ namespace Amazon.Lightsail
 
         internal virtual OpenInstancePublicPortsResponse OpenInstancePublicPorts(OpenInstancePublicPortsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -9733,7 +9733,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         public virtual Task<OpenInstancePublicPortsResponse> OpenInstancePublicPortsAsync(OpenInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -9745,7 +9745,7 @@ namespace Amazon.Lightsail
 
         internal virtual PeerVpcResponse PeerVpc(PeerVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PeerVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
@@ -9802,7 +9802,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         public virtual Task<PeerVpcResponse> PeerVpcAsync(PeerVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PeerVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
@@ -9814,7 +9814,7 @@ namespace Amazon.Lightsail
 
         internal virtual PutAlarmResponse PutAlarm(PutAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlarmResponseUnmarshaller.Instance;
 
@@ -9887,7 +9887,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">REST API Reference for PutAlarm Operation</seealso>
         public virtual Task<PutAlarmResponse> PutAlarmAsync(PutAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlarmResponseUnmarshaller.Instance;
 
@@ -9899,7 +9899,7 @@ namespace Amazon.Lightsail
 
         internal virtual PutInstancePublicPortsResponse PutInstancePublicPorts(PutInstancePublicPortsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -9969,7 +9969,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
         public virtual Task<PutInstancePublicPortsResponse> PutInstancePublicPortsAsync(PutInstancePublicPortsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
@@ -9981,7 +9981,7 @@ namespace Amazon.Lightsail
 
         internal virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
@@ -10046,7 +10046,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
@@ -10058,7 +10058,7 @@ namespace Amazon.Lightsail
 
         internal virtual RebootRelationalDatabaseResponse RebootRelationalDatabase(RebootRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -10123,7 +10123,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">REST API Reference for RebootRelationalDatabase Operation</seealso>
         public virtual Task<RebootRelationalDatabaseResponse> RebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -10135,7 +10135,7 @@ namespace Amazon.Lightsail
 
         internal virtual RegisterContainerImageResponse RegisterContainerImage(RegisterContainerImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterContainerImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterContainerImageResponseUnmarshaller.Instance;
 
@@ -10195,7 +10195,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisterContainerImage">REST API Reference for RegisterContainerImage Operation</seealso>
         public virtual Task<RegisterContainerImageResponse> RegisterContainerImageAsync(RegisterContainerImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterContainerImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterContainerImageResponseUnmarshaller.Instance;
 
@@ -10207,7 +10207,7 @@ namespace Amazon.Lightsail
 
         internal virtual ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
@@ -10264,7 +10264,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         public virtual Task<ReleaseStaticIpResponse> ReleaseStaticIpAsync(ReleaseStaticIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseStaticIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
@@ -10276,7 +10276,7 @@ namespace Amazon.Lightsail
 
         internal virtual ResetDistributionCacheResponse ResetDistributionCache(ResetDistributionCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDistributionCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDistributionCacheResponseUnmarshaller.Instance;
 
@@ -10332,7 +10332,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache">REST API Reference for ResetDistributionCache Operation</seealso>
         public virtual Task<ResetDistributionCacheResponse> ResetDistributionCacheAsync(ResetDistributionCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDistributionCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDistributionCacheResponseUnmarshaller.Instance;
 
@@ -10344,7 +10344,7 @@ namespace Amazon.Lightsail
 
         internal virtual SendContactMethodVerificationResponse SendContactMethodVerification(SendContactMethodVerificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendContactMethodVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendContactMethodVerificationResponseUnmarshaller.Instance;
 
@@ -10420,7 +10420,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">REST API Reference for SendContactMethodVerification Operation</seealso>
         public virtual Task<SendContactMethodVerificationResponse> SendContactMethodVerificationAsync(SendContactMethodVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendContactMethodVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendContactMethodVerificationResponseUnmarshaller.Instance;
 
@@ -10432,7 +10432,7 @@ namespace Amazon.Lightsail
 
         internal virtual SetIpAddressTypeResponse SetIpAddressType(SetIpAddressTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIpAddressTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
 
@@ -10496,7 +10496,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
         public virtual Task<SetIpAddressTypeResponse> SetIpAddressTypeAsync(SetIpAddressTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIpAddressTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
 
@@ -10508,7 +10508,7 @@ namespace Amazon.Lightsail
 
         internal virtual SetResourceAccessForBucketResponse SetResourceAccessForBucket(SetResourceAccessForBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetResourceAccessForBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetResourceAccessForBucketResponseUnmarshaller.Instance;
 
@@ -10564,7 +10564,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetResourceAccessForBucket">REST API Reference for SetResourceAccessForBucket Operation</seealso>
         public virtual Task<SetResourceAccessForBucketResponse> SetResourceAccessForBucketAsync(SetResourceAccessForBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetResourceAccessForBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetResourceAccessForBucketResponseUnmarshaller.Instance;
 
@@ -10576,7 +10576,7 @@ namespace Amazon.Lightsail
 
         internal virtual SetupInstanceHttpsResponse SetupInstanceHttps(SetupInstanceHttpsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetupInstanceHttpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetupInstanceHttpsResponseUnmarshaller.Instance;
 
@@ -10633,7 +10633,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps">REST API Reference for SetupInstanceHttps Operation</seealso>
         public virtual Task<SetupInstanceHttpsResponse> SetupInstanceHttpsAsync(SetupInstanceHttpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetupInstanceHttpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetupInstanceHttpsResponseUnmarshaller.Instance;
 
@@ -10645,7 +10645,7 @@ namespace Amazon.Lightsail
 
         internal virtual StartGUISessionResponse StartGUISession(StartGUISessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGUISessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGUISessionResponseUnmarshaller.Instance;
 
@@ -10697,7 +10697,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession">REST API Reference for StartGUISession Operation</seealso>
         public virtual Task<StartGUISessionResponse> StartGUISessionAsync(StartGUISessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGUISessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGUISessionResponseUnmarshaller.Instance;
 
@@ -10709,7 +10709,7 @@ namespace Amazon.Lightsail
 
         internal virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
@@ -10783,7 +10783,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
@@ -10795,7 +10795,7 @@ namespace Amazon.Lightsail
 
         internal virtual StartRelationalDatabaseResponse StartRelationalDatabase(StartRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -10861,7 +10861,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">REST API Reference for StartRelationalDatabase Operation</seealso>
         public virtual Task<StartRelationalDatabaseResponse> StartRelationalDatabaseAsync(StartRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -10873,7 +10873,7 @@ namespace Amazon.Lightsail
 
         internal virtual StopGUISessionResponse StopGUISession(StopGUISessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGUISessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGUISessionResponseUnmarshaller.Instance;
 
@@ -10925,7 +10925,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession">REST API Reference for StopGUISession Operation</seealso>
         public virtual Task<StopGUISessionResponse> StopGUISessionAsync(StopGUISessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGUISessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGUISessionResponseUnmarshaller.Instance;
 
@@ -10937,7 +10937,7 @@ namespace Amazon.Lightsail
 
         internal virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
@@ -11010,7 +11010,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
@@ -11022,7 +11022,7 @@ namespace Amazon.Lightsail
 
         internal virtual StopRelationalDatabaseResponse StopRelationalDatabase(StopRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -11094,7 +11094,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">REST API Reference for StopRelationalDatabase Operation</seealso>
         public virtual Task<StopRelationalDatabaseResponse> StopRelationalDatabaseAsync(StopRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -11106,7 +11106,7 @@ namespace Amazon.Lightsail
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -11174,7 +11174,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -11186,7 +11186,7 @@ namespace Amazon.Lightsail
 
         internal virtual TestAlarmResponse TestAlarm(TestAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestAlarmResponseUnmarshaller.Instance;
 
@@ -11249,7 +11249,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">REST API Reference for TestAlarm Operation</seealso>
         public virtual Task<TestAlarmResponse> TestAlarmAsync(TestAlarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestAlarmResponseUnmarshaller.Instance;
 
@@ -11261,7 +11261,7 @@ namespace Amazon.Lightsail
 
         internal virtual UnpeerVpcResponse UnpeerVpc(UnpeerVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnpeerVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
@@ -11318,7 +11318,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         public virtual Task<UnpeerVpcResponse> UnpeerVpcAsync(UnpeerVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnpeerVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
@@ -11330,7 +11330,7 @@ namespace Amazon.Lightsail
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -11396,7 +11396,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -11408,7 +11408,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateBucketResponse UpdateBucket(UpdateBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketResponseUnmarshaller.Instance;
 
@@ -11464,7 +11464,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucket">REST API Reference for UpdateBucket Operation</seealso>
         public virtual Task<UpdateBucketResponse> UpdateBucketAsync(UpdateBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketResponseUnmarshaller.Instance;
 
@@ -11476,7 +11476,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateBucketBundleResponse UpdateBucketBundle(UpdateBucketBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketBundleResponseUnmarshaller.Instance;
 
@@ -11546,7 +11546,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateBucketBundle">REST API Reference for UpdateBucketBundle Operation</seealso>
         public virtual Task<UpdateBucketBundleResponse> UpdateBucketBundleAsync(UpdateBucketBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketBundleResponseUnmarshaller.Instance;
 
@@ -11558,7 +11558,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateContainerServiceResponse UpdateContainerService(UpdateContainerServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerServiceResponseUnmarshaller.Instance;
 
@@ -11609,7 +11609,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateContainerService">REST API Reference for UpdateContainerService Operation</seealso>
         public virtual Task<UpdateContainerServiceResponse> UpdateContainerServiceAsync(UpdateContainerServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerServiceResponseUnmarshaller.Instance;
 
@@ -11621,7 +11621,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
@@ -11675,7 +11675,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
@@ -11687,7 +11687,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateDistributionBundleResponse UpdateDistributionBundle(UpdateDistributionBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionBundleResponseUnmarshaller.Instance;
 
@@ -11754,7 +11754,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle">REST API Reference for UpdateDistributionBundle Operation</seealso>
         public virtual Task<UpdateDistributionBundleResponse> UpdateDistributionBundleAsync(UpdateDistributionBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionBundleResponseUnmarshaller.Instance;
 
@@ -11766,7 +11766,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateDomainEntryResponse UpdateDomainEntry(UpdateDomainEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
@@ -11831,7 +11831,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         public virtual Task<UpdateDomainEntryResponse> UpdateDomainEntryAsync(UpdateDomainEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
@@ -11843,7 +11843,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateInstanceMetadataOptionsResponse UpdateInstanceMetadataOptions(UpdateInstanceMetadataOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -11907,7 +11907,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions">REST API Reference for UpdateInstanceMetadataOptions Operation</seealso>
         public virtual Task<UpdateInstanceMetadataOptionsResponse> UpdateInstanceMetadataOptionsAsync(UpdateInstanceMetadataOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -11919,7 +11919,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateLoadBalancerAttributeResponse UpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
@@ -11985,7 +11985,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
         public virtual Task<UpdateLoadBalancerAttributeResponse> UpdateLoadBalancerAttributeAsync(UpdateLoadBalancerAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
@@ -11997,7 +11997,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateRelationalDatabaseResponse UpdateRelationalDatabase(UpdateRelationalDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -12067,7 +12067,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">REST API Reference for UpdateRelationalDatabase Operation</seealso>
         public virtual Task<UpdateRelationalDatabaseResponse> UpdateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelationalDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelationalDatabaseResponseUnmarshaller.Instance;
 
@@ -12079,7 +12079,7 @@ namespace Amazon.Lightsail
 
         internal virtual UpdateRelationalDatabaseParametersResponse UpdateRelationalDatabaseParameters(UpdateRelationalDatabaseParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelationalDatabaseParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelationalDatabaseParametersResponseUnmarshaller.Instance;
 
@@ -12153,7 +12153,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">REST API Reference for UpdateRelationalDatabaseParameters Operation</seealso>
         public virtual Task<UpdateRelationalDatabaseParametersResponse> UpdateRelationalDatabaseParametersAsync(UpdateRelationalDatabaseParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelationalDatabaseParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelationalDatabaseParametersResponseUnmarshaller.Instance;
 

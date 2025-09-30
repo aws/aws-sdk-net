@@ -284,7 +284,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ConvertRecoveryPointToSnapshotResponse ConvertRecoveryPointToSnapshot(ConvertRecoveryPointToSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConvertRecoveryPointToSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConvertRecoveryPointToSnapshotResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ConvertRecoveryPointToSnapshot">REST API Reference for ConvertRecoveryPointToSnapshot Operation</seealso>
         public virtual Task<ConvertRecoveryPointToSnapshotResponse> ConvertRecoveryPointToSnapshotAsync(ConvertRecoveryPointToSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConvertRecoveryPointToSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConvertRecoveryPointToSnapshotResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -376,7 +376,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
         public virtual Task<CreateCustomDomainAssociationResponse> CreateCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointAccessResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
         public virtual Task<CreateEndpointAccessResponse> CreateEndpointAccessAsync(CreateEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointAccessResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         public virtual Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateReservationResponse CreateReservation(CreateReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
 
@@ -528,7 +528,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
         public virtual Task<CreateReservationResponse> CreateReservationAsync(CreateReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservationResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
         public virtual Task<CreateScheduledActionResponse> CreateScheduledActionAsync(CreateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduledActionResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -628,7 +628,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateSnapshotCopyConfigurationResponse CreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -680,7 +680,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<CreateSnapshotCopyConfigurationResponse> CreateSnapshotCopyConfigurationAsync(CreateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateUsageLimitResponse CreateUsageLimit(CreateUsageLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsageLimitResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
         public virtual Task<CreateUsageLimitResponse> CreateUsageLimitAsync(CreateUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsageLimitResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual CreateWorkgroupResponse CreateWorkgroup(CreateWorkgroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkgroupResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateWorkgroup">REST API Reference for CreateWorkgroup Operation</seealso>
         public virtual Task<CreateWorkgroupResponse> CreateWorkgroupAsync(CreateWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkgroupResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
         public virtual Task<DeleteCustomDomainAssociationResponse> DeleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteEndpointAccessResponse DeleteEndpointAccess(DeleteEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointAccessResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
         public virtual Task<DeleteEndpointAccessResponse> DeleteEndpointAccessAsync(DeleteEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointAccessResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteSnapshotCopyConfigurationResponse DeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -1128,7 +1128,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<DeleteSnapshotCopyConfigurationResponse> DeleteSnapshotCopyConfigurationAsync(DeleteSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteUsageLimitResponse DeleteUsageLimit(DeleteUsageLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsageLimitResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
         public virtual Task<DeleteUsageLimitResponse> DeleteUsageLimitAsync(DeleteUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsageLimitResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual DeleteWorkgroupResponse DeleteWorkgroup(DeleteWorkgroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkgroupResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteWorkgroup">REST API Reference for DeleteWorkgroup Operation</seealso>
         public virtual Task<DeleteWorkgroupResponse> DeleteWorkgroupAsync(DeleteWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkgroupResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetCredentialsResponse GetCredentials(GetCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCredentialsResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">REST API Reference for GetCredentials Operation</seealso>
         public virtual Task<GetCredentialsResponse> GetCredentialsAsync(GetCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCredentialsResponseUnmarshaller.Instance;
 
@@ -1289,7 +1289,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetCustomDomainAssociationResponse GetCustomDomainAssociation(GetCustomDomainAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -1328,7 +1328,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
         public virtual Task<GetCustomDomainAssociationResponse> GetCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetEndpointAccessResponse GetEndpointAccess(GetEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointAccessResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetEndpointAccess">REST API Reference for GetEndpointAccess Operation</seealso>
         public virtual Task<GetEndpointAccessResponse> GetEndpointAccessAsync(GetEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointAccessResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetNamespaceResponse GetNamespace(GetNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         public virtual Task<GetNamespaceResponse> GetNamespaceAsync(GetNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceResponseUnmarshaller.Instance;
 
@@ -1427,7 +1427,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetRecoveryPointResponse GetRecoveryPoint(GetRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointResponseUnmarshaller.Instance;
 
@@ -1460,7 +1460,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetRecoveryPoint">REST API Reference for GetRecoveryPoint Operation</seealso>
         public virtual Task<GetRecoveryPointResponse> GetRecoveryPointAsync(GetRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointResponseUnmarshaller.Instance;
 
@@ -1472,7 +1472,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetReservationResponse GetReservation(GetReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
 
@@ -1507,7 +1507,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
         public virtual Task<GetReservationResponse> GetReservationAsync(GetReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservationResponseUnmarshaller.Instance;
 
@@ -1519,7 +1519,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetReservationOfferingResponse GetReservationOffering(GetReservationOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
         public virtual Task<GetReservationOfferingResponse> GetReservationOfferingAsync(GetReservationOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservationOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservationOfferingResponseUnmarshaller.Instance;
 
@@ -1565,7 +1565,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1607,7 +1607,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetScheduledActionResponse GetScheduledAction(GetScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
 
@@ -1637,7 +1637,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
         public virtual Task<GetScheduledActionResponse> GetScheduledActionAsync(GetScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScheduledActionResponseUnmarshaller.Instance;
 
@@ -1649,7 +1649,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetSnapshotResponse GetSnapshot(GetSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">REST API Reference for GetSnapshot Operation</seealso>
         public virtual Task<GetSnapshotResponse> GetSnapshotAsync(GetSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetTableRestoreStatusResponse GetTableRestoreStatus(GetTableRestoreStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRestoreStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableRestoreStatusResponseUnmarshaller.Instance;
 
@@ -1718,7 +1718,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
         public virtual Task<GetTableRestoreStatusResponse> GetTableRestoreStatusAsync(GetTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRestoreStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableRestoreStatusResponseUnmarshaller.Instance;
 
@@ -1730,7 +1730,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetTrackResponse GetTrack(GetTrackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrackResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
         public virtual Task<GetTrackResponse> GetTrackAsync(GetTrackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrackResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetUsageLimitResponse GetUsageLimit(GetUsageLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageLimitResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">REST API Reference for GetUsageLimit Operation</seealso>
         public virtual Task<GetUsageLimitResponse> GetUsageLimitAsync(GetUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageLimitResponseUnmarshaller.Instance;
 
@@ -1826,7 +1826,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual GetWorkgroupResponse GetWorkgroup(GetWorkgroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkgroupResponseUnmarshaller.Instance;
 
@@ -1856,7 +1856,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetWorkgroup">REST API Reference for GetWorkgroup Operation</seealso>
         public virtual Task<GetWorkgroupResponse> GetWorkgroupAsync(GetWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkgroupResponseUnmarshaller.Instance;
 
@@ -1868,7 +1868,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListCustomDomainAssociationsResponse ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -1904,7 +1904,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
         public virtual Task<ListCustomDomainAssociationsResponse> ListCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -1916,7 +1916,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListEndpointAccessResponse ListEndpointAccess(ListEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointAccessResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">REST API Reference for ListEndpointAccess Operation</seealso>
         public virtual Task<ListEndpointAccessResponse> ListEndpointAccessAsync(ListEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointAccessResponseUnmarshaller.Instance;
 
@@ -1961,7 +1961,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListManagedWorkgroupsResponse ListManagedWorkgroups(ListManagedWorkgroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedWorkgroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedWorkgroupsResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListManagedWorkgroups">REST API Reference for ListManagedWorkgroups Operation</seealso>
         public virtual Task<ListManagedWorkgroupsResponse> ListManagedWorkgroupsAsync(ListManagedWorkgroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedWorkgroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedWorkgroupsResponseUnmarshaller.Instance;
 
@@ -2000,7 +2000,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -2027,7 +2027,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -2039,7 +2039,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListRecoveryPointsResponse ListRecoveryPoints(ListRecoveryPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListRecoveryPoints">REST API Reference for ListRecoveryPoints Operation</seealso>
         public virtual Task<ListRecoveryPointsResponse> ListRecoveryPointsAsync(ListRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListReservationOfferingsResponse ListReservationOfferings(ListReservationOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
         public virtual Task<ListReservationOfferingsResponse> ListReservationOfferingsAsync(ListReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -2162,7 +2162,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
 
@@ -2196,7 +2196,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         public virtual Task<ListScheduledActionsResponse> ListScheduledActionsAsync(ListScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
 
@@ -2208,7 +2208,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListSnapshotCopyConfigurationsResponse ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
 
@@ -2244,7 +2244,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
         public virtual Task<ListSnapshotCopyConfigurationsResponse> ListSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotCopyConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotCopyConfigurationsResponseUnmarshaller.Instance;
 
@@ -2256,7 +2256,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListSnapshotsResponse ListSnapshots(ListSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
         public virtual Task<ListSnapshotsResponse> ListSnapshotsAsync(ListSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListTableRestoreStatusResponse ListTableRestoreStatus(ListTableRestoreStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableRestoreStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableRestoreStatusResponseUnmarshaller.Instance;
 
@@ -2328,7 +2328,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
         public virtual Task<ListTableRestoreStatusResponse> ListTableRestoreStatusAsync(ListTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableRestoreStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableRestoreStatusResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2373,7 +2373,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2385,7 +2385,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListTracksResponse ListTracks(ListTracksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTracksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTracksResponseUnmarshaller.Instance;
 
@@ -2421,7 +2421,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
         public virtual Task<ListTracksResponse> ListTracksAsync(ListTracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTracksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTracksResponseUnmarshaller.Instance;
 
@@ -2433,7 +2433,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListUsageLimitsResponse ListUsageLimits(ListUsageLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageLimitsResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListUsageLimits">REST API Reference for ListUsageLimits Operation</seealso>
         public virtual Task<ListUsageLimitsResponse> ListUsageLimitsAsync(ListUsageLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageLimitsResponseUnmarshaller.Instance;
 
@@ -2481,7 +2481,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual ListWorkgroupsResponse ListWorkgroups(ListWorkgroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkgroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkgroupsResponseUnmarshaller.Instance;
 
@@ -2508,7 +2508,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListWorkgroups">REST API Reference for ListWorkgroups Operation</seealso>
         public virtual Task<ListWorkgroupsResponse> ListWorkgroupsAsync(ListWorkgroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkgroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkgroupsResponseUnmarshaller.Instance;
 
@@ -2520,7 +2520,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2557,7 +2557,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2569,7 +2569,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual RestoreFromRecoveryPointResponse RestoreFromRecoveryPoint(RestoreFromRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2602,7 +2602,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromRecoveryPoint">REST API Reference for RestoreFromRecoveryPoint Operation</seealso>
         public virtual Task<RestoreFromRecoveryPointResponse> RestoreFromRecoveryPointAsync(RestoreFromRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2614,7 +2614,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2650,7 +2650,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2662,7 +2662,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual RestoreTableFromRecoveryPointResponse RestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2696,7 +2696,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
         public virtual Task<RestoreTableFromRecoveryPointResponse> RestoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2708,7 +2708,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual RestoreTableFromSnapshotResponse RestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2743,7 +2743,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
         public virtual Task<RestoreTableFromSnapshotResponse> RestoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2791,7 +2791,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2803,7 +2803,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2836,7 +2836,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2848,7 +2848,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateCustomDomainAssociationResponse UpdateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -2887,7 +2887,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
         public virtual Task<UpdateCustomDomainAssociationResponse> UpdateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomDomainAssociationResponseUnmarshaller.Instance;
 
@@ -2899,7 +2899,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateEndpointAccessResponse UpdateEndpointAccess(UpdateEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointAccessResponseUnmarshaller.Instance;
 
@@ -2935,7 +2935,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateEndpointAccess">REST API Reference for UpdateEndpointAccess Operation</seealso>
         public virtual Task<UpdateEndpointAccessResponse> UpdateEndpointAccessAsync(UpdateEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointAccessResponseUnmarshaller.Instance;
 
@@ -2947,7 +2947,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateNamespaceResponse UpdateNamespace(UpdateNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamespaceResponseUnmarshaller.Instance;
 
@@ -2983,7 +2983,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">REST API Reference for UpdateNamespace Operation</seealso>
         public virtual Task<UpdateNamespaceResponse> UpdateNamespaceAsync(UpdateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamespaceResponseUnmarshaller.Instance;
 
@@ -2995,7 +2995,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
 
@@ -3028,7 +3028,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         public virtual Task<UpdateScheduledActionResponse> UpdateScheduledActionAsync(UpdateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
 
@@ -3040,7 +3040,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotResponseUnmarshaller.Instance;
 
@@ -3073,7 +3073,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         public virtual Task<UpdateSnapshotResponse> UpdateSnapshotAsync(UpdateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotResponseUnmarshaller.Instance;
 
@@ -3085,7 +3085,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateSnapshotCopyConfigurationResponse UpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -3121,7 +3121,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<UpdateSnapshotCopyConfigurationResponse> UpdateSnapshotCopyConfigurationAsync(UpdateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotCopyConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotCopyConfigurationResponseUnmarshaller.Instance;
 
@@ -3133,7 +3133,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateUsageLimitResponse UpdateUsageLimit(UpdateUsageLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageLimitResponseUnmarshaller.Instance;
 
@@ -3167,7 +3167,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateUsageLimit">REST API Reference for UpdateUsageLimit Operation</seealso>
         public virtual Task<UpdateUsageLimitResponse> UpdateUsageLimitAsync(UpdateUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageLimitResponseUnmarshaller.Instance;
 
@@ -3179,7 +3179,7 @@ namespace Amazon.RedshiftServerless
 
         internal virtual UpdateWorkgroupResponse UpdateWorkgroup(UpdateWorkgroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkgroupResponseUnmarshaller.Instance;
 
@@ -3246,7 +3246,7 @@ namespace Amazon.RedshiftServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">REST API Reference for UpdateWorkgroup Operation</seealso>
         public virtual Task<UpdateWorkgroupResponse> UpdateWorkgroupAsync(UpdateWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkgroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkgroupResponseUnmarshaller.Instance;
 

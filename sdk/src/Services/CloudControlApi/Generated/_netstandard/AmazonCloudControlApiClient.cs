@@ -268,7 +268,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual CancelResourceRequestResponse CancelResourceRequest(CancelResourceRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelResourceRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelResourceRequestResponseUnmarshaller.Instance;
 
@@ -303,7 +303,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CancelResourceRequest">REST API Reference for CancelResourceRequest Operation</seealso>
         public virtual Task<CancelResourceRequestResponse> CancelResourceRequestAsync(CancelResourceRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelResourceRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelResourceRequestResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -549,7 +549,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual Task<GetResourceResponse> GetResourceAsync(GetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual GetResourceRequestStatusResponse GetResourceRequestStatus(GetResourceRequestStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceRequestStatusResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/GetResourceRequestStatus">REST API Reference for GetResourceRequestStatus Operation</seealso>
         public virtual Task<GetResourceRequestStatusResponse> GetResourceRequestStatusAsync(GetResourceRequestStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceRequestStatusResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual ListResourceRequestsResponse ListResourceRequests(ListResourceRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceRequestsResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResourceRequests">REST API Reference for ListResourceRequests Operation</seealso>
         public virtual Task<ListResourceRequestsResponse> ListResourceRequestsAsync(ListResourceRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceRequestsResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.CloudControlApi
 
         internal virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.CloudControlApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 

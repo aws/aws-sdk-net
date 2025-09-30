@@ -308,7 +308,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
         public virtual AbortMultipartReadSetUploadResponse AbortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartReadSetUploadResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
         public virtual Task<AbortMultipartReadSetUploadResponse> AbortMultipartReadSetUploadAsync(AbortMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartReadSetUploadResponseUnmarshaller.Instance;
             
@@ -397,7 +397,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
         public virtual AcceptShareResponse AcceptShare(AcceptShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptShareResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
         public virtual Task<AcceptShareResponse> AcceptShareAsync(AcceptShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptShareResponseUnmarshaller.Instance;
             
@@ -482,7 +482,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/BatchDeleteReadSet">REST API Reference for BatchDeleteReadSet Operation</seealso>
         public virtual BatchDeleteReadSetResponse BatchDeleteReadSet(BatchDeleteReadSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteReadSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteReadSetResponseUnmarshaller.Instance;
 
@@ -525,7 +525,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/BatchDeleteReadSet">REST API Reference for BatchDeleteReadSet Operation</seealso>
         public virtual Task<BatchDeleteReadSetResponse> BatchDeleteReadSetAsync(BatchDeleteReadSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteReadSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteReadSetResponseUnmarshaller.Instance;
             
@@ -561,7 +561,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelAnnotationImportJob">REST API Reference for CancelAnnotationImportJob Operation</seealso>
         public virtual CancelAnnotationImportJobResponse CancelAnnotationImportJob(CancelAnnotationImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelAnnotationImportJobResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelAnnotationImportJob">REST API Reference for CancelAnnotationImportJob Operation</seealso>
         public virtual Task<CancelAnnotationImportJobResponse> CancelAnnotationImportJobAsync(CancelAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelAnnotationImportJobResponseUnmarshaller.Instance;
             
@@ -643,7 +643,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRun">REST API Reference for CancelRun Operation</seealso>
         public virtual CancelRunResponse CancelRun(CancelRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelRunResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRun">REST API Reference for CancelRun Operation</seealso>
         public virtual Task<CancelRunResponse> CancelRunAsync(CancelRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelRunResponseUnmarshaller.Instance;
             
@@ -725,7 +725,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelVariantImportJob">REST API Reference for CancelVariantImportJob Operation</seealso>
         public virtual CancelVariantImportJobResponse CancelVariantImportJob(CancelVariantImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelVariantImportJobResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelVariantImportJob">REST API Reference for CancelVariantImportJob Operation</seealso>
         public virtual Task<CancelVariantImportJobResponse> CancelVariantImportJobAsync(CancelVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelVariantImportJobResponseUnmarshaller.Instance;
             
@@ -815,7 +815,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
         public virtual CompleteMultipartReadSetUploadResponse CompleteMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartReadSetUploadResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
         public virtual Task<CompleteMultipartReadSetUploadResponse> CompleteMultipartReadSetUploadAsync(CompleteMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartReadSetUploadResponseUnmarshaller.Instance;
             
@@ -911,7 +911,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">REST API Reference for CreateAnnotationStore Operation</seealso>
         public virtual CreateAnnotationStoreResponse CreateAnnotationStore(CreateAnnotationStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnnotationStoreResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">REST API Reference for CreateAnnotationStore Operation</seealso>
         public virtual Task<CreateAnnotationStoreResponse> CreateAnnotationStoreAsync(CreateAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnnotationStoreResponseUnmarshaller.Instance;
             
@@ -994,7 +994,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
         public virtual CreateAnnotationStoreVersionResponse CreateAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnnotationStoreVersionResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
         public virtual Task<CreateAnnotationStoreVersionResponse> CreateAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnnotationStoreVersionResponseUnmarshaller.Instance;
             
@@ -1111,7 +1111,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
         public virtual CreateMultipartReadSetUploadResponse CreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultipartReadSetUploadResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
         public virtual Task<CreateMultipartReadSetUploadResponse> CreateMultipartReadSetUploadAsync(CreateMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultipartReadSetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultipartReadSetUploadResponseUnmarshaller.Instance;
             
@@ -1234,7 +1234,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateReferenceStore">REST API Reference for CreateReferenceStore Operation</seealso>
         public virtual CreateReferenceStoreResponse CreateReferenceStore(CreateReferenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReferenceStoreResponseUnmarshaller.Instance;
 
@@ -1281,7 +1281,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateReferenceStore">REST API Reference for CreateReferenceStore Operation</seealso>
         public virtual Task<CreateReferenceStoreResponse> CreateReferenceStoreAsync(CreateReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReferenceStoreResponseUnmarshaller.Instance;
             
@@ -1337,7 +1337,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">REST API Reference for CreateRunCache Operation</seealso>
         public virtual CreateRunCacheResponse CreateRunCache(CreateRunCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRunCacheResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">REST API Reference for CreateRunCache Operation</seealso>
         public virtual Task<CreateRunCacheResponse> CreateRunCacheAsync(CreateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRunCacheResponseUnmarshaller.Instance;
             
@@ -1438,7 +1438,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">REST API Reference for CreateRunGroup Operation</seealso>
         public virtual CreateRunGroupResponse CreateRunGroup(CreateRunGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRunGroupResponseUnmarshaller.Instance;
 
@@ -1483,7 +1483,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">REST API Reference for CreateRunGroup Operation</seealso>
         public virtual Task<CreateRunGroupResponse> CreateRunGroupAsync(CreateRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRunGroupResponseUnmarshaller.Instance;
             
@@ -1559,7 +1559,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateSequenceStore">REST API Reference for CreateSequenceStore Operation</seealso>
         public virtual CreateSequenceStoreResponse CreateSequenceStore(CreateSequenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSequenceStoreResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateSequenceStore">REST API Reference for CreateSequenceStore Operation</seealso>
         public virtual Task<CreateSequenceStoreResponse> CreateSequenceStoreAsync(CreateSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSequenceStoreResponseUnmarshaller.Instance;
             
@@ -1696,7 +1696,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
         public virtual CreateShareResponse CreateShare(CreateShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateShareResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
         public virtual Task<CreateShareResponse> CreateShareAsync(CreateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateShareResponseUnmarshaller.Instance;
             
@@ -1799,7 +1799,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">REST API Reference for CreateVariantStore Operation</seealso>
         public virtual CreateVariantStoreResponse CreateVariantStore(CreateVariantStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVariantStoreResponseUnmarshaller.Instance;
 
@@ -1840,7 +1840,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">REST API Reference for CreateVariantStore Operation</seealso>
         public virtual Task<CreateVariantStoreResponse> CreateVariantStoreAsync(CreateVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVariantStoreResponseUnmarshaller.Instance;
             
@@ -1918,7 +1918,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -1995,7 +1995,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
             
@@ -2063,7 +2063,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
         public virtual CreateWorkflowVersionResponse CreateWorkflowVersion(CreateWorkflowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowVersionResponseUnmarshaller.Instance;
 
@@ -2130,7 +2130,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
         public virtual Task<CreateWorkflowVersionResponse> CreateWorkflowVersionAsync(CreateWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowVersionResponseUnmarshaller.Instance;
             
@@ -2169,7 +2169,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStore">REST API Reference for DeleteAnnotationStore Operation</seealso>
         public virtual DeleteAnnotationStoreResponse DeleteAnnotationStore(DeleteAnnotationStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnnotationStoreResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStore">REST API Reference for DeleteAnnotationStore Operation</seealso>
         public virtual Task<DeleteAnnotationStoreResponse> DeleteAnnotationStoreAsync(DeleteAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnnotationStoreResponseUnmarshaller.Instance;
             
@@ -2246,7 +2246,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
         public virtual DeleteAnnotationStoreVersionsResponse DeleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnnotationStoreVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnnotationStoreVersionsResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
         public virtual Task<DeleteAnnotationStoreVersionsResponse> DeleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnnotationStoreVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnnotationStoreVersionsResponseUnmarshaller.Instance;
             
@@ -2336,7 +2336,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReference">REST API Reference for DeleteReference Operation</seealso>
         public virtual DeleteReferenceResponse DeleteReference(DeleteReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReferenceResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReference">REST API Reference for DeleteReference Operation</seealso>
         public virtual Task<DeleteReferenceResponse> DeleteReferenceAsync(DeleteReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReferenceResponseUnmarshaller.Instance;
             
@@ -2438,7 +2438,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReferenceStore">REST API Reference for DeleteReferenceStore Operation</seealso>
         public virtual DeleteReferenceStoreResponse DeleteReferenceStore(DeleteReferenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReferenceStoreResponseUnmarshaller.Instance;
 
@@ -2488,7 +2488,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReferenceStore">REST API Reference for DeleteReferenceStore Operation</seealso>
         public virtual Task<DeleteReferenceStoreResponse> DeleteReferenceStoreAsync(DeleteReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReferenceStoreResponseUnmarshaller.Instance;
             
@@ -2551,7 +2551,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual DeleteRunResponse DeleteRun(DeleteRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunResponseUnmarshaller.Instance;
 
@@ -2613,7 +2613,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunResponseUnmarshaller.Instance;
             
@@ -2668,7 +2668,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">REST API Reference for DeleteRunCache Operation</seealso>
         public virtual DeleteRunCacheResponse DeleteRunCache(DeleteRunCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunCacheResponseUnmarshaller.Instance;
 
@@ -2722,7 +2722,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">REST API Reference for DeleteRunCache Operation</seealso>
         public virtual Task<DeleteRunCacheResponse> DeleteRunCacheAsync(DeleteRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunCacheResponseUnmarshaller.Instance;
             
@@ -2781,7 +2781,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunGroup">REST API Reference for DeleteRunGroup Operation</seealso>
         public virtual DeleteRunGroupResponse DeleteRunGroup(DeleteRunGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunGroupResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunGroup">REST API Reference for DeleteRunGroup Operation</seealso>
         public virtual Task<DeleteRunGroupResponse> DeleteRunGroupAsync(DeleteRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunGroupResponseUnmarshaller.Instance;
             
@@ -2881,7 +2881,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
         public virtual DeleteS3AccessPolicyResponse DeleteS3AccessPolicy(DeleteS3AccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteS3AccessPolicyResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
         public virtual Task<DeleteS3AccessPolicyResponse> DeleteS3AccessPolicyAsync(DeleteS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteS3AccessPolicyResponseUnmarshaller.Instance;
             
@@ -2978,7 +2978,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteSequenceStore">REST API Reference for DeleteSequenceStore Operation</seealso>
         public virtual DeleteSequenceStoreResponse DeleteSequenceStore(DeleteSequenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSequenceStoreResponseUnmarshaller.Instance;
 
@@ -3033,7 +3033,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteSequenceStore">REST API Reference for DeleteSequenceStore Operation</seealso>
         public virtual Task<DeleteSequenceStoreResponse> DeleteSequenceStoreAsync(DeleteSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSequenceStoreResponseUnmarshaller.Instance;
             
@@ -3077,7 +3077,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
         public virtual DeleteShareResponse DeleteShare(DeleteShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteShareResponseUnmarshaller.Instance;
 
@@ -3120,7 +3120,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
         public virtual Task<DeleteShareResponse> DeleteShareAsync(DeleteShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteShareResponseUnmarshaller.Instance;
             
@@ -3159,7 +3159,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">REST API Reference for DeleteVariantStore Operation</seealso>
         public virtual DeleteVariantStoreResponse DeleteVariantStore(DeleteVariantStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVariantStoreResponseUnmarshaller.Instance;
 
@@ -3197,7 +3197,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">REST API Reference for DeleteVariantStore Operation</seealso>
         public virtual Task<DeleteVariantStoreResponse> DeleteVariantStoreAsync(DeleteVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVariantStoreResponseUnmarshaller.Instance;
             
@@ -3257,7 +3257,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -3316,7 +3316,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
             
@@ -3369,7 +3369,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
         public virtual DeleteWorkflowVersionResponse DeleteWorkflowVersion(DeleteWorkflowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowVersionResponseUnmarshaller.Instance;
 
@@ -3421,7 +3421,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
         public virtual Task<DeleteWorkflowVersionResponse> DeleteWorkflowVersionAsync(DeleteWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowVersionResponseUnmarshaller.Instance;
             
@@ -3457,7 +3457,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationImportJob">REST API Reference for GetAnnotationImportJob Operation</seealso>
         public virtual GetAnnotationImportJobResponse GetAnnotationImportJob(GetAnnotationImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationImportJobResponseUnmarshaller.Instance;
 
@@ -3492,7 +3492,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationImportJob">REST API Reference for GetAnnotationImportJob Operation</seealso>
         public virtual Task<GetAnnotationImportJobResponse> GetAnnotationImportJobAsync(GetAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationImportJobResponseUnmarshaller.Instance;
             
@@ -3528,7 +3528,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStore">REST API Reference for GetAnnotationStore Operation</seealso>
         public virtual GetAnnotationStoreResponse GetAnnotationStore(GetAnnotationStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationStoreResponseUnmarshaller.Instance;
 
@@ -3563,7 +3563,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStore">REST API Reference for GetAnnotationStore Operation</seealso>
         public virtual Task<GetAnnotationStoreResponse> GetAnnotationStoreAsync(GetAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationStoreResponseUnmarshaller.Instance;
             
@@ -3599,7 +3599,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
         public virtual GetAnnotationStoreVersionResponse GetAnnotationStoreVersion(GetAnnotationStoreVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationStoreVersionResponseUnmarshaller.Instance;
 
@@ -3634,7 +3634,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
         public virtual Task<GetAnnotationStoreVersionResponse> GetAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnnotationStoreVersionResponseUnmarshaller.Instance;
             
@@ -3681,7 +3681,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSet">REST API Reference for GetReadSet Operation</seealso>
         public virtual GetReadSetResponse GetReadSet(GetReadSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetResponseUnmarshaller.Instance;
 
@@ -3727,7 +3727,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSet">REST API Reference for GetReadSet Operation</seealso>
         public virtual Task<GetReadSetResponse> GetReadSetAsync(GetReadSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetResponseUnmarshaller.Instance;
             
@@ -3767,7 +3767,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetActivationJob">REST API Reference for GetReadSetActivationJob Operation</seealso>
         public virtual GetReadSetActivationJobResponse GetReadSetActivationJob(GetReadSetActivationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetActivationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetActivationJobResponseUnmarshaller.Instance;
 
@@ -3806,7 +3806,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetActivationJob">REST API Reference for GetReadSetActivationJob Operation</seealso>
         public virtual Task<GetReadSetActivationJobResponse> GetReadSetActivationJobAsync(GetReadSetActivationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetActivationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetActivationJobResponseUnmarshaller.Instance;
             
@@ -3846,7 +3846,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetExportJob">REST API Reference for GetReadSetExportJob Operation</seealso>
         public virtual GetReadSetExportJobResponse GetReadSetExportJob(GetReadSetExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetExportJobResponseUnmarshaller.Instance;
 
@@ -3885,7 +3885,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetExportJob">REST API Reference for GetReadSetExportJob Operation</seealso>
         public virtual Task<GetReadSetExportJobResponse> GetReadSetExportJobAsync(GetReadSetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetExportJobResponseUnmarshaller.Instance;
             
@@ -3925,7 +3925,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetImportJob">REST API Reference for GetReadSetImportJob Operation</seealso>
         public virtual GetReadSetImportJobResponse GetReadSetImportJob(GetReadSetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetImportJobResponseUnmarshaller.Instance;
 
@@ -3964,7 +3964,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetImportJob">REST API Reference for GetReadSetImportJob Operation</seealso>
         public virtual Task<GetReadSetImportJobResponse> GetReadSetImportJobAsync(GetReadSetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetImportJobResponseUnmarshaller.Instance;
             
@@ -4005,7 +4005,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetMetadata">REST API Reference for GetReadSetMetadata Operation</seealso>
         public virtual GetReadSetMetadataResponse GetReadSetMetadata(GetReadSetMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetMetadataResponseUnmarshaller.Instance;
 
@@ -4045,7 +4045,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetMetadata">REST API Reference for GetReadSetMetadata Operation</seealso>
         public virtual Task<GetReadSetMetadataResponse> GetReadSetMetadataAsync(GetReadSetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadSetMetadataResponseUnmarshaller.Instance;
             
@@ -4094,7 +4094,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReference">REST API Reference for GetReference Operation</seealso>
         public virtual GetReferenceResponse GetReference(GetReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceResponseUnmarshaller.Instance;
 
@@ -4142,7 +4142,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReference">REST API Reference for GetReference Operation</seealso>
         public virtual Task<GetReferenceResponse> GetReferenceAsync(GetReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceResponseUnmarshaller.Instance;
             
@@ -4182,7 +4182,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceImportJob">REST API Reference for GetReferenceImportJob Operation</seealso>
         public virtual GetReferenceImportJobResponse GetReferenceImportJob(GetReferenceImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceImportJobResponseUnmarshaller.Instance;
 
@@ -4221,7 +4221,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceImportJob">REST API Reference for GetReferenceImportJob Operation</seealso>
         public virtual Task<GetReferenceImportJobResponse> GetReferenceImportJobAsync(GetReferenceImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceImportJobResponseUnmarshaller.Instance;
             
@@ -4262,7 +4262,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceMetadata">REST API Reference for GetReferenceMetadata Operation</seealso>
         public virtual GetReferenceMetadataResponse GetReferenceMetadata(GetReferenceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceMetadataResponseUnmarshaller.Instance;
 
@@ -4302,7 +4302,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceMetadata">REST API Reference for GetReferenceMetadata Operation</seealso>
         public virtual Task<GetReferenceMetadataResponse> GetReferenceMetadataAsync(GetReferenceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceMetadataResponseUnmarshaller.Instance;
             
@@ -4341,7 +4341,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceStore">REST API Reference for GetReferenceStore Operation</seealso>
         public virtual GetReferenceStoreResponse GetReferenceStore(GetReferenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceStoreResponseUnmarshaller.Instance;
 
@@ -4379,7 +4379,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceStore">REST API Reference for GetReferenceStore Operation</seealso>
         public virtual Task<GetReferenceStoreResponse> GetReferenceStoreAsync(GetReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReferenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReferenceStoreResponseUnmarshaller.Instance;
             
@@ -4433,7 +4433,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual GetRunResponse GetRun(GetRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunResponseUnmarshaller.Instance;
 
@@ -4486,7 +4486,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual Task<GetRunResponse> GetRunAsync(GetRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunResponseUnmarshaller.Instance;
             
@@ -4538,7 +4538,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">REST API Reference for GetRunCache Operation</seealso>
         public virtual GetRunCacheResponse GetRunCache(GetRunCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunCacheResponseUnmarshaller.Instance;
 
@@ -4589,7 +4589,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">REST API Reference for GetRunCache Operation</seealso>
         public virtual Task<GetRunCacheResponse> GetRunCacheAsync(GetRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunCacheResponseUnmarshaller.Instance;
             
@@ -4634,7 +4634,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunGroup">REST API Reference for GetRunGroup Operation</seealso>
         public virtual GetRunGroupResponse GetRunGroup(GetRunGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunGroupResponseUnmarshaller.Instance;
 
@@ -4678,7 +4678,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunGroup">REST API Reference for GetRunGroup Operation</seealso>
         public virtual Task<GetRunGroupResponse> GetRunGroupAsync(GetRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunGroupResponseUnmarshaller.Instance;
             
@@ -4723,7 +4723,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">REST API Reference for GetRunTask Operation</seealso>
         public virtual GetRunTaskResponse GetRunTask(GetRunTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunTaskResponseUnmarshaller.Instance;
 
@@ -4767,7 +4767,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">REST API Reference for GetRunTask Operation</seealso>
         public virtual Task<GetRunTaskResponse> GetRunTaskAsync(GetRunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunTaskResponseUnmarshaller.Instance;
             
@@ -4812,7 +4812,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
         public virtual GetS3AccessPolicyResponse GetS3AccessPolicy(GetS3AccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetS3AccessPolicyResponseUnmarshaller.Instance;
 
@@ -4856,7 +4856,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
         public virtual Task<GetS3AccessPolicyResponse> GetS3AccessPolicyAsync(GetS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetS3AccessPolicyResponseUnmarshaller.Instance;
             
@@ -4895,7 +4895,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetSequenceStore">REST API Reference for GetSequenceStore Operation</seealso>
         public virtual GetSequenceStoreResponse GetSequenceStore(GetSequenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSequenceStoreResponseUnmarshaller.Instance;
 
@@ -4933,7 +4933,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetSequenceStore">REST API Reference for GetSequenceStore Operation</seealso>
         public virtual Task<GetSequenceStoreResponse> GetSequenceStoreAsync(GetSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSequenceStoreResponseUnmarshaller.Instance;
             
@@ -4975,7 +4975,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
         public virtual GetShareResponse GetShare(GetShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShareResponseUnmarshaller.Instance;
 
@@ -5016,7 +5016,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
         public virtual Task<GetShareResponse> GetShareAsync(GetShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShareResponseUnmarshaller.Instance;
             
@@ -5052,7 +5052,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">REST API Reference for GetVariantImportJob Operation</seealso>
         public virtual GetVariantImportJobResponse GetVariantImportJob(GetVariantImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariantImportJobResponseUnmarshaller.Instance;
 
@@ -5087,7 +5087,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">REST API Reference for GetVariantImportJob Operation</seealso>
         public virtual Task<GetVariantImportJobResponse> GetVariantImportJobAsync(GetVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariantImportJobResponseUnmarshaller.Instance;
             
@@ -5123,7 +5123,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantStore">REST API Reference for GetVariantStore Operation</seealso>
         public virtual GetVariantStoreResponse GetVariantStore(GetVariantStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariantStoreResponseUnmarshaller.Instance;
 
@@ -5158,7 +5158,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantStore">REST API Reference for GetVariantStore Operation</seealso>
         public virtual Task<GetVariantStoreResponse> GetVariantStoreAsync(GetVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVariantStoreResponseUnmarshaller.Instance;
             
@@ -5213,7 +5213,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -5267,7 +5267,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
             
@@ -5314,7 +5314,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
         public virtual GetWorkflowVersionResponse GetWorkflowVersion(GetWorkflowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowVersionResponseUnmarshaller.Instance;
 
@@ -5360,7 +5360,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
         public virtual Task<GetWorkflowVersionResponse> GetWorkflowVersionAsync(GetWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowVersionResponseUnmarshaller.Instance;
             
@@ -5396,7 +5396,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">REST API Reference for ListAnnotationImportJobs Operation</seealso>
         public virtual ListAnnotationImportJobsResponse ListAnnotationImportJobs(ListAnnotationImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationImportJobsResponseUnmarshaller.Instance;
 
@@ -5431,7 +5431,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">REST API Reference for ListAnnotationImportJobs Operation</seealso>
         public virtual Task<ListAnnotationImportJobsResponse> ListAnnotationImportJobsAsync(ListAnnotationImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationImportJobsResponseUnmarshaller.Instance;
             
@@ -5467,7 +5467,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">REST API Reference for ListAnnotationStores Operation</seealso>
         public virtual ListAnnotationStoresResponse ListAnnotationStores(ListAnnotationStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationStoresResponseUnmarshaller.Instance;
 
@@ -5502,7 +5502,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">REST API Reference for ListAnnotationStores Operation</seealso>
         public virtual Task<ListAnnotationStoresResponse> ListAnnotationStoresAsync(ListAnnotationStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationStoresResponseUnmarshaller.Instance;
             
@@ -5538,7 +5538,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
         public virtual ListAnnotationStoreVersionsResponse ListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationStoreVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationStoreVersionsResponseUnmarshaller.Instance;
 
@@ -5573,7 +5573,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
         public virtual Task<ListAnnotationStoreVersionsResponse> ListAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnnotationStoreVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnnotationStoreVersionsResponseUnmarshaller.Instance;
             
@@ -5620,7 +5620,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
         public virtual ListMultipartReadSetUploadsResponse ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartReadSetUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartReadSetUploadsResponseUnmarshaller.Instance;
 
@@ -5666,7 +5666,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
         public virtual Task<ListMultipartReadSetUploadsResponse> ListMultipartReadSetUploadsAsync(ListMultipartReadSetUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartReadSetUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartReadSetUploadsResponseUnmarshaller.Instance;
             
@@ -5707,7 +5707,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetActivationJobs">REST API Reference for ListReadSetActivationJobs Operation</seealso>
         public virtual ListReadSetActivationJobsResponse ListReadSetActivationJobs(ListReadSetActivationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetActivationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetActivationJobsResponseUnmarshaller.Instance;
 
@@ -5747,7 +5747,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetActivationJobs">REST API Reference for ListReadSetActivationJobs Operation</seealso>
         public virtual Task<ListReadSetActivationJobsResponse> ListReadSetActivationJobsAsync(ListReadSetActivationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetActivationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetActivationJobsResponseUnmarshaller.Instance;
             
@@ -5788,7 +5788,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetExportJobs">REST API Reference for ListReadSetExportJobs Operation</seealso>
         public virtual ListReadSetExportJobsResponse ListReadSetExportJobs(ListReadSetExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetExportJobsResponseUnmarshaller.Instance;
 
@@ -5828,7 +5828,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetExportJobs">REST API Reference for ListReadSetExportJobs Operation</seealso>
         public virtual Task<ListReadSetExportJobsResponse> ListReadSetExportJobsAsync(ListReadSetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetExportJobsResponseUnmarshaller.Instance;
             
@@ -5867,7 +5867,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetImportJobs">REST API Reference for ListReadSetImportJobs Operation</seealso>
         public virtual ListReadSetImportJobsResponse ListReadSetImportJobs(ListReadSetImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetImportJobsResponseUnmarshaller.Instance;
 
@@ -5905,7 +5905,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetImportJobs">REST API Reference for ListReadSetImportJobs Operation</seealso>
         public virtual Task<ListReadSetImportJobsResponse> ListReadSetImportJobsAsync(ListReadSetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetImportJobsResponseUnmarshaller.Instance;
             
@@ -5945,7 +5945,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSets">REST API Reference for ListReadSets Operation</seealso>
         public virtual ListReadSetsResponse ListReadSets(ListReadSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetsResponseUnmarshaller.Instance;
 
@@ -5984,7 +5984,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSets">REST API Reference for ListReadSets Operation</seealso>
         public virtual Task<ListReadSetsResponse> ListReadSetsAsync(ListReadSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetsResponseUnmarshaller.Instance;
             
@@ -6030,7 +6030,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
         public virtual ListReadSetUploadPartsResponse ListReadSetUploadParts(ListReadSetUploadPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetUploadPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetUploadPartsResponseUnmarshaller.Instance;
 
@@ -6075,7 +6075,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
         public virtual Task<ListReadSetUploadPartsResponse> ListReadSetUploadPartsAsync(ListReadSetUploadPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadSetUploadPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadSetUploadPartsResponseUnmarshaller.Instance;
             
@@ -6114,7 +6114,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceImportJobs">REST API Reference for ListReferenceImportJobs Operation</seealso>
         public virtual ListReferenceImportJobsResponse ListReferenceImportJobs(ListReferenceImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferenceImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferenceImportJobsResponseUnmarshaller.Instance;
 
@@ -6152,7 +6152,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceImportJobs">REST API Reference for ListReferenceImportJobs Operation</seealso>
         public virtual Task<ListReferenceImportJobsResponse> ListReferenceImportJobsAsync(ListReferenceImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferenceImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferenceImportJobsResponseUnmarshaller.Instance;
             
@@ -6197,7 +6197,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferences">REST API Reference for ListReferences Operation</seealso>
         public virtual ListReferencesResponse ListReferences(ListReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferencesResponseUnmarshaller.Instance;
 
@@ -6241,7 +6241,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferences">REST API Reference for ListReferences Operation</seealso>
         public virtual Task<ListReferencesResponse> ListReferencesAsync(ListReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferencesResponseUnmarshaller.Instance;
             
@@ -6284,7 +6284,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceStores">REST API Reference for ListReferenceStores Operation</seealso>
         public virtual ListReferenceStoresResponse ListReferenceStores(ListReferenceStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferenceStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferenceStoresResponseUnmarshaller.Instance;
 
@@ -6326,7 +6326,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceStores">REST API Reference for ListReferenceStores Operation</seealso>
         public virtual Task<ListReferenceStoresResponse> ListReferenceStoresAsync(ListReferenceStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReferenceStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReferenceStoresResponseUnmarshaller.Instance;
             
@@ -6371,7 +6371,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">REST API Reference for ListRunCaches Operation</seealso>
         public virtual ListRunCachesResponse ListRunCaches(ListRunCachesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunCachesResponseUnmarshaller.Instance;
 
@@ -6415,7 +6415,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">REST API Reference for ListRunCaches Operation</seealso>
         public virtual Task<ListRunCachesResponse> ListRunCachesAsync(ListRunCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunCachesResponseUnmarshaller.Instance;
             
@@ -6460,7 +6460,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">REST API Reference for ListRunGroups Operation</seealso>
         public virtual ListRunGroupsResponse ListRunGroups(ListRunGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunGroupsResponseUnmarshaller.Instance;
 
@@ -6504,7 +6504,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">REST API Reference for ListRunGroups Operation</seealso>
         public virtual Task<ListRunGroupsResponse> ListRunGroupsAsync(ListRunGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunGroupsResponseUnmarshaller.Instance;
             
@@ -6558,7 +6558,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual ListRunsResponse ListRuns(ListRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunsResponseUnmarshaller.Instance;
 
@@ -6611,7 +6611,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual Task<ListRunsResponse> ListRunsAsync(ListRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunsResponseUnmarshaller.Instance;
             
@@ -6657,7 +6657,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunTasks">REST API Reference for ListRunTasks Operation</seealso>
         public virtual ListRunTasksResponse ListRunTasks(ListRunTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunTasksResponseUnmarshaller.Instance;
 
@@ -6702,7 +6702,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunTasks">REST API Reference for ListRunTasks Operation</seealso>
         public virtual Task<ListRunTasksResponse> ListRunTasksAsync(ListRunTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunTasksResponseUnmarshaller.Instance;
             
@@ -6744,7 +6744,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListSequenceStores">REST API Reference for ListSequenceStores Operation</seealso>
         public virtual ListSequenceStoresResponse ListSequenceStores(ListSequenceStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSequenceStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSequenceStoresResponseUnmarshaller.Instance;
 
@@ -6785,7 +6785,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListSequenceStores">REST API Reference for ListSequenceStores Operation</seealso>
         public virtual Task<ListSequenceStoresResponse> ListSequenceStoresAsync(ListSequenceStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSequenceStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSequenceStoresResponseUnmarshaller.Instance;
             
@@ -6828,7 +6828,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
         public virtual ListSharesResponse ListShares(ListSharesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSharesResponseUnmarshaller.Instance;
 
@@ -6870,7 +6870,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
         public virtual Task<ListSharesResponse> ListSharesAsync(ListSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSharesResponseUnmarshaller.Instance;
             
@@ -6915,7 +6915,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6959,7 +6959,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -6995,7 +6995,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">REST API Reference for ListVariantImportJobs Operation</seealso>
         public virtual ListVariantImportJobsResponse ListVariantImportJobs(ListVariantImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVariantImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVariantImportJobsResponseUnmarshaller.Instance;
 
@@ -7030,7 +7030,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">REST API Reference for ListVariantImportJobs Operation</seealso>
         public virtual Task<ListVariantImportJobsResponse> ListVariantImportJobsAsync(ListVariantImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVariantImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVariantImportJobsResponseUnmarshaller.Instance;
             
@@ -7066,7 +7066,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">REST API Reference for ListVariantStores Operation</seealso>
         public virtual ListVariantStoresResponse ListVariantStores(ListVariantStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVariantStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVariantStoresResponseUnmarshaller.Instance;
 
@@ -7101,7 +7101,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">REST API Reference for ListVariantStores Operation</seealso>
         public virtual Task<ListVariantStoresResponse> ListVariantStoresAsync(ListVariantStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVariantStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVariantStoresResponseUnmarshaller.Instance;
             
@@ -7150,7 +7150,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -7198,7 +7198,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
             
@@ -7246,7 +7246,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
         public virtual ListWorkflowVersionsResponse ListWorkflowVersions(ListWorkflowVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowVersionsResponseUnmarshaller.Instance;
 
@@ -7293,7 +7293,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
         public virtual Task<ListWorkflowVersionsResponse> ListWorkflowVersionsAsync(ListWorkflowVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowVersionsResponseUnmarshaller.Instance;
             
@@ -7335,7 +7335,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
         public virtual PutS3AccessPolicyResponse PutS3AccessPolicy(PutS3AccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutS3AccessPolicyResponseUnmarshaller.Instance;
 
@@ -7376,7 +7376,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
         public virtual Task<PutS3AccessPolicyResponse> PutS3AccessPolicyAsync(PutS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutS3AccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutS3AccessPolicyResponseUnmarshaller.Instance;
             
@@ -7415,7 +7415,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">REST API Reference for StartAnnotationImportJob Operation</seealso>
         public virtual StartAnnotationImportJobResponse StartAnnotationImportJob(StartAnnotationImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnnotationImportJobResponseUnmarshaller.Instance;
 
@@ -7453,7 +7453,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">REST API Reference for StartAnnotationImportJob Operation</seealso>
         public virtual Task<StartAnnotationImportJobResponse> StartAnnotationImportJobAsync(StartAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnnotationImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnnotationImportJobResponseUnmarshaller.Instance;
             
@@ -7504,7 +7504,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetActivationJob">REST API Reference for StartReadSetActivationJob Operation</seealso>
         public virtual StartReadSetActivationJobResponse StartReadSetActivationJob(StartReadSetActivationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetActivationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetActivationJobResponseUnmarshaller.Instance;
 
@@ -7554,7 +7554,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetActivationJob">REST API Reference for StartReadSetActivationJob Operation</seealso>
         public virtual Task<StartReadSetActivationJobResponse> StartReadSetActivationJobAsync(StartReadSetActivationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetActivationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetActivationJobResponseUnmarshaller.Instance;
             
@@ -7604,7 +7604,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetExportJob">REST API Reference for StartReadSetExportJob Operation</seealso>
         public virtual StartReadSetExportJobResponse StartReadSetExportJob(StartReadSetExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetExportJobResponseUnmarshaller.Instance;
 
@@ -7653,7 +7653,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetExportJob">REST API Reference for StartReadSetExportJob Operation</seealso>
         public virtual Task<StartReadSetExportJobResponse> StartReadSetExportJobAsync(StartReadSetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetExportJobResponseUnmarshaller.Instance;
             
@@ -7697,7 +7697,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetImportJob">REST API Reference for StartReadSetImportJob Operation</seealso>
         public virtual StartReadSetImportJobResponse StartReadSetImportJob(StartReadSetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetImportJobResponseUnmarshaller.Instance;
 
@@ -7740,7 +7740,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetImportJob">REST API Reference for StartReadSetImportJob Operation</seealso>
         public virtual Task<StartReadSetImportJobResponse> StartReadSetImportJobAsync(StartReadSetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReadSetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReadSetImportJobResponseUnmarshaller.Instance;
             
@@ -7785,7 +7785,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReferenceImportJob">REST API Reference for StartReferenceImportJob Operation</seealso>
         public virtual StartReferenceImportJobResponse StartReferenceImportJob(StartReferenceImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReferenceImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReferenceImportJobResponseUnmarshaller.Instance;
 
@@ -7829,7 +7829,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReferenceImportJob">REST API Reference for StartReferenceImportJob Operation</seealso>
         public virtual Task<StartReferenceImportJobResponse> StartReferenceImportJobAsync(StartReferenceImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReferenceImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReferenceImportJobResponseUnmarshaller.Instance;
             
@@ -7953,7 +7953,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">REST API Reference for StartRun Operation</seealso>
         public virtual StartRunResponse StartRun(StartRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRunResponseUnmarshaller.Instance;
 
@@ -8076,7 +8076,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">REST API Reference for StartRun Operation</seealso>
         public virtual Task<StartRunResponse> StartRunAsync(StartRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRunResponseUnmarshaller.Instance;
             
@@ -8115,7 +8115,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartVariantImportJob">REST API Reference for StartVariantImportJob Operation</seealso>
         public virtual StartVariantImportJobResponse StartVariantImportJob(StartVariantImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVariantImportJobResponseUnmarshaller.Instance;
 
@@ -8153,7 +8153,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartVariantImportJob">REST API Reference for StartVariantImportJob Operation</seealso>
         public virtual Task<StartVariantImportJobResponse> StartVariantImportJobAsync(StartVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVariantImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVariantImportJobResponseUnmarshaller.Instance;
             
@@ -8198,7 +8198,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8242,7 +8242,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -8287,7 +8287,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8331,7 +8331,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -8367,7 +8367,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStore">REST API Reference for UpdateAnnotationStore Operation</seealso>
         public virtual UpdateAnnotationStoreResponse UpdateAnnotationStore(UpdateAnnotationStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnnotationStoreResponseUnmarshaller.Instance;
 
@@ -8402,7 +8402,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStore">REST API Reference for UpdateAnnotationStore Operation</seealso>
         public virtual Task<UpdateAnnotationStoreResponse> UpdateAnnotationStoreAsync(UpdateAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnnotationStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnnotationStoreResponseUnmarshaller.Instance;
             
@@ -8438,7 +8438,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
         public virtual UpdateAnnotationStoreVersionResponse UpdateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnnotationStoreVersionResponseUnmarshaller.Instance;
 
@@ -8473,7 +8473,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
         public virtual Task<UpdateAnnotationStoreVersionResponse> UpdateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnnotationStoreVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnnotationStoreVersionResponseUnmarshaller.Instance;
             
@@ -8528,7 +8528,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">REST API Reference for UpdateRunCache Operation</seealso>
         public virtual UpdateRunCacheResponse UpdateRunCache(UpdateRunCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRunCacheResponseUnmarshaller.Instance;
 
@@ -8582,7 +8582,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">REST API Reference for UpdateRunCache Operation</seealso>
         public virtual Task<UpdateRunCacheResponse> UpdateRunCacheAsync(UpdateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRunCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRunCacheResponseUnmarshaller.Instance;
             
@@ -8659,7 +8659,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">REST API Reference for UpdateRunGroup Operation</seealso>
         public virtual UpdateRunGroupResponse UpdateRunGroup(UpdateRunGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRunGroupResponseUnmarshaller.Instance;
 
@@ -8735,7 +8735,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">REST API Reference for UpdateRunGroup Operation</seealso>
         public virtual Task<UpdateRunGroupResponse> UpdateRunGroupAsync(UpdateRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRunGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRunGroupResponseUnmarshaller.Instance;
             
@@ -8777,7 +8777,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
         public virtual UpdateSequenceStoreResponse UpdateSequenceStore(UpdateSequenceStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSequenceStoreResponseUnmarshaller.Instance;
 
@@ -8818,7 +8818,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
         public virtual Task<UpdateSequenceStoreResponse> UpdateSequenceStoreAsync(UpdateSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSequenceStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSequenceStoreResponseUnmarshaller.Instance;
             
@@ -8854,7 +8854,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateVariantStore">REST API Reference for UpdateVariantStore Operation</seealso>
         public virtual UpdateVariantStoreResponse UpdateVariantStore(UpdateVariantStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVariantStoreResponseUnmarshaller.Instance;
 
@@ -8889,7 +8889,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateVariantStore">REST API Reference for UpdateVariantStore Operation</seealso>
         public virtual Task<UpdateVariantStoreResponse> UpdateVariantStoreAsync(UpdateVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVariantStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVariantStoreResponseUnmarshaller.Instance;
             
@@ -8965,7 +8965,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
 
@@ -9040,7 +9040,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual Task<UpdateWorkflowResponse> UpdateWorkflowAsync(UpdateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
             
@@ -9087,7 +9087,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
         public virtual UpdateWorkflowVersionResponse UpdateWorkflowVersion(UpdateWorkflowVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowVersionResponseUnmarshaller.Instance;
 
@@ -9133,7 +9133,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
         public virtual Task<UpdateWorkflowVersionResponse> UpdateWorkflowVersionAsync(UpdateWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowVersionResponseUnmarshaller.Instance;
             
@@ -9187,7 +9187,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
         public virtual UploadReadSetPartResponse UploadReadSetPart(UploadReadSetPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadReadSetPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadReadSetPartResponseUnmarshaller.Instance;
 
@@ -9240,7 +9240,7 @@ namespace Amazon.Omics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
         public virtual Task<UploadReadSetPartResponse> UploadReadSetPartAsync(UploadReadSetPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadReadSetPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadReadSetPartResponseUnmarshaller.Instance;
             

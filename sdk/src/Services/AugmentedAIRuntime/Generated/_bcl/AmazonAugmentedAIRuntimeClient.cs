@@ -327,7 +327,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">REST API Reference for DeleteHumanLoop Operation</seealso>
         public virtual DeleteHumanLoopResponse DeleteHumanLoop(DeleteHumanLoopRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHumanLoopResponseUnmarshaller.Instance;
 
@@ -366,7 +366,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">REST API Reference for DeleteHumanLoop Operation</seealso>
         public virtual Task<DeleteHumanLoopResponse> DeleteHumanLoopAsync(DeleteHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHumanLoopResponseUnmarshaller.Instance;
             
@@ -401,7 +401,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">REST API Reference for DescribeHumanLoop Operation</seealso>
         public virtual DescribeHumanLoopResponse DescribeHumanLoop(DescribeHumanLoopRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHumanLoopResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">REST API Reference for DescribeHumanLoop Operation</seealso>
         public virtual Task<DescribeHumanLoopResponse> DescribeHumanLoopAsync(DescribeHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHumanLoopResponseUnmarshaller.Instance;
             
@@ -470,7 +470,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">REST API Reference for ListHumanLoops Operation</seealso>
         public virtual ListHumanLoopsResponse ListHumanLoops(ListHumanLoopsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHumanLoopsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHumanLoopsResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">REST API Reference for ListHumanLoops Operation</seealso>
         public virtual Task<ListHumanLoopsResponse> ListHumanLoopsAsync(ListHumanLoopsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHumanLoopsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHumanLoopsResponseUnmarshaller.Instance;
             
@@ -547,7 +547,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop">REST API Reference for StartHumanLoop Operation</seealso>
         public virtual StartHumanLoopResponse StartHumanLoop(StartHumanLoopRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartHumanLoopResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop">REST API Reference for StartHumanLoop Operation</seealso>
         public virtual Task<StartHumanLoopResponse> StartHumanLoopAsync(StartHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartHumanLoopResponseUnmarshaller.Instance;
             
@@ -623,7 +623,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StopHumanLoop">REST API Reference for StopHumanLoop Operation</seealso>
         public virtual StopHumanLoopResponse StopHumanLoop(StopHumanLoopRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopHumanLoopResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.AugmentedAIRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StopHumanLoop">REST API Reference for StopHumanLoop Operation</seealso>
         public virtual Task<StopHumanLoopResponse> StopHumanLoopAsync(StopHumanLoopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopHumanLoopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopHumanLoopResponseUnmarshaller.Instance;
             

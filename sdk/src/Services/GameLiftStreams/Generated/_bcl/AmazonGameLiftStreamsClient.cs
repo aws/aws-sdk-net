@@ -324,7 +324,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AddStreamGroupLocations">REST API Reference for AddStreamGroupLocations Operation</seealso>
         public virtual AddStreamGroupLocationsResponse AddStreamGroupLocations(AddStreamGroupLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddStreamGroupLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddStreamGroupLocationsResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AddStreamGroupLocations">REST API Reference for AddStreamGroupLocations Operation</seealso>
         public virtual Task<AddStreamGroupLocationsResponse> AddStreamGroupLocationsAsync(AddStreamGroupLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddStreamGroupLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddStreamGroupLocationsResponseUnmarshaller.Instance;
             
@@ -432,7 +432,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
         public virtual AssociateApplicationsResponse AssociateApplications(AssociateApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
         public virtual Task<AssociateApplicationsResponse> AssociateApplicationsAsync(AssociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
             
@@ -552,7 +552,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -709,7 +709,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamGroup">REST API Reference for CreateStreamGroup Operation</seealso>
         public virtual CreateStreamGroupResponse CreateStreamGroup(CreateStreamGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamGroupResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamGroup">REST API Reference for CreateStreamGroup Operation</seealso>
         public virtual Task<CreateStreamGroupResponse> CreateStreamGroupAsync(CreateStreamGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamGroupResponseUnmarshaller.Instance;
             
@@ -905,7 +905,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionConnection">REST API Reference for CreateStreamSessionConnection Operation</seealso>
         public virtual CreateStreamSessionConnectionResponse CreateStreamSessionConnection(CreateStreamSessionConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamSessionConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamSessionConnectionResponseUnmarshaller.Instance;
 
@@ -1010,7 +1010,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamSessionConnection">REST API Reference for CreateStreamSessionConnection Operation</seealso>
         public virtual Task<CreateStreamSessionConnectionResponse> CreateStreamSessionConnectionAsync(CreateStreamSessionConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamSessionConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamSessionConnectionResponseUnmarshaller.Instance;
             
@@ -1089,7 +1089,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -1218,7 +1218,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteStreamGroup">REST API Reference for DeleteStreamGroup Operation</seealso>
         public virtual DeleteStreamGroupResponse DeleteStreamGroup(DeleteStreamGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamGroupResponseUnmarshaller.Instance;
 
@@ -1268,7 +1268,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DeleteStreamGroup">REST API Reference for DeleteStreamGroup Operation</seealso>
         public virtual Task<DeleteStreamGroupResponse> DeleteStreamGroupAsync(DeleteStreamGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamGroupResponseUnmarshaller.Instance;
             
@@ -1321,7 +1321,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
         public virtual DisassociateApplicationsResponse DisassociateApplications(DisassociateApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
         public virtual Task<DisassociateApplicationsResponse> DisassociateApplicationsAsync(DisassociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
             
@@ -1454,7 +1454,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ExportStreamSessionFiles">REST API Reference for ExportStreamSessionFiles Operation</seealso>
         public virtual ExportStreamSessionFilesResponse ExportStreamSessionFiles(ExportStreamSessionFilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportStreamSessionFilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportStreamSessionFilesResponseUnmarshaller.Instance;
 
@@ -1534,7 +1534,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ExportStreamSessionFiles">REST API Reference for ExportStreamSessionFiles Operation</seealso>
         public virtual Task<ExportStreamSessionFilesResponse> ExportStreamSessionFilesAsync(ExportStreamSessionFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportStreamSessionFilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportStreamSessionFilesResponseUnmarshaller.Instance;
             
@@ -1576,7 +1576,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
             
@@ -1659,7 +1659,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamGroup">REST API Reference for GetStreamGroup Operation</seealso>
         public virtual GetStreamGroupResponse GetStreamGroup(GetStreamGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamGroupResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamGroup">REST API Reference for GetStreamGroup Operation</seealso>
         public virtual Task<GetStreamGroupResponse> GetStreamGroupAsync(GetStreamGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamGroupResponseUnmarshaller.Instance;
             
@@ -1743,7 +1743,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamSession">REST API Reference for GetStreamSession Operation</seealso>
         public virtual GetStreamSessionResponse GetStreamSession(GetStreamSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamSessionResponseUnmarshaller.Instance;
 
@@ -1785,7 +1785,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamSession">REST API Reference for GetStreamSession Operation</seealso>
         public virtual Task<GetStreamSessionResponse> GetStreamSessionAsync(GetStreamSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamSessionResponseUnmarshaller.Instance;
             
@@ -1823,7 +1823,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -1898,7 +1898,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamGroups">REST API Reference for ListStreamGroups Operation</seealso>
         public virtual ListStreamGroupsResponse ListStreamGroups(ListStreamGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamGroupsResponseUnmarshaller.Instance;
 
@@ -1935,7 +1935,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamGroups">REST API Reference for ListStreamGroups Operation</seealso>
         public virtual Task<ListStreamGroupsResponse> ListStreamGroupsAsync(ListStreamGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamGroupsResponseUnmarshaller.Instance;
             
@@ -1986,7 +1986,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamSessions">REST API Reference for ListStreamSessions Operation</seealso>
         public virtual ListStreamSessionsResponse ListStreamSessions(ListStreamSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsResponseUnmarshaller.Instance;
 
@@ -2036,7 +2036,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamSessions">REST API Reference for ListStreamSessions Operation</seealso>
         public virtual Task<ListStreamSessionsResponse> ListStreamSessionsAsync(ListStreamSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsResponseUnmarshaller.Instance;
             
@@ -2086,7 +2086,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamSessionsByAccount">REST API Reference for ListStreamSessionsByAccount Operation</seealso>
         public virtual ListStreamSessionsByAccountResponse ListStreamSessionsByAccount(ListStreamSessionsByAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsByAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsByAccountResponseUnmarshaller.Instance;
 
@@ -2135,7 +2135,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamSessionsByAccount">REST API Reference for ListStreamSessionsByAccount Operation</seealso>
         public virtual Task<ListStreamSessionsByAccountResponse> ListStreamSessionsByAccountAsync(ListStreamSessionsByAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsByAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsByAccountResponseUnmarshaller.Instance;
             
@@ -2188,7 +2188,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2240,7 +2240,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2290,7 +2290,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/RemoveStreamGroupLocations">REST API Reference for RemoveStreamGroupLocations Operation</seealso>
         public virtual RemoveStreamGroupLocationsResponse RemoveStreamGroupLocations(RemoveStreamGroupLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveStreamGroupLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveStreamGroupLocationsResponseUnmarshaller.Instance;
 
@@ -2339,7 +2339,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/RemoveStreamGroupLocations">REST API Reference for RemoveStreamGroupLocations Operation</seealso>
         public virtual Task<RemoveStreamGroupLocationsResponse> RemoveStreamGroupLocationsAsync(RemoveStreamGroupLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveStreamGroupLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveStreamGroupLocationsResponseUnmarshaller.Instance;
             
@@ -2527,7 +2527,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StartStreamSession">REST API Reference for StartStreamSession Operation</seealso>
         public virtual StartStreamSessionResponse StartStreamSession(StartStreamSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamSessionResponseUnmarshaller.Instance;
 
@@ -2714,7 +2714,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StartStreamSession">REST API Reference for StartStreamSession Operation</seealso>
         public virtual Task<StartStreamSessionResponse> StartStreamSessionAsync(StartStreamSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamSessionResponseUnmarshaller.Instance;
             
@@ -2776,7 +2776,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2837,7 +2837,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2880,7 +2880,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/TerminateStreamSession">REST API Reference for TerminateStreamSession Operation</seealso>
         public virtual TerminateStreamSessionResponse TerminateStreamSession(TerminateStreamSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateStreamSessionResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/TerminateStreamSession">REST API Reference for TerminateStreamSession Operation</seealso>
         public virtual Task<TerminateStreamSessionResponse> TerminateStreamSessionAsync(TerminateStreamSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateStreamSessionResponseUnmarshaller.Instance;
             
@@ -2959,7 +2959,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2995,7 +2995,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -3044,7 +3044,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -3092,7 +3092,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -3171,7 +3171,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UpdateStreamGroup">REST API Reference for UpdateStreamGroup Operation</seealso>
         public virtual UpdateStreamGroupResponse UpdateStreamGroup(UpdateStreamGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamGroupResponseUnmarshaller.Instance;
 
@@ -3249,7 +3249,7 @@ namespace Amazon.GameLiftStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/UpdateStreamGroup">REST API Reference for UpdateStreamGroup Operation</seealso>
         public virtual Task<UpdateStreamGroupResponse> UpdateStreamGroupAsync(UpdateStreamGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamGroupResponseUnmarshaller.Instance;
             

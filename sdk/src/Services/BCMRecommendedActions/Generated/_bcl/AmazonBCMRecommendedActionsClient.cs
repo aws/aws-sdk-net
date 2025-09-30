@@ -294,7 +294,7 @@ namespace Amazon.BCMRecommendedActions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-recommended-actions-2024-11-14/ListRecommendedActions">REST API Reference for ListRecommendedActions Operation</seealso>
         public virtual ListRecommendedActionsResponse ListRecommendedActions(ListRecommendedActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendedActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendedActionsResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.BCMRecommendedActions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bcm-recommended-actions-2024-11-14/ListRecommendedActions">REST API Reference for ListRecommendedActions Operation</seealso>
         public virtual Task<ListRecommendedActionsResponse> ListRecommendedActionsAsync(ListRecommendedActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendedActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendedActionsResponseUnmarshaller.Instance;
             

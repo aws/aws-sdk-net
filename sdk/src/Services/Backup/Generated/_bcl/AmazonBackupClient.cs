@@ -293,7 +293,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
         public virtual AssociateBackupVaultMpaApprovalTeamResponse AssociateBackupVaultMpaApprovalTeam(AssociateBackupVaultMpaApprovalTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AssociateBackupVaultMpaApprovalTeam">REST API Reference for AssociateBackupVaultMpaApprovalTeam Operation</seealso>
         public virtual Task<AssociateBackupVaultMpaApprovalTeamResponse> AssociateBackupVaultMpaApprovalTeamAsync(AssociateBackupVaultMpaApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
             
@@ -369,7 +369,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">REST API Reference for CancelLegalHold Operation</seealso>
         public virtual CancelLegalHoldResponse CancelLegalHold(CancelLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLegalHoldResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold">REST API Reference for CancelLegalHold Operation</seealso>
         public virtual Task<CancelLegalHoldResponse> CancelLegalHoldAsync(CancelLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLegalHoldResponseUnmarshaller.Instance;
             
@@ -453,7 +453,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupPlan">REST API Reference for CreateBackupPlan Operation</seealso>
         public virtual CreateBackupPlanResponse CreateBackupPlan(CreateBackupPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupPlanResponseUnmarshaller.Instance;
 
@@ -498,7 +498,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupPlan">REST API Reference for CreateBackupPlan Operation</seealso>
         public virtual Task<CreateBackupPlanResponse> CreateBackupPlanAsync(CreateBackupPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupPlanResponseUnmarshaller.Instance;
             
@@ -538,7 +538,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupSelection">REST API Reference for CreateBackupSelection Operation</seealso>
         public virtual CreateBackupSelectionResponse CreateBackupSelection(CreateBackupSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupSelectionResponseUnmarshaller.Instance;
 
@@ -577,7 +577,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupSelection">REST API Reference for CreateBackupSelection Operation</seealso>
         public virtual Task<CreateBackupSelectionResponse> CreateBackupSelectionAsync(CreateBackupSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupSelectionResponseUnmarshaller.Instance;
             
@@ -623,7 +623,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">REST API Reference for CreateBackupVault Operation</seealso>
         public virtual CreateBackupVaultResponse CreateBackupVault(CreateBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupVaultResponseUnmarshaller.Instance;
 
@@ -668,7 +668,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">REST API Reference for CreateBackupVault Operation</seealso>
         public virtual Task<CreateBackupVaultResponse> CreateBackupVaultAsync(CreateBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupVaultResponseUnmarshaller.Instance;
             
@@ -709,7 +709,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">REST API Reference for CreateFramework Operation</seealso>
         public virtual CreateFrameworkResponse CreateFramework(CreateFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFrameworkResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateFramework">REST API Reference for CreateFramework Operation</seealso>
         public virtual Task<CreateFrameworkResponse> CreateFrameworkAsync(CreateFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFrameworkResponseUnmarshaller.Instance;
             
@@ -787,7 +787,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold">REST API Reference for CreateLegalHold Operation</seealso>
         public virtual CreateLegalHoldResponse CreateLegalHold(CreateLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLegalHoldResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold">REST API Reference for CreateLegalHold Operation</seealso>
         public virtual Task<CreateLegalHoldResponse> CreateLegalHoldAsync(CreateLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLegalHoldResponseUnmarshaller.Instance;
             
@@ -878,7 +878,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">REST API Reference for CreateLogicallyAirGappedBackupVault Operation</seealso>
         public virtual CreateLogicallyAirGappedBackupVaultResponse CreateLogicallyAirGappedBackupVault(CreateLogicallyAirGappedBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogicallyAirGappedBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogicallyAirGappedBackupVaultResponseUnmarshaller.Instance;
 
@@ -931,7 +931,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">REST API Reference for CreateLogicallyAirGappedBackupVault Operation</seealso>
         public virtual Task<CreateLogicallyAirGappedBackupVaultResponse> CreateLogicallyAirGappedBackupVaultAsync(CreateLogicallyAirGappedBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogicallyAirGappedBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogicallyAirGappedBackupVaultResponseUnmarshaller.Instance;
             
@@ -976,7 +976,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateReportPlan">REST API Reference for CreateReportPlan Operation</seealso>
         public virtual CreateReportPlanResponse CreateReportPlan(CreateReportPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReportPlanResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateReportPlan">REST API Reference for CreateReportPlan Operation</seealso>
         public virtual Task<CreateReportPlanResponse> CreateReportPlanAsync(CreateReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReportPlanResponseUnmarshaller.Instance;
             
@@ -1066,7 +1066,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
         public virtual CreateRestoreAccessBackupVaultResponse CreateRestoreAccessBackupVault(CreateRestoreAccessBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreAccessBackupVault">REST API Reference for CreateRestoreAccessBackupVault Operation</seealso>
         public virtual Task<CreateRestoreAccessBackupVaultResponse> CreateRestoreAccessBackupVaultAsync(CreateRestoreAccessBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreAccessBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreAccessBackupVaultResponseUnmarshaller.Instance;
             
@@ -1159,7 +1159,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
         public virtual CreateRestoreTestingPlanResponse CreateRestoreTestingPlan(CreateRestoreTestingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreTestingPlanResponseUnmarshaller.Instance;
 
@@ -1206,7 +1206,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan">REST API Reference for CreateRestoreTestingPlan Operation</seealso>
         public virtual Task<CreateRestoreTestingPlanResponse> CreateRestoreTestingPlanAsync(CreateRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreTestingPlanResponseUnmarshaller.Instance;
             
@@ -1278,7 +1278,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
         public virtual CreateRestoreTestingSelectionResponse CreateRestoreTestingSelection(CreateRestoreTestingSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreTestingSelectionResponseUnmarshaller.Instance;
 
@@ -1349,7 +1349,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection">REST API Reference for CreateRestoreTestingSelection Operation</seealso>
         public virtual Task<CreateRestoreTestingSelectionResponse> CreateRestoreTestingSelectionAsync(CreateRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreTestingSelectionResponseUnmarshaller.Instance;
             
@@ -1389,7 +1389,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupPlan">REST API Reference for DeleteBackupPlan Operation</seealso>
         public virtual DeleteBackupPlanResponse DeleteBackupPlan(DeleteBackupPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupPlanResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupPlan">REST API Reference for DeleteBackupPlan Operation</seealso>
         public virtual Task<DeleteBackupPlanResponse> DeleteBackupPlanAsync(DeleteBackupPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupPlanResponseUnmarshaller.Instance;
             
@@ -1463,7 +1463,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupSelection">REST API Reference for DeleteBackupSelection Operation</seealso>
         public virtual DeleteBackupSelectionResponse DeleteBackupSelection(DeleteBackupSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupSelectionResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupSelection">REST API Reference for DeleteBackupSelection Operation</seealso>
         public virtual Task<DeleteBackupSelectionResponse> DeleteBackupSelectionAsync(DeleteBackupSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupSelectionResponseUnmarshaller.Instance;
             
@@ -1536,7 +1536,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVault">REST API Reference for DeleteBackupVault Operation</seealso>
         public virtual DeleteBackupVaultResponse DeleteBackupVault(DeleteBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultResponseUnmarshaller.Instance;
 
@@ -1574,7 +1574,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVault">REST API Reference for DeleteBackupVault Operation</seealso>
         public virtual Task<DeleteBackupVaultResponse> DeleteBackupVaultAsync(DeleteBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultResponseUnmarshaller.Instance;
             
@@ -1608,7 +1608,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultAccessPolicy">REST API Reference for DeleteBackupVaultAccessPolicy Operation</seealso>
         public virtual DeleteBackupVaultAccessPolicyResponse DeleteBackupVaultAccessPolicy(DeleteBackupVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultAccessPolicy">REST API Reference for DeleteBackupVaultAccessPolicy Operation</seealso>
         public virtual Task<DeleteBackupVaultAccessPolicyResponse> DeleteBackupVaultAccessPolicyAsync(DeleteBackupVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultAccessPolicyResponseUnmarshaller.Instance;
             
@@ -1687,7 +1687,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
         public virtual DeleteBackupVaultLockConfigurationResponse DeleteBackupVaultLockConfiguration(DeleteBackupVaultLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultLockConfigurationResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
         public virtual Task<DeleteBackupVaultLockConfigurationResponse> DeleteBackupVaultLockConfigurationAsync(DeleteBackupVaultLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultLockConfigurationResponseUnmarshaller.Instance;
             
@@ -1766,7 +1766,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultNotifications">REST API Reference for DeleteBackupVaultNotifications Operation</seealso>
         public virtual DeleteBackupVaultNotificationsResponse DeleteBackupVaultNotifications(DeleteBackupVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1799,7 +1799,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultNotifications">REST API Reference for DeleteBackupVaultNotifications Operation</seealso>
         public virtual Task<DeleteBackupVaultNotificationsResponse> DeleteBackupVaultNotificationsAsync(DeleteBackupVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupVaultNotificationsResponseUnmarshaller.Instance;
             
@@ -1837,7 +1837,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteFramework">REST API Reference for DeleteFramework Operation</seealso>
         public virtual DeleteFrameworkResponse DeleteFramework(DeleteFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFrameworkResponseUnmarshaller.Instance;
 
@@ -1874,7 +1874,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteFramework">REST API Reference for DeleteFramework Operation</seealso>
         public virtual Task<DeleteFrameworkResponse> DeleteFrameworkAsync(DeleteFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFrameworkResponseUnmarshaller.Instance;
             
@@ -1940,7 +1940,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRecoveryPoint">REST API Reference for DeleteRecoveryPoint Operation</seealso>
         public virtual DeleteRecoveryPointResponse DeleteRecoveryPoint(DeleteRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2005,7 +2005,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRecoveryPoint">REST API Reference for DeleteRecoveryPoint Operation</seealso>
         public virtual Task<DeleteRecoveryPointResponse> DeleteRecoveryPointAsync(DeleteRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryPointResponseUnmarshaller.Instance;
             
@@ -2043,7 +2043,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteReportPlan">REST API Reference for DeleteReportPlan Operation</seealso>
         public virtual DeleteReportPlanResponse DeleteReportPlan(DeleteReportPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportPlanResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteReportPlan">REST API Reference for DeleteReportPlan Operation</seealso>
         public virtual Task<DeleteReportPlanResponse> DeleteReportPlanAsync(DeleteReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportPlanResponseUnmarshaller.Instance;
             
@@ -2114,7 +2114,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
         public virtual DeleteRestoreTestingPlanResponse DeleteRestoreTestingPlan(DeleteRestoreTestingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestoreTestingPlanResponseUnmarshaller.Instance;
 
@@ -2147,7 +2147,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan">REST API Reference for DeleteRestoreTestingPlan Operation</seealso>
         public virtual Task<DeleteRestoreTestingPlanResponse> DeleteRestoreTestingPlanAsync(DeleteRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestoreTestingPlanResponseUnmarshaller.Instance;
             
@@ -2180,7 +2180,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
         public virtual DeleteRestoreTestingSelectionResponse DeleteRestoreTestingSelection(DeleteRestoreTestingSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestoreTestingSelectionResponseUnmarshaller.Instance;
 
@@ -2212,7 +2212,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection">REST API Reference for DeleteRestoreTestingSelection Operation</seealso>
         public virtual Task<DeleteRestoreTestingSelectionResponse> DeleteRestoreTestingSelectionAsync(DeleteRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestoreTestingSelectionResponseUnmarshaller.Instance;
             
@@ -2250,7 +2250,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">REST API Reference for DescribeBackupJob Operation</seealso>
         public virtual DescribeBackupJobResponse DescribeBackupJob(DescribeBackupJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupJobResponseUnmarshaller.Instance;
 
@@ -2287,7 +2287,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupJob">REST API Reference for DescribeBackupJob Operation</seealso>
         public virtual Task<DescribeBackupJobResponse> DescribeBackupJobAsync(DescribeBackupJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupJobResponseUnmarshaller.Instance;
             
@@ -2321,7 +2321,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupVault">REST API Reference for DescribeBackupVault Operation</seealso>
         public virtual DescribeBackupVaultResponse DescribeBackupVault(DescribeBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupVaultResponseUnmarshaller.Instance;
 
@@ -2354,7 +2354,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupVault">REST API Reference for DescribeBackupVault Operation</seealso>
         public virtual Task<DescribeBackupVaultResponse> DescribeBackupVaultAsync(DescribeBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupVaultResponseUnmarshaller.Instance;
             
@@ -2388,7 +2388,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob">REST API Reference for DescribeCopyJob Operation</seealso>
         public virtual DescribeCopyJobResponse DescribeCopyJob(DescribeCopyJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCopyJobResponseUnmarshaller.Instance;
 
@@ -2421,7 +2421,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob">REST API Reference for DescribeCopyJob Operation</seealso>
         public virtual Task<DescribeCopyJobResponse> DescribeCopyJobAsync(DescribeCopyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCopyJobResponseUnmarshaller.Instance;
             
@@ -2455,7 +2455,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeFramework">REST API Reference for DescribeFramework Operation</seealso>
         public virtual DescribeFrameworkResponse DescribeFramework(DescribeFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFrameworkResponseUnmarshaller.Instance;
 
@@ -2488,7 +2488,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeFramework">REST API Reference for DescribeFramework Operation</seealso>
         public virtual Task<DescribeFrameworkResponse> DescribeFrameworkAsync(DescribeFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFrameworkResponseUnmarshaller.Instance;
             
@@ -2518,7 +2518,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
         public virtual DescribeGlobalSettingsResponse DescribeGlobalSettings(DescribeGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
         public virtual Task<DescribeGlobalSettingsResponse> DescribeGlobalSettingsAsync(DescribeGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
             
@@ -2583,7 +2583,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeProtectedResource">REST API Reference for DescribeProtectedResource Operation</seealso>
         public virtual DescribeProtectedResourceResponse DescribeProtectedResource(DescribeProtectedResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectedResourceResponseUnmarshaller.Instance;
 
@@ -2618,7 +2618,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeProtectedResource">REST API Reference for DescribeProtectedResource Operation</seealso>
         public virtual Task<DescribeProtectedResourceResponse> DescribeProtectedResourceAsync(DescribeProtectedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectedResourceResponseUnmarshaller.Instance;
             
@@ -2653,7 +2653,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRecoveryPoint">REST API Reference for DescribeRecoveryPoint Operation</seealso>
         public virtual DescribeRecoveryPointResponse DescribeRecoveryPoint(DescribeRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoveryPointResponseUnmarshaller.Instance;
 
@@ -2687,7 +2687,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRecoveryPoint">REST API Reference for DescribeRecoveryPoint Operation</seealso>
         public virtual Task<DescribeRecoveryPointResponse> DescribeRecoveryPointAsync(DescribeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoveryPointResponseUnmarshaller.Instance;
             
@@ -2714,7 +2714,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
         public virtual DescribeRegionSettingsResponse DescribeRegionSettings(DescribeRegionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionSettingsResponseUnmarshaller.Instance;
 
@@ -2740,7 +2740,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">REST API Reference for DescribeRegionSettings Operation</seealso>
         public virtual Task<DescribeRegionSettingsResponse> DescribeRegionSettingsAsync(DescribeRegionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionSettingsResponseUnmarshaller.Instance;
             
@@ -2770,7 +2770,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportJob">REST API Reference for DescribeReportJob Operation</seealso>
         public virtual DescribeReportJobResponse DescribeReportJob(DescribeReportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportJobResponseUnmarshaller.Instance;
 
@@ -2799,7 +2799,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportJob">REST API Reference for DescribeReportJob Operation</seealso>
         public virtual Task<DescribeReportJobResponse> DescribeReportJobAsync(DescribeReportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportJobResponseUnmarshaller.Instance;
             
@@ -2834,7 +2834,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportPlan">REST API Reference for DescribeReportPlan Operation</seealso>
         public virtual DescribeReportPlanResponse DescribeReportPlan(DescribeReportPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportPlanResponseUnmarshaller.Instance;
 
@@ -2868,7 +2868,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeReportPlan">REST API Reference for DescribeReportPlan Operation</seealso>
         public virtual Task<DescribeReportPlanResponse> DescribeReportPlanAsync(DescribeReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportPlanResponseUnmarshaller.Instance;
             
@@ -2906,7 +2906,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRestoreJob">REST API Reference for DescribeRestoreJob Operation</seealso>
         public virtual DescribeRestoreJobResponse DescribeRestoreJob(DescribeRestoreJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRestoreJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRestoreJobResponseUnmarshaller.Instance;
 
@@ -2943,7 +2943,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRestoreJob">REST API Reference for DescribeRestoreJob Operation</seealso>
         public virtual Task<DescribeRestoreJobResponse> DescribeRestoreJobAsync(DescribeRestoreJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRestoreJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRestoreJobResponseUnmarshaller.Instance;
             
@@ -2982,7 +2982,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
         public virtual DisassociateBackupVaultMpaApprovalTeamResponse DisassociateBackupVaultMpaApprovalTeam(DisassociateBackupVaultMpaApprovalTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
 
@@ -3020,7 +3020,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateBackupVaultMpaApprovalTeam">REST API Reference for DisassociateBackupVaultMpaApprovalTeam Operation</seealso>
         public virtual Task<DisassociateBackupVaultMpaApprovalTeamResponse> DisassociateBackupVaultMpaApprovalTeamAsync(DisassociateBackupVaultMpaApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateBackupVaultMpaApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateBackupVaultMpaApprovalTeamResponseUnmarshaller.Instance;
             
@@ -3070,7 +3070,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPoint">REST API Reference for DisassociateRecoveryPoint Operation</seealso>
         public virtual DisassociateRecoveryPointResponse DisassociateRecoveryPoint(DisassociateRecoveryPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRecoveryPointResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPoint">REST API Reference for DisassociateRecoveryPoint Operation</seealso>
         public virtual Task<DisassociateRecoveryPointResponse> DisassociateRecoveryPointAsync(DisassociateRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRecoveryPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRecoveryPointResponseUnmarshaller.Instance;
             
@@ -3158,7 +3158,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent">REST API Reference for DisassociateRecoveryPointFromParent Operation</seealso>
         public virtual DisassociateRecoveryPointFromParentResponse DisassociateRecoveryPointFromParent(DisassociateRecoveryPointFromParentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRecoveryPointFromParentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRecoveryPointFromParentResponseUnmarshaller.Instance;
 
@@ -3196,7 +3196,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent">REST API Reference for DisassociateRecoveryPointFromParent Operation</seealso>
         public virtual Task<DisassociateRecoveryPointFromParentResponse> DisassociateRecoveryPointFromParentAsync(DisassociateRecoveryPointFromParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRecoveryPointFromParentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRecoveryPointFromParentResponseUnmarshaller.Instance;
             
@@ -3230,7 +3230,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ExportBackupPlanTemplate">REST API Reference for ExportBackupPlanTemplate Operation</seealso>
         public virtual ExportBackupPlanTemplateResponse ExportBackupPlanTemplate(ExportBackupPlanTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportBackupPlanTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportBackupPlanTemplateResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ExportBackupPlanTemplate">REST API Reference for ExportBackupPlanTemplate Operation</seealso>
         public virtual Task<ExportBackupPlanTemplateResponse> ExportBackupPlanTemplateAsync(ExportBackupPlanTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportBackupPlanTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportBackupPlanTemplateResponseUnmarshaller.Instance;
             
@@ -3298,7 +3298,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlan">REST API Reference for GetBackupPlan Operation</seealso>
         public virtual GetBackupPlanResponse GetBackupPlan(GetBackupPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanResponseUnmarshaller.Instance;
 
@@ -3332,7 +3332,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlan">REST API Reference for GetBackupPlan Operation</seealso>
         public virtual Task<GetBackupPlanResponse> GetBackupPlanAsync(GetBackupPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanResponseUnmarshaller.Instance;
             
@@ -3371,7 +3371,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlanFromJSON">REST API Reference for GetBackupPlanFromJSON Operation</seealso>
         public virtual GetBackupPlanFromJSONResponse GetBackupPlanFromJSON(GetBackupPlanFromJSONRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanFromJSONRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanFromJSONResponseUnmarshaller.Instance;
 
@@ -3409,7 +3409,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlanFromJSON">REST API Reference for GetBackupPlanFromJSON Operation</seealso>
         public virtual Task<GetBackupPlanFromJSONResponse> GetBackupPlanFromJSONAsync(GetBackupPlanFromJSONRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanFromJSONRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanFromJSONResponseUnmarshaller.Instance;
             
@@ -3443,7 +3443,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlanFromTemplate">REST API Reference for GetBackupPlanFromTemplate Operation</seealso>
         public virtual GetBackupPlanFromTemplateResponse GetBackupPlanFromTemplate(GetBackupPlanFromTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanFromTemplateResponseUnmarshaller.Instance;
 
@@ -3476,7 +3476,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupPlanFromTemplate">REST API Reference for GetBackupPlanFromTemplate Operation</seealso>
         public virtual Task<GetBackupPlanFromTemplateResponse> GetBackupPlanFromTemplateAsync(GetBackupPlanFromTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupPlanFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupPlanFromTemplateResponseUnmarshaller.Instance;
             
@@ -3511,7 +3511,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupSelection">REST API Reference for GetBackupSelection Operation</seealso>
         public virtual GetBackupSelectionResponse GetBackupSelection(GetBackupSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupSelectionResponseUnmarshaller.Instance;
 
@@ -3545,7 +3545,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupSelection">REST API Reference for GetBackupSelection Operation</seealso>
         public virtual Task<GetBackupSelectionResponse> GetBackupSelectionAsync(GetBackupSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupSelectionResponseUnmarshaller.Instance;
             
@@ -3579,7 +3579,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupVaultAccessPolicy">REST API Reference for GetBackupVaultAccessPolicy Operation</seealso>
         public virtual GetBackupVaultAccessPolicyResponse GetBackupVaultAccessPolicy(GetBackupVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3612,7 +3612,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupVaultAccessPolicy">REST API Reference for GetBackupVaultAccessPolicy Operation</seealso>
         public virtual Task<GetBackupVaultAccessPolicyResponse> GetBackupVaultAccessPolicyAsync(GetBackupVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupVaultAccessPolicyResponseUnmarshaller.Instance;
             
@@ -3646,7 +3646,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupVaultNotifications">REST API Reference for GetBackupVaultNotifications Operation</seealso>
         public virtual GetBackupVaultNotificationsResponse GetBackupVaultNotifications(GetBackupVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -3679,7 +3679,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetBackupVaultNotifications">REST API Reference for GetBackupVaultNotifications Operation</seealso>
         public virtual Task<GetBackupVaultNotificationsResponse> GetBackupVaultNotificationsAsync(GetBackupVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackupVaultNotificationsResponseUnmarshaller.Instance;
             
@@ -3714,7 +3714,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold">REST API Reference for GetLegalHold Operation</seealso>
         public virtual GetLegalHoldResponse GetLegalHold(GetLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLegalHoldResponseUnmarshaller.Instance;
 
@@ -3748,7 +3748,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold">REST API Reference for GetLegalHold Operation</seealso>
         public virtual Task<GetLegalHoldResponse> GetLegalHoldAsync(GetLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLegalHoldResponseUnmarshaller.Instance;
             
@@ -3783,7 +3783,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
         public virtual GetRecoveryPointIndexDetailsResponse GetRecoveryPointIndexDetails(GetRecoveryPointIndexDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointIndexDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointIndexDetailsResponseUnmarshaller.Instance;
 
@@ -3817,7 +3817,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
         public virtual Task<GetRecoveryPointIndexDetailsResponse> GetRecoveryPointIndexDetailsAsync(GetRecoveryPointIndexDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointIndexDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointIndexDetailsResponseUnmarshaller.Instance;
             
@@ -3851,7 +3851,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointRestoreMetadata">REST API Reference for GetRecoveryPointRestoreMetadata Operation</seealso>
         public virtual GetRecoveryPointRestoreMetadataResponse GetRecoveryPointRestoreMetadata(GetRecoveryPointRestoreMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointRestoreMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointRestoreMetadataResponseUnmarshaller.Instance;
 
@@ -3884,7 +3884,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointRestoreMetadata">REST API Reference for GetRecoveryPointRestoreMetadata Operation</seealso>
         public virtual Task<GetRecoveryPointRestoreMetadataResponse> GetRecoveryPointRestoreMetadataAsync(GetRecoveryPointRestoreMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryPointRestoreMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryPointRestoreMetadataResponseUnmarshaller.Instance;
             
@@ -3918,7 +3918,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
         public virtual GetRestoreJobMetadataResponse GetRestoreJobMetadata(GetRestoreJobMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreJobMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreJobMetadataResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata">REST API Reference for GetRestoreJobMetadata Operation</seealso>
         public virtual Task<GetRestoreJobMetadataResponse> GetRestoreJobMetadataAsync(GetRestoreJobMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreJobMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreJobMetadataResponseUnmarshaller.Instance;
             
@@ -3987,7 +3987,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
         public virtual GetRestoreTestingInferredMetadataResponse GetRestoreTestingInferredMetadata(GetRestoreTestingInferredMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingInferredMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingInferredMetadataResponseUnmarshaller.Instance;
 
@@ -4022,7 +4022,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata">REST API Reference for GetRestoreTestingInferredMetadata Operation</seealso>
         public virtual Task<GetRestoreTestingInferredMetadataResponse> GetRestoreTestingInferredMetadataAsync(GetRestoreTestingInferredMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingInferredMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingInferredMetadataResponseUnmarshaller.Instance;
             
@@ -4051,7 +4051,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
         public virtual GetRestoreTestingPlanResponse GetRestoreTestingPlan(GetRestoreTestingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingPlanResponseUnmarshaller.Instance;
 
@@ -4079,7 +4079,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan">REST API Reference for GetRestoreTestingPlan Operation</seealso>
         public virtual Task<GetRestoreTestingPlanResponse> GetRestoreTestingPlanAsync(GetRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingPlanResponseUnmarshaller.Instance;
             
@@ -4107,7 +4107,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
         public virtual GetRestoreTestingSelectionResponse GetRestoreTestingSelection(GetRestoreTestingSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingSelectionResponseUnmarshaller.Instance;
 
@@ -4134,7 +4134,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection">REST API Reference for GetRestoreTestingSelection Operation</seealso>
         public virtual Task<GetRestoreTestingSelectionResponse> GetRestoreTestingSelectionAsync(GetRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestoreTestingSelectionResponseUnmarshaller.Instance;
             
@@ -4158,7 +4158,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetSupportedResourceTypes">REST API Reference for GetSupportedResourceTypes Operation</seealso>
         public virtual GetSupportedResourceTypesResponse GetSupportedResourceTypes(GetSupportedResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSupportedResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSupportedResourceTypesResponseUnmarshaller.Instance;
 
@@ -4181,7 +4181,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetSupportedResourceTypes">REST API Reference for GetSupportedResourceTypes Operation</seealso>
         public virtual Task<GetSupportedResourceTypesResponse> GetSupportedResourceTypesAsync(GetSupportedResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSupportedResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSupportedResourceTypesResponseUnmarshaller.Instance;
             
@@ -4211,7 +4211,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">REST API Reference for ListBackupJobs Operation</seealso>
         public virtual ListBackupJobsResponse ListBackupJobs(ListBackupJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupJobsResponseUnmarshaller.Instance;
 
@@ -4240,7 +4240,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobs">REST API Reference for ListBackupJobs Operation</seealso>
         public virtual Task<ListBackupJobsResponse> ListBackupJobsAsync(ListBackupJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupJobsResponseUnmarshaller.Instance;
             
@@ -4276,7 +4276,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
         public virtual ListBackupJobSummariesResponse ListBackupJobSummaries(ListBackupJobSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupJobSummariesResponseUnmarshaller.Instance;
 
@@ -4311,7 +4311,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries">REST API Reference for ListBackupJobSummaries Operation</seealso>
         public virtual Task<ListBackupJobSummariesResponse> ListBackupJobSummariesAsync(ListBackupJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupJobSummariesResponseUnmarshaller.Instance;
             
@@ -4345,7 +4345,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">REST API Reference for ListBackupPlans Operation</seealso>
         public virtual ListBackupPlansResponse ListBackupPlans(ListBackupPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlansResponseUnmarshaller.Instance;
 
@@ -4378,7 +4378,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlans">REST API Reference for ListBackupPlans Operation</seealso>
         public virtual Task<ListBackupPlansResponse> ListBackupPlansAsync(ListBackupPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlansResponseUnmarshaller.Instance;
             
@@ -4412,7 +4412,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanTemplates">REST API Reference for ListBackupPlanTemplates Operation</seealso>
         public virtual ListBackupPlanTemplatesResponse ListBackupPlanTemplates(ListBackupPlanTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlanTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlanTemplatesResponseUnmarshaller.Instance;
 
@@ -4445,7 +4445,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanTemplates">REST API Reference for ListBackupPlanTemplates Operation</seealso>
         public virtual Task<ListBackupPlanTemplatesResponse> ListBackupPlanTemplatesAsync(ListBackupPlanTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlanTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlanTemplatesResponseUnmarshaller.Instance;
             
@@ -4480,7 +4480,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanVersions">REST API Reference for ListBackupPlanVersions Operation</seealso>
         public virtual ListBackupPlanVersionsResponse ListBackupPlanVersions(ListBackupPlanVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlanVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlanVersionsResponseUnmarshaller.Instance;
 
@@ -4514,7 +4514,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupPlanVersions">REST API Reference for ListBackupPlanVersions Operation</seealso>
         public virtual Task<ListBackupPlanVersionsResponse> ListBackupPlanVersionsAsync(ListBackupPlanVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupPlanVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupPlanVersionsResponseUnmarshaller.Instance;
             
@@ -4549,7 +4549,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupSelections">REST API Reference for ListBackupSelections Operation</seealso>
         public virtual ListBackupSelectionsResponse ListBackupSelections(ListBackupSelectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupSelectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupSelectionsResponseUnmarshaller.Instance;
 
@@ -4583,7 +4583,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupSelections">REST API Reference for ListBackupSelections Operation</seealso>
         public virtual Task<ListBackupSelectionsResponse> ListBackupSelectionsAsync(ListBackupSelectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupSelectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupSelectionsResponseUnmarshaller.Instance;
             
@@ -4617,7 +4617,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupVaults">REST API Reference for ListBackupVaults Operation</seealso>
         public virtual ListBackupVaultsResponse ListBackupVaults(ListBackupVaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupVaultsResponseUnmarshaller.Instance;
 
@@ -4650,7 +4650,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupVaults">REST API Reference for ListBackupVaults Operation</seealso>
         public virtual Task<ListBackupVaultsResponse> ListBackupVaultsAsync(ListBackupVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupVaultsResponseUnmarshaller.Instance;
             
@@ -4678,7 +4678,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
         public virtual ListCopyJobsResponse ListCopyJobs(ListCopyJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCopyJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCopyJobsResponseUnmarshaller.Instance;
 
@@ -4705,7 +4705,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs">REST API Reference for ListCopyJobs Operation</seealso>
         public virtual Task<ListCopyJobsResponse> ListCopyJobsAsync(ListCopyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCopyJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCopyJobsResponseUnmarshaller.Instance;
             
@@ -4741,7 +4741,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
         public virtual ListCopyJobSummariesResponse ListCopyJobSummaries(ListCopyJobSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCopyJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCopyJobSummariesResponseUnmarshaller.Instance;
 
@@ -4776,7 +4776,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries">REST API Reference for ListCopyJobSummaries Operation</seealso>
         public virtual Task<ListCopyJobSummariesResponse> ListCopyJobSummariesAsync(ListCopyJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCopyJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCopyJobSummariesResponseUnmarshaller.Instance;
             
@@ -4805,7 +4805,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">REST API Reference for ListFrameworks Operation</seealso>
         public virtual ListFrameworksResponse ListFrameworks(ListFrameworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFrameworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFrameworksResponseUnmarshaller.Instance;
 
@@ -4833,7 +4833,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">REST API Reference for ListFrameworks Operation</seealso>
         public virtual Task<ListFrameworksResponse> ListFrameworksAsync(ListFrameworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFrameworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFrameworksResponseUnmarshaller.Instance;
             
@@ -4871,7 +4871,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
         public virtual ListIndexedRecoveryPointsResponse ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexedRecoveryPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexedRecoveryPointsResponseUnmarshaller.Instance;
 
@@ -4908,7 +4908,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
         public virtual Task<ListIndexedRecoveryPointsResponse> ListIndexedRecoveryPointsAsync(ListIndexedRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexedRecoveryPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexedRecoveryPointsResponseUnmarshaller.Instance;
             
@@ -4936,7 +4936,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds">REST API Reference for ListLegalHolds Operation</seealso>
         public virtual ListLegalHoldsResponse ListLegalHolds(ListLegalHoldsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLegalHoldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLegalHoldsResponseUnmarshaller.Instance;
 
@@ -4963,7 +4963,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds">REST API Reference for ListLegalHolds Operation</seealso>
         public virtual Task<ListLegalHoldsResponse> ListLegalHoldsAsync(ListLegalHoldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLegalHoldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLegalHoldsResponseUnmarshaller.Instance;
             
@@ -4993,7 +4993,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResources">REST API Reference for ListProtectedResources Operation</seealso>
         public virtual ListProtectedResourcesResponse ListProtectedResources(ListProtectedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedResourcesResponseUnmarshaller.Instance;
 
@@ -5022,7 +5022,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResources">REST API Reference for ListProtectedResources Operation</seealso>
         public virtual Task<ListProtectedResourcesResponse> ListProtectedResourcesAsync(ListProtectedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedResourcesResponseUnmarshaller.Instance;
             
@@ -5053,7 +5053,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">REST API Reference for ListProtectedResourcesByBackupVault Operation</seealso>
         public virtual ListProtectedResourcesByBackupVaultResponse ListProtectedResourcesByBackupVault(ListProtectedResourcesByBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedResourcesByBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedResourcesByBackupVaultResponseUnmarshaller.Instance;
 
@@ -5083,7 +5083,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">REST API Reference for ListProtectedResourcesByBackupVault Operation</seealso>
         public virtual Task<ListProtectedResourcesByBackupVaultResponse> ListProtectedResourcesByBackupVaultAsync(ListProtectedResourcesByBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectedResourcesByBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectedResourcesByBackupVaultResponseUnmarshaller.Instance;
             
@@ -5117,7 +5117,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByBackupVault">REST API Reference for ListRecoveryPointsByBackupVault Operation</seealso>
         public virtual ListRecoveryPointsByBackupVaultResponse ListRecoveryPointsByBackupVault(ListRecoveryPointsByBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByBackupVaultResponseUnmarshaller.Instance;
 
@@ -5150,7 +5150,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByBackupVault">REST API Reference for ListRecoveryPointsByBackupVault Operation</seealso>
         public virtual Task<ListRecoveryPointsByBackupVaultResponse> ListRecoveryPointsByBackupVaultAsync(ListRecoveryPointsByBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByBackupVaultResponseUnmarshaller.Instance;
             
@@ -5182,7 +5182,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold">REST API Reference for ListRecoveryPointsByLegalHold Operation</seealso>
         public virtual ListRecoveryPointsByLegalHoldResponse ListRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByLegalHoldResponseUnmarshaller.Instance;
 
@@ -5213,7 +5213,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold">REST API Reference for ListRecoveryPointsByLegalHold Operation</seealso>
         public virtual Task<ListRecoveryPointsByLegalHoldResponse> ListRecoveryPointsByLegalHoldAsync(ListRecoveryPointsByLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByLegalHoldResponseUnmarshaller.Instance;
             
@@ -5254,7 +5254,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByResource">REST API Reference for ListRecoveryPointsByResource Operation</seealso>
         public virtual ListRecoveryPointsByResourceResponse ListRecoveryPointsByResource(ListRecoveryPointsByResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByResourceResponseUnmarshaller.Instance;
 
@@ -5294,7 +5294,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByResource">REST API Reference for ListRecoveryPointsByResource Operation</seealso>
         public virtual Task<ListRecoveryPointsByResourceResponse> ListRecoveryPointsByResourceAsync(ListRecoveryPointsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryPointsByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryPointsByResourceResponseUnmarshaller.Instance;
             
@@ -5325,7 +5325,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs">REST API Reference for ListReportJobs Operation</seealso>
         public virtual ListReportJobsResponse ListReportJobs(ListReportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportJobsResponseUnmarshaller.Instance;
 
@@ -5355,7 +5355,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs">REST API Reference for ListReportJobs Operation</seealso>
         public virtual Task<ListReportJobsResponse> ListReportJobsAsync(ListReportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportJobsResponseUnmarshaller.Instance;
             
@@ -5384,7 +5384,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportPlans">REST API Reference for ListReportPlans Operation</seealso>
         public virtual ListReportPlansResponse ListReportPlans(ListReportPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportPlansResponseUnmarshaller.Instance;
 
@@ -5412,7 +5412,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportPlans">REST API Reference for ListReportPlans Operation</seealso>
         public virtual Task<ListReportPlansResponse> ListReportPlansAsync(ListReportPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportPlansResponseUnmarshaller.Instance;
             
@@ -5447,7 +5447,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
         public virtual ListRestoreAccessBackupVaultsResponse ListRestoreAccessBackupVaults(ListRestoreAccessBackupVaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
 
@@ -5481,7 +5481,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreAccessBackupVaults">REST API Reference for ListRestoreAccessBackupVaults Operation</seealso>
         public virtual Task<ListRestoreAccessBackupVaultsResponse> ListRestoreAccessBackupVaultsAsync(ListRestoreAccessBackupVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreAccessBackupVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreAccessBackupVaultsResponseUnmarshaller.Instance;
             
@@ -5516,7 +5516,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobs">REST API Reference for ListRestoreJobs Operation</seealso>
         public virtual ListRestoreJobsResponse ListRestoreJobs(ListRestoreJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobsResponseUnmarshaller.Instance;
 
@@ -5550,7 +5550,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobs">REST API Reference for ListRestoreJobs Operation</seealso>
         public virtual Task<ListRestoreJobsResponse> ListRestoreJobsAsync(ListRestoreJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobsResponseUnmarshaller.Instance;
             
@@ -5591,7 +5591,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
         public virtual ListRestoreJobsByProtectedResourceResponse ListRestoreJobsByProtectedResource(ListRestoreJobsByProtectedResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobsByProtectedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobsByProtectedResourceResponseUnmarshaller.Instance;
 
@@ -5631,7 +5631,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource">REST API Reference for ListRestoreJobsByProtectedResource Operation</seealso>
         public virtual Task<ListRestoreJobsByProtectedResourceResponse> ListRestoreJobsByProtectedResourceAsync(ListRestoreJobsByProtectedResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobsByProtectedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobsByProtectedResourceResponseUnmarshaller.Instance;
             
@@ -5667,7 +5667,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
         public virtual ListRestoreJobSummariesResponse ListRestoreJobSummaries(ListRestoreJobSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobSummariesResponseUnmarshaller.Instance;
 
@@ -5702,7 +5702,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries">REST API Reference for ListRestoreJobSummaries Operation</seealso>
         public virtual Task<ListRestoreJobSummariesResponse> ListRestoreJobSummariesAsync(ListRestoreJobSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreJobSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreJobSummariesResponseUnmarshaller.Instance;
             
@@ -5730,7 +5730,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
         public virtual ListRestoreTestingPlansResponse ListRestoreTestingPlans(ListRestoreTestingPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreTestingPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreTestingPlansResponseUnmarshaller.Instance;
 
@@ -5757,7 +5757,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans">REST API Reference for ListRestoreTestingPlans Operation</seealso>
         public virtual Task<ListRestoreTestingPlansResponse> ListRestoreTestingPlansAsync(ListRestoreTestingPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreTestingPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreTestingPlansResponseUnmarshaller.Instance;
             
@@ -5789,7 +5789,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
         public virtual ListRestoreTestingSelectionsResponse ListRestoreTestingSelections(ListRestoreTestingSelectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreTestingSelectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreTestingSelectionsResponseUnmarshaller.Instance;
 
@@ -5820,7 +5820,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections">REST API Reference for ListRestoreTestingSelections Operation</seealso>
         public virtual Task<ListRestoreTestingSelectionsResponse> ListRestoreTestingSelectionsAsync(ListRestoreTestingSelectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRestoreTestingSelectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRestoreTestingSelectionsResponseUnmarshaller.Instance;
             
@@ -5873,7 +5873,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -5925,7 +5925,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
             
@@ -5960,7 +5960,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultAccessPolicy">REST API Reference for PutBackupVaultAccessPolicy Operation</seealso>
         public virtual PutBackupVaultAccessPolicyResponse PutBackupVaultAccessPolicy(PutBackupVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -5994,7 +5994,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultAccessPolicy">REST API Reference for PutBackupVaultAccessPolicy Operation</seealso>
         public virtual Task<PutBackupVaultAccessPolicyResponse> PutBackupVaultAccessPolicyAsync(PutBackupVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultAccessPolicyResponseUnmarshaller.Instance;
             
@@ -6049,7 +6049,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
         public virtual PutBackupVaultLockConfigurationResponse PutBackupVaultLockConfiguration(PutBackupVaultLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultLockConfigurationResponseUnmarshaller.Instance;
 
@@ -6103,7 +6103,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
         public virtual Task<PutBackupVaultLockConfigurationResponse> PutBackupVaultLockConfigurationAsync(PutBackupVaultLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultLockConfigurationResponseUnmarshaller.Instance;
             
@@ -6137,7 +6137,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultNotifications">REST API Reference for PutBackupVaultNotifications Operation</seealso>
         public virtual PutBackupVaultNotificationsResponse PutBackupVaultNotifications(PutBackupVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -6170,7 +6170,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultNotifications">REST API Reference for PutBackupVaultNotifications Operation</seealso>
         public virtual Task<PutBackupVaultNotificationsResponse> PutBackupVaultNotificationsAsync(PutBackupVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBackupVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBackupVaultNotificationsResponseUnmarshaller.Instance;
             
@@ -6210,7 +6210,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
         public virtual PutRestoreValidationResultResponse PutRestoreValidationResult(PutRestoreValidationResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRestoreValidationResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRestoreValidationResultResponseUnmarshaller.Instance;
 
@@ -6249,7 +6249,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult">REST API Reference for PutRestoreValidationResult Operation</seealso>
         public virtual Task<PutRestoreValidationResultResponse> PutRestoreValidationResultAsync(PutRestoreValidationResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRestoreValidationResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRestoreValidationResultResponseUnmarshaller.Instance;
             
@@ -6288,7 +6288,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
         public virtual RevokeRestoreAccessBackupVaultResponse RevokeRestoreAccessBackupVault(RevokeRestoreAccessBackupVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
 
@@ -6326,7 +6326,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RevokeRestoreAccessBackupVault">REST API Reference for RevokeRestoreAccessBackupVault Operation</seealso>
         public virtual Task<RevokeRestoreAccessBackupVaultResponse> RevokeRestoreAccessBackupVaultAsync(RevokeRestoreAccessBackupVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeRestoreAccessBackupVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeRestoreAccessBackupVaultResponseUnmarshaller.Instance;
             
@@ -6368,7 +6368,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">REST API Reference for StartBackupJob Operation</seealso>
         public virtual StartBackupJobResponse StartBackupJob(StartBackupJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBackupJobResponseUnmarshaller.Instance;
 
@@ -6409,7 +6409,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartBackupJob">REST API Reference for StartBackupJob Operation</seealso>
         public virtual Task<StartBackupJobResponse> StartBackupJobAsync(StartBackupJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBackupJobResponseUnmarshaller.Instance;
             
@@ -6456,7 +6456,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob">REST API Reference for StartCopyJob Operation</seealso>
         public virtual StartCopyJobResponse StartCopyJob(StartCopyJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCopyJobResponseUnmarshaller.Instance;
 
@@ -6502,7 +6502,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob">REST API Reference for StartCopyJob Operation</seealso>
         public virtual Task<StartCopyJobResponse> StartCopyJobAsync(StartCopyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCopyJobResponseUnmarshaller.Instance;
             
@@ -6536,7 +6536,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartReportJob">REST API Reference for StartReportJob Operation</seealso>
         public virtual StartReportJobResponse StartReportJob(StartReportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportJobResponseUnmarshaller.Instance;
 
@@ -6569,7 +6569,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartReportJob">REST API Reference for StartReportJob Operation</seealso>
         public virtual Task<StartReportJobResponse> StartReportJobAsync(StartReportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportJobResponseUnmarshaller.Instance;
             
@@ -6607,7 +6607,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">REST API Reference for StartRestoreJob Operation</seealso>
         public virtual StartRestoreJobResponse StartRestoreJob(StartRestoreJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRestoreJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRestoreJobResponseUnmarshaller.Instance;
 
@@ -6644,7 +6644,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob">REST API Reference for StartRestoreJob Operation</seealso>
         public virtual Task<StartRestoreJobResponse> StartRestoreJobAsync(StartRestoreJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRestoreJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRestoreJobResponseUnmarshaller.Instance;
             
@@ -6724,7 +6724,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">REST API Reference for StopBackupJob Operation</seealso>
         public virtual StopBackupJobResponse StopBackupJob(StopBackupJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBackupJobResponseUnmarshaller.Instance;
 
@@ -6803,7 +6803,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">REST API Reference for StopBackupJob Operation</seealso>
         public virtual Task<StopBackupJobResponse> StopBackupJobAsync(StopBackupJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBackupJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBackupJobResponseUnmarshaller.Instance;
             
@@ -6841,7 +6841,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6878,7 +6878,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -6919,7 +6919,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6959,7 +6959,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -6993,7 +6993,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">REST API Reference for UpdateBackupPlan Operation</seealso>
         public virtual UpdateBackupPlanResponse UpdateBackupPlan(UpdateBackupPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackupPlanResponseUnmarshaller.Instance;
 
@@ -7026,7 +7026,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateBackupPlan">REST API Reference for UpdateBackupPlan Operation</seealso>
         public virtual Task<UpdateBackupPlanResponse> UpdateBackupPlanAsync(UpdateBackupPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackupPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackupPlanResponseUnmarshaller.Instance;
             
@@ -7071,7 +7071,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateFramework">REST API Reference for UpdateFramework Operation</seealso>
         public virtual UpdateFrameworkResponse UpdateFramework(UpdateFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFrameworkResponseUnmarshaller.Instance;
 
@@ -7115,7 +7115,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateFramework">REST API Reference for UpdateFramework Operation</seealso>
         public virtual Task<UpdateFrameworkResponse> UpdateFrameworkAsync(UpdateFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFrameworkResponseUnmarshaller.Instance;
             
@@ -7152,7 +7152,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         public virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -7188,7 +7188,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         public virtual Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
             
@@ -7231,7 +7231,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
         public virtual UpdateRecoveryPointIndexSettingsResponse UpdateRecoveryPointIndexSettings(UpdateRecoveryPointIndexSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryPointIndexSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryPointIndexSettingsResponseUnmarshaller.Instance;
 
@@ -7273,7 +7273,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
         public virtual Task<UpdateRecoveryPointIndexSettingsResponse> UpdateRecoveryPointIndexSettingsAsync(UpdateRecoveryPointIndexSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryPointIndexSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryPointIndexSettingsResponseUnmarshaller.Instance;
             
@@ -7341,7 +7341,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">REST API Reference for UpdateRecoveryPointLifecycle Operation</seealso>
         public virtual UpdateRecoveryPointLifecycleResponse UpdateRecoveryPointLifecycle(UpdateRecoveryPointLifecycleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryPointLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryPointLifecycleResponseUnmarshaller.Instance;
 
@@ -7408,7 +7408,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointLifecycle">REST API Reference for UpdateRecoveryPointLifecycle Operation</seealso>
         public virtual Task<UpdateRecoveryPointLifecycleResponse> UpdateRecoveryPointLifecycleAsync(UpdateRecoveryPointLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryPointLifecycleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryPointLifecycleResponseUnmarshaller.Instance;
             
@@ -7445,7 +7445,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
         public virtual UpdateRegionSettingsResponse UpdateRegionSettings(UpdateRegionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegionSettingsResponseUnmarshaller.Instance;
 
@@ -7481,7 +7481,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">REST API Reference for UpdateRegionSettings Operation</seealso>
         public virtual Task<UpdateRegionSettingsResponse> UpdateRegionSettingsAsync(UpdateRegionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegionSettingsResponseUnmarshaller.Instance;
             
@@ -7519,7 +7519,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateReportPlan">REST API Reference for UpdateReportPlan Operation</seealso>
         public virtual UpdateReportPlanResponse UpdateReportPlan(UpdateReportPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReportPlanResponseUnmarshaller.Instance;
 
@@ -7556,7 +7556,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateReportPlan">REST API Reference for UpdateReportPlan Operation</seealso>
         public virtual Task<UpdateReportPlanResponse> UpdateReportPlanAsync(UpdateReportPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReportPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReportPlanResponseUnmarshaller.Instance;
             
@@ -7621,7 +7621,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
         public virtual UpdateRestoreTestingPlanResponse UpdateRestoreTestingPlan(UpdateRestoreTestingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestoreTestingPlanResponseUnmarshaller.Instance;
 
@@ -7685,7 +7685,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan">REST API Reference for UpdateRestoreTestingPlan Operation</seealso>
         public virtual Task<UpdateRestoreTestingPlanResponse> UpdateRestoreTestingPlanAsync(UpdateRestoreTestingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestoreTestingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestoreTestingPlanResponseUnmarshaller.Instance;
             
@@ -7733,7 +7733,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
         public virtual UpdateRestoreTestingSelectionResponse UpdateRestoreTestingSelection(UpdateRestoreTestingSelectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestoreTestingSelectionResponseUnmarshaller.Instance;
 
@@ -7780,7 +7780,7 @@ namespace Amazon.Backup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection">REST API Reference for UpdateRestoreTestingSelection Operation</seealso>
         public virtual Task<UpdateRestoreTestingSelectionResponse> UpdateRestoreTestingSelectionAsync(UpdateRestoreTestingSelectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestoreTestingSelectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestoreTestingSelectionResponseUnmarshaller.Instance;
             

@@ -293,7 +293,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateAlertManagerDefinitionResponse CreateAlertManagerDefinition(CreateAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
         public virtual Task<CreateAlertManagerDefinitionResponse> CreateAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateLoggingConfigurationResponse CreateLoggingConfiguration(CreateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -390,7 +390,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         public virtual Task<CreateLoggingConfigurationResponse> CreateLoggingConfigurationAsync(CreateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateQueryLoggingConfigurationResponse CreateQueryLoggingConfiguration(CreateQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateQueryLoggingConfiguration">REST API Reference for CreateQueryLoggingConfiguration Operation</seealso>
         public virtual Task<CreateQueryLoggingConfigurationResponse> CreateQueryLoggingConfigurationAsync(CreateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateRuleGroupsNamespaceResponse CreateRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -498,7 +498,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
         public virtual Task<CreateRuleGroupsNamespaceResponse> CreateRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateScraperResponse CreateScraper(CreateScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateScraper">REST API Reference for CreateScraper Operation</seealso>
         public virtual Task<CreateScraperResponse> CreateScraperAsync(CreateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScraperResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.PrometheusService
 
         internal virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -649,7 +649,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteAlertManagerDefinitionResponse DeleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -688,7 +688,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
         public virtual Task<DeleteAlertManagerDefinitionResponse> DeleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -754,7 +754,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteQueryLoggingConfigurationResponse DeleteQueryLoggingConfiguration(DeleteQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -790,7 +790,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteQueryLoggingConfiguration">REST API Reference for DeleteQueryLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteQueryLoggingConfigurationResponse> DeleteQueryLoggingConfigurationAsync(DeleteQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteRuleGroupsNamespaceResponse DeleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
         public virtual Task<DeleteRuleGroupsNamespaceResponse> DeleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteScraperResponse DeleteScraper(DeleteScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraper">REST API Reference for DeleteScraper Operation</seealso>
         public virtual Task<DeleteScraperResponse> DeleteScraperAsync(DeleteScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperResponseUnmarshaller.Instance;
 
@@ -957,7 +957,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteScraperLoggingConfigurationResponse DeleteScraperLoggingConfiguration(DeleteScraperLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteScraperLoggingConfiguration">REST API Reference for DeleteScraperLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteScraperLoggingConfigurationResponse> DeleteScraperLoggingConfigurationAsync(DeleteScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -1051,7 +1051,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(DeleteWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeAlertManagerDefinitionResponse DescribeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -1099,7 +1099,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
         public virtual Task<DescribeAlertManagerDefinitionResponse> DescribeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeLoggingConfigurationResponse DescribeLoggingConfiguration(DescribeLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(DescribeLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeQueryLoggingConfigurationResponse DescribeQueryLoggingConfiguration(DescribeQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeQueryLoggingConfiguration">REST API Reference for DescribeQueryLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeQueryLoggingConfigurationResponse> DescribeQueryLoggingConfigurationAsync(DescribeQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(DescribeResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1257,7 +1257,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeRuleGroupsNamespaceResponse DescribeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1294,7 +1294,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
         public virtual Task<DescribeRuleGroupsNamespaceResponse> DescribeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeScraperResponse DescribeScraper(DescribeScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
 
@@ -1342,7 +1342,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraper">REST API Reference for DescribeScraper Operation</seealso>
         public virtual Task<DescribeScraperResponse> DescribeScraperAsync(DescribeScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeScraperLoggingConfigurationResponse DescribeScraperLoggingConfiguration(DescribeScraperLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1387,7 +1387,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeScraperLoggingConfiguration">REST API Reference for DescribeScraperLoggingConfiguration Operation</seealso>
         public virtual Task<DescribeScraperLoggingConfigurationResponse> DescribeScraperLoggingConfigurationAsync(DescribeScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
         public virtual Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(DescribeWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
 
@@ -1447,7 +1447,7 @@ namespace Amazon.PrometheusService
 
         internal virtual DescribeWorkspaceConfigurationResponse DescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -1485,7 +1485,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
         public virtual Task<DescribeWorkspaceConfigurationResponse> DescribeWorkspaceConfigurationAsync(DescribeWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.PrometheusService
 
         internal virtual GetDefaultScraperConfigurationResponse GetDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
 
@@ -1528,7 +1528,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/GetDefaultScraperConfiguration">REST API Reference for GetDefaultScraperConfiguration Operation</seealso>
         public virtual Task<GetDefaultScraperConfigurationResponse> GetDefaultScraperConfigurationAsync(GetDefaultScraperConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultScraperConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultScraperConfigurationResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.PrometheusService
 
         internal virtual ListRuleGroupsNamespacesResponse ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
         public virtual Task<ListRuleGroupsNamespacesResponse> ListRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.PrometheusService
 
         internal virtual ListScrapersResponse ListScrapers(ListScrapersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListScrapers">REST API Reference for ListScrapers Operation</seealso>
         public virtual Task<ListScrapersResponse> ListScrapersAsync(ListScrapersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScrapersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScrapersResponseUnmarshaller.Instance;
 
@@ -1635,7 +1635,7 @@ namespace Amazon.PrometheusService
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1673,7 +1673,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1685,7 +1685,7 @@ namespace Amazon.PrometheusService
 
         internal virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1719,7 +1719,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual Task<ListWorkspacesResponse> ListWorkspacesAsync(ListWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.PrometheusService
 
         internal virtual PutAlertManagerDefinitionResponse PutAlertManagerDefinition(PutAlertManagerDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -1775,7 +1775,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
         public virtual Task<PutAlertManagerDefinitionResponse> PutAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
 
@@ -1787,7 +1787,7 @@ namespace Amazon.PrometheusService
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1849,7 +1849,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.PrometheusService
 
         internal virtual PutRuleGroupsNamespaceResponse PutRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1916,7 +1916,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
         public virtual Task<PutRuleGroupsNamespaceResponse> PutRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.PrometheusService
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1974,7 +1974,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1986,7 +1986,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2023,7 +2023,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateQueryLoggingConfigurationResponse UpdateQueryLoggingConfiguration(UpdateQueryLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2126,7 +2126,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateQueryLoggingConfiguration">REST API Reference for UpdateQueryLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateQueryLoggingConfigurationResponse> UpdateQueryLoggingConfigurationAsync(UpdateQueryLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueryLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueryLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateScraperResponse UpdateScraper(UpdateScraperRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraper">REST API Reference for UpdateScraper Operation</seealso>
         public virtual Task<UpdateScraperResponse> UpdateScraperAsync(UpdateScraperRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateScraperLoggingConfigurationResponse UpdateScraperLoggingConfiguration(UpdateScraperLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2234,7 +2234,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateScraperLoggingConfiguration">REST API Reference for UpdateScraperLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateScraperLoggingConfigurationResponse> UpdateScraperLoggingConfigurationAsync(UpdateScraperLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScraperLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScraperLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateWorkspaceAliasResponse UpdateWorkspaceAlias(UpdateWorkspaceAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAliasResponseUnmarshaller.Instance;
 
@@ -2288,7 +2288,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">REST API Reference for UpdateWorkspaceAlias Operation</seealso>
         public virtual Task<UpdateWorkspaceAliasResponse> UpdateWorkspaceAliasAsync(UpdateWorkspaceAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAliasResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.PrometheusService
 
         internal virtual UpdateWorkspaceConfigurationResponse UpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -2349,7 +2349,7 @@ namespace Amazon.PrometheusService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
         public virtual Task<UpdateWorkspaceConfigurationResponse> UpdateWorkspaceConfigurationAsync(UpdateWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
 

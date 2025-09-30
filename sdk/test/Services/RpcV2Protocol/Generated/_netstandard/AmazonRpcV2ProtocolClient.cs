@@ -247,7 +247,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual EmptyInputOutputResponse EmptyInputOutput(EmptyInputOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputOutputResponseUnmarshaller.Instance;
 
@@ -268,7 +268,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/EmptyInputOutput">REST API Reference for EmptyInputOutput Operation</seealso>
         public virtual Task<EmptyInputOutputResponse> EmptyInputOutputAsync(EmptyInputOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputOutputResponseUnmarshaller.Instance;
 
@@ -280,7 +280,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual Float16Response Float16(Float16Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = Float16RequestMarshaller.Instance;
             options.ResponseUnmarshaller = Float16ResponseUnmarshaller.Instance;
 
@@ -301,7 +301,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/Float16">REST API Reference for Float16 Operation</seealso>
         public virtual Task<Float16Response> Float16Async(Float16Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = Float16RequestMarshaller.Instance;
             options.ResponseUnmarshaller = Float16ResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual FractionalSecondsResponse FractionalSeconds(FractionalSecondsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual Task<FractionalSecondsResponse> FractionalSecondsAsync(FractionalSecondsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -346,7 +346,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual Task<GreetingWithErrorsResponse> GreetingWithErrorsAsync(GreetingWithErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual NoInputOutputResponse NoInputOutput(NoInputOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputOutputResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/NoInputOutput">REST API Reference for NoInputOutput Operation</seealso>
         public virtual Task<NoInputOutputResponse> NoInputOutputAsync(NoInputOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputOutputResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual OptionalInputOutputResponse OptionalInputOutput(OptionalInputOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptionalInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptionalInputOutputResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/OptionalInputOutput">REST API Reference for OptionalInputOutput Operation</seealso>
         public virtual Task<OptionalInputOutputResponse> OptionalInputOutputAsync(OptionalInputOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptionalInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptionalInputOutputResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual RecursiveShapesResponse RecursiveShapes(RecursiveShapesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveShapesResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RecursiveShapes">REST API Reference for RecursiveShapes Operation</seealso>
         public virtual Task<RecursiveShapesResponse> RecursiveShapesAsync(RecursiveShapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveShapesResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual RpcV2CborDenseMapsResponse RpcV2CborDenseMaps(RpcV2CborDenseMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RpcV2CborDenseMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RpcV2CborDenseMapsResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborDenseMaps">REST API Reference for RpcV2CborDenseMaps Operation</seealso>
         public virtual Task<RpcV2CborDenseMapsResponse> RpcV2CborDenseMapsAsync(RpcV2CborDenseMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RpcV2CborDenseMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RpcV2CborDenseMapsResponseUnmarshaller.Instance;
 
@@ -528,7 +528,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual RpcV2CborListsResponse RpcV2CborLists(RpcV2CborListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RpcV2CborListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RpcV2CborListsResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborLists">REST API Reference for RpcV2CborLists Operation</seealso>
         public virtual Task<RpcV2CborListsResponse> RpcV2CborListsAsync(RpcV2CborListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RpcV2CborListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RpcV2CborListsResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.RpcV2Protocol
 
         internal virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.RpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 

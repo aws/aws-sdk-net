@@ -247,7 +247,7 @@ namespace Amazon.NonQueryCompatibleRpcV2Protocol
 
         internal virtual NonQueryCompatibleOperationResponse NonQueryCompatibleOperation(NonQueryCompatibleOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NonQueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NonQueryCompatibleOperationResponseUnmarshaller.Instance;
 
@@ -268,7 +268,7 @@ namespace Amazon.NonQueryCompatibleRpcV2Protocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/non-query-compatible-rpcv2-protocol-2025-06-20/NonQueryCompatibleOperation">REST API Reference for NonQueryCompatibleOperation Operation</seealso>
         public virtual Task<NonQueryCompatibleOperationResponse> NonQueryCompatibleOperationAsync(NonQueryCompatibleOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NonQueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NonQueryCompatibleOperationResponseUnmarshaller.Instance;
 

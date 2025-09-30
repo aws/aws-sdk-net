@@ -279,7 +279,7 @@ namespace Amazon.SSMContacts
 
         internal virtual AcceptPageResponse AcceptPage(AcceptPageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPageResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/AcceptPage">REST API Reference for AcceptPage Operation</seealso>
         public virtual Task<AcceptPageResponse> AcceptPageAsync(AcceptPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPageResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ActivateContactChannelResponse ActivateContactChannel(ActivateContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateContactChannelResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ActivateContactChannel">REST API Reference for ActivateContactChannel Operation</seealso>
         public virtual Task<ActivateContactChannelResponse> ActivateContactChannelAsync(ActivateContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateContactChannelResponseUnmarshaller.Instance;
 
@@ -376,7 +376,7 @@ namespace Amazon.SSMContacts
 
         internal virtual CreateContactResponse CreateContact(CreateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContact">REST API Reference for CreateContact Operation</seealso>
         public virtual Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.SSMContacts
 
         internal virtual CreateContactChannelResponse CreateContactChannel(CreateContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactChannelResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContactChannel">REST API Reference for CreateContactChannel Operation</seealso>
         public virtual Task<CreateContactChannelResponse> CreateContactChannelAsync(CreateContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContactChannelResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.SSMContacts
 
         internal virtual CreateRotationResponse CreateRotation(CreateRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRotationResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation">REST API Reference for CreateRotation Operation</seealso>
         public virtual Task<CreateRotationResponse> CreateRotationAsync(CreateRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRotationResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.SSMContacts
 
         internal virtual CreateRotationOverrideResponse CreateRotationOverride(CreateRotationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRotationOverrideResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride">REST API Reference for CreateRotationOverride Operation</seealso>
         public virtual Task<CreateRotationOverrideResponse> CreateRotationOverrideAsync(CreateRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRotationOverrideResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DeactivateContactChannelResponse DeactivateContactChannel(DeactivateContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateContactChannelResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeactivateContactChannel">REST API Reference for DeactivateContactChannel Operation</seealso>
         public virtual Task<DeactivateContactChannelResponse> DeactivateContactChannelAsync(DeactivateContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateContactChannelResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
         public virtual Task<DeleteContactResponse> DeleteContactAsync(DeleteContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DeleteContactChannelResponse DeleteContactChannel(DeleteContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactChannelResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteContactChannel">REST API Reference for DeleteContactChannel Operation</seealso>
         public virtual Task<DeleteContactChannelResponse> DeleteContactChannelAsync(DeleteContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContactChannelResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DeleteRotationResponse DeleteRotation(DeleteRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRotationResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation">REST API Reference for DeleteRotation Operation</seealso>
         public virtual Task<DeleteRotationResponse> DeleteRotationAsync(DeleteRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRotationResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DeleteRotationOverrideResponse DeleteRotationOverride(DeleteRotationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRotationOverrideResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride">REST API Reference for DeleteRotationOverride Operation</seealso>
         public virtual Task<DeleteRotationOverrideResponse> DeleteRotationOverrideAsync(DeleteRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRotationOverrideResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DescribeEngagementResponse DescribeEngagement(DescribeEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngagementResponseUnmarshaller.Instance;
 
@@ -881,7 +881,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribeEngagement">REST API Reference for DescribeEngagement Operation</seealso>
         public virtual Task<DescribeEngagementResponse> DescribeEngagementAsync(DescribeEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngagementResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.SSMContacts
 
         internal virtual DescribePageResponse DescribePage(DescribePageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePageResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DescribePage">REST API Reference for DescribePage Operation</seealso>
         public virtual Task<DescribePageResponse> DescribePageAsync(DescribePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePageResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.SSMContacts
 
         internal virtual GetContactResponse GetContact(GetContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContact">REST API Reference for GetContact Operation</seealso>
         public virtual Task<GetContactResponse> GetContactAsync(GetContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactResponseUnmarshaller.Instance;
 
@@ -995,7 +995,7 @@ namespace Amazon.SSMContacts
 
         internal virtual GetContactChannelResponse GetContactChannel(GetContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactChannelResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactChannel">REST API Reference for GetContactChannel Operation</seealso>
         public virtual Task<GetContactChannelResponse> GetContactChannelAsync(GetContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactChannelResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.SSMContacts
 
         internal virtual GetContactPolicyResponse GetContactPolicy(GetContactPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactPolicyResponseUnmarshaller.Instance;
 
@@ -1082,7 +1082,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetContactPolicy">REST API Reference for GetContactPolicy Operation</seealso>
         public virtual Task<GetContactPolicyResponse> GetContactPolicyAsync(GetContactPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactPolicyResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.SSMContacts
 
         internal virtual GetRotationResponse GetRotation(GetRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRotationResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation">REST API Reference for GetRotation Operation</seealso>
         public virtual Task<GetRotationResponse> GetRotationAsync(GetRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRotationResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.SSMContacts
 
         internal virtual GetRotationOverrideResponse GetRotationOverride(GetRotationOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRotationOverrideResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride">REST API Reference for GetRotationOverride Operation</seealso>
         public virtual Task<GetRotationOverrideResponse> GetRotationOverrideAsync(GetRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRotationOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRotationOverrideResponseUnmarshaller.Instance;
 
@@ -1190,7 +1190,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListContactChannelsResponse ListContactChannels(ListContactChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactChannelsResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContactChannels">REST API Reference for ListContactChannels Operation</seealso>
         public virtual Task<ListContactChannelsResponse> ListContactChannelsAsync(ListContactChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactChannelsResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListContactsResponse ListContacts(ListContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContacts">REST API Reference for ListContacts Operation</seealso>
         public virtual Task<ListContactsResponse> ListContactsAsync(ListContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
 
@@ -1286,7 +1286,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListEngagementsResponse ListEngagements(ListEngagementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListEngagements">REST API Reference for ListEngagements Operation</seealso>
         public virtual Task<ListEngagementsResponse> ListEngagementsAsync(ListEngagementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngagementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngagementsResponseUnmarshaller.Instance;
 
@@ -1331,7 +1331,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListPageReceiptsResponse ListPageReceipts(ListPageReceiptsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPageReceiptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPageReceiptsResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageReceipts">REST API Reference for ListPageReceipts Operation</seealso>
         public virtual Task<ListPageReceiptsResponse> ListPageReceiptsAsync(ListPageReceiptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPageReceiptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPageReceiptsResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListPageResolutionsResponse ListPageResolutions(ListPageResolutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPageResolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPageResolutionsResponseUnmarshaller.Instance;
 
@@ -1418,7 +1418,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions">REST API Reference for ListPageResolutions Operation</seealso>
         public virtual Task<ListPageResolutionsResponse> ListPageResolutionsAsync(ListPageResolutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPageResolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPageResolutionsResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListPagesByContactResponse ListPagesByContact(ListPagesByContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPagesByContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPagesByContactResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByContact">REST API Reference for ListPagesByContact Operation</seealso>
         public virtual Task<ListPagesByContactResponse> ListPagesByContactAsync(ListPagesByContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPagesByContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPagesByContactResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListPagesByEngagementResponse ListPagesByEngagement(ListPagesByEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPagesByEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPagesByEngagementResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPagesByEngagement">REST API Reference for ListPagesByEngagement Operation</seealso>
         public virtual Task<ListPagesByEngagementResponse> ListPagesByEngagementAsync(ListPagesByEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPagesByEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPagesByEngagementResponseUnmarshaller.Instance;
 
@@ -1526,7 +1526,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListPreviewRotationShiftsResponse ListPreviewRotationShifts(ListPreviewRotationShiftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreviewRotationShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreviewRotationShiftsResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts">REST API Reference for ListPreviewRotationShifts Operation</seealso>
         public virtual Task<ListPreviewRotationShiftsResponse> ListPreviewRotationShiftsAsync(ListPreviewRotationShiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreviewRotationShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreviewRotationShiftsResponseUnmarshaller.Instance;
 
@@ -1578,7 +1578,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListRotationOverridesResponse ListRotationOverrides(ListRotationOverridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationOverridesResponseUnmarshaller.Instance;
 
@@ -1614,7 +1614,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides">REST API Reference for ListRotationOverrides Operation</seealso>
         public virtual Task<ListRotationOverridesResponse> ListRotationOverridesAsync(ListRotationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationOverridesResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListRotationsResponse ListRotations(ListRotationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationsResponseUnmarshaller.Instance;
 
@@ -1662,7 +1662,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations">REST API Reference for ListRotations Operation</seealso>
         public virtual Task<ListRotationsResponse> ListRotationsAsync(ListRotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationsResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListRotationShiftsResponse ListRotationShifts(ListRotationShiftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationShiftsResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts">REST API Reference for ListRotationShifts Operation</seealso>
         public virtual Task<ListRotationShiftsResponse> ListRotationShiftsAsync(ListRotationShiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRotationShiftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRotationShiftsResponseUnmarshaller.Instance;
 
@@ -1725,7 +1725,7 @@ namespace Amazon.SSMContacts
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1761,7 +1761,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1773,7 +1773,7 @@ namespace Amazon.SSMContacts
 
         internal virtual PutContactPolicyResponse PutContactPolicy(PutContactPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactPolicyResponseUnmarshaller.Instance;
 
@@ -1815,7 +1815,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/PutContactPolicy">REST API Reference for PutContactPolicy Operation</seealso>
         public virtual Task<PutContactPolicyResponse> PutContactPolicyAsync(PutContactPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactPolicyResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.SSMContacts
 
         internal virtual SendActivationCodeResponse SendActivationCode(SendActivationCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendActivationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendActivationCodeResponseUnmarshaller.Instance;
 
@@ -1871,7 +1871,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/SendActivationCode">REST API Reference for SendActivationCode Operation</seealso>
         public virtual Task<SendActivationCodeResponse> SendActivationCodeAsync(SendActivationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendActivationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendActivationCodeResponseUnmarshaller.Instance;
 
@@ -1883,7 +1883,7 @@ namespace Amazon.SSMContacts
 
         internal virtual StartEngagementResponse StartEngagement(StartEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementResponseUnmarshaller.Instance;
 
@@ -1923,7 +1923,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/StartEngagement">REST API Reference for StartEngagement Operation</seealso>
         public virtual Task<StartEngagementResponse> StartEngagementAsync(StartEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEngagementResponseUnmarshaller.Instance;
 
@@ -1935,7 +1935,7 @@ namespace Amazon.SSMContacts
 
         internal virtual StopEngagementResponse StopEngagement(StopEngagementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEngagementResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/StopEngagement">REST API Reference for StopEngagement Operation</seealso>
         public virtual Task<StopEngagementResponse> StopEngagementAsync(StopEngagementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEngagementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEngagementResponseUnmarshaller.Instance;
 
@@ -1984,7 +1984,7 @@ namespace Amazon.SSMContacts
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2024,7 +2024,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2036,7 +2036,7 @@ namespace Amazon.SSMContacts
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2084,7 +2084,7 @@ namespace Amazon.SSMContacts
 
         internal virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
 
@@ -2126,7 +2126,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
         public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.SSMContacts
 
         internal virtual UpdateContactChannelResponse UpdateContactChannel(UpdateContactChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactChannelResponseUnmarshaller.Instance;
 
@@ -2180,7 +2180,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContactChannel">REST API Reference for UpdateContactChannel Operation</seealso>
         public virtual Task<UpdateContactChannelResponse> UpdateContactChannelAsync(UpdateContactChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContactChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContactChannelResponseUnmarshaller.Instance;
 
@@ -2192,7 +2192,7 @@ namespace Amazon.SSMContacts
 
         internal virtual UpdateRotationResponse UpdateRotation(UpdateRotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRotationResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.SSMContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation">REST API Reference for UpdateRotation Operation</seealso>
         public virtual Task<UpdateRotationResponse> UpdateRotationAsync(UpdateRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRotationResponseUnmarshaller.Instance;
 

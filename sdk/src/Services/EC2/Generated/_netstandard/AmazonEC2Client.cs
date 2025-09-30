@@ -283,7 +283,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptAddressTransferResponse AcceptAddressTransfer(AcceptAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
 
@@ -305,7 +305,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
         public virtual Task<AcceptAddressTransferResponse> AcceptAddressTransferAsync(AcceptAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptCapacityReservationBillingOwnershipResponse AcceptCapacityReservationBillingOwnership(AcceptCapacityReservationBillingOwnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
         public virtual Task<AcceptCapacityReservationBillingOwnershipResponse> AcceptCapacityReservationBillingOwnershipAsync(AcceptCapacityReservationBillingOwnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public virtual Task<AcceptReservedInstancesExchangeQuoteResponse> AcceptReservedInstancesExchangeQuoteAsync(AcceptReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptTransitGatewayMulticastDomainAssociationsResponse AcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual Task<AcceptTransitGatewayMulticastDomainAssociationsResponse> AcceptTransitGatewayMulticastDomainAssociationsAsync(AcceptTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptTransitGatewayPeeringAttachmentResponse AcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
         public virtual Task<AcceptTransitGatewayPeeringAttachmentResponse> AcceptTransitGatewayPeeringAttachmentAsync(AcceptTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -453,7 +453,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -481,7 +481,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
         public virtual Task<AcceptTransitGatewayVpcAttachmentResponse> AcceptTransitGatewayVpcAttachmentAsync(AcceptTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptVpcEndpointConnectionsResponse AcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections">REST API Reference for AcceptVpcEndpointConnections Operation</seealso>
         public virtual Task<AcceptVpcEndpointConnectionsResponse> AcceptVpcEndpointConnectionsAsync(AcceptVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.EC2
 
         internal virtual AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public virtual Task<AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.EC2
 
         internal virtual AdvertiseByoipCidrResponse AdvertiseByoipCidr(AdvertiseByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
 
@@ -609,7 +609,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
         public virtual Task<AdvertiseByoipCidrResponse> AdvertiseByoipCidrAsync(AdvertiseByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.EC2
         }
         internal virtual AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateAddressResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public virtual Task<AllocateAddressResponse> AllocateAddressAsync(AllocateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateAddressResponseUnmarshaller.Instance;
 
@@ -733,7 +733,7 @@ namespace Amazon.EC2
 
         internal virtual AllocateHostsResponse AllocateHosts(AllocateHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostsResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public virtual Task<AllocateHostsResponse> AllocateHostsAsync(AllocateHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostsResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.EC2
 
         internal virtual AllocateIpamPoolCidrResponse AllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
         public virtual Task<AllocateIpamPoolCidrResponse> AllocateIpamPoolCidrAsync(AllocateIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.EC2
 
         internal virtual ApplySecurityGroupsToClientVpnTargetNetworkResponse ApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
         public virtual Task<ApplySecurityGroupsToClientVpnTargetNetworkResponse> ApplySecurityGroupsToClientVpnTargetNetworkAsync(ApplySecurityGroupsToClientVpnTargetNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.EC2
 
         internal virtual AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public virtual Task<AssignIpv6AddressesResponse> AssignIpv6AddressesAsync(AssignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.EC2
 
         internal virtual AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public virtual Task<AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.EC2
 
         internal virtual AssignPrivateNatGatewayAddressResponse AssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
         public virtual Task<AssignPrivateNatGatewayAddressResponse> AssignPrivateNatGatewayAddressAsync(AssignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAddressResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public virtual Task<AssociateAddressResponse> AssociateAddressAsync(AssociateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAddressResponseUnmarshaller.Instance;
 
@@ -1061,7 +1061,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateCapacityReservationBillingOwnerResponse AssociateCapacityReservationBillingOwner(AssociateCapacityReservationBillingOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
         public virtual Task<AssociateCapacityReservationBillingOwnerResponse> AssociateCapacityReservationBillingOwnerAsync(AssociateCapacityReservationBillingOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -1097,7 +1097,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateClientVpnTargetNetworkResponse AssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
         public virtual Task<AssociateClientVpnTargetNetworkResponse> AssociateClientVpnTargetNetworkAsync(AssociateClientVpnTargetNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public virtual Task<AssociateDhcpOptionsResponse> AssociateDhcpOptionsAsync(AssociateDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateEnclaveCertificateIamRoleResponse AssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
         public virtual Task<AssociateEnclaveCertificateIamRoleResponse> AssociateEnclaveCertificateIamRoleAsync(AssociateEnclaveCertificateIamRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateIamInstanceProfileResponse AssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1264,7 +1264,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
         public virtual Task<AssociateIamInstanceProfileResponse> AssociateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateInstanceEventWindowResponse AssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
         public virtual Task<AssociateInstanceEventWindowResponse> AssociateInstanceEventWindowAsync(AssociateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -1316,7 +1316,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateIpamByoasnResponse AssociateIpamByoasn(AssociateIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
         public virtual Task<AssociateIpamByoasnResponse> AssociateIpamByoasnAsync(AssociateIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
         public virtual Task<AssociateIpamResourceDiscoveryResponse> AssociateIpamResourceDiscoveryAsync(AssociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateNatGatewayAddressResponse AssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1436,7 +1436,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
         public virtual Task<AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressAsync(AssociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1448,7 +1448,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateRouteServerResponse AssociateRouteServer(AssociateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteServerResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
         public virtual Task<AssociateRouteServerResponse> AssociateRouteServerAsync(AssociateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteServerResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteTableResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public virtual Task<AssociateRouteTableResponse> AssociateRouteTableAsync(AssociateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteTableResponseUnmarshaller.Instance;
 
@@ -1535,7 +1535,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateSecurityGroupVpcResponse AssociateSecurityGroupVpc(AssociateSecurityGroupVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
         public virtual Task<AssociateSecurityGroupVpcResponse> AssociateSecurityGroupVpcAsync(AssociateSecurityGroupVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -1615,7 +1615,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public virtual Task<AssociateSubnetCidrBlockResponse> AssociateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -1627,7 +1627,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateTransitGatewayMulticastDomainResponse AssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -1656,7 +1656,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual Task<AssociateTransitGatewayMulticastDomainResponse> AssociateTransitGatewayMulticastDomainAsync(AssociateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -1668,7 +1668,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateTransitGatewayPolicyTableResponse AssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
         public virtual Task<AssociateTransitGatewayPolicyTableResponse> AssociateTransitGatewayPolicyTableAsync(AssociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
         public virtual Task<AssociateTransitGatewayRouteTableResponse> AssociateTransitGatewayRouteTableAsync(AssociateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -1736,7 +1736,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateTrunkInterfaceResponse AssociateTrunkInterface(AssociateTrunkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">REST API Reference for AssociateTrunkInterface Operation</seealso>
         public virtual Task<AssociateTrunkInterfaceResponse> AssociateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.EC2
 
         internal virtual AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -1812,7 +1812,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public virtual Task<AssociateVpcCidrBlockResponse> AssociateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.EC2
 
         internal virtual AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -1866,7 +1866,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public virtual Task<AttachClassicLinkVpcResponse> AttachClassicLinkVpcAsync(AttachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.EC2
 
         internal virtual AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -1901,7 +1901,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public virtual Task<AttachInternetGatewayResponse> AttachInternetGatewayAsync(AttachInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -1913,7 +1913,7 @@ namespace Amazon.EC2
 
         internal virtual AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -1934,7 +1934,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public virtual Task<AttachNetworkInterfaceResponse> AttachNetworkInterfaceAsync(AttachNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -1946,7 +1946,7 @@ namespace Amazon.EC2
 
         internal virtual AttachVerifiedAccessTrustProviderResponse AttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
         public virtual Task<AttachVerifiedAccessTrustProviderResponse> AttachVerifiedAccessTrustProviderAsync(AttachVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.EC2
 
         internal virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
 
@@ -2044,7 +2044,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public virtual Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
 
@@ -2056,7 +2056,7 @@ namespace Amazon.EC2
 
         internal virtual AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -2085,7 +2085,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public virtual Task<AttachVpnGatewayResponse> AttachVpnGatewayAsync(AttachVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -2097,7 +2097,7 @@ namespace Amazon.EC2
 
         internal virtual AuthorizeClientVpnIngressResponse AuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -2121,7 +2121,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
         public virtual Task<AuthorizeClientVpnIngressResponse> AuthorizeClientVpnIngressAsync(AuthorizeClientVpnIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -2133,7 +2133,7 @@ namespace Amazon.EC2
 
         internal virtual AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public virtual Task<AuthorizeSecurityGroupEgressResponse> AuthorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.EC2
 
         internal virtual AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -2252,7 +2252,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public virtual Task<AuthorizeSecurityGroupIngressResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -2264,7 +2264,7 @@ namespace Amazon.EC2
 
         internal virtual BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BundleInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BundleInstanceResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public virtual Task<BundleInstanceResponse> BundleInstanceAsync(BundleInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BundleInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BundleInstanceResponseUnmarshaller.Instance;
 
@@ -2309,7 +2309,7 @@ namespace Amazon.EC2
 
         internal virtual CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBundleTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBundleTaskResponseUnmarshaller.Instance;
 
@@ -2330,7 +2330,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public virtual Task<CancelBundleTaskResponse> CancelBundleTaskAsync(CancelBundleTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBundleTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBundleTaskResponseUnmarshaller.Instance;
 
@@ -2342,7 +2342,7 @@ namespace Amazon.EC2
 
         internal virtual CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -2397,7 +2397,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -2409,7 +2409,7 @@ namespace Amazon.EC2
 
         internal virtual CancelCapacityReservationFleetsResponse CancelCapacityReservationFleets(CancelCapacityReservationFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -2447,7 +2447,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">REST API Reference for CancelCapacityReservationFleets Operation</seealso>
         public virtual Task<CancelCapacityReservationFleetsResponse> CancelCapacityReservationFleetsAsync(CancelCapacityReservationFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -2459,7 +2459,7 @@ namespace Amazon.EC2
 
         internal virtual CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelConversionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelConversionTaskResponseUnmarshaller.Instance;
 
@@ -2483,7 +2483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public virtual Task<CancelConversionTaskResponse> CancelConversionTaskAsync(CancelConversionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelConversionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelConversionTaskResponseUnmarshaller.Instance;
 
@@ -2495,7 +2495,7 @@ namespace Amazon.EC2
 
         internal virtual CancelDeclarativePoliciesReportResponse CancelDeclarativePoliciesReport(CancelDeclarativePoliciesReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -2528,7 +2528,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
         public virtual Task<CancelDeclarativePoliciesReportResponse> CancelDeclarativePoliciesReportAsync(CancelDeclarativePoliciesReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -2540,7 +2540,7 @@ namespace Amazon.EC2
 
         internal virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -2563,7 +2563,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -2575,7 +2575,7 @@ namespace Amazon.EC2
 
         internal virtual CancelImageLaunchPermissionResponse CancelImageLaunchPermission(CancelImageLaunchPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
 
@@ -2599,7 +2599,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
         public virtual Task<CancelImageLaunchPermissionResponse> CancelImageLaunchPermissionAsync(CancelImageLaunchPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
 
@@ -2611,7 +2611,7 @@ namespace Amazon.EC2
 
         internal virtual CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
 
@@ -2632,7 +2632,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public virtual Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
 
@@ -2644,7 +2644,7 @@ namespace Amazon.EC2
 
         internal virtual CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -2671,7 +2671,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public virtual Task<CancelReservedInstancesListingResponse> CancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -2683,7 +2683,7 @@ namespace Amazon.EC2
 
         internal virtual CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -2727,7 +2727,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public virtual Task<CancelSpotFleetRequestsResponse> CancelSpotFleetRequestsAsync(CancelSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -2739,7 +2739,7 @@ namespace Amazon.EC2
 
         internal virtual CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -2767,7 +2767,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public virtual Task<CancelSpotInstanceRequestsResponse> CancelSpotInstanceRequestsAsync(CancelSpotInstanceRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -2779,7 +2779,7 @@ namespace Amazon.EC2
 
         internal virtual ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmProductInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmProductInstanceResponseUnmarshaller.Instance;
 
@@ -2802,7 +2802,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public virtual Task<ConfirmProductInstanceResponse> ConfirmProductInstanceAsync(ConfirmProductInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmProductInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmProductInstanceResponseUnmarshaller.Instance;
 
@@ -2814,7 +2814,7 @@ namespace Amazon.EC2
 
         internal virtual CopyFpgaImageResponse CopyFpgaImage(CopyFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
 
@@ -2835,7 +2835,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
         public virtual Task<CopyFpgaImageResponse> CopyFpgaImageAsync(CopyFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
 
@@ -2847,7 +2847,7 @@ namespace Amazon.EC2
 
         internal virtual CopyImageResponse CopyImage(CopyImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
@@ -2977,7 +2977,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public virtual Task<CopyImageResponse> CopyImageAsync(CopyImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
@@ -2989,7 +2989,7 @@ namespace Amazon.EC2
 
         internal virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -3055,7 +3055,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -3067,7 +3067,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3122,7 +3122,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3134,7 +3134,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCapacityReservationBySplittingResponse CreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
 
@@ -3158,7 +3158,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
         public virtual Task<CreateCapacityReservationBySplittingResponse> CreateCapacityReservationBySplittingAsync(CreateCapacityReservationBySplittingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
 
@@ -3170,7 +3170,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCapacityReservationFleetResponse CreateCapacityReservationFleet(CreateCapacityReservationFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -3192,7 +3192,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">REST API Reference for CreateCapacityReservationFleet Operation</seealso>
         public virtual Task<CreateCapacityReservationFleetResponse> CreateCapacityReservationFleetAsync(CreateCapacityReservationFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -3204,7 +3204,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCarrierGatewayResponse CreateCarrierGateway(CreateCarrierGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -3226,7 +3226,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
         public virtual Task<CreateCarrierGatewayResponse> CreateCarrierGatewayAsync(CreateCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -3238,7 +3238,7 @@ namespace Amazon.EC2
 
         internal virtual CreateClientVpnEndpointResponse CreateClientVpnEndpoint(CreateClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -3261,7 +3261,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
         public virtual Task<CreateClientVpnEndpointResponse> CreateClientVpnEndpointAsync(CreateClientVpnEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -3273,7 +3273,7 @@ namespace Amazon.EC2
 
         internal virtual CreateClientVpnRouteResponse CreateClientVpnRoute(CreateClientVpnRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -3296,7 +3296,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
         public virtual Task<CreateClientVpnRouteResponse> CreateClientVpnRouteAsync(CreateClientVpnRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -3308,7 +3308,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCoipCidrResponse CreateCoipCidr(CreateCoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
 
@@ -3329,7 +3329,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
         public virtual Task<CreateCoipCidrResponse> CreateCoipCidrAsync(CreateCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
 
@@ -3341,7 +3341,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCoipPoolResponse CreateCoipPool(CreateCoipPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
 
@@ -3362,7 +3362,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
         public virtual Task<CreateCoipPoolResponse> CreateCoipPoolAsync(CreateCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
 
@@ -3374,7 +3374,7 @@ namespace Amazon.EC2
 
         internal virtual CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -3416,7 +3416,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public virtual Task<CreateCustomerGatewayResponse> CreateCustomerGatewayAsync(CreateCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.EC2
 
         internal virtual CreateDefaultSubnetResponse CreateDefaultSubnet(CreateDefaultSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
 
@@ -3452,7 +3452,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
         public virtual Task<CreateDefaultSubnetResponse> CreateDefaultSubnetAsync(CreateDefaultSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
 
@@ -3464,7 +3464,7 @@ namespace Amazon.EC2
 
         internal virtual CreateDefaultVpcResponse CreateDefaultVpc(CreateDefaultVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
 
@@ -3495,7 +3495,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
         public virtual Task<CreateDefaultVpcResponse> CreateDefaultVpcAsync(CreateDefaultVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
 
@@ -3507,7 +3507,7 @@ namespace Amazon.EC2
 
         internal virtual CreateDelegateMacVolumeOwnershipTaskResponse CreateDelegateMacVolumeOwnershipTask(CreateDelegateMacVolumeOwnershipTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
 
@@ -3529,7 +3529,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
         public virtual Task<CreateDelegateMacVolumeOwnershipTaskResponse> CreateDelegateMacVolumeOwnershipTaskAsync(CreateDelegateMacVolumeOwnershipTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
 
@@ -3541,7 +3541,7 @@ namespace Amazon.EC2
 
         internal virtual CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -3619,7 +3619,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public virtual Task<CreateDhcpOptionsResponse> CreateDhcpOptionsAsync(CreateDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -3631,7 +3631,7 @@ namespace Amazon.EC2
 
         internal virtual CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -3655,7 +3655,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public virtual Task<CreateEgressOnlyInternetGatewayResponse> CreateEgressOnlyInternetGatewayAsync(CreateEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -3667,7 +3667,7 @@ namespace Amazon.EC2
 
         internal virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -3700,7 +3700,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -3712,7 +3712,7 @@ namespace Amazon.EC2
 
         internal virtual CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
 
@@ -3754,7 +3754,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public virtual Task<CreateFlowLogsResponse> CreateFlowLogsAsync(CreateFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
 
@@ -3766,7 +3766,7 @@ namespace Amazon.EC2
 
         internal virtual CreateFpgaImageResponse CreateFpgaImage(CreateFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
 
@@ -3800,7 +3800,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
         public virtual Task<CreateFpgaImageResponse> CreateFpgaImageAsync(CreateFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
 
@@ -3812,7 +3812,7 @@ namespace Amazon.EC2
 
         internal virtual CreateImageResponse CreateImage(CreateImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
 
@@ -3862,7 +3862,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
 
@@ -3874,7 +3874,7 @@ namespace Amazon.EC2
 
         internal virtual CreateImageUsageReportResponse CreateImageUsageReport(CreateImageUsageReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
 
@@ -3904,7 +3904,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
         public virtual Task<CreateImageUsageReportResponse> CreateImageUsageReportAsync(CreateImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
 
@@ -3916,7 +3916,7 @@ namespace Amazon.EC2
 
         internal virtual CreateInstanceConnectEndpointResponse CreateInstanceConnectEndpoint(CreateInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -3946,7 +3946,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
         public virtual Task<CreateInstanceConnectEndpointResponse> CreateInstanceConnectEndpointAsync(CreateInstanceConnectEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -3958,7 +3958,7 @@ namespace Amazon.EC2
 
         internal virtual CreateInstanceEventWindowResponse CreateInstanceEventWindow(CreateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -4019,7 +4019,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
         public virtual Task<CreateInstanceEventWindowResponse> CreateInstanceEventWindowAsync(CreateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -4031,7 +4031,7 @@ namespace Amazon.EC2
 
         internal virtual CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceExportTaskResponseUnmarshaller.Instance;
 
@@ -4060,7 +4060,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public virtual Task<CreateInstanceExportTaskResponse> CreateInstanceExportTaskAsync(CreateInstanceExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceExportTaskResponseUnmarshaller.Instance;
 
@@ -4076,7 +4076,7 @@ namespace Amazon.EC2
         }
         internal virtual CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInternetGatewayResponseUnmarshaller.Instance;
 
@@ -4126,7 +4126,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public virtual Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(CreateInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInternetGatewayResponseUnmarshaller.Instance;
 
@@ -4138,7 +4138,7 @@ namespace Amazon.EC2
 
         internal virtual CreateIpamResponse CreateIpam(CreateIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
 
@@ -4168,7 +4168,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
         public virtual Task<CreateIpamResponse> CreateIpamAsync(CreateIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
 
@@ -4180,7 +4180,7 @@ namespace Amazon.EC2
 
         internal virtual CreateIpamExternalResourceVerificationTokenResponse CreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -4204,7 +4204,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
         public virtual Task<CreateIpamExternalResourceVerificationTokenResponse> CreateIpamExternalResourceVerificationTokenAsync(CreateIpamExternalResourceVerificationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -4216,7 +4216,7 @@ namespace Amazon.EC2
 
         internal virtual CreateIpamPoolResponse CreateIpamPool(CreateIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
 
@@ -4247,7 +4247,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
         public virtual Task<CreateIpamPoolResponse> CreateIpamPoolAsync(CreateIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
 
@@ -4259,7 +4259,7 @@ namespace Amazon.EC2
 
         internal virtual CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -4281,7 +4281,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
         public virtual Task<CreateIpamResourceDiscoveryResponse> CreateIpamResourceDiscoveryAsync(CreateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -4293,7 +4293,7 @@ namespace Amazon.EC2
 
         internal virtual CreateIpamScopeResponse CreateIpamScope(CreateIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
 
@@ -4324,7 +4324,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
         public virtual Task<CreateIpamScopeResponse> CreateIpamScopeAsync(CreateIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
 
@@ -4336,7 +4336,7 @@ namespace Amazon.EC2
 
         internal virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -4377,7 +4377,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -4389,7 +4389,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLaunchTemplateResponse CreateLaunchTemplate(CreateLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -4426,7 +4426,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate">REST API Reference for CreateLaunchTemplate Operation</seealso>
         public virtual Task<CreateLaunchTemplateResponse> CreateLaunchTemplateAsync(CreateLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -4438,7 +4438,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLaunchTemplateVersionResponse CreateLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
 
@@ -4479,7 +4479,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">REST API Reference for CreateLaunchTemplateVersion Operation</seealso>
         public virtual Task<CreateLaunchTemplateVersionResponse> CreateLaunchTemplateVersionAsync(CreateLaunchTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
 
@@ -4491,7 +4491,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayRouteResponse CreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -4523,7 +4523,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
         public virtual Task<CreateLocalGatewayRouteResponse> CreateLocalGatewayRouteAsync(CreateLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -4535,7 +4535,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayRouteTableResponse CreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -4556,7 +4556,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
         public virtual Task<CreateLocalGatewayRouteTableResponse> CreateLocalGatewayRouteTableAsync(CreateLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -4568,7 +4568,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -4589,7 +4589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual Task<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -4601,7 +4601,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayRouteTableVpcAssociationResponse CreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -4622,7 +4622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual Task<CreateLocalGatewayRouteTableVpcAssociationResponse> CreateLocalGatewayRouteTableVpcAssociationAsync(CreateLocalGatewayRouteTableVpcAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -4634,7 +4634,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayVirtualInterfaceResponse CreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -4655,7 +4655,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
         public virtual Task<CreateLocalGatewayVirtualInterfaceResponse> CreateLocalGatewayVirtualInterfaceAsync(CreateLocalGatewayVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -4667,7 +4667,7 @@ namespace Amazon.EC2
 
         internal virtual CreateLocalGatewayVirtualInterfaceGroupResponse CreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -4688,7 +4688,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual Task<CreateLocalGatewayVirtualInterfaceGroupResponse> CreateLocalGatewayVirtualInterfaceGroupAsync(CreateLocalGatewayVirtualInterfaceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -4700,7 +4700,7 @@ namespace Amazon.EC2
 
         internal virtual CreateMacSystemIntegrityProtectionModificationTaskResponse CreateMacSystemIntegrityProtectionModificationTask(CreateMacSystemIntegrityProtectionModificationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
 
@@ -4771,7 +4771,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
         public virtual Task<CreateMacSystemIntegrityProtectionModificationTaskResponse> CreateMacSystemIntegrityProtectionModificationTaskAsync(CreateMacSystemIntegrityProtectionModificationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
 
@@ -4783,7 +4783,7 @@ namespace Amazon.EC2
 
         internal virtual CreateManagedPrefixListResponse CreateManagedPrefixList(CreateManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -4805,7 +4805,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
         public virtual Task<CreateManagedPrefixListResponse> CreateManagedPrefixListAsync(CreateManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -4817,7 +4817,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
 
@@ -4870,7 +4870,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public virtual Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
 
@@ -4882,7 +4882,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclResponseUnmarshaller.Instance;
 
@@ -4910,7 +4910,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public virtual Task<CreateNetworkAclResponse> CreateNetworkAclAsync(CreateNetworkAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclResponseUnmarshaller.Instance;
 
@@ -4922,7 +4922,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -4966,7 +4966,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public virtual Task<CreateNetworkAclEntryResponse> CreateNetworkAclEntryAsync(CreateNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -4978,7 +4978,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkInsightsAccessScopeResponse CreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -5007,7 +5007,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
         public virtual Task<CreateNetworkInsightsAccessScopeResponse> CreateNetworkInsightsAccessScopeAsync(CreateNetworkInsightsAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -5019,7 +5019,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkInsightsPathResponse CreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -5048,7 +5048,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
         public virtual Task<CreateNetworkInsightsPathResponse> CreateNetworkInsightsPathAsync(CreateNetworkInsightsPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -5060,7 +5060,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -5092,7 +5092,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public virtual Task<CreateNetworkInterfaceResponse> CreateNetworkInterfaceAsync(CreateNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -5104,7 +5104,7 @@ namespace Amazon.EC2
 
         internal virtual CreateNetworkInterfacePermissionResponse CreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -5132,7 +5132,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
         public virtual Task<CreateNetworkInterfacePermissionResponse> CreateNetworkInterfacePermissionAsync(CreateNetworkInterfacePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -5144,7 +5144,7 @@ namespace Amazon.EC2
 
         internal virtual CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlacementGroupResponseUnmarshaller.Instance;
 
@@ -5180,7 +5180,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public virtual Task<CreatePlacementGroupResponse> CreatePlacementGroupAsync(CreatePlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlacementGroupResponseUnmarshaller.Instance;
 
@@ -5192,7 +5192,7 @@ namespace Amazon.EC2
 
         internal virtual CreatePublicIpv4PoolResponse CreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -5216,7 +5216,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
         public virtual Task<CreatePublicIpv4PoolResponse> CreatePublicIpv4PoolAsync(CreatePublicIpv4PoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -5228,7 +5228,7 @@ namespace Amazon.EC2
 
         internal virtual CreateReplaceRootVolumeTaskResponse CreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplaceRootVolumeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplaceRootVolumeTaskResponseUnmarshaller.Instance;
 
@@ -5258,7 +5258,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
         public virtual Task<CreateReplaceRootVolumeTaskResponse> CreateReplaceRootVolumeTaskAsync(CreateReplaceRootVolumeTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplaceRootVolumeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplaceRootVolumeTaskResponseUnmarshaller.Instance;
 
@@ -5270,7 +5270,7 @@ namespace Amazon.EC2
 
         internal virtual CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -5322,7 +5322,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public virtual Task<CreateReservedInstancesListingResponse> CreateReservedInstancesListingAsync(CreateReservedInstancesListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -5334,7 +5334,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRestoreImageTaskResponse CreateRestoreImageTask(CreateRestoreImageTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreImageTaskResponseUnmarshaller.Instance;
 
@@ -5368,7 +5368,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
         public virtual Task<CreateRestoreImageTaskResponse> CreateRestoreImageTaskAsync(CreateRestoreImageTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreImageTaskResponseUnmarshaller.Instance;
 
@@ -5380,7 +5380,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -5432,7 +5432,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -5444,7 +5444,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRouteServerResponse CreateRouteServer(CreateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerResponseUnmarshaller.Instance;
 
@@ -5502,7 +5502,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
         public virtual Task<CreateRouteServerResponse> CreateRouteServerAsync(CreateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerResponseUnmarshaller.Instance;
 
@@ -5514,7 +5514,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRouteServerEndpointResponse CreateRouteServerEndpoint(CreateRouteServerEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -5547,7 +5547,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
         public virtual Task<CreateRouteServerEndpointResponse> CreateRouteServerEndpointAsync(CreateRouteServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -5559,7 +5559,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRouteServerPeerResponse CreateRouteServerPeer(CreateRouteServerPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -5604,7 +5604,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
         public virtual Task<CreateRouteServerPeerResponse> CreateRouteServerPeerAsync(CreateRouteServerPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -5616,7 +5616,7 @@ namespace Amazon.EC2
 
         internal virtual CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteTableResponseUnmarshaller.Instance;
 
@@ -5644,7 +5644,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public virtual Task<CreateRouteTableResponse> CreateRouteTableAsync(CreateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteTableResponseUnmarshaller.Instance;
 
@@ -5656,7 +5656,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityGroupResponseUnmarshaller.Instance;
 
@@ -5707,7 +5707,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public virtual Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityGroupResponseUnmarshaller.Instance;
 
@@ -5719,7 +5719,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -5792,7 +5792,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -5804,7 +5804,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSnapshotsResponse CreateSnapshots(CreateSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
 
@@ -5851,7 +5851,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
         public virtual Task<CreateSnapshotsResponse> CreateSnapshotsAsync(CreateSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
 
@@ -5863,7 +5863,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -5887,7 +5887,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public virtual Task<CreateSpotDatafeedSubscriptionResponse> CreateSpotDatafeedSubscriptionAsync(CreateSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -5899,7 +5899,7 @@ namespace Amazon.EC2
 
         internal virtual CreateStoreImageTaskResponse CreateStoreImageTask(CreateStoreImageTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStoreImageTaskResponseUnmarshaller.Instance;
 
@@ -5932,7 +5932,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
         public virtual Task<CreateStoreImageTaskResponse> CreateStoreImageTaskAsync(CreateStoreImageTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStoreImageTaskResponseUnmarshaller.Instance;
 
@@ -5944,7 +5944,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetResponseUnmarshaller.Instance;
 
@@ -6002,7 +6002,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public virtual Task<CreateSubnetResponse> CreateSubnetAsync(CreateSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetResponseUnmarshaller.Instance;
 
@@ -6014,7 +6014,7 @@ namespace Amazon.EC2
 
         internal virtual CreateSubnetCidrReservationResponse CreateSubnetCidrReservation(CreateSubnetCidrReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -6037,7 +6037,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
         public virtual Task<CreateSubnetCidrReservationResponse> CreateSubnetCidrReservationAsync(CreateSubnetCidrReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -6049,7 +6049,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -6083,7 +6083,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -6095,7 +6095,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTrafficMirrorFilterResponse CreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -6128,7 +6128,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
         public virtual Task<CreateTrafficMirrorFilterResponse> CreateTrafficMirrorFilterAsync(CreateTrafficMirrorFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -6140,7 +6140,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTrafficMirrorFilterRuleResponse CreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -6170,7 +6170,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
         public virtual Task<CreateTrafficMirrorFilterRuleResponse> CreateTrafficMirrorFilterRuleAsync(CreateTrafficMirrorFilterRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -6182,7 +6182,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTrafficMirrorSessionResponse CreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -6221,7 +6221,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
         public virtual Task<CreateTrafficMirrorSessionResponse> CreateTrafficMirrorSessionAsync(CreateTrafficMirrorSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -6233,7 +6233,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTrafficMirrorTargetResponse CreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -6270,7 +6270,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
         public virtual Task<CreateTrafficMirrorTargetResponse> CreateTrafficMirrorTargetAsync(CreateTrafficMirrorTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -6282,7 +6282,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayResponse CreateTransitGateway(CreateTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
 
@@ -6331,7 +6331,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
         public virtual Task<CreateTransitGatewayResponse> CreateTransitGatewayAsync(CreateTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
 
@@ -6343,7 +6343,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayConnectResponse CreateTransitGatewayConnect(CreateTransitGatewayConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -6372,7 +6372,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
         public virtual Task<CreateTransitGatewayConnectResponse> CreateTransitGatewayConnectAsync(CreateTransitGatewayConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -6384,7 +6384,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayConnectPeerResponse CreateTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -6417,7 +6417,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
         public virtual Task<CreateTransitGatewayConnectPeerResponse> CreateTransitGatewayConnectPeerAsync(CreateTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -6429,7 +6429,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayMulticastDomainResponse CreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -6457,7 +6457,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
         public virtual Task<CreateTransitGatewayMulticastDomainResponse> CreateTransitGatewayMulticastDomainAsync(CreateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -6469,7 +6469,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayPeeringAttachmentResponse CreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -6498,7 +6498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
         public virtual Task<CreateTransitGatewayPeeringAttachmentResponse> CreateTransitGatewayPeeringAttachmentAsync(CreateTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -6510,7 +6510,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayPolicyTableResponse CreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -6531,7 +6531,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
         public virtual Task<CreateTransitGatewayPolicyTableResponse> CreateTransitGatewayPolicyTableAsync(CreateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -6543,7 +6543,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayPrefixListReferenceResponse CreateTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -6565,7 +6565,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
         public virtual Task<CreateTransitGatewayPrefixListReferenceResponse> CreateTransitGatewayPrefixListReferenceAsync(CreateTransitGatewayPrefixListReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -6577,7 +6577,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayRouteResponse CreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -6598,7 +6598,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
         public virtual Task<CreateTransitGatewayRouteResponse> CreateTransitGatewayRouteAsync(CreateTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -6610,7 +6610,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayRouteTableResponse CreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -6631,7 +6631,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
         public virtual Task<CreateTransitGatewayRouteTableResponse> CreateTransitGatewayRouteTableAsync(CreateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -6643,7 +6643,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayRouteTableAnnouncementResponse CreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -6664,7 +6664,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual Task<CreateTransitGatewayRouteTableAnnouncementResponse> CreateTransitGatewayRouteTableAnnouncementAsync(CreateTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -6676,7 +6676,7 @@ namespace Amazon.EC2
 
         internal virtual CreateTransitGatewayVpcAttachmentResponse CreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -6709,7 +6709,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
         public virtual Task<CreateTransitGatewayVpcAttachmentResponse> CreateTransitGatewayVpcAttachmentAsync(CreateTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -6721,7 +6721,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVerifiedAccessEndpointResponse CreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -6743,7 +6743,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
         public virtual Task<CreateVerifiedAccessEndpointResponse> CreateVerifiedAccessEndpointAsync(CreateVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -6755,7 +6755,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVerifiedAccessGroupResponse CreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -6780,7 +6780,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
         public virtual Task<CreateVerifiedAccessGroupResponse> CreateVerifiedAccessGroupAsync(CreateVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -6792,7 +6792,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVerifiedAccessInstanceResponse CreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -6814,7 +6814,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
         public virtual Task<CreateVerifiedAccessInstanceResponse> CreateVerifiedAccessInstanceAsync(CreateVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -6826,7 +6826,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVerifiedAccessTrustProviderResponse CreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -6850,7 +6850,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
         public virtual Task<CreateVerifiedAccessTrustProviderResponse> CreateVerifiedAccessTrustProviderAsync(CreateVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -6862,7 +6862,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -6907,7 +6907,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public virtual Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -6919,7 +6919,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcResponse CreateVpc(CreateVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcResponseUnmarshaller.Instance;
 
@@ -6961,7 +6961,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public virtual Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcResponseUnmarshaller.Instance;
 
@@ -6973,7 +6973,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcBlockPublicAccessExclusionResponse CreateVpcBlockPublicAccessExclusion(CreateVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -7000,7 +7000,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual Task<CreateVpcBlockPublicAccessExclusionResponse> CreateVpcBlockPublicAccessExclusionAsync(CreateVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -7012,7 +7012,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -7037,7 +7037,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -7049,7 +7049,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcEndpointConnectionNotificationResponse CreateVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -7078,7 +7078,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification">REST API Reference for CreateVpcEndpointConnectionNotification Operation</seealso>
         public virtual Task<CreateVpcEndpointConnectionNotificationResponse> CreateVpcEndpointConnectionNotificationAsync(CreateVpcEndpointConnectionNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -7090,7 +7090,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcEndpointServiceConfigurationResponse CreateVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -7139,7 +7139,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">REST API Reference for CreateVpcEndpointServiceConfiguration Operation</seealso>
         public virtual Task<CreateVpcEndpointServiceConfigurationResponse> CreateVpcEndpointServiceConfigurationAsync(CreateVpcEndpointServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -7151,7 +7151,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -7193,7 +7193,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -7205,7 +7205,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionResponseUnmarshaller.Instance;
 
@@ -7256,7 +7256,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public virtual Task<CreateVpnConnectionResponse> CreateVpnConnectionAsync(CreateVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionResponseUnmarshaller.Instance;
 
@@ -7268,7 +7268,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -7298,7 +7298,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public virtual Task<CreateVpnConnectionRouteResponse> CreateVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -7310,7 +7310,7 @@ namespace Amazon.EC2
 
         internal virtual CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnGatewayResponseUnmarshaller.Instance;
 
@@ -7340,7 +7340,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public virtual Task<CreateVpnGatewayResponse> CreateVpnGatewayAsync(CreateVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnGatewayResponseUnmarshaller.Instance;
 
@@ -7352,7 +7352,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteCarrierGatewayResponse DeleteCarrierGateway(DeleteCarrierGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -7380,7 +7380,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
         public virtual Task<DeleteCarrierGatewayResponse> DeleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -7392,7 +7392,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteClientVpnEndpointResponse DeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -7414,7 +7414,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
         public virtual Task<DeleteClientVpnEndpointResponse> DeleteClientVpnEndpointAsync(DeleteClientVpnEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -7426,7 +7426,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteClientVpnRouteResponse DeleteClientVpnRoute(DeleteClientVpnRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -7450,7 +7450,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
         public virtual Task<DeleteClientVpnRouteResponse> DeleteClientVpnRouteAsync(DeleteClientVpnRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -7462,7 +7462,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteCoipCidrResponse DeleteCoipCidr(DeleteCoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
 
@@ -7483,7 +7483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
         public virtual Task<DeleteCoipCidrResponse> DeleteCoipCidrAsync(DeleteCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
 
@@ -7495,7 +7495,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteCoipPoolResponse DeleteCoipPool(DeleteCoipPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
 
@@ -7516,7 +7516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
         public virtual Task<DeleteCoipPoolResponse> DeleteCoipPoolAsync(DeleteCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
 
@@ -7528,7 +7528,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -7550,7 +7550,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public virtual Task<DeleteCustomerGatewayResponse> DeleteCustomerGatewayAsync(DeleteCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -7562,7 +7562,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -7585,7 +7585,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public virtual Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -7597,7 +7597,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -7618,7 +7618,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public virtual Task<DeleteEgressOnlyInternetGatewayResponse> DeleteEgressOnlyInternetGatewayAsync(DeleteEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -7630,7 +7630,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteFleetsResponse DeleteFleets(DeleteFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
 
@@ -7700,7 +7700,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
         public virtual Task<DeleteFleetsResponse> DeleteFleetsAsync(DeleteFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
 
@@ -7712,7 +7712,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
 
@@ -7733,7 +7733,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public virtual Task<DeleteFlowLogsResponse> DeleteFlowLogsAsync(DeleteFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
 
@@ -7745,7 +7745,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteFpgaImageResponse DeleteFpgaImage(DeleteFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
 
@@ -7766,7 +7766,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
         public virtual Task<DeleteFpgaImageResponse> DeleteFpgaImageAsync(DeleteFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
 
@@ -7778,7 +7778,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteImageUsageReportResponse DeleteImageUsageReport(DeleteImageUsageReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
 
@@ -7805,7 +7805,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
         public virtual Task<DeleteImageUsageReportResponse> DeleteImageUsageReportAsync(DeleteImageUsageReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
 
@@ -7817,7 +7817,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteInstanceConnectEndpointResponse DeleteInstanceConnectEndpoint(DeleteInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -7838,7 +7838,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
         public virtual Task<DeleteInstanceConnectEndpointResponse> DeleteInstanceConnectEndpointAsync(DeleteInstanceConnectEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -7850,7 +7850,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteInstanceEventWindowResponse DeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -7877,7 +7877,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
         public virtual Task<DeleteInstanceEventWindowResponse> DeleteInstanceEventWindowAsync(DeleteInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -7889,7 +7889,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInternetGatewayResponseUnmarshaller.Instance;
 
@@ -7911,7 +7911,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public virtual Task<DeleteInternetGatewayResponse> DeleteInternetGatewayAsync(DeleteInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInternetGatewayResponseUnmarshaller.Instance;
 
@@ -7923,7 +7923,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteIpamResponse DeleteIpam(DeleteIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
 
@@ -7951,7 +7951,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
         public virtual Task<DeleteIpamResponse> DeleteIpamAsync(DeleteIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
 
@@ -7963,7 +7963,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteIpamExternalResourceVerificationTokenResponse DeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -7987,7 +7987,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
         public virtual Task<DeleteIpamExternalResourceVerificationTokenResponse> DeleteIpamExternalResourceVerificationTokenAsync(DeleteIpamExternalResourceVerificationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -7999,7 +7999,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteIpamPoolResponse DeleteIpamPool(DeleteIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
@@ -8032,7 +8032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
         public virtual Task<DeleteIpamPoolResponse> DeleteIpamPoolAsync(DeleteIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
@@ -8044,7 +8044,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -8066,7 +8066,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
         public virtual Task<DeleteIpamResourceDiscoveryResponse> DeleteIpamResourceDiscoveryAsync(DeleteIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -8078,7 +8078,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteIpamScopeResponse DeleteIpamScope(DeleteIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
 
@@ -8105,7 +8105,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
         public virtual Task<DeleteIpamScopeResponse> DeleteIpamScopeAsync(DeleteIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
 
@@ -8117,7 +8117,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -8138,7 +8138,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -8150,7 +8150,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLaunchTemplateResponse DeleteLaunchTemplate(DeleteLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -8171,7 +8171,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate">REST API Reference for DeleteLaunchTemplate Operation</seealso>
         public virtual Task<DeleteLaunchTemplateResponse> DeleteLaunchTemplateAsync(DeleteLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -8183,7 +8183,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLaunchTemplateVersionsResponse DeleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -8222,7 +8222,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">REST API Reference for DeleteLaunchTemplateVersions Operation</seealso>
         public virtual Task<DeleteLaunchTemplateVersionsResponse> DeleteLaunchTemplateVersionsAsync(DeleteLaunchTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -8234,7 +8234,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayRouteResponse DeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -8255,7 +8255,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
         public virtual Task<DeleteLocalGatewayRouteResponse> DeleteLocalGatewayRouteAsync(DeleteLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -8267,7 +8267,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayRouteTableResponse DeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -8288,7 +8288,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
         public virtual Task<DeleteLocalGatewayRouteTableResponse> DeleteLocalGatewayRouteTableAsync(DeleteLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -8300,7 +8300,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -8321,7 +8321,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual Task<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -8333,7 +8333,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayRouteTableVpcAssociationResponse DeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -8354,7 +8354,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual Task<DeleteLocalGatewayRouteTableVpcAssociationResponse> DeleteLocalGatewayRouteTableVpcAssociationAsync(DeleteLocalGatewayRouteTableVpcAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -8366,7 +8366,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayVirtualInterfaceResponse DeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -8387,7 +8387,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
         public virtual Task<DeleteLocalGatewayVirtualInterfaceResponse> DeleteLocalGatewayVirtualInterfaceAsync(DeleteLocalGatewayVirtualInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -8399,7 +8399,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteLocalGatewayVirtualInterfaceGroupResponse DeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -8420,7 +8420,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual Task<DeleteLocalGatewayVirtualInterfaceGroupResponse> DeleteLocalGatewayVirtualInterfaceGroupAsync(DeleteLocalGatewayVirtualInterfaceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -8432,7 +8432,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteManagedPrefixListResponse DeleteManagedPrefixList(DeleteManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -8454,7 +8454,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
         public virtual Task<DeleteManagedPrefixListResponse> DeleteManagedPrefixListAsync(DeleteManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -8466,7 +8466,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
 
@@ -8489,7 +8489,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public virtual Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
 
@@ -8501,7 +8501,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclResponseUnmarshaller.Instance;
 
@@ -8523,7 +8523,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public virtual Task<DeleteNetworkAclResponse> DeleteNetworkAclAsync(DeleteNetworkAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclResponseUnmarshaller.Instance;
 
@@ -8535,7 +8535,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -8556,7 +8556,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public virtual Task<DeleteNetworkAclEntryResponse> DeleteNetworkAclEntryAsync(DeleteNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -8568,7 +8568,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInsightsAccessScopeResponse DeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -8589,7 +8589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
         public virtual Task<DeleteNetworkInsightsAccessScopeResponse> DeleteNetworkInsightsAccessScopeAsync(DeleteNetworkInsightsAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -8601,7 +8601,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInsightsAccessScopeAnalysisResponse DeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -8622,7 +8622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual Task<DeleteNetworkInsightsAccessScopeAnalysisResponse> DeleteNetworkInsightsAccessScopeAnalysisAsync(DeleteNetworkInsightsAccessScopeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -8634,7 +8634,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInsightsAnalysisResponse DeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -8655,7 +8655,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
         public virtual Task<DeleteNetworkInsightsAnalysisResponse> DeleteNetworkInsightsAnalysisAsync(DeleteNetworkInsightsAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -8667,7 +8667,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInsightsPathResponse DeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -8688,7 +8688,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
         public virtual Task<DeleteNetworkInsightsPathResponse> DeleteNetworkInsightsPathAsync(DeleteNetworkInsightsPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -8700,7 +8700,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -8722,7 +8722,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public virtual Task<DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -8734,7 +8734,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteNetworkInterfacePermissionResponse DeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -8757,7 +8757,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
         public virtual Task<DeleteNetworkInterfacePermissionResponse> DeleteNetworkInterfacePermissionAsync(DeleteNetworkInterfacePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -8769,7 +8769,7 @@ namespace Amazon.EC2
 
         internal virtual DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
@@ -8792,7 +8792,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public virtual Task<DeletePlacementGroupResponse> DeletePlacementGroupAsync(DeletePlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
@@ -8804,7 +8804,7 @@ namespace Amazon.EC2
 
         internal virtual DeletePublicIpv4PoolResponse DeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -8827,7 +8827,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
         public virtual Task<DeletePublicIpv4PoolResponse> DeletePublicIpv4PoolAsync(DeletePublicIpv4PoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -8839,7 +8839,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteQueuedReservedInstancesResponse DeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
 
@@ -8860,7 +8860,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
         public virtual Task<DeleteQueuedReservedInstancesResponse> DeleteQueuedReservedInstancesAsync(DeleteQueuedReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
 
@@ -8872,7 +8872,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -8893,7 +8893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -8905,7 +8905,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteRouteServerResponse DeleteRouteServer(DeleteRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerResponseUnmarshaller.Instance;
 
@@ -8963,7 +8963,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
         public virtual Task<DeleteRouteServerResponse> DeleteRouteServerAsync(DeleteRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerResponseUnmarshaller.Instance;
 
@@ -8975,7 +8975,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteRouteServerEndpointResponse DeleteRouteServerEndpoint(DeleteRouteServerEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -9003,7 +9003,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
         public virtual Task<DeleteRouteServerEndpointResponse> DeleteRouteServerEndpointAsync(DeleteRouteServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -9015,7 +9015,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteRouteServerPeerResponse DeleteRouteServerPeer(DeleteRouteServerPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -9056,7 +9056,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
         public virtual Task<DeleteRouteServerPeerResponse> DeleteRouteServerPeerAsync(DeleteRouteServerPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -9068,7 +9068,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteTableResponseUnmarshaller.Instance;
 
@@ -9090,7 +9090,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public virtual Task<DeleteRouteTableResponse> DeleteRouteTableAsync(DeleteRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteTableResponseUnmarshaller.Instance;
 
@@ -9102,7 +9102,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityGroupResponseUnmarshaller.Instance;
 
@@ -9130,7 +9130,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public virtual Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityGroupResponseUnmarshaller.Instance;
 
@@ -9142,7 +9142,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -9182,7 +9182,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -9198,7 +9198,7 @@ namespace Amazon.EC2
         }
         internal virtual DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -9234,7 +9234,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public virtual Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -9246,7 +9246,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetResponseUnmarshaller.Instance;
 
@@ -9268,7 +9268,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public virtual Task<DeleteSubnetResponse> DeleteSubnetAsync(DeleteSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetResponseUnmarshaller.Instance;
 
@@ -9280,7 +9280,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteSubnetCidrReservationResponse DeleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -9301,7 +9301,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
         public virtual Task<DeleteSubnetCidrReservationResponse> DeleteSubnetCidrReservationAsync(DeleteSubnetCidrReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -9313,7 +9313,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -9341,7 +9341,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -9353,7 +9353,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTrafficMirrorFilterResponse DeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -9379,7 +9379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
         public virtual Task<DeleteTrafficMirrorFilterResponse> DeleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -9391,7 +9391,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTrafficMirrorFilterRuleResponse DeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -9412,7 +9412,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
         public virtual Task<DeleteTrafficMirrorFilterRuleResponse> DeleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -9424,7 +9424,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTrafficMirrorSessionResponse DeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -9445,7 +9445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
         public virtual Task<DeleteTrafficMirrorSessionResponse> DeleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -9457,7 +9457,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTrafficMirrorTargetResponse DeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -9483,7 +9483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
         public virtual Task<DeleteTrafficMirrorTargetResponse> DeleteTrafficMirrorTargetAsync(DeleteTrafficMirrorTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -9495,7 +9495,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayResponse DeleteTransitGateway(DeleteTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
 
@@ -9516,7 +9516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
         public virtual Task<DeleteTransitGatewayResponse> DeleteTransitGatewayAsync(DeleteTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
 
@@ -9528,7 +9528,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayConnectResponse DeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -9550,7 +9550,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
         public virtual Task<DeleteTransitGatewayConnectResponse> DeleteTransitGatewayConnectAsync(DeleteTransitGatewayConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -9562,7 +9562,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayConnectPeerResponse DeleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -9583,7 +9583,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
         public virtual Task<DeleteTransitGatewayConnectPeerResponse> DeleteTransitGatewayConnectPeerAsync(DeleteTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -9595,7 +9595,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayMulticastDomainResponse DeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -9616,7 +9616,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
         public virtual Task<DeleteTransitGatewayMulticastDomainResponse> DeleteTransitGatewayMulticastDomainAsync(DeleteTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -9628,7 +9628,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayPeeringAttachmentResponse DeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -9649,7 +9649,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
         public virtual Task<DeleteTransitGatewayPeeringAttachmentResponse> DeleteTransitGatewayPeeringAttachmentAsync(DeleteTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -9661,7 +9661,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayPolicyTableResponse DeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -9682,7 +9682,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
         public virtual Task<DeleteTransitGatewayPolicyTableResponse> DeleteTransitGatewayPolicyTableAsync(DeleteTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -9694,7 +9694,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayPrefixListReferenceResponse DeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -9716,7 +9716,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
         public virtual Task<DeleteTransitGatewayPrefixListReferenceResponse> DeleteTransitGatewayPrefixListReferenceAsync(DeleteTransitGatewayPrefixListReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -9728,7 +9728,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -9749,7 +9749,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
         public virtual Task<DeleteTransitGatewayRouteResponse> DeleteTransitGatewayRouteAsync(DeleteTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -9761,7 +9761,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayRouteTableResponse DeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -9785,7 +9785,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
         public virtual Task<DeleteTransitGatewayRouteTableResponse> DeleteTransitGatewayRouteTableAsync(DeleteTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -9797,7 +9797,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayRouteTableAnnouncementResponse DeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -9818,7 +9818,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual Task<DeleteTransitGatewayRouteTableAnnouncementResponse> DeleteTransitGatewayRouteTableAnnouncementAsync(DeleteTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -9830,7 +9830,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteTransitGatewayVpcAttachmentResponse DeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -9851,7 +9851,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
         public virtual Task<DeleteTransitGatewayVpcAttachmentResponse> DeleteTransitGatewayVpcAttachmentAsync(DeleteTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -9863,7 +9863,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVerifiedAccessEndpointResponse DeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -9884,7 +9884,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
         public virtual Task<DeleteVerifiedAccessEndpointResponse> DeleteVerifiedAccessEndpointAsync(DeleteVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -9896,7 +9896,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVerifiedAccessGroupResponse DeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -9917,7 +9917,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
         public virtual Task<DeleteVerifiedAccessGroupResponse> DeleteVerifiedAccessGroupAsync(DeleteVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -9929,7 +9929,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVerifiedAccessInstanceResponse DeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -9950,7 +9950,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
         public virtual Task<DeleteVerifiedAccessInstanceResponse> DeleteVerifiedAccessInstanceAsync(DeleteVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -9962,7 +9962,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVerifiedAccessTrustProviderResponse DeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -9983,7 +9983,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
         public virtual Task<DeleteVerifiedAccessTrustProviderResponse> DeleteVerifiedAccessTrustProviderAsync(DeleteVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -9995,7 +9995,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -10027,7 +10027,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -10039,7 +10039,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
@@ -10071,7 +10071,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public virtual Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
@@ -10083,7 +10083,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcBlockPublicAccessExclusionResponse DeleteVpcBlockPublicAccessExclusion(DeleteVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -10110,7 +10110,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual Task<DeleteVpcBlockPublicAccessExclusionResponse> DeleteVpcBlockPublicAccessExclusionAsync(DeleteVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -10122,7 +10122,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcEndpointConnectionNotificationsResponse DeleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -10143,7 +10143,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">REST API Reference for DeleteVpcEndpointConnectionNotifications Operation</seealso>
         public virtual Task<DeleteVpcEndpointConnectionNotificationsResponse> DeleteVpcEndpointConnectionNotificationsAsync(DeleteVpcEndpointConnectionNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -10155,7 +10155,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -10192,7 +10192,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public virtual Task<DeleteVpcEndpointsResponse> DeleteVpcEndpointsAsync(DeleteVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -10204,7 +10204,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcEndpointServiceConfigurationsResponse DeleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -10227,7 +10227,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations">REST API Reference for DeleteVpcEndpointServiceConfigurations Operation</seealso>
         public virtual Task<DeleteVpcEndpointServiceConfigurationsResponse> DeleteVpcEndpointServiceConfigurationsAsync(DeleteVpcEndpointServiceConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -10239,7 +10239,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -10264,7 +10264,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -10276,7 +10276,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionResponseUnmarshaller.Instance;
 
@@ -10314,7 +10314,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public virtual Task<DeleteVpnConnectionResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionResponseUnmarshaller.Instance;
 
@@ -10326,7 +10326,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -10349,7 +10349,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public virtual Task<DeleteVpnConnectionRouteResponse> DeleteVpnConnectionRouteAsync(DeleteVpnConnectionRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -10361,7 +10361,7 @@ namespace Amazon.EC2
 
         internal virtual DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnGatewayResponseUnmarshaller.Instance;
 
@@ -10384,7 +10384,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public virtual Task<DeleteVpnGatewayResponse> DeleteVpnGatewayAsync(DeleteVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnGatewayResponseUnmarshaller.Instance;
 
@@ -10396,7 +10396,7 @@ namespace Amazon.EC2
 
         internal virtual DeprovisionByoipCidrResponse DeprovisionByoipCidr(DeprovisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -10425,7 +10425,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         public virtual Task<DeprovisionByoipCidrResponse> DeprovisionByoipCidrAsync(DeprovisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -10437,7 +10437,7 @@ namespace Amazon.EC2
 
         internal virtual DeprovisionIpamByoasnResponse DeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -10462,7 +10462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
         public virtual Task<DeprovisionIpamByoasnResponse> DeprovisionIpamByoasnAsync(DeprovisionIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -10474,7 +10474,7 @@ namespace Amazon.EC2
 
         internal virtual DeprovisionIpamPoolCidrResponse DeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -10498,7 +10498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
         public virtual Task<DeprovisionIpamPoolCidrResponse> DeprovisionIpamPoolCidrAsync(DeprovisionIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -10510,7 +10510,7 @@ namespace Amazon.EC2
 
         internal virtual DeprovisionPublicIpv4PoolCidrResponse DeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -10531,7 +10531,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
         public virtual Task<DeprovisionPublicIpv4PoolCidrResponse> DeprovisionPublicIpv4PoolCidrAsync(DeprovisionPublicIpv4PoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -10543,7 +10543,7 @@ namespace Amazon.EC2
 
         internal virtual DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterImageResponseUnmarshaller.Instance;
 
@@ -10605,7 +10605,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public virtual Task<DeregisterImageResponse> DeregisterImageAsync(DeregisterImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterImageResponseUnmarshaller.Instance;
 
@@ -10617,7 +10617,7 @@ namespace Amazon.EC2
 
         internal virtual DeregisterInstanceEventNotificationAttributesResponse DeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -10639,7 +10639,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual Task<DeregisterInstanceEventNotificationAttributesResponse> DeregisterInstanceEventNotificationAttributesAsync(DeregisterInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -10651,7 +10651,7 @@ namespace Amazon.EC2
 
         internal virtual DeregisterTransitGatewayMulticastGroupMembersResponse DeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -10673,7 +10673,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual Task<DeregisterTransitGatewayMulticastGroupMembersResponse> DeregisterTransitGatewayMulticastGroupMembersAsync(DeregisterTransitGatewayMulticastGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -10685,7 +10685,7 @@ namespace Amazon.EC2
 
         internal virtual DeregisterTransitGatewayMulticastGroupSourcesResponse DeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -10707,7 +10707,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual Task<DeregisterTransitGatewayMulticastGroupSourcesResponse> DeregisterTransitGatewayMulticastGroupSourcesAsync(DeregisterTransitGatewayMulticastGroupSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -10723,7 +10723,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -10833,7 +10833,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -10849,7 +10849,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
@@ -10885,7 +10885,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public virtual Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
@@ -10897,7 +10897,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeAddressesAttributeResponse DescribeAddressesAttribute(DescribeAddressesAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
 
@@ -10920,7 +10920,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
         public virtual Task<DescribeAddressesAttributeResponse> DescribeAddressesAttributeAsync(DescribeAddressesAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
 
@@ -10932,7 +10932,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeAddressTransfersResponse DescribeAddressTransfers(DescribeAddressTransfersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
 
@@ -10965,7 +10965,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
         public virtual Task<DescribeAddressTransfersResponse> DescribeAddressTransfersAsync(DescribeAddressTransfersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
 
@@ -10977,7 +10977,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeAggregateIdFormatResponse DescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateIdFormatResponseUnmarshaller.Instance;
 
@@ -11017,7 +11017,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
         public virtual Task<DescribeAggregateIdFormatResponse> DescribeAggregateIdFormatAsync(DescribeAggregateIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateIdFormatResponseUnmarshaller.Instance;
 
@@ -11033,7 +11033,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -11097,7 +11097,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public virtual Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -11109,7 +11109,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeAwsNetworkPerformanceMetricSubscriptionsResponse DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
 
@@ -11130,7 +11130,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
         public virtual Task<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse> DescribeAwsNetworkPerformanceMetricSubscriptionsAsync(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
 
@@ -11146,7 +11146,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleTasksResponseUnmarshaller.Instance;
 
@@ -11210,7 +11210,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public virtual Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(DescribeBundleTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleTasksResponseUnmarshaller.Instance;
 
@@ -11222,7 +11222,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeByoipCidrsResponse DescribeByoipCidrs(DescribeByoipCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
 
@@ -11244,7 +11244,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
         public virtual Task<DescribeByoipCidrsResponse> DescribeByoipCidrsAsync(DescribeByoipCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
 
@@ -11256,7 +11256,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityBlockExtensionHistoryResponse DescribeCapacityBlockExtensionHistory(DescribeCapacityBlockExtensionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
 
@@ -11278,7 +11278,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionHistory">REST API Reference for DescribeCapacityBlockExtensionHistory Operation</seealso>
         public virtual Task<DescribeCapacityBlockExtensionHistoryResponse> DescribeCapacityBlockExtensionHistoryAsync(DescribeCapacityBlockExtensionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
 
@@ -11290,7 +11290,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityBlockExtensionOfferingsResponse DescribeCapacityBlockExtensionOfferings(DescribeCapacityBlockExtensionOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
 
@@ -11312,7 +11312,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionOfferings">REST API Reference for DescribeCapacityBlockExtensionOfferings Operation</seealso>
         public virtual Task<DescribeCapacityBlockExtensionOfferingsResponse> DescribeCapacityBlockExtensionOfferingsAsync(DescribeCapacityBlockExtensionOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
 
@@ -11324,7 +11324,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
 
@@ -11353,7 +11353,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
         public virtual Task<DescribeCapacityBlockOfferingsResponse> DescribeCapacityBlockOfferingsAsync(DescribeCapacityBlockOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
 
@@ -11365,7 +11365,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityBlocksResponse DescribeCapacityBlocks(DescribeCapacityBlocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
 
@@ -11387,7 +11387,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlocks">REST API Reference for DescribeCapacityBlocks Operation</seealso>
         public virtual Task<DescribeCapacityBlocksResponse> DescribeCapacityBlocksAsync(DescribeCapacityBlocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
 
@@ -11399,7 +11399,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityBlockStatusResponse DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
 
@@ -11421,7 +11421,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">REST API Reference for DescribeCapacityBlockStatus Operation</seealso>
         public virtual Task<DescribeCapacityBlockStatusResponse> DescribeCapacityBlockStatusAsync(DescribeCapacityBlockStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
 
@@ -11433,7 +11433,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityReservationBillingRequestsResponse DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationBillingRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationBillingRequestsResponseUnmarshaller.Instance;
 
@@ -11456,7 +11456,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
         public virtual Task<DescribeCapacityReservationBillingRequestsResponse> DescribeCapacityReservationBillingRequestsAsync(DescribeCapacityReservationBillingRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationBillingRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationBillingRequestsResponseUnmarshaller.Instance;
 
@@ -11468,7 +11468,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityReservationFleetsResponse DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -11489,7 +11489,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">REST API Reference for DescribeCapacityReservationFleets Operation</seealso>
         public virtual Task<DescribeCapacityReservationFleetsResponse> DescribeCapacityReservationFleetsAsync(DescribeCapacityReservationFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -11501,7 +11501,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCapacityReservationsResponse DescribeCapacityReservations(DescribeCapacityReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -11523,7 +11523,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
         public virtual Task<DescribeCapacityReservationsResponse> DescribeCapacityReservationsAsync(DescribeCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -11535,7 +11535,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCarrierGatewaysResponse DescribeCarrierGateways(DescribeCarrierGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
 
@@ -11556,7 +11556,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
         public virtual Task<DescribeCarrierGatewaysResponse> DescribeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
 
@@ -11568,7 +11568,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassicLinkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
 
@@ -11598,7 +11598,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public virtual Task<DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesAsync(DescribeClassicLinkInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassicLinkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
 
@@ -11610,7 +11610,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClientVpnAuthorizationRulesResponse DescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
 
@@ -11631,7 +11631,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
         public virtual Task<DescribeClientVpnAuthorizationRulesResponse> DescribeClientVpnAuthorizationRulesAsync(DescribeClientVpnAuthorizationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
 
@@ -11643,7 +11643,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClientVpnConnectionsResponse DescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -11665,7 +11665,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
         public virtual Task<DescribeClientVpnConnectionsResponse> DescribeClientVpnConnectionsAsync(DescribeClientVpnConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -11677,7 +11677,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClientVpnEndpointsResponse DescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
 
@@ -11698,7 +11698,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
         public virtual Task<DescribeClientVpnEndpointsResponse> DescribeClientVpnEndpointsAsync(DescribeClientVpnEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
 
@@ -11710,7 +11710,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClientVpnRoutesResponse DescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
 
@@ -11731,7 +11731,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
         public virtual Task<DescribeClientVpnRoutesResponse> DescribeClientVpnRoutesAsync(DescribeClientVpnRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
 
@@ -11743,7 +11743,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeClientVpnTargetNetworksResponse DescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
 
@@ -11764,7 +11764,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
         public virtual Task<DescribeClientVpnTargetNetworksResponse> DescribeClientVpnTargetNetworksAsync(DescribeClientVpnTargetNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
 
@@ -11776,7 +11776,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeCoipPoolsResponse DescribeCoipPools(DescribeCoipPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
 
@@ -11798,7 +11798,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
         public virtual Task<DescribeCoipPoolsResponse> DescribeCoipPoolsAsync(DescribeCoipPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
 
@@ -11814,7 +11814,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionTasksResponseUnmarshaller.Instance;
 
@@ -11866,7 +11866,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public virtual Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(DescribeConversionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionTasksResponseUnmarshaller.Instance;
 
@@ -11882,7 +11882,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.Instance;
 
@@ -11932,7 +11932,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public virtual Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.Instance;
 
@@ -11944,7 +11944,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeDeclarativePoliciesReportsResponse DescribeDeclarativePoliciesReports(DescribeDeclarativePoliciesReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeclarativePoliciesReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeclarativePoliciesReportsResponseUnmarshaller.Instance;
 
@@ -11981,7 +11981,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
         public virtual Task<DescribeDeclarativePoliciesReportsResponse> DescribeDeclarativePoliciesReportsAsync(DescribeDeclarativePoliciesReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeclarativePoliciesReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeclarativePoliciesReportsResponseUnmarshaller.Instance;
 
@@ -11997,7 +11997,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -12049,7 +12049,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public virtual Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(DescribeDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -12061,7 +12061,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEgressOnlyInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -12085,7 +12085,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public virtual Task<DescribeEgressOnlyInternetGatewaysResponse> DescribeEgressOnlyInternetGatewaysAsync(DescribeEgressOnlyInternetGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEgressOnlyInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -12097,7 +12097,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeElasticGpusResponse DescribeElasticGpus(DescribeElasticGpusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticGpusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
 
@@ -12125,7 +12125,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
         public virtual Task<DescribeElasticGpusResponse> DescribeElasticGpusAsync(DescribeElasticGpusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticGpusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
 
@@ -12137,7 +12137,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeExportImageTasksResponse DescribeExportImageTasks(DescribeExportImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
 
@@ -12158,7 +12158,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
         public virtual Task<DescribeExportImageTasksResponse> DescribeExportImageTasksAsync(DescribeExportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
 
@@ -12174,7 +12174,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -12210,7 +12210,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -12222,7 +12222,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFastLaunchImagesResponse DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
 
@@ -12243,7 +12243,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
         public virtual Task<DescribeFastLaunchImagesResponse> DescribeFastLaunchImagesAsync(DescribeFastLaunchImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
 
@@ -12255,7 +12255,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFastSnapshotRestoresResponse DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -12276,7 +12276,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
         public virtual Task<DescribeFastSnapshotRestoresResponse> DescribeFastSnapshotRestoresAsync(DescribeFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -12288,7 +12288,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
 
@@ -12321,7 +12321,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
         public virtual Task<DescribeFleetHistoryResponse> DescribeFleetHistoryAsync(DescribeFleetHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
 
@@ -12333,7 +12333,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFleetInstancesResponse DescribeFleetInstances(DescribeFleetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
 
@@ -12366,7 +12366,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
         public virtual Task<DescribeFleetInstancesResponse> DescribeFleetInstancesAsync(DescribeFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
 
@@ -12378,7 +12378,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
@@ -12410,7 +12410,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
@@ -12422,7 +12422,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
@@ -12450,7 +12450,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public virtual Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
@@ -12462,7 +12462,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFpgaImageAttributeResponse DescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -12483,7 +12483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
         public virtual Task<DescribeFpgaImageAttributeResponse> DescribeFpgaImageAttributeAsync(DescribeFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -12495,7 +12495,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeFpgaImagesResponse DescribeFpgaImages(DescribeFpgaImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
 
@@ -12518,7 +12518,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
         public virtual Task<DescribeFpgaImagesResponse> DescribeFpgaImagesAsync(DescribeFpgaImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
 
@@ -12530,7 +12530,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -12561,7 +12561,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public virtual Task<DescribeHostReservationOfferingsResponse> DescribeHostReservationOfferingsAsync(DescribeHostReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -12573,7 +12573,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
 
@@ -12594,7 +12594,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public virtual Task<DescribeHostReservationsResponse> DescribeHostReservationsAsync(DescribeHostReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
 
@@ -12606,7 +12606,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeHostsResponse DescribeHosts(DescribeHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostsResponseUnmarshaller.Instance;
 
@@ -12634,7 +12634,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public virtual Task<DescribeHostsResponse> DescribeHostsAsync(DescribeHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostsResponseUnmarshaller.Instance;
 
@@ -12646,7 +12646,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIamInstanceProfileAssociationsResponse DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIamInstanceProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
 
@@ -12667,7 +12667,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
         public virtual Task<DescribeIamInstanceProfileAssociationsResponse> DescribeIamInstanceProfileAssociationsAsync(DescribeIamInstanceProfileAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIamInstanceProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
 
@@ -12679,7 +12679,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIdentityIdFormatResponse DescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -12723,7 +12723,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public virtual Task<DescribeIdentityIdFormatResponse> DescribeIdentityIdFormatAsync(DescribeIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -12735,7 +12735,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
 
@@ -12781,7 +12781,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public virtual Task<DescribeIdFormatResponse> DescribeIdFormatAsync(DescribeIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
 
@@ -12793,7 +12793,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAttributeResponseUnmarshaller.Instance;
 
@@ -12822,7 +12822,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public virtual Task<DescribeImageAttributeResponse> DescribeImageAttributeAsync(DescribeImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAttributeResponseUnmarshaller.Instance;
 
@@ -12834,7 +12834,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImageReferencesResponse DescribeImageReferences(DescribeImageReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
 
@@ -12861,7 +12861,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
         public virtual Task<DescribeImageReferencesResponse> DescribeImageReferencesAsync(DescribeImageReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
 
@@ -12877,7 +12877,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -12999,7 +12999,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -13011,7 +13011,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImageUsageReportEntriesResponse DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
 
@@ -13039,7 +13039,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
         public virtual Task<DescribeImageUsageReportEntriesResponse> DescribeImageUsageReportEntriesAsync(DescribeImageUsageReportEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
 
@@ -13051,7 +13051,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImageUsageReportsResponse DescribeImageUsageReports(DescribeImageUsageReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
 
@@ -13079,7 +13079,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
         public virtual Task<DescribeImageUsageReportsResponse> DescribeImageUsageReportsAsync(DescribeImageUsageReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
 
@@ -13091,7 +13091,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
 
@@ -13113,7 +13113,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public virtual Task<DescribeImportImageTasksResponse> DescribeImportImageTasksAsync(DescribeImportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
 
@@ -13125,7 +13125,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportSnapshotTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
 
@@ -13146,7 +13146,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public virtual Task<DescribeImportSnapshotTasksResponse> DescribeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportSnapshotTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
 
@@ -13158,7 +13158,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -13180,7 +13180,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public virtual Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -13192,7 +13192,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceConnectEndpointsResponse DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
 
@@ -13214,7 +13214,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
         public virtual Task<DescribeInstanceConnectEndpointsResponse> DescribeInstanceConnectEndpointsAsync(DescribeInstanceConnectEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
 
@@ -13226,7 +13226,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceCreditSpecificationsResponse DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceCreditSpecificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
 
@@ -13280,7 +13280,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
         public virtual Task<DescribeInstanceCreditSpecificationsResponse> DescribeInstanceCreditSpecificationsAsync(DescribeInstanceCreditSpecificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceCreditSpecificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
 
@@ -13292,7 +13292,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceEventNotificationAttributesResponse DescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -13314,7 +13314,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
         public virtual Task<DescribeInstanceEventNotificationAttributesResponse> DescribeInstanceEventNotificationAttributesAsync(DescribeInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -13326,7 +13326,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceEventWindowsResponse DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
 
@@ -13362,7 +13362,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
         public virtual Task<DescribeInstanceEventWindowsResponse> DescribeInstanceEventWindowsAsync(DescribeInstanceEventWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
 
@@ -13374,7 +13374,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceImageMetadataResponse DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceImageMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceImageMetadataResponseUnmarshaller.Instance;
 
@@ -13428,7 +13428,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
         public virtual Task<DescribeInstanceImageMetadataResponse> DescribeInstanceImageMetadataAsync(DescribeInstanceImageMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceImageMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceImageMetadataResponseUnmarshaller.Instance;
 
@@ -13444,7 +13444,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
@@ -13572,7 +13572,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
@@ -13588,7 +13588,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStatusResponseUnmarshaller.Instance;
 
@@ -13706,7 +13706,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public virtual Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(DescribeInstanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStatusResponseUnmarshaller.Instance;
 
@@ -13718,7 +13718,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceTopologyResponse DescribeInstanceTopology(DescribeInstanceTopologyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTopologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTopologyResponseUnmarshaller.Instance;
 
@@ -13763,7 +13763,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
         public virtual Task<DescribeInstanceTopologyResponse> DescribeInstanceTopologyAsync(DescribeInstanceTopologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTopologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTopologyResponseUnmarshaller.Instance;
 
@@ -13775,7 +13775,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceTypeOfferingsResponse DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeOfferingsResponseUnmarshaller.Instance;
 
@@ -13798,7 +13798,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
         public virtual Task<DescribeInstanceTypeOfferingsResponse> DescribeInstanceTypeOfferingsAsync(DescribeInstanceTypeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeOfferingsResponseUnmarshaller.Instance;
 
@@ -13810,7 +13810,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeInstanceTypesResponse DescribeInstanceTypes(DescribeInstanceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypesResponseUnmarshaller.Instance;
 
@@ -13832,7 +13832,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
         public virtual Task<DescribeInstanceTypesResponse> DescribeInstanceTypesAsync(DescribeInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypesResponseUnmarshaller.Instance;
 
@@ -13848,7 +13848,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -13888,7 +13888,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public virtual Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -13900,7 +13900,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamByoasnResponse DescribeIpamByoasn(DescribeIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
 
@@ -13923,7 +13923,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
         public virtual Task<DescribeIpamByoasnResponse> DescribeIpamByoasnAsync(DescribeIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
 
@@ -13935,7 +13935,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamExternalResourceVerificationTokensResponse DescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamExternalResourceVerificationTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamExternalResourceVerificationTokensResponseUnmarshaller.Instance;
 
@@ -13959,7 +13959,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         public virtual Task<DescribeIpamExternalResourceVerificationTokensResponse> DescribeIpamExternalResourceVerificationTokensAsync(DescribeIpamExternalResourceVerificationTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamExternalResourceVerificationTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamExternalResourceVerificationTokensResponseUnmarshaller.Instance;
 
@@ -13971,7 +13971,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamPoolsResponse DescribeIpamPools(DescribeIpamPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
 
@@ -13992,7 +13992,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
         public virtual Task<DescribeIpamPoolsResponse> DescribeIpamPoolsAsync(DescribeIpamPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
 
@@ -14004,7 +14004,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
 
@@ -14026,7 +14026,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
         public virtual Task<DescribeIpamResourceDiscoveriesResponse> DescribeIpamResourceDiscoveriesAsync(DescribeIpamResourceDiscoveriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
 
@@ -14038,7 +14038,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
 
@@ -14060,7 +14060,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
         public virtual Task<DescribeIpamResourceDiscoveryAssociationsResponse> DescribeIpamResourceDiscoveryAssociationsAsync(DescribeIpamResourceDiscoveryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
 
@@ -14072,7 +14072,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamsResponse DescribeIpams(DescribeIpamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
 
@@ -14099,7 +14099,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
         public virtual Task<DescribeIpamsResponse> DescribeIpamsAsync(DescribeIpamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
 
@@ -14111,7 +14111,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpamScopesResponse DescribeIpamScopes(DescribeIpamScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
 
@@ -14132,7 +14132,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
         public virtual Task<DescribeIpamScopesResponse> DescribeIpamScopesAsync(DescribeIpamScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
 
@@ -14144,7 +14144,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeIpv6PoolsResponse DescribeIpv6Pools(DescribeIpv6PoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpv6PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpv6PoolsResponseUnmarshaller.Instance;
 
@@ -14165,7 +14165,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">REST API Reference for DescribeIpv6Pools Operation</seealso>
         public virtual Task<DescribeIpv6PoolsResponse> DescribeIpv6PoolsAsync(DescribeIpv6PoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpv6PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpv6PoolsResponseUnmarshaller.Instance;
 
@@ -14181,7 +14181,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyPairsResponseUnmarshaller.Instance;
 
@@ -14229,7 +14229,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public virtual Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(DescribeKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyPairsResponseUnmarshaller.Instance;
 
@@ -14241,7 +14241,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLaunchTemplatesResponse DescribeLaunchTemplates(DescribeLaunchTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
 
@@ -14262,7 +14262,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates">REST API Reference for DescribeLaunchTemplates Operation</seealso>
         public virtual Task<DescribeLaunchTemplatesResponse> DescribeLaunchTemplatesAsync(DescribeLaunchTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
 
@@ -14274,7 +14274,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLaunchTemplateVersionsResponse DescribeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -14297,7 +14297,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
         public virtual Task<DescribeLaunchTemplateVersionsResponse> DescribeLaunchTemplateVersionsAsync(DescribeLaunchTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -14309,7 +14309,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewayRouteTablesResponse DescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -14331,7 +14331,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
         public virtual Task<DescribeLocalGatewayRouteTablesResponse> DescribeLocalGatewayRouteTablesAsync(DescribeLocalGatewayRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -14343,7 +14343,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
 
@@ -14365,7 +14365,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
         public virtual Task<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse> DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
 
@@ -14377,7 +14377,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewayRouteTableVpcAssociationsResponse DescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -14398,7 +14398,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
         public virtual Task<DescribeLocalGatewayRouteTableVpcAssociationsResponse> DescribeLocalGatewayRouteTableVpcAssociationsAsync(DescribeLocalGatewayRouteTableVpcAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -14410,7 +14410,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewaysResponse DescribeLocalGateways(DescribeLocalGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
 
@@ -14432,7 +14432,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
         public virtual Task<DescribeLocalGatewaysResponse> DescribeLocalGatewaysAsync(DescribeLocalGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
 
@@ -14444,7 +14444,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewayVirtualInterfaceGroupsResponse DescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
 
@@ -14465,7 +14465,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
         public virtual Task<DescribeLocalGatewayVirtualInterfaceGroupsResponse> DescribeLocalGatewayVirtualInterfaceGroupsAsync(DescribeLocalGatewayVirtualInterfaceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
 
@@ -14477,7 +14477,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLocalGatewayVirtualInterfacesResponse DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -14498,7 +14498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
         public virtual Task<DescribeLocalGatewayVirtualInterfacesResponse> DescribeLocalGatewayVirtualInterfacesAsync(DescribeLocalGatewayVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -14510,7 +14510,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeLockedSnapshotsResponse DescribeLockedSnapshots(DescribeLockedSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
 
@@ -14531,7 +14531,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
         public virtual Task<DescribeLockedSnapshotsResponse> DescribeLockedSnapshotsAsync(DescribeLockedSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
 
@@ -14543,7 +14543,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeMacHostsResponse DescribeMacHosts(DescribeMacHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
 
@@ -14564,7 +14564,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts">REST API Reference for DescribeMacHosts Operation</seealso>
         public virtual Task<DescribeMacHostsResponse> DescribeMacHostsAsync(DescribeMacHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
 
@@ -14576,7 +14576,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeMacModificationTasksResponse DescribeMacModificationTasks(DescribeMacModificationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
 
@@ -14599,7 +14599,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
         public virtual Task<DescribeMacModificationTasksResponse> DescribeMacModificationTasksAsync(DescribeMacModificationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
 
@@ -14611,7 +14611,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
 
@@ -14632,7 +14632,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
         public virtual Task<DescribeManagedPrefixListsResponse> DescribeManagedPrefixListsAsync(DescribeManagedPrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
 
@@ -14644,7 +14644,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMovingAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
 
@@ -14674,7 +14674,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public virtual Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMovingAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
 
@@ -14686,7 +14686,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNatGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
 
@@ -14709,7 +14709,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public virtual Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNatGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
 
@@ -14725,7 +14725,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkAclsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkAclsResponseUnmarshaller.Instance;
 
@@ -14777,7 +14777,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public virtual Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkAclsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkAclsResponseUnmarshaller.Instance;
 
@@ -14789,7 +14789,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInsightsAccessScopeAnalysesResponse DescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
 
@@ -14810,7 +14810,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
         public virtual Task<DescribeNetworkInsightsAccessScopeAnalysesResponse> DescribeNetworkInsightsAccessScopeAnalysesAsync(DescribeNetworkInsightsAccessScopeAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
 
@@ -14822,7 +14822,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInsightsAccessScopesResponse DescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
 
@@ -14843,7 +14843,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
         public virtual Task<DescribeNetworkInsightsAccessScopesResponse> DescribeNetworkInsightsAccessScopesAsync(DescribeNetworkInsightsAccessScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
 
@@ -14855,7 +14855,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInsightsAnalysesResponse DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
 
@@ -14876,7 +14876,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
         public virtual Task<DescribeNetworkInsightsAnalysesResponse> DescribeNetworkInsightsAnalysesAsync(DescribeNetworkInsightsAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
 
@@ -14888,7 +14888,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInsightsPathsResponse DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
 
@@ -14909,7 +14909,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
         public virtual Task<DescribeNetworkInsightsPathsResponse> DescribeNetworkInsightsPathsAsync(DescribeNetworkInsightsPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
 
@@ -14921,7 +14921,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -14942,7 +14942,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public virtual Task<DescribeNetworkInterfaceAttributeResponse> DescribeNetworkInterfaceAttributeAsync(DescribeNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -14954,7 +14954,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeNetworkInterfacePermissionsResponse DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
 
@@ -14975,7 +14975,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
         public virtual Task<DescribeNetworkInterfacePermissionsResponse> DescribeNetworkInterfacePermissionsAsync(DescribeNetworkInterfacePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
 
@@ -14991,7 +14991,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -15053,7 +15053,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public virtual Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(DescribeNetworkInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -15065,7 +15065,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeOutpostLagsResponse DescribeOutpostLags(DescribeOutpostLagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
 
@@ -15092,7 +15092,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
         public virtual Task<DescribeOutpostLagsResponse> DescribeOutpostLagsAsync(DescribeOutpostLagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
 
@@ -15108,7 +15108,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
@@ -15170,7 +15170,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public virtual Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(DescribePlacementGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
@@ -15182,7 +15182,7 @@ namespace Amazon.EC2
 
         internal virtual DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
 
@@ -15205,7 +15205,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public virtual Task<DescribePrefixListsResponse> DescribePrefixListsAsync(DescribePrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
 
@@ -15217,7 +15217,7 @@ namespace Amazon.EC2
 
         internal virtual DescribePrincipalIdFormatResponse DescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalIdFormatResponseUnmarshaller.Instance;
 
@@ -15258,7 +15258,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
         public virtual Task<DescribePrincipalIdFormatResponse> DescribePrincipalIdFormatAsync(DescribePrincipalIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalIdFormatResponseUnmarshaller.Instance;
 
@@ -15270,7 +15270,7 @@ namespace Amazon.EC2
 
         internal virtual DescribePublicIpv4PoolsResponse DescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
 
@@ -15291,7 +15291,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
         public virtual Task<DescribePublicIpv4PoolsResponse> DescribePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
 
@@ -15307,7 +15307,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -15379,7 +15379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public virtual Task<DescribeRegionsResponse> DescribeRegionsAsync(DescribeRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -15391,7 +15391,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeReplaceRootVolumeTasksResponse DescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplaceRootVolumeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplaceRootVolumeTasksResponseUnmarshaller.Instance;
 
@@ -15413,7 +15413,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
         public virtual Task<DescribeReplaceRootVolumeTasksResponse> DescribeReplaceRootVolumeTasksAsync(DescribeReplaceRootVolumeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplaceRootVolumeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplaceRootVolumeTasksResponseUnmarshaller.Instance;
 
@@ -15429,7 +15429,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
 
@@ -15489,7 +15489,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
 
@@ -15505,7 +15505,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.Instance;
 
@@ -15607,7 +15607,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public virtual Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.Instance;
 
@@ -15623,7 +15623,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesModificationsResponseUnmarshaller.Instance;
 
@@ -15689,7 +15689,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public virtual Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesModificationsResponseUnmarshaller.Instance;
 
@@ -15705,7 +15705,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -15783,7 +15783,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public virtual Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(DescribeReservedInstancesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -15795,7 +15795,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeRouteServerEndpointsResponse DescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerEndpointsResponseUnmarshaller.Instance;
 
@@ -15828,7 +15828,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
         public virtual Task<DescribeRouteServerEndpointsResponse> DescribeRouteServerEndpointsAsync(DescribeRouteServerEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerEndpointsResponseUnmarshaller.Instance;
 
@@ -15840,7 +15840,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeRouteServerPeersResponse DescribeRouteServerPeers(DescribeRouteServerPeersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerPeersResponseUnmarshaller.Instance;
 
@@ -15885,7 +15885,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
         public virtual Task<DescribeRouteServerPeersResponse> DescribeRouteServerPeersAsync(DescribeRouteServerPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerPeersResponseUnmarshaller.Instance;
 
@@ -15897,7 +15897,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeRouteServersResponse DescribeRouteServers(DescribeRouteServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServersResponseUnmarshaller.Instance;
 
@@ -15955,7 +15955,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
         public virtual Task<DescribeRouteServersResponse> DescribeRouteServersAsync(DescribeRouteServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServersResponseUnmarshaller.Instance;
 
@@ -15971,7 +15971,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteTablesResponseUnmarshaller.Instance;
 
@@ -16035,7 +16035,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public virtual Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(DescribeRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteTablesResponseUnmarshaller.Instance;
 
@@ -16047,7 +16047,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstanceAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
 
@@ -16081,7 +16081,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public virtual Task<DescribeScheduledInstanceAvailabilityResponse> DescribeScheduledInstanceAvailabilityAsync(DescribeScheduledInstanceAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstanceAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
 
@@ -16093,7 +16093,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -16114,7 +16114,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public virtual Task<DescribeScheduledInstancesResponse> DescribeScheduledInstancesAsync(DescribeScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -16126,7 +16126,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
 
@@ -16148,7 +16148,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public virtual Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
 
@@ -16160,7 +16160,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSecurityGroupRulesResponse DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -16181,7 +16181,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
         public virtual Task<DescribeSecurityGroupRulesResponse> DescribeSecurityGroupRulesAsync(DescribeSecurityGroupRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -16197,7 +16197,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -16233,7 +16233,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public virtual Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(DescribeSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -16245,7 +16245,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSecurityGroupVpcAssociationsResponse DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -16266,7 +16266,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
         public virtual Task<DescribeSecurityGroupVpcAssociationsResponse> DescribeSecurityGroupVpcAssociationsAsync(DescribeSecurityGroupVpcAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -16278,7 +16278,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeServiceLinkVirtualInterfacesResponse DescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -16299,7 +16299,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
         public virtual Task<DescribeServiceLinkVirtualInterfacesResponse> DescribeServiceLinkVirtualInterfacesAsync(DescribeServiceLinkVirtualInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -16311,7 +16311,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -16339,7 +16339,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public virtual Task<DescribeSnapshotAttributeResponse> DescribeSnapshotAttributeAsync(DescribeSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -16355,7 +16355,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -16533,7 +16533,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -16545,7 +16545,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSnapshotTierStatusResponse DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
 
@@ -16566,7 +16566,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
         public virtual Task<DescribeSnapshotTierStatusResponse> DescribeSnapshotTierStatusAsync(DescribeSnapshotTierStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
 
@@ -16582,7 +16582,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -16620,7 +16620,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public virtual Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -16632,7 +16632,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
 
@@ -16653,7 +16653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public virtual Task<DescribeSpotFleetInstancesResponse> DescribeSpotFleetInstancesAsync(DescribeSpotFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
 
@@ -16665,7 +16665,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
 
@@ -16698,7 +16698,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public virtual Task<DescribeSpotFleetRequestHistoryResponse> DescribeSpotFleetRequestHistoryAsync(DescribeSpotFleetRequestHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
 
@@ -16710,7 +16710,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -16737,7 +16737,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public virtual Task<DescribeSpotFleetRequestsResponse> DescribeSpotFleetRequestsAsync(DescribeSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -16753,7 +16753,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -16835,7 +16835,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public virtual Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(DescribeSpotInstanceRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -16851,7 +16851,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotPriceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
@@ -16903,7 +16903,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public virtual Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotPriceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
@@ -16915,7 +16915,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStaleSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -16943,7 +16943,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public virtual Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStaleSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -16955,7 +16955,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeStoreImageTasksResponse DescribeStoreImageTasks(DescribeStoreImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStoreImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStoreImageTasksResponseUnmarshaller.Instance;
 
@@ -17001,7 +17001,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
         public virtual Task<DescribeStoreImageTasksResponse> DescribeStoreImageTasksAsync(DescribeStoreImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStoreImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStoreImageTasksResponseUnmarshaller.Instance;
 
@@ -17017,7 +17017,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetsResponseUnmarshaller.Instance;
 
@@ -17069,7 +17069,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public virtual Task<DescribeSubnetsResponse> DescribeSubnetsAsync(DescribeSubnetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetsResponseUnmarshaller.Instance;
 
@@ -17085,7 +17085,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -17155,7 +17155,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -17167,7 +17167,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTrafficMirrorFilterRulesResponse DescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
 
@@ -17188,7 +17188,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
         public virtual Task<DescribeTrafficMirrorFilterRulesResponse> DescribeTrafficMirrorFilterRulesAsync(DescribeTrafficMirrorFilterRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
 
@@ -17200,7 +17200,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTrafficMirrorFiltersResponse DescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
 
@@ -17221,7 +17221,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
         public virtual Task<DescribeTrafficMirrorFiltersResponse> DescribeTrafficMirrorFiltersAsync(DescribeTrafficMirrorFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
 
@@ -17233,7 +17233,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTrafficMirrorSessionsResponse DescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
 
@@ -17255,7 +17255,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
         public virtual Task<DescribeTrafficMirrorSessionsResponse> DescribeTrafficMirrorSessionsAsync(DescribeTrafficMirrorSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
 
@@ -17267,7 +17267,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTrafficMirrorTargetsResponse DescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
 
@@ -17288,7 +17288,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
         public virtual Task<DescribeTrafficMirrorTargetsResponse> DescribeTrafficMirrorTargetsAsync(DescribeTrafficMirrorTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
 
@@ -17300,7 +17300,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayAttachmentsResponse DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -17323,7 +17323,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
         public virtual Task<DescribeTransitGatewayAttachmentsResponse> DescribeTransitGatewayAttachmentsAsync(DescribeTransitGatewayAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -17335,7 +17335,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayConnectPeersResponse DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
 
@@ -17356,7 +17356,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
         public virtual Task<DescribeTransitGatewayConnectPeersResponse> DescribeTransitGatewayConnectPeersAsync(DescribeTransitGatewayConnectPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
 
@@ -17368,7 +17368,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayConnectsResponse DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
 
@@ -17389,7 +17389,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
         public virtual Task<DescribeTransitGatewayConnectsResponse> DescribeTransitGatewayConnectsAsync(DescribeTransitGatewayConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
 
@@ -17401,7 +17401,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayMulticastDomainsResponse DescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
 
@@ -17422,7 +17422,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
         public virtual Task<DescribeTransitGatewayMulticastDomainsResponse> DescribeTransitGatewayMulticastDomainsAsync(DescribeTransitGatewayMulticastDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
 
@@ -17434,7 +17434,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayPeeringAttachmentsResponse DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
 
@@ -17455,7 +17455,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
         public virtual Task<DescribeTransitGatewayPeeringAttachmentsResponse> DescribeTransitGatewayPeeringAttachmentsAsync(DescribeTransitGatewayPeeringAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
 
@@ -17467,7 +17467,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayPolicyTablesResponse DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
 
@@ -17488,7 +17488,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
         public virtual Task<DescribeTransitGatewayPolicyTablesResponse> DescribeTransitGatewayPolicyTablesAsync(DescribeTransitGatewayPolicyTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
 
@@ -17500,7 +17500,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayRouteTableAnnouncementsResponse DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
 
@@ -17521,7 +17521,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
         public virtual Task<DescribeTransitGatewayRouteTableAnnouncementsResponse> DescribeTransitGatewayRouteTableAnnouncementsAsync(DescribeTransitGatewayRouteTableAnnouncementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
 
@@ -17533,7 +17533,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -17555,7 +17555,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
         public virtual Task<DescribeTransitGatewayRouteTablesResponse> DescribeTransitGatewayRouteTablesAsync(DescribeTransitGatewayRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -17567,7 +17567,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewaysResponse DescribeTransitGateways(DescribeTransitGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
 
@@ -17589,7 +17589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
         public virtual Task<DescribeTransitGatewaysResponse> DescribeTransitGatewaysAsync(DescribeTransitGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
 
@@ -17601,7 +17601,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTransitGatewayVpcAttachmentsResponse DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
 
@@ -17623,7 +17623,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
         public virtual Task<DescribeTransitGatewayVpcAttachmentsResponse> DescribeTransitGatewayVpcAttachmentsAsync(DescribeTransitGatewayVpcAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
 
@@ -17635,7 +17635,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeTrunkInterfaceAssociationsResponse DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
 
@@ -17656,7 +17656,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">REST API Reference for DescribeTrunkInterfaceAssociations Operation</seealso>
         public virtual Task<DescribeTrunkInterfaceAssociationsResponse> DescribeTrunkInterfaceAssociationsAsync(DescribeTrunkInterfaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
 
@@ -17668,7 +17668,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVerifiedAccessEndpointsResponse DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
 
@@ -17689,7 +17689,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
         public virtual Task<DescribeVerifiedAccessEndpointsResponse> DescribeVerifiedAccessEndpointsAsync(DescribeVerifiedAccessEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
 
@@ -17701,7 +17701,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVerifiedAccessGroupsResponse DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
 
@@ -17722,7 +17722,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
         public virtual Task<DescribeVerifiedAccessGroupsResponse> DescribeVerifiedAccessGroupsAsync(DescribeVerifiedAccessGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
 
@@ -17734,7 +17734,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVerifiedAccessInstanceLoggingConfigurationsResponse DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -17755,7 +17755,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
         public virtual Task<DescribeVerifiedAccessInstanceLoggingConfigurationsResponse> DescribeVerifiedAccessInstanceLoggingConfigurationsAsync(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -17767,7 +17767,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVerifiedAccessInstancesResponse DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
 
@@ -17788,7 +17788,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
         public virtual Task<DescribeVerifiedAccessInstancesResponse> DescribeVerifiedAccessInstancesAsync(DescribeVerifiedAccessInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
 
@@ -17800,7 +17800,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVerifiedAccessTrustProvidersResponse DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
 
@@ -17821,7 +17821,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
         public virtual Task<DescribeVerifiedAccessTrustProvidersResponse> DescribeVerifiedAccessTrustProvidersAsync(DescribeVerifiedAccessTrustProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
 
@@ -17833,7 +17833,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -17861,7 +17861,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public virtual Task<DescribeVolumeAttributeResponse> DescribeVolumeAttributeAsync(DescribeVolumeAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -17877,7 +17877,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -17957,7 +17957,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -17969,7 +17969,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVolumesModificationsResponse DescribeVolumesModifications(DescribeVolumesModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
 
@@ -17996,7 +17996,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
         public virtual Task<DescribeVolumesModificationsResponse> DescribeVolumesModificationsAsync(DescribeVolumesModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
 
@@ -18012,7 +18012,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeStatusResponseUnmarshaller.Instance;
 
@@ -18150,7 +18150,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public virtual Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(DescribeVolumeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeStatusResponseUnmarshaller.Instance;
 
@@ -18162,7 +18162,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcAttributeResponseUnmarshaller.Instance;
 
@@ -18184,7 +18184,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public virtual Task<DescribeVpcAttributeResponse> DescribeVpcAttributeAsync(DescribeVpcAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcAttributeResponseUnmarshaller.Instance;
 
@@ -18196,7 +18196,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcBlockPublicAccessExclusionsResponse DescribeVpcBlockPublicAccessExclusions(DescribeVpcBlockPublicAccessExclusionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
 
@@ -18223,7 +18223,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
         public virtual Task<DescribeVpcBlockPublicAccessExclusionsResponse> DescribeVpcBlockPublicAccessExclusionsAsync(DescribeVpcBlockPublicAccessExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
 
@@ -18235,7 +18235,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcBlockPublicAccessOptionsResponse DescribeVpcBlockPublicAccessOptions(DescribeVpcBlockPublicAccessOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -18260,7 +18260,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
         public virtual Task<DescribeVpcBlockPublicAccessOptionsResponse> DescribeVpcBlockPublicAccessOptionsAsync(DescribeVpcBlockPublicAccessOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -18272,7 +18272,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -18300,7 +18300,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public virtual Task<DescribeVpcClassicLinkResponse> DescribeVpcClassicLinkAsync(DescribeVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -18312,7 +18312,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -18344,7 +18344,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public virtual Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -18356,7 +18356,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointAssociationsResponse DescribeVpcEndpointAssociations(DescribeVpcEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -18378,7 +18378,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
         public virtual Task<DescribeVpcEndpointAssociationsResponse> DescribeVpcEndpointAssociationsAsync(DescribeVpcEndpointAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -18390,7 +18390,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointConnectionNotificationsResponse DescribeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -18411,7 +18411,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">REST API Reference for DescribeVpcEndpointConnectionNotifications Operation</seealso>
         public virtual Task<DescribeVpcEndpointConnectionNotificationsResponse> DescribeVpcEndpointConnectionNotificationsAsync(DescribeVpcEndpointConnectionNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -18423,7 +18423,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointConnectionsResponse DescribeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -18445,7 +18445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections">REST API Reference for DescribeVpcEndpointConnections Operation</seealso>
         public virtual Task<DescribeVpcEndpointConnectionsResponse> DescribeVpcEndpointConnectionsAsync(DescribeVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -18457,7 +18457,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -18480,7 +18480,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -18492,7 +18492,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointServiceConfigurationsResponse DescribeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -18513,7 +18513,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations">REST API Reference for DescribeVpcEndpointServiceConfigurations Operation</seealso>
         public virtual Task<DescribeVpcEndpointServiceConfigurationsResponse> DescribeVpcEndpointServiceConfigurationsAsync(DescribeVpcEndpointServiceConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -18525,7 +18525,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointServicePermissionsResponse DescribeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -18547,7 +18547,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">REST API Reference for DescribeVpcEndpointServicePermissions Operation</seealso>
         public virtual Task<DescribeVpcEndpointServicePermissionsResponse> DescribeVpcEndpointServicePermissionsAsync(DescribeVpcEndpointServicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -18559,7 +18559,7 @@ namespace Amazon.EC2
 
         internal virtual DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
 
@@ -18590,7 +18590,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public virtual Task<DescribeVpcEndpointServicesResponse> DescribeVpcEndpointServicesAsync(DescribeVpcEndpointServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
 
@@ -18606,7 +18606,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -18648,7 +18648,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -18664,7 +18664,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcsResponseUnmarshaller.Instance;
 
@@ -18704,7 +18704,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public virtual Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcsResponseUnmarshaller.Instance;
 
@@ -18720,7 +18720,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -18770,7 +18770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public virtual Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(DescribeVpnConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -18786,7 +18786,7 @@ namespace Amazon.EC2
         }
         internal virtual DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnGatewaysResponseUnmarshaller.Instance;
 
@@ -18836,7 +18836,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public virtual Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(DescribeVpnGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnGatewaysResponseUnmarshaller.Instance;
 
@@ -18848,7 +18848,7 @@ namespace Amazon.EC2
 
         internal virtual DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -18878,7 +18878,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public virtual Task<DetachClassicLinkVpcResponse> DetachClassicLinkVpcAsync(DetachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -18890,7 +18890,7 @@ namespace Amazon.EC2
 
         internal virtual DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -18913,7 +18913,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public virtual Task<DetachInternetGatewayResponse> DetachInternetGatewayAsync(DetachInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -18925,7 +18925,7 @@ namespace Amazon.EC2
 
         internal virtual DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -18946,7 +18946,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public virtual Task<DetachNetworkInterfaceResponse> DetachNetworkInterfaceAsync(DetachNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -18958,7 +18958,7 @@ namespace Amazon.EC2
 
         internal virtual DetachVerifiedAccessTrustProviderResponse DetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -18980,7 +18980,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
         public virtual Task<DetachVerifiedAccessTrustProviderResponse> DetachVerifiedAccessTrustProviderAsync(DetachVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -18992,7 +18992,7 @@ namespace Amazon.EC2
 
         internal virtual DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
 
@@ -19036,7 +19036,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public virtual Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
 
@@ -19048,7 +19048,7 @@ namespace Amazon.EC2
 
         internal virtual DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -19078,7 +19078,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public virtual Task<DetachVpnGatewayResponse> DetachVpnGatewayAsync(DetachVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -19090,7 +19090,7 @@ namespace Amazon.EC2
 
         internal virtual DisableAddressTransferResponse DisableAddressTransfer(DisableAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
 
@@ -19112,7 +19112,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
         public virtual Task<DisableAddressTransferResponse> DisableAddressTransferAsync(DisableAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
 
@@ -19124,7 +19124,7 @@ namespace Amazon.EC2
 
         internal virtual DisableAllowedImagesSettingsResponse DisableAllowedImagesSettings(DisableAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -19161,7 +19161,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
         public virtual Task<DisableAllowedImagesSettingsResponse> DisableAllowedImagesSettingsAsync(DisableAllowedImagesSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -19173,7 +19173,7 @@ namespace Amazon.EC2
 
         internal virtual DisableAwsNetworkPerformanceMetricSubscriptionResponse DisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -19194,7 +19194,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual Task<DisableAwsNetworkPerformanceMetricSubscriptionResponse> DisableAwsNetworkPerformanceMetricSubscriptionAsync(DisableAwsNetworkPerformanceMetricSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -19206,7 +19206,7 @@ namespace Amazon.EC2
 
         internal virtual DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -19243,7 +19243,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
         public virtual Task<DisableEbsEncryptionByDefaultResponse> DisableEbsEncryptionByDefaultAsync(DisableEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -19255,7 +19255,7 @@ namespace Amazon.EC2
 
         internal virtual DisableFastLaunchResponse DisableFastLaunch(DisableFastLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
 
@@ -19286,7 +19286,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
         public virtual Task<DisableFastLaunchResponse> DisableFastLaunchAsync(DisableFastLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
 
@@ -19298,7 +19298,7 @@ namespace Amazon.EC2
 
         internal virtual DisableFastSnapshotRestoresResponse DisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -19320,7 +19320,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
         public virtual Task<DisableFastSnapshotRestoresResponse> DisableFastSnapshotRestoresAsync(DisableFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -19332,7 +19332,7 @@ namespace Amazon.EC2
 
         internal virtual DisableImageResponse DisableImage(DisableImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
 
@@ -19379,7 +19379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
         public virtual Task<DisableImageResponse> DisableImageAsync(DisableImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
 
@@ -19391,7 +19391,7 @@ namespace Amazon.EC2
 
         internal virtual DisableImageBlockPublicAccessResponse DisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -19421,7 +19421,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
         public virtual Task<DisableImageBlockPublicAccessResponse> DisableImageBlockPublicAccessAsync(DisableImageBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -19433,7 +19433,7 @@ namespace Amazon.EC2
 
         internal virtual DisableImageDeprecationResponse DisableImageDeprecation(DisableImageDeprecationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -19460,7 +19460,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
         public virtual Task<DisableImageDeprecationResponse> DisableImageDeprecationAsync(DisableImageDeprecationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -19472,7 +19472,7 @@ namespace Amazon.EC2
 
         internal virtual DisableImageDeregistrationProtectionResponse DisableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -19506,7 +19506,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
         public virtual Task<DisableImageDeregistrationProtectionResponse> DisableImageDeregistrationProtectionAsync(DisableImageDeregistrationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -19518,7 +19518,7 @@ namespace Amazon.EC2
 
         internal virtual DisableIpamOrganizationAdminAccountResponse DisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -19540,7 +19540,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
         public virtual Task<DisableIpamOrganizationAdminAccountResponse> DisableIpamOrganizationAdminAccountAsync(DisableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -19552,7 +19552,7 @@ namespace Amazon.EC2
 
         internal virtual DisableRouteServerPropagationResponse DisableRouteServerPropagation(DisableRouteServerPropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -19615,7 +19615,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
         public virtual Task<DisableRouteServerPropagationResponse> DisableRouteServerPropagationAsync(DisableRouteServerPropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -19627,7 +19627,7 @@ namespace Amazon.EC2
 
         internal virtual DisableSerialConsoleAccessResponse DisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -19651,7 +19651,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
         public virtual Task<DisableSerialConsoleAccessResponse> DisableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -19663,7 +19663,7 @@ namespace Amazon.EC2
 
         internal virtual DisableSnapshotBlockPublicAccessResponse DisableSnapshotBlockPublicAccess(DisableSnapshotBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -19705,7 +19705,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
         public virtual Task<DisableSnapshotBlockPublicAccessResponse> DisableSnapshotBlockPublicAccessAsync(DisableSnapshotBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -19717,7 +19717,7 @@ namespace Amazon.EC2
 
         internal virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -19739,7 +19739,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual Task<DisableTransitGatewayRouteTablePropagationResponse> DisableTransitGatewayRouteTablePropagationAsync(DisableTransitGatewayRouteTablePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -19751,7 +19751,7 @@ namespace Amazon.EC2
 
         internal virtual DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -19773,7 +19773,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public virtual Task<DisableVgwRoutePropagationResponse> DisableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -19785,7 +19785,7 @@ namespace Amazon.EC2
 
         internal virtual DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -19814,7 +19814,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public virtual Task<DisableVpcClassicLinkResponse> DisableVpcClassicLinkAsync(DisableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -19826,7 +19826,7 @@ namespace Amazon.EC2
 
         internal virtual DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -19860,7 +19860,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual Task<DisableVpcClassicLinkDnsSupportResponse> DisableVpcClassicLinkDnsSupportAsync(DisableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -19872,7 +19872,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAddressResponseUnmarshaller.Instance;
 
@@ -19917,7 +19917,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public virtual Task<DisassociateAddressResponse> DisassociateAddressAsync(DisassociateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAddressResponseUnmarshaller.Instance;
 
@@ -19929,7 +19929,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateCapacityReservationBillingOwnerResponse DisassociateCapacityReservationBillingOwner(DisassociateCapacityReservationBillingOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -19953,7 +19953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
         public virtual Task<DisassociateCapacityReservationBillingOwnerResponse> DisassociateCapacityReservationBillingOwnerAsync(DisassociateCapacityReservationBillingOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -19965,7 +19965,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateClientVpnTargetNetworkResponse DisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -20005,7 +20005,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
         public virtual Task<DisassociateClientVpnTargetNetworkResponse> DisassociateClientVpnTargetNetworkAsync(DisassociateClientVpnTargetNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -20017,7 +20017,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateEnclaveCertificateIamRoleResponse DisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -20042,7 +20042,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
         public virtual Task<DisassociateEnclaveCertificateIamRoleResponse> DisassociateEnclaveCertificateIamRoleAsync(DisassociateEnclaveCertificateIamRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -20054,7 +20054,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateIamInstanceProfileResponse DisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -20080,7 +20080,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
         public virtual Task<DisassociateIamInstanceProfileResponse> DisassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -20092,7 +20092,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateInstanceEventWindowResponse DisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -20119,7 +20119,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
         public virtual Task<DisassociateInstanceEventWindowResponse> DisassociateInstanceEventWindowAsync(DisassociateInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -20131,7 +20131,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateIpamByoasnResponse DisassociateIpamByoasn(DisassociateIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -20155,7 +20155,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
         public virtual Task<DisassociateIpamByoasnResponse> DisassociateIpamByoasnAsync(DisassociateIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -20167,7 +20167,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -20190,7 +20190,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
         public virtual Task<DisassociateIpamResourceDiscoveryResponse> DisassociateIpamResourceDiscoveryAsync(DisassociateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -20202,7 +20202,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateNatGatewayAddressResponse DisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -20240,7 +20240,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
         public virtual Task<DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressAsync(DisassociateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -20252,7 +20252,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateRouteServerResponse DisassociateRouteServer(DisassociateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteServerResponseUnmarshaller.Instance;
 
@@ -20284,7 +20284,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
         public virtual Task<DisassociateRouteServerResponse> DisassociateRouteServerAsync(DisassociateRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteServerResponseUnmarshaller.Instance;
 
@@ -20296,7 +20296,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteTableResponseUnmarshaller.Instance;
 
@@ -20325,7 +20325,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public virtual Task<DisassociateRouteTableResponse> DisassociateRouteTableAsync(DisassociateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteTableResponseUnmarshaller.Instance;
 
@@ -20337,7 +20337,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateSecurityGroupVpcResponse DisassociateSecurityGroupVpc(DisassociateSecurityGroupVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -20361,7 +20361,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
         public virtual Task<DisassociateSecurityGroupVpcResponse> DisassociateSecurityGroupVpcAsync(DisassociateSecurityGroupVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -20373,7 +20373,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -20396,7 +20396,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public virtual Task<DisassociateSubnetCidrBlockResponse> DisassociateSubnetCidrBlockAsync(DisassociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -20408,7 +20408,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateTransitGatewayMulticastDomainResponse DisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -20429,7 +20429,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual Task<DisassociateTransitGatewayMulticastDomainResponse> DisassociateTransitGatewayMulticastDomainAsync(DisassociateTransitGatewayMulticastDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -20441,7 +20441,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateTransitGatewayPolicyTableResponse DisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -20462,7 +20462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
         public virtual Task<DisassociateTransitGatewayPolicyTableResponse> DisassociateTransitGatewayPolicyTableAsync(DisassociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -20474,7 +20474,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -20495,7 +20495,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
         public virtual Task<DisassociateTransitGatewayRouteTableResponse> DisassociateTransitGatewayRouteTableAsync(DisassociateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -20507,7 +20507,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateTrunkInterfaceResponse DisassociateTrunkInterface(DisassociateTrunkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -20528,7 +20528,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">REST API Reference for DisassociateTrunkInterface Operation</seealso>
         public virtual Task<DisassociateTrunkInterfaceResponse> DisassociateTrunkInterfaceAsync(DisassociateTrunkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -20540,7 +20540,7 @@ namespace Amazon.EC2
 
         internal virtual DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -20570,7 +20570,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public virtual Task<DisassociateVpcCidrBlockResponse> DisassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -20582,7 +20582,7 @@ namespace Amazon.EC2
 
         internal virtual EnableAddressTransferResponse EnableAddressTransfer(EnableAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
 
@@ -20604,7 +20604,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
         public virtual Task<EnableAddressTransferResponse> EnableAddressTransferAsync(EnableAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
 
@@ -20616,7 +20616,7 @@ namespace Amazon.EC2
 
         internal virtual EnableAllowedImagesSettingsResponse EnableAllowedImagesSettings(EnableAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -20670,7 +20670,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
         public virtual Task<EnableAllowedImagesSettingsResponse> EnableAllowedImagesSettingsAsync(EnableAllowedImagesSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -20682,7 +20682,7 @@ namespace Amazon.EC2
 
         internal virtual EnableAwsNetworkPerformanceMetricSubscriptionResponse EnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -20703,7 +20703,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual Task<EnableAwsNetworkPerformanceMetricSubscriptionResponse> EnableAwsNetworkPerformanceMetricSubscriptionAsync(EnableAwsNetworkPerformanceMetricSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -20715,7 +20715,7 @@ namespace Amazon.EC2
 
         internal virtual EnableEbsEncryptionByDefaultResponse EnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -20755,7 +20755,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         public virtual Task<EnableEbsEncryptionByDefaultResponse> EnableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -20767,7 +20767,7 @@ namespace Amazon.EC2
 
         internal virtual EnableFastLaunchResponse EnableFastLaunch(EnableFastLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
 
@@ -20800,7 +20800,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
         public virtual Task<EnableFastLaunchResponse> EnableFastLaunchAsync(EnableFastLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
 
@@ -20812,7 +20812,7 @@ namespace Amazon.EC2
 
         internal virtual EnableFastSnapshotRestoresResponse EnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -20845,7 +20845,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         public virtual Task<EnableFastSnapshotRestoresResponse> EnableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -20857,7 +20857,7 @@ namespace Amazon.EC2
 
         internal virtual EnableImageResponse EnableImage(EnableImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
 
@@ -20892,7 +20892,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
         public virtual Task<EnableImageResponse> EnableImageAsync(EnableImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
 
@@ -20904,7 +20904,7 @@ namespace Amazon.EC2
 
         internal virtual EnableImageBlockPublicAccessResponse EnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -20940,7 +20940,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
         public virtual Task<EnableImageBlockPublicAccessResponse> EnableImageBlockPublicAccessAsync(EnableImageBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -20952,7 +20952,7 @@ namespace Amazon.EC2
 
         internal virtual EnableImageDeprecationResponse EnableImageDeprecation(EnableImageDeprecationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -20979,7 +20979,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
         public virtual Task<EnableImageDeprecationResponse> EnableImageDeprecationAsync(EnableImageDeprecationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -20991,7 +20991,7 @@ namespace Amazon.EC2
 
         internal virtual EnableImageDeregistrationProtectionResponse EnableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -21023,7 +21023,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
         public virtual Task<EnableImageDeregistrationProtectionResponse> EnableImageDeregistrationProtectionAsync(EnableImageDeregistrationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -21035,7 +21035,7 @@ namespace Amazon.EC2
 
         internal virtual EnableIpamOrganizationAdminAccountResponse EnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -21059,7 +21059,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         public virtual Task<EnableIpamOrganizationAdminAccountResponse> EnableIpamOrganizationAdminAccountAsync(EnableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -21071,7 +21071,7 @@ namespace Amazon.EC2
 
         internal virtual EnableReachabilityAnalyzerOrganizationSharingResponse EnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
 
@@ -21100,7 +21100,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
         public virtual Task<EnableReachabilityAnalyzerOrganizationSharingResponse> EnableReachabilityAnalyzerOrganizationSharingAsync(EnableReachabilityAnalyzerOrganizationSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
 
@@ -21112,7 +21112,7 @@ namespace Amazon.EC2
 
         internal virtual EnableRouteServerPropagationResponse EnableRouteServerPropagation(EnableRouteServerPropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -21144,7 +21144,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
         public virtual Task<EnableRouteServerPropagationResponse> EnableRouteServerPropagationAsync(EnableRouteServerPropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -21156,7 +21156,7 @@ namespace Amazon.EC2
 
         internal virtual EnableSerialConsoleAccessResponse EnableSerialConsoleAccess(EnableSerialConsoleAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -21180,7 +21180,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
         public virtual Task<EnableSerialConsoleAccessResponse> EnableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -21192,7 +21192,7 @@ namespace Amazon.EC2
 
         internal virtual EnableSnapshotBlockPublicAccessResponse EnableSnapshotBlockPublicAccess(EnableSnapshotBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -21236,7 +21236,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
         public virtual Task<EnableSnapshotBlockPublicAccessResponse> EnableSnapshotBlockPublicAccessAsync(EnableSnapshotBlockPublicAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -21248,7 +21248,7 @@ namespace Amazon.EC2
 
         internal virtual EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -21270,7 +21270,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual Task<EnableTransitGatewayRouteTablePropagationResponse> EnableTransitGatewayRouteTablePropagationAsync(EnableTransitGatewayRouteTablePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -21282,7 +21282,7 @@ namespace Amazon.EC2
 
         internal virtual EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -21304,7 +21304,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public virtual Task<EnableVgwRoutePropagationResponse> EnableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -21316,7 +21316,7 @@ namespace Amazon.EC2
 
         internal virtual EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVolumeIORequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVolumeIOResponseUnmarshaller.Instance;
 
@@ -21338,7 +21338,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public virtual Task<EnableVolumeIOResponse> EnableVolumeIOAsync(EnableVolumeIORequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVolumeIORequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVolumeIOResponseUnmarshaller.Instance;
 
@@ -21350,7 +21350,7 @@ namespace Amazon.EC2
 
         internal virtual EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -21382,7 +21382,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public virtual Task<EnableVpcClassicLinkResponse> EnableVpcClassicLinkAsync(EnableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -21394,7 +21394,7 @@ namespace Amazon.EC2
 
         internal virtual EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -21430,7 +21430,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -21442,7 +21442,7 @@ namespace Amazon.EC2
 
         internal virtual ExportClientVpnClientCertificateRevocationListResponse ExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -21463,7 +21463,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual Task<ExportClientVpnClientCertificateRevocationListResponse> ExportClientVpnClientCertificateRevocationListAsync(ExportClientVpnClientCertificateRevocationListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -21475,7 +21475,7 @@ namespace Amazon.EC2
 
         internal virtual ExportClientVpnClientConfigurationResponse ExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
 
@@ -21499,7 +21499,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
         public virtual Task<ExportClientVpnClientConfigurationResponse> ExportClientVpnClientConfigurationAsync(ExportClientVpnClientConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
 
@@ -21511,7 +21511,7 @@ namespace Amazon.EC2
 
         internal virtual ExportImageResponse ExportImage(ExportImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
 
@@ -21534,7 +21534,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
         public virtual Task<ExportImageResponse> ExportImageAsync(ExportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
 
@@ -21546,7 +21546,7 @@ namespace Amazon.EC2
 
         internal virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -21576,7 +21576,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
         public virtual Task<ExportTransitGatewayRoutesResponse> ExportTransitGatewayRoutesAsync(ExportTransitGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -21588,7 +21588,7 @@ namespace Amazon.EC2
 
         internal virtual ExportVerifiedAccessInstanceClientConfigurationResponse ExportVerifiedAccessInstanceClientConfiguration(ExportVerifiedAccessInstanceClientConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVerifiedAccessInstanceClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVerifiedAccessInstanceClientConfigurationResponseUnmarshaller.Instance;
 
@@ -21609,7 +21609,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
         public virtual Task<ExportVerifiedAccessInstanceClientConfigurationResponse> ExportVerifiedAccessInstanceClientConfigurationAsync(ExportVerifiedAccessInstanceClientConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVerifiedAccessInstanceClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVerifiedAccessInstanceClientConfigurationResponseUnmarshaller.Instance;
 
@@ -21621,7 +21621,7 @@ namespace Amazon.EC2
 
         internal virtual GetActiveVpnTunnelStatusResponse GetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
 
@@ -21643,7 +21643,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
         public virtual Task<GetActiveVpnTunnelStatusResponse> GetActiveVpnTunnelStatusAsync(GetActiveVpnTunnelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
 
@@ -21655,7 +21655,7 @@ namespace Amazon.EC2
 
         internal virtual GetAllowedImagesSettingsResponse GetAllowedImagesSettings(GetAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -21690,7 +21690,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
         public virtual Task<GetAllowedImagesSettingsResponse> GetAllowedImagesSettingsAsync(GetAllowedImagesSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -21702,7 +21702,7 @@ namespace Amazon.EC2
 
         internal virtual GetAssociatedEnclaveCertificateIamRolesResponse GetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
 
@@ -21726,7 +21726,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
         public virtual Task<GetAssociatedEnclaveCertificateIamRolesResponse> GetAssociatedEnclaveCertificateIamRolesAsync(GetAssociatedEnclaveCertificateIamRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
 
@@ -21738,7 +21738,7 @@ namespace Amazon.EC2
 
         internal virtual GetAssociatedIpv6PoolCidrsResponse GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedIpv6PoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance;
 
@@ -21760,7 +21760,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">REST API Reference for GetAssociatedIpv6PoolCidrs Operation</seealso>
         public virtual Task<GetAssociatedIpv6PoolCidrsResponse> GetAssociatedIpv6PoolCidrsAsync(GetAssociatedIpv6PoolCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedIpv6PoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance;
 
@@ -21772,7 +21772,7 @@ namespace Amazon.EC2
 
         internal virtual GetAwsNetworkPerformanceDataResponse GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
 
@@ -21793,7 +21793,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
         public virtual Task<GetAwsNetworkPerformanceDataResponse> GetAwsNetworkPerformanceDataAsync(GetAwsNetworkPerformanceDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
 
@@ -21805,7 +21805,7 @@ namespace Amazon.EC2
 
         internal virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
 
@@ -21829,7 +21829,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
         public virtual Task<GetCapacityReservationUsageResponse> GetCapacityReservationUsageAsync(GetCapacityReservationUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
 
@@ -21841,7 +21841,7 @@ namespace Amazon.EC2
 
         internal virtual GetCoipPoolUsageResponse GetCoipPoolUsage(GetCoipPoolUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
 
@@ -21862,7 +21862,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
         public virtual Task<GetCoipPoolUsageResponse> GetCoipPoolUsageAsync(GetCoipPoolUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
 
@@ -21874,7 +21874,7 @@ namespace Amazon.EC2
 
         internal virtual GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleOutputResponseUnmarshaller.Instance;
 
@@ -21904,7 +21904,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public virtual Task<GetConsoleOutputResponse> GetConsoleOutputAsync(GetConsoleOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleOutputResponseUnmarshaller.Instance;
 
@@ -21916,7 +21916,7 @@ namespace Amazon.EC2
 
         internal virtual GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleScreenshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
 
@@ -21947,7 +21947,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public virtual Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleScreenshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
 
@@ -21959,7 +21959,7 @@ namespace Amazon.EC2
 
         internal virtual GetDeclarativePoliciesReportSummaryResponse GetDeclarativePoliciesReportSummary(GetDeclarativePoliciesReportSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeclarativePoliciesReportSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeclarativePoliciesReportSummaryResponseUnmarshaller.Instance;
 
@@ -21996,7 +21996,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
         public virtual Task<GetDeclarativePoliciesReportSummaryResponse> GetDeclarativePoliciesReportSummaryAsync(GetDeclarativePoliciesReportSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeclarativePoliciesReportSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeclarativePoliciesReportSummaryResponseUnmarshaller.Instance;
 
@@ -22008,7 +22008,7 @@ namespace Amazon.EC2
 
         internal virtual GetDefaultCreditSpecificationResponse GetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -22036,7 +22036,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
         public virtual Task<GetDefaultCreditSpecificationResponse> GetDefaultCreditSpecificationAsync(GetDefaultCreditSpecificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -22048,7 +22048,7 @@ namespace Amazon.EC2
 
         internal virtual GetEbsDefaultKmsKeyIdResponse GetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -22076,7 +22076,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
         public virtual Task<GetEbsDefaultKmsKeyIdResponse> GetEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -22088,7 +22088,7 @@ namespace Amazon.EC2
 
         internal virtual GetEbsEncryptionByDefaultResponse GetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -22116,7 +22116,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
         public virtual Task<GetEbsEncryptionByDefaultResponse> GetEbsEncryptionByDefaultAsync(GetEbsEncryptionByDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -22128,7 +22128,7 @@ namespace Amazon.EC2
 
         internal virtual GetFlowLogsIntegrationTemplateResponse GetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
 
@@ -22176,7 +22176,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
         public virtual Task<GetFlowLogsIntegrationTemplateResponse> GetFlowLogsIntegrationTemplateAsync(GetFlowLogsIntegrationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
 
@@ -22188,7 +22188,7 @@ namespace Amazon.EC2
 
         internal virtual GetGroupsForCapacityReservationResponse GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
 
@@ -22209,7 +22209,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
         public virtual Task<GetGroupsForCapacityReservationResponse> GetGroupsForCapacityReservationAsync(GetGroupsForCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
 
@@ -22221,7 +22221,7 @@ namespace Amazon.EC2
 
         internal virtual GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostReservationPurchasePreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
 
@@ -22249,7 +22249,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public virtual Task<GetHostReservationPurchasePreviewResponse> GetHostReservationPurchasePreviewAsync(GetHostReservationPurchasePreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostReservationPurchasePreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
 
@@ -22261,7 +22261,7 @@ namespace Amazon.EC2
 
         internal virtual GetImageBlockPublicAccessStateResponse GetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -22289,7 +22289,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
         public virtual Task<GetImageBlockPublicAccessStateResponse> GetImageBlockPublicAccessStateAsync(GetImageBlockPublicAccessStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -22301,7 +22301,7 @@ namespace Amazon.EC2
 
         internal virtual GetInstanceMetadataDefaultsResponse GetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -22329,7 +22329,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
         public virtual Task<GetInstanceMetadataDefaultsResponse> GetInstanceMetadataDefaultsAsync(GetInstanceMetadataDefaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -22341,7 +22341,7 @@ namespace Amazon.EC2
 
         internal virtual GetInstanceTpmEkPubResponse GetInstanceTpmEkPub(GetInstanceTpmEkPubRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
 
@@ -22363,7 +22363,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
         public virtual Task<GetInstanceTpmEkPubResponse> GetInstanceTpmEkPubAsync(GetInstanceTpmEkPubRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
 
@@ -22375,7 +22375,7 @@ namespace Amazon.EC2
 
         internal virtual GetInstanceTypesFromInstanceRequirementsResponse GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
 
@@ -22414,7 +22414,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
         public virtual Task<GetInstanceTypesFromInstanceRequirementsResponse> GetInstanceTypesFromInstanceRequirementsAsync(GetInstanceTypesFromInstanceRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
 
@@ -22426,7 +22426,7 @@ namespace Amazon.EC2
 
         internal virtual GetInstanceUefiDataResponse GetInstanceUefiData(GetInstanceUefiDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
 
@@ -22465,7 +22465,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">REST API Reference for GetInstanceUefiData Operation</seealso>
         public virtual Task<GetInstanceUefiDataResponse> GetInstanceUefiDataAsync(GetInstanceUefiDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
 
@@ -22477,7 +22477,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamAddressHistoryResponse GetIpamAddressHistory(GetIpamAddressHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
 
@@ -22500,7 +22500,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
         public virtual Task<GetIpamAddressHistoryResponse> GetIpamAddressHistoryAsync(GetIpamAddressHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
 
@@ -22512,7 +22512,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
 
@@ -22536,7 +22536,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
         public virtual Task<GetIpamDiscoveredAccountsResponse> GetIpamDiscoveredAccountsAsync(GetIpamDiscoveredAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
 
@@ -22548,7 +22548,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamDiscoveredPublicAddressesResponse GetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
 
@@ -22569,7 +22569,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
         public virtual Task<GetIpamDiscoveredPublicAddressesResponse> GetIpamDiscoveredPublicAddressesAsync(GetIpamDiscoveredPublicAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
 
@@ -22581,7 +22581,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
 
@@ -22604,7 +22604,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
         public virtual Task<GetIpamDiscoveredResourceCidrsResponse> GetIpamDiscoveredResourceCidrsAsync(GetIpamDiscoveredResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
 
@@ -22616,7 +22616,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
 
@@ -22648,7 +22648,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
         public virtual Task<GetIpamPoolAllocationsResponse> GetIpamPoolAllocationsAsync(GetIpamPoolAllocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
 
@@ -22660,7 +22660,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamPoolCidrsResponse GetIpamPoolCidrs(GetIpamPoolCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
 
@@ -22681,7 +22681,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
         public virtual Task<GetIpamPoolCidrsResponse> GetIpamPoolCidrsAsync(GetIpamPoolCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
 
@@ -22693,7 +22693,7 @@ namespace Amazon.EC2
 
         internal virtual GetIpamResourceCidrsResponse GetIpamResourceCidrs(GetIpamResourceCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
 
@@ -22717,7 +22717,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
         public virtual Task<GetIpamResourceCidrsResponse> GetIpamResourceCidrsAsync(GetIpamResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
 
@@ -22729,7 +22729,7 @@ namespace Amazon.EC2
 
         internal virtual GetLaunchTemplateDataResponse GetLaunchTemplateData(GetLaunchTemplateDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchTemplateDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
 
@@ -22760,7 +22760,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
         public virtual Task<GetLaunchTemplateDataResponse> GetLaunchTemplateDataAsync(GetLaunchTemplateDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchTemplateDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
 
@@ -22772,7 +22772,7 @@ namespace Amazon.EC2
 
         internal virtual GetManagedPrefixListAssociationsResponse GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
 
@@ -22794,7 +22794,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
         public virtual Task<GetManagedPrefixListAssociationsResponse> GetManagedPrefixListAssociationsAsync(GetManagedPrefixListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
 
@@ -22806,7 +22806,7 @@ namespace Amazon.EC2
 
         internal virtual GetManagedPrefixListEntriesResponse GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
 
@@ -22827,7 +22827,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
         public virtual Task<GetManagedPrefixListEntriesResponse> GetManagedPrefixListEntriesAsync(GetManagedPrefixListEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
 
@@ -22839,7 +22839,7 @@ namespace Amazon.EC2
 
         internal virtual GetNetworkInsightsAccessScopeAnalysisFindingsResponse GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
 
@@ -22860,7 +22860,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
         public virtual Task<GetNetworkInsightsAccessScopeAnalysisFindingsResponse> GetNetworkInsightsAccessScopeAnalysisFindingsAsync(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
 
@@ -22872,7 +22872,7 @@ namespace Amazon.EC2
 
         internal virtual GetNetworkInsightsAccessScopeContentResponse GetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
 
@@ -22893,7 +22893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
         public virtual Task<GetNetworkInsightsAccessScopeContentResponse> GetNetworkInsightsAccessScopeContentAsync(GetNetworkInsightsAccessScopeContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
 
@@ -22905,7 +22905,7 @@ namespace Amazon.EC2
 
         internal virtual GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPasswordDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPasswordDataResponseUnmarshaller.Instance;
 
@@ -22952,7 +22952,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public virtual Task<GetPasswordDataResponse> GetPasswordDataAsync(GetPasswordDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPasswordDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPasswordDataResponseUnmarshaller.Instance;
 
@@ -22964,7 +22964,7 @@ namespace Amazon.EC2
 
         internal virtual GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -22988,7 +22988,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public virtual Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -23000,7 +23000,7 @@ namespace Amazon.EC2
 
         internal virtual GetRouteServerAssociationsResponse GetRouteServerAssociations(GetRouteServerAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerAssociationsResponseUnmarshaller.Instance;
 
@@ -23032,7 +23032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
         public virtual Task<GetRouteServerAssociationsResponse> GetRouteServerAssociationsAsync(GetRouteServerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerAssociationsResponseUnmarshaller.Instance;
 
@@ -23044,7 +23044,7 @@ namespace Amazon.EC2
 
         internal virtual GetRouteServerPropagationsResponse GetRouteServerPropagations(GetRouteServerPropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerPropagationsResponseUnmarshaller.Instance;
 
@@ -23102,7 +23102,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
         public virtual Task<GetRouteServerPropagationsResponse> GetRouteServerPropagationsAsync(GetRouteServerPropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerPropagationsResponseUnmarshaller.Instance;
 
@@ -23114,7 +23114,7 @@ namespace Amazon.EC2
 
         internal virtual GetRouteServerRoutingDatabaseResponse GetRouteServerRoutingDatabase(GetRouteServerRoutingDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerRoutingDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerRoutingDatabaseResponseUnmarshaller.Instance;
 
@@ -23172,7 +23172,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
         public virtual Task<GetRouteServerRoutingDatabaseResponse> GetRouteServerRoutingDatabaseAsync(GetRouteServerRoutingDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerRoutingDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerRoutingDatabaseResponseUnmarshaller.Instance;
 
@@ -23184,7 +23184,7 @@ namespace Amazon.EC2
 
         internal virtual GetSecurityGroupsForVpcResponse GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
 
@@ -23206,7 +23206,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
         public virtual Task<GetSecurityGroupsForVpcResponse> GetSecurityGroupsForVpcAsync(GetSecurityGroupsForVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
 
@@ -23218,7 +23218,7 @@ namespace Amazon.EC2
 
         internal virtual GetSerialConsoleAccessStatusResponse GetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSerialConsoleAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance;
 
@@ -23242,7 +23242,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         public virtual Task<GetSerialConsoleAccessStatusResponse> GetSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSerialConsoleAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance;
 
@@ -23254,7 +23254,7 @@ namespace Amazon.EC2
 
         internal virtual GetSnapshotBlockPublicAccessStateResponse GetSnapshotBlockPublicAccessState(GetSnapshotBlockPublicAccessStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -23282,7 +23282,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
         public virtual Task<GetSnapshotBlockPublicAccessStateResponse> GetSnapshotBlockPublicAccessStateAsync(GetSnapshotBlockPublicAccessStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -23294,7 +23294,7 @@ namespace Amazon.EC2
 
         internal virtual GetSpotPlacementScoresResponse GetSpotPlacementScores(GetSpotPlacementScoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
 
@@ -23328,7 +23328,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
         public virtual Task<GetSpotPlacementScoresResponse> GetSpotPlacementScoresAsync(GetSpotPlacementScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
 
@@ -23340,7 +23340,7 @@ namespace Amazon.EC2
 
         internal virtual GetSubnetCidrReservationsResponse GetSubnetCidrReservations(GetSubnetCidrReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
 
@@ -23361,7 +23361,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
         public virtual Task<GetSubnetCidrReservationsResponse> GetSubnetCidrReservationsAsync(GetSubnetCidrReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
 
@@ -23373,7 +23373,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayAttachmentPropagationsResponse GetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
 
@@ -23394,7 +23394,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
         public virtual Task<GetTransitGatewayAttachmentPropagationsResponse> GetTransitGatewayAttachmentPropagationsAsync(GetTransitGatewayAttachmentPropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
 
@@ -23406,7 +23406,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayMulticastDomainAssociationsResponse GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -23427,7 +23427,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual Task<GetTransitGatewayMulticastDomainAssociationsResponse> GetTransitGatewayMulticastDomainAssociationsAsync(GetTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -23439,7 +23439,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayPolicyTableAssociationsResponse GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
 
@@ -23460,7 +23460,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
         public virtual Task<GetTransitGatewayPolicyTableAssociationsResponse> GetTransitGatewayPolicyTableAssociationsAsync(GetTransitGatewayPolicyTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
 
@@ -23472,7 +23472,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayPolicyTableEntriesResponse GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
 
@@ -23493,7 +23493,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
         public virtual Task<GetTransitGatewayPolicyTableEntriesResponse> GetTransitGatewayPolicyTableEntriesAsync(GetTransitGatewayPolicyTableEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
 
@@ -23505,7 +23505,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayPrefixListReferencesResponse GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPrefixListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPrefixListReferencesResponseUnmarshaller.Instance;
 
@@ -23527,7 +23527,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
         public virtual Task<GetTransitGatewayPrefixListReferencesResponse> GetTransitGatewayPrefixListReferencesAsync(GetTransitGatewayPrefixListReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPrefixListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPrefixListReferencesResponseUnmarshaller.Instance;
 
@@ -23539,7 +23539,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayRouteTableAssociationsResponse GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
 
@@ -23560,7 +23560,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
         public virtual Task<GetTransitGatewayRouteTableAssociationsResponse> GetTransitGatewayRouteTableAssociationsAsync(GetTransitGatewayRouteTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
 
@@ -23572,7 +23572,7 @@ namespace Amazon.EC2
 
         internal virtual GetTransitGatewayRouteTablePropagationsResponse GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
 
@@ -23594,7 +23594,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
         public virtual Task<GetTransitGatewayRouteTablePropagationsResponse> GetTransitGatewayRouteTablePropagationsAsync(GetTransitGatewayRouteTablePropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
 
@@ -23606,7 +23606,7 @@ namespace Amazon.EC2
 
         internal virtual GetVerifiedAccessEndpointPolicyResponse GetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -23627,7 +23627,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual Task<GetVerifiedAccessEndpointPolicyResponse> GetVerifiedAccessEndpointPolicyAsync(GetVerifiedAccessEndpointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -23639,7 +23639,7 @@ namespace Amazon.EC2
 
         internal virtual GetVerifiedAccessEndpointTargetsResponse GetVerifiedAccessEndpointTargets(GetVerifiedAccessEndpointTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointTargetsResponseUnmarshaller.Instance;
 
@@ -23660,7 +23660,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
         public virtual Task<GetVerifiedAccessEndpointTargetsResponse> GetVerifiedAccessEndpointTargetsAsync(GetVerifiedAccessEndpointTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointTargetsResponseUnmarshaller.Instance;
 
@@ -23672,7 +23672,7 @@ namespace Amazon.EC2
 
         internal virtual GetVerifiedAccessGroupPolicyResponse GetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -23693,7 +23693,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
         public virtual Task<GetVerifiedAccessGroupPolicyResponse> GetVerifiedAccessGroupPolicyAsync(GetVerifiedAccessGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -23705,7 +23705,7 @@ namespace Amazon.EC2
 
         internal virtual GetVpnConnectionDeviceSampleConfigurationResponse GetVpnConnectionDeviceSampleConfiguration(GetVpnConnectionDeviceSampleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceSampleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceSampleConfigurationResponseUnmarshaller.Instance;
 
@@ -23727,7 +23727,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">REST API Reference for GetVpnConnectionDeviceSampleConfiguration Operation</seealso>
         public virtual Task<GetVpnConnectionDeviceSampleConfigurationResponse> GetVpnConnectionDeviceSampleConfigurationAsync(GetVpnConnectionDeviceSampleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceSampleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceSampleConfigurationResponseUnmarshaller.Instance;
 
@@ -23739,7 +23739,7 @@ namespace Amazon.EC2
 
         internal virtual GetVpnConnectionDeviceTypesResponse GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceTypesResponseUnmarshaller.Instance;
 
@@ -23763,7 +23763,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">REST API Reference for GetVpnConnectionDeviceTypes Operation</seealso>
         public virtual Task<GetVpnConnectionDeviceTypesResponse> GetVpnConnectionDeviceTypesAsync(GetVpnConnectionDeviceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceTypesResponseUnmarshaller.Instance;
 
@@ -23775,7 +23775,7 @@ namespace Amazon.EC2
 
         internal virtual GetVpnTunnelReplacementStatusResponse GetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
 
@@ -23796,7 +23796,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
         public virtual Task<GetVpnTunnelReplacementStatusResponse> GetVpnTunnelReplacementStatusAsync(GetVpnTunnelReplacementStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
 
@@ -23808,7 +23808,7 @@ namespace Amazon.EC2
 
         internal virtual ImportClientVpnClientCertificateRevocationListResponse ImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -23836,7 +23836,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual Task<ImportClientVpnClientCertificateRevocationListResponse> ImportClientVpnClientCertificateRevocationListAsync(ImportClientVpnClientCertificateRevocationListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -23848,7 +23848,7 @@ namespace Amazon.EC2
 
         internal virtual ImportImageResponse ImportImage(ImportImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportImageResponseUnmarshaller.Instance;
 
@@ -23893,7 +23893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public virtual Task<ImportImageResponse> ImportImageAsync(ImportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportImageResponseUnmarshaller.Instance;
 
@@ -23905,7 +23905,7 @@ namespace Amazon.EC2
 
         internal virtual ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportInstanceResponseUnmarshaller.Instance;
 
@@ -23949,7 +23949,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public virtual Task<ImportInstanceResponse> ImportInstanceAsync(ImportInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportInstanceResponseUnmarshaller.Instance;
 
@@ -23961,7 +23961,7 @@ namespace Amazon.EC2
 
         internal virtual ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -23990,7 +23990,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -24002,7 +24002,7 @@ namespace Amazon.EC2
 
         internal virtual ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
 
@@ -24029,7 +24029,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public virtual Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
 
@@ -24041,7 +24041,7 @@ namespace Amazon.EC2
 
         internal virtual ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
@@ -24079,7 +24079,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public virtual Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
@@ -24091,7 +24091,7 @@ namespace Amazon.EC2
 
         internal virtual ListImagesInRecycleBinResponse ListImagesInRecycleBin(ListImagesInRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
 
@@ -24114,7 +24114,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
         public virtual Task<ListImagesInRecycleBinResponse> ListImagesInRecycleBinAsync(ListImagesInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
 
@@ -24126,7 +24126,7 @@ namespace Amazon.EC2
 
         internal virtual ListSnapshotsInRecycleBinResponse ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
 
@@ -24147,7 +24147,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
         public virtual Task<ListSnapshotsInRecycleBinResponse> ListSnapshotsInRecycleBinAsync(ListSnapshotsInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
 
@@ -24159,7 +24159,7 @@ namespace Amazon.EC2
 
         internal virtual LockSnapshotResponse LockSnapshot(LockSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
 
@@ -24204,7 +24204,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
         public virtual Task<LockSnapshotResponse> LockSnapshotAsync(LockSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
 
@@ -24216,7 +24216,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
 
@@ -24239,7 +24239,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
         public virtual Task<ModifyAddressAttributeResponse> ModifyAddressAttributeAsync(ModifyAddressAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
 
@@ -24251,7 +24251,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyAvailabilityZoneGroupResponse ModifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAvailabilityZoneGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAvailabilityZoneGroupResponseUnmarshaller.Instance;
 
@@ -24272,7 +24272,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
         public virtual Task<ModifyAvailabilityZoneGroupResponse> ModifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAvailabilityZoneGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAvailabilityZoneGroupResponseUnmarshaller.Instance;
 
@@ -24284,7 +24284,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
 
@@ -24341,7 +24341,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         public virtual Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
 
@@ -24353,7 +24353,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyCapacityReservationFleetResponse ModifyCapacityReservationFleet(ModifyCapacityReservationFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -24383,7 +24383,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">REST API Reference for ModifyCapacityReservationFleet Operation</seealso>
         public virtual Task<ModifyCapacityReservationFleetResponse> ModifyCapacityReservationFleetAsync(ModifyCapacityReservationFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -24395,7 +24395,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyClientVpnEndpointResponse ModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -24417,7 +24417,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         public virtual Task<ModifyClientVpnEndpointResponse> ModifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -24429,7 +24429,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyDefaultCreditSpecificationResponse ModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -24468,7 +24468,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
         public virtual Task<ModifyDefaultCreditSpecificationResponse> ModifyDefaultCreditSpecificationAsync(ModifyDefaultCreditSpecificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -24480,7 +24480,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyEbsDefaultKmsKeyIdResponse ModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -24520,7 +24520,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
         public virtual Task<ModifyEbsDefaultKmsKeyIdResponse> ModifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -24532,7 +24532,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyFleetResponse ModifyFleet(ModifyFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFleetResponseUnmarshaller.Instance;
 
@@ -24592,7 +24592,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
         public virtual Task<ModifyFleetResponse> ModifyFleetAsync(ModifyFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFleetResponseUnmarshaller.Instance;
 
@@ -24604,7 +24604,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyFpgaImageAttributeResponse ModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -24625,7 +24625,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
         public virtual Task<ModifyFpgaImageAttributeResponse> ModifyFpgaImageAttributeAsync(ModifyFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -24637,7 +24637,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHostsResponseUnmarshaller.Instance;
 
@@ -24669,7 +24669,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public virtual Task<ModifyHostsResponse> ModifyHostsAsync(ModifyHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHostsResponseUnmarshaller.Instance;
 
@@ -24681,7 +24681,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIdentityIdFormatResponse ModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -24735,7 +24735,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public virtual Task<ModifyIdentityIdFormatResponse> ModifyIdentityIdFormatAsync(ModifyIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -24747,7 +24747,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
 
@@ -24797,7 +24797,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public virtual Task<ModifyIdFormatResponse> ModifyIdFormatAsync(ModifyIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
 
@@ -24809,7 +24809,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyImageAttributeResponseUnmarshaller.Instance;
 
@@ -24846,7 +24846,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public virtual Task<ModifyImageAttributeResponse> ModifyImageAttributeAsync(ModifyImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyImageAttributeResponseUnmarshaller.Instance;
 
@@ -24858,7 +24858,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -24895,7 +24895,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public virtual Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -24907,7 +24907,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceCapacityReservationAttributesResponse ModifyInstanceCapacityReservationAttributes(ModifyInstanceCapacityReservationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
 
@@ -24931,7 +24931,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
         public virtual Task<ModifyInstanceCapacityReservationAttributesResponse> ModifyInstanceCapacityReservationAttributesAsync(ModifyInstanceCapacityReservationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
 
@@ -24943,7 +24943,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceConnectEndpointResponse ModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -24970,7 +24970,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
         public virtual Task<ModifyInstanceConnectEndpointResponse> ModifyInstanceConnectEndpointAsync(ModifyInstanceConnectEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -24982,7 +24982,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceCpuOptionsResponse ModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
 
@@ -25020,7 +25020,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
         public virtual Task<ModifyInstanceCpuOptionsResponse> ModifyInstanceCpuOptionsAsync(ModifyInstanceCpuOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
 
@@ -25032,7 +25032,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceCreditSpecificationResponse ModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -25060,7 +25060,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
         public virtual Task<ModifyInstanceCreditSpecificationResponse> ModifyInstanceCreditSpecificationAsync(ModifyInstanceCreditSpecificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -25072,7 +25072,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceEventStartTimeResponse ModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
 
@@ -25093,7 +25093,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
         public virtual Task<ModifyInstanceEventStartTimeResponse> ModifyInstanceEventStartTimeAsync(ModifyInstanceEventStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
 
@@ -25105,7 +25105,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceEventWindowResponse ModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -25147,7 +25147,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
         public virtual Task<ModifyInstanceEventWindowResponse> ModifyInstanceEventWindowAsync(ModifyInstanceEventWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -25159,7 +25159,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceMaintenanceOptionsResponse ModifyInstanceMaintenanceOptions(ModifyInstanceMaintenanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
 
@@ -25191,7 +25191,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
         public virtual Task<ModifyInstanceMaintenanceOptionsResponse> ModifyInstanceMaintenanceOptionsAsync(ModifyInstanceMaintenanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
 
@@ -25203,7 +25203,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceMetadataDefaultsResponse ModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -25235,7 +25235,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
         public virtual Task<ModifyInstanceMetadataDefaultsResponse> ModifyInstanceMetadataDefaultsAsync(ModifyInstanceMetadataDefaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -25247,7 +25247,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceMetadataOptionsResponse ModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -25274,7 +25274,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
         public virtual Task<ModifyInstanceMetadataOptionsResponse> ModifyInstanceMetadataOptionsAsync(ModifyInstanceMetadataOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -25286,7 +25286,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstanceNetworkPerformanceOptionsResponse ModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
 
@@ -25307,7 +25307,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
         public virtual Task<ModifyInstanceNetworkPerformanceOptionsResponse> ModifyInstanceNetworkPerformanceOptionsAsync(ModifyInstanceNetworkPerformanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
 
@@ -25319,7 +25319,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstancePlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
 
@@ -25372,7 +25372,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public virtual Task<ModifyInstancePlacementResponse> ModifyInstancePlacementAsync(ModifyInstancePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstancePlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
 
@@ -25384,7 +25384,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIpamResponse ModifyIpam(ModifyIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
 
@@ -25405,7 +25405,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
         public virtual Task<ModifyIpamResponse> ModifyIpamAsync(ModifyIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
 
@@ -25417,7 +25417,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIpamPoolResponse ModifyIpamPool(ModifyIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
 
@@ -25444,7 +25444,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
         public virtual Task<ModifyIpamPoolResponse> ModifyIpamPoolAsync(ModifyIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
 
@@ -25456,7 +25456,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIpamResourceCidrResponse ModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
 
@@ -25487,7 +25487,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
         public virtual Task<ModifyIpamResourceCidrResponse> ModifyIpamResourceCidrAsync(ModifyIpamResourceCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
 
@@ -25499,7 +25499,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -25521,7 +25521,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
         public virtual Task<ModifyIpamResourceDiscoveryResponse> ModifyIpamResourceDiscoveryAsync(ModifyIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -25533,7 +25533,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
 
@@ -25554,7 +25554,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
         public virtual Task<ModifyIpamScopeResponse> ModifyIpamScopeAsync(ModifyIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
 
@@ -25566,7 +25566,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyLaunchTemplateResponse ModifyLaunchTemplate(ModifyLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -25589,7 +25589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         public virtual Task<ModifyLaunchTemplateResponse> ModifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -25601,7 +25601,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyLocalGatewayRouteResponse ModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -25622,7 +25622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
         public virtual Task<ModifyLocalGatewayRouteResponse> ModifyLocalGatewayRouteAsync(ModifyLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -25634,7 +25634,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyManagedPrefixListResponse ModifyManagedPrefixList(ModifyManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -25666,7 +25666,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
         public virtual Task<ModifyManagedPrefixListResponse> ModifyManagedPrefixListAsync(ModifyManagedPrefixListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -25678,7 +25678,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -25701,7 +25701,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public virtual Task<ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeAsync(ModifyNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -25713,7 +25713,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyPrivateDnsNameOptionsResponse ModifyPrivateDnsNameOptions(ModifyPrivateDnsNameOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPrivateDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPrivateDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -25734,7 +25734,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
         public virtual Task<ModifyPrivateDnsNameOptionsResponse> ModifyPrivateDnsNameOptionsAsync(ModifyPrivateDnsNameOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPrivateDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPrivateDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -25746,7 +25746,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyPublicIpDnsNameOptionsResponse ModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -25769,7 +25769,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
         public virtual Task<ModifyPublicIpDnsNameOptionsResponse> ModifyPublicIpDnsNameOptionsAsync(ModifyPublicIpDnsNameOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -25781,7 +25781,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReservedInstancesResponseUnmarshaller.Instance;
 
@@ -25810,7 +25810,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public virtual Task<ModifyReservedInstancesResponse> ModifyReservedInstancesAsync(ModifyReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReservedInstancesResponseUnmarshaller.Instance;
 
@@ -25822,7 +25822,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyRouteServerResponse ModifyRouteServer(ModifyRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRouteServerResponseUnmarshaller.Instance;
 
@@ -25880,7 +25880,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
         public virtual Task<ModifyRouteServerResponse> ModifyRouteServerAsync(ModifyRouteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRouteServerResponseUnmarshaller.Instance;
 
@@ -25892,7 +25892,7 @@ namespace Amazon.EC2
 
         internal virtual ModifySecurityGroupRulesResponse ModifySecurityGroupRules(ModifySecurityGroupRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -25913,7 +25913,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
         public virtual Task<ModifySecurityGroupRulesResponse> ModifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -25925,7 +25925,7 @@ namespace Amazon.EC2
 
         internal virtual ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -25962,7 +25962,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public virtual Task<ModifySnapshotAttributeResponse> ModifySnapshotAttributeAsync(ModifySnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -25974,7 +25974,7 @@ namespace Amazon.EC2
 
         internal virtual ModifySnapshotTierResponse ModifySnapshotTier(ModifySnapshotTierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
 
@@ -25999,7 +25999,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
         public virtual Task<ModifySnapshotTierResponse> ModifySnapshotTierAsync(ModifySnapshotTierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
 
@@ -26011,7 +26011,7 @@ namespace Amazon.EC2
 
         internal virtual ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySpotFleetRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
 
@@ -26071,7 +26071,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public virtual Task<ModifySpotFleetRequestResponse> ModifySpotFleetRequestAsync(ModifySpotFleetRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySpotFleetRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
 
@@ -26083,7 +26083,7 @@ namespace Amazon.EC2
 
         internal virtual ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySubnetAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySubnetAttributeResponseUnmarshaller.Instance;
 
@@ -26134,7 +26134,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public virtual Task<ModifySubnetAttributeResponse> ModifySubnetAttributeAsync(ModifySubnetAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySubnetAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySubnetAttributeResponseUnmarshaller.Instance;
 
@@ -26146,7 +26146,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTrafficMirrorFilterNetworkServicesResponse ModifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
 
@@ -26177,7 +26177,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
         public virtual Task<ModifyTrafficMirrorFilterNetworkServicesResponse> ModifyTrafficMirrorFilterNetworkServicesAsync(ModifyTrafficMirrorFilterNetworkServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
 
@@ -26189,7 +26189,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTrafficMirrorFilterRuleResponse ModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -26216,7 +26216,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
         public virtual Task<ModifyTrafficMirrorFilterRuleResponse> ModifyTrafficMirrorFilterRuleAsync(ModifyTrafficMirrorFilterRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -26228,7 +26228,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTrafficMirrorSessionResponse ModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -26249,7 +26249,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
         public virtual Task<ModifyTrafficMirrorSessionResponse> ModifyTrafficMirrorSessionAsync(ModifyTrafficMirrorSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -26261,7 +26261,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTransitGatewayResponse ModifyTransitGateway(ModifyTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayResponseUnmarshaller.Instance;
 
@@ -26284,7 +26284,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
         public virtual Task<ModifyTransitGatewayResponse> ModifyTransitGatewayAsync(ModifyTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayResponseUnmarshaller.Instance;
 
@@ -26296,7 +26296,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTransitGatewayPrefixListReferenceResponse ModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -26318,7 +26318,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
         public virtual Task<ModifyTransitGatewayPrefixListReferenceResponse> ModifyTransitGatewayPrefixListReferenceAsync(ModifyTransitGatewayPrefixListReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -26330,7 +26330,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyTransitGatewayVpcAttachmentResponse ModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -26351,7 +26351,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
         public virtual Task<ModifyTransitGatewayVpcAttachmentResponse> ModifyTransitGatewayVpcAttachmentAsync(ModifyTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -26363,7 +26363,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessEndpointResponse ModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -26384,7 +26384,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
         public virtual Task<ModifyVerifiedAccessEndpointResponse> ModifyVerifiedAccessEndpointAsync(ModifyVerifiedAccessEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -26396,7 +26396,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessEndpointPolicyResponse ModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -26417,7 +26417,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual Task<ModifyVerifiedAccessEndpointPolicyResponse> ModifyVerifiedAccessEndpointPolicyAsync(ModifyVerifiedAccessEndpointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -26429,7 +26429,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessGroupResponse ModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -26450,7 +26450,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
         public virtual Task<ModifyVerifiedAccessGroupResponse> ModifyVerifiedAccessGroupAsync(ModifyVerifiedAccessGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -26462,7 +26462,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessGroupPolicyResponse ModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -26483,7 +26483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
         public virtual Task<ModifyVerifiedAccessGroupPolicyResponse> ModifyVerifiedAccessGroupPolicyAsync(ModifyVerifiedAccessGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -26495,7 +26495,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessInstanceResponse ModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -26516,7 +26516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
         public virtual Task<ModifyVerifiedAccessInstanceResponse> ModifyVerifiedAccessInstanceAsync(ModifyVerifiedAccessInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -26528,7 +26528,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessInstanceLoggingConfigurationResponse ModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -26550,7 +26550,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
         public virtual Task<ModifyVerifiedAccessInstanceLoggingConfigurationResponse> ModifyVerifiedAccessInstanceLoggingConfigurationAsync(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -26562,7 +26562,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVerifiedAccessTrustProviderResponse ModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -26584,7 +26584,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
         public virtual Task<ModifyVerifiedAccessTrustProviderResponse> ModifyVerifiedAccessTrustProviderAsync(ModifyVerifiedAccessTrustProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -26596,7 +26596,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
 
@@ -26646,7 +26646,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
         public virtual Task<ModifyVolumeResponse> ModifyVolumeAsync(ModifyVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
 
@@ -26658,7 +26658,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -26692,7 +26692,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public virtual Task<ModifyVolumeAttributeResponse> ModifyVolumeAttributeAsync(ModifyVolumeAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -26704,7 +26704,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcAttributeResponseUnmarshaller.Instance;
 
@@ -26725,7 +26725,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public virtual Task<ModifyVpcAttributeResponse> ModifyVpcAttributeAsync(ModifyVpcAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcAttributeResponseUnmarshaller.Instance;
 
@@ -26737,7 +26737,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcBlockPublicAccessExclusionResponse ModifyVpcBlockPublicAccessExclusion(ModifyVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -26762,7 +26762,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual Task<ModifyVpcBlockPublicAccessExclusionResponse> ModifyVpcBlockPublicAccessExclusionAsync(ModifyVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -26774,7 +26774,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcBlockPublicAccessOptionsResponse ModifyVpcBlockPublicAccessOptions(ModifyVpcBlockPublicAccessOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -26799,7 +26799,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
         public virtual Task<ModifyVpcBlockPublicAccessOptionsResponse> ModifyVpcBlockPublicAccessOptionsAsync(ModifyVpcBlockPublicAccessOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -26811,7 +26811,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
@@ -26835,7 +26835,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public virtual Task<ModifyVpcEndpointResponse> ModifyVpcEndpointAsync(ModifyVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
@@ -26847,7 +26847,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcEndpointConnectionNotificationResponse ModifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -26869,7 +26869,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
         public virtual Task<ModifyVpcEndpointConnectionNotificationResponse> ModifyVpcEndpointConnectionNotificationAsync(ModifyVpcEndpointConnectionNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -26881,7 +26881,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcEndpointServiceConfigurationResponse ModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -26908,7 +26908,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">REST API Reference for ModifyVpcEndpointServiceConfiguration Operation</seealso>
         public virtual Task<ModifyVpcEndpointServiceConfigurationResponse> ModifyVpcEndpointServiceConfigurationAsync(ModifyVpcEndpointServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -26920,7 +26920,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcEndpointServicePayerResponsibilityResponse ModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
 
@@ -26941,7 +26941,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
         public virtual Task<ModifyVpcEndpointServicePayerResponsibilityResponse> ModifyVpcEndpointServicePayerResponsibilityAsync(ModifyVpcEndpointServicePayerResponsibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
 
@@ -26953,7 +26953,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcEndpointServicePermissionsResponse ModifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -26983,7 +26983,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">REST API Reference for ModifyVpcEndpointServicePermissions Operation</seealso>
         public virtual Task<ModifyVpcEndpointServicePermissionsResponse> ModifyVpcEndpointServicePermissionsAsync(ModifyVpcEndpointServicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -26995,7 +26995,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcPeeringConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -27031,7 +27031,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public virtual Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcPeeringConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -27043,7 +27043,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpcTenancyResponse ModifyVpcTenancy(ModifyVpcTenancyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcTenancyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
 
@@ -27078,7 +27078,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
         public virtual Task<ModifyVpcTenancyResponse> ModifyVpcTenancyAsync(ModifyVpcTenancyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcTenancyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
 
@@ -27090,7 +27090,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpnConnectionResponse ModifyVpnConnection(ModifyVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
 
@@ -27175,7 +27175,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
         public virtual Task<ModifyVpnConnectionResponse> ModifyVpnConnectionAsync(ModifyVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
 
@@ -27187,7 +27187,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpnConnectionOptionsResponse ModifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -27215,7 +27215,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">REST API Reference for ModifyVpnConnectionOptions Operation</seealso>
         public virtual Task<ModifyVpnConnectionOptionsResponse> ModifyVpnConnectionOptionsAsync(ModifyVpnConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -27227,7 +27227,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpnTunnelCertificateResponse ModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
 
@@ -27248,7 +27248,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
         public virtual Task<ModifyVpnTunnelCertificateResponse> ModifyVpnTunnelCertificateAsync(ModifyVpnTunnelCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
 
@@ -27260,7 +27260,7 @@ namespace Amazon.EC2
 
         internal virtual ModifyVpnTunnelOptionsResponse ModifyVpnTunnelOptions(ModifyVpnTunnelOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
 
@@ -27285,7 +27285,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
         public virtual Task<ModifyVpnTunnelOptionsResponse> ModifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
 
@@ -27297,7 +27297,7 @@ namespace Amazon.EC2
 
         internal virtual MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
@@ -27325,7 +27325,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public virtual Task<MonitorInstancesResponse> MonitorInstancesAsync(MonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
@@ -27337,7 +27337,7 @@ namespace Amazon.EC2
 
         internal virtual MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveAddressToVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
 
@@ -27370,7 +27370,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public virtual Task<MoveAddressToVpcResponse> MoveAddressToVpcAsync(MoveAddressToVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveAddressToVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
 
@@ -27382,7 +27382,7 @@ namespace Amazon.EC2
 
         internal virtual MoveByoipCidrToIpamResponse MoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
 
@@ -27412,7 +27412,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
         public virtual Task<MoveByoipCidrToIpamResponse> MoveByoipCidrToIpamAsync(MoveByoipCidrToIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
 
@@ -27424,7 +27424,7 @@ namespace Amazon.EC2
 
         internal virtual MoveCapacityReservationInstancesResponse MoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
 
@@ -27474,7 +27474,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
         public virtual Task<MoveCapacityReservationInstancesResponse> MoveCapacityReservationInstancesAsync(MoveCapacityReservationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
 
@@ -27486,7 +27486,7 @@ namespace Amazon.EC2
 
         internal virtual ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -27525,7 +27525,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         public virtual Task<ProvisionByoipCidrResponse> ProvisionByoipCidrAsync(ProvisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -27537,7 +27537,7 @@ namespace Amazon.EC2
 
         internal virtual ProvisionIpamByoasnResponse ProvisionIpamByoasn(ProvisionIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -27561,7 +27561,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
         public virtual Task<ProvisionIpamByoasnResponse> ProvisionIpamByoasnAsync(ProvisionIpamByoasnRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -27573,7 +27573,7 @@ namespace Amazon.EC2
 
         internal virtual ProvisionIpamPoolCidrResponse ProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -27601,7 +27601,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
         public virtual Task<ProvisionIpamPoolCidrResponse> ProvisionIpamPoolCidrAsync(ProvisionIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -27613,7 +27613,7 @@ namespace Amazon.EC2
 
         internal virtual ProvisionPublicIpv4PoolCidrResponse ProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -27640,7 +27640,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         public virtual Task<ProvisionPublicIpv4PoolCidrResponse> ProvisionPublicIpv4PoolCidrAsync(ProvisionPublicIpv4PoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -27652,7 +27652,7 @@ namespace Amazon.EC2
 
         internal virtual PurchaseCapacityBlockResponse PurchaseCapacityBlock(PurchaseCapacityBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
 
@@ -27675,7 +27675,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
         public virtual Task<PurchaseCapacityBlockResponse> PurchaseCapacityBlockAsync(PurchaseCapacityBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
 
@@ -27687,7 +27687,7 @@ namespace Amazon.EC2
 
         internal virtual PurchaseCapacityBlockExtensionResponse PurchaseCapacityBlockExtension(PurchaseCapacityBlockExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
 
@@ -27709,7 +27709,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlockExtension">REST API Reference for PurchaseCapacityBlockExtension Operation</seealso>
         public virtual Task<PurchaseCapacityBlockExtensionResponse> PurchaseCapacityBlockExtensionAsync(PurchaseCapacityBlockExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
 
@@ -27721,7 +27721,7 @@ namespace Amazon.EC2
 
         internal virtual PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseHostReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
 
@@ -27745,7 +27745,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public virtual Task<PurchaseHostReservationResponse> PurchaseHostReservationAsync(PurchaseHostReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseHostReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
 
@@ -27757,7 +27757,7 @@ namespace Amazon.EC2
 
         internal virtual PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -27797,7 +27797,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public virtual Task<PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingAsync(PurchaseReservedInstancesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -27809,7 +27809,7 @@ namespace Amazon.EC2
 
         internal virtual PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -27850,7 +27850,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public virtual Task<PurchaseScheduledInstancesResponse> PurchaseScheduledInstancesAsync(PurchaseScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -27862,7 +27862,7 @@ namespace Amazon.EC2
 
         internal virtual RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstancesResponseUnmarshaller.Instance;
 
@@ -27897,7 +27897,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public virtual Task<RebootInstancesResponse> RebootInstancesAsync(RebootInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstancesResponseUnmarshaller.Instance;
 
@@ -27909,7 +27909,7 @@ namespace Amazon.EC2
 
         internal virtual RegisterImageResponse RegisterImage(RegisterImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterImageResponseUnmarshaller.Instance;
 
@@ -27992,7 +27992,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public virtual Task<RegisterImageResponse> RegisterImageAsync(RegisterImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterImageResponseUnmarshaller.Instance;
 
@@ -28004,7 +28004,7 @@ namespace Amazon.EC2
 
         internal virtual RegisterInstanceEventNotificationAttributesResponse RegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -28031,7 +28031,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual Task<RegisterInstanceEventNotificationAttributesResponse> RegisterInstanceEventNotificationAttributesAsync(RegisterInstanceEventNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -28043,7 +28043,7 @@ namespace Amazon.EC2
 
         internal virtual RegisterTransitGatewayMulticastGroupMembersResponse RegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -28073,7 +28073,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual Task<RegisterTransitGatewayMulticastGroupMembersResponse> RegisterTransitGatewayMulticastGroupMembersAsync(RegisterTransitGatewayMulticastGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -28085,7 +28085,7 @@ namespace Amazon.EC2
 
         internal virtual RegisterTransitGatewayMulticastGroupSourcesResponse RegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -28119,7 +28119,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual Task<RegisterTransitGatewayMulticastGroupSourcesResponse> RegisterTransitGatewayMulticastGroupSourcesAsync(RegisterTransitGatewayMulticastGroupSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -28131,7 +28131,7 @@ namespace Amazon.EC2
 
         internal virtual RejectCapacityReservationBillingOwnershipResponse RejectCapacityReservationBillingOwnership(RejectCapacityReservationBillingOwnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -28154,7 +28154,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
         public virtual Task<RejectCapacityReservationBillingOwnershipResponse> RejectCapacityReservationBillingOwnershipAsync(RejectCapacityReservationBillingOwnershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -28166,7 +28166,7 @@ namespace Amazon.EC2
 
         internal virtual RejectTransitGatewayMulticastDomainAssociationsResponse RejectTransitGatewayMulticastDomainAssociations(RejectTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -28188,7 +28188,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual Task<RejectTransitGatewayMulticastDomainAssociationsResponse> RejectTransitGatewayMulticastDomainAssociationsAsync(RejectTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -28200,7 +28200,7 @@ namespace Amazon.EC2
 
         internal virtual RejectTransitGatewayPeeringAttachmentResponse RejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -28221,7 +28221,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
         public virtual Task<RejectTransitGatewayPeeringAttachmentResponse> RejectTransitGatewayPeeringAttachmentAsync(RejectTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -28233,7 +28233,7 @@ namespace Amazon.EC2
 
         internal virtual RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -28261,7 +28261,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
         public virtual Task<RejectTransitGatewayVpcAttachmentResponse> RejectTransitGatewayVpcAttachmentAsync(RejectTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -28273,7 +28273,7 @@ namespace Amazon.EC2
 
         internal virtual RejectVpcEndpointConnectionsResponse RejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -28294,7 +28294,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections">REST API Reference for RejectVpcEndpointConnections Operation</seealso>
         public virtual Task<RejectVpcEndpointConnectionsResponse> RejectVpcEndpointConnectionsAsync(RejectVpcEndpointConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -28306,7 +28306,7 @@ namespace Amazon.EC2
 
         internal virtual RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -28331,7 +28331,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public virtual Task<RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionAsync(RejectVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -28343,7 +28343,7 @@ namespace Amazon.EC2
 
         internal virtual ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseAddressResponseUnmarshaller.Instance;
 
@@ -28390,7 +28390,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public virtual Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseAddressResponseUnmarshaller.Instance;
 
@@ -28402,7 +28402,7 @@ namespace Amazon.EC2
 
         internal virtual ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
 
@@ -28438,7 +28438,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public virtual Task<ReleaseHostsResponse> ReleaseHostsAsync(ReleaseHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
 
@@ -28450,7 +28450,7 @@ namespace Amazon.EC2
 
         internal virtual ReleaseIpamPoolAllocationResponse ReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
 
@@ -28484,7 +28484,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
         public virtual Task<ReleaseIpamPoolAllocationResponse> ReleaseIpamPoolAllocationAsync(ReleaseIpamPoolAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
 
@@ -28496,7 +28496,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceIamInstanceProfileAssociationResponse ReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceIamInstanceProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
 
@@ -28524,7 +28524,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
         public virtual Task<ReplaceIamInstanceProfileAssociationResponse> ReplaceIamInstanceProfileAssociationAsync(ReplaceIamInstanceProfileAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceIamInstanceProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
 
@@ -28536,7 +28536,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceImageCriteriaInAllowedImagesSettingsResponse ReplaceImageCriteriaInAllowedImagesSettings(ReplaceImageCriteriaInAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceImageCriteriaInAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -28570,7 +28570,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
         public virtual Task<ReplaceImageCriteriaInAllowedImagesSettingsResponse> ReplaceImageCriteriaInAllowedImagesSettingsAsync(ReplaceImageCriteriaInAllowedImagesSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceImageCriteriaInAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -28582,7 +28582,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.Instance;
 
@@ -28611,7 +28611,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public virtual Task<ReplaceNetworkAclAssociationResponse> ReplaceNetworkAclAssociationAsync(ReplaceNetworkAclAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.Instance;
 
@@ -28623,7 +28623,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -28645,7 +28645,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public virtual Task<ReplaceNetworkAclEntryResponse> ReplaceNetworkAclEntryAsync(ReplaceNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -28657,7 +28657,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteResponseUnmarshaller.Instance;
 
@@ -28690,7 +28690,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public virtual Task<ReplaceRouteResponse> ReplaceRouteAsync(ReplaceRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteResponseUnmarshaller.Instance;
 
@@ -28702,7 +28702,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.Instance;
 
@@ -28734,7 +28734,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public virtual Task<ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationAsync(ReplaceRouteTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.Instance;
 
@@ -28746,7 +28746,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceTransitGatewayRouteResponse ReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -28767,7 +28767,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
         public virtual Task<ReplaceTransitGatewayRouteResponse> ReplaceTransitGatewayRouteAsync(ReplaceTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -28779,7 +28779,7 @@ namespace Amazon.EC2
 
         internal virtual ReplaceVpnTunnelResponse ReplaceVpnTunnel(ReplaceVpnTunnelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
 
@@ -28800,7 +28800,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
         public virtual Task<ReplaceVpnTunnelResponse> ReplaceVpnTunnelAsync(ReplaceVpnTunnelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
 
@@ -28812,7 +28812,7 @@ namespace Amazon.EC2
 
         internal virtual ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportInstanceStatusResponseUnmarshaller.Instance;
 
@@ -28842,7 +28842,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public virtual Task<ReportInstanceStatusResponse> ReportInstanceStatusAsync(ReportInstanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportInstanceStatusResponseUnmarshaller.Instance;
 
@@ -28854,7 +28854,7 @@ namespace Amazon.EC2
 
         internal virtual RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
 
@@ -28918,7 +28918,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public virtual Task<RequestSpotFleetResponse> RequestSpotFleetAsync(RequestSpotFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
 
@@ -28930,7 +28930,7 @@ namespace Amazon.EC2
 
         internal virtual RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
@@ -28964,7 +28964,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public virtual Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
@@ -28976,7 +28976,7 @@ namespace Amazon.EC2
 
         internal virtual ResetAddressAttributeResponse ResetAddressAttribute(ResetAddressAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
 
@@ -28998,7 +28998,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
         public virtual Task<ResetAddressAttributeResponse> ResetAddressAttributeAsync(ResetAddressAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
 
@@ -29010,7 +29010,7 @@ namespace Amazon.EC2
 
         internal virtual ResetEbsDefaultKmsKeyIdResponse ResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -29040,7 +29040,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
         public virtual Task<ResetEbsDefaultKmsKeyIdResponse> ResetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -29052,7 +29052,7 @@ namespace Amazon.EC2
 
         internal virtual ResetFpgaImageAttributeResponse ResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -29074,7 +29074,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
         public virtual Task<ResetFpgaImageAttributeResponse> ResetFpgaImageAttributeAsync(ResetFpgaImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -29086,7 +29086,7 @@ namespace Amazon.EC2
 
         internal virtual ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetImageAttributeResponseUnmarshaller.Instance;
 
@@ -29107,7 +29107,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public virtual Task<ResetImageAttributeResponse> ResetImageAttributeAsync(ResetImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetImageAttributeResponseUnmarshaller.Instance;
 
@@ -29119,7 +29119,7 @@ namespace Amazon.EC2
 
         internal virtual ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -29151,7 +29151,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public virtual Task<ResetInstanceAttributeResponse> ResetInstanceAttributeAsync(ResetInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -29163,7 +29163,7 @@ namespace Amazon.EC2
 
         internal virtual ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -29184,7 +29184,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public virtual Task<ResetNetworkInterfaceAttributeResponse> ResetNetworkInterfaceAttributeAsync(ResetNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -29196,7 +29196,7 @@ namespace Amazon.EC2
 
         internal virtual ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -29223,7 +29223,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public virtual Task<ResetSnapshotAttributeResponse> ResetSnapshotAttributeAsync(ResetSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -29235,7 +29235,7 @@ namespace Amazon.EC2
 
         internal virtual RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAddressToClassicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
 
@@ -29266,7 +29266,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public virtual Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAddressToClassicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
 
@@ -29278,7 +29278,7 @@ namespace Amazon.EC2
 
         internal virtual RestoreImageFromRecycleBinResponse RestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -29301,7 +29301,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
         public virtual Task<RestoreImageFromRecycleBinResponse> RestoreImageFromRecycleBinAsync(RestoreImageFromRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -29313,7 +29313,7 @@ namespace Amazon.EC2
 
         internal virtual RestoreManagedPrefixListVersionResponse RestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
 
@@ -29335,7 +29335,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
         public virtual Task<RestoreManagedPrefixListVersionResponse> RestoreManagedPrefixListVersionAsync(RestoreManagedPrefixListVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
 
@@ -29347,7 +29347,7 @@ namespace Amazon.EC2
 
         internal virtual RestoreSnapshotFromRecycleBinResponse RestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -29369,7 +29369,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
         public virtual Task<RestoreSnapshotFromRecycleBinResponse> RestoreSnapshotFromRecycleBinAsync(RestoreSnapshotFromRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -29381,7 +29381,7 @@ namespace Amazon.EC2
 
         internal virtual RestoreSnapshotTierResponse RestoreSnapshotTier(RestoreSnapshotTierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
 
@@ -29412,7 +29412,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
         public virtual Task<RestoreSnapshotTierResponse> RestoreSnapshotTierAsync(RestoreSnapshotTierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
 
@@ -29424,7 +29424,7 @@ namespace Amazon.EC2
 
         internal virtual RevokeClientVpnIngressResponse RevokeClientVpnIngress(RevokeClientVpnIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -29445,7 +29445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
         public virtual Task<RevokeClientVpnIngressResponse> RevokeClientVpnIngressAsync(RevokeClientVpnIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -29457,7 +29457,7 @@ namespace Amazon.EC2
 
         internal virtual RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -29505,7 +29505,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public virtual Task<RevokeSecurityGroupEgressResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -29517,7 +29517,7 @@ namespace Amazon.EC2
 
         internal virtual RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -29571,7 +29571,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public virtual Task<RevokeSecurityGroupIngressResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -29583,7 +29583,7 @@ namespace Amazon.EC2
 
         internal virtual RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunInstancesResponseUnmarshaller.Instance;
 
@@ -29676,7 +29676,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public virtual Task<RunInstancesResponse> RunInstancesAsync(RunInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunInstancesResponseUnmarshaller.Instance;
 
@@ -29688,7 +29688,7 @@ namespace Amazon.EC2
 
         internal virtual RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -29722,7 +29722,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public virtual Task<RunScheduledInstancesResponse> RunScheduledInstancesAsync(RunScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -29734,7 +29734,7 @@ namespace Amazon.EC2
 
         internal virtual SearchLocalGatewayRoutesResponse SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -29755,7 +29755,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
         public virtual Task<SearchLocalGatewayRoutesResponse> SearchLocalGatewayRoutesAsync(SearchLocalGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -29767,7 +29767,7 @@ namespace Amazon.EC2
 
         internal virtual SearchTransitGatewayMulticastGroupsResponse SearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
 
@@ -29789,7 +29789,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
         public virtual Task<SearchTransitGatewayMulticastGroupsResponse> SearchTransitGatewayMulticastGroupsAsync(SearchTransitGatewayMulticastGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
 
@@ -29801,7 +29801,7 @@ namespace Amazon.EC2
 
         internal virtual SearchTransitGatewayRoutesResponse SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -29822,7 +29822,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
         public virtual Task<SearchTransitGatewayRoutesResponse> SearchTransitGatewayRoutesAsync(SearchTransitGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -29834,7 +29834,7 @@ namespace Amazon.EC2
 
         internal virtual SendDiagnosticInterruptResponse SendDiagnosticInterrupt(SendDiagnosticInterruptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
 
@@ -29877,7 +29877,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">REST API Reference for SendDiagnosticInterrupt Operation</seealso>
         public virtual Task<SendDiagnosticInterruptResponse> SendDiagnosticInterruptAsync(SendDiagnosticInterruptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
 
@@ -29889,7 +29889,7 @@ namespace Amazon.EC2
 
         internal virtual StartDeclarativePoliciesReportResponse StartDeclarativePoliciesReport(StartDeclarativePoliciesReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -29969,7 +29969,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
         public virtual Task<StartDeclarativePoliciesReportResponse> StartDeclarativePoliciesReportAsync(StartDeclarativePoliciesReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -29981,7 +29981,7 @@ namespace Amazon.EC2
 
         internal virtual StartInstancesResponse StartInstances(StartInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
 
@@ -30035,7 +30035,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public virtual Task<StartInstancesResponse> StartInstancesAsync(StartInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
 
@@ -30047,7 +30047,7 @@ namespace Amazon.EC2
 
         internal virtual StartNetworkInsightsAccessScopeAnalysisResponse StartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -30068,7 +30068,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual Task<StartNetworkInsightsAccessScopeAnalysisResponse> StartNetworkInsightsAccessScopeAnalysisAsync(StartNetworkInsightsAccessScopeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -30080,7 +30080,7 @@ namespace Amazon.EC2
 
         internal virtual StartNetworkInsightsAnalysisResponse StartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -30102,7 +30102,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
         public virtual Task<StartNetworkInsightsAnalysisResponse> StartNetworkInsightsAnalysisAsync(StartNetworkInsightsAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -30114,7 +30114,7 @@ namespace Amazon.EC2
 
         internal virtual StartVpcEndpointServicePrivateDnsVerificationResponse StartVpcEndpointServicePrivateDnsVerification(StartVpcEndpointServicePrivateDnsVerificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
 
@@ -30146,7 +30146,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">REST API Reference for StartVpcEndpointServicePrivateDnsVerification Operation</seealso>
         public virtual Task<StartVpcEndpointServicePrivateDnsVerificationResponse> StartVpcEndpointServicePrivateDnsVerificationAsync(StartVpcEndpointServicePrivateDnsVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
 
@@ -30158,7 +30158,7 @@ namespace Amazon.EC2
 
         internal virtual StopInstancesResponse StopInstances(StopInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstancesResponseUnmarshaller.Instance;
 
@@ -30227,7 +30227,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public virtual Task<StopInstancesResponse> StopInstancesAsync(StopInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstancesResponseUnmarshaller.Instance;
 
@@ -30239,7 +30239,7 @@ namespace Amazon.EC2
 
         internal virtual TerminateClientVpnConnectionsResponse TerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -30262,7 +30262,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
         public virtual Task<TerminateClientVpnConnectionsResponse> TerminateClientVpnConnectionsAsync(TerminateClientVpnConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -30274,7 +30274,7 @@ namespace Amazon.EC2
 
         internal virtual TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstancesResponseUnmarshaller.Instance;
 
@@ -30388,7 +30388,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public virtual Task<TerminateInstancesResponse> TerminateInstancesAsync(TerminateInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstancesResponseUnmarshaller.Instance;
 
@@ -30400,7 +30400,7 @@ namespace Amazon.EC2
 
         internal virtual UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -30422,7 +30422,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public virtual Task<UnassignIpv6AddressesResponse> UnassignIpv6AddressesAsync(UnassignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -30434,7 +30434,7 @@ namespace Amazon.EC2
 
         internal virtual UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -30456,7 +30456,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public virtual Task<UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -30468,7 +30468,7 @@ namespace Amazon.EC2
 
         internal virtual UnassignPrivateNatGatewayAddressResponse UnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -30506,7 +30506,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
         public virtual Task<UnassignPrivateNatGatewayAddressResponse> UnassignPrivateNatGatewayAddressAsync(UnassignPrivateNatGatewayAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -30518,7 +30518,7 @@ namespace Amazon.EC2
 
         internal virtual UnlockSnapshotResponse UnlockSnapshot(UnlockSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
 
@@ -30541,7 +30541,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
         public virtual Task<UnlockSnapshotResponse> UnlockSnapshotAsync(UnlockSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
 
@@ -30553,7 +30553,7 @@ namespace Amazon.EC2
 
         internal virtual UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnmonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
 
@@ -30576,7 +30576,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public virtual Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnmonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
 
@@ -30588,7 +30588,7 @@ namespace Amazon.EC2
 
         internal virtual UpdateSecurityGroupRuleDescriptionsEgressResponse UpdateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
 
@@ -30612,7 +30612,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
         public virtual Task<UpdateSecurityGroupRuleDescriptionsEgressResponse> UpdateSecurityGroupRuleDescriptionsEgressAsync(UpdateSecurityGroupRuleDescriptionsEgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
 
@@ -30624,7 +30624,7 @@ namespace Amazon.EC2
 
         internal virtual UpdateSecurityGroupRuleDescriptionsIngressResponse UpdateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
 
@@ -30648,7 +30648,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
         public virtual Task<UpdateSecurityGroupRuleDescriptionsIngressResponse> UpdateSecurityGroupRuleDescriptionsIngressAsync(UpdateSecurityGroupRuleDescriptionsIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
 
@@ -30660,7 +30660,7 @@ namespace Amazon.EC2
 
         internal virtual WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
 
@@ -30692,7 +30692,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
         public virtual Task<WithdrawByoipCidrResponse> WithdrawByoipCidrAsync(WithdrawByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
 

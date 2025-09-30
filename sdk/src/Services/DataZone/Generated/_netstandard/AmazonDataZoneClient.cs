@@ -271,7 +271,7 @@ namespace Amazon.DataZone
 
         internal virtual AcceptPredictionsResponse AcceptPredictions(AcceptPredictionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPredictionsResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AcceptPredictions">REST API Reference for AcceptPredictions Operation</seealso>
         public virtual Task<AcceptPredictionsResponse> AcceptPredictionsAsync(AcceptPredictionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPredictionsResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.DataZone
 
         internal virtual AcceptSubscriptionRequestResponse AcceptSubscriptionRequest(AcceptSubscriptionRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -368,7 +368,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AcceptSubscriptionRequest">REST API Reference for AcceptSubscriptionRequest Operation</seealso>
         public virtual Task<AcceptSubscriptionRequestResponse> AcceptSubscriptionRequestAsync(AcceptSubscriptionRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.DataZone
 
         internal virtual AddEntityOwnerResponse AddEntityOwner(AddEntityOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddEntityOwner">REST API Reference for AddEntityOwner Operation</seealso>
         public virtual Task<AddEntityOwnerResponse> AddEntityOwnerAsync(AddEntityOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddEntityOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddEntityOwnerResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.DataZone
 
         internal virtual AddPolicyGrantResponse AddPolicyGrant(AddPolicyGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AddPolicyGrant">REST API Reference for AddPolicyGrant Operation</seealso>
         public virtual Task<AddPolicyGrantResponse> AddPolicyGrantAsync(AddPolicyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyGrantResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.DataZone
 
         internal virtual AssociateEnvironmentRoleResponse AssociateEnvironmentRole(AssociateEnvironmentRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateEnvironmentRole">REST API Reference for AssociateEnvironmentRole Operation</seealso>
         public virtual Task<AssociateEnvironmentRoleResponse> AssociateEnvironmentRoleAsync(AssociateEnvironmentRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnvironmentRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnvironmentRoleResponseUnmarshaller.Instance;
 
@@ -546,7 +546,7 @@ namespace Amazon.DataZone
 
         internal virtual AssociateGovernedTermsResponse AssociateGovernedTerms(AssociateGovernedTermsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateGovernedTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateGovernedTermsResponseUnmarshaller.Instance;
 
@@ -588,7 +588,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssociateGovernedTerms">REST API Reference for AssociateGovernedTerms Operation</seealso>
         public virtual Task<AssociateGovernedTermsResponse> AssociateGovernedTermsAsync(AssociateGovernedTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateGovernedTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateGovernedTermsResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.DataZone
 
         internal virtual CancelMetadataGenerationRunResponse CancelMetadataGenerationRun(CancelMetadataGenerationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun">REST API Reference for CancelMetadataGenerationRun Operation</seealso>
         public virtual Task<CancelMetadataGenerationRunResponse> CancelMetadataGenerationRunAsync(CancelMetadataGenerationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.DataZone
 
         internal virtual CancelSubscriptionResponse CancelSubscription(CancelSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelSubscription">REST API Reference for CancelSubscription Operation</seealso>
         public virtual Task<CancelSubscriptionResponse> CancelSubscriptionAsync(CancelSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
 
@@ -726,7 +726,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateAccountPoolResponse CreateAccountPool(CreateAccountPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
 
@@ -771,7 +771,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAccountPool">REST API Reference for CreateAccountPool Operation</seealso>
         public virtual Task<CreateAccountPoolResponse> CreateAccountPoolAsync(CreateAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountPoolResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateAssetResponse CreateAsset(CreateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -874,7 +874,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual Task<CreateAssetResponse> CreateAssetAsync(CreateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -886,7 +886,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateAssetFilterResponse CreateAssetFilter(CreateAssetFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetFilterResponseUnmarshaller.Instance;
 
@@ -964,7 +964,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetFilter">REST API Reference for CreateAssetFilter Operation</seealso>
         public virtual Task<CreateAssetFilterResponse> CreateAssetFilterAsync(CreateAssetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetFilterResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateAssetRevisionResponse CreateAssetRevision(CreateAssetRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetRevisionResponseUnmarshaller.Instance;
 
@@ -1052,7 +1052,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetRevision">REST API Reference for CreateAssetRevision Operation</seealso>
         public virtual Task<CreateAssetRevisionResponse> CreateAssetRevisionAsync(CreateAssetRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetRevisionResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateAssetTypeResponse CreateAssetType(CreateAssetTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetTypeResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateAssetType">REST API Reference for CreateAssetType Operation</seealso>
         public virtual Task<CreateAssetTypeResponse> CreateAssetTypeAsync(CreateAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetTypeResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1204,7 +1204,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateDataProductResponse CreateDataProduct(CreateDataProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProductResponseUnmarshaller.Instance;
 
@@ -1285,7 +1285,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataProduct">REST API Reference for CreateDataProduct Operation</seealso>
         public virtual Task<CreateDataProductResponse> CreateDataProductAsync(CreateDataProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProductResponseUnmarshaller.Instance;
 
@@ -1297,7 +1297,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateDataProductRevisionResponse CreateDataProductRevision(CreateDataProductRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProductRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProductRevisionResponseUnmarshaller.Instance;
 
@@ -1361,7 +1361,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataProductRevision">REST API Reference for CreateDataProductRevision Operation</seealso>
         public virtual Task<CreateDataProductRevisionResponse> CreateDataProductRevisionAsync(CreateDataProductRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProductRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProductRevisionResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1418,7 +1418,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -1475,7 +1475,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateDomainUnitResponse CreateDomainUnit(CreateDomainUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
 
@@ -1529,7 +1529,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomainUnit">REST API Reference for CreateDomainUnit Operation</seealso>
         public virtual Task<CreateDomainUnitResponse> CreateDomainUnitAsync(CreateDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainUnitResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -1583,7 +1583,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateEnvironmentActionResponse CreateEnvironmentAction(CreateEnvironmentActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentAction">REST API Reference for CreateEnvironmentAction Operation</seealso>
         public virtual Task<CreateEnvironmentActionResponse> CreateEnvironmentActionAsync(CreateEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateEnvironmentBlueprintResponse CreateEnvironmentBlueprint(CreateEnvironmentBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentBlueprint">REST API Reference for CreateEnvironmentBlueprint Operation</seealso>
         public virtual Task<CreateEnvironmentBlueprintResponse> CreateEnvironmentBlueprintAsync(CreateEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -1707,7 +1707,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateEnvironmentProfileResponse CreateEnvironmentProfile(CreateEnvironmentProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateEnvironmentProfile">REST API Reference for CreateEnvironmentProfile Operation</seealso>
         public virtual Task<CreateEnvironmentProfileResponse> CreateEnvironmentProfileAsync(CreateEnvironmentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -1764,7 +1764,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateFormTypeResponse CreateFormType(CreateFormTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFormTypeResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateFormType">REST API Reference for CreateFormType Operation</seealso>
         public virtual Task<CreateFormTypeResponse> CreateFormTypeAsync(CreateFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFormTypeResponseUnmarshaller.Instance;
 
@@ -1836,7 +1836,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateGlossaryResponse CreateGlossary(CreateGlossaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlossaryResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateGlossary">REST API Reference for CreateGlossary Operation</seealso>
         public virtual Task<CreateGlossaryResponse> CreateGlossaryAsync(CreateGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlossaryResponseUnmarshaller.Instance;
 
@@ -1921,7 +1921,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateGlossaryTermResponse CreateGlossaryTerm(CreateGlossaryTermRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlossaryTermResponseUnmarshaller.Instance;
 
@@ -1999,7 +1999,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateGlossaryTerm">REST API Reference for CreateGlossaryTerm Operation</seealso>
         public virtual Task<CreateGlossaryTermResponse> CreateGlossaryTermAsync(CreateGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlossaryTermResponseUnmarshaller.Instance;
 
@@ -2011,7 +2011,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateGroupProfileResponse CreateGroupProfile(CreateGroupProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupProfileResponseUnmarshaller.Instance;
 
@@ -2050,7 +2050,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateGroupProfile">REST API Reference for CreateGroupProfile Operation</seealso>
         public virtual Task<CreateGroupProfileResponse> CreateGroupProfileAsync(CreateGroupProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupProfileResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateListingChangeSetResponse CreateListingChangeSet(CreateListingChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListingChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListingChangeSetResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateListingChangeSet">REST API Reference for CreateListingChangeSet Operation</seealso>
         public virtual Task<CreateListingChangeSetResponse> CreateListingChangeSetAsync(CreateListingChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListingChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListingChangeSetResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -2165,7 +2165,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -2177,7 +2177,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateProjectMembershipResponse CreateProjectMembership(CreateProjectMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectMembershipResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateProjectMembership">REST API Reference for CreateProjectMembership Operation</seealso>
         public virtual Task<CreateProjectMembershipResponse> CreateProjectMembershipAsync(CreateProjectMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectMembershipResponseUnmarshaller.Instance;
 
@@ -2228,7 +2228,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateProjectProfileResponse CreateProjectProfile(CreateProjectProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectProfileResponseUnmarshaller.Instance;
 
@@ -2273,7 +2273,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateProjectProfile">REST API Reference for CreateProjectProfile Operation</seealso>
         public virtual Task<CreateProjectProfileResponse> CreateProjectProfileAsync(CreateProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectProfileResponseUnmarshaller.Instance;
 
@@ -2285,7 +2285,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -2348,7 +2348,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateSubscriptionGrantResponse CreateSubscriptionGrant(CreateSubscriptionGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateSubscriptionGrant">REST API Reference for CreateSubscriptionGrant Operation</seealso>
         public virtual Task<CreateSubscriptionGrantResponse> CreateSubscriptionGrantAsync(CreateSubscriptionGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -2402,7 +2402,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateSubscriptionRequestResponse CreateSubscriptionRequest(CreateSubscriptionRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateSubscriptionRequest">REST API Reference for CreateSubscriptionRequest Operation</seealso>
         public virtual Task<CreateSubscriptionRequestResponse> CreateSubscriptionRequestAsync(CreateSubscriptionRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -2456,7 +2456,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateSubscriptionTargetResponse CreateSubscriptionTarget(CreateSubscriptionTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -2498,7 +2498,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateSubscriptionTarget">REST API Reference for CreateSubscriptionTarget Operation</seealso>
         public virtual Task<CreateSubscriptionTargetResponse> CreateSubscriptionTargetAsync(CreateSubscriptionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.DataZone
 
         internal virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
@@ -2561,7 +2561,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteAccountPoolResponse DeleteAccountPool(DeleteAccountPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
 
@@ -2600,7 +2600,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAccountPool">REST API Reference for DeleteAccountPool Operation</seealso>
         public virtual Task<DeleteAccountPoolResponse> DeleteAccountPoolAsync(DeleteAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountPoolResponseUnmarshaller.Instance;
 
@@ -2612,7 +2612,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -2676,7 +2676,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -2688,7 +2688,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteAssetFilterResponse DeleteAssetFilter(DeleteAssetFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetFilterResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAssetFilter">REST API Reference for DeleteAssetFilter Operation</seealso>
         public virtual Task<DeleteAssetFilterResponse> DeleteAssetFilterAsync(DeleteAssetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetFilterResponseUnmarshaller.Instance;
 
@@ -2760,7 +2760,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteAssetTypeResponse DeleteAssetType(DeleteAssetTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteAssetType">REST API Reference for DeleteAssetType Operation</seealso>
         public virtual Task<DeleteAssetTypeResponse> DeleteAssetTypeAsync(DeleteAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetTypeResponseUnmarshaller.Instance;
 
@@ -2838,7 +2838,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -2878,7 +2878,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -2890,7 +2890,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteDataProductResponse DeleteDataProduct(DeleteDataProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataProductResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataProduct">REST API Reference for DeleteDataProduct Operation</seealso>
         public virtual Task<DeleteDataProductResponse> DeleteDataProductAsync(DeleteDataProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataProductResponseUnmarshaller.Instance;
 
@@ -2966,7 +2966,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -3011,7 +3011,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -3023,7 +3023,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -3065,7 +3065,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -3077,7 +3077,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteDomainUnitResponse DeleteDomainUnit(DeleteDomainUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDomainUnit">REST API Reference for DeleteDomainUnit Operation</seealso>
         public virtual Task<DeleteDomainUnitResponse> DeleteDomainUnitAsync(DeleteDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainUnitResponseUnmarshaller.Instance;
 
@@ -3131,7 +3131,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -3170,7 +3170,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -3182,7 +3182,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteEnvironmentActionResponse DeleteEnvironmentAction(DeleteEnvironmentActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -3225,7 +3225,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentAction">REST API Reference for DeleteEnvironmentAction Operation</seealso>
         public virtual Task<DeleteEnvironmentActionResponse> DeleteEnvironmentActionAsync(DeleteEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -3237,7 +3237,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteEnvironmentBlueprintResponse DeleteEnvironmentBlueprint(DeleteEnvironmentBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -3279,7 +3279,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentBlueprint">REST API Reference for DeleteEnvironmentBlueprint Operation</seealso>
         public virtual Task<DeleteEnvironmentBlueprintResponse> DeleteEnvironmentBlueprintAsync(DeleteEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -3291,7 +3291,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteEnvironmentBlueprintConfigurationResponse DeleteEnvironmentBlueprintConfiguration(DeleteEnvironmentBlueprintConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -3327,7 +3327,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentBlueprintConfiguration">REST API Reference for DeleteEnvironmentBlueprintConfiguration Operation</seealso>
         public virtual Task<DeleteEnvironmentBlueprintConfigurationResponse> DeleteEnvironmentBlueprintConfigurationAsync(DeleteEnvironmentBlueprintConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -3339,7 +3339,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteEnvironmentProfileResponse DeleteEnvironmentProfile(DeleteEnvironmentProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -3378,7 +3378,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteEnvironmentProfile">REST API Reference for DeleteEnvironmentProfile Operation</seealso>
         public virtual Task<DeleteEnvironmentProfileResponse> DeleteEnvironmentProfileAsync(DeleteEnvironmentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -3390,7 +3390,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteFormTypeResponse DeleteFormType(DeleteFormTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFormTypeResponseUnmarshaller.Instance;
 
@@ -3458,7 +3458,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteFormType">REST API Reference for DeleteFormType Operation</seealso>
         public virtual Task<DeleteFormTypeResponse> DeleteFormTypeAsync(DeleteFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFormTypeResponseUnmarshaller.Instance;
 
@@ -3470,7 +3470,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteGlossaryResponse DeleteGlossary(DeleteGlossaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlossaryResponseUnmarshaller.Instance;
 
@@ -3539,7 +3539,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteGlossary">REST API Reference for DeleteGlossary Operation</seealso>
         public virtual Task<DeleteGlossaryResponse> DeleteGlossaryAsync(DeleteGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlossaryResponseUnmarshaller.Instance;
 
@@ -3551,7 +3551,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteGlossaryTermResponse DeleteGlossaryTerm(DeleteGlossaryTermRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlossaryTermResponseUnmarshaller.Instance;
 
@@ -3615,7 +3615,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteGlossaryTerm">REST API Reference for DeleteGlossaryTerm Operation</seealso>
         public virtual Task<DeleteGlossaryTermResponse> DeleteGlossaryTermAsync(DeleteGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlossaryTermResponseUnmarshaller.Instance;
 
@@ -3627,7 +3627,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteListingResponse DeleteListing(DeleteListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListingResponseUnmarshaller.Instance;
 
@@ -3669,7 +3669,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteListing">REST API Reference for DeleteListing Operation</seealso>
         public virtual Task<DeleteListingResponse> DeleteListingAsync(DeleteListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListingResponseUnmarshaller.Instance;
 
@@ -3681,7 +3681,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -3720,7 +3720,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -3732,7 +3732,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteProjectMembershipResponse DeleteProjectMembership(DeleteProjectMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectMembershipResponseUnmarshaller.Instance;
 
@@ -3774,7 +3774,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteProjectMembership">REST API Reference for DeleteProjectMembership Operation</seealso>
         public virtual Task<DeleteProjectMembershipResponse> DeleteProjectMembershipAsync(DeleteProjectMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectMembershipResponseUnmarshaller.Instance;
 
@@ -3786,7 +3786,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteProjectProfileResponse DeleteProjectProfile(DeleteProjectProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectProfileResponseUnmarshaller.Instance;
 
@@ -3825,7 +3825,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteProjectProfile">REST API Reference for DeleteProjectProfile Operation</seealso>
         public virtual Task<DeleteProjectProfileResponse> DeleteProjectProfileAsync(DeleteProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectProfileResponseUnmarshaller.Instance;
 
@@ -3837,7 +3837,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -3885,7 +3885,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -3897,7 +3897,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteSubscriptionGrantResponse DeleteSubscriptionGrant(DeleteSubscriptionGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -3939,7 +3939,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteSubscriptionGrant">REST API Reference for DeleteSubscriptionGrant Operation</seealso>
         public virtual Task<DeleteSubscriptionGrantResponse> DeleteSubscriptionGrantAsync(DeleteSubscriptionGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteSubscriptionRequestResponse DeleteSubscriptionRequest(DeleteSubscriptionRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -3993,7 +3993,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteSubscriptionRequest">REST API Reference for DeleteSubscriptionRequest Operation</seealso>
         public virtual Task<DeleteSubscriptionRequestResponse> DeleteSubscriptionRequestAsync(DeleteSubscriptionRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -4005,7 +4005,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteSubscriptionTargetResponse DeleteSubscriptionTarget(DeleteSubscriptionTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -4047,7 +4047,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteSubscriptionTarget">REST API Reference for DeleteSubscriptionTarget Operation</seealso>
         public virtual Task<DeleteSubscriptionTargetResponse> DeleteSubscriptionTargetAsync(DeleteSubscriptionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -4059,7 +4059,7 @@ namespace Amazon.DataZone
 
         internal virtual DeleteTimeSeriesDataPointsResponse DeleteTimeSeriesDataPoints(DeleteTimeSeriesDataPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -4098,7 +4098,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteTimeSeriesDataPoints">REST API Reference for DeleteTimeSeriesDataPoints Operation</seealso>
         public virtual Task<DeleteTimeSeriesDataPointsResponse> DeleteTimeSeriesDataPointsAsync(DeleteTimeSeriesDataPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.DataZone
 
         internal virtual DisassociateEnvironmentRoleResponse DisassociateEnvironmentRole(DisassociateEnvironmentRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
 
@@ -4152,7 +4152,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateEnvironmentRole">REST API Reference for DisassociateEnvironmentRole Operation</seealso>
         public virtual Task<DisassociateEnvironmentRoleResponse> DisassociateEnvironmentRoleAsync(DisassociateEnvironmentRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnvironmentRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnvironmentRoleResponseUnmarshaller.Instance;
 
@@ -4164,7 +4164,7 @@ namespace Amazon.DataZone
 
         internal virtual DisassociateGovernedTermsResponse DisassociateGovernedTerms(DisassociateGovernedTermsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGovernedTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGovernedTermsResponseUnmarshaller.Instance;
 
@@ -4206,7 +4206,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DisassociateGovernedTerms">REST API Reference for DisassociateGovernedTerms Operation</seealso>
         public virtual Task<DisassociateGovernedTermsResponse> DisassociateGovernedTermsAsync(DisassociateGovernedTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGovernedTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGovernedTermsResponseUnmarshaller.Instance;
 
@@ -4218,7 +4218,7 @@ namespace Amazon.DataZone
 
         internal virtual GetAccountPoolResponse GetAccountPool(GetAccountPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
 
@@ -4257,7 +4257,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAccountPool">REST API Reference for GetAccountPool Operation</seealso>
         public virtual Task<GetAccountPoolResponse> GetAccountPoolAsync(GetAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPoolResponseUnmarshaller.Instance;
 
@@ -4269,7 +4269,7 @@ namespace Amazon.DataZone
 
         internal virtual GetAssetResponse GetAsset(GetAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
 
@@ -4337,7 +4337,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAsset">REST API Reference for GetAsset Operation</seealso>
         public virtual Task<GetAssetResponse> GetAssetAsync(GetAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetResponseUnmarshaller.Instance;
 
@@ -4349,7 +4349,7 @@ namespace Amazon.DataZone
 
         internal virtual GetAssetFilterResponse GetAssetFilter(GetAssetFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetFilterResponseUnmarshaller.Instance;
 
@@ -4407,7 +4407,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAssetFilter">REST API Reference for GetAssetFilter Operation</seealso>
         public virtual Task<GetAssetFilterResponse> GetAssetFilterAsync(GetAssetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetFilterResponseUnmarshaller.Instance;
 
@@ -4419,7 +4419,7 @@ namespace Amazon.DataZone
 
         internal virtual GetAssetTypeResponse GetAssetType(GetAssetTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetTypeResponseUnmarshaller.Instance;
 
@@ -4486,7 +4486,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetAssetType">REST API Reference for GetAssetType Operation</seealso>
         public virtual Task<GetAssetTypeResponse> GetAssetTypeAsync(GetAssetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetTypeResponseUnmarshaller.Instance;
 
@@ -4498,7 +4498,7 @@ namespace Amazon.DataZone
 
         internal virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -4538,7 +4538,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -4550,7 +4550,7 @@ namespace Amazon.DataZone
 
         internal virtual GetDataProductResponse GetDataProduct(GetDataProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataProductResponseUnmarshaller.Instance;
 
@@ -4607,7 +4607,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataProduct">REST API Reference for GetDataProduct Operation</seealso>
         public virtual Task<GetDataProductResponse> GetDataProductAsync(GetDataProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataProductResponseUnmarshaller.Instance;
 
@@ -4619,7 +4619,7 @@ namespace Amazon.DataZone
 
         internal virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
@@ -4664,7 +4664,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
@@ -4676,7 +4676,7 @@ namespace Amazon.DataZone
 
         internal virtual GetDataSourceRunResponse GetDataSourceRun(GetDataSourceRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceRunResponseUnmarshaller.Instance;
 
@@ -4721,7 +4721,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDataSourceRun">REST API Reference for GetDataSourceRun Operation</seealso>
         public virtual Task<GetDataSourceRunResponse> GetDataSourceRunAsync(GetDataSourceRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceRunResponseUnmarshaller.Instance;
 
@@ -4733,7 +4733,7 @@ namespace Amazon.DataZone
 
         internal virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -4775,7 +4775,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -4787,7 +4787,7 @@ namespace Amazon.DataZone
 
         internal virtual GetDomainUnitResponse GetDomainUnit(GetDomainUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
 
@@ -4826,7 +4826,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDomainUnit">REST API Reference for GetDomainUnit Operation</seealso>
         public virtual Task<GetDomainUnitResponse> GetDomainUnitAsync(GetDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainUnitResponseUnmarshaller.Instance;
 
@@ -4838,7 +4838,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -4877,7 +4877,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -4889,7 +4889,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentActionResponse GetEnvironmentAction(GetEnvironmentActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -4928,7 +4928,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentAction">REST API Reference for GetEnvironmentAction Operation</seealso>
         public virtual Task<GetEnvironmentActionResponse> GetEnvironmentActionAsync(GetEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -4940,7 +4940,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentBlueprintResponse GetEnvironmentBlueprint(GetEnvironmentBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -4979,7 +4979,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentBlueprint">REST API Reference for GetEnvironmentBlueprint Operation</seealso>
         public virtual Task<GetEnvironmentBlueprintResponse> GetEnvironmentBlueprintAsync(GetEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -4991,7 +4991,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentBlueprintConfigurationResponse GetEnvironmentBlueprintConfiguration(GetEnvironmentBlueprintConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -5030,7 +5030,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentBlueprintConfiguration">REST API Reference for GetEnvironmentBlueprintConfiguration Operation</seealso>
         public virtual Task<GetEnvironmentBlueprintConfigurationResponse> GetEnvironmentBlueprintConfigurationAsync(GetEnvironmentBlueprintConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -5042,7 +5042,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentCredentialsResponse GetEnvironmentCredentials(GetEnvironmentCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentCredentialsResponseUnmarshaller.Instance;
 
@@ -5081,7 +5081,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentCredentials">REST API Reference for GetEnvironmentCredentials Operation</seealso>
         public virtual Task<GetEnvironmentCredentialsResponse> GetEnvironmentCredentialsAsync(GetEnvironmentCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentCredentialsResponseUnmarshaller.Instance;
 
@@ -5093,7 +5093,7 @@ namespace Amazon.DataZone
 
         internal virtual GetEnvironmentProfileResponse GetEnvironmentProfile(GetEnvironmentProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -5132,7 +5132,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetEnvironmentProfile">REST API Reference for GetEnvironmentProfile Operation</seealso>
         public virtual Task<GetEnvironmentProfileResponse> GetEnvironmentProfileAsync(GetEnvironmentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -5144,7 +5144,7 @@ namespace Amazon.DataZone
 
         internal virtual GetFormTypeResponse GetFormType(GetFormTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFormTypeResponseUnmarshaller.Instance;
 
@@ -5210,7 +5210,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetFormType">REST API Reference for GetFormType Operation</seealso>
         public virtual Task<GetFormTypeResponse> GetFormTypeAsync(GetFormTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFormTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFormTypeResponseUnmarshaller.Instance;
 
@@ -5222,7 +5222,7 @@ namespace Amazon.DataZone
 
         internal virtual GetGlossaryResponse GetGlossary(GetGlossaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlossaryResponseUnmarshaller.Instance;
 
@@ -5275,7 +5275,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetGlossary">REST API Reference for GetGlossary Operation</seealso>
         public virtual Task<GetGlossaryResponse> GetGlossaryAsync(GetGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlossaryResponseUnmarshaller.Instance;
 
@@ -5287,7 +5287,7 @@ namespace Amazon.DataZone
 
         internal virtual GetGlossaryTermResponse GetGlossaryTerm(GetGlossaryTermRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlossaryTermResponseUnmarshaller.Instance;
 
@@ -5344,7 +5344,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetGlossaryTerm">REST API Reference for GetGlossaryTerm Operation</seealso>
         public virtual Task<GetGlossaryTermResponse> GetGlossaryTermAsync(GetGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlossaryTermResponseUnmarshaller.Instance;
 
@@ -5356,7 +5356,7 @@ namespace Amazon.DataZone
 
         internal virtual GetGroupProfileResponse GetGroupProfile(GetGroupProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupProfileResponseUnmarshaller.Instance;
 
@@ -5395,7 +5395,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetGroupProfile">REST API Reference for GetGroupProfile Operation</seealso>
         public virtual Task<GetGroupProfileResponse> GetGroupProfileAsync(GetGroupProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupProfileResponseUnmarshaller.Instance;
 
@@ -5407,7 +5407,7 @@ namespace Amazon.DataZone
 
         internal virtual GetIamPortalLoginUrlResponse GetIamPortalLoginUrl(GetIamPortalLoginUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIamPortalLoginUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIamPortalLoginUrlResponseUnmarshaller.Instance;
 
@@ -5449,7 +5449,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetIamPortalLoginUrl">REST API Reference for GetIamPortalLoginUrl Operation</seealso>
         public virtual Task<GetIamPortalLoginUrlResponse> GetIamPortalLoginUrlAsync(GetIamPortalLoginUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIamPortalLoginUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIamPortalLoginUrlResponseUnmarshaller.Instance;
 
@@ -5461,7 +5461,7 @@ namespace Amazon.DataZone
 
         internal virtual GetJobRunResponse GetJobRun(GetJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunResponseUnmarshaller.Instance;
 
@@ -5500,7 +5500,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
         public virtual Task<GetJobRunResponse> GetJobRunAsync(GetJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunResponseUnmarshaller.Instance;
 
@@ -5512,7 +5512,7 @@ namespace Amazon.DataZone
 
         internal virtual GetLineageEventResponse GetLineageEvent(GetLineageEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLineageEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLineageEventResponseUnmarshaller.Instance;
 
@@ -5551,7 +5551,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageEvent">REST API Reference for GetLineageEvent Operation</seealso>
         public virtual Task<GetLineageEventResponse> GetLineageEventAsync(GetLineageEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLineageEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLineageEventResponseUnmarshaller.Instance;
 
@@ -5563,7 +5563,7 @@ namespace Amazon.DataZone
 
         internal virtual GetLineageNodeResponse GetLineageNode(GetLineageNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
 
@@ -5602,7 +5602,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetLineageNode">REST API Reference for GetLineageNode Operation</seealso>
         public virtual Task<GetLineageNodeResponse> GetLineageNodeAsync(GetLineageNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLineageNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLineageNodeResponseUnmarshaller.Instance;
 
@@ -5614,7 +5614,7 @@ namespace Amazon.DataZone
 
         internal virtual GetListingResponse GetListing(GetListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListingResponseUnmarshaller.Instance;
 
@@ -5654,7 +5654,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetListing">REST API Reference for GetListing Operation</seealso>
         public virtual Task<GetListingResponse> GetListingAsync(GetListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListingResponseUnmarshaller.Instance;
 
@@ -5666,7 +5666,7 @@ namespace Amazon.DataZone
 
         internal virtual GetMetadataGenerationRunResponse GetMetadataGenerationRun(GetMetadataGenerationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -5723,7 +5723,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun">REST API Reference for GetMetadataGenerationRun Operation</seealso>
         public virtual Task<GetMetadataGenerationRunResponse> GetMetadataGenerationRunAsync(GetMetadataGenerationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -5735,7 +5735,7 @@ namespace Amazon.DataZone
 
         internal virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -5774,7 +5774,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -5786,7 +5786,7 @@ namespace Amazon.DataZone
 
         internal virtual GetProjectProfileResponse GetProjectProfile(GetProjectProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectProfileResponseUnmarshaller.Instance;
 
@@ -5825,7 +5825,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetProjectProfile">REST API Reference for GetProjectProfile Operation</seealso>
         public virtual Task<GetProjectProfileResponse> GetProjectProfileAsync(GetProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectProfileResponseUnmarshaller.Instance;
 
@@ -5837,7 +5837,7 @@ namespace Amazon.DataZone
 
         internal virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -5882,7 +5882,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual Task<GetRuleResponse> GetRuleAsync(GetRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -5894,7 +5894,7 @@ namespace Amazon.DataZone
 
         internal virtual GetSubscriptionResponse GetSubscription(GetSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionResponseUnmarshaller.Instance;
 
@@ -5933,7 +5933,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetSubscription">REST API Reference for GetSubscription Operation</seealso>
         public virtual Task<GetSubscriptionResponse> GetSubscriptionAsync(GetSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionResponseUnmarshaller.Instance;
 
@@ -5945,7 +5945,7 @@ namespace Amazon.DataZone
 
         internal virtual GetSubscriptionGrantResponse GetSubscriptionGrant(GetSubscriptionGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -5984,7 +5984,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetSubscriptionGrant">REST API Reference for GetSubscriptionGrant Operation</seealso>
         public virtual Task<GetSubscriptionGrantResponse> GetSubscriptionGrantAsync(GetSubscriptionGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionGrantResponseUnmarshaller.Instance;
 
@@ -5996,7 +5996,7 @@ namespace Amazon.DataZone
 
         internal virtual GetSubscriptionRequestDetailsResponse GetSubscriptionRequestDetails(GetSubscriptionRequestDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionRequestDetailsResponseUnmarshaller.Instance;
 
@@ -6035,7 +6035,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetSubscriptionRequestDetails">REST API Reference for GetSubscriptionRequestDetails Operation</seealso>
         public virtual Task<GetSubscriptionRequestDetailsResponse> GetSubscriptionRequestDetailsAsync(GetSubscriptionRequestDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionRequestDetailsResponseUnmarshaller.Instance;
 
@@ -6047,7 +6047,7 @@ namespace Amazon.DataZone
 
         internal virtual GetSubscriptionTargetResponse GetSubscriptionTarget(GetSubscriptionTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -6086,7 +6086,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetSubscriptionTarget">REST API Reference for GetSubscriptionTarget Operation</seealso>
         public virtual Task<GetSubscriptionTargetResponse> GetSubscriptionTargetAsync(GetSubscriptionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -6098,7 +6098,7 @@ namespace Amazon.DataZone
 
         internal virtual GetTimeSeriesDataPointResponse GetTimeSeriesDataPoint(GetTimeSeriesDataPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimeSeriesDataPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimeSeriesDataPointResponseUnmarshaller.Instance;
 
@@ -6137,7 +6137,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetTimeSeriesDataPoint">REST API Reference for GetTimeSeriesDataPoint Operation</seealso>
         public virtual Task<GetTimeSeriesDataPointResponse> GetTimeSeriesDataPointAsync(GetTimeSeriesDataPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimeSeriesDataPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimeSeriesDataPointResponseUnmarshaller.Instance;
 
@@ -6149,7 +6149,7 @@ namespace Amazon.DataZone
 
         internal virtual GetUserProfileResponse GetUserProfile(GetUserProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserProfileResponseUnmarshaller.Instance;
 
@@ -6188,7 +6188,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetUserProfile">REST API Reference for GetUserProfile Operation</seealso>
         public virtual Task<GetUserProfileResponse> GetUserProfileAsync(GetUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserProfileResponseUnmarshaller.Instance;
 
@@ -6200,7 +6200,7 @@ namespace Amazon.DataZone
 
         internal virtual ListAccountPoolsResponse ListAccountPools(ListAccountPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
 
@@ -6236,7 +6236,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountPools">REST API Reference for ListAccountPools Operation</seealso>
         public virtual Task<ListAccountPoolsResponse> ListAccountPoolsAsync(ListAccountPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountPoolsResponseUnmarshaller.Instance;
 
@@ -6248,7 +6248,7 @@ namespace Amazon.DataZone
 
         internal virtual ListAccountsInAccountPoolResponse ListAccountsInAccountPool(ListAccountsInAccountPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
 
@@ -6287,7 +6287,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAccountsInAccountPool">REST API Reference for ListAccountsInAccountPool Operation</seealso>
         public virtual Task<ListAccountsInAccountPoolResponse> ListAccountsInAccountPoolAsync(ListAccountsInAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsInAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsInAccountPoolResponseUnmarshaller.Instance;
 
@@ -6299,7 +6299,7 @@ namespace Amazon.DataZone
 
         internal virtual ListAssetFiltersResponse ListAssetFilters(ListAssetFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetFiltersResponseUnmarshaller.Instance;
 
@@ -6352,7 +6352,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAssetFilters">REST API Reference for ListAssetFilters Operation</seealso>
         public virtual Task<ListAssetFiltersResponse> ListAssetFiltersAsync(ListAssetFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetFiltersResponseUnmarshaller.Instance;
 
@@ -6364,7 +6364,7 @@ namespace Amazon.DataZone
 
         internal virtual ListAssetRevisionsResponse ListAssetRevisions(ListAssetRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRevisionsResponseUnmarshaller.Instance;
 
@@ -6426,7 +6426,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListAssetRevisions">REST API Reference for ListAssetRevisions Operation</seealso>
         public virtual Task<ListAssetRevisionsResponse> ListAssetRevisionsAsync(ListAssetRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRevisionsResponseUnmarshaller.Instance;
 
@@ -6438,7 +6438,7 @@ namespace Amazon.DataZone
 
         internal virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -6475,7 +6475,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -6487,7 +6487,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDataProductRevisionsResponse ListDataProductRevisions(ListDataProductRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataProductRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataProductRevisionsResponseUnmarshaller.Instance;
 
@@ -6544,7 +6544,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDataProductRevisions">REST API Reference for ListDataProductRevisions Operation</seealso>
         public virtual Task<ListDataProductRevisionsResponse> ListDataProductRevisionsAsync(ListDataProductRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataProductRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataProductRevisionsResponseUnmarshaller.Instance;
 
@@ -6556,7 +6556,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDataSourceRunActivitiesResponse ListDataSourceRunActivities(ListDataSourceRunActivitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceRunActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceRunActivitiesResponseUnmarshaller.Instance;
 
@@ -6601,7 +6601,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDataSourceRunActivities">REST API Reference for ListDataSourceRunActivities Operation</seealso>
         public virtual Task<ListDataSourceRunActivitiesResponse> ListDataSourceRunActivitiesAsync(ListDataSourceRunActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceRunActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceRunActivitiesResponseUnmarshaller.Instance;
 
@@ -6613,7 +6613,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDataSourceRunsResponse ListDataSourceRuns(ListDataSourceRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceRunsResponseUnmarshaller.Instance;
 
@@ -6658,7 +6658,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDataSourceRuns">REST API Reference for ListDataSourceRuns Operation</seealso>
         public virtual Task<ListDataSourceRunsResponse> ListDataSourceRunsAsync(ListDataSourceRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceRunsResponseUnmarshaller.Instance;
 
@@ -6670,7 +6670,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -6715,7 +6715,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -6727,7 +6727,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -6772,7 +6772,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -6784,7 +6784,7 @@ namespace Amazon.DataZone
 
         internal virtual ListDomainUnitsForParentResponse ListDomainUnitsForParent(ListDomainUnitsForParentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
 
@@ -6820,7 +6820,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDomainUnitsForParent">REST API Reference for ListDomainUnitsForParent Operation</seealso>
         public virtual Task<ListDomainUnitsForParentResponse> ListDomainUnitsForParentAsync(ListDomainUnitsForParentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainUnitsForParentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainUnitsForParentResponseUnmarshaller.Instance;
 
@@ -6832,7 +6832,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEntityOwnersResponse ListEntityOwners(ListEntityOwnersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
 
@@ -6868,7 +6868,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEntityOwners">REST API Reference for ListEntityOwners Operation</seealso>
         public virtual Task<ListEntityOwnersResponse> ListEntityOwnersAsync(ListEntityOwnersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntityOwnersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntityOwnersResponseUnmarshaller.Instance;
 
@@ -6880,7 +6880,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEnvironmentActionsResponse ListEnvironmentActions(ListEnvironmentActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
 
@@ -6916,7 +6916,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentActions">REST API Reference for ListEnvironmentActions Operation</seealso>
         public virtual Task<ListEnvironmentActionsResponse> ListEnvironmentActionsAsync(ListEnvironmentActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentActionsResponseUnmarshaller.Instance;
 
@@ -6928,7 +6928,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEnvironmentBlueprintConfigurationsResponse ListEnvironmentBlueprintConfigurations(ListEnvironmentBlueprintConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentBlueprintConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentBlueprintConfigurationsResponseUnmarshaller.Instance;
 
@@ -6967,7 +6967,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentBlueprintConfigurations">REST API Reference for ListEnvironmentBlueprintConfigurations Operation</seealso>
         public virtual Task<ListEnvironmentBlueprintConfigurationsResponse> ListEnvironmentBlueprintConfigurationsAsync(ListEnvironmentBlueprintConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentBlueprintConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentBlueprintConfigurationsResponseUnmarshaller.Instance;
 
@@ -6979,7 +6979,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEnvironmentBlueprintsResponse ListEnvironmentBlueprints(ListEnvironmentBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentBlueprintsResponseUnmarshaller.Instance;
 
@@ -7018,7 +7018,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentBlueprints">REST API Reference for ListEnvironmentBlueprints Operation</seealso>
         public virtual Task<ListEnvironmentBlueprintsResponse> ListEnvironmentBlueprintsAsync(ListEnvironmentBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentBlueprintsResponseUnmarshaller.Instance;
 
@@ -7030,7 +7030,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEnvironmentProfilesResponse ListEnvironmentProfiles(ListEnvironmentProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentProfilesResponseUnmarshaller.Instance;
 
@@ -7066,7 +7066,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironmentProfiles">REST API Reference for ListEnvironmentProfiles Operation</seealso>
         public virtual Task<ListEnvironmentProfilesResponse> ListEnvironmentProfilesAsync(ListEnvironmentProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentProfilesResponseUnmarshaller.Instance;
 
@@ -7078,7 +7078,7 @@ namespace Amazon.DataZone
 
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -7114,7 +7114,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -7126,7 +7126,7 @@ namespace Amazon.DataZone
 
         internal virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -7165,7 +7165,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual Task<ListJobRunsResponse> ListJobRunsAsync(ListJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -7177,7 +7177,7 @@ namespace Amazon.DataZone
 
         internal virtual ListLineageEventsResponse ListLineageEvents(ListLineageEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLineageEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLineageEventsResponseUnmarshaller.Instance;
 
@@ -7213,7 +7213,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageEvents">REST API Reference for ListLineageEvents Operation</seealso>
         public virtual Task<ListLineageEventsResponse> ListLineageEventsAsync(ListLineageEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLineageEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLineageEventsResponseUnmarshaller.Instance;
 
@@ -7225,7 +7225,7 @@ namespace Amazon.DataZone
 
         internal virtual ListLineageNodeHistoryResponse ListLineageNodeHistory(ListLineageNodeHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
 
@@ -7264,7 +7264,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListLineageNodeHistory">REST API Reference for ListLineageNodeHistory Operation</seealso>
         public virtual Task<ListLineageNodeHistoryResponse> ListLineageNodeHistoryAsync(ListLineageNodeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLineageNodeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLineageNodeHistoryResponseUnmarshaller.Instance;
 
@@ -7276,7 +7276,7 @@ namespace Amazon.DataZone
 
         internal virtual ListMetadataGenerationRunsResponse ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetadataGenerationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetadataGenerationRunsResponseUnmarshaller.Instance;
 
@@ -7338,7 +7338,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns">REST API Reference for ListMetadataGenerationRuns Operation</seealso>
         public virtual Task<ListMetadataGenerationRunsResponse> ListMetadataGenerationRunsAsync(ListMetadataGenerationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetadataGenerationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetadataGenerationRunsResponseUnmarshaller.Instance;
 
@@ -7350,7 +7350,7 @@ namespace Amazon.DataZone
 
         internal virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -7389,7 +7389,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
         public virtual Task<ListNotificationsResponse> ListNotificationsAsync(ListNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -7401,7 +7401,7 @@ namespace Amazon.DataZone
 
         internal virtual ListPolicyGrantsResponse ListPolicyGrants(ListPolicyGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
 
@@ -7437,7 +7437,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListPolicyGrants">REST API Reference for ListPolicyGrants Operation</seealso>
         public virtual Task<ListPolicyGrantsResponse> ListPolicyGrantsAsync(ListPolicyGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyGrantsResponseUnmarshaller.Instance;
 
@@ -7449,7 +7449,7 @@ namespace Amazon.DataZone
 
         internal virtual ListProjectMembershipsResponse ListProjectMemberships(ListProjectMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectMembershipsResponseUnmarshaller.Instance;
 
@@ -7488,7 +7488,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListProjectMemberships">REST API Reference for ListProjectMemberships Operation</seealso>
         public virtual Task<ListProjectMembershipsResponse> ListProjectMembershipsAsync(ListProjectMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectMembershipsResponseUnmarshaller.Instance;
 
@@ -7500,7 +7500,7 @@ namespace Amazon.DataZone
 
         internal virtual ListProjectProfilesResponse ListProjectProfiles(ListProjectProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectProfilesResponseUnmarshaller.Instance;
 
@@ -7536,7 +7536,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListProjectProfiles">REST API Reference for ListProjectProfiles Operation</seealso>
         public virtual Task<ListProjectProfilesResponse> ListProjectProfilesAsync(ListProjectProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectProfilesResponseUnmarshaller.Instance;
 
@@ -7548,7 +7548,7 @@ namespace Amazon.DataZone
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -7584,7 +7584,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -7596,7 +7596,7 @@ namespace Amazon.DataZone
 
         internal virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -7641,7 +7641,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -7653,7 +7653,7 @@ namespace Amazon.DataZone
 
         internal virtual ListSubscriptionGrantsResponse ListSubscriptionGrants(ListSubscriptionGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionGrantsResponseUnmarshaller.Instance;
 
@@ -7692,7 +7692,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListSubscriptionGrants">REST API Reference for ListSubscriptionGrants Operation</seealso>
         public virtual Task<ListSubscriptionGrantsResponse> ListSubscriptionGrantsAsync(ListSubscriptionGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionGrantsResponseUnmarshaller.Instance;
 
@@ -7704,7 +7704,7 @@ namespace Amazon.DataZone
 
         internal virtual ListSubscriptionRequestsResponse ListSubscriptionRequests(ListSubscriptionRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionRequestsResponseUnmarshaller.Instance;
 
@@ -7743,7 +7743,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListSubscriptionRequests">REST API Reference for ListSubscriptionRequests Operation</seealso>
         public virtual Task<ListSubscriptionRequestsResponse> ListSubscriptionRequestsAsync(ListSubscriptionRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionRequestsResponseUnmarshaller.Instance;
 
@@ -7755,7 +7755,7 @@ namespace Amazon.DataZone
 
         internal virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -7794,7 +7794,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -7806,7 +7806,7 @@ namespace Amazon.DataZone
 
         internal virtual ListSubscriptionTargetsResponse ListSubscriptionTargets(ListSubscriptionTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionTargetsResponseUnmarshaller.Instance;
 
@@ -7845,7 +7845,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListSubscriptionTargets">REST API Reference for ListSubscriptionTargets Operation</seealso>
         public virtual Task<ListSubscriptionTargetsResponse> ListSubscriptionTargetsAsync(ListSubscriptionTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionTargetsResponseUnmarshaller.Instance;
 
@@ -7857,7 +7857,7 @@ namespace Amazon.DataZone
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7896,7 +7896,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7908,7 +7908,7 @@ namespace Amazon.DataZone
 
         internal virtual ListTimeSeriesDataPointsResponse ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -7947,7 +7947,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListTimeSeriesDataPoints">REST API Reference for ListTimeSeriesDataPoints Operation</seealso>
         public virtual Task<ListTimeSeriesDataPointsResponse> ListTimeSeriesDataPointsAsync(ListTimeSeriesDataPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -7959,7 +7959,7 @@ namespace Amazon.DataZone
 
         internal virtual PostLineageEventResponse PostLineageEvent(PostLineageEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
 
@@ -8004,7 +8004,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostLineageEvent">REST API Reference for PostLineageEvent Operation</seealso>
         public virtual Task<PostLineageEventResponse> PostLineageEventAsync(PostLineageEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostLineageEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostLineageEventResponseUnmarshaller.Instance;
 
@@ -8016,7 +8016,7 @@ namespace Amazon.DataZone
 
         internal virtual PostTimeSeriesDataPointsResponse PostTimeSeriesDataPoints(PostTimeSeriesDataPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -8061,7 +8061,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PostTimeSeriesDataPoints">REST API Reference for PostTimeSeriesDataPoints Operation</seealso>
         public virtual Task<PostTimeSeriesDataPointsResponse> PostTimeSeriesDataPointsAsync(PostTimeSeriesDataPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostTimeSeriesDataPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostTimeSeriesDataPointsResponseUnmarshaller.Instance;
 
@@ -8073,7 +8073,7 @@ namespace Amazon.DataZone
 
         internal virtual PutEnvironmentBlueprintConfigurationResponse PutEnvironmentBlueprintConfiguration(PutEnvironmentBlueprintConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -8115,7 +8115,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/PutEnvironmentBlueprintConfiguration">REST API Reference for PutEnvironmentBlueprintConfiguration Operation</seealso>
         public virtual Task<PutEnvironmentBlueprintConfigurationResponse> PutEnvironmentBlueprintConfigurationAsync(PutEnvironmentBlueprintConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEnvironmentBlueprintConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEnvironmentBlueprintConfigurationResponseUnmarshaller.Instance;
 
@@ -8127,7 +8127,7 @@ namespace Amazon.DataZone
 
         internal virtual RejectPredictionsResponse RejectPredictions(RejectPredictionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectPredictionsResponseUnmarshaller.Instance;
 
@@ -8170,7 +8170,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RejectPredictions">REST API Reference for RejectPredictions Operation</seealso>
         public virtual Task<RejectPredictionsResponse> RejectPredictionsAsync(RejectPredictionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectPredictionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectPredictionsResponseUnmarshaller.Instance;
 
@@ -8182,7 +8182,7 @@ namespace Amazon.DataZone
 
         internal virtual RejectSubscriptionRequestResponse RejectSubscriptionRequest(RejectSubscriptionRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -8224,7 +8224,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RejectSubscriptionRequest">REST API Reference for RejectSubscriptionRequest Operation</seealso>
         public virtual Task<RejectSubscriptionRequestResponse> RejectSubscriptionRequestAsync(RejectSubscriptionRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -8236,7 +8236,7 @@ namespace Amazon.DataZone
 
         internal virtual RemoveEntityOwnerResponse RemoveEntityOwner(RemoveEntityOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
 
@@ -8275,7 +8275,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemoveEntityOwner">REST API Reference for RemoveEntityOwner Operation</seealso>
         public virtual Task<RemoveEntityOwnerResponse> RemoveEntityOwnerAsync(RemoveEntityOwnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveEntityOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveEntityOwnerResponseUnmarshaller.Instance;
 
@@ -8287,7 +8287,7 @@ namespace Amazon.DataZone
 
         internal virtual RemovePolicyGrantResponse RemovePolicyGrant(RemovePolicyGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
 
@@ -8323,7 +8323,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RemovePolicyGrant">REST API Reference for RemovePolicyGrant Operation</seealso>
         public virtual Task<RemovePolicyGrantResponse> RemovePolicyGrantAsync(RemovePolicyGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePolicyGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePolicyGrantResponseUnmarshaller.Instance;
 
@@ -8335,7 +8335,7 @@ namespace Amazon.DataZone
 
         internal virtual RevokeSubscriptionResponse RevokeSubscription(RevokeSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSubscriptionResponseUnmarshaller.Instance;
 
@@ -8377,7 +8377,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RevokeSubscription">REST API Reference for RevokeSubscription Operation</seealso>
         public virtual Task<RevokeSubscriptionResponse> RevokeSubscriptionAsync(RevokeSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSubscriptionResponseUnmarshaller.Instance;
 
@@ -8389,7 +8389,7 @@ namespace Amazon.DataZone
 
         internal virtual SearchResponse Search(SearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -8470,7 +8470,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/Search">REST API Reference for Search Operation</seealso>
         public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -8482,7 +8482,7 @@ namespace Amazon.DataZone
 
         internal virtual SearchGroupProfilesResponse SearchGroupProfiles(SearchGroupProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupProfilesResponseUnmarshaller.Instance;
 
@@ -8521,7 +8521,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchGroupProfiles">REST API Reference for SearchGroupProfiles Operation</seealso>
         public virtual Task<SearchGroupProfilesResponse> SearchGroupProfilesAsync(SearchGroupProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupProfilesResponseUnmarshaller.Instance;
 
@@ -8533,7 +8533,7 @@ namespace Amazon.DataZone
 
         internal virtual SearchListingsResponse SearchListings(SearchListingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchListingsResponseUnmarshaller.Instance;
 
@@ -8569,7 +8569,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchListings">REST API Reference for SearchListings Operation</seealso>
         public virtual Task<SearchListingsResponse> SearchListingsAsync(SearchListingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchListingsResponseUnmarshaller.Instance;
 
@@ -8581,7 +8581,7 @@ namespace Amazon.DataZone
 
         internal virtual SearchTypesResponse SearchTypes(SearchTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTypesResponseUnmarshaller.Instance;
 
@@ -8648,7 +8648,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchTypes">REST API Reference for SearchTypes Operation</seealso>
         public virtual Task<SearchTypesResponse> SearchTypesAsync(SearchTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTypesResponseUnmarshaller.Instance;
 
@@ -8660,7 +8660,7 @@ namespace Amazon.DataZone
 
         internal virtual SearchUserProfilesResponse SearchUserProfiles(SearchUserProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUserProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUserProfilesResponseUnmarshaller.Instance;
 
@@ -8699,7 +8699,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchUserProfiles">REST API Reference for SearchUserProfiles Operation</seealso>
         public virtual Task<SearchUserProfilesResponse> SearchUserProfilesAsync(SearchUserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUserProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUserProfilesResponseUnmarshaller.Instance;
 
@@ -8711,7 +8711,7 @@ namespace Amazon.DataZone
 
         internal virtual StartDataSourceRunResponse StartDataSourceRun(StartDataSourceRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceRunResponseUnmarshaller.Instance;
 
@@ -8756,7 +8756,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartDataSourceRun">REST API Reference for StartDataSourceRun Operation</seealso>
         public virtual Task<StartDataSourceRunResponse> StartDataSourceRunAsync(StartDataSourceRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceRunResponseUnmarshaller.Instance;
 
@@ -8768,7 +8768,7 @@ namespace Amazon.DataZone
 
         internal virtual StartMetadataGenerationRunResponse StartMetadataGenerationRun(StartMetadataGenerationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -8840,7 +8840,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun">REST API Reference for StartMetadataGenerationRun Operation</seealso>
         public virtual Task<StartMetadataGenerationRunResponse> StartMetadataGenerationRunAsync(StartMetadataGenerationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataGenerationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataGenerationRunResponseUnmarshaller.Instance;
 
@@ -8852,7 +8852,7 @@ namespace Amazon.DataZone
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8891,7 +8891,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8903,7 +8903,7 @@ namespace Amazon.DataZone
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8939,7 +8939,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8951,7 +8951,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateAccountPoolResponse UpdateAccountPool(UpdateAccountPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
 
@@ -8996,7 +8996,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAccountPool">REST API Reference for UpdateAccountPool Operation</seealso>
         public virtual Task<UpdateAccountPoolResponse> UpdateAccountPoolAsync(UpdateAccountPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountPoolResponseUnmarshaller.Instance;
 
@@ -9008,7 +9008,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateAssetFilterResponse UpdateAssetFilter(UpdateAssetFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetFilterResponseUnmarshaller.Instance;
 
@@ -9069,7 +9069,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateAssetFilter">REST API Reference for UpdateAssetFilter Operation</seealso>
         public virtual Task<UpdateAssetFilterResponse> UpdateAssetFilterAsync(UpdateAssetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetFilterResponseUnmarshaller.Instance;
 
@@ -9081,7 +9081,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -9127,7 +9127,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -9139,7 +9139,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -9184,7 +9184,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -9196,7 +9196,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -9241,7 +9241,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -9253,7 +9253,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateDomainUnitResponse UpdateDomainUnit(UpdateDomainUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
 
@@ -9295,7 +9295,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDomainUnit">REST API Reference for UpdateDomainUnit Operation</seealso>
         public virtual Task<UpdateDomainUnitResponse> UpdateDomainUnitAsync(UpdateDomainUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainUnitResponseUnmarshaller.Instance;
 
@@ -9307,7 +9307,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -9349,7 +9349,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -9361,7 +9361,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateEnvironmentActionResponse UpdateEnvironmentAction(UpdateEnvironmentActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -9403,7 +9403,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentAction">REST API Reference for UpdateEnvironmentAction Operation</seealso>
         public virtual Task<UpdateEnvironmentActionResponse> UpdateEnvironmentActionAsync(UpdateEnvironmentActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentActionResponseUnmarshaller.Instance;
 
@@ -9415,7 +9415,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateEnvironmentBlueprintResponse UpdateEnvironmentBlueprint(UpdateEnvironmentBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -9460,7 +9460,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentBlueprint">REST API Reference for UpdateEnvironmentBlueprint Operation</seealso>
         public virtual Task<UpdateEnvironmentBlueprintResponse> UpdateEnvironmentBlueprintAsync(UpdateEnvironmentBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentBlueprintResponseUnmarshaller.Instance;
 
@@ -9472,7 +9472,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateEnvironmentProfileResponse UpdateEnvironmentProfile(UpdateEnvironmentProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -9517,7 +9517,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateEnvironmentProfile">REST API Reference for UpdateEnvironmentProfile Operation</seealso>
         public virtual Task<UpdateEnvironmentProfileResponse> UpdateEnvironmentProfileAsync(UpdateEnvironmentProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentProfileResponseUnmarshaller.Instance;
 
@@ -9529,7 +9529,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateGlossaryResponse UpdateGlossary(UpdateGlossaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlossaryResponseUnmarshaller.Instance;
 
@@ -9593,7 +9593,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateGlossary">REST API Reference for UpdateGlossary Operation</seealso>
         public virtual Task<UpdateGlossaryResponse> UpdateGlossaryAsync(UpdateGlossaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlossaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlossaryResponseUnmarshaller.Instance;
 
@@ -9605,7 +9605,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateGlossaryTermResponse UpdateGlossaryTerm(UpdateGlossaryTermRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlossaryTermResponseUnmarshaller.Instance;
 
@@ -9669,7 +9669,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateGlossaryTerm">REST API Reference for UpdateGlossaryTerm Operation</seealso>
         public virtual Task<UpdateGlossaryTermResponse> UpdateGlossaryTermAsync(UpdateGlossaryTermRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlossaryTermRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlossaryTermResponseUnmarshaller.Instance;
 
@@ -9681,7 +9681,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateGroupProfileResponse UpdateGroupProfile(UpdateGroupProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupProfileResponseUnmarshaller.Instance;
 
@@ -9720,7 +9720,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateGroupProfile">REST API Reference for UpdateGroupProfile Operation</seealso>
         public virtual Task<UpdateGroupProfileResponse> UpdateGroupProfileAsync(UpdateGroupProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupProfileResponseUnmarshaller.Instance;
 
@@ -9732,7 +9732,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -9777,7 +9777,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -9789,7 +9789,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateProjectProfileResponse UpdateProjectProfile(UpdateProjectProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectProfileResponseUnmarshaller.Instance;
 
@@ -9834,7 +9834,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateProjectProfile">REST API Reference for UpdateProjectProfile Operation</seealso>
         public virtual Task<UpdateProjectProfileResponse> UpdateProjectProfileAsync(UpdateProjectProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectProfileResponseUnmarshaller.Instance;
 
@@ -9846,7 +9846,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -9897,7 +9897,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -9909,7 +9909,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateSubscriptionGrantStatusResponse UpdateSubscriptionGrantStatus(UpdateSubscriptionGrantStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionGrantStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionGrantStatusResponseUnmarshaller.Instance;
 
@@ -9951,7 +9951,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateSubscriptionGrantStatus">REST API Reference for UpdateSubscriptionGrantStatus Operation</seealso>
         public virtual Task<UpdateSubscriptionGrantStatusResponse> UpdateSubscriptionGrantStatusAsync(UpdateSubscriptionGrantStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionGrantStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionGrantStatusResponseUnmarshaller.Instance;
 
@@ -9963,7 +9963,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateSubscriptionRequestResponse UpdateSubscriptionRequest(UpdateSubscriptionRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -10005,7 +10005,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateSubscriptionRequest">REST API Reference for UpdateSubscriptionRequest Operation</seealso>
         public virtual Task<UpdateSubscriptionRequestResponse> UpdateSubscriptionRequestAsync(UpdateSubscriptionRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionRequestResponseUnmarshaller.Instance;
 
@@ -10017,7 +10017,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateSubscriptionTargetResponse UpdateSubscriptionTarget(UpdateSubscriptionTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -10059,7 +10059,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateSubscriptionTarget">REST API Reference for UpdateSubscriptionTarget Operation</seealso>
         public virtual Task<UpdateSubscriptionTargetResponse> UpdateSubscriptionTargetAsync(UpdateSubscriptionTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionTargetResponseUnmarshaller.Instance;
 
@@ -10071,7 +10071,7 @@ namespace Amazon.DataZone
 
         internal virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
@@ -10110,7 +10110,7 @@ namespace Amazon.DataZone
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 

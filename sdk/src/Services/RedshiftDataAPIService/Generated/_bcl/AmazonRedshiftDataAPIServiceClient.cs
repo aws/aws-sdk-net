@@ -339,7 +339,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
             
@@ -459,7 +459,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
         public virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
 
@@ -498,7 +498,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
         public virtual Task<CancelStatementResponse> CancelStatementAsync(CancelStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
             
@@ -537,7 +537,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeStatement">REST API Reference for DescribeStatement Operation</seealso>
         public virtual DescribeStatementResponse DescribeStatement(DescribeStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStatementResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeStatement">REST API Reference for DescribeStatement Operation</seealso>
         public virtual Task<DescribeStatementResponse> DescribeStatementAsync(DescribeStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStatementResponseUnmarshaller.Instance;
             
@@ -653,7 +653,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
             
@@ -811,7 +811,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
             
@@ -931,7 +931,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">REST API Reference for GetStatementResult Operation</seealso>
         public virtual GetStatementResultResponse GetStatementResult(GetStatementResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResultResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">REST API Reference for GetStatementResult Operation</seealso>
         public virtual Task<GetStatementResultResponse> GetStatementResultAsync(GetStatementResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResultResponseUnmarshaller.Instance;
             
@@ -1010,7 +1010,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
         public virtual GetStatementResultV2Response GetStatementResultV2(GetStatementResultV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementResultV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResultV2ResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">REST API Reference for GetStatementResultV2 Operation</seealso>
         public virtual Task<GetStatementResultV2Response> GetStatementResultV2Async(GetStatementResultV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementResultV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResultV2ResponseUnmarshaller.Instance;
             
@@ -1126,7 +1126,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -1202,7 +1202,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
             
@@ -1279,7 +1279,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -1355,7 +1355,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
             
@@ -1398,7 +1398,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">REST API Reference for ListStatements Operation</seealso>
         public virtual ListStatementsResponse ListStatements(ListStatementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
 
@@ -1440,7 +1440,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">REST API Reference for ListStatements Operation</seealso>
         public virtual Task<ListStatementsResponse> ListStatementsAsync(ListStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
             
@@ -1518,7 +1518,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.RedshiftDataAPIService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
             

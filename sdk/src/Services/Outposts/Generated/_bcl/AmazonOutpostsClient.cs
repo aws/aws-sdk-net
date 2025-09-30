@@ -291,7 +291,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask">REST API Reference for CancelCapacityTask Operation</seealso>
         public virtual CancelCapacityTaskResponse CancelCapacityTask(CancelCapacityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityTaskResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask">REST API Reference for CancelCapacityTask Operation</seealso>
         public virtual Task<CancelCapacityTaskResponse> CancelCapacityTaskAsync(CancelCapacityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityTaskResponseUnmarshaller.Instance;
             
@@ -362,7 +362,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelOrder">REST API Reference for CancelOrder Operation</seealso>
         public virtual CancelOrderResponse CancelOrder(CancelOrderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelOrderResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelOrder">REST API Reference for CancelOrder Operation</seealso>
         public virtual Task<CancelOrderResponse> CancelOrderAsync(CancelOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelOrderResponseUnmarshaller.Instance;
             
@@ -436,7 +436,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">REST API Reference for CreateOrder Operation</seealso>
         public virtual CreateOrderResponse CreateOrder(CreateOrderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrderResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOrder">REST API Reference for CreateOrder Operation</seealso>
         public virtual Task<CreateOrderResponse> CreateOrderAsync(CreateOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrderResponseUnmarshaller.Instance;
             
@@ -518,7 +518,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">REST API Reference for CreateOutpost Operation</seealso>
         public virtual CreateOutpostResponse CreateOutpost(CreateOutpostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutpostResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">REST API Reference for CreateOutpost Operation</seealso>
         public virtual Task<CreateOutpostResponse> CreateOutpostAsync(CreateOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutpostResponseUnmarshaller.Instance;
             
@@ -597,7 +597,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateSite">REST API Reference for CreateSite Operation</seealso>
         public virtual CreateSiteResponse CreateSite(CreateSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateSite">REST API Reference for CreateSite Operation</seealso>
         public virtual Task<CreateSiteResponse> CreateSiteAsync(CreateSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteResponseUnmarshaller.Instance;
             
@@ -668,7 +668,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
         public virtual DeleteOutpostResponse DeleteOutpost(DeleteOutpostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">REST API Reference for DeleteOutpost Operation</seealso>
         public virtual Task<DeleteOutpostResponse> DeleteOutpostAsync(DeleteOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
             
@@ -739,7 +739,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
         public virtual DeleteSiteResponse DeleteSite(DeleteSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
 
@@ -774,7 +774,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
         public virtual Task<DeleteSiteResponse> DeleteSiteAsync(DeleteSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
             
@@ -807,7 +807,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask">REST API Reference for GetCapacityTask Operation</seealso>
         public virtual GetCapacityTaskResponse GetCapacityTask(GetCapacityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityTaskResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask">REST API Reference for GetCapacityTask Operation</seealso>
         public virtual Task<GetCapacityTaskResponse> GetCapacityTaskAsync(GetCapacityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityTaskResponseUnmarshaller.Instance;
             
@@ -872,7 +872,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCatalogItem">REST API Reference for GetCatalogItem Operation</seealso>
         public virtual GetCatalogItemResponse GetCatalogItem(GetCatalogItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogItemResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCatalogItem">REST API Reference for GetCatalogItem Operation</seealso>
         public virtual Task<GetCatalogItemResponse> GetCatalogItemAsync(GetCatalogItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogItemResponseUnmarshaller.Instance;
             
@@ -952,7 +952,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
             
@@ -1029,7 +1029,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOrder">REST API Reference for GetOrder Operation</seealso>
         public virtual GetOrderResponse GetOrder(GetOrderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrderResponseUnmarshaller.Instance;
 
@@ -1058,7 +1058,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOrder">REST API Reference for GetOrder Operation</seealso>
         public virtual Task<GetOrderResponse> GetOrderAsync(GetOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrderResponseUnmarshaller.Instance;
             
@@ -1091,7 +1091,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpost">REST API Reference for GetOutpost Operation</seealso>
         public virtual GetOutpostResponse GetOutpost(GetOutpostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpost">REST API Reference for GetOutpost Operation</seealso>
         public virtual Task<GetOutpostResponse> GetOutpostAsync(GetOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostResponseUnmarshaller.Instance;
             
@@ -1153,7 +1153,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
         public virtual GetOutpostBillingInformationResponse GetOutpostBillingInformation(GetOutpostBillingInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostBillingInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostBillingInformationResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostBillingInformation">REST API Reference for GetOutpostBillingInformation Operation</seealso>
         public virtual Task<GetOutpostBillingInformationResponse> GetOutpostBillingInformationAsync(GetOutpostBillingInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostBillingInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostBillingInformationResponseUnmarshaller.Instance;
             
@@ -1215,7 +1215,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">REST API Reference for GetOutpostInstanceTypes Operation</seealso>
         public virtual GetOutpostInstanceTypesResponse GetOutpostInstanceTypes(GetOutpostInstanceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostInstanceTypesResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostInstanceTypes">REST API Reference for GetOutpostInstanceTypes Operation</seealso>
         public virtual Task<GetOutpostInstanceTypesResponse> GetOutpostInstanceTypesAsync(GetOutpostInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostInstanceTypesResponseUnmarshaller.Instance;
             
@@ -1282,7 +1282,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
         public virtual GetOutpostSupportedInstanceTypesResponse GetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostSupportedInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostSupportedInstanceTypesResponseUnmarshaller.Instance;
 
@@ -1316,7 +1316,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
         public virtual Task<GetOutpostSupportedInstanceTypesResponse> GetOutpostSupportedInstanceTypesAsync(GetOutpostSupportedInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOutpostSupportedInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOutpostSupportedInstanceTypesResponseUnmarshaller.Instance;
             
@@ -1349,7 +1349,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSite">REST API Reference for GetSite Operation</seealso>
         public virtual GetSiteResponse GetSite(GetSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSite">REST API Reference for GetSite Operation</seealso>
         public virtual Task<GetSiteResponse> GetSiteAsync(GetSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteResponseUnmarshaller.Instance;
             
@@ -1414,7 +1414,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSiteAddress">REST API Reference for GetSiteAddress Operation</seealso>
         public virtual GetSiteAddressResponse GetSiteAddress(GetSiteAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteAddressResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSiteAddress">REST API Reference for GetSiteAddress Operation</seealso>
         public virtual Task<GetSiteAddressResponse> GetSiteAddressAsync(GetSiteAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteAddressResponseUnmarshaller.Instance;
             
@@ -1480,7 +1480,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">REST API Reference for ListAssetInstances Operation</seealso>
         public virtual ListAssetInstancesResponse ListAssetInstances(ListAssetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetInstancesResponseUnmarshaller.Instance;
 
@@ -1513,7 +1513,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">REST API Reference for ListAssetInstances Operation</seealso>
         public virtual Task<ListAssetInstancesResponse> ListAssetInstancesAsync(ListAssetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetInstancesResponseUnmarshaller.Instance;
             
@@ -1554,7 +1554,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual ListAssetsResponse ListAssets(ListAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
             
@@ -1629,7 +1629,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">REST API Reference for ListBlockingInstancesForCapacityTask Operation</seealso>
         public virtual ListBlockingInstancesForCapacityTaskResponse ListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlockingInstancesForCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlockingInstancesForCapacityTaskResponseUnmarshaller.Instance;
 
@@ -1663,7 +1663,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">REST API Reference for ListBlockingInstancesForCapacityTask Operation</seealso>
         public virtual Task<ListBlockingInstancesForCapacityTaskResponse> ListBlockingInstancesForCapacityTaskAsync(ListBlockingInstancesForCapacityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlockingInstancesForCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlockingInstancesForCapacityTaskResponseUnmarshaller.Instance;
             
@@ -1704,7 +1704,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks">REST API Reference for ListCapacityTasks Operation</seealso>
         public virtual ListCapacityTasksResponse ListCapacityTasks(ListCapacityTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityTasksResponseUnmarshaller.Instance;
 
@@ -1744,7 +1744,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks">REST API Reference for ListCapacityTasks Operation</seealso>
         public virtual Task<ListCapacityTasksResponse> ListCapacityTasksAsync(ListCapacityTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityTasksResponseUnmarshaller.Instance;
             
@@ -1785,7 +1785,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">REST API Reference for ListCatalogItems Operation</seealso>
         public virtual ListCatalogItemsResponse ListCatalogItems(ListCatalogItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCatalogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCatalogItemsResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">REST API Reference for ListCatalogItems Operation</seealso>
         public virtual Task<ListCatalogItemsResponse> ListCatalogItemsAsync(ListCatalogItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCatalogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCatalogItemsResponseUnmarshaller.Instance;
             
@@ -1858,7 +1858,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">REST API Reference for ListOrders Operation</seealso>
         public virtual ListOrdersResponse ListOrders(ListOrdersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrdersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrdersResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">REST API Reference for ListOrders Operation</seealso>
         public virtual Task<ListOrdersResponse> ListOrdersAsync(ListOrdersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrdersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrdersResponseUnmarshaller.Instance;
             
@@ -1928,7 +1928,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">REST API Reference for ListOutposts Operation</seealso>
         public virtual ListOutpostsResponse ListOutposts(ListOutpostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOutpostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOutpostsResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">REST API Reference for ListOutposts Operation</seealso>
         public virtual Task<ListOutpostsResponse> ListOutpostsAsync(ListOutpostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOutpostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOutpostsResponseUnmarshaller.Instance;
             
@@ -2004,7 +2004,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">REST API Reference for ListSites Operation</seealso>
         public virtual ListSitesResponse ListSites(ListSitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSitesResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">REST API Reference for ListSites Operation</seealso>
         public virtual Task<ListSitesResponse> ListSitesAsync(ListSitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSitesResponseUnmarshaller.Instance;
             
@@ -2072,7 +2072,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2138,7 +2138,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">REST API Reference for StartCapacityTask Operation</seealso>
         public virtual StartCapacityTaskResponse StartCapacityTask(StartCapacityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCapacityTaskResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">REST API Reference for StartCapacityTask Operation</seealso>
         public virtual Task<StartCapacityTaskResponse> StartCapacityTaskAsync(StartCapacityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCapacityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCapacityTaskResponseUnmarshaller.Instance;
             
@@ -2222,7 +2222,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">REST API Reference for StartConnection Operation</seealso>
         public virtual StartConnectionResponse StartConnection(StartConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConnectionResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">REST API Reference for StartConnection Operation</seealso>
         public virtual Task<StartConnectionResponse> StartConnectionAsync(StartConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConnectionResponseUnmarshaller.Instance;
             
@@ -2299,7 +2299,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2328,7 +2328,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2358,7 +2358,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2423,7 +2423,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">REST API Reference for UpdateOutpost Operation</seealso>
         public virtual UpdateOutpostResponse UpdateOutpost(UpdateOutpostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOutpostResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">REST API Reference for UpdateOutpost Operation</seealso>
         public virtual Task<UpdateOutpostResponse> UpdateOutpostAsync(UpdateOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOutpostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOutpostResponseUnmarshaller.Instance;
             
@@ -2494,7 +2494,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         public virtual UpdateSiteResponse UpdateSite(UpdateSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteResponseUnmarshaller.Instance;
 
@@ -2529,7 +2529,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         public virtual Task<UpdateSiteResponse> UpdateSiteAsync(UpdateSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteResponseUnmarshaller.Instance;
             
@@ -2576,7 +2576,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSiteAddress">REST API Reference for UpdateSiteAddress Operation</seealso>
         public virtual UpdateSiteAddressResponse UpdateSiteAddress(UpdateSiteAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteAddressResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSiteAddress">REST API Reference for UpdateSiteAddress Operation</seealso>
         public virtual Task<UpdateSiteAddressResponse> UpdateSiteAddressAsync(UpdateSiteAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteAddressResponseUnmarshaller.Instance;
             
@@ -2666,7 +2666,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSiteRackPhysicalProperties">REST API Reference for UpdateSiteRackPhysicalProperties Operation</seealso>
         public virtual UpdateSiteRackPhysicalPropertiesResponse UpdateSiteRackPhysicalProperties(UpdateSiteRackPhysicalPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRackPhysicalPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteRackPhysicalPropertiesResponseUnmarshaller.Instance;
 
@@ -2709,7 +2709,7 @@ namespace Amazon.Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSiteRackPhysicalProperties">REST API Reference for UpdateSiteRackPhysicalProperties Operation</seealso>
         public virtual Task<UpdateSiteRackPhysicalPropertiesResponse> UpdateSiteRackPhysicalPropertiesAsync(UpdateSiteRackPhysicalPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRackPhysicalPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteRackPhysicalPropertiesResponseUnmarshaller.Instance;
             

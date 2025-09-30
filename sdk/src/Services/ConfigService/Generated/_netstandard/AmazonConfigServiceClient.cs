@@ -290,7 +290,7 @@ namespace Amazon.ConfigService
 
         internal virtual AssociateResourceTypesResponse AssociateResourceTypes(AssociateResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceTypesResponseUnmarshaller.Instance;
 
@@ -416,7 +416,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AssociateResourceTypes">REST API Reference for AssociateResourceTypes Operation</seealso>
         public virtual Task<AssociateResourceTypesResponse> AssociateResourceTypesAsync(AssociateResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceTypesResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.ConfigService
 
         internal virtual BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
         public virtual Task<BatchGetAggregateResourceConfigResponse> BatchGetAggregateResourceConfigAsync(BatchGetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.ConfigService
 
         internal virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
         public virtual Task<BatchGetResourceConfigResponse> BatchGetResourceConfigAsync(BatchGetResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteAggregationAuthorizationResponse DeleteAggregationAuthorization(DeleteAggregationAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">REST API Reference for DeleteAggregationAuthorization Operation</seealso>
         public virtual Task<DeleteAggregationAuthorizationResponse> DeleteAggregationAuthorizationAsync(DeleteAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAggregationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAggregationAuthorizationResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public virtual Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigRuleResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteConfigurationAggregatorResponse DeleteConfigurationAggregator(DeleteConfigurationAggregatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">REST API Reference for DeleteConfigurationAggregator Operation</seealso>
         public virtual Task<DeleteConfigurationAggregatorResponse> DeleteConfigurationAggregatorAsync(DeleteConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationAggregatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationAggregatorResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public virtual Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteConformancePackResponse DeleteConformancePack(DeleteConformancePackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConformancePackResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack">REST API Reference for DeleteConformancePack Operation</seealso>
         public virtual Task<DeleteConformancePackResponse> DeleteConformancePackAsync(DeleteConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConformancePackResponseUnmarshaller.Instance;
 
@@ -1016,7 +1016,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public virtual Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeliveryChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public virtual Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEvaluationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteOrganizationConfigRuleResponse DeleteOrganizationConfigRule(DeleteOrganizationConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationConfigRuleResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">REST API Reference for DeleteOrganizationConfigRule Operation</seealso>
         public virtual Task<DeleteOrganizationConfigRuleResponse> DeleteOrganizationConfigRuleAsync(DeleteOrganizationConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationConfigRuleResponseUnmarshaller.Instance;
 
@@ -1326,7 +1326,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteOrganizationConformancePackResponse DeleteOrganizationConformancePack(DeleteOrganizationConformancePackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationConformancePackResponseUnmarshaller.Instance;
 
@@ -1468,7 +1468,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack">REST API Reference for DeleteOrganizationConformancePack Operation</seealso>
         public virtual Task<DeleteOrganizationConformancePackResponse> DeleteOrganizationConformancePackAsync(DeleteOrganizationConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationConformancePackResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeletePendingAggregationRequestResponse DeletePendingAggregationRequest(DeletePendingAggregationRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
 
@@ -1506,7 +1506,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">REST API Reference for DeletePendingAggregationRequest Operation</seealso>
         public virtual Task<DeletePendingAggregationRequestResponse> DeletePendingAggregationRequestAsync(DeletePendingAggregationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePendingAggregationRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePendingAggregationRequestResponseUnmarshaller.Instance;
 
@@ -1518,7 +1518,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteRemediationConfigurationResponse DeleteRemediationConfiguration(DeleteRemediationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemediationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemediationConfigurationResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration">REST API Reference for DeleteRemediationConfiguration Operation</seealso>
         public virtual Task<DeleteRemediationConfigurationResponse> DeleteRemediationConfigurationAsync(DeleteRemediationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemediationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemediationConfigurationResponseUnmarshaller.Instance;
 
@@ -1607,7 +1607,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteRemediationExceptionsResponse DeleteRemediationExceptions(DeleteRemediationExceptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">REST API Reference for DeleteRemediationExceptions Operation</seealso>
         public virtual Task<DeleteRemediationExceptionsResponse> DeleteRemediationExceptionsAsync(DeleteRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteResourceConfigResponse DeleteResourceConfig(DeleteResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceConfigResponseUnmarshaller.Instance;
 
@@ -1736,7 +1736,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">REST API Reference for DeleteResourceConfig Operation</seealso>
         public virtual Task<DeleteResourceConfigResponse> DeleteResourceConfigAsync(DeleteResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceConfigResponseUnmarshaller.Instance;
 
@@ -1748,7 +1748,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
         public virtual Task<DeleteRetentionConfigurationResponse> DeleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
 
@@ -1788,7 +1788,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteServiceLinkedConfigurationRecorderResponse DeleteServiceLinkedConfigurationRecorder(DeleteServiceLinkedConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -1926,7 +1926,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteServiceLinkedConfigurationRecorder">REST API Reference for DeleteServiceLinkedConfigurationRecorder Operation</seealso>
         public virtual Task<DeleteServiceLinkedConfigurationRecorderResponse> DeleteServiceLinkedConfigurationRecorderAsync(DeleteServiceLinkedConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -1938,7 +1938,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStoredQueryResponseUnmarshaller.Instance;
 
@@ -2022,7 +2022,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
         public virtual Task<DeleteStoredQueryResponse> DeleteStoredQueryAsync(DeleteStoredQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStoredQueryResponseUnmarshaller.Instance;
 
@@ -2034,7 +2034,7 @@ namespace Amazon.ConfigService
 
         internal virtual DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public virtual Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(DeliverConfigSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeliverConfigSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeliverConfigSnapshotResponseUnmarshaller.Instance;
 
@@ -2139,7 +2139,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeAggregateComplianceByConfigRulesResponse DescribeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
 
@@ -2238,7 +2238,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
         public virtual Task<DescribeAggregateComplianceByConfigRulesResponse> DescribeAggregateComplianceByConfigRulesAsync(DescribeAggregateComplianceByConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateComplianceByConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateComplianceByConfigRulesResponseUnmarshaller.Instance;
 
@@ -2250,7 +2250,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeAggregateComplianceByConformancePacksResponse DescribeAggregateComplianceByConformancePacks(DescribeAggregateComplianceByConformancePacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateComplianceByConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateComplianceByConformancePacksResponseUnmarshaller.Instance;
 
@@ -2351,7 +2351,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">REST API Reference for DescribeAggregateComplianceByConformancePacks Operation</seealso>
         public virtual Task<DescribeAggregateComplianceByConformancePacksResponse> DescribeAggregateComplianceByConformancePacksAsync(DescribeAggregateComplianceByConformancePacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateComplianceByConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateComplianceByConformancePacksResponseUnmarshaller.Instance;
 
@@ -2363,7 +2363,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeAggregationAuthorizationsResponse DescribeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
 
@@ -2395,7 +2395,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">REST API Reference for DescribeAggregationAuthorizations Operation</seealso>
         public virtual Task<DescribeAggregationAuthorizationsResponse> DescribeAggregationAuthorizationsAsync(DescribeAggregationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregationAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregationAuthorizationsResponseUnmarshaller.Instance;
 
@@ -2407,7 +2407,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
@@ -2473,7 +2473,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public virtual Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComplianceByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComplianceByConfigRuleResponseUnmarshaller.Instance;
 
@@ -2485,7 +2485,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public virtual Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComplianceByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComplianceByResourceResponseUnmarshaller.Instance;
 
@@ -2559,7 +2559,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
@@ -2595,7 +2595,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public virtual Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigRuleEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigRuleEvaluationStatusResponseUnmarshaller.Instance;
 
@@ -2607,7 +2607,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
@@ -2641,7 +2641,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public virtual Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigRulesResponseUnmarshaller.Instance;
 
@@ -2653,7 +2653,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConfigurationAggregatorsResponse DescribeConfigurationAggregators(DescribeConfigurationAggregatorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
 
@@ -2690,7 +2690,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">REST API Reference for DescribeConfigurationAggregators Operation</seealso>
         public virtual Task<DescribeConfigurationAggregatorsResponse> DescribeConfigurationAggregatorsAsync(DescribeConfigurationAggregatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationAggregatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationAggregatorsResponseUnmarshaller.Instance;
 
@@ -2702,7 +2702,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConfigurationAggregatorSourcesStatusResponse DescribeConfigurationAggregatorSourcesStatus(DescribeConfigurationAggregatorSourcesStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
 
@@ -2740,7 +2740,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">REST API Reference for DescribeConfigurationAggregatorSourcesStatus Operation</seealso>
         public virtual Task<DescribeConfigurationAggregatorSourcesStatusResponse> DescribeConfigurationAggregatorSourcesStatusAsync(DescribeConfigurationAggregatorSourcesStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationAggregatorSourcesStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationAggregatorSourcesStatusResponseUnmarshaller.Instance;
 
@@ -2756,7 +2756,7 @@ namespace Amazon.ConfigService
         }
         internal virtual DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
@@ -2938,7 +2938,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public virtual Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRecordersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRecordersResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.ConfigService
         }
         internal virtual DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
@@ -3148,7 +3148,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public virtual Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRecorderStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRecorderStatusResponseUnmarshaller.Instance;
 
@@ -3160,7 +3160,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConformancePackComplianceResponse DescribeConformancePackCompliance(DescribeConformancePackComplianceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePackComplianceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePackComplianceResponseUnmarshaller.Instance;
 
@@ -3204,7 +3204,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">REST API Reference for DescribeConformancePackCompliance Operation</seealso>
         public virtual Task<DescribeConformancePackComplianceResponse> DescribeConformancePackComplianceAsync(DescribeConformancePackComplianceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePackComplianceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePackComplianceResponseUnmarshaller.Instance;
 
@@ -3216,7 +3216,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConformancePacksResponse DescribeConformancePacks(DescribeConformancePacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePacksResponseUnmarshaller.Instance;
 
@@ -3251,7 +3251,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks">REST API Reference for DescribeConformancePacks Operation</seealso>
         public virtual Task<DescribeConformancePacksResponse> DescribeConformancePacksAsync(DescribeConformancePacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePacksResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeConformancePackStatusResponse DescribeConformancePackStatus(DescribeConformancePackStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePackStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePackStatusResponseUnmarshaller.Instance;
 
@@ -3301,7 +3301,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">REST API Reference for DescribeConformancePackStatus Operation</seealso>
         public virtual Task<DescribeConformancePackStatusResponse> DescribeConformancePackStatusAsync(DescribeConformancePackStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConformancePackStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConformancePackStatusResponseUnmarshaller.Instance;
 
@@ -3317,7 +3317,7 @@ namespace Amazon.ConfigService
         }
         internal virtual DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
@@ -3375,7 +3375,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public virtual Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeliveryChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeliveryChannelsResponseUnmarshaller.Instance;
 
@@ -3391,7 +3391,7 @@ namespace Amazon.ConfigService
         }
         internal virtual DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
@@ -3449,7 +3449,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public virtual Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeliveryChannelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeliveryChannelStatusResponseUnmarshaller.Instance;
 
@@ -3461,7 +3461,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeOrganizationConfigRulesResponse DescribeOrganizationConfigRules(DescribeOrganizationConfigRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigRulesResponseUnmarshaller.Instance;
 
@@ -3555,7 +3555,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
         public virtual Task<DescribeOrganizationConfigRulesResponse> DescribeOrganizationConfigRulesAsync(DescribeOrganizationConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigRulesResponseUnmarshaller.Instance;
 
@@ -3567,7 +3567,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeOrganizationConfigRuleStatusesResponse DescribeOrganizationConfigRuleStatuses(DescribeOrganizationConfigRuleStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigRuleStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance;
 
@@ -3647,7 +3647,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
         public virtual Task<DescribeOrganizationConfigRuleStatusesResponse> DescribeOrganizationConfigRuleStatusesAsync(DescribeOrganizationConfigRuleStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigRuleStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigRuleStatusesResponseUnmarshaller.Instance;
 
@@ -3659,7 +3659,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeOrganizationConformancePacksResponse DescribeOrganizationConformancePacks(DescribeOrganizationConformancePacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConformancePacksResponseUnmarshaller.Instance;
 
@@ -3758,7 +3758,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
         public virtual Task<DescribeOrganizationConformancePacksResponse> DescribeOrganizationConformancePacksAsync(DescribeOrganizationConformancePacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConformancePacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConformancePacksResponseUnmarshaller.Instance;
 
@@ -3770,7 +3770,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeOrganizationConformancePackStatusesResponse DescribeOrganizationConformancePackStatuses(DescribeOrganizationConformancePackStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConformancePackStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConformancePackStatusesResponseUnmarshaller.Instance;
 
@@ -3854,7 +3854,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
         public virtual Task<DescribeOrganizationConformancePackStatusesResponse> DescribeOrganizationConformancePackStatusesAsync(DescribeOrganizationConformancePackStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConformancePackStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConformancePackStatusesResponseUnmarshaller.Instance;
 
@@ -3866,7 +3866,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribePendingAggregationRequestsResponse DescribePendingAggregationRequests(DescribePendingAggregationRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
 
@@ -3898,7 +3898,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">REST API Reference for DescribePendingAggregationRequests Operation</seealso>
         public virtual Task<DescribePendingAggregationRequestsResponse> DescribePendingAggregationRequestsAsync(DescribePendingAggregationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingAggregationRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingAggregationRequestsResponseUnmarshaller.Instance;
 
@@ -3910,7 +3910,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeRemediationConfigurationsResponse DescribeRemediationConfigurations(DescribeRemediationConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationConfigurationsResponseUnmarshaller.Instance;
 
@@ -3931,7 +3931,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationConfigurations">REST API Reference for DescribeRemediationConfigurations Operation</seealso>
         public virtual Task<DescribeRemediationConfigurationsResponse> DescribeRemediationConfigurationsAsync(DescribeRemediationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationConfigurationsResponseUnmarshaller.Instance;
 
@@ -3943,7 +3943,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeRemediationExceptionsResponse DescribeRemediationExceptions(DescribeRemediationExceptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -3992,7 +3992,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">REST API Reference for DescribeRemediationExceptions Operation</seealso>
         public virtual Task<DescribeRemediationExceptionsResponse> DescribeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -4004,7 +4004,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeRemediationExecutionStatusResponse DescribeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -4039,7 +4039,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus">REST API Reference for DescribeRemediationExecutionStatus Operation</seealso>
         public virtual Task<DescribeRemediationExecutionStatusResponse> DescribeRemediationExecutionStatusAsync(DescribeRemediationExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRemediationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRemediationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -4051,7 +4051,7 @@ namespace Amazon.ConfigService
 
         internal virtual DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
 
@@ -4091,7 +4091,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
         public virtual Task<DescribeRetentionConfigurationsResponse> DescribeRetentionConfigurationsAsync(DescribeRetentionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
 
@@ -4103,7 +4103,7 @@ namespace Amazon.ConfigService
 
         internal virtual DisassociateResourceTypesResponse DisassociateResourceTypes(DisassociateResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceTypesResponseUnmarshaller.Instance;
 
@@ -4230,7 +4230,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DisassociateResourceTypes">REST API Reference for DisassociateResourceTypes Operation</seealso>
         public virtual Task<DisassociateResourceTypesResponse> DisassociateResourceTypesAsync(DisassociateResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceTypesResponseUnmarshaller.Instance;
 
@@ -4242,7 +4242,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4342,7 +4342,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetAggregateComplianceDetailsByConfigRuleResponse> GetAggregateComplianceDetailsByConfigRuleAsync(GetAggregateComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4354,7 +4354,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetAggregateConfigRuleComplianceSummaryResponse GetAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -4452,7 +4452,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">REST API Reference for GetAggregateConfigRuleComplianceSummary Operation</seealso>
         public virtual Task<GetAggregateConfigRuleComplianceSummaryResponse> GetAggregateConfigRuleComplianceSummaryAsync(GetAggregateConfigRuleComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateConfigRuleComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateConfigRuleComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -4464,7 +4464,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetAggregateConformancePackComplianceSummaryResponse GetAggregateConformancePackComplianceSummary(GetAggregateConformancePackComplianceSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateConformancePackComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateConformancePackComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -4563,7 +4563,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
         public virtual Task<GetAggregateConformancePackComplianceSummaryResponse> GetAggregateConformancePackComplianceSummaryAsync(GetAggregateConformancePackComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateConformancePackComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateConformancePackComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -4575,7 +4575,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
@@ -4674,7 +4674,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
         public virtual Task<GetAggregateDiscoveredResourceCountsResponse> GetAggregateDiscoveredResourceCountsAsync(GetAggregateDiscoveredResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
@@ -4686,7 +4686,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -4782,7 +4782,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
         public virtual Task<GetAggregateResourceConfigResponse> GetAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -4794,7 +4794,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4830,7 +4830,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public virtual Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailsByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailsByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4842,7 +4842,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
@@ -4869,7 +4869,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public virtual Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailsByResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailsByResourceResponseUnmarshaller.Instance;
 
@@ -4881,7 +4881,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4903,7 +4903,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public virtual Task<GetComplianceSummaryByConfigRuleResponse> GetComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryByConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryByConfigRuleResponseUnmarshaller.Instance;
 
@@ -4915,7 +4915,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
@@ -4942,7 +4942,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public virtual Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryByResourceTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryByResourceTypeResponseUnmarshaller.Instance;
 
@@ -4954,7 +4954,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetConformancePackComplianceDetailsResponse GetConformancePackComplianceDetails(GetConformancePackComplianceDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConformancePackComplianceDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConformancePackComplianceDetailsResponseUnmarshaller.Instance;
 
@@ -4993,7 +4993,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceDetails">REST API Reference for GetConformancePackComplianceDetails Operation</seealso>
         public virtual Task<GetConformancePackComplianceDetailsResponse> GetConformancePackComplianceDetailsAsync(GetConformancePackComplianceDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConformancePackComplianceDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConformancePackComplianceDetailsResponseUnmarshaller.Instance;
 
@@ -5005,7 +5005,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetConformancePackComplianceSummaryResponse GetConformancePackComplianceSummary(GetConformancePackComplianceSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConformancePackComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -5037,7 +5037,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary">REST API Reference for GetConformancePackComplianceSummary Operation</seealso>
         public virtual Task<GetConformancePackComplianceSummaryResponse> GetConformancePackComplianceSummaryAsync(GetConformancePackComplianceSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConformancePackComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConformancePackComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -5049,7 +5049,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetCustomRulePolicyResponse GetCustomRulePolicy(GetCustomRulePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
 
@@ -5075,7 +5075,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetCustomRulePolicy">REST API Reference for GetCustomRulePolicy Operation</seealso>
         public virtual Task<GetCustomRulePolicyResponse> GetCustomRulePolicyAsync(GetCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomRulePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomRulePolicyResponseUnmarshaller.Instance;
 
@@ -5087,7 +5087,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetDiscoveredResourceCountsResponse GetDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
@@ -5233,7 +5233,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">REST API Reference for GetDiscoveredResourceCounts Operation</seealso>
         public virtual Task<GetDiscoveredResourceCountsResponse> GetDiscoveredResourceCountsAsync(GetDiscoveredResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredResourceCountsResponseUnmarshaller.Instance;
 
@@ -5245,7 +5245,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetOrganizationConfigRuleDetailedStatusResponse GetOrganizationConfigRuleDetailedStatus(GetOrganizationConfigRuleDetailedStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationConfigRuleDetailedStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance;
 
@@ -5313,7 +5313,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
         public virtual Task<GetOrganizationConfigRuleDetailedStatusResponse> GetOrganizationConfigRuleDetailedStatusAsync(GetOrganizationConfigRuleDetailedStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationConfigRuleDetailedStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationConfigRuleDetailedStatusResponseUnmarshaller.Instance;
 
@@ -5325,7 +5325,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetOrganizationConformancePackDetailedStatusResponse GetOrganizationConformancePackDetailedStatus(GetOrganizationConformancePackDetailedStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationConformancePackDetailedStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
 
@@ -5397,7 +5397,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
         public virtual Task<GetOrganizationConformancePackDetailedStatusResponse> GetOrganizationConformancePackDetailedStatusAsync(GetOrganizationConformancePackDetailedStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationConformancePackDetailedStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationConformancePackDetailedStatusResponseUnmarshaller.Instance;
 
@@ -5409,7 +5409,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetOrganizationCustomRulePolicyResponse GetOrganizationCustomRulePolicy(GetOrganizationCustomRulePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
 
@@ -5470,7 +5470,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">REST API Reference for GetOrganizationCustomRulePolicy Operation</seealso>
         public virtual Task<GetOrganizationCustomRulePolicyResponse> GetOrganizationCustomRulePolicyAsync(GetOrganizationCustomRulePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationCustomRulePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationCustomRulePolicyResponseUnmarshaller.Instance;
 
@@ -5482,7 +5482,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
@@ -5623,7 +5623,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public virtual Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceConfigHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
@@ -5635,7 +5635,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetResourceEvaluationSummaryResponse GetResourceEvaluationSummary(GetResourceEvaluationSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
 
@@ -5672,7 +5672,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary">REST API Reference for GetResourceEvaluationSummary Operation</seealso>
         public virtual Task<GetResourceEvaluationSummaryResponse> GetResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceEvaluationSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceEvaluationSummaryResponseUnmarshaller.Instance;
 
@@ -5684,7 +5684,7 @@ namespace Amazon.ConfigService
 
         internal virtual GetStoredQueryResponse GetStoredQuery(GetStoredQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStoredQueryResponseUnmarshaller.Instance;
 
@@ -5767,7 +5767,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
         public virtual Task<GetStoredQueryResponse> GetStoredQueryAsync(GetStoredQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStoredQueryResponseUnmarshaller.Instance;
 
@@ -5779,7 +5779,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -5880,7 +5880,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
         public virtual Task<ListAggregateDiscoveredResourcesResponse> ListAggregateDiscoveredResourcesAsync(ListAggregateDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -5892,7 +5892,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListConfigurationRecordersResponse ListConfigurationRecorders(ListConfigurationRecordersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRecordersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRecordersResponseUnmarshaller.Instance;
 
@@ -5972,7 +5972,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConfigurationRecorders">REST API Reference for ListConfigurationRecorders Operation</seealso>
         public virtual Task<ListConfigurationRecordersResponse> ListConfigurationRecordersAsync(ListConfigurationRecordersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRecordersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRecordersResponseUnmarshaller.Instance;
 
@@ -5984,7 +5984,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListConformancePackComplianceScoresResponse ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConformancePackComplianceScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConformancePackComplianceScoresResponseUnmarshaller.Instance;
 
@@ -6027,7 +6027,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
         public virtual Task<ListConformancePackComplianceScoresResponse> ListConformancePackComplianceScoresAsync(ListConformancePackComplianceScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConformancePackComplianceScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConformancePackComplianceScoresResponseUnmarshaller.Instance;
 
@@ -6039,7 +6039,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -6186,7 +6186,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -6198,7 +6198,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListResourceEvaluationsResponse ListResourceEvaluations(ListResourceEvaluationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
 
@@ -6231,7 +6231,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations">REST API Reference for ListResourceEvaluations Operation</seealso>
         public virtual Task<ListResourceEvaluationsResponse> ListResourceEvaluationsAsync(ListResourceEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceEvaluationsResponseUnmarshaller.Instance;
 
@@ -6243,7 +6243,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStoredQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStoredQueriesResponseUnmarshaller.Instance;
 
@@ -6328,7 +6328,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
         public virtual Task<ListStoredQueriesResponse> ListStoredQueriesAsync(ListStoredQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStoredQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStoredQueriesResponseUnmarshaller.Instance;
 
@@ -6340,7 +6340,7 @@ namespace Amazon.ConfigService
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6430,7 +6430,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6442,7 +6442,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutAggregationAuthorizationResponse PutAggregationAuthorization(PutAggregationAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
 
@@ -6488,7 +6488,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">REST API Reference for PutAggregationAuthorization Operation</seealso>
         public virtual Task<PutAggregationAuthorizationResponse> PutAggregationAuthorizationAsync(PutAggregationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAggregationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAggregationAuthorizationResponseUnmarshaller.Instance;
 
@@ -6500,7 +6500,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
@@ -6689,7 +6689,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public virtual Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigRuleResponseUnmarshaller.Instance;
 
@@ -6701,7 +6701,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutConfigurationAggregatorResponse PutConfigurationAggregator(PutConfigurationAggregatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
 
@@ -6832,7 +6832,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">REST API Reference for PutConfigurationAggregator Operation</seealso>
         public virtual Task<PutConfigurationAggregatorResponse> PutConfigurationAggregatorAsync(PutConfigurationAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationAggregatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationAggregatorResponseUnmarshaller.Instance;
 
@@ -6844,7 +6844,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -7054,7 +7054,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public virtual Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -7066,7 +7066,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutConformancePackResponse PutConformancePack(PutConformancePackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConformancePackResponseUnmarshaller.Instance;
 
@@ -7213,7 +7213,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">REST API Reference for PutConformancePack Operation</seealso>
         public virtual Task<PutConformancePackResponse> PutConformancePackAsync(PutConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConformancePackResponseUnmarshaller.Instance;
 
@@ -7225,7 +7225,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
@@ -7295,7 +7295,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public virtual Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDeliveryChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDeliveryChannelResponseUnmarshaller.Instance;
 
@@ -7307,7 +7307,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
@@ -7341,7 +7341,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public virtual Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
@@ -7353,7 +7353,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutExternalEvaluationResponse PutExternalEvaluation(PutExternalEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutExternalEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutExternalEvaluationResponseUnmarshaller.Instance;
 
@@ -7384,7 +7384,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
         public virtual Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutExternalEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutExternalEvaluationResponseUnmarshaller.Instance;
 
@@ -7396,7 +7396,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutOrganizationConfigRuleResponse PutOrganizationConfigRule(PutOrganizationConfigRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOrganizationConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOrganizationConfigRuleResponseUnmarshaller.Instance;
 
@@ -7679,7 +7679,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
         public virtual Task<PutOrganizationConfigRuleResponse> PutOrganizationConfigRuleAsync(PutOrganizationConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOrganizationConfigRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOrganizationConfigRuleResponseUnmarshaller.Instance;
 
@@ -7691,7 +7691,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutOrganizationConformancePackResponse PutOrganizationConformancePack(PutOrganizationConformancePackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOrganizationConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOrganizationConformancePackResponseUnmarshaller.Instance;
 
@@ -7957,7 +7957,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">REST API Reference for PutOrganizationConformancePack Operation</seealso>
         public virtual Task<PutOrganizationConformancePackResponse> PutOrganizationConformancePackAsync(PutOrganizationConformancePackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOrganizationConformancePackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOrganizationConformancePackResponseUnmarshaller.Instance;
 
@@ -7969,7 +7969,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutRemediationConfigurationsResponse PutRemediationConfigurations(PutRemediationConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRemediationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRemediationConfigurationsResponseUnmarshaller.Instance;
 
@@ -8095,7 +8095,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">REST API Reference for PutRemediationConfigurations Operation</seealso>
         public virtual Task<PutRemediationConfigurationsResponse> PutRemediationConfigurationsAsync(PutRemediationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRemediationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRemediationConfigurationsResponseUnmarshaller.Instance;
 
@@ -8107,7 +8107,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutRemediationExceptionsResponse PutRemediationExceptions(PutRemediationExceptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -8245,7 +8245,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">REST API Reference for PutRemediationExceptions Operation</seealso>
         public virtual Task<PutRemediationExceptionsResponse> PutRemediationExceptionsAsync(PutRemediationExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRemediationExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRemediationExceptionsResponseUnmarshaller.Instance;
 
@@ -8257,7 +8257,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutResourceConfigResponse PutResourceConfig(PutResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceConfigResponseUnmarshaller.Instance;
 
@@ -8411,7 +8411,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">REST API Reference for PutResourceConfig Operation</seealso>
         public virtual Task<PutResourceConfigResponse> PutResourceConfigAsync(PutResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceConfigResponseUnmarshaller.Instance;
 
@@ -8423,7 +8423,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
 
@@ -8462,7 +8462,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         public virtual Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRetentionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
 
@@ -8474,7 +8474,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutServiceLinkedConfigurationRecorderResponse PutServiceLinkedConfigurationRecorder(PutServiceLinkedConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -8690,7 +8690,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutServiceLinkedConfigurationRecorder">REST API Reference for PutServiceLinkedConfigurationRecorder Operation</seealso>
         public virtual Task<PutServiceLinkedConfigurationRecorderResponse> PutServiceLinkedConfigurationRecorderAsync(PutServiceLinkedConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -8702,7 +8702,7 @@ namespace Amazon.ConfigService
 
         internal virtual PutStoredQueryResponse PutStoredQuery(PutStoredQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStoredQueryResponseUnmarshaller.Instance;
 
@@ -8807,7 +8807,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
         public virtual Task<PutStoredQueryResponse> PutStoredQueryAsync(PutStoredQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStoredQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStoredQueryResponseUnmarshaller.Instance;
 
@@ -8819,7 +8819,7 @@ namespace Amazon.ConfigService
 
         internal virtual SelectAggregateResourceConfigResponse SelectAggregateResourceConfig(SelectAggregateResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -8877,7 +8877,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">REST API Reference for SelectAggregateResourceConfig Operation</seealso>
         public virtual Task<SelectAggregateResourceConfigResponse> SelectAggregateResourceConfigAsync(SelectAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectAggregateResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectAggregateResourceConfigResponseUnmarshaller.Instance;
 
@@ -8889,7 +8889,7 @@ namespace Amazon.ConfigService
 
         internal virtual SelectResourceConfigResponse SelectResourceConfig(SelectResourceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectResourceConfigResponseUnmarshaller.Instance;
 
@@ -8927,7 +8927,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">REST API Reference for SelectResourceConfig Operation</seealso>
         public virtual Task<SelectResourceConfigResponse> SelectResourceConfigAsync(SelectResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectResourceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectResourceConfigResponseUnmarshaller.Instance;
 
@@ -8939,7 +8939,7 @@ namespace Amazon.ConfigService
 
         internal virtual StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
@@ -9074,7 +9074,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public virtual Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigRulesEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
 
@@ -9086,7 +9086,7 @@ namespace Amazon.ConfigService
 
         internal virtual StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -9209,7 +9209,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public virtual Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(StartConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -9221,7 +9221,7 @@ namespace Amazon.ConfigService
 
         internal virtual StartRemediationExecutionResponse StartRemediationExecution(StartRemediationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemediationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemediationExecutionResponseUnmarshaller.Instance;
 
@@ -9302,7 +9302,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartRemediationExecution">REST API Reference for StartRemediationExecution Operation</seealso>
         public virtual Task<StartRemediationExecutionResponse> StartRemediationExecutionAsync(StartRemediationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRemediationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRemediationExecutionResponseUnmarshaller.Instance;
 
@@ -9314,7 +9314,7 @@ namespace Amazon.ConfigService
 
         internal virtual StartResourceEvaluationResponse StartResourceEvaluation(StartResourceEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
 
@@ -9368,7 +9368,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation">REST API Reference for StartResourceEvaluation Operation</seealso>
         public virtual Task<StartResourceEvaluationResponse> StartResourceEvaluationAsync(StartResourceEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceEvaluationResponseUnmarshaller.Instance;
 
@@ -9380,7 +9380,7 @@ namespace Amazon.ConfigService
 
         internal virtual StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -9485,7 +9485,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public virtual Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(StopConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopConfigurationRecorderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopConfigurationRecorderResponseUnmarshaller.Instance;
 
@@ -9497,7 +9497,7 @@ namespace Amazon.ConfigService
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -9589,7 +9589,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -9601,7 +9601,7 @@ namespace Amazon.ConfigService
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -9684,7 +9684,7 @@ namespace Amazon.ConfigService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

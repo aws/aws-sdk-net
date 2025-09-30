@@ -275,7 +275,7 @@ namespace Amazon.CloudFront
 
         internal virtual AssociateAliasResponse AssociateAlias(AssociateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAliasResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateAlias">REST API Reference for AssociateAlias Operation</seealso>
         public virtual Task<AssociateAliasResponse> AssociateAliasAsync(AssociateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAliasResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.CloudFront
 
         internal virtual AssociateDistributionTenantWebACLResponse AssociateDistributionTenantWebACL(AssociateDistributionTenantWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDistributionTenantWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDistributionTenantWebACLResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionTenantWebACL">REST API Reference for AssociateDistributionTenantWebACL Operation</seealso>
         public virtual Task<AssociateDistributionTenantWebACLResponse> AssociateDistributionTenantWebACLAsync(AssociateDistributionTenantWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDistributionTenantWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDistributionTenantWebACLResponseUnmarshaller.Instance;
 
@@ -403,7 +403,7 @@ namespace Amazon.CloudFront
 
         internal virtual AssociateDistributionWebACLResponse AssociateDistributionWebACL(AssociateDistributionWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDistributionWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDistributionWebACLResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AssociateDistributionWebACL">REST API Reference for AssociateDistributionWebACL Operation</seealso>
         public virtual Task<AssociateDistributionWebACLResponse> AssociateDistributionWebACLAsync(AssociateDistributionWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDistributionWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDistributionWebACLResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.CloudFront
 
         internal virtual CopyDistributionResponse CopyDistribution(CopyDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDistributionResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution">REST API Reference for CopyDistribution Operation</seealso>
         public virtual Task<CopyDistributionResponse> CopyDistributionAsync(CopyDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDistributionResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateAnycastIpListResponse CreateAnycastIpList(CreateAnycastIpListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnycastIpListResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
         public virtual Task<CreateAnycastIpListResponse> CreateAnycastIpListAsync(CreateAnycastIpListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnycastIpListResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateCachePolicyResponse CreateCachePolicy(CreateCachePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCachePolicyResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy">REST API Reference for CreateCachePolicy Operation</seealso>
         public virtual Task<CreateCachePolicyResponse> CreateCachePolicyAsync(CreateCachePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCachePolicyResponseUnmarshaller.Instance;
 
@@ -903,7 +903,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateConnectionGroupResponse CreateConnectionGroup(CreateConnectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionGroupResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionGroup">REST API Reference for CreateConnectionGroup Operation</seealso>
         public virtual Task<CreateConnectionGroupResponse> CreateConnectionGroupAsync(CreateConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionGroupResponseUnmarshaller.Instance;
 
@@ -1011,7 +1011,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateContinuousDeploymentPolicyResponse CreateContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateContinuousDeploymentPolicy">REST API Reference for CreateContinuousDeploymentPolicy Operation</seealso>
         public virtual Task<CreateContinuousDeploymentPolicyResponse> CreateContinuousDeploymentPolicyAsync(CreateContinuousDeploymentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateDistributionTenantResponse CreateDistributionTenant(CreateDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionTenantResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionTenant">REST API Reference for CreateDistributionTenant Operation</seealso>
         public virtual Task<CreateDistributionTenantResponse> CreateDistributionTenantAsync(CreateDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionTenantResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -1753,7 +1753,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
         public virtual Task<CreateFieldLevelEncryptionConfigResponse> CreateFieldLevelEncryptionConfigAsync(CreateFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
         public virtual Task<CreateFieldLevelEncryptionProfileResponse> CreateFieldLevelEncryptionProfileAsync(CreateFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -1822,7 +1822,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvalidationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
 
@@ -1939,7 +1939,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvalidationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateInvalidationForDistributionTenantResponse CreateInvalidationForDistributionTenant(CreateInvalidationForDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvalidationForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvalidationForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -1996,7 +1996,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidationForDistributionTenant">REST API Reference for CreateInvalidationForDistributionTenant Operation</seealso>
         public virtual Task<CreateInvalidationForDistributionTenantResponse> CreateInvalidationForDistributionTenantAsync(CreateInvalidationForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvalidationForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvalidationForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateKeyGroupResponse CreateKeyGroup(CreateKeyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyGroupResponseUnmarshaller.Instance;
 
@@ -2059,7 +2059,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyGroup">REST API Reference for CreateKeyGroup Operation</seealso>
         public virtual Task<CreateKeyGroupResponse> CreateKeyGroupAsync(CreateKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyGroupResponseUnmarshaller.Instance;
 
@@ -2071,7 +2071,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateKeyValueStoreResponse CreateKeyValueStore(CreateKeyValueStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -2112,7 +2112,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
         public virtual Task<CreateKeyValueStoreResponse> CreateKeyValueStoreAsync(CreateKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateMonitoringSubscriptionResponse CreateMonitoringSubscription(CreateMonitoringSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -2165,7 +2165,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
         public virtual Task<CreateMonitoringSubscriptionResponse> CreateMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -2177,7 +2177,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateOriginAccessControlResponse CreateOriginAccessControl(CreateOriginAccessControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -2228,7 +2228,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
         public virtual Task<CreateOriginAccessControlResponse> CreateOriginAccessControlAsync(CreateOriginAccessControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -2240,7 +2240,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateOriginRequestPolicyResponse CreateOriginRequestPolicy(CreateOriginRequestPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -2328,7 +2328,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy">REST API Reference for CreateOriginRequestPolicy Operation</seealso>
         public virtual Task<CreateOriginRequestPolicyResponse> CreateOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
 
@@ -2373,7 +2373,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
         public virtual Task<CreatePublicKeyResponse> CreatePublicKeyAsync(CreatePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
 
@@ -2385,7 +2385,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateRealtimeLogConfigResponse CreateRealtimeLogConfig(CreateRealtimeLogConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
         public virtual Task<CreateRealtimeLogConfigResponse> CreateRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateResponseHeadersPolicyResponse CreateResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -2538,7 +2538,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
         public virtual Task<CreateResponseHeadersPolicyResponse> CreateResponseHeadersPolicyAsync(CreateResponseHeadersPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -2550,7 +2550,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -2615,7 +2615,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -2627,7 +2627,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
 
@@ -2695,7 +2695,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamingDistributionWithTagsResponseUnmarshaller.Instance;
 
@@ -2707,7 +2707,7 @@ namespace Amazon.CloudFront
 
         internal virtual CreateVpcOriginResponse CreateVpcOrigin(CreateVpcOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcOriginResponseUnmarshaller.Instance;
 
@@ -2749,7 +2749,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
         public virtual Task<CreateVpcOriginResponse> CreateVpcOriginAsync(CreateVpcOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcOriginResponseUnmarshaller.Instance;
 
@@ -2761,7 +2761,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteAnycastIpListResponse DeleteAnycastIpList(DeleteAnycastIpListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnycastIpListResponseUnmarshaller.Instance;
 
@@ -2806,7 +2806,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
         public virtual Task<DeleteAnycastIpListResponse> DeleteAnycastIpListAsync(DeleteAnycastIpListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnycastIpListResponseUnmarshaller.Instance;
 
@@ -2818,7 +2818,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteCachePolicyResponse DeleteCachePolicy(DeleteCachePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCachePolicyResponseUnmarshaller.Instance;
 
@@ -2869,7 +2869,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
         public virtual Task<DeleteCachePolicyResponse> DeleteCachePolicyAsync(DeleteCachePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCachePolicyResponseUnmarshaller.Instance;
 
@@ -2885,7 +2885,7 @@ namespace Amazon.CloudFront
         }
         internal virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -2951,7 +2951,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -2963,7 +2963,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteConnectionGroupResponse DeleteConnectionGroup(DeleteConnectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionGroupResponseUnmarshaller.Instance;
 
@@ -3002,7 +3002,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionGroup">REST API Reference for DeleteConnectionGroup Operation</seealso>
         public virtual Task<DeleteConnectionGroupResponse> DeleteConnectionGroupAsync(DeleteConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionGroupResponseUnmarshaller.Instance;
 
@@ -3014,7 +3014,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteContinuousDeploymentPolicyResponse DeleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -3061,7 +3061,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
         public virtual Task<DeleteContinuousDeploymentPolicyResponse> DeleteContinuousDeploymentPolicyAsync(DeleteContinuousDeploymentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -3077,7 +3077,7 @@ namespace Amazon.CloudFront
         }
         internal virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
@@ -3151,7 +3151,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
@@ -3163,7 +3163,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteDistributionTenantResponse DeleteDistributionTenant(DeleteDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionTenantResponseUnmarshaller.Instance;
 
@@ -3206,7 +3206,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionTenant">REST API Reference for DeleteDistributionTenant Operation</seealso>
         public virtual Task<DeleteDistributionTenantResponse> DeleteDistributionTenantAsync(DeleteDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDistributionTenantResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -3254,7 +3254,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         public virtual Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -3266,7 +3266,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -3302,7 +3302,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         public virtual Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -3314,7 +3314,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -3362,7 +3362,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -3374,7 +3374,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteKeyGroupResponse DeleteKeyGroup(DeleteKeyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyGroupResponseUnmarshaller.Instance;
 
@@ -3419,7 +3419,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyGroup">REST API Reference for DeleteKeyGroup Operation</seealso>
         public virtual Task<DeleteKeyGroupResponse> DeleteKeyGroupAsync(DeleteKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyGroupResponseUnmarshaller.Instance;
 
@@ -3431,7 +3431,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteKeyValueStoreResponse DeleteKeyValueStore(DeleteKeyValueStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -3470,7 +3470,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
         public virtual Task<DeleteKeyValueStoreResponse> DeleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -3482,7 +3482,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteMonitoringSubscriptionResponse DeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -3515,7 +3515,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
         public virtual Task<DeleteMonitoringSubscriptionResponse> DeleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -3527,7 +3527,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteOriginAccessControlResponse DeleteOriginAccessControl(DeleteOriginAccessControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -3570,7 +3570,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
         public virtual Task<DeleteOriginAccessControlResponse> DeleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -3582,7 +3582,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteOriginRequestPolicyResponse DeleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -3634,7 +3634,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
         public virtual Task<DeleteOriginRequestPolicyResponse> DeleteOriginRequestPolicyAsync(DeleteOriginRequestPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -3646,7 +3646,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
@@ -3682,7 +3682,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         public virtual Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
 
@@ -3694,7 +3694,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteRealtimeLogConfigResponse DeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -3741,7 +3741,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
         public virtual Task<DeleteRealtimeLogConfigResponse> DeleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -3753,7 +3753,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteResponseHeadersPolicyResponse DeleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -3805,7 +3805,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
         public virtual Task<DeleteResponseHeadersPolicyResponse> DeleteResponseHeadersPolicyAsync(DeleteResponseHeadersPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -3821,7 +3821,7 @@ namespace Amazon.CloudFront
         }
         internal virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -3999,7 +3999,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -4011,7 +4011,7 @@ namespace Amazon.CloudFront
 
         internal virtual DeleteVpcOriginResponse DeleteVpcOrigin(DeleteVpcOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcOriginResponseUnmarshaller.Instance;
 
@@ -4056,7 +4056,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
         public virtual Task<DeleteVpcOriginResponse> DeleteVpcOriginAsync(DeleteVpcOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcOriginResponseUnmarshaller.Instance;
 
@@ -4068,7 +4068,7 @@ namespace Amazon.CloudFront
 
         internal virtual DescribeFunctionResponse DescribeFunction(DescribeFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFunctionResponseUnmarshaller.Instance;
 
@@ -4102,7 +4102,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction">REST API Reference for DescribeFunction Operation</seealso>
         public virtual Task<DescribeFunctionResponse> DescribeFunctionAsync(DescribeFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFunctionResponseUnmarshaller.Instance;
 
@@ -4114,7 +4114,7 @@ namespace Amazon.CloudFront
 
         internal virtual DescribeKeyValueStoreResponse DescribeKeyValueStore(DescribeKeyValueStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -4147,7 +4147,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
         public virtual Task<DescribeKeyValueStoreResponse> DescribeKeyValueStoreAsync(DescribeKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -4159,7 +4159,7 @@ namespace Amazon.CloudFront
 
         internal virtual DisassociateDistributionTenantWebACLResponse DisassociateDistributionTenantWebACL(DisassociateDistributionTenantWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDistributionTenantWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDistributionTenantWebACLResponseUnmarshaller.Instance;
 
@@ -4195,7 +4195,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionTenantWebACL">REST API Reference for DisassociateDistributionTenantWebACL Operation</seealso>
         public virtual Task<DisassociateDistributionTenantWebACLResponse> DisassociateDistributionTenantWebACLAsync(DisassociateDistributionTenantWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDistributionTenantWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDistributionTenantWebACLResponseUnmarshaller.Instance;
 
@@ -4207,7 +4207,7 @@ namespace Amazon.CloudFront
 
         internal virtual DisassociateDistributionWebACLResponse DisassociateDistributionWebACL(DisassociateDistributionWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDistributionWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDistributionWebACLResponseUnmarshaller.Instance;
 
@@ -4243,7 +4243,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DisassociateDistributionWebACL">REST API Reference for DisassociateDistributionWebACL Operation</seealso>
         public virtual Task<DisassociateDistributionWebACLResponse> DisassociateDistributionWebACLAsync(DisassociateDistributionWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDistributionWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDistributionWebACLResponseUnmarshaller.Instance;
 
@@ -4255,7 +4255,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetAnycastIpListResponse GetAnycastIpList(GetAnycastIpListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnycastIpListResponseUnmarshaller.Instance;
 
@@ -4288,7 +4288,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
         public virtual Task<GetAnycastIpListResponse> GetAnycastIpListAsync(GetAnycastIpListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnycastIpListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnycastIpListResponseUnmarshaller.Instance;
 
@@ -4300,7 +4300,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetCachePolicyResponse GetCachePolicy(GetCachePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCachePolicyResponseUnmarshaller.Instance;
 
@@ -4343,7 +4343,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy">REST API Reference for GetCachePolicy Operation</seealso>
         public virtual Task<GetCachePolicyResponse> GetCachePolicyAsync(GetCachePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCachePolicyResponseUnmarshaller.Instance;
 
@@ -4355,7 +4355,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetCachePolicyConfigResponse GetCachePolicyConfig(GetCachePolicyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCachePolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCachePolicyConfigResponseUnmarshaller.Instance;
 
@@ -4390,7 +4390,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig">REST API Reference for GetCachePolicyConfig Operation</seealso>
         public virtual Task<GetCachePolicyConfigResponse> GetCachePolicyConfigAsync(GetCachePolicyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCachePolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCachePolicyConfigResponseUnmarshaller.Instance;
 
@@ -4406,7 +4406,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -4454,7 +4454,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -4470,7 +4470,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
 
@@ -4518,7 +4518,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
 
@@ -4530,7 +4530,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetConnectionGroupResponse GetConnectionGroup(GetConnectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionGroupResponseUnmarshaller.Instance;
 
@@ -4557,7 +4557,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroup">REST API Reference for GetConnectionGroup Operation</seealso>
         public virtual Task<GetConnectionGroupResponse> GetConnectionGroupAsync(GetConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionGroupResponseUnmarshaller.Instance;
 
@@ -4569,7 +4569,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetConnectionGroupByRoutingEndpointResponse GetConnectionGroupByRoutingEndpoint(GetConnectionGroupByRoutingEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionGroupByRoutingEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionGroupByRoutingEndpointResponseUnmarshaller.Instance;
 
@@ -4596,7 +4596,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionGroupByRoutingEndpoint">REST API Reference for GetConnectionGroupByRoutingEndpoint Operation</seealso>
         public virtual Task<GetConnectionGroupByRoutingEndpointResponse> GetConnectionGroupByRoutingEndpointAsync(GetConnectionGroupByRoutingEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionGroupByRoutingEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionGroupByRoutingEndpointResponseUnmarshaller.Instance;
 
@@ -4608,7 +4608,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetContinuousDeploymentPolicyResponse GetContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -4636,7 +4636,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicy">REST API Reference for GetContinuousDeploymentPolicy Operation</seealso>
         public virtual Task<GetContinuousDeploymentPolicyResponse> GetContinuousDeploymentPolicyAsync(GetContinuousDeploymentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -4648,7 +4648,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetContinuousDeploymentPolicyConfigResponse GetContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContinuousDeploymentPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContinuousDeploymentPolicyConfigResponseUnmarshaller.Instance;
 
@@ -4675,7 +4675,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetContinuousDeploymentPolicyConfig">REST API Reference for GetContinuousDeploymentPolicyConfig Operation</seealso>
         public virtual Task<GetContinuousDeploymentPolicyConfigResponse> GetContinuousDeploymentPolicyConfigAsync(GetContinuousDeploymentPolicyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContinuousDeploymentPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContinuousDeploymentPolicyConfigResponseUnmarshaller.Instance;
 
@@ -4691,7 +4691,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionResponseUnmarshaller.Instance;
 
@@ -4739,7 +4739,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionResponseUnmarshaller.Instance;
 
@@ -4755,7 +4755,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
 
@@ -4803,7 +4803,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
 
@@ -4815,7 +4815,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetDistributionTenantResponse GetDistributionTenant(GetDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionTenantResponseUnmarshaller.Instance;
 
@@ -4842,7 +4842,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenant">REST API Reference for GetDistributionTenant Operation</seealso>
         public virtual Task<GetDistributionTenantResponse> GetDistributionTenantAsync(GetDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionTenantResponseUnmarshaller.Instance;
 
@@ -4854,7 +4854,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetDistributionTenantByDomainResponse GetDistributionTenantByDomain(GetDistributionTenantByDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionTenantByDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionTenantByDomainResponseUnmarshaller.Instance;
 
@@ -4881,7 +4881,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionTenantByDomain">REST API Reference for GetDistributionTenantByDomain Operation</seealso>
         public virtual Task<GetDistributionTenantByDomainResponse> GetDistributionTenantByDomainAsync(GetDistributionTenantByDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDistributionTenantByDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDistributionTenantByDomainResponseUnmarshaller.Instance;
 
@@ -4893,7 +4893,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
 
@@ -4920,7 +4920,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
         public virtual Task<GetFieldLevelEncryptionResponse> GetFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
 
@@ -4932,7 +4932,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -4959,7 +4959,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
         public virtual Task<GetFieldLevelEncryptionConfigResponse> GetFieldLevelEncryptionConfigAsync(GetFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -4971,7 +4971,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -4998,7 +4998,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
         public virtual Task<GetFieldLevelEncryptionProfileResponse> GetFieldLevelEncryptionProfileAsync(GetFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -5010,7 +5010,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
 
@@ -5037,7 +5037,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
         public virtual Task<GetFieldLevelEncryptionProfileConfigResponse> GetFieldLevelEncryptionProfileConfigAsync(GetFieldLevelEncryptionProfileConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
 
@@ -5049,7 +5049,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -5083,7 +5083,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -5095,7 +5095,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvalidationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvalidationResponseUnmarshaller.Instance;
 
@@ -5125,7 +5125,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvalidationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvalidationResponseUnmarshaller.Instance;
 
@@ -5137,7 +5137,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetInvalidationForDistributionTenantResponse GetInvalidationForDistributionTenant(GetInvalidationForDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvalidationForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvalidationForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -5167,7 +5167,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidationForDistributionTenant">REST API Reference for GetInvalidationForDistributionTenant Operation</seealso>
         public virtual Task<GetInvalidationForDistributionTenantResponse> GetInvalidationForDistributionTenantAsync(GetInvalidationForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvalidationForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvalidationForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -5179,7 +5179,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetKeyGroupResponse GetKeyGroup(GetKeyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyGroupResponseUnmarshaller.Instance;
 
@@ -5211,7 +5211,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroup">REST API Reference for GetKeyGroup Operation</seealso>
         public virtual Task<GetKeyGroupResponse> GetKeyGroupAsync(GetKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyGroupResponseUnmarshaller.Instance;
 
@@ -5223,7 +5223,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetKeyGroupConfigResponse GetKeyGroupConfig(GetKeyGroupConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyGroupConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyGroupConfigResponseUnmarshaller.Instance;
 
@@ -5256,7 +5256,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetKeyGroupConfig">REST API Reference for GetKeyGroupConfig Operation</seealso>
         public virtual Task<GetKeyGroupConfigResponse> GetKeyGroupConfigAsync(GetKeyGroupConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyGroupConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyGroupConfigResponseUnmarshaller.Instance;
 
@@ -5268,7 +5268,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetManagedCertificateDetailsResponse GetManagedCertificateDetails(GetManagedCertificateDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedCertificateDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedCertificateDetailsResponseUnmarshaller.Instance;
 
@@ -5295,7 +5295,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetManagedCertificateDetails">REST API Reference for GetManagedCertificateDetails Operation</seealso>
         public virtual Task<GetManagedCertificateDetailsResponse> GetManagedCertificateDetailsAsync(GetManagedCertificateDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedCertificateDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedCertificateDetailsResponseUnmarshaller.Instance;
 
@@ -5307,7 +5307,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetMonitoringSubscriptionResponse GetMonitoringSubscription(GetMonitoringSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -5341,7 +5341,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
         public virtual Task<GetMonitoringSubscriptionResponse> GetMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitoringSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitoringSubscriptionResponseUnmarshaller.Instance;
 
@@ -5353,7 +5353,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetOriginAccessControlResponse GetOriginAccessControl(GetOriginAccessControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -5380,7 +5380,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
         public virtual Task<GetOriginAccessControlResponse> GetOriginAccessControlAsync(GetOriginAccessControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -5392,7 +5392,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetOriginAccessControlConfigResponse GetOriginAccessControlConfig(GetOriginAccessControlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginAccessControlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginAccessControlConfigResponseUnmarshaller.Instance;
 
@@ -5419,7 +5419,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
         public virtual Task<GetOriginAccessControlConfigResponse> GetOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginAccessControlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginAccessControlConfigResponseUnmarshaller.Instance;
 
@@ -5431,7 +5431,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetOriginRequestPolicyResponse GetOriginRequestPolicy(GetOriginRequestPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -5475,7 +5475,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy">REST API Reference for GetOriginRequestPolicy Operation</seealso>
         public virtual Task<GetOriginRequestPolicyResponse> GetOriginRequestPolicyAsync(GetOriginRequestPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -5487,7 +5487,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetOriginRequestPolicyConfigResponse GetOriginRequestPolicyConfig(GetOriginRequestPolicyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginRequestPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginRequestPolicyConfigResponseUnmarshaller.Instance;
 
@@ -5523,7 +5523,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig">REST API Reference for GetOriginRequestPolicyConfig Operation</seealso>
         public virtual Task<GetOriginRequestPolicyConfigResponse> GetOriginRequestPolicyConfigAsync(GetOriginRequestPolicyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginRequestPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginRequestPolicyConfigResponseUnmarshaller.Instance;
 
@@ -5535,7 +5535,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
@@ -5562,7 +5562,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         public virtual Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
 
@@ -5574,7 +5574,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
 
@@ -5601,7 +5601,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
         public virtual Task<GetPublicKeyConfigResponse> GetPublicKeyConfigAsync(GetPublicKeyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
 
@@ -5613,7 +5613,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetRealtimeLogConfigResponse GetRealtimeLogConfig(GetRealtimeLogConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -5650,7 +5650,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig">REST API Reference for GetRealtimeLogConfig Operation</seealso>
         public virtual Task<GetRealtimeLogConfigResponse> GetRealtimeLogConfigAsync(GetRealtimeLogConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -5662,7 +5662,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetResponseHeadersPolicyResponse GetResponseHeadersPolicy(GetResponseHeadersPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -5699,7 +5699,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
         public virtual Task<GetResponseHeadersPolicyResponse> GetResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -5711,7 +5711,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetResponseHeadersPolicyConfigResponse GetResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponseHeadersPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponseHeadersPolicyConfigResponseUnmarshaller.Instance;
 
@@ -5747,7 +5747,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
         public virtual Task<GetResponseHeadersPolicyConfigResponse> GetResponseHeadersPolicyConfigAsync(GetResponseHeadersPolicyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponseHeadersPolicyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponseHeadersPolicyConfigResponseUnmarshaller.Instance;
 
@@ -5763,7 +5763,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -5811,7 +5811,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -5827,7 +5827,7 @@ namespace Amazon.CloudFront
         }
         internal virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
 
@@ -5875,7 +5875,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.Instance;
 
@@ -5887,7 +5887,7 @@ namespace Amazon.CloudFront
 
         internal virtual GetVpcOriginResponse GetVpcOrigin(GetVpcOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcOriginResponseUnmarshaller.Instance;
 
@@ -5920,7 +5920,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
         public virtual Task<GetVpcOriginResponse> GetVpcOriginAsync(GetVpcOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcOriginResponseUnmarshaller.Instance;
 
@@ -5932,7 +5932,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListAnycastIpListsResponse ListAnycastIpLists(ListAnycastIpListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnycastIpListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnycastIpListsResponseUnmarshaller.Instance;
 
@@ -5965,7 +5965,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
         public virtual Task<ListAnycastIpListsResponse> ListAnycastIpListsAsync(ListAnycastIpListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnycastIpListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnycastIpListsResponseUnmarshaller.Instance;
 
@@ -5977,7 +5977,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListCachePoliciesResponse ListCachePolicies(ListCachePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCachePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCachePoliciesResponseUnmarshaller.Instance;
 
@@ -6021,7 +6021,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies">REST API Reference for ListCachePolicies Operation</seealso>
         public virtual Task<ListCachePoliciesResponse> ListCachePoliciesAsync(ListCachePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCachePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCachePoliciesResponseUnmarshaller.Instance;
 
@@ -6037,7 +6037,7 @@ namespace Amazon.CloudFront
         }
         internal virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
 
@@ -6079,7 +6079,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.Instance;
 
@@ -6091,7 +6091,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListConflictingAliasesResponse ListConflictingAliases(ListConflictingAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConflictingAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConflictingAliasesResponseUnmarshaller.Instance;
 
@@ -6166,7 +6166,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConflictingAliases">REST API Reference for ListConflictingAliases Operation</seealso>
         public virtual Task<ListConflictingAliasesResponse> ListConflictingAliasesAsync(ListConflictingAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConflictingAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConflictingAliasesResponseUnmarshaller.Instance;
 
@@ -6178,7 +6178,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListConnectionGroupsResponse ListConnectionGroups(ListConnectionGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionGroupsResponseUnmarshaller.Instance;
 
@@ -6208,7 +6208,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionGroups">REST API Reference for ListConnectionGroups Operation</seealso>
         public virtual Task<ListConnectionGroupsResponse> ListConnectionGroupsAsync(ListConnectionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionGroupsResponseUnmarshaller.Instance;
 
@@ -6220,7 +6220,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListContinuousDeploymentPoliciesResponse ListContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContinuousDeploymentPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContinuousDeploymentPoliciesResponseUnmarshaller.Instance;
 
@@ -6259,7 +6259,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListContinuousDeploymentPolicies">REST API Reference for ListContinuousDeploymentPolicies Operation</seealso>
         public virtual Task<ListContinuousDeploymentPoliciesResponse> ListContinuousDeploymentPoliciesAsync(ListContinuousDeploymentPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContinuousDeploymentPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContinuousDeploymentPoliciesResponseUnmarshaller.Instance;
 
@@ -6275,7 +6275,7 @@ namespace Amazon.CloudFront
         }
         internal virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsResponseUnmarshaller.Instance;
 
@@ -6317,7 +6317,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsResponseUnmarshaller.Instance;
 
@@ -6329,7 +6329,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByAnycastIpListIdResponse ListDistributionsByAnycastIpListId(ListDistributionsByAnycastIpListIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByAnycastIpListIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByAnycastIpListIdResponseUnmarshaller.Instance;
 
@@ -6362,7 +6362,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
         public virtual Task<ListDistributionsByAnycastIpListIdResponse> ListDistributionsByAnycastIpListIdAsync(ListDistributionsByAnycastIpListIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByAnycastIpListIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByAnycastIpListIdResponseUnmarshaller.Instance;
 
@@ -6374,7 +6374,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByCachePolicyIdResponse ListDistributionsByCachePolicyId(ListDistributionsByCachePolicyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByCachePolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByCachePolicyIdResponseUnmarshaller.Instance;
 
@@ -6414,7 +6414,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId">REST API Reference for ListDistributionsByCachePolicyId Operation</seealso>
         public virtual Task<ListDistributionsByCachePolicyIdResponse> ListDistributionsByCachePolicyIdAsync(ListDistributionsByCachePolicyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByCachePolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByCachePolicyIdResponseUnmarshaller.Instance;
 
@@ -6426,7 +6426,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByConnectionModeResponse ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByConnectionModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByConnectionModeResponseUnmarshaller.Instance;
 
@@ -6453,7 +6453,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionMode">REST API Reference for ListDistributionsByConnectionMode Operation</seealso>
         public virtual Task<ListDistributionsByConnectionModeResponse> ListDistributionsByConnectionModeAsync(ListDistributionsByConnectionModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByConnectionModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByConnectionModeResponseUnmarshaller.Instance;
 
@@ -6465,7 +6465,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByKeyGroupResponse ListDistributionsByKeyGroup(ListDistributionsByKeyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByKeyGroupResponseUnmarshaller.Instance;
 
@@ -6502,7 +6502,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByKeyGroup">REST API Reference for ListDistributionsByKeyGroup Operation</seealso>
         public virtual Task<ListDistributionsByKeyGroupResponse> ListDistributionsByKeyGroupAsync(ListDistributionsByKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByKeyGroupResponseUnmarshaller.Instance;
 
@@ -6514,7 +6514,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByOriginRequestPolicyIdResponse ListDistributionsByOriginRequestPolicyId(ListDistributionsByOriginRequestPolicyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByOriginRequestPolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByOriginRequestPolicyIdResponseUnmarshaller.Instance;
 
@@ -6554,7 +6554,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId">REST API Reference for ListDistributionsByOriginRequestPolicyId Operation</seealso>
         public virtual Task<ListDistributionsByOriginRequestPolicyIdResponse> ListDistributionsByOriginRequestPolicyIdAsync(ListDistributionsByOriginRequestPolicyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByOriginRequestPolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByOriginRequestPolicyIdResponseUnmarshaller.Instance;
 
@@ -6566,7 +6566,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByRealtimeLogConfigResponse ListDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -6606,7 +6606,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig">REST API Reference for ListDistributionsByRealtimeLogConfig Operation</seealso>
         public virtual Task<ListDistributionsByRealtimeLogConfigResponse> ListDistributionsByRealtimeLogConfigAsync(ListDistributionsByRealtimeLogConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -6618,7 +6618,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByResponseHeadersPolicyIdResponse ListDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByResponseHeadersPolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByResponseHeadersPolicyIdResponseUnmarshaller.Instance;
 
@@ -6658,7 +6658,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
         public virtual Task<ListDistributionsByResponseHeadersPolicyIdResponse> ListDistributionsByResponseHeadersPolicyIdAsync(ListDistributionsByResponseHeadersPolicyIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByResponseHeadersPolicyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByResponseHeadersPolicyIdResponseUnmarshaller.Instance;
 
@@ -6670,7 +6670,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByVpcOriginIdResponse ListDistributionsByVpcOriginId(ListDistributionsByVpcOriginIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByVpcOriginIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByVpcOriginIdResponseUnmarshaller.Instance;
 
@@ -6703,7 +6703,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
         public virtual Task<ListDistributionsByVpcOriginIdResponse> ListDistributionsByVpcOriginIdAsync(ListDistributionsByVpcOriginIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByVpcOriginIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByVpcOriginIdResponseUnmarshaller.Instance;
 
@@ -6715,7 +6715,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
 
@@ -6744,7 +6744,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
 
@@ -6756,7 +6756,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionTenantsResponse ListDistributionTenants(ListDistributionTenantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionTenantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionTenantsResponseUnmarshaller.Instance;
 
@@ -6786,7 +6786,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenants">REST API Reference for ListDistributionTenants Operation</seealso>
         public virtual Task<ListDistributionTenantsResponse> ListDistributionTenantsAsync(ListDistributionTenantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionTenantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionTenantsResponseUnmarshaller.Instance;
 
@@ -6798,7 +6798,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDistributionTenantsByCustomizationResponse ListDistributionTenantsByCustomization(ListDistributionTenantsByCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionTenantsByCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionTenantsByCustomizationResponseUnmarshaller.Instance;
 
@@ -6834,7 +6834,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionTenantsByCustomization">REST API Reference for ListDistributionTenantsByCustomization Operation</seealso>
         public virtual Task<ListDistributionTenantsByCustomizationResponse> ListDistributionTenantsByCustomizationAsync(ListDistributionTenantsByCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDistributionTenantsByCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDistributionTenantsByCustomizationResponseUnmarshaller.Instance;
 
@@ -6846,7 +6846,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListDomainConflictsResponse ListDomainConflicts(ListDomainConflictsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainConflictsResponseUnmarshaller.Instance;
 
@@ -6931,7 +6931,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDomainConflicts">REST API Reference for ListDomainConflicts Operation</seealso>
         public virtual Task<ListDomainConflictsResponse> ListDomainConflictsAsync(ListDomainConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainConflictsResponseUnmarshaller.Instance;
 
@@ -6943,7 +6943,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
 
@@ -6968,7 +6968,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
         public virtual Task<ListFieldLevelEncryptionConfigsResponse> ListFieldLevelEncryptionConfigsAsync(ListFieldLevelEncryptionConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
 
@@ -6980,7 +6980,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
 
@@ -7005,7 +7005,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
         public virtual Task<ListFieldLevelEncryptionProfilesResponse> ListFieldLevelEncryptionProfilesAsync(ListFieldLevelEncryptionProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
 
@@ -7017,7 +7017,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -7058,7 +7058,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -7070,7 +7070,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvalidationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
 
@@ -7100,7 +7100,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvalidationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
 
@@ -7112,7 +7112,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListInvalidationsForDistributionTenantResponse ListInvalidationsForDistributionTenant(ListInvalidationsForDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvalidationsForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvalidationsForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -7142,7 +7142,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsForDistributionTenant">REST API Reference for ListInvalidationsForDistributionTenant Operation</seealso>
         public virtual Task<ListInvalidationsForDistributionTenantResponse> ListInvalidationsForDistributionTenantAsync(ListInvalidationsForDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvalidationsForDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvalidationsForDistributionTenantResponseUnmarshaller.Instance;
 
@@ -7154,7 +7154,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListKeyGroupsResponse ListKeyGroups(ListKeyGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyGroupsResponseUnmarshaller.Instance;
 
@@ -7187,7 +7187,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyGroups">REST API Reference for ListKeyGroups Operation</seealso>
         public virtual Task<ListKeyGroupsResponse> ListKeyGroupsAsync(ListKeyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyGroupsResponseUnmarshaller.Instance;
 
@@ -7199,7 +7199,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListKeyValueStoresResponse ListKeyValueStores(ListKeyValueStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyValueStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyValueStoresResponseUnmarshaller.Instance;
 
@@ -7229,7 +7229,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
         public virtual Task<ListKeyValueStoresResponse> ListKeyValueStoresAsync(ListKeyValueStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyValueStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyValueStoresResponseUnmarshaller.Instance;
 
@@ -7241,7 +7241,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListOriginAccessControlsResponse ListOriginAccessControls(ListOriginAccessControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginAccessControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginAccessControlsResponseUnmarshaller.Instance;
 
@@ -7282,7 +7282,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
         public virtual Task<ListOriginAccessControlsResponse> ListOriginAccessControlsAsync(ListOriginAccessControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginAccessControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginAccessControlsResponseUnmarshaller.Instance;
 
@@ -7294,7 +7294,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListOriginRequestPoliciesResponse ListOriginRequestPolicies(ListOriginRequestPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginRequestPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginRequestPoliciesResponseUnmarshaller.Instance;
 
@@ -7338,7 +7338,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies">REST API Reference for ListOriginRequestPolicies Operation</seealso>
         public virtual Task<ListOriginRequestPoliciesResponse> ListOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginRequestPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginRequestPoliciesResponseUnmarshaller.Instance;
 
@@ -7350,7 +7350,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -7374,7 +7374,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -7386,7 +7386,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListRealtimeLogConfigsResponse ListRealtimeLogConfigs(ListRealtimeLogConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeLogConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeLogConfigsResponseUnmarshaller.Instance;
 
@@ -7425,7 +7425,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
         public virtual Task<ListRealtimeLogConfigsResponse> ListRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeLogConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeLogConfigsResponseUnmarshaller.Instance;
 
@@ -7437,7 +7437,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListResponseHeadersPoliciesResponse ListResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResponseHeadersPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResponseHeadersPoliciesResponseUnmarshaller.Instance;
 
@@ -7481,7 +7481,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
         public virtual Task<ListResponseHeadersPoliciesResponse> ListResponseHeadersPoliciesAsync(ListResponseHeadersPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResponseHeadersPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResponseHeadersPoliciesResponseUnmarshaller.Instance;
 
@@ -7497,7 +7497,7 @@ namespace Amazon.CloudFront
         }
         internal virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamingDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
 
@@ -7539,7 +7539,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamingDistributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamingDistributionsResponseUnmarshaller.Instance;
 
@@ -7551,7 +7551,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7585,7 +7585,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7597,7 +7597,7 @@ namespace Amazon.CloudFront
 
         internal virtual ListVpcOriginsResponse ListVpcOrigins(ListVpcOriginsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcOriginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcOriginsResponseUnmarshaller.Instance;
 
@@ -7630,7 +7630,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
         public virtual Task<ListVpcOriginsResponse> ListVpcOriginsAsync(ListVpcOriginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcOriginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcOriginsResponseUnmarshaller.Instance;
 
@@ -7642,7 +7642,7 @@ namespace Amazon.CloudFront
 
         internal virtual PublishFunctionResponse PublishFunction(PublishFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishFunctionResponseUnmarshaller.Instance;
 
@@ -7691,7 +7691,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction">REST API Reference for PublishFunction Operation</seealso>
         public virtual Task<PublishFunctionResponse> PublishFunctionAsync(PublishFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishFunctionResponseUnmarshaller.Instance;
 
@@ -7703,7 +7703,7 @@ namespace Amazon.CloudFront
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7737,7 +7737,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7749,7 +7749,7 @@ namespace Amazon.CloudFront
 
         internal virtual TestFunctionResponse TestFunction(TestFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestFunctionResponseUnmarshaller.Instance;
 
@@ -7802,7 +7802,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction">REST API Reference for TestFunction Operation</seealso>
         public virtual Task<TestFunctionResponse> TestFunctionAsync(TestFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestFunctionResponseUnmarshaller.Instance;
 
@@ -7814,7 +7814,7 @@ namespace Amazon.CloudFront
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7848,7 +7848,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7860,7 +7860,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateCachePolicyResponse UpdateCachePolicy(UpdateCachePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCachePolicyResponseUnmarshaller.Instance;
 
@@ -7949,7 +7949,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy">REST API Reference for UpdateCachePolicy Operation</seealso>
         public virtual Task<UpdateCachePolicyResponse> UpdateCachePolicyAsync(UpdateCachePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCachePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCachePolicyResponseUnmarshaller.Instance;
 
@@ -7961,7 +7961,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -8007,7 +8007,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
 
@@ -8019,7 +8019,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateConnectionGroupResponse UpdateConnectionGroup(UpdateConnectionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionGroupResponseUnmarshaller.Instance;
 
@@ -8064,7 +8064,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionGroup">REST API Reference for UpdateConnectionGroup Operation</seealso>
         public virtual Task<UpdateConnectionGroupResponse> UpdateConnectionGroupAsync(UpdateConnectionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionGroupResponseUnmarshaller.Instance;
 
@@ -8076,7 +8076,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateContinuousDeploymentPolicyResponse UpdateContinuousDeploymentPolicy(UpdateContinuousDeploymentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -8143,7 +8143,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateContinuousDeploymentPolicy">REST API Reference for UpdateContinuousDeploymentPolicy Operation</seealso>
         public virtual Task<UpdateContinuousDeploymentPolicyResponse> UpdateContinuousDeploymentPolicyAsync(UpdateContinuousDeploymentPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContinuousDeploymentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContinuousDeploymentPolicyResponseUnmarshaller.Instance;
 
@@ -8155,7 +8155,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
@@ -8460,7 +8460,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
@@ -8472,7 +8472,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateDistributionTenantResponse UpdateDistributionTenant(UpdateDistributionTenantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionTenantResponseUnmarshaller.Instance;
 
@@ -8520,7 +8520,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionTenant">REST API Reference for UpdateDistributionTenant Operation</seealso>
         public virtual Task<UpdateDistributionTenantResponse> UpdateDistributionTenantAsync(UpdateDistributionTenantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionTenantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionTenantResponseUnmarshaller.Instance;
 
@@ -8532,7 +8532,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateDistributionWithStagingConfigResponse UpdateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionWithStagingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionWithStagingConfigResponseUnmarshaller.Instance;
 
@@ -8809,7 +8809,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig">REST API Reference for UpdateDistributionWithStagingConfig Operation</seealso>
         public virtual Task<UpdateDistributionWithStagingConfigResponse> UpdateDistributionWithStagingConfigAsync(UpdateDistributionWithStagingConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDistributionWithStagingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDistributionWithStagingConfigResponseUnmarshaller.Instance;
 
@@ -8821,7 +8821,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateDomainAssociationResponse UpdateDomainAssociation(UpdateDomainAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
 
@@ -8888,7 +8888,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDomainAssociation">REST API Reference for UpdateDomainAssociation Operation</seealso>
         public virtual Task<UpdateDomainAssociationResponse> UpdateDomainAssociationAsync(UpdateDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainAssociationResponseUnmarshaller.Instance;
 
@@ -8900,7 +8900,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -8954,7 +8954,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
         public virtual Task<UpdateFieldLevelEncryptionConfigResponse> UpdateFieldLevelEncryptionConfigAsync(UpdateFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -8966,7 +8966,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -9023,7 +9023,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
         public virtual Task<UpdateFieldLevelEncryptionProfileResponse> UpdateFieldLevelEncryptionProfileAsync(UpdateFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
 
@@ -9035,7 +9035,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
@@ -9087,7 +9087,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         public virtual Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
 
@@ -9099,7 +9099,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateKeyGroupResponse UpdateKeyGroup(UpdateKeyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyGroupResponseUnmarshaller.Instance;
 
@@ -9163,7 +9163,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyGroup">REST API Reference for UpdateKeyGroup Operation</seealso>
         public virtual Task<UpdateKeyGroupResponse> UpdateKeyGroupAsync(UpdateKeyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyGroupResponseUnmarshaller.Instance;
 
@@ -9175,7 +9175,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateKeyValueStoreResponse UpdateKeyValueStore(UpdateKeyValueStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -9214,7 +9214,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
         public virtual Task<UpdateKeyValueStoreResponse> UpdateKeyValueStoreAsync(UpdateKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyValueStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyValueStoreResponseUnmarshaller.Instance;
 
@@ -9226,7 +9226,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateOriginAccessControlResponse UpdateOriginAccessControl(UpdateOriginAccessControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -9268,7 +9268,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
         public virtual Task<UpdateOriginAccessControlResponse> UpdateOriginAccessControlAsync(UpdateOriginAccessControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginAccessControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginAccessControlResponseUnmarshaller.Instance;
 
@@ -9280,7 +9280,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateOriginRequestPolicyResponse UpdateOriginRequestPolicy(UpdateOriginRequestPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -9363,7 +9363,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy">REST API Reference for UpdateOriginRequestPolicy Operation</seealso>
         public virtual Task<UpdateOriginRequestPolicyResponse> UpdateOriginRequestPolicyAsync(UpdateOriginRequestPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginRequestPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginRequestPolicyResponseUnmarshaller.Instance;
 
@@ -9375,7 +9375,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
 
@@ -9417,7 +9417,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         public virtual Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
 
@@ -9429,7 +9429,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateRealtimeLogConfigResponse UpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -9484,7 +9484,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
         public virtual Task<UpdateRealtimeLogConfigResponse> UpdateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRealtimeLogConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRealtimeLogConfigResponseUnmarshaller.Instance;
 
@@ -9496,7 +9496,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateResponseHeadersPolicyResponse UpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -9592,7 +9592,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
         public virtual Task<UpdateResponseHeadersPolicyResponse> UpdateResponseHeadersPolicyAsync(UpdateResponseHeadersPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResponseHeadersPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResponseHeadersPolicyResponseUnmarshaller.Instance;
 
@@ -9604,7 +9604,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -9668,7 +9668,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
 
@@ -9680,7 +9680,7 @@ namespace Amazon.CloudFront
 
         internal virtual UpdateVpcOriginResponse UpdateVpcOrigin(UpdateVpcOriginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcOriginResponseUnmarshaller.Instance;
 
@@ -9734,7 +9734,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
         public virtual Task<UpdateVpcOriginResponse> UpdateVpcOriginAsync(UpdateVpcOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcOriginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcOriginResponseUnmarshaller.Instance;
 
@@ -9746,7 +9746,7 @@ namespace Amazon.CloudFront
 
         internal virtual VerifyDnsConfigurationResponse VerifyDnsConfiguration(VerifyDnsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDnsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDnsConfigurationResponseUnmarshaller.Instance;
 
@@ -9779,7 +9779,7 @@ namespace Amazon.CloudFront
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/VerifyDnsConfiguration">REST API Reference for VerifyDnsConfiguration Operation</seealso>
         public virtual Task<VerifyDnsConfigurationResponse> VerifyDnsConfigurationAsync(VerifyDnsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDnsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDnsConfigurationResponseUnmarshaller.Instance;
 

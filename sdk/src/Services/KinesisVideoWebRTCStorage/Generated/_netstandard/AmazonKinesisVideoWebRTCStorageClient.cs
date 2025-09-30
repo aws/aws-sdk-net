@@ -254,7 +254,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
 
         internal virtual JoinStorageSessionResponse JoinStorageSession(JoinStorageSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JoinStorageSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JoinStorageSessionResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
         public virtual Task<JoinStorageSessionResponse> JoinStorageSessionAsync(JoinStorageSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JoinStorageSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JoinStorageSessionResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
 
         internal virtual JoinStorageSessionAsViewerResponse JoinStorageSessionAsViewer(JoinStorageSessionAsViewerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JoinStorageSessionAsViewerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JoinStorageSessionAsViewerResponseUnmarshaller.Instance;
 
@@ -433,7 +433,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
         public virtual Task<JoinStorageSessionAsViewerResponse> JoinStorageSessionAsViewerAsync(JoinStorageSessionAsViewerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JoinStorageSessionAsViewerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JoinStorageSessionAsViewerResponseUnmarshaller.Instance;
 

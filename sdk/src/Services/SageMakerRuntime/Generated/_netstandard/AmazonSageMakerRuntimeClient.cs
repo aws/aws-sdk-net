@@ -249,7 +249,7 @@ namespace Amazon.SageMakerRuntime
 
         internal virtual InvokeEndpointResponse InvokeEndpoint(InvokeEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
@@ -324,7 +324,7 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">REST API Reference for InvokeEndpoint Operation</seealso>
         public virtual Task<InvokeEndpointResponse> InvokeEndpointAsync(InvokeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.SageMakerRuntime
 
         internal virtual InvokeEndpointAsyncResponse InvokeEndpointAsync(InvokeEndpointAsyncRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointAsyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointAsyncResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointAsync">REST API Reference for InvokeEndpointAsync Operation</seealso>
         public virtual Task<InvokeEndpointAsyncResponse> InvokeEndpointAsyncAsync(InvokeEndpointAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointAsyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointAsyncResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.SageMakerRuntime
 
         internal virtual InvokeEndpointWithResponseStreamResponse InvokeEndpointWithResponseStream(InvokeEndpointWithResponseStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpointWithResponseStream">REST API Reference for InvokeEndpointWithResponseStream Operation</seealso>
         public virtual Task<InvokeEndpointWithResponseStreamResponse> InvokeEndpointWithResponseStreamAsync(InvokeEndpointWithResponseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeEndpointWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeEndpointWithResponseStreamResponseUnmarshaller.Instance;
 

@@ -304,7 +304,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/BatchGetFindings">REST API Reference for BatchGetFindings Operation</seealso>
         public virtual BatchGetFindingsResponse BatchGetFindings(BatchGetFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFindingsResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/BatchGetFindings">REST API Reference for BatchGetFindings Operation</seealso>
         public virtual Task<BatchGetFindingsResponse> BatchGetFindingsAsync(BatchGetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFindingsResponseUnmarshaller.Instance;
             
@@ -376,7 +376,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateScan">REST API Reference for CreateScan Operation</seealso>
         public virtual CreateScanResponse CreateScan(CreateScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScanResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateScan">REST API Reference for CreateScan Operation</seealso>
         public virtual Task<CreateScanResponse> CreateScanAsync(CreateScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScanResponseUnmarshaller.Instance;
             
@@ -455,7 +455,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateUploadUrl">REST API Reference for CreateUploadUrl Operation</seealso>
         public virtual CreateUploadUrlResponse CreateUploadUrl(CreateUploadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadUrlResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/CreateUploadUrl">REST API Reference for CreateUploadUrl Operation</seealso>
         public virtual Task<CreateUploadUrlResponse> CreateUploadUrlAsync(CreateUploadUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadUrlResponseUnmarshaller.Instance;
             
@@ -527,7 +527,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetAccountConfiguration">REST API Reference for GetAccountConfiguration Operation</seealso>
         public virtual GetAccountConfigurationResponse GetAccountConfiguration(GetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetAccountConfiguration">REST API Reference for GetAccountConfiguration Operation</seealso>
         public virtual Task<GetAccountConfigurationResponse> GetAccountConfigurationAsync(GetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountConfigurationResponseUnmarshaller.Instance;
             
@@ -599,7 +599,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsResponseUnmarshaller.Instance;
             
@@ -673,7 +673,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetMetricsSummary">REST API Reference for GetMetricsSummary Operation</seealso>
         public virtual GetMetricsSummaryResponse GetMetricsSummary(GetMetricsSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricsSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricsSummaryResponseUnmarshaller.Instance;
 
@@ -707,7 +707,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetMetricsSummary">REST API Reference for GetMetricsSummary Operation</seealso>
         public virtual Task<GetMetricsSummaryResponse> GetMetricsSummaryAsync(GetMetricsSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricsSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricsSummaryResponseUnmarshaller.Instance;
             
@@ -743,7 +743,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetScan">REST API Reference for GetScan Operation</seealso>
         public virtual GetScanResponse GetScan(GetScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScanResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/GetScan">REST API Reference for GetScan Operation</seealso>
         public virtual Task<GetScanResponse> GetScanAsync(GetScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScanResponseUnmarshaller.Instance;
             
@@ -811,7 +811,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListFindingsMetrics">REST API Reference for ListFindingsMetrics Operation</seealso>
         public virtual ListFindingsMetricsResponse ListFindingsMetrics(ListFindingsMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsMetricsResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListFindingsMetrics">REST API Reference for ListFindingsMetrics Operation</seealso>
         public virtual Task<ListFindingsMetricsResponse> ListFindingsMetricsAsync(ListFindingsMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsMetricsResponseUnmarshaller.Instance;
             
@@ -876,7 +876,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListScans">REST API Reference for ListScans Operation</seealso>
         public virtual ListScansResponse ListScans(ListScansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScansResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListScans">REST API Reference for ListScans Operation</seealso>
         public virtual Task<ListScansResponse> ListScansAsync(ListScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScansResponseUnmarshaller.Instance;
             
@@ -948,7 +948,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -987,7 +987,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1027,7 +1027,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1106,7 +1106,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1181,7 +1181,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
         public virtual UpdateAccountConfigurationResponse UpdateAccountConfiguration(UpdateAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.CodeGuruSecurity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-security-2018-05-10/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
         public virtual Task<UpdateAccountConfigurationResponse> UpdateAccountConfigurationAsync(UpdateAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
             

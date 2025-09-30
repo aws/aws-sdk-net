@@ -300,7 +300,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
         public virtual AssociateEntitiesToExperienceResponse AssociateEntitiesToExperience(AssociateEntitiesToExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEntitiesToExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEntitiesToExperienceResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
         public virtual Task<AssociateEntitiesToExperienceResponse> AssociateEntitiesToExperienceAsync(AssociateEntitiesToExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEntitiesToExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEntitiesToExperienceResponseUnmarshaller.Instance;
             
@@ -399,7 +399,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
         public virtual AssociatePersonasToEntitiesResponse AssociatePersonasToEntities(AssociatePersonasToEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePersonasToEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePersonasToEntitiesResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
         public virtual Task<AssociatePersonasToEntitiesResponse> AssociatePersonasToEntitiesAsync(AssociatePersonasToEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePersonasToEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePersonasToEntitiesResponseUnmarshaller.Instance;
             
@@ -508,7 +508,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         public virtual BatchDeleteDocumentResponse BatchDeleteDocument(BatchDeleteDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDocumentResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">REST API Reference for BatchDeleteDocument Operation</seealso>
         public virtual Task<BatchDeleteDocumentResponse> BatchDeleteDocumentAsync(BatchDeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDocumentResponseUnmarshaller.Instance;
             
@@ -611,7 +611,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteFeaturedResultsSet">REST API Reference for BatchDeleteFeaturedResultsSet Operation</seealso>
         public virtual BatchDeleteFeaturedResultsSetResponse BatchDeleteFeaturedResultsSet(BatchDeleteFeaturedResultsSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteFeaturedResultsSet">REST API Reference for BatchDeleteFeaturedResultsSet Operation</seealso>
         public virtual Task<BatchDeleteFeaturedResultsSetResponse> BatchDeleteFeaturedResultsSetAsync(BatchDeleteFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance;
             
@@ -715,7 +715,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
         public virtual BatchGetDocumentStatusResponse BatchGetDocumentStatus(BatchGetDocumentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDocumentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDocumentStatusResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">REST API Reference for BatchGetDocumentStatus Operation</seealso>
         public virtual Task<BatchGetDocumentStatusResponse> BatchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDocumentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDocumentStatusResponseUnmarshaller.Instance;
             
@@ -846,7 +846,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         public virtual BatchPutDocumentResponse BatchPutDocument(BatchPutDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDocumentResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">REST API Reference for BatchPutDocument Operation</seealso>
         public virtual Task<BatchPutDocumentResponse> BatchPutDocumentAsync(BatchPutDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDocumentResponseUnmarshaller.Instance;
             
@@ -976,7 +976,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
         public virtual ClearQuerySuggestionsResponse ClearQuerySuggestions(ClearQuerySuggestionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClearQuerySuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClearQuerySuggestionsResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions">REST API Reference for ClearQuerySuggestions Operation</seealso>
         public virtual Task<ClearQuerySuggestionsResponse> ClearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClearQuerySuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClearQuerySuggestionsResponseUnmarshaller.Instance;
             
@@ -1118,7 +1118,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
         public virtual CreateAccessControlConfigurationResponse CreateAccessControlConfiguration(CreateAccessControlConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessControlConfigurationResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
         public virtual Task<CreateAccessControlConfigurationResponse> CreateAccessControlConfigurationAsync(CreateAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessControlConfigurationResponseUnmarshaller.Instance;
             
@@ -1273,7 +1273,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
             
@@ -1399,7 +1399,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
         public virtual CreateExperienceResponse CreateExperience(CreateExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperienceResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
         public virtual Task<CreateExperienceResponse> CreateExperienceAsync(CreateExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperienceResponseUnmarshaller.Instance;
             
@@ -1514,7 +1514,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">REST API Reference for CreateFaq Operation</seealso>
         public virtual CreateFaqResponse CreateFaq(CreateFaqRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaqResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">REST API Reference for CreateFaq Operation</seealso>
         public virtual Task<CreateFaqResponse> CreateFaqAsync(CreateFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaqResponseUnmarshaller.Instance;
             
@@ -1636,7 +1636,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFeaturedResultsSet">REST API Reference for CreateFeaturedResultsSet Operation</seealso>
         public virtual CreateFeaturedResultsSetResponse CreateFeaturedResultsSet(CreateFeaturedResultsSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFeaturedResultsSetResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFeaturedResultsSet">REST API Reference for CreateFeaturedResultsSet Operation</seealso>
         public virtual Task<CreateFeaturedResultsSetResponse> CreateFeaturedResultsSetAsync(CreateFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFeaturedResultsSetResponseUnmarshaller.Instance;
             
@@ -1764,7 +1764,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
             
@@ -1909,7 +1909,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
         public virtual CreateQuerySuggestionsBlockListResponse CreateQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
 
@@ -1986,7 +1986,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">REST API Reference for CreateQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<CreateQuerySuggestionsBlockListResponse> CreateQuerySuggestionsBlockListAsync(CreateQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
             
@@ -2044,7 +2044,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
         public virtual CreateThesaurusResponse CreateThesaurus(CreateThesaurusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
         public virtual Task<CreateThesaurusResponse> CreateThesaurusAsync(CreateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
             
@@ -2150,7 +2150,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
         public virtual DeleteAccessControlConfigurationResponse DeleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessControlConfigurationResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
         public virtual Task<DeleteAccessControlConfigurationResponse> DeleteAccessControlConfigurationAsync(DeleteAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessControlConfigurationResponseUnmarshaller.Instance;
             
@@ -2255,7 +2255,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -2311,7 +2311,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
             
@@ -2359,7 +2359,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
         public virtual DeleteExperienceResponse DeleteExperience(DeleteExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperienceResponseUnmarshaller.Instance;
 
@@ -2406,7 +2406,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
         public virtual Task<DeleteExperienceResponse> DeleteExperienceAsync(DeleteExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperienceResponseUnmarshaller.Instance;
             
@@ -2452,7 +2452,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">REST API Reference for DeleteFaq Operation</seealso>
         public virtual DeleteFaqResponse DeleteFaq(DeleteFaqRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFaqResponseUnmarshaller.Instance;
 
@@ -2497,7 +2497,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">REST API Reference for DeleteFaq Operation</seealso>
         public virtual Task<DeleteFaqResponse> DeleteFaqAsync(DeleteFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFaqResponseUnmarshaller.Instance;
             
@@ -2545,7 +2545,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -2592,7 +2592,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
             
@@ -2659,7 +2659,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">REST API Reference for DeletePrincipalMapping Operation</seealso>
         public virtual DeletePrincipalMappingResponse DeletePrincipalMapping(DeletePrincipalMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrincipalMappingResponseUnmarshaller.Instance;
 
@@ -2725,7 +2725,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping">REST API Reference for DeletePrincipalMapping Operation</seealso>
         public virtual Task<DeletePrincipalMappingResponse> DeletePrincipalMappingAsync(DeletePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrincipalMappingResponseUnmarshaller.Instance;
             
@@ -2782,7 +2782,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
         public virtual DeleteQuerySuggestionsBlockListResponse DeleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuerySuggestionsBlockListResponseUnmarshaller.Instance;
 
@@ -2838,7 +2838,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList">REST API Reference for DeleteQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<DeleteQuerySuggestionsBlockListResponse> DeleteQuerySuggestionsBlockListAsync(DeleteQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQuerySuggestionsBlockListResponseUnmarshaller.Instance;
             
@@ -2884,7 +2884,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
         public virtual DeleteThesaurusResponse DeleteThesaurus(DeleteThesaurusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
 
@@ -2929,7 +2929,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
         public virtual Task<DeleteThesaurusResponse> DeleteThesaurusAsync(DeleteThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
             
@@ -2974,7 +2974,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
         public virtual DescribeAccessControlConfigurationResponse DescribeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessControlConfigurationResponseUnmarshaller.Instance;
 
@@ -3018,7 +3018,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
         public virtual Task<DescribeAccessControlConfigurationResponse> DescribeAccessControlConfigurationAsync(DescribeAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessControlConfigurationResponseUnmarshaller.Instance;
             
@@ -3060,7 +3060,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">REST API Reference for DescribeDataSource Operation</seealso>
         public virtual DescribeDataSourceResponse DescribeDataSource(DescribeDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourceResponseUnmarshaller.Instance;
 
@@ -3101,7 +3101,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource">REST API Reference for DescribeDataSource Operation</seealso>
         public virtual Task<DescribeDataSourceResponse> DescribeDataSourceAsync(DescribeDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourceResponseUnmarshaller.Instance;
             
@@ -3145,7 +3145,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
         public virtual DescribeExperienceResponse DescribeExperience(DescribeExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExperienceResponseUnmarshaller.Instance;
 
@@ -3188,7 +3188,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
         public virtual Task<DescribeExperienceResponse> DescribeExperienceAsync(DescribeExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExperienceResponseUnmarshaller.Instance;
             
@@ -3230,7 +3230,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">REST API Reference for DescribeFaq Operation</seealso>
         public virtual DescribeFaqResponse DescribeFaq(DescribeFaqRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFaqResponseUnmarshaller.Instance;
 
@@ -3271,7 +3271,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">REST API Reference for DescribeFaq Operation</seealso>
         public virtual Task<DescribeFaqResponse> DescribeFaqAsync(DescribeFaqRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFaqRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFaqResponseUnmarshaller.Instance;
             
@@ -3315,7 +3315,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFeaturedResultsSet">REST API Reference for DescribeFeaturedResultsSet Operation</seealso>
         public virtual DescribeFeaturedResultsSetResponse DescribeFeaturedResultsSet(DescribeFeaturedResultsSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeaturedResultsSetResponseUnmarshaller.Instance;
 
@@ -3358,7 +3358,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFeaturedResultsSet">REST API Reference for DescribeFeaturedResultsSet Operation</seealso>
         public virtual Task<DescribeFeaturedResultsSetResponse> DescribeFeaturedResultsSetAsync(DescribeFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeaturedResultsSetResponseUnmarshaller.Instance;
             
@@ -3400,7 +3400,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         public virtual DescribeIndexResponse DescribeIndex(DescribeIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIndexResponseUnmarshaller.Instance;
 
@@ -3441,7 +3441,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">REST API Reference for DescribeIndex Operation</seealso>
         public virtual Task<DescribeIndexResponse> DescribeIndexAsync(DescribeIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIndexResponseUnmarshaller.Instance;
             
@@ -3493,7 +3493,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">REST API Reference for DescribePrincipalMapping Operation</seealso>
         public virtual DescribePrincipalMappingResponse DescribePrincipalMapping(DescribePrincipalMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalMappingResponseUnmarshaller.Instance;
 
@@ -3544,7 +3544,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping">REST API Reference for DescribePrincipalMapping Operation</seealso>
         public virtual Task<DescribePrincipalMappingResponse> DescribePrincipalMappingAsync(DescribePrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalMappingResponseUnmarshaller.Instance;
             
@@ -3596,7 +3596,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
         public virtual DescribeQuerySuggestionsBlockListResponse DescribeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuerySuggestionsBlockListResponseUnmarshaller.Instance;
 
@@ -3647,7 +3647,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList">REST API Reference for DescribeQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<DescribeQuerySuggestionsBlockListResponse> DescribeQuerySuggestionsBlockListAsync(DescribeQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuerySuggestionsBlockListResponseUnmarshaller.Instance;
             
@@ -3699,7 +3699,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
         public virtual DescribeQuerySuggestionsConfigResponse DescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuerySuggestionsConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuerySuggestionsConfigResponseUnmarshaller.Instance;
 
@@ -3750,7 +3750,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig">REST API Reference for DescribeQuerySuggestionsConfig Operation</seealso>
         public virtual Task<DescribeQuerySuggestionsConfigResponse> DescribeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuerySuggestionsConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuerySuggestionsConfigResponseUnmarshaller.Instance;
             
@@ -3792,7 +3792,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
         public virtual DescribeThesaurusResponse DescribeThesaurus(DescribeThesaurusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
 
@@ -3833,7 +3833,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
         public virtual Task<DescribeThesaurusResponse> DescribeThesaurusAsync(DescribeThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
             
@@ -3879,7 +3879,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
         public virtual DisassociateEntitiesFromExperienceResponse DisassociateEntitiesFromExperience(DisassociateEntitiesFromExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEntitiesFromExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEntitiesFromExperienceResponseUnmarshaller.Instance;
 
@@ -3924,7 +3924,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
         public virtual Task<DisassociateEntitiesFromExperienceResponse> DisassociateEntitiesFromExperienceAsync(DisassociateEntitiesFromExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEntitiesFromExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEntitiesFromExperienceResponseUnmarshaller.Instance;
             
@@ -3970,7 +3970,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
         public virtual DisassociatePersonasFromEntitiesResponse DisassociatePersonasFromEntities(DisassociatePersonasFromEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePersonasFromEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePersonasFromEntitiesResponseUnmarshaller.Instance;
 
@@ -4015,7 +4015,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
         public virtual Task<DisassociatePersonasFromEntitiesResponse> DisassociatePersonasFromEntitiesAsync(DisassociatePersonasFromEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePersonasFromEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePersonasFromEntitiesResponseUnmarshaller.Instance;
             
@@ -4072,7 +4072,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
         public virtual GetQuerySuggestionsResponse GetQuerySuggestions(GetQuerySuggestionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuerySuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuerySuggestionsResponseUnmarshaller.Instance;
 
@@ -4128,7 +4128,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
         public virtual Task<GetQuerySuggestionsResponse> GetQuerySuggestionsAsync(GetQuerySuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQuerySuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQuerySuggestionsResponseUnmarshaller.Instance;
             
@@ -4166,7 +4166,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
         public virtual GetSnapshotsResponse GetSnapshots(GetSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotsResponseUnmarshaller.Instance;
 
@@ -4203,7 +4203,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
         public virtual Task<GetSnapshotsResponse> GetSnapshotsAsync(GetSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotsResponseUnmarshaller.Instance;
             
@@ -4247,7 +4247,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
         public virtual ListAccessControlConfigurationsResponse ListAccessControlConfigurations(ListAccessControlConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessControlConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessControlConfigurationsResponseUnmarshaller.Instance;
 
@@ -4290,7 +4290,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
         public virtual Task<ListAccessControlConfigurationsResponse> ListAccessControlConfigurationsAsync(ListAccessControlConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessControlConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessControlConfigurationsResponseUnmarshaller.Instance;
             
@@ -4332,7 +4332,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -4373,7 +4373,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
             
@@ -4419,7 +4419,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         public virtual ListDataSourceSyncJobsResponse ListDataSourceSyncJobs(ListDataSourceSyncJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceSyncJobsResponseUnmarshaller.Instance;
 
@@ -4464,7 +4464,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs">REST API Reference for ListDataSourceSyncJobs Operation</seealso>
         public virtual Task<ListDataSourceSyncJobsResponse> ListDataSourceSyncJobsAsync(ListDataSourceSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourceSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourceSyncJobsResponseUnmarshaller.Instance;
             
@@ -4506,7 +4506,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
         public virtual ListEntityPersonasResponse ListEntityPersonas(ListEntityPersonasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntityPersonasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntityPersonasResponseUnmarshaller.Instance;
 
@@ -4547,7 +4547,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
         public virtual Task<ListEntityPersonasResponse> ListEntityPersonasAsync(ListEntityPersonasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntityPersonasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntityPersonasResponseUnmarshaller.Instance;
             
@@ -4593,7 +4593,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
         public virtual ListExperienceEntitiesResponse ListExperienceEntities(ListExperienceEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperienceEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperienceEntitiesResponseUnmarshaller.Instance;
 
@@ -4638,7 +4638,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
         public virtual Task<ListExperienceEntitiesResponse> ListExperienceEntitiesAsync(ListExperienceEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperienceEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperienceEntitiesResponseUnmarshaller.Instance;
             
@@ -4683,7 +4683,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
         public virtual ListExperiencesResponse ListExperiences(ListExperiencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperiencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperiencesResponseUnmarshaller.Instance;
 
@@ -4727,7 +4727,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
         public virtual Task<ListExperiencesResponse> ListExperiencesAsync(ListExperiencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperiencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperiencesResponseUnmarshaller.Instance;
             
@@ -4769,7 +4769,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">REST API Reference for ListFaqs Operation</seealso>
         public virtual ListFaqsResponse ListFaqs(ListFaqsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFaqsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFaqsResponseUnmarshaller.Instance;
 
@@ -4810,7 +4810,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">REST API Reference for ListFaqs Operation</seealso>
         public virtual Task<ListFaqsResponse> ListFaqsAsync(ListFaqsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFaqsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFaqsResponseUnmarshaller.Instance;
             
@@ -4854,7 +4854,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFeaturedResultsSets">REST API Reference for ListFeaturedResultsSets Operation</seealso>
         public virtual ListFeaturedResultsSetsResponse ListFeaturedResultsSets(ListFeaturedResultsSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFeaturedResultsSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFeaturedResultsSetsResponseUnmarshaller.Instance;
 
@@ -4897,7 +4897,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFeaturedResultsSets">REST API Reference for ListFeaturedResultsSets Operation</seealso>
         public virtual Task<ListFeaturedResultsSetsResponse> ListFeaturedResultsSetsAsync(ListFeaturedResultsSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFeaturedResultsSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFeaturedResultsSetsResponseUnmarshaller.Instance;
             
@@ -4950,7 +4950,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">REST API Reference for ListGroupsOlderThanOrderingId Operation</seealso>
         public virtual ListGroupsOlderThanOrderingIdResponse ListGroupsOlderThanOrderingId(ListGroupsOlderThanOrderingIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsOlderThanOrderingIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsOlderThanOrderingIdResponseUnmarshaller.Instance;
 
@@ -5002,7 +5002,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId">REST API Reference for ListGroupsOlderThanOrderingId Operation</seealso>
         public virtual Task<ListGroupsOlderThanOrderingIdResponse> ListGroupsOlderThanOrderingIdAsync(ListGroupsOlderThanOrderingIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsOlderThanOrderingIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsOlderThanOrderingIdResponseUnmarshaller.Instance;
             
@@ -5040,7 +5040,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual ListIndicesResponse ListIndices(ListIndicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
 
@@ -5077,7 +5077,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices">REST API Reference for ListIndices Operation</seealso>
         public virtual Task<ListIndicesResponse> ListIndicesAsync(ListIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicesResponseUnmarshaller.Instance;
             
@@ -5130,7 +5130,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
         public virtual ListQuerySuggestionsBlockListsResponse ListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuerySuggestionsBlockListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuerySuggestionsBlockListsResponseUnmarshaller.Instance;
 
@@ -5182,7 +5182,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists">REST API Reference for ListQuerySuggestionsBlockLists Operation</seealso>
         public virtual Task<ListQuerySuggestionsBlockListsResponse> ListQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuerySuggestionsBlockListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuerySuggestionsBlockListsResponseUnmarshaller.Instance;
             
@@ -5225,7 +5225,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5267,7 +5267,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5309,7 +5309,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
         public virtual ListThesauriResponse ListThesauri(ListThesauriRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
 
@@ -5350,7 +5350,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
         public virtual Task<ListThesauriResponse> ListThesauriAsync(ListThesauriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
             
@@ -5422,7 +5422,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">REST API Reference for PutPrincipalMapping Operation</seealso>
         public virtual PutPrincipalMappingResponse PutPrincipalMapping(PutPrincipalMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPrincipalMappingResponseUnmarshaller.Instance;
 
@@ -5493,7 +5493,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">REST API Reference for PutPrincipalMapping Operation</seealso>
         public virtual Task<PutPrincipalMappingResponse> PutPrincipalMappingAsync(PutPrincipalMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPrincipalMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPrincipalMappingResponseUnmarshaller.Instance;
             
@@ -5594,7 +5594,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">REST API Reference for Query Operation</seealso>
         public virtual QueryResponse Query(QueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
 
@@ -5694,7 +5694,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">REST API Reference for Query Operation</seealso>
         public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
             
@@ -5805,7 +5805,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve">REST API Reference for Retrieve Operation</seealso>
         public virtual RetrieveResponse Retrieve(RetrieveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
 
@@ -5915,7 +5915,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve">REST API Reference for Retrieve Operation</seealso>
         public virtual Task<RetrieveResponse> RetrieveAsync(RetrieveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
             
@@ -5973,7 +5973,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         public virtual StartDataSourceSyncJobResponse StartDataSourceSyncJob(StartDataSourceSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -6030,7 +6030,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">REST API Reference for StartDataSourceSyncJob Operation</seealso>
         public virtual Task<StartDataSourceSyncJobResponse> StartDataSourceSyncJobAsync(StartDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataSourceSyncJobResponseUnmarshaller.Instance;
             
@@ -6073,7 +6073,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         public virtual StopDataSourceSyncJobResponse StopDataSourceSyncJob(StopDataSourceSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataSourceSyncJobResponseUnmarshaller.Instance;
 
@@ -6115,7 +6115,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StopDataSourceSyncJob">REST API Reference for StopDataSourceSyncJob Operation</seealso>
         public virtual Task<StopDataSourceSyncJobResponse> StopDataSourceSyncJobAsync(StopDataSourceSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataSourceSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataSourceSyncJobResponseUnmarshaller.Instance;
             
@@ -6168,7 +6168,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
         public virtual SubmitFeedbackResponse SubmitFeedback(SubmitFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitFeedbackResponseUnmarshaller.Instance;
 
@@ -6220,7 +6220,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback">REST API Reference for SubmitFeedback Operation</seealso>
         public virtual Task<SubmitFeedbackResponse> SubmitFeedbackAsync(SubmitFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitFeedbackResponseUnmarshaller.Instance;
             
@@ -6263,7 +6263,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6305,7 +6305,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -6347,7 +6347,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6388,7 +6388,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -6471,7 +6471,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
         public virtual UpdateAccessControlConfigurationResponse UpdateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessControlConfigurationResponseUnmarshaller.Instance;
 
@@ -6553,7 +6553,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
         public virtual Task<UpdateAccessControlConfigurationResponse> UpdateAccessControlConfigurationAsync(UpdateAccessControlConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessControlConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessControlConfigurationResponseUnmarshaller.Instance;
             
@@ -6599,7 +6599,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -6644,7 +6644,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
             
@@ -6692,7 +6692,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
         public virtual UpdateExperienceResponse UpdateExperience(UpdateExperienceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperienceResponseUnmarshaller.Instance;
 
@@ -6739,7 +6739,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
         public virtual Task<UpdateExperienceResponse> UpdateExperienceAsync(UpdateExperienceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperienceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperienceResponseUnmarshaller.Instance;
             
@@ -6790,7 +6790,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateFeaturedResultsSet">REST API Reference for UpdateFeaturedResultsSet Operation</seealso>
         public virtual UpdateFeaturedResultsSetResponse UpdateFeaturedResultsSet(UpdateFeaturedResultsSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFeaturedResultsSetResponseUnmarshaller.Instance;
 
@@ -6840,7 +6840,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateFeaturedResultsSet">REST API Reference for UpdateFeaturedResultsSet Operation</seealso>
         public virtual Task<UpdateFeaturedResultsSetResponse> UpdateFeaturedResultsSetAsync(UpdateFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFeaturedResultsSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFeaturedResultsSetResponseUnmarshaller.Instance;
             
@@ -6891,7 +6891,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         public virtual UpdateIndexResponse UpdateIndex(UpdateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
 
@@ -6941,7 +6941,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
         public virtual Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
             
@@ -7009,7 +7009,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
         public virtual UpdateQuerySuggestionsBlockListResponse UpdateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
 
@@ -7076,7 +7076,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList">REST API Reference for UpdateQuerySuggestionsBlockList Operation</seealso>
         public virtual Task<UpdateQuerySuggestionsBlockListResponse> UpdateQuerySuggestionsBlockListAsync(UpdateQuerySuggestionsBlockListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuerySuggestionsBlockListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuerySuggestionsBlockListResponseUnmarshaller.Instance;
             
@@ -7148,7 +7148,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
         public virtual UpdateQuerySuggestionsConfigResponse UpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuerySuggestionsConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuerySuggestionsConfigResponseUnmarshaller.Instance;
 
@@ -7219,7 +7219,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">REST API Reference for UpdateQuerySuggestionsConfig Operation</seealso>
         public virtual Task<UpdateQuerySuggestionsConfigResponse> UpdateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuerySuggestionsConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuerySuggestionsConfigResponseUnmarshaller.Instance;
             
@@ -7265,7 +7265,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
         public virtual UpdateThesaurusResponse UpdateThesaurus(UpdateThesaurusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
 
@@ -7310,7 +7310,7 @@ namespace Amazon.Kendra
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
         public virtual Task<UpdateThesaurusResponse> UpdateThesaurusAsync(UpdateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
             

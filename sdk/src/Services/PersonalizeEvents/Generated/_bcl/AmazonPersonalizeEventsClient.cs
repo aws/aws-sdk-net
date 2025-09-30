@@ -277,7 +277,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
         public virtual PutActionInteractionsResponse PutActionInteractions(PutActionInteractionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutActionInteractionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutActionInteractionsResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
         public virtual Task<PutActionInteractionsResponse> PutActionInteractionsAsync(PutActionInteractionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutActionInteractionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutActionInteractionsResponseUnmarshaller.Instance;
             
@@ -347,7 +347,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
         public virtual PutActionsResponse PutActions(PutActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutActionsResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
         public virtual Task<PutActionsResponse> PutActionsAsync(PutActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutActionsResponseUnmarshaller.Instance;
             
@@ -402,7 +402,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -426,7 +426,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
             
@@ -457,7 +457,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
         public virtual PutItemsResponse PutItems(PutItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
         public virtual Task<PutItemsResponse> PutItemsAsync(PutItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
             
@@ -518,7 +518,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
         public virtual PutUsersResponse PutUsers(PutUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.PersonalizeEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
         public virtual Task<PutUsersResponse> PutUsersAsync(PutUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
             

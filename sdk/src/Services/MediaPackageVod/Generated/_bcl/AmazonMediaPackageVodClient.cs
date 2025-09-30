@@ -289,7 +289,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
         public virtual ConfigureLogsResponse ConfigureLogs(ConfigureLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs">REST API Reference for ConfigureLogs Operation</seealso>
         public virtual Task<ConfigureLogsResponse> ConfigureLogsAsync(ConfigureLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsResponseUnmarshaller.Instance;
             
@@ -366,7 +366,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual CreateAssetResponse CreateAsset(CreateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual Task<CreateAssetResponse> CreateAssetAsync(CreateAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
             
@@ -443,7 +443,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingConfiguration">REST API Reference for CreatePackagingConfiguration Operation</seealso>
         public virtual CreatePackagingConfigurationResponse CreatePackagingConfiguration(CreatePackagingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackagingConfigurationResponseUnmarshaller.Instance;
 
@@ -481,7 +481,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingConfiguration">REST API Reference for CreatePackagingConfiguration Operation</seealso>
         public virtual Task<CreatePackagingConfigurationResponse> CreatePackagingConfigurationAsync(CreatePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackagingConfigurationResponseUnmarshaller.Instance;
             
@@ -520,7 +520,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingGroup">REST API Reference for CreatePackagingGroup Operation</seealso>
         public virtual CreatePackagingGroupResponse CreatePackagingGroup(CreatePackagingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackagingGroupResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingGroup">REST API Reference for CreatePackagingGroup Operation</seealso>
         public virtual Task<CreatePackagingGroupResponse> CreatePackagingGroupAsync(CreatePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackagingGroupResponseUnmarshaller.Instance;
             
@@ -597,7 +597,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual Task<DeleteAssetResponse> DeleteAssetAsync(DeleteAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
             
@@ -674,7 +674,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingConfiguration">REST API Reference for DeletePackagingConfiguration Operation</seealso>
         public virtual DeletePackagingConfigurationResponse DeletePackagingConfiguration(DeletePackagingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackagingConfigurationResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingConfiguration">REST API Reference for DeletePackagingConfiguration Operation</seealso>
         public virtual Task<DeletePackagingConfigurationResponse> DeletePackagingConfigurationAsync(DeletePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackagingConfigurationResponseUnmarshaller.Instance;
             
@@ -751,7 +751,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingGroup">REST API Reference for DeletePackagingGroup Operation</seealso>
         public virtual DeletePackagingGroupResponse DeletePackagingGroup(DeletePackagingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackagingGroupResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DeletePackagingGroup">REST API Reference for DeletePackagingGroup Operation</seealso>
         public virtual Task<DeletePackagingGroupResponse> DeletePackagingGroupAsync(DeletePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackagingGroupResponseUnmarshaller.Instance;
             
@@ -828,7 +828,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual DescribeAssetResponse DescribeAsset(DescribeAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual Task<DescribeAssetResponse> DescribeAssetAsync(DescribeAssetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
             
@@ -905,7 +905,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingConfiguration">REST API Reference for DescribePackagingConfiguration Operation</seealso>
         public virtual DescribePackagingConfigurationResponse DescribePackagingConfiguration(DescribePackagingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagingConfigurationResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingConfiguration">REST API Reference for DescribePackagingConfiguration Operation</seealso>
         public virtual Task<DescribePackagingConfigurationResponse> DescribePackagingConfigurationAsync(DescribePackagingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagingConfigurationResponseUnmarshaller.Instance;
             
@@ -982,7 +982,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingGroup">REST API Reference for DescribePackagingGroup Operation</seealso>
         public virtual DescribePackagingGroupResponse DescribePackagingGroup(DescribePackagingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagingGroupResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DescribePackagingGroup">REST API Reference for DescribePackagingGroup Operation</seealso>
         public virtual Task<DescribePackagingGroupResponse> DescribePackagingGroupAsync(DescribePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagingGroupResponseUnmarshaller.Instance;
             
@@ -1059,7 +1059,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual ListAssetsResponse ListAssets(ListAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
 
@@ -1097,7 +1097,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual Task<ListAssetsResponse> ListAssetsAsync(ListAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
             
@@ -1136,7 +1136,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingConfigurations">REST API Reference for ListPackagingConfigurations Operation</seealso>
         public virtual ListPackagingConfigurationsResponse ListPackagingConfigurations(ListPackagingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingConfigurations">REST API Reference for ListPackagingConfigurations Operation</seealso>
         public virtual Task<ListPackagingConfigurationsResponse> ListPackagingConfigurationsAsync(ListPackagingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagingConfigurationsResponseUnmarshaller.Instance;
             
@@ -1213,7 +1213,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingGroups">REST API Reference for ListPackagingGroups Operation</seealso>
         public virtual ListPackagingGroupsResponse ListPackagingGroups(ListPackagingGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagingGroupsResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListPackagingGroups">REST API Reference for ListPackagingGroups Operation</seealso>
         public virtual Task<ListPackagingGroupsResponse> ListPackagingGroupsAsync(ListPackagingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagingGroupsResponseUnmarshaller.Instance;
             
@@ -1272,7 +1272,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1313,7 +1313,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1333,7 +1333,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1354,7 +1354,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1414,7 +1414,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
         public virtual UpdatePackagingGroupResponse UpdatePackagingGroup(UpdatePackagingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackagingGroupResponseUnmarshaller.Instance;
 
@@ -1453,7 +1453,7 @@ namespace Amazon.MediaPackageVod
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">REST API Reference for UpdatePackagingGroup Operation</seealso>
         public virtual Task<UpdatePackagingGroupResponse> UpdatePackagingGroupAsync(UpdatePackagingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackagingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackagingGroupResponseUnmarshaller.Instance;
             

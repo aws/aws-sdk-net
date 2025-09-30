@@ -311,7 +311,7 @@ namespace Amazon.WAFV2
 
         internal virtual AssociateWebACLResponse AssociateWebACL(AssociateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWebACLResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">REST API Reference for AssociateWebACL Operation</seealso>
         public virtual Task<AssociateWebACLResponse> AssociateWebACLAsync(AssociateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWebACLResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.WAFV2
 
         internal virtual CheckCapacityResponse CheckCapacity(CheckCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckCapacityResponseUnmarshaller.Instance;
 
@@ -541,7 +541,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">REST API Reference for CheckCapacity Operation</seealso>
         public virtual Task<CheckCapacityResponse> CheckCapacityAsync(CheckCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckCapacityResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.WAFV2
 
         internal virtual CreateAPIKeyResponse CreateAPIKey(CreateAPIKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
         public virtual Task<CreateAPIKeyResponse> CreateAPIKeyAsync(CreateAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.WAFV2
 
         internal virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
@@ -728,7 +728,7 @@ namespace Amazon.WAFV2
 
         internal virtual CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         public virtual Task<CreateRegexPatternSetResponse> CreateRegexPatternSetAsync(CreateRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.WAFV2
 
         internal virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual Task<CreateRuleGroupResponse> CreateRuleGroupAsync(CreateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.WAFV2
 
         internal virtual CreateWebACLResponse CreateWebACL(CreateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual Task<CreateWebACLResponse> CreateWebACLAsync(CreateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteAPIKeyResponse DeleteAPIKey(DeleteAPIKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAPIKeyResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteAPIKey">REST API Reference for DeleteAPIKey Operation</seealso>
         public virtual Task<DeleteAPIKeyResponse> DeleteAPIKeyAsync(DeleteAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAPIKeyResponseUnmarshaller.Instance;
 
@@ -1157,7 +1157,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteFirewallManagerRuleGroupsResponse DeleteFirewallManagerRuleGroups(DeleteFirewallManagerRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallManagerRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallManagerRuleGroupsResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">REST API Reference for DeleteFirewallManagerRuleGroups Operation</seealso>
         public virtual Task<DeleteFirewallManagerRuleGroupsResponse> DeleteFirewallManagerRuleGroupsAsync(DeleteFirewallManagerRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallManagerRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallManagerRuleGroupsResponseUnmarshaller.Instance;
 
@@ -1240,7 +1240,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
@@ -1327,7 +1327,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
         public virtual Task<DeletePermissionPolicyResponse> DeletePermissionPolicyAsync(DeletePermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
 
@@ -1476,7 +1476,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         public virtual Task<DeleteRegexPatternSetResponse> DeleteRegexPatternSetAsync(DeleteRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -1563,7 +1563,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual Task<DeleteRuleGroupResponse> DeleteRuleGroupAsync(DeleteRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.WAFV2
 
         internal virtual DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual Task<DeleteWebACLResponse> DeleteWebACLAsync(DeleteWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.WAFV2
 
         internal virtual DescribeAllManagedProductsResponse DescribeAllManagedProducts(DescribeAllManagedProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAllManagedProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAllManagedProductsResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts">REST API Reference for DescribeAllManagedProducts Operation</seealso>
         public virtual Task<DescribeAllManagedProductsResponse> DescribeAllManagedProductsAsync(DescribeAllManagedProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAllManagedProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAllManagedProductsResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.WAFV2
 
         internal virtual DescribeManagedProductsByVendorResponse DescribeManagedProductsByVendor(DescribeManagedProductsByVendorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedProductsByVendorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedProductsByVendorResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedProductsByVendor">REST API Reference for DescribeManagedProductsByVendor Operation</seealso>
         public virtual Task<DescribeManagedProductsByVendorResponse> DescribeManagedProductsByVendorAsync(DescribeManagedProductsByVendorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedProductsByVendorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedProductsByVendorResponseUnmarshaller.Instance;
 
@@ -1908,7 +1908,7 @@ namespace Amazon.WAFV2
 
         internal virtual DescribeManagedRuleGroupResponse DescribeManagedRuleGroup(DescribeManagedRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedRuleGroupResponseUnmarshaller.Instance;
 
@@ -1977,7 +1977,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">REST API Reference for DescribeManagedRuleGroup Operation</seealso>
         public virtual Task<DescribeManagedRuleGroupResponse> DescribeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedRuleGroupResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.WAFV2
 
         internal virtual DisassociateWebACLResponse DisassociateWebACL(DisassociateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWebACLResponseUnmarshaller.Instance;
 
@@ -2067,7 +2067,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">REST API Reference for DisassociateWebACL Operation</seealso>
         public virtual Task<DisassociateWebACLResponse> DisassociateWebACLAsync(DisassociateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWebACLResponseUnmarshaller.Instance;
 
@@ -2079,7 +2079,7 @@ namespace Amazon.WAFV2
 
         internal virtual GenerateMobileSdkReleaseUrlResponse GenerateMobileSdkReleaseUrl(GenerateMobileSdkReleaseUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMobileSdkReleaseUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMobileSdkReleaseUrlResponseUnmarshaller.Instance;
 
@@ -2146,7 +2146,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GenerateMobileSdkReleaseUrl">REST API Reference for GenerateMobileSdkReleaseUrl Operation</seealso>
         public virtual Task<GenerateMobileSdkReleaseUrlResponse> GenerateMobileSdkReleaseUrlAsync(GenerateMobileSdkReleaseUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMobileSdkReleaseUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMobileSdkReleaseUrlResponseUnmarshaller.Instance;
 
@@ -2158,7 +2158,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetDecryptedAPIKeyResponse GetDecryptedAPIKey(GetDecryptedAPIKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
         public virtual Task<GetDecryptedAPIKeyResponse> GetDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
 
@@ -2243,7 +2243,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
@@ -2314,7 +2314,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2373,7 +2373,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         public virtual Task<GetLoggingConfigurationResponse> GetLoggingConfigurationAsync(GetLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2385,7 +2385,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetManagedRuleSetResponse GetManagedRuleSet(GetManagedRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedRuleSetResponseUnmarshaller.Instance;
 
@@ -2457,7 +2457,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetManagedRuleSet">REST API Reference for GetManagedRuleSet Operation</seealso>
         public virtual Task<GetManagedRuleSetResponse> GetManagedRuleSetAsync(GetManagedRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedRuleSetResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetMobileSdkReleaseResponse GetMobileSdkRelease(GetMobileSdkReleaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileSdkReleaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileSdkReleaseResponseUnmarshaller.Instance;
 
@@ -2537,7 +2537,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetMobileSdkRelease">REST API Reference for GetMobileSdkRelease Operation</seealso>
         public virtual Task<GetMobileSdkReleaseResponse> GetMobileSdkReleaseAsync(GetMobileSdkReleaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileSdkReleaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileSdkReleaseResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
         public virtual Task<GetPermissionPolicyResponse> GetPermissionPolicyAsync(GetPermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetRateBasedStatementManagedKeysResponse GetRateBasedStatementManagedKeys(GetRateBasedStatementManagedKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedStatementManagedKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedStatementManagedKeysResponseUnmarshaller.Instance;
 
@@ -2711,7 +2711,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         public virtual Task<GetRateBasedStatementManagedKeysResponse> GetRateBasedStatementManagedKeysAsync(GetRateBasedStatementManagedKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedStatementManagedKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedStatementManagedKeysResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -2782,7 +2782,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         public virtual Task<GetRegexPatternSetResponse> GetRegexPatternSetAsync(GetRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetRuleGroupResponse GetRuleGroup(GetRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
@@ -2853,7 +2853,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         public virtual Task<GetRuleGroupResponse> GetRuleGroupAsync(GetRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
@@ -2865,7 +2865,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampledRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
@@ -2933,7 +2933,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         public virtual Task<GetSampledRequestsResponse> GetSampledRequestsAsync(GetSampledRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampledRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
@@ -2945,7 +2945,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetWebACLResponse GetWebACL(GetWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
@@ -3004,7 +3004,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         public virtual Task<GetWebACLResponse> GetWebACLAsync(GetWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
@@ -3016,7 +3016,7 @@ namespace Amazon.WAFV2
 
         internal virtual GetWebACLForResourceResponse GetWebACLForResource(GetWebACLForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLForResourceResponseUnmarshaller.Instance;
 
@@ -3106,7 +3106,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource">REST API Reference for GetWebACLForResource Operation</seealso>
         public virtual Task<GetWebACLForResourceResponse> GetWebACLForResourceAsync(GetWebACLForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLForResourceResponseUnmarshaller.Instance;
 
@@ -3118,7 +3118,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListAPIKeysResponse ListAPIKeys(ListAPIKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
 
@@ -3184,7 +3184,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
         public virtual Task<ListAPIKeysResponse> ListAPIKeysAsync(ListAPIKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
 
@@ -3196,7 +3196,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListAvailableManagedRuleGroupsResponse ListAvailableManagedRuleGroups(ListAvailableManagedRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagedRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagedRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3251,7 +3251,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">REST API Reference for ListAvailableManagedRuleGroups Operation</seealso>
         public virtual Task<ListAvailableManagedRuleGroupsResponse> ListAvailableManagedRuleGroupsAsync(ListAvailableManagedRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagedRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagedRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListAvailableManagedRuleGroupVersionsResponse ListAvailableManagedRuleGroupVersions(ListAvailableManagedRuleGroupVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagedRuleGroupVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagedRuleGroupVersionsResponseUnmarshaller.Instance;
 
@@ -3322,7 +3322,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroupVersions">REST API Reference for ListAvailableManagedRuleGroupVersions Operation</seealso>
         public virtual Task<ListAvailableManagedRuleGroupVersionsResponse> ListAvailableManagedRuleGroupVersionsAsync(ListAvailableManagedRuleGroupVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagedRuleGroupVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagedRuleGroupVersionsResponseUnmarshaller.Instance;
 
@@ -3334,7 +3334,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIPSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
@@ -3387,7 +3387,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual Task<ListIPSetsResponse> ListIPSetsAsync(ListIPSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIPSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
@@ -3399,7 +3399,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -3452,7 +3452,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         public virtual Task<ListLoggingConfigurationsResponse> ListLoggingConfigurationsAsync(ListLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -3464,7 +3464,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListManagedRuleSetsResponse ListManagedRuleSets(ListManagedRuleSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedRuleSetsResponseUnmarshaller.Instance;
 
@@ -3530,7 +3530,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListManagedRuleSets">REST API Reference for ListManagedRuleSets Operation</seealso>
         public virtual Task<ListManagedRuleSetsResponse> ListManagedRuleSetsAsync(ListManagedRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedRuleSetsResponseUnmarshaller.Instance;
 
@@ -3542,7 +3542,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListMobileSdkReleasesResponse ListMobileSdkReleases(ListMobileSdkReleasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileSdkReleasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileSdkReleasesResponseUnmarshaller.Instance;
 
@@ -3604,7 +3604,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListMobileSdkReleases">REST API Reference for ListMobileSdkReleases Operation</seealso>
         public virtual Task<ListMobileSdkReleasesResponse> ListMobileSdkReleasesAsync(ListMobileSdkReleasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileSdkReleasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileSdkReleasesResponseUnmarshaller.Instance;
 
@@ -3616,7 +3616,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListRegexPatternSetsResponse ListRegexPatternSets(ListRegexPatternSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
@@ -3670,7 +3670,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
         public virtual Task<ListRegexPatternSetsResponse> ListRegexPatternSetsAsync(ListRegexPatternSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
@@ -3682,7 +3682,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListResourcesForWebACLResponse ListResourcesForWebACL(ListResourcesForWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesForWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesForWebACLResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL">REST API Reference for ListResourcesForWebACL Operation</seealso>
         public virtual Task<ListResourcesForWebACLResponse> ListResourcesForWebACLAsync(ListResourcesForWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesForWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesForWebACLResponseUnmarshaller.Instance;
 
@@ -3771,7 +3771,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3825,7 +3825,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual Task<ListRuleGroupsResponse> ListRuleGroupsAsync(ListRuleGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3837,7 +3837,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3914,7 +3914,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3926,7 +3926,7 @@ namespace Amazon.WAFV2
 
         internal virtual ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
@@ -3979,7 +3979,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         public virtual Task<ListWebACLsResponse> ListWebACLsAsync(ListWebACLsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
@@ -3991,7 +3991,7 @@ namespace Amazon.WAFV2
 
         internal virtual PutLoggingConfigurationResponse PutLoggingConfiguration(PutLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -4148,7 +4148,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
         public virtual Task<PutLoggingConfigurationResponse> PutLoggingConfigurationAsync(PutLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -4160,7 +4160,7 @@ namespace Amazon.WAFV2
 
         internal virtual PutManagedRuleSetVersionsResponse PutManagedRuleSetVersions(PutManagedRuleSetVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedRuleSetVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedRuleSetVersionsResponseUnmarshaller.Instance;
 
@@ -4250,7 +4250,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutManagedRuleSetVersions">REST API Reference for PutManagedRuleSetVersions Operation</seealso>
         public virtual Task<PutManagedRuleSetVersionsResponse> PutManagedRuleSetVersionsAsync(PutManagedRuleSetVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedRuleSetVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedRuleSetVersionsResponseUnmarshaller.Instance;
 
@@ -4262,7 +4262,7 @@ namespace Amazon.WAFV2
 
         internal virtual PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -4383,7 +4383,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
         public virtual Task<PutPermissionPolicyResponse> PutPermissionPolicyAsync(PutPermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -4395,7 +4395,7 @@ namespace Amazon.WAFV2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4478,7 +4478,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4490,7 +4490,7 @@ namespace Amazon.WAFV2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4560,7 +4560,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4572,7 +4572,7 @@ namespace Amazon.WAFV2
 
         internal virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
@@ -4704,7 +4704,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
@@ -4716,7 +4716,7 @@ namespace Amazon.WAFV2
 
         internal virtual UpdateManagedRuleSetVersionExpiryDateResponse UpdateManagedRuleSetVersionExpiryDate(UpdateManagedRuleSetVersionExpiryDateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateManagedRuleSetVersionExpiryDateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateManagedRuleSetVersionExpiryDateResponseUnmarshaller.Instance;
 
@@ -4796,7 +4796,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateManagedRuleSetVersionExpiryDate">REST API Reference for UpdateManagedRuleSetVersionExpiryDate Operation</seealso>
         public virtual Task<UpdateManagedRuleSetVersionExpiryDateResponse> UpdateManagedRuleSetVersionExpiryDateAsync(UpdateManagedRuleSetVersionExpiryDateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateManagedRuleSetVersionExpiryDateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateManagedRuleSetVersionExpiryDateResponseUnmarshaller.Instance;
 
@@ -4808,7 +4808,7 @@ namespace Amazon.WAFV2
 
         internal virtual UpdateRegexPatternSetResponse UpdateRegexPatternSet(UpdateRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -4940,7 +4940,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
         public virtual Task<UpdateRegexPatternSetResponse> UpdateRegexPatternSetAsync(UpdateRegexPatternSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -4952,7 +4952,7 @@ namespace Amazon.WAFV2
 
         internal virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -5122,7 +5122,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual Task<UpdateRuleGroupResponse> UpdateRuleGroupAsync(UpdateRuleGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -5134,7 +5134,7 @@ namespace Amazon.WAFV2
 
         internal virtual UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
@@ -5319,7 +5319,7 @@ namespace Amazon.WAFV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         public virtual Task<UpdateWebACLResponse> UpdateWebACLAsync(UpdateWebACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 

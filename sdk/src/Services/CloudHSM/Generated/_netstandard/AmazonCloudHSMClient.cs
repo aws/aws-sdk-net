@@ -264,7 +264,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual CreateHapgResponse CreateHapg(CreateHapgRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHapgResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHapgResponseUnmarshaller.Instance;
 
@@ -434,7 +434,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHapgResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHapgResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHapgResponseUnmarshaller.Instance;
 
@@ -973,7 +973,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHapgResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHsmResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHsmResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
 
@@ -1152,7 +1152,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual GetConfigResponse GetConfig(GetConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ListHapgsResponse ListHapgs(ListHapgsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHapgsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHapgsResponseUnmarshaller.Instance;
 
@@ -1418,7 +1418,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHapgsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHapgsResponseUnmarshaller.Instance;
 
@@ -1431,7 +1431,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ListHsmsResponse ListHsms(ListHsmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHsmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHsmsResponseUnmarshaller.Instance;
 
@@ -1534,7 +1534,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHsmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHsmsResponseUnmarshaller.Instance;
 
@@ -1547,7 +1547,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLunaClientsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLunaClientsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
 
@@ -1663,7 +1663,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1723,7 +1723,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHapgResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHapgRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHapgResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHsmResponseUnmarshaller.Instance;
 
@@ -1838,7 +1838,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHsmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHsmResponseUnmarshaller.Instance;
 
@@ -1851,7 +1851,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
 
@@ -1897,7 +1897,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLunaClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
 
@@ -1910,7 +1910,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         internal virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -1962,7 +1962,7 @@ namespace Amazon.CloudHSM
         [Obsolete("This API is deprecated.")]
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 

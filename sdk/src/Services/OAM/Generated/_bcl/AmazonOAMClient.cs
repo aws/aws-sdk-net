@@ -338,7 +338,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/CreateLink">REST API Reference for CreateLink Operation</seealso>
         public virtual CreateLinkResponse CreateLink(CreateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLinkResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/CreateLink">REST API Reference for CreateLink Operation</seealso>
         public virtual Task<CreateLinkResponse> CreateLinkAsync(CreateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLinkResponseUnmarshaller.Instance;
             
@@ -448,7 +448,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/CreateSink">REST API Reference for CreateSink Operation</seealso>
         public virtual CreateSinkResponse CreateSink(CreateSinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSinkResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/CreateSink">REST API Reference for CreateSink Operation</seealso>
         public virtual Task<CreateSinkResponse> CreateSinkAsync(CreateSinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSinkResponseUnmarshaller.Instance;
             
@@ -531,7 +531,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/DeleteLink">REST API Reference for DeleteLink Operation</seealso>
         public virtual DeleteLinkResponse DeleteLink(DeleteLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLinkResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/DeleteLink">REST API Reference for DeleteLink Operation</seealso>
         public virtual Task<DeleteLinkResponse> DeleteLinkAsync(DeleteLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLinkResponseUnmarshaller.Instance;
             
@@ -600,7 +600,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/DeleteSink">REST API Reference for DeleteSink Operation</seealso>
         public virtual DeleteSinkResponse DeleteSink(DeleteSinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSinkResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/DeleteSink">REST API Reference for DeleteSink Operation</seealso>
         public virtual Task<DeleteSinkResponse> DeleteSinkAsync(DeleteSinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSinkResponseUnmarshaller.Instance;
             
@@ -674,7 +674,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetLink">REST API Reference for GetLink Operation</seealso>
         public virtual GetLinkResponse GetLink(GetLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetLink">REST API Reference for GetLink Operation</seealso>
         public virtual Task<GetLinkResponse> GetLinkAsync(GetLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkResponseUnmarshaller.Instance;
             
@@ -751,7 +751,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetSink">REST API Reference for GetSink Operation</seealso>
         public virtual GetSinkResponse GetSink(GetSinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSinkResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetSink">REST API Reference for GetSink Operation</seealso>
         public virtual Task<GetSinkResponse> GetSinkAsync(GetSinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSinkResponseUnmarshaller.Instance;
             
@@ -824,7 +824,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetSinkPolicy">REST API Reference for GetSinkPolicy Operation</seealso>
         public virtual GetSinkPolicyResponse GetSinkPolicy(GetSinkPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSinkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSinkPolicyResponseUnmarshaller.Instance;
 
@@ -858,7 +858,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/GetSinkPolicy">REST API Reference for GetSinkPolicy Operation</seealso>
         public virtual Task<GetSinkPolicyResponse> GetSinkPolicyAsync(GetSinkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSinkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSinkPolicyResponseUnmarshaller.Instance;
             
@@ -902,7 +902,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListAttachedLinks">REST API Reference for ListAttachedLinks Operation</seealso>
         public virtual ListAttachedLinksResponse ListAttachedLinks(ListAttachedLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachedLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachedLinksResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListAttachedLinks">REST API Reference for ListAttachedLinks Operation</seealso>
         public virtual Task<ListAttachedLinksResponse> ListAttachedLinksAsync(ListAttachedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachedLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachedLinksResponseUnmarshaller.Instance;
             
@@ -982,7 +982,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListLinks">REST API Reference for ListLinks Operation</seealso>
         public virtual ListLinksResponse ListLinks(ListLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinksResponseUnmarshaller.Instance;
 
@@ -1018,7 +1018,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListLinks">REST API Reference for ListLinks Operation</seealso>
         public virtual Task<ListLinksResponse> ListLinksAsync(ListLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinksResponseUnmarshaller.Instance;
             
@@ -1049,7 +1049,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListSinks">REST API Reference for ListSinks Operation</seealso>
         public virtual ListSinksResponse ListSinks(ListSinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSinksResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListSinks">REST API Reference for ListSinks Operation</seealso>
         public virtual Task<ListSinksResponse> ListSinksAsync(ListSinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSinksResponseUnmarshaller.Instance;
             
@@ -1106,7 +1106,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1205,7 +1205,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/PutSinkPolicy">REST API Reference for PutSinkPolicy Operation</seealso>
         public virtual PutSinkPolicyResponse PutSinkPolicy(PutSinkPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSinkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSinkPolicyResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/PutSinkPolicy">REST API Reference for PutSinkPolicy Operation</seealso>
         public virtual Task<PutSinkPolicyResponse> PutSinkPolicyAsync(PutSinkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSinkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSinkPolicyResponseUnmarshaller.Instance;
             
@@ -1339,7 +1339,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1435,7 +1435,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1469,7 +1469,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1515,7 +1515,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/UpdateLink">REST API Reference for UpdateLink Operation</seealso>
         public virtual UpdateLinkResponse UpdateLink(UpdateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLinkResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.OAM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/UpdateLink">REST API Reference for UpdateLink Operation</seealso>
         public virtual Task<UpdateLinkResponse> UpdateLinkAsync(UpdateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLinkResponseUnmarshaller.Instance;
             

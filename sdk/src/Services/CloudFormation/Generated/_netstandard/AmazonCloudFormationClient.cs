@@ -294,7 +294,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ActivateOrganizationsAccessResponse ActivateOrganizationsAccess(ActivateOrganizationsAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -323,7 +323,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess">REST API Reference for ActivateOrganizationsAccess Operation</seealso>
         public virtual Task<ActivateOrganizationsAccessResponse> ActivateOrganizationsAccessAsync(ActivateOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ActivateTypeResponse ActivateType(ActivateTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateTypeResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">REST API Reference for ActivateType Operation</seealso>
         public virtual Task<ActivateTypeResponse> ActivateTypeAsync(ActivateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateTypeResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.CloudFormation
 
         internal virtual BatchDescribeTypeConfigurationsResponse BatchDescribeTypeConfigurations(BatchDescribeTypeConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDescribeTypeConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDescribeTypeConfigurationsResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">REST API Reference for BatchDescribeTypeConfigurations Operation</seealso>
         public virtual Task<BatchDescribeTypeConfigurationsResponse> BatchDescribeTypeConfigurationsAsync(BatchDescribeTypeConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDescribeTypeConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDescribeTypeConfigurationsResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelUpdateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
         public virtual Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelUpdateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelUpdateStackResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContinueUpdateRollbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
 
@@ -529,7 +529,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
         public virtual Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContinueUpdateRollbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContinueUpdateRollbackResponseUnmarshaller.Instance;
 
@@ -541,7 +541,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
         public virtual Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChangeSetResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateGeneratedTemplateResponse CreateGeneratedTemplate(CreateGeneratedTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
         public virtual Task<CreateGeneratedTemplateResponse> CreateGeneratedTemplateAsync(CreateGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateStackInstancesResponse CreateStackInstances(CreateStackInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
 
@@ -805,7 +805,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">REST API Reference for CreateStackInstances Operation</seealso>
         public virtual Task<CreateStackInstancesResponse> CreateStackInstancesAsync(CreateStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackInstancesResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateStackRefactorResponse CreateStackRefactor(CreateStackRefactorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackRefactorResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackRefactor">REST API Reference for CreateStackRefactor Operation</seealso>
         public virtual Task<CreateStackRefactorResponse> CreateStackRefactorAsync(CreateStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackRefactorResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.CloudFormation
 
         internal virtual CreateStackSetResponse CreateStackSet(CreateStackSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackSetResponseUnmarshaller.Instance;
 
@@ -887,7 +887,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">REST API Reference for CreateStackSet Operation</seealso>
         public virtual Task<CreateStackSetResponse> CreateStackSetAsync(CreateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStackSetResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeactivateOrganizationsAccessResponse DeactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess">REST API Reference for DeactivateOrganizationsAccess Operation</seealso>
         public virtual Task<DeactivateOrganizationsAccessResponse> DeactivateOrganizationsAccessAsync(DeactivateOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -940,7 +940,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeactivateTypeResponse DeactivateType(DeactivateTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateTypeResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">REST API Reference for DeactivateType Operation</seealso>
         public virtual Task<DeactivateTypeResponse> DeactivateTypeAsync(DeactivateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateTypeResponseUnmarshaller.Instance;
 
@@ -997,7 +997,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
 
@@ -1036,7 +1036,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         public virtual Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
 
@@ -1048,7 +1048,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeleteGeneratedTemplateResponse DeleteGeneratedTemplate(DeleteGeneratedTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
         public virtual Task<DeleteGeneratedTemplateResponse> DeleteGeneratedTemplateAsync(DeleteGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeleteStackInstancesResponse DeleteStackInstances(DeleteStackInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
 
@@ -1193,7 +1193,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackInstances">REST API Reference for DeleteStackInstances Operation</seealso>
         public virtual Task<DeleteStackInstancesResponse> DeleteStackInstancesAsync(DeleteStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackInstancesResponseUnmarshaller.Instance;
 
@@ -1205,7 +1205,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
 
@@ -1235,7 +1235,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">REST API Reference for DeleteStackSet Operation</seealso>
         public virtual Task<DeleteStackSetResponse> DeleteStackSetAsync(DeleteStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStackSetResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DeregisterTypeResponse DeregisterType(DeregisterTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTypeResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">REST API Reference for DeregisterType Operation</seealso>
         public virtual Task<DeregisterTypeResponse> DeregisterTypeAsync(DeregisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTypeResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1336,7 +1336,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1348,7 +1348,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         public virtual Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChangeSetResponseUnmarshaller.Instance;
 
@@ -1387,7 +1387,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeChangeSetHooksResponse DescribeChangeSetHooks(DescribeChangeSetHooksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChangeSetHooksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChangeSetHooksResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSetHooks">REST API Reference for DescribeChangeSetHooks Operation</seealso>
         public virtual Task<DescribeChangeSetHooksResponse> DescribeChangeSetHooksAsync(DescribeChangeSetHooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChangeSetHooksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChangeSetHooksResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeGeneratedTemplateResponse DescribeGeneratedTemplate(DescribeGeneratedTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
         public virtual Task<DescribeGeneratedTemplateResponse> DescribeGeneratedTemplateAsync(DescribeGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeOrganizationsAccessResponse DescribeOrganizationsAccess(DescribeOrganizationsAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess">REST API Reference for DescribeOrganizationsAccess Operation</seealso>
         public virtual Task<DescribeOrganizationsAccessResponse> DescribeOrganizationsAccessAsync(DescribeOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationsAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationsAccessResponseUnmarshaller.Instance;
 
@@ -1506,7 +1506,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribePublisherResponse DescribePublisher(DescribePublisherRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublisherRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublisherResponseUnmarshaller.Instance;
 
@@ -1552,7 +1552,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
         public virtual Task<DescribePublisherResponse> DescribePublisherAsync(DescribePublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublisherRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublisherResponseUnmarshaller.Instance;
 
@@ -1564,7 +1564,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeResourceScanResponse DescribeResourceScan(DescribeResourceScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
         public virtual Task<DescribeResourceScanResponse> DescribeResourceScanAsync(DescribeResourceScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackDriftDetectionStatusResponse DescribeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackDriftDetectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackDriftDetectionStatusResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">REST API Reference for DescribeStackDriftDetectionStatus Operation</seealso>
         public virtual Task<DescribeStackDriftDetectionStatusResponse> DescribeStackDriftDetectionStatusAsync(DescribeStackDriftDetectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackDriftDetectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackDriftDetectionStatusResponseUnmarshaller.Instance;
 
@@ -1648,7 +1648,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
 
@@ -1678,7 +1678,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
         public virtual Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackEventsResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackInstanceResponse DescribeStackInstance(DescribeStackInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
 
@@ -1723,7 +1723,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackInstance">REST API Reference for DescribeStackInstance Operation</seealso>
         public virtual Task<DescribeStackInstanceResponse> DescribeStackInstanceAsync(DescribeStackInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackInstanceResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackRefactorResponse DescribeStackRefactor(DescribeStackRefactorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackRefactorResponseUnmarshaller.Instance;
 
@@ -1759,7 +1759,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackRefactor">REST API Reference for DescribeStackRefactor Operation</seealso>
         public virtual Task<DescribeStackRefactorResponse> DescribeStackRefactorAsync(DescribeStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackRefactorResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
 
@@ -1798,7 +1798,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
         public virtual Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackResourceDriftsResponse DescribeStackResourceDrifts(DescribeStackResourceDriftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourceDriftsResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">REST API Reference for DescribeStackResourceDrifts Operation</seealso>
         public virtual Task<DescribeStackResourceDriftsResponse> DescribeStackResourceDriftsAsync(DescribeStackResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourceDriftsResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
         public virtual Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackResourcesResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.CloudFormation
         }
         internal virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
@@ -1979,7 +1979,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
@@ -1991,7 +1991,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackSetResponse DescribeStackSet(DescribeStackSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
 
@@ -2022,7 +2022,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSet">REST API Reference for DescribeStackSet Operation</seealso>
         public virtual Task<DescribeStackSetResponse> DescribeStackSetAsync(DescribeStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackSetResponseUnmarshaller.Instance;
 
@@ -2034,7 +2034,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeStackSetOperationResponse DescribeStackSetOperation(DescribeStackSetOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackSetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
         public virtual Task<DescribeStackSetOperationResponse> DescribeStackSetOperationAsync(DescribeStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStackSetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeTypeResponse DescribeType(DescribeTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTypeResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">REST API Reference for DescribeType Operation</seealso>
         public virtual Task<DescribeTypeResponse> DescribeTypeAsync(DescribeTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTypeResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DescribeTypeRegistrationResponse DescribeTypeRegistration(DescribeTypeRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTypeRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTypeRegistrationResponseUnmarshaller.Instance;
 
@@ -2163,7 +2163,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">REST API Reference for DescribeTypeRegistration Operation</seealso>
         public virtual Task<DescribeTypeRegistrationResponse> DescribeTypeRegistrationAsync(DescribeTypeRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTypeRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTypeRegistrationResponseUnmarshaller.Instance;
 
@@ -2175,7 +2175,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DetectStackDriftResponse DetectStackDrift(DetectStackDriftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackDriftResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">REST API Reference for DetectStackDrift Operation</seealso>
         public virtual Task<DetectStackDriftResponse> DetectStackDriftAsync(DetectStackDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackDriftResponseUnmarshaller.Instance;
 
@@ -2241,7 +2241,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DetectStackResourceDriftResponse DetectStackResourceDrift(DetectStackResourceDriftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackResourceDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackResourceDriftResponseUnmarshaller.Instance;
 
@@ -2280,7 +2280,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">REST API Reference for DetectStackResourceDrift Operation</seealso>
         public virtual Task<DetectStackResourceDriftResponse> DetectStackResourceDriftAsync(DetectStackResourceDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackResourceDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackResourceDriftResponseUnmarshaller.Instance;
 
@@ -2292,7 +2292,7 @@ namespace Amazon.CloudFormation
 
         internal virtual DetectStackSetDriftResponse DetectStackSetDrift(DetectStackSetDriftRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackSetDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackSetDriftResponseUnmarshaller.Instance;
 
@@ -2363,7 +2363,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">REST API Reference for DetectStackSetDrift Operation</seealso>
         public virtual Task<DetectStackSetDriftResponse> DetectStackSetDriftAsync(DetectStackSetDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectStackSetDriftRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectStackSetDriftResponseUnmarshaller.Instance;
 
@@ -2375,7 +2375,7 @@ namespace Amazon.CloudFormation
 
         internal virtual EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EstimateTemplateCostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
 
@@ -2398,7 +2398,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
         public virtual Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EstimateTemplateCostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EstimateTemplateCostResponseUnmarshaller.Instance;
 
@@ -2410,7 +2410,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
 
@@ -2465,7 +2465,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
         public virtual Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteChangeSetResponseUnmarshaller.Instance;
 
@@ -2477,7 +2477,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ExecuteStackRefactorResponse ExecuteStackRefactor(ExecuteStackRefactorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStackRefactorResponseUnmarshaller.Instance;
 
@@ -2498,7 +2498,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteStackRefactor">REST API Reference for ExecuteStackRefactor Operation</seealso>
         public virtual Task<ExecuteStackRefactorResponse> ExecuteStackRefactorAsync(ExecuteStackRefactorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStackRefactorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStackRefactorResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.CloudFormation
 
         internal virtual GetGeneratedTemplateResponse GetGeneratedTemplate(GetGeneratedTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -2537,7 +2537,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
         public virtual Task<GetGeneratedTemplateResponse> GetGeneratedTemplateAsync(GetGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.CloudFormation
 
         internal virtual GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStackPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
         public virtual Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStackPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStackPolicyResponseUnmarshaller.Instance;
 
@@ -2583,7 +2583,7 @@ namespace Amazon.CloudFormation
 
         internal virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -2632,7 +2632,7 @@ namespace Amazon.CloudFormation
 
         internal virtual GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
 
@@ -2670,7 +2670,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
         public virtual Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSummaryResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ImportStacksToStackSetResponse ImportStacksToStackSet(ImportStacksToStackSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportStacksToStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportStacksToStackSetResponseUnmarshaller.Instance;
 
@@ -2736,7 +2736,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ImportStacksToStackSet">REST API Reference for ImportStacksToStackSet Operation</seealso>
         public virtual Task<ImportStacksToStackSetResponse> ImportStacksToStackSetAsync(ImportStacksToStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportStacksToStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportStacksToStackSetResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangeSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
 
@@ -2771,7 +2771,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
         public virtual Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangeSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -2813,7 +2813,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListGeneratedTemplatesResponse ListGeneratedTemplates(ListGeneratedTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
 
@@ -2846,7 +2846,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
         public virtual Task<ListGeneratedTemplatesResponse> ListGeneratedTemplatesAsync(ListGeneratedTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
 
@@ -2858,7 +2858,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListHookResultsResponse ListHookResults(ListHookResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHookResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHookResultsResponseUnmarshaller.Instance;
 
@@ -2907,7 +2907,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
         public virtual Task<ListHookResultsResponse> ListHookResultsAsync(ListHookResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHookResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHookResultsResponseUnmarshaller.Instance;
 
@@ -2919,7 +2919,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -2948,7 +2948,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -2960,7 +2960,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListResourceScanRelatedResourcesResponse ListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
 
@@ -2989,7 +2989,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
         public virtual Task<ListResourceScanRelatedResourcesResponse> ListResourceScanRelatedResourcesAsync(ListResourceScanRelatedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
 
@@ -3001,7 +3001,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListResourceScanResourcesResponse ListResourceScanResources(ListResourceScanResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
 
@@ -3032,7 +3032,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
         public virtual Task<ListResourceScanResourcesResponse> ListResourceScanResourcesAsync(ListResourceScanResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
 
@@ -3044,7 +3044,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListResourceScansResponse ListResourceScans(ListResourceScansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
 
@@ -3066,7 +3066,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
         public virtual Task<ListResourceScansResponse> ListResourceScansAsync(ListResourceScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
 
@@ -3078,7 +3078,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackInstanceResourceDriftsResponse ListStackInstanceResourceDrifts(ListStackInstanceResourceDriftsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackInstanceResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance;
 
@@ -3116,7 +3116,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstanceResourceDrifts">REST API Reference for ListStackInstanceResourceDrifts Operation</seealso>
         public virtual Task<ListStackInstanceResourceDriftsResponse> ListStackInstanceResourceDriftsAsync(ListStackInstanceResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackInstanceResourceDriftsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackInstanceResourceDriftsResponseUnmarshaller.Instance;
 
@@ -3128,7 +3128,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
 
@@ -3154,7 +3154,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">REST API Reference for ListStackInstances Operation</seealso>
         public virtual Task<ListStackInstancesResponse> ListStackInstancesAsync(ListStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackInstancesResponseUnmarshaller.Instance;
 
@@ -3166,7 +3166,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackRefactorActionsResponse ListStackRefactorActions(ListStackRefactorActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackRefactorActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackRefactorActionsResponseUnmarshaller.Instance;
 
@@ -3188,7 +3188,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactorActions">REST API Reference for ListStackRefactorActions Operation</seealso>
         public virtual Task<ListStackRefactorActionsResponse> ListStackRefactorActionsAsync(ListStackRefactorActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackRefactorActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackRefactorActionsResponseUnmarshaller.Instance;
 
@@ -3200,7 +3200,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackRefactorsResponse ListStackRefactors(ListStackRefactorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackRefactorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackRefactorsResponseUnmarshaller.Instance;
 
@@ -3221,7 +3221,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackRefactors">REST API Reference for ListStackRefactors Operation</seealso>
         public virtual Task<ListStackRefactorsResponse> ListStackRefactorsAsync(ListStackRefactorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackRefactorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackRefactorsResponseUnmarshaller.Instance;
 
@@ -3233,7 +3233,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
 
@@ -3260,7 +3260,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
         public virtual Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackResourcesResponseUnmarshaller.Instance;
 
@@ -3276,7 +3276,7 @@ namespace Amazon.CloudFormation
         }
         internal virtual ListStacksResponse ListStacks(ListStacksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStacksResponseUnmarshaller.Instance;
 
@@ -3318,7 +3318,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
         public virtual Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStacksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStacksResponseUnmarshaller.Instance;
 
@@ -3330,7 +3330,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackSetAutoDeploymentTargetsResponse ListStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
 
@@ -3354,7 +3354,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
         public virtual Task<ListStackSetAutoDeploymentTargetsResponse> ListStackSetAutoDeploymentTargetsAsync(ListStackSetAutoDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
 
@@ -3366,7 +3366,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackSetOperationResultsResponse ListStackSetOperationResults(ListStackSetOperationResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
 
@@ -3400,7 +3400,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">REST API Reference for ListStackSetOperationResults Operation</seealso>
         public virtual Task<ListStackSetOperationResultsResponse> ListStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetOperationResultsResponseUnmarshaller.Instance;
 
@@ -3412,7 +3412,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
 
@@ -3443,7 +3443,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperations">REST API Reference for ListStackSetOperations Operation</seealso>
         public virtual Task<ListStackSetOperationsResponse> ListStackSetOperationsAsync(ListStackSetOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetOperationsResponseUnmarshaller.Instance;
 
@@ -3455,7 +3455,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListStackSetsResponse ListStackSets(ListStackSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetsResponseUnmarshaller.Instance;
 
@@ -3501,7 +3501,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSets">REST API Reference for ListStackSets Operation</seealso>
         public virtual Task<ListStackSetsResponse> ListStackSetsAsync(ListStackSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStackSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStackSetsResponseUnmarshaller.Instance;
 
@@ -3513,7 +3513,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListTypeRegistrationsResponse ListTypeRegistrations(ListTypeRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypeRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypeRegistrationsResponseUnmarshaller.Instance;
 
@@ -3537,7 +3537,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">REST API Reference for ListTypeRegistrations Operation</seealso>
         public virtual Task<ListTypeRegistrationsResponse> ListTypeRegistrationsAsync(ListTypeRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypeRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypeRegistrationsResponseUnmarshaller.Instance;
 
@@ -3549,7 +3549,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListTypesResponse ListTypes(ListTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
@@ -3575,7 +3575,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
@@ -3587,7 +3587,7 @@ namespace Amazon.CloudFormation
 
         internal virtual ListTypeVersionsResponse ListTypeVersions(ListTypeVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypeVersionsResponseUnmarshaller.Instance;
 
@@ -3611,7 +3611,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">REST API Reference for ListTypeVersions Operation</seealso>
         public virtual Task<ListTypeVersionsResponse> ListTypeVersionsAsync(ListTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypeVersionsResponseUnmarshaller.Instance;
 
@@ -3623,7 +3623,7 @@ namespace Amazon.CloudFormation
 
         internal virtual PublishTypeResponse PublishType(PublishTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishTypeResponseUnmarshaller.Instance;
 
@@ -3660,7 +3660,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">REST API Reference for PublishType Operation</seealso>
         public virtual Task<PublishTypeResponse> PublishTypeAsync(PublishTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishTypeResponseUnmarshaller.Instance;
 
@@ -3672,7 +3672,7 @@ namespace Amazon.CloudFormation
 
         internal virtual RecordHandlerProgressResponse RecordHandlerProgress(RecordHandlerProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordHandlerProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordHandlerProgressResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">REST API Reference for RecordHandlerProgress Operation</seealso>
         public virtual Task<RecordHandlerProgressResponse> RecordHandlerProgressAsync(RecordHandlerProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordHandlerProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordHandlerProgressResponseUnmarshaller.Instance;
 
@@ -3719,7 +3719,7 @@ namespace Amazon.CloudFormation
 
         internal virtual RegisterPublisherResponse RegisterPublisher(RegisterPublisherRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterPublisherRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterPublisherResponseUnmarshaller.Instance;
 
@@ -3753,7 +3753,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">REST API Reference for RegisterPublisher Operation</seealso>
         public virtual Task<RegisterPublisherResponse> RegisterPublisherAsync(RegisterPublisherRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterPublisherRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterPublisherResponseUnmarshaller.Instance;
 
@@ -3765,7 +3765,7 @@ namespace Amazon.CloudFormation
 
         internal virtual RegisterTypeResponse RegisterType(RegisterTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTypeResponseUnmarshaller.Instance;
 
@@ -3830,7 +3830,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">REST API Reference for RegisterType Operation</seealso>
         public virtual Task<RegisterTypeResponse> RegisterTypeAsync(RegisterTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTypeResponseUnmarshaller.Instance;
 
@@ -3842,7 +3842,7 @@ namespace Amazon.CloudFormation
 
         internal virtual RollbackStackResponse RollbackStack(RollbackStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackStackResponseUnmarshaller.Instance;
 
@@ -3901,7 +3901,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackStack">REST API Reference for RollbackStack Operation</seealso>
         public virtual Task<RollbackStackResponse> RollbackStackAsync(RollbackStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackStackResponseUnmarshaller.Instance;
 
@@ -3913,7 +3913,7 @@ namespace Amazon.CloudFormation
 
         internal virtual SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetStackPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
 
@@ -3934,7 +3934,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
         public virtual Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetStackPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetStackPolicyResponseUnmarshaller.Instance;
 
@@ -3946,7 +3946,7 @@ namespace Amazon.CloudFormation
 
         internal virtual SetTypeConfigurationResponse SetTypeConfiguration(SetTypeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTypeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTypeConfigurationResponseUnmarshaller.Instance;
 
@@ -3992,7 +3992,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">REST API Reference for SetTypeConfiguration Operation</seealso>
         public virtual Task<SetTypeConfigurationResponse> SetTypeConfigurationAsync(SetTypeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTypeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTypeConfigurationResponseUnmarshaller.Instance;
 
@@ -4004,7 +4004,7 @@ namespace Amazon.CloudFormation
 
         internal virtual SetTypeDefaultVersionResponse SetTypeDefaultVersion(SetTypeDefaultVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTypeDefaultVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTypeDefaultVersionResponseUnmarshaller.Instance;
 
@@ -4032,7 +4032,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">REST API Reference for SetTypeDefaultVersion Operation</seealso>
         public virtual Task<SetTypeDefaultVersionResponse> SetTypeDefaultVersionAsync(SetTypeDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTypeDefaultVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTypeDefaultVersionResponseUnmarshaller.Instance;
 
@@ -4044,7 +4044,7 @@ namespace Amazon.CloudFormation
 
         internal virtual SignalResourceResponse SignalResource(SignalResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalResourceResponseUnmarshaller.Instance;
 
@@ -4070,7 +4070,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
         public virtual Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalResourceResponseUnmarshaller.Instance;
 
@@ -4082,7 +4082,7 @@ namespace Amazon.CloudFormation
 
         internal virtual StartResourceScanResponse StartResourceScan(StartResourceScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
 
@@ -4127,7 +4127,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
         public virtual Task<StartResourceScanResponse> StartResourceScanAsync(StartResourceScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
 
@@ -4139,7 +4139,7 @@ namespace Amazon.CloudFormation
 
         internal virtual StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStackSetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
 
@@ -4171,7 +4171,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StopStackSetOperation">REST API Reference for StopStackSetOperation Operation</seealso>
         public virtual Task<StopStackSetOperationResponse> StopStackSetOperationAsync(StopStackSetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStackSetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStackSetOperationResponseUnmarshaller.Instance;
 
@@ -4183,7 +4183,7 @@ namespace Amazon.CloudFormation
 
         internal virtual TestTypeResponse TestType(TestTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestTypeResponseUnmarshaller.Instance;
 
@@ -4249,7 +4249,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
         public virtual Task<TestTypeResponse> TestTypeAsync(TestTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestTypeResponseUnmarshaller.Instance;
 
@@ -4261,7 +4261,7 @@ namespace Amazon.CloudFormation
 
         internal virtual UpdateGeneratedTemplateResponse UpdateGeneratedTemplate(UpdateGeneratedTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -4300,7 +4300,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
         public virtual Task<UpdateGeneratedTemplateResponse> UpdateGeneratedTemplateAsync(UpdateGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
 
@@ -4312,7 +4312,7 @@ namespace Amazon.CloudFormation
 
         internal virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
@@ -4355,7 +4355,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
@@ -4367,7 +4367,7 @@ namespace Amazon.CloudFormation
 
         internal virtual UpdateStackInstancesResponse UpdateStackInstances(UpdateStackInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackInstancesResponseUnmarshaller.Instance;
 
@@ -4451,7 +4451,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">REST API Reference for UpdateStackInstances Operation</seealso>
         public virtual Task<UpdateStackInstancesResponse> UpdateStackInstancesAsync(UpdateStackInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackInstancesResponseUnmarshaller.Instance;
 
@@ -4463,7 +4463,7 @@ namespace Amazon.CloudFormation
 
         internal virtual UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
 
@@ -4533,7 +4533,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">REST API Reference for UpdateStackSet Operation</seealso>
         public virtual Task<UpdateStackSetResponse> UpdateStackSetAsync(UpdateStackSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStackSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStackSetResponseUnmarshaller.Instance;
 
@@ -4545,7 +4545,7 @@ namespace Amazon.CloudFormation
 
         internal virtual UpdateTerminationProtectionResponse UpdateTerminationProtection(UpdateTerminationProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTerminationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
 
@@ -4576,7 +4576,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">REST API Reference for UpdateTerminationProtection Operation</seealso>
         public virtual Task<UpdateTerminationProtectionResponse> UpdateTerminationProtectionAsync(UpdateTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTerminationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTerminationProtectionResponseUnmarshaller.Instance;
 
@@ -4592,7 +4592,7 @@ namespace Amazon.CloudFormation
         }
         internal virtual ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
 
@@ -4632,7 +4632,7 @@ namespace Amazon.CloudFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
         public virtual Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateTemplateResponseUnmarshaller.Instance;
 

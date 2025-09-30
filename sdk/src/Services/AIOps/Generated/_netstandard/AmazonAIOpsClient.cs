@@ -276,7 +276,7 @@ namespace Amazon.AIOps
 
         internal virtual CreateInvestigationGroupResponse CreateInvestigationGroup(CreateInvestigationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -368,7 +368,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/CreateInvestigationGroup">REST API Reference for CreateInvestigationGroup Operation</seealso>
         public virtual Task<CreateInvestigationGroupResponse> CreateInvestigationGroupAsync(CreateInvestigationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.AIOps
 
         internal virtual DeleteInvestigationGroupResponse DeleteInvestigationGroup(DeleteInvestigationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/DeleteInvestigationGroup">REST API Reference for DeleteInvestigationGroup Operation</seealso>
         public virtual Task<DeleteInvestigationGroupResponse> DeleteInvestigationGroupAsync(DeleteInvestigationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.AIOps
 
         internal virtual DeleteInvestigationGroupPolicyResponse DeleteInvestigationGroupPolicy(DeleteInvestigationGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -481,7 +481,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/DeleteInvestigationGroupPolicy">REST API Reference for DeleteInvestigationGroupPolicy Operation</seealso>
         public virtual Task<DeleteInvestigationGroupPolicyResponse> DeleteInvestigationGroupPolicyAsync(DeleteInvestigationGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.AIOps
 
         internal virtual GetInvestigationGroupResponse GetInvestigationGroup(GetInvestigationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/GetInvestigationGroup">REST API Reference for GetInvestigationGroup Operation</seealso>
         public virtual Task<GetInvestigationGroupResponse> GetInvestigationGroupAsync(GetInvestigationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.AIOps
 
         internal virtual GetInvestigationGroupPolicyResponse GetInvestigationGroupPolicy(GetInvestigationGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -592,7 +592,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/GetInvestigationGroupPolicy">REST API Reference for GetInvestigationGroupPolicy Operation</seealso>
         public virtual Task<GetInvestigationGroupPolicyResponse> GetInvestigationGroupPolicyAsync(GetInvestigationGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.AIOps
 
         internal virtual ListInvestigationGroupsResponse ListInvestigationGroups(ListInvestigationGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvestigationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvestigationGroupsResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/ListInvestigationGroups">REST API Reference for ListInvestigationGroups Operation</seealso>
         public virtual Task<ListInvestigationGroupsResponse> ListInvestigationGroupsAsync(ListInvestigationGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvestigationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvestigationGroupsResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.AIOps
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.AIOps
 
         internal virtual PutInvestigationGroupPolicyResponse PutInvestigationGroupPolicy(PutInvestigationGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/PutInvestigationGroupPolicy">REST API Reference for PutInvestigationGroupPolicy Operation</seealso>
         public virtual Task<PutInvestigationGroupPolicyResponse> PutInvestigationGroupPolicyAsync(PutInvestigationGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInvestigationGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInvestigationGroupPolicyResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.AIOps
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -844,7 +844,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.AIOps
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -911,7 +911,7 @@ namespace Amazon.AIOps
 
         internal virtual UpdateInvestigationGroupResponse UpdateInvestigationGroup(UpdateInvestigationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvestigationGroupResponseUnmarshaller.Instance;
 
@@ -954,7 +954,7 @@ namespace Amazon.AIOps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aiops-2018-05-10/UpdateInvestigationGroup">REST API Reference for UpdateInvestigationGroup Operation</seealso>
         public virtual Task<UpdateInvestigationGroupResponse> UpdateInvestigationGroupAsync(UpdateInvestigationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvestigationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvestigationGroupResponseUnmarshaller.Instance;
 

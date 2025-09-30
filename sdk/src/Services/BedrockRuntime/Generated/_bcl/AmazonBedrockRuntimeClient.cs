@@ -310,7 +310,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
         public virtual ApplyGuardrailResponse ApplyGuardrail(ApplyGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyGuardrailResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
         public virtual Task<ApplyGuardrailResponse> ApplyGuardrailAsync(ApplyGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyGuardrailResponseUnmarshaller.Instance;
             
@@ -487,7 +487,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
         public virtual ConverseResponse Converse(ConverseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConverseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">REST API Reference for Converse Operation</seealso>
         public virtual Task<ConverseResponse> ConverseAsync(ConverseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConverseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConverseResponseUnmarshaller.Instance;
             
@@ -733,7 +733,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
         public virtual ConverseStreamResponse ConverseStream(ConverseStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
 
@@ -861,7 +861,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">REST API Reference for ConverseStream Operation</seealso>
         public virtual Task<ConverseStreamResponse> ConverseStreamAsync(ConverseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConverseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConverseStreamResponseUnmarshaller.Instance;
             
@@ -956,7 +956,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">REST API Reference for CountTokens Operation</seealso>
         public virtual CountTokensResponse CountTokens(CountTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountTokensResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/CountTokens">REST API Reference for CountTokens Operation</seealso>
         public virtual Task<CountTokensResponse> CountTokensAsync(CountTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountTokensResponseUnmarshaller.Instance;
             
@@ -1090,7 +1090,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">REST API Reference for GetAsyncInvoke Operation</seealso>
         public virtual GetAsyncInvokeResponse GetAsyncInvoke(GetAsyncInvokeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAsyncInvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAsyncInvokeResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/GetAsyncInvoke">REST API Reference for GetAsyncInvoke Operation</seealso>
         public virtual Task<GetAsyncInvokeResponse> GetAsyncInvokeAsync(GetAsyncInvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAsyncInvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAsyncInvokeResponseUnmarshaller.Instance;
             
@@ -1222,7 +1222,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">REST API Reference for InvokeModel Operation</seealso>
         public virtual InvokeModelResponse InvokeModel(InvokeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeModelResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">REST API Reference for InvokeModel Operation</seealso>
         public virtual Task<InvokeModelResponse> InvokeModelAsync(InvokeModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeModelResponseUnmarshaller.Instance;
             
@@ -1419,7 +1419,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">REST API Reference for InvokeModelWithResponseStream Operation</seealso>
         public virtual InvokeModelWithResponseStreamResponse InvokeModelWithResponseStream(InvokeModelWithResponseStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeModelWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeModelWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">REST API Reference for InvokeModelWithResponseStream Operation</seealso>
         public virtual Task<InvokeModelWithResponseStreamResponse> InvokeModelWithResponseStreamAsync(InvokeModelWithResponseStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeModelWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeModelWithResponseStreamResponseUnmarshaller.Instance;
             
@@ -1563,7 +1563,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ListAsyncInvokes">REST API Reference for ListAsyncInvokes Operation</seealso>
         public virtual ListAsyncInvokesResponse ListAsyncInvokes(ListAsyncInvokesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAsyncInvokesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAsyncInvokesResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ListAsyncInvokes">REST API Reference for ListAsyncInvokes Operation</seealso>
         public virtual Task<ListAsyncInvokesResponse> ListAsyncInvokesAsync(ListAsyncInvokesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAsyncInvokesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAsyncInvokesResponseUnmarshaller.Instance;
             
@@ -1674,7 +1674,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/StartAsyncInvoke">REST API Reference for StartAsyncInvoke Operation</seealso>
         public virtual StartAsyncInvokeResponse StartAsyncInvoke(StartAsyncInvokeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAsyncInvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAsyncInvokeResponseUnmarshaller.Instance;
 
@@ -1745,7 +1745,7 @@ namespace Amazon.BedrockRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/StartAsyncInvoke">REST API Reference for StartAsyncInvoke Operation</seealso>
         public virtual Task<StartAsyncInvokeResponse> StartAsyncInvokeAsync(StartAsyncInvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAsyncInvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAsyncInvokeResponseUnmarshaller.Instance;
             

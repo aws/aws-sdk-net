@@ -271,7 +271,7 @@ namespace Amazon.Kinesis
 
         internal virtual AddTagsToStreamResponse AddTagsToStream(AddTagsToStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToStreamResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">REST API Reference for AddTagsToStream Operation</seealso>
         public virtual Task<AddTagsToStreamResponse> AddTagsToStreamAsync(AddTagsToStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToStreamResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.Kinesis
 
         internal virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.Kinesis
 
         internal virtual DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseStreamRetentionPeriodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
         public virtual Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseStreamRetentionPeriodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.Kinesis
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -636,7 +636,7 @@ namespace Amazon.Kinesis
 
         internal virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.Kinesis
 
         internal virtual DeregisterStreamConsumerResponse DeregisterStreamConsumer(DeregisterStreamConsumerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterStreamConsumerResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
         public virtual Task<DeregisterStreamConsumerResponse> DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterStreamConsumerResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.Kinesis
 
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
         public virtual Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.Kinesis
 
         internal virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.Kinesis
 
         internal virtual DescribeStreamConsumerResponse DescribeStreamConsumer(DescribeStreamConsumerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamConsumerResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
         public virtual Task<DescribeStreamConsumerResponse> DescribeStreamConsumerAsync(DescribeStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamConsumerResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.Kinesis
 
         internal virtual DescribeStreamSummaryResponse DescribeStreamSummary(DescribeStreamSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">REST API Reference for DescribeStreamSummary Operation</seealso>
         public virtual Task<DescribeStreamSummaryResponse> DescribeStreamSummaryAsync(DescribeStreamSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.Kinesis
 
         internal virtual DisableEnhancedMonitoringResponse DisableEnhancedMonitoring(DisableEnhancedMonitoringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEnhancedMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEnhancedMonitoringResponseUnmarshaller.Instance;
 
@@ -1082,7 +1082,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">REST API Reference for DisableEnhancedMonitoring Operation</seealso>
         public virtual Task<DisableEnhancedMonitoringResponse> DisableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEnhancedMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEnhancedMonitoringResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.Kinesis
 
         internal virtual EnableEnhancedMonitoringResponse EnableEnhancedMonitoring(EnableEnhancedMonitoringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEnhancedMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEnhancedMonitoringResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">REST API Reference for EnableEnhancedMonitoring Operation</seealso>
         public virtual Task<EnableEnhancedMonitoringResponse> EnableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEnhancedMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEnhancedMonitoringResponseUnmarshaller.Instance;
 
@@ -1153,7 +1153,7 @@ namespace Amazon.Kinesis
 
         internal virtual GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public virtual Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.Kinesis
 
         internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1371,7 +1371,7 @@ namespace Amazon.Kinesis
 
         internal virtual GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
@@ -1468,7 +1468,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public virtual Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.Kinesis
 
         internal virtual IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseStreamRetentionPeriodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         public virtual Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseStreamRetentionPeriodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
 
@@ -1605,7 +1605,7 @@ namespace Amazon.Kinesis
 
         internal virtual ListShardsResponse ListShards(ListShardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListShardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListShardsResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">REST API Reference for ListShards Operation</seealso>
         public virtual Task<ListShardsResponse> ListShardsAsync(ListShardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListShardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListShardsResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.Kinesis
 
         internal virtual ListStreamConsumersResponse ListStreamConsumers(ListStreamConsumersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamConsumersResponseUnmarshaller.Instance;
 
@@ -1726,7 +1726,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
         public virtual Task<ListStreamConsumersResponse> ListStreamConsumersAsync(ListStreamConsumersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamConsumersResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.Kinesis
         }
         internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -1856,7 +1856,7 @@ namespace Amazon.Kinesis
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.Kinesis
 
         internal virtual ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
@@ -1959,7 +1959,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual Task<ListTagsForStreamResponse> ListTagsForStreamAsync(ListTagsForStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
@@ -1971,7 +1971,7 @@ namespace Amazon.Kinesis
 
         internal virtual MergeShardsResponse MergeShards(MergeShardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeShardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeShardsResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public virtual Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeShardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeShardsResponseUnmarshaller.Instance;
 
@@ -2084,7 +2084,7 @@ namespace Amazon.Kinesis
 
         internal virtual PutRecordResponse PutRecord(PutRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public virtual Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
 
@@ -2228,7 +2228,7 @@ namespace Amazon.Kinesis
 
         internal virtual PutRecordsResponse PutRecords(PutRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordsResponseUnmarshaller.Instance;
 
@@ -2386,7 +2386,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">REST API Reference for PutRecords Operation</seealso>
         public virtual Task<PutRecordsResponse> PutRecordsAsync(PutRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordsResponseUnmarshaller.Instance;
 
@@ -2398,7 +2398,7 @@ namespace Amazon.Kinesis
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2463,7 +2463,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2475,7 +2475,7 @@ namespace Amazon.Kinesis
 
         internal virtual RegisterStreamConsumerResponse RegisterStreamConsumer(RegisterStreamConsumerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterStreamConsumerResponseUnmarshaller.Instance;
 
@@ -2541,7 +2541,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
         public virtual Task<RegisterStreamConsumerResponse> RegisterStreamConsumerAsync(RegisterStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterStreamConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterStreamConsumerResponseUnmarshaller.Instance;
 
@@ -2553,7 +2553,7 @@ namespace Amazon.Kinesis
 
         internal virtual RemoveTagsFromStreamResponse RemoveTagsFromStream(RemoveTagsFromStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromStreamResponseUnmarshaller.Instance;
 
@@ -2608,7 +2608,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">REST API Reference for RemoveTagsFromStream Operation</seealso>
         public virtual Task<RemoveTagsFromStreamResponse> RemoveTagsFromStreamAsync(RemoveTagsFromStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromStreamResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.Kinesis
 
         internal virtual SplitShardResponse SplitShard(SplitShardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SplitShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SplitShardResponseUnmarshaller.Instance;
 
@@ -2733,7 +2733,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public virtual Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SplitShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SplitShardResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.Kinesis
 
         internal virtual StartStreamEncryptionResponse StartStreamEncryption(StartStreamEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
 
@@ -2837,7 +2837,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">REST API Reference for StartStreamEncryption Operation</seealso>
         public virtual Task<StartStreamEncryptionResponse> StartStreamEncryptionAsync(StartStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
 
@@ -2849,7 +2849,7 @@ namespace Amazon.Kinesis
 
         internal virtual StopStreamEncryptionResponse StopStreamEncryption(StopStreamEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
 
@@ -2917,7 +2917,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption">REST API Reference for StopStreamEncryption Operation</seealso>
         public virtual Task<StopStreamEncryptionResponse> StopStreamEncryptionAsync(StopStreamEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
 
@@ -2930,7 +2930,7 @@ namespace Amazon.Kinesis
 #if NET8_0_OR_GREATER
         internal virtual SubscribeToShardResponse SubscribeToShard(SubscribeToShardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeToShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeToShardResponseUnmarshaller.Instance;
 
@@ -3002,7 +3002,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">REST API Reference for SubscribeToShard Operation</seealso>
         public virtual Task<SubscribeToShardResponse> SubscribeToShardAsync(SubscribeToShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeToShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeToShardResponseUnmarshaller.Instance;
 
@@ -3015,7 +3015,7 @@ namespace Amazon.Kinesis
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3056,7 +3056,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3068,7 +3068,7 @@ namespace Amazon.Kinesis
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3108,7 +3108,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3120,7 +3120,7 @@ namespace Amazon.Kinesis
 
         internal virtual UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateShardCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
 
@@ -3235,7 +3235,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public virtual Task<UpdateShardCountResponse> UpdateShardCountAsync(UpdateShardCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateShardCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
 
@@ -3247,7 +3247,7 @@ namespace Amazon.Kinesis
 
         internal virtual UpdateStreamModeResponse UpdateStreamMode(UpdateStreamModeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamModeResponseUnmarshaller.Instance;
 
@@ -3285,7 +3285,7 @@ namespace Amazon.Kinesis
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         public virtual Task<UpdateStreamModeResponse> UpdateStreamModeAsync(UpdateStreamModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamModeResponseUnmarshaller.Instance;
 

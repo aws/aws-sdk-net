@@ -412,7 +412,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         public virtual CreateSlackChannelConfigurationResponse CreateSlackChannelConfiguration(CreateSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         public virtual Task<CreateSlackChannelConfigurationResponse> CreateSlackChannelConfigurationAsync(CreateSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSlackChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -541,7 +541,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         public virtual DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         public virtual Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
             
@@ -644,7 +644,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         public virtual DeleteSlackChannelConfigurationResponse DeleteSlackChannelConfiguration(DeleteSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         public virtual Task<DeleteSlackChannelConfigurationResponse> DeleteSlackChannelConfigurationAsync(DeleteSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackChannelConfigurationResponseUnmarshaller.Instance;
             
@@ -785,7 +785,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
         public virtual DeleteSlackWorkspaceConfigurationResponse DeleteSlackWorkspaceConfiguration(DeleteSlackWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -855,7 +855,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
         public virtual Task<DeleteSlackWorkspaceConfigurationResponse> DeleteSlackWorkspaceConfigurationAsync(DeleteSlackWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSlackWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSlackWorkspaceConfigurationResponseUnmarshaller.Instance;
             
@@ -881,7 +881,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
         public virtual GetAccountAliasResponse GetAccountAlias(GetAccountAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountAliasResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
         public virtual Task<GetAccountAliasResponse> GetAccountAliasAsync(GetAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountAliasResponseUnmarshaller.Instance;
             
@@ -933,7 +933,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
         public virtual ListSlackChannelConfigurationsResponse ListSlackChannelConfigurations(ListSlackChannelConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSlackChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSlackChannelConfigurationsResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
         public virtual Task<ListSlackChannelConfigurationsResponse> ListSlackChannelConfigurationsAsync(ListSlackChannelConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSlackChannelConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSlackChannelConfigurationsResponseUnmarshaller.Instance;
             
@@ -986,7 +986,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
         public virtual ListSlackWorkspaceConfigurationsResponse ListSlackWorkspaceConfigurations(ListSlackWorkspaceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSlackWorkspaceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSlackWorkspaceConfigurationsResponseUnmarshaller.Instance;
 
@@ -1012,7 +1012,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
         public virtual Task<ListSlackWorkspaceConfigurationsResponse> ListSlackWorkspaceConfigurationsAsync(ListSlackWorkspaceConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSlackWorkspaceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSlackWorkspaceConfigurationsResponseUnmarshaller.Instance;
             
@@ -1046,7 +1046,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
         public virtual PutAccountAliasResponse PutAccountAlias(PutAccountAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountAliasResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
         public virtual Task<PutAccountAliasResponse> PutAccountAliasAsync(PutAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountAliasResponseUnmarshaller.Instance;
             
@@ -1193,7 +1193,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
         public virtual RegisterSlackWorkspaceForOrganizationResponse RegisterSlackWorkspaceForOrganization(RegisterSlackWorkspaceForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSlackWorkspaceForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSlackWorkspaceForOrganizationResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
         public virtual Task<RegisterSlackWorkspaceForOrganizationResponse> RegisterSlackWorkspaceForOrganizationAsync(RegisterSlackWorkspaceForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSlackWorkspaceForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSlackWorkspaceForOrganizationResponseUnmarshaller.Instance;
             
@@ -1376,7 +1376,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         public virtual UpdateSlackChannelConfigurationResponse UpdateSlackChannelConfiguration(UpdateSlackChannelConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSlackChannelConfigurationResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.SupportApp
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         public virtual Task<UpdateSlackChannelConfigurationResponse> UpdateSlackChannelConfigurationAsync(UpdateSlackChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSlackChannelConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSlackChannelConfigurationResponseUnmarshaller.Instance;
             

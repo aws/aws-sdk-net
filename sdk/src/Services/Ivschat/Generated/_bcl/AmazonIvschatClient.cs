@@ -456,7 +456,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateChatToken">REST API Reference for CreateChatToken Operation</seealso>
         public virtual CreateChatTokenResponse CreateChatToken(CreateChatTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChatTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChatTokenResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateChatToken">REST API Reference for CreateChatToken Operation</seealso>
         public virtual Task<CreateChatTokenResponse> CreateChatTokenAsync(CreateChatTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChatTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChatTokenResponseUnmarshaller.Instance;
             
@@ -547,7 +547,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         public virtual CreateLoggingConfigurationResponse CreateLoggingConfiguration(CreateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
         public virtual Task<CreateLoggingConfigurationResponse> CreateLoggingConfigurationAsync(CreateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -624,7 +624,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
         public virtual CreateRoomResponse CreateRoom(CreateRoomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoomResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
         public virtual Task<CreateRoomResponse> CreateRoomAsync(CreateRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoomResponseUnmarshaller.Instance;
             
@@ -698,7 +698,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -733,7 +733,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -772,7 +772,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
 
@@ -810,7 +810,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
             
@@ -843,7 +843,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
         public virtual DeleteRoomResponse DeleteRoom(DeleteRoomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoomResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
         public virtual Task<DeleteRoomResponse> DeleteRoomAsync(DeleteRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoomResponseUnmarshaller.Instance;
             
@@ -913,7 +913,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser">REST API Reference for DisconnectUser Operation</seealso>
         public virtual DisconnectUserResponse DisconnectUser(DisconnectUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectUserResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser">REST API Reference for DisconnectUser Operation</seealso>
         public virtual Task<DisconnectUserResponse> DisconnectUserAsync(DisconnectUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectUserResponseUnmarshaller.Instance;
             
@@ -980,7 +980,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         public virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1009,7 +1009,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         public virtual Task<GetLoggingConfigurationResponse> GetLoggingConfigurationAsync(GetLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -1039,7 +1039,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetRoom">REST API Reference for GetRoom Operation</seealso>
         public virtual GetRoomResponse GetRoom(GetRoomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoomResponseUnmarshaller.Instance;
 
@@ -1068,7 +1068,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetRoom">REST API Reference for GetRoom Operation</seealso>
         public virtual Task<GetRoomResponse> GetRoomAsync(GetRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoomResponseUnmarshaller.Instance;
             
@@ -1096,7 +1096,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         public virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         public virtual Task<ListLoggingConfigurationsResponse> ListLoggingConfigurationsAsync(ListLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
             
@@ -1154,7 +1154,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListRooms">REST API Reference for ListRooms Operation</seealso>
         public virtual ListRoomsResponse ListRooms(ListRoomsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoomsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoomsResponseUnmarshaller.Instance;
 
@@ -1184,7 +1184,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListRooms">REST API Reference for ListRooms Operation</seealso>
         public virtual Task<ListRoomsResponse> ListRoomsAsync(ListRoomsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoomsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoomsResponseUnmarshaller.Instance;
             
@@ -1214,7 +1214,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1281,7 +1281,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent">REST API Reference for SendEvent Operation</seealso>
         public virtual SendEventResponse SendEvent(SendEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent">REST API Reference for SendEvent Operation</seealso>
         public virtual Task<SendEventResponse> SendEventAsync(SendEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
             
@@ -1348,7 +1348,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1407,7 +1407,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1436,7 +1436,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1472,7 +1472,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -1507,7 +1507,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -1540,7 +1540,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
         public virtual UpdateRoomResponse UpdateRoom(UpdateRoomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoomResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.Ivschat
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
         public virtual Task<UpdateRoomResponse> UpdateRoomAsync(UpdateRoomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoomResponseUnmarshaller.Instance;
             

@@ -298,7 +298,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
         public virtual AcceptAttachmentResponse AcceptAttachment(AcceptAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAttachmentResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
         public virtual Task<AcceptAttachmentResponse> AcceptAttachmentAsync(AcceptAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAttachmentResponseUnmarshaller.Instance;
             
@@ -394,7 +394,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
         public virtual AssociateConnectPeerResponse AssociateConnectPeer(AssociateConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectPeerResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
         public virtual Task<AssociateConnectPeerResponse> AssociateConnectPeerAsync(AssociateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectPeerResponseUnmarshaller.Instance;
             
@@ -502,7 +502,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateCustomerGateway">REST API Reference for AssociateCustomerGateway Operation</seealso>
         public virtual AssociateCustomerGatewayResponse AssociateCustomerGateway(AssociateCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateCustomerGateway">REST API Reference for AssociateCustomerGateway Operation</seealso>
         public virtual Task<AssociateCustomerGatewayResponse> AssociateCustomerGatewayAsync(AssociateCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCustomerGatewayResponseUnmarshaller.Instance;
             
@@ -604,7 +604,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateLink">REST API Reference for AssociateLink Operation</seealso>
         public virtual AssociateLinkResponse AssociateLink(AssociateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLinkResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateLink">REST API Reference for AssociateLink Operation</seealso>
         public virtual Task<AssociateLinkResponse> AssociateLinkAsync(AssociateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLinkResponseUnmarshaller.Instance;
             
@@ -703,7 +703,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">REST API Reference for AssociateTransitGatewayConnectPeer Operation</seealso>
         public virtual AssociateTransitGatewayConnectPeerResponse AssociateTransitGatewayConnectPeer(AssociateTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateTransitGatewayConnectPeer">REST API Reference for AssociateTransitGatewayConnectPeer Operation</seealso>
         public virtual Task<AssociateTransitGatewayConnectPeerResponse> AssociateTransitGatewayConnectPeerAsync(AssociateTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
             
@@ -805,7 +805,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
         public virtual CreateConnectAttachmentResponse CreateConnectAttachment(CreateConnectAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectAttachmentResponseUnmarshaller.Instance;
 
@@ -852,7 +852,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
         public virtual Task<CreateConnectAttachmentResponse> CreateConnectAttachmentAsync(CreateConnectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectAttachmentResponseUnmarshaller.Instance;
             
@@ -894,7 +894,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
             
@@ -977,7 +977,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
         public virtual CreateConnectPeerResponse CreateConnectPeer(CreateConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectPeerResponseUnmarshaller.Instance;
 
@@ -1018,7 +1018,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
         public virtual Task<CreateConnectPeerResponse> CreateConnectPeerAsync(CreateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectPeerResponseUnmarshaller.Instance;
             
@@ -1062,7 +1062,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
         public virtual CreateCoreNetworkResponse CreateCoreNetwork(CreateCoreNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreNetworkResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
         public virtual Task<CreateCoreNetworkResponse> CreateCoreNetworkAsync(CreateCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoreNetworkResponseUnmarshaller.Instance;
             
@@ -1149,7 +1149,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDevice">REST API Reference for CreateDevice Operation</seealso>
         public virtual CreateDeviceResponse CreateDevice(CreateDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDevice">REST API Reference for CreateDevice Operation</seealso>
         public virtual Task<CreateDeviceResponse> CreateDeviceAsync(CreateDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceResponseUnmarshaller.Instance;
             
@@ -1232,7 +1232,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">REST API Reference for CreateDirectConnectGatewayAttachment Operation</seealso>
         public virtual CreateDirectConnectGatewayAttachmentResponse CreateDirectConnectGatewayAttachment(CreateDirectConnectGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">REST API Reference for CreateDirectConnectGatewayAttachment Operation</seealso>
         public virtual Task<CreateDirectConnectGatewayAttachmentResponse> CreateDirectConnectGatewayAttachmentAsync(CreateDirectConnectGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
             
@@ -1311,7 +1311,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">REST API Reference for CreateGlobalNetwork Operation</seealso>
         public virtual CreateGlobalNetworkResponse CreateGlobalNetwork(CreateGlobalNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalNetworkResponseUnmarshaller.Instance;
 
@@ -1350,7 +1350,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">REST API Reference for CreateGlobalNetwork Operation</seealso>
         public virtual Task<CreateGlobalNetworkResponse> CreateGlobalNetworkAsync(CreateGlobalNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalNetworkResponseUnmarshaller.Instance;
             
@@ -1393,7 +1393,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateLink">REST API Reference for CreateLink Operation</seealso>
         public virtual CreateLinkResponse CreateLink(CreateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLinkResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateLink">REST API Reference for CreateLink Operation</seealso>
         public virtual Task<CreateLinkResponse> CreateLinkAsync(CreateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLinkResponseUnmarshaller.Instance;
             
@@ -1478,7 +1478,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSite">REST API Reference for CreateSite Operation</seealso>
         public virtual CreateSiteResponse CreateSite(CreateSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteResponseUnmarshaller.Instance;
 
@@ -1520,7 +1520,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSite">REST API Reference for CreateSite Operation</seealso>
         public virtual Task<CreateSiteResponse> CreateSiteAsync(CreateSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteResponseUnmarshaller.Instance;
             
@@ -1561,7 +1561,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
         public virtual CreateSiteToSiteVpnAttachmentResponse CreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteToSiteVpnAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
 
@@ -1601,7 +1601,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
         public virtual Task<CreateSiteToSiteVpnAttachmentResponse> CreateSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSiteToSiteVpnAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
             
@@ -1641,7 +1641,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
         public virtual CreateTransitGatewayPeeringResponse CreateTransitGatewayPeering(CreateTransitGatewayPeeringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
 
@@ -1680,7 +1680,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
         public virtual Task<CreateTransitGatewayPeeringResponse> CreateTransitGatewayPeeringAsync(CreateTransitGatewayPeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
             
@@ -1720,7 +1720,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
         public virtual CreateTransitGatewayRouteTableAttachmentResponse CreateTransitGatewayRouteTableAttachment(CreateTransitGatewayRouteTableAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
 
@@ -1759,7 +1759,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
         public virtual Task<CreateTransitGatewayRouteTableAttachmentResponse> CreateTransitGatewayRouteTableAttachmentAsync(CreateTransitGatewayRouteTableAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
             
@@ -1799,7 +1799,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
         public virtual CreateVpcAttachmentResponse CreateVpcAttachment(CreateVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -1838,7 +1838,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
         public virtual Task<CreateVpcAttachmentResponse> CreateVpcAttachmentAsync(CreateVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcAttachmentResponseUnmarshaller.Instance;
             
@@ -1878,7 +1878,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
         public virtual DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
 
@@ -1917,7 +1917,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
         public virtual Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
             
@@ -1957,7 +1957,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1996,7 +1996,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
             
@@ -2036,7 +2036,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
         public virtual DeleteConnectPeerResponse DeleteConnectPeer(DeleteConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectPeerResponseUnmarshaller.Instance;
 
@@ -2075,7 +2075,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
         public virtual Task<DeleteConnectPeerResponse> DeleteConnectPeerAsync(DeleteConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectPeerResponseUnmarshaller.Instance;
             
@@ -2116,7 +2116,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
         public virtual DeleteCoreNetworkResponse DeleteCoreNetwork(DeleteCoreNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreNetworkResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
         public virtual Task<DeleteCoreNetworkResponse> DeleteCoreNetworkAsync(DeleteCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreNetworkResponseUnmarshaller.Instance;
             
@@ -2196,7 +2196,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
         public virtual DeleteCoreNetworkPolicyVersionResponse DeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreNetworkPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
 
@@ -2235,7 +2235,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
         public virtual Task<DeleteCoreNetworkPolicyVersionResponse> DeleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoreNetworkPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
             
@@ -2276,7 +2276,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
         public virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
 
@@ -2316,7 +2316,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
         public virtual Task<DeleteDeviceResponse> DeleteDeviceAsync(DeleteDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
             
@@ -2358,7 +2358,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">REST API Reference for DeleteGlobalNetwork Operation</seealso>
         public virtual DeleteGlobalNetworkResponse DeleteGlobalNetwork(DeleteGlobalNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalNetworkResponseUnmarshaller.Instance;
 
@@ -2399,7 +2399,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">REST API Reference for DeleteGlobalNetwork Operation</seealso>
         public virtual Task<DeleteGlobalNetworkResponse> DeleteGlobalNetworkAsync(DeleteGlobalNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalNetworkResponseUnmarshaller.Instance;
             
@@ -2440,7 +2440,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteLink">REST API Reference for DeleteLink Operation</seealso>
         public virtual DeleteLinkResponse DeleteLink(DeleteLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLinkResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteLink">REST API Reference for DeleteLink Operation</seealso>
         public virtual Task<DeleteLinkResponse> DeleteLinkAsync(DeleteLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLinkResponseUnmarshaller.Instance;
             
@@ -2520,7 +2520,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
         public virtual DeletePeeringResponse DeletePeering(DeletePeeringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
 
@@ -2559,7 +2559,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
         public virtual Task<DeletePeeringResponse> DeletePeeringAsync(DeletePeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
             
@@ -2597,7 +2597,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2634,7 +2634,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             
@@ -2674,7 +2674,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
         public virtual DeleteSiteResponse DeleteSite(DeleteSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
 
@@ -2713,7 +2713,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteSite">REST API Reference for DeleteSite Operation</seealso>
         public virtual Task<DeleteSiteResponse> DeleteSiteAsync(DeleteSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSiteResponseUnmarshaller.Instance;
             
@@ -2755,7 +2755,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeregisterTransitGateway">REST API Reference for DeregisterTransitGateway Operation</seealso>
         public virtual DeregisterTransitGatewayResponse DeregisterTransitGateway(DeregisterTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeregisterTransitGateway">REST API Reference for DeregisterTransitGateway Operation</seealso>
         public virtual Task<DeregisterTransitGatewayResponse> DeregisterTransitGatewayAsync(DeregisterTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayResponseUnmarshaller.Instance;
             
@@ -2834,7 +2834,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">REST API Reference for DescribeGlobalNetworks Operation</seealso>
         public virtual DescribeGlobalNetworksResponse DescribeGlobalNetworks(DescribeGlobalNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalNetworksResponseUnmarshaller.Instance;
 
@@ -2871,7 +2871,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">REST API Reference for DescribeGlobalNetworks Operation</seealso>
         public virtual Task<DescribeGlobalNetworksResponse> DescribeGlobalNetworksAsync(DescribeGlobalNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalNetworksResponseUnmarshaller.Instance;
             
@@ -2911,7 +2911,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
         public virtual DisassociateConnectPeerResponse DisassociateConnectPeer(DisassociateConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectPeerResponseUnmarshaller.Instance;
 
@@ -2950,7 +2950,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
         public virtual Task<DisassociateConnectPeerResponse> DisassociateConnectPeerAsync(DisassociateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectPeerResponseUnmarshaller.Instance;
             
@@ -2990,7 +2990,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateCustomerGateway">REST API Reference for DisassociateCustomerGateway Operation</seealso>
         public virtual DisassociateCustomerGatewayResponse DisassociateCustomerGateway(DisassociateCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateCustomerGateway">REST API Reference for DisassociateCustomerGateway Operation</seealso>
         public virtual Task<DisassociateCustomerGatewayResponse> DisassociateCustomerGatewayAsync(DisassociateCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCustomerGatewayResponseUnmarshaller.Instance;
             
@@ -3070,7 +3070,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateLink">REST API Reference for DisassociateLink Operation</seealso>
         public virtual DisassociateLinkResponse DisassociateLink(DisassociateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLinkResponseUnmarshaller.Instance;
 
@@ -3110,7 +3110,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateLink">REST API Reference for DisassociateLink Operation</seealso>
         public virtual Task<DisassociateLinkResponse> DisassociateLinkAsync(DisassociateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLinkResponseUnmarshaller.Instance;
             
@@ -3150,7 +3150,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">REST API Reference for DisassociateTransitGatewayConnectPeer Operation</seealso>
         public virtual DisassociateTransitGatewayConnectPeerResponse DisassociateTransitGatewayConnectPeer(DisassociateTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -3189,7 +3189,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateTransitGatewayConnectPeer">REST API Reference for DisassociateTransitGatewayConnectPeer Operation</seealso>
         public virtual Task<DisassociateTransitGatewayConnectPeerResponse> DisassociateTransitGatewayConnectPeerAsync(DisassociateTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
             
@@ -3230,7 +3230,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
         public virtual ExecuteCoreNetworkChangeSetResponse ExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCoreNetworkChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCoreNetworkChangeSetResponseUnmarshaller.Instance;
 
@@ -3270,7 +3270,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
         public virtual Task<ExecuteCoreNetworkChangeSetResponse> ExecuteCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCoreNetworkChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCoreNetworkChangeSetResponseUnmarshaller.Instance;
             
@@ -3306,7 +3306,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
         public virtual GetConnectAttachmentResponse GetConnectAttachment(GetConnectAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectAttachmentResponseUnmarshaller.Instance;
 
@@ -3341,7 +3341,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
         public virtual Task<GetConnectAttachmentResponse> GetConnectAttachmentAsync(GetConnectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectAttachmentResponseUnmarshaller.Instance;
             
@@ -3377,7 +3377,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">REST API Reference for GetConnections Operation</seealso>
         public virtual GetConnectionsResponse GetConnections(GetConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
 
@@ -3412,7 +3412,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">REST API Reference for GetConnections Operation</seealso>
         public virtual Task<GetConnectionsResponse> GetConnectionsAsync(GetConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
             
@@ -3448,7 +3448,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
         public virtual GetConnectPeerResponse GetConnectPeer(GetConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectPeerResponseUnmarshaller.Instance;
 
@@ -3483,7 +3483,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
         public virtual Task<GetConnectPeerResponse> GetConnectPeerAsync(GetConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectPeerResponseUnmarshaller.Instance;
             
@@ -3523,7 +3523,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
         public virtual GetConnectPeerAssociationsResponse GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectPeerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectPeerAssociationsResponseUnmarshaller.Instance;
 
@@ -3562,7 +3562,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
         public virtual Task<GetConnectPeerAssociationsResponse> GetConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectPeerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectPeerAssociationsResponseUnmarshaller.Instance;
             
@@ -3598,7 +3598,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
         public virtual GetCoreNetworkResponse GetCoreNetwork(GetCoreNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkResponseUnmarshaller.Instance;
 
@@ -3633,7 +3633,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
         public virtual Task<GetCoreNetworkResponse> GetCoreNetworkAsync(GetCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkResponseUnmarshaller.Instance;
             
@@ -3669,7 +3669,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
         public virtual GetCoreNetworkChangeEventsResponse GetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
 
@@ -3704,7 +3704,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
         public virtual Task<GetCoreNetworkChangeEventsResponse> GetCoreNetworkChangeEventsAsync(GetCoreNetworkChangeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
             
@@ -3740,7 +3740,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
         public virtual GetCoreNetworkChangeSetResponse GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkChangeSetResponseUnmarshaller.Instance;
 
@@ -3775,7 +3775,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
         public virtual Task<GetCoreNetworkChangeSetResponse> GetCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkChangeSetResponseUnmarshaller.Instance;
             
@@ -3812,7 +3812,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
         public virtual GetCoreNetworkPolicyResponse GetCoreNetworkPolicy(GetCoreNetworkPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkPolicyResponseUnmarshaller.Instance;
 
@@ -3848,7 +3848,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
         public virtual Task<GetCoreNetworkPolicyResponse> GetCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoreNetworkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoreNetworkPolicyResponseUnmarshaller.Instance;
             
@@ -3889,7 +3889,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCustomerGatewayAssociations">REST API Reference for GetCustomerGatewayAssociations Operation</seealso>
         public virtual GetCustomerGatewayAssociationsResponse GetCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomerGatewayAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomerGatewayAssociationsResponseUnmarshaller.Instance;
 
@@ -3929,7 +3929,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCustomerGatewayAssociations">REST API Reference for GetCustomerGatewayAssociations Operation</seealso>
         public virtual Task<GetCustomerGatewayAssociationsResponse> GetCustomerGatewayAssociationsAsync(GetCustomerGatewayAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomerGatewayAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomerGatewayAssociationsResponseUnmarshaller.Instance;
             
@@ -3965,7 +3965,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDevices">REST API Reference for GetDevices Operation</seealso>
         public virtual GetDevicesResponse GetDevices(GetDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicesResponseUnmarshaller.Instance;
 
@@ -4000,7 +4000,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDevices">REST API Reference for GetDevices Operation</seealso>
         public virtual Task<GetDevicesResponse> GetDevicesAsync(GetDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicesResponseUnmarshaller.Instance;
             
@@ -4036,7 +4036,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">REST API Reference for GetDirectConnectGatewayAttachment Operation</seealso>
         public virtual GetDirectConnectGatewayAttachmentResponse GetDirectConnectGatewayAttachment(GetDirectConnectGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -4071,7 +4071,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">REST API Reference for GetDirectConnectGatewayAttachment Operation</seealso>
         public virtual Task<GetDirectConnectGatewayAttachmentResponse> GetDirectConnectGatewayAttachmentAsync(GetDirectConnectGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
             
@@ -4108,7 +4108,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinkAssociations">REST API Reference for GetLinkAssociations Operation</seealso>
         public virtual GetLinkAssociationsResponse GetLinkAssociations(GetLinkAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkAssociationsResponseUnmarshaller.Instance;
 
@@ -4144,7 +4144,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinkAssociations">REST API Reference for GetLinkAssociations Operation</seealso>
         public virtual Task<GetLinkAssociationsResponse> GetLinkAssociationsAsync(GetLinkAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkAssociationsResponseUnmarshaller.Instance;
             
@@ -4186,7 +4186,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinks">REST API Reference for GetLinks Operation</seealso>
         public virtual GetLinksResponse GetLinks(GetLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinksResponseUnmarshaller.Instance;
 
@@ -4227,7 +4227,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetLinks">REST API Reference for GetLinks Operation</seealso>
         public virtual Task<GetLinksResponse> GetLinksAsync(GetLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinksResponseUnmarshaller.Instance;
             
@@ -4260,7 +4260,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
         public virtual GetNetworkResourceCountsResponse GetNetworkResourceCounts(GetNetworkResourceCountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourceCountsResponseUnmarshaller.Instance;
 
@@ -4292,7 +4292,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
         public virtual Task<GetNetworkResourceCountsResponse> GetNetworkResourceCountsAsync(GetNetworkResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourceCountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourceCountsResponseUnmarshaller.Instance;
             
@@ -4328,7 +4328,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
         public virtual GetNetworkResourceRelationshipsResponse GetNetworkResourceRelationships(GetNetworkResourceRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourceRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourceRelationshipsResponseUnmarshaller.Instance;
 
@@ -4363,7 +4363,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
         public virtual Task<GetNetworkResourceRelationshipsResponse> GetNetworkResourceRelationshipsAsync(GetNetworkResourceRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourceRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourceRelationshipsResponseUnmarshaller.Instance;
             
@@ -4405,7 +4405,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
         public virtual GetNetworkResourcesResponse GetNetworkResources(GetNetworkResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourcesResponseUnmarshaller.Instance;
 
@@ -4446,7 +4446,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
         public virtual Task<GetNetworkResourcesResponse> GetNetworkResourcesAsync(GetNetworkResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkResourcesResponseUnmarshaller.Instance;
             
@@ -4482,7 +4482,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
         public virtual GetNetworkRoutesResponse GetNetworkRoutes(GetNetworkRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkRoutesResponseUnmarshaller.Instance;
 
@@ -4517,7 +4517,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
         public virtual Task<GetNetworkRoutesResponse> GetNetworkRoutesAsync(GetNetworkRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkRoutesResponseUnmarshaller.Instance;
             
@@ -4553,7 +4553,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
         public virtual GetNetworkTelemetryResponse GetNetworkTelemetry(GetNetworkTelemetryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkTelemetryResponseUnmarshaller.Instance;
 
@@ -4588,7 +4588,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
         public virtual Task<GetNetworkTelemetryResponse> GetNetworkTelemetryAsync(GetNetworkTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkTelemetryResponseUnmarshaller.Instance;
             
@@ -4621,7 +4621,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4653,7 +4653,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -4689,7 +4689,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
         public virtual GetRouteAnalysisResponse GetRouteAnalysis(GetRouteAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteAnalysisResponseUnmarshaller.Instance;
 
@@ -4724,7 +4724,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
         public virtual Task<GetRouteAnalysisResponse> GetRouteAnalysisAsync(GetRouteAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteAnalysisResponseUnmarshaller.Instance;
             
@@ -4760,7 +4760,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">REST API Reference for GetSites Operation</seealso>
         public virtual GetSitesResponse GetSites(GetSitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSitesResponseUnmarshaller.Instance;
 
@@ -4795,7 +4795,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">REST API Reference for GetSites Operation</seealso>
         public virtual Task<GetSitesResponse> GetSitesAsync(GetSitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSitesResponseUnmarshaller.Instance;
             
@@ -4831,7 +4831,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
         public virtual GetSiteToSiteVpnAttachmentResponse GetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteToSiteVpnAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
 
@@ -4866,7 +4866,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
         public virtual Task<GetSiteToSiteVpnAttachmentResponse> GetSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSiteToSiteVpnAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
             
@@ -4907,7 +4907,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">REST API Reference for GetTransitGatewayConnectPeerAssociations Operation</seealso>
         public virtual GetTransitGatewayConnectPeerAssociationsResponse GetTransitGatewayConnectPeerAssociations(GetTransitGatewayConnectPeerAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayConnectPeerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayConnectPeerAssociationsResponseUnmarshaller.Instance;
 
@@ -4947,7 +4947,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayConnectPeerAssociations">REST API Reference for GetTransitGatewayConnectPeerAssociations Operation</seealso>
         public virtual Task<GetTransitGatewayConnectPeerAssociationsResponse> GetTransitGatewayConnectPeerAssociationsAsync(GetTransitGatewayConnectPeerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayConnectPeerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayConnectPeerAssociationsResponseUnmarshaller.Instance;
             
@@ -4983,7 +4983,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
         public virtual GetTransitGatewayPeeringResponse GetTransitGatewayPeering(GetTransitGatewayPeeringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
 
@@ -5018,7 +5018,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
         public virtual Task<GetTransitGatewayPeeringResponse> GetTransitGatewayPeeringAsync(GetTransitGatewayPeeringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
             
@@ -5054,7 +5054,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRegistrations">REST API Reference for GetTransitGatewayRegistrations Operation</seealso>
         public virtual GetTransitGatewayRegistrationsResponse GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRegistrationsResponseUnmarshaller.Instance;
 
@@ -5089,7 +5089,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRegistrations">REST API Reference for GetTransitGatewayRegistrations Operation</seealso>
         public virtual Task<GetTransitGatewayRegistrationsResponse> GetTransitGatewayRegistrationsAsync(GetTransitGatewayRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRegistrationsResponseUnmarshaller.Instance;
             
@@ -5125,7 +5125,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
         public virtual GetTransitGatewayRouteTableAttachmentResponse GetTransitGatewayRouteTableAttachment(GetTransitGatewayRouteTableAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
 
@@ -5160,7 +5160,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
         public virtual Task<GetTransitGatewayRouteTableAttachmentResponse> GetTransitGatewayRouteTableAttachmentAsync(GetTransitGatewayRouteTableAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
             
@@ -5196,7 +5196,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
         public virtual GetVpcAttachmentResponse GetVpcAttachment(GetVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -5231,7 +5231,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
         public virtual Task<GetVpcAttachmentResponse> GetVpcAttachmentAsync(GetVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcAttachmentResponseUnmarshaller.Instance;
             
@@ -5264,7 +5264,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
         public virtual ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
 
@@ -5296,7 +5296,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
         public virtual Task<ListAttachmentsResponse> ListAttachmentsAsync(ListAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
             
@@ -5329,7 +5329,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
         public virtual ListConnectPeersResponse ListConnectPeers(ListConnectPeersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectPeersResponseUnmarshaller.Instance;
 
@@ -5361,7 +5361,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
         public virtual Task<ListConnectPeersResponse> ListConnectPeersAsync(ListConnectPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectPeersResponseUnmarshaller.Instance;
             
@@ -5397,7 +5397,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
         public virtual ListCoreNetworkPolicyVersionsResponse ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreNetworkPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreNetworkPolicyVersionsResponseUnmarshaller.Instance;
 
@@ -5432,7 +5432,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
         public virtual Task<ListCoreNetworkPolicyVersionsResponse> ListCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreNetworkPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreNetworkPolicyVersionsResponseUnmarshaller.Instance;
             
@@ -5465,7 +5465,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
         public virtual ListCoreNetworksResponse ListCoreNetworks(ListCoreNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreNetworksResponseUnmarshaller.Instance;
 
@@ -5497,7 +5497,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
         public virtual Task<ListCoreNetworksResponse> ListCoreNetworksAsync(ListCoreNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoreNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoreNetworksResponseUnmarshaller.Instance;
             
@@ -5519,7 +5519,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
         public virtual ListOrganizationServiceAccessStatusResponse ListOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
 
@@ -5540,7 +5540,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus">REST API Reference for ListOrganizationServiceAccessStatus Operation</seealso>
         public virtual Task<ListOrganizationServiceAccessStatusResponse> ListOrganizationServiceAccessStatusAsync(ListOrganizationServiceAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationServiceAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationServiceAccessStatusResponseUnmarshaller.Instance;
             
@@ -5573,7 +5573,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
         public virtual ListPeeringsResponse ListPeerings(ListPeeringsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
 
@@ -5605,7 +5605,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
         public virtual Task<ListPeeringsResponse> ListPeeringsAsync(ListPeeringsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
             
@@ -5641,7 +5641,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5676,7 +5676,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5720,7 +5720,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
         public virtual PutCoreNetworkPolicyResponse PutCoreNetworkPolicy(PutCoreNetworkPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCoreNetworkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCoreNetworkPolicyResponseUnmarshaller.Instance;
 
@@ -5763,7 +5763,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
         public virtual Task<PutCoreNetworkPolicyResponse> PutCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCoreNetworkPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCoreNetworkPolicyResponseUnmarshaller.Instance;
             
@@ -5803,7 +5803,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -5842,7 +5842,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             
@@ -5887,7 +5887,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">REST API Reference for RegisterTransitGateway Operation</seealso>
         public virtual RegisterTransitGatewayResponse RegisterTransitGateway(RegisterTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayResponseUnmarshaller.Instance;
 
@@ -5931,7 +5931,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">REST API Reference for RegisterTransitGateway Operation</seealso>
         public virtual Task<RegisterTransitGatewayResponse> RegisterTransitGatewayAsync(RegisterTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayResponseUnmarshaller.Instance;
             
@@ -5971,7 +5971,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
         public virtual RejectAttachmentResponse RejectAttachment(RejectAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectAttachmentResponseUnmarshaller.Instance;
 
@@ -6010,7 +6010,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
         public virtual Task<RejectAttachmentResponse> RejectAttachmentAsync(RejectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectAttachmentResponseUnmarshaller.Instance;
             
@@ -6052,7 +6052,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
         public virtual RestoreCoreNetworkPolicyVersionResponse RestoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreCoreNetworkPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
 
@@ -6093,7 +6093,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
         public virtual Task<RestoreCoreNetworkPolicyVersionResponse> RestoreCoreNetworkPolicyVersionAsync(RestoreCoreNetworkPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreCoreNetworkPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
             
@@ -6134,7 +6134,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
         public virtual StartOrganizationServiceAccessUpdateResponse StartOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
 
@@ -6174,7 +6174,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">REST API Reference for StartOrganizationServiceAccessUpdate Operation</seealso>
         public virtual Task<StartOrganizationServiceAccessUpdateResponse> StartOrganizationServiceAccessUpdateAsync(StartOrganizationServiceAccessUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartOrganizationServiceAccessUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartOrganizationServiceAccessUpdateResponseUnmarshaller.Instance;
             
@@ -6216,7 +6216,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
         public virtual StartRouteAnalysisResponse StartRouteAnalysis(StartRouteAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRouteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRouteAnalysisResponseUnmarshaller.Instance;
 
@@ -6257,7 +6257,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
         public virtual Task<StartRouteAnalysisResponse> StartRouteAnalysisAsync(StartRouteAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRouteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRouteAnalysisResponseUnmarshaller.Instance;
             
@@ -6300,7 +6300,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6342,7 +6342,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -6382,7 +6382,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6421,7 +6421,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -6462,7 +6462,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -6502,7 +6502,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
             
@@ -6542,7 +6542,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
         public virtual UpdateCoreNetworkResponse UpdateCoreNetwork(UpdateCoreNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCoreNetworkResponseUnmarshaller.Instance;
 
@@ -6581,7 +6581,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
         public virtual Task<UpdateCoreNetworkResponse> UpdateCoreNetworkAsync(UpdateCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCoreNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCoreNetworkResponseUnmarshaller.Instance;
             
@@ -6622,7 +6622,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
         public virtual UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceResponseUnmarshaller.Instance;
 
@@ -6662,7 +6662,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
         public virtual Task<UpdateDeviceResponse> UpdateDeviceAsync(UpdateDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceResponseUnmarshaller.Instance;
             
@@ -6703,7 +6703,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">REST API Reference for UpdateDirectConnectGatewayAttachment Operation</seealso>
         public virtual UpdateDirectConnectGatewayAttachmentResponse UpdateDirectConnectGatewayAttachment(UpdateDirectConnectGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -6743,7 +6743,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">REST API Reference for UpdateDirectConnectGatewayAttachment Operation</seealso>
         public virtual Task<UpdateDirectConnectGatewayAttachmentResponse> UpdateDirectConnectGatewayAttachmentAsync(UpdateDirectConnectGatewayAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
             
@@ -6784,7 +6784,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateGlobalNetwork">REST API Reference for UpdateGlobalNetwork Operation</seealso>
         public virtual UpdateGlobalNetworkResponse UpdateGlobalNetwork(UpdateGlobalNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalNetworkResponseUnmarshaller.Instance;
 
@@ -6824,7 +6824,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateGlobalNetwork">REST API Reference for UpdateGlobalNetwork Operation</seealso>
         public virtual Task<UpdateGlobalNetworkResponse> UpdateGlobalNetworkAsync(UpdateGlobalNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalNetworkResponseUnmarshaller.Instance;
             
@@ -6868,7 +6868,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateLink">REST API Reference for UpdateLink Operation</seealso>
         public virtual UpdateLinkResponse UpdateLink(UpdateLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLinkResponseUnmarshaller.Instance;
 
@@ -6911,7 +6911,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateLink">REST API Reference for UpdateLink Operation</seealso>
         public virtual Task<UpdateLinkResponse> UpdateLinkAsync(UpdateLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLinkResponseUnmarshaller.Instance;
             
@@ -6951,7 +6951,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
         public virtual UpdateNetworkResourceMetadataResponse UpdateNetworkResourceMetadata(UpdateNetworkResourceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkResourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkResourceMetadataResponseUnmarshaller.Instance;
 
@@ -6990,7 +6990,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
         public virtual Task<UpdateNetworkResourceMetadataResponse> UpdateNetworkResourceMetadataAsync(UpdateNetworkResourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkResourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkResourceMetadataResponseUnmarshaller.Instance;
             
@@ -7031,7 +7031,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         public virtual UpdateSiteResponse UpdateSite(UpdateSiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteResponseUnmarshaller.Instance;
 
@@ -7071,7 +7071,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         public virtual Task<UpdateSiteResponse> UpdateSiteAsync(UpdateSiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSiteResponseUnmarshaller.Instance;
             
@@ -7111,7 +7111,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
         public virtual UpdateVpcAttachmentResponse UpdateVpcAttachment(UpdateVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -7150,7 +7150,7 @@ namespace Amazon.NetworkManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
         public virtual Task<UpdateVpcAttachmentResponse> UpdateVpcAttachmentAsync(UpdateVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcAttachmentResponseUnmarshaller.Instance;
             

@@ -299,7 +299,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateProfile">REST API Reference for AssociateProfile Operation</seealso>
         public virtual AssociateProfileResponse AssociateProfile(AssociateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProfileResponseUnmarshaller.Instance;
 
@@ -346,7 +346,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateProfile">REST API Reference for AssociateProfile Operation</seealso>
         public virtual Task<AssociateProfileResponse> AssociateProfileAsync(AssociateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProfileResponseUnmarshaller.Instance;
             
@@ -392,7 +392,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateResourceToProfile">REST API Reference for AssociateResourceToProfile Operation</seealso>
         public virtual AssociateResourceToProfileResponse AssociateResourceToProfile(AssociateResourceToProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceToProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceToProfileResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateResourceToProfile">REST API Reference for AssociateResourceToProfile Operation</seealso>
         public virtual Task<AssociateResourceToProfileResponse> AssociateResourceToProfileAsync(AssociateResourceToProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceToProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceToProfileResponseUnmarshaller.Instance;
             
@@ -474,7 +474,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
             
@@ -548,7 +548,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
             
@@ -625,7 +625,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DisassociateProfile">REST API Reference for DisassociateProfile Operation</seealso>
         public virtual DisassociateProfileResponse DisassociateProfile(DisassociateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProfileResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DisassociateProfile">REST API Reference for DisassociateProfile Operation</seealso>
         public virtual Task<DisassociateProfileResponse> DisassociateProfileAsync(DisassociateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProfileResponseUnmarshaller.Instance;
             
@@ -710,7 +710,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DisassociateResourceFromProfile">REST API Reference for DisassociateResourceFromProfile Operation</seealso>
         public virtual DisassociateResourceFromProfileResponse DisassociateResourceFromProfile(DisassociateResourceFromProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceFromProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceFromProfileResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/DisassociateResourceFromProfile">REST API Reference for DisassociateResourceFromProfile Operation</seealso>
         public virtual Task<DisassociateResourceFromProfileResponse> DisassociateResourceFromProfileAsync(DisassociateResourceFromProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceFromProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceFromProfileResponseUnmarshaller.Instance;
             
@@ -790,7 +790,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
             
@@ -859,7 +859,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfileAssociation">REST API Reference for GetProfileAssociation Operation</seealso>
         public virtual GetProfileAssociationResponse GetProfileAssociation(GetProfileAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileAssociationResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfileAssociation">REST API Reference for GetProfileAssociation Operation</seealso>
         public virtual Task<GetProfileAssociationResponse> GetProfileAssociationAsync(GetProfileAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileAssociationResponseUnmarshaller.Instance;
             
@@ -930,7 +930,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfileResourceAssociation">REST API Reference for GetProfileResourceAssociation Operation</seealso>
         public virtual GetProfileResourceAssociationResponse GetProfileResourceAssociation(GetProfileResourceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResourceAssociationResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfileResourceAssociation">REST API Reference for GetProfileResourceAssociation Operation</seealso>
         public virtual Task<GetProfileResourceAssociationResponse> GetProfileResourceAssociationAsync(GetProfileResourceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResourceAssociationResponseUnmarshaller.Instance;
             
@@ -1003,7 +1003,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfileAssociations">REST API Reference for ListProfileAssociations Operation</seealso>
         public virtual ListProfileAssociationsResponse ListProfileAssociations(ListProfileAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAssociationsResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfileAssociations">REST API Reference for ListProfileAssociations Operation</seealso>
         public virtual Task<ListProfileAssociationsResponse> ListProfileAssociationsAsync(ListProfileAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAssociationsResponseUnmarshaller.Instance;
             
@@ -1082,7 +1082,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfileResourceAssociations">REST API Reference for ListProfileResourceAssociations Operation</seealso>
         public virtual ListProfileResourceAssociationsResponse ListProfileResourceAssociations(ListProfileResourceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileResourceAssociationsResponseUnmarshaller.Instance;
 
@@ -1124,7 +1124,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfileResourceAssociations">REST API Reference for ListProfileResourceAssociations Operation</seealso>
         public virtual Task<ListProfileResourceAssociationsResponse> ListProfileResourceAssociationsAsync(ListProfileResourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileResourceAssociationsResponseUnmarshaller.Instance;
             
@@ -1161,7 +1161,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1197,7 +1197,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
             
@@ -1234,7 +1234,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1270,7 +1270,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1304,7 +1304,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1374,7 +1374,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1456,7 +1456,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UpdateProfileResourceAssociation">REST API Reference for UpdateProfileResourceAssociation Operation</seealso>
         public virtual UpdateProfileResourceAssociationResponse UpdateProfileResourceAssociation(UpdateProfileResourceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResourceAssociationResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.Route53Profiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UpdateProfileResourceAssociation">REST API Reference for UpdateProfileResourceAssociation Operation</seealso>
         public virtual Task<UpdateProfileResourceAssociationResponse> UpdateProfileResourceAssociationAsync(UpdateProfileResourceAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResourceAssociationResponseUnmarshaller.Instance;
             

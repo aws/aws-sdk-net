@@ -359,7 +359,7 @@ namespace Amazon.AppConfigData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration">REST API Reference for GetLatestConfiguration Operation</seealso>
         public virtual GetLatestConfigurationResponse GetLatestConfiguration(GetLatestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLatestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLatestConfigurationResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.AppConfigData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/GetLatestConfiguration">REST API Reference for GetLatestConfiguration Operation</seealso>
         public virtual Task<GetLatestConfigurationResponse> GetLatestConfigurationAsync(GetLatestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLatestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLatestConfigurationResponseUnmarshaller.Instance;
             
@@ -448,7 +448,7 @@ namespace Amazon.AppConfigData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession">REST API Reference for StartConfigurationSession Operation</seealso>
         public virtual StartConfigurationSessionResponse StartConfigurationSession(StartConfigurationSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationSessionResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.AppConfigData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/StartConfigurationSession">REST API Reference for StartConfigurationSession Operation</seealso>
         public virtual Task<StartConfigurationSessionResponse> StartConfigurationSessionAsync(StartConfigurationSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationSessionResponseUnmarshaller.Instance;
             

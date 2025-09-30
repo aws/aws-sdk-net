@@ -269,7 +269,7 @@ namespace Amazon.Inspector2
 
         internal virtual AssociateMemberResponse AssociateMember(AssociateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberResponseUnmarshaller.Instance;
 
@@ -318,7 +318,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AssociateMember">REST API Reference for AssociateMember Operation</seealso>
         public virtual Task<AssociateMemberResponse> AssociateMemberAsync(AssociateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchAssociateCodeSecurityScanConfigurationResponse BatchAssociateCodeSecurityScanConfiguration(BatchAssociateCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchAssociateCodeSecurityScanConfiguration">REST API Reference for BatchAssociateCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<BatchAssociateCodeSecurityScanConfigurationResponse> BatchAssociateCodeSecurityScanConfigurationAsync(BatchAssociateCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchDisassociateCodeSecurityScanConfigurationResponse BatchDisassociateCodeSecurityScanConfiguration(BatchDisassociateCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchDisassociateCodeSecurityScanConfiguration">REST API Reference for BatchDisassociateCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<BatchDisassociateCodeSecurityScanConfigurationResponse> BatchDisassociateCodeSecurityScanConfigurationAsync(BatchDisassociateCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -452,7 +452,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchGetAccountStatusResponse BatchGetAccountStatus(BatchGetAccountStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAccountStatusResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetAccountStatus">REST API Reference for BatchGetAccountStatus Operation</seealso>
         public virtual Task<BatchGetAccountStatusResponse> BatchGetAccountStatusAsync(BatchGetAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAccountStatusResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchGetCodeSnippetResponse BatchGetCodeSnippet(BatchGetCodeSnippetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCodeSnippetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCodeSnippetResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
         public virtual Task<BatchGetCodeSnippetResponse> BatchGetCodeSnippetAsync(BatchGetCodeSnippetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCodeSnippetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCodeSnippetResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchGetFindingDetailsResponse BatchGetFindingDetails(BatchGetFindingDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFindingDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFindingDetailsResponseUnmarshaller.Instance;
 
@@ -602,7 +602,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails">REST API Reference for BatchGetFindingDetails Operation</seealso>
         public virtual Task<BatchGetFindingDetailsResponse> BatchGetFindingDetailsAsync(BatchGetFindingDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFindingDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFindingDetailsResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchGetFreeTrialInfoResponse BatchGetFreeTrialInfo(BatchGetFreeTrialInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFreeTrialInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFreeTrialInfoResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFreeTrialInfo">REST API Reference for BatchGetFreeTrialInfo Operation</seealso>
         public virtual Task<BatchGetFreeTrialInfoResponse> BatchGetFreeTrialInfoAsync(BatchGetFreeTrialInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFreeTrialInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFreeTrialInfoResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchGetMemberEc2DeepInspectionStatusResponse BatchGetMemberEc2DeepInspectionStatus(BatchGetMemberEc2DeepInspectionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
 
@@ -708,7 +708,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus">REST API Reference for BatchGetMemberEc2DeepInspectionStatus Operation</seealso>
         public virtual Task<BatchGetMemberEc2DeepInspectionStatusResponse> BatchGetMemberEc2DeepInspectionStatusAsync(BatchGetMemberEc2DeepInspectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.Inspector2
 
         internal virtual BatchUpdateMemberEc2DeepInspectionStatusResponse BatchUpdateMemberEc2DeepInspectionStatus(BatchUpdateMemberEc2DeepInspectionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchUpdateMemberEc2DeepInspectionStatus">REST API Reference for BatchUpdateMemberEc2DeepInspectionStatus Operation</seealso>
         public virtual Task<BatchUpdateMemberEc2DeepInspectionStatusResponse> BatchUpdateMemberEc2DeepInspectionStatusAsync(BatchUpdateMemberEc2DeepInspectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
 
@@ -774,7 +774,7 @@ namespace Amazon.Inspector2
 
         internal virtual CancelFindingsReportResponse CancelFindingsReport(CancelFindingsReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelFindingsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelFindingsReportResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelFindingsReport">REST API Reference for CancelFindingsReport Operation</seealso>
         public virtual Task<CancelFindingsReportResponse> CancelFindingsReportAsync(CancelFindingsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelFindingsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelFindingsReportResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.Inspector2
 
         internal virtual CancelSbomExportResponse CancelSbomExport(CancelSbomExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSbomExportResponseUnmarshaller.Instance;
 
@@ -874,7 +874,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
         public virtual Task<CancelSbomExportResponse> CancelSbomExportAsync(CancelSbomExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSbomExportResponseUnmarshaller.Instance;
 
@@ -886,7 +886,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateCisScanConfigurationResponse CreateCisScanConfiguration(CreateCisScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
         public virtual Task<CreateCisScanConfigurationResponse> CreateCisScanConfigurationAsync(CreateCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateCodeSecurityIntegrationResponse CreateCodeSecurityIntegration(CreateCodeSecurityIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCodeSecurityIntegration">REST API Reference for CreateCodeSecurityIntegration Operation</seealso>
         public virtual Task<CreateCodeSecurityIntegrationResponse> CreateCodeSecurityIntegrationAsync(CreateCodeSecurityIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateCodeSecurityScanConfigurationResponse CreateCodeSecurityScanConfiguration(CreateCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCodeSecurityScanConfiguration">REST API Reference for CreateCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<CreateCodeSecurityScanConfigurationResponse> CreateCodeSecurityScanConfigurationAsync(CreateCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1065,7 +1065,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFilterResponseUnmarshaller.Instance;
 
@@ -1113,7 +1113,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         public virtual Task<CreateFilterResponse> CreateFilterAsync(CreateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFilterResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateFindingsReportResponse CreateFindingsReport(CreateFindingsReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFindingsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFindingsReportResponseUnmarshaller.Instance;
 
@@ -1171,7 +1171,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFindingsReport">REST API Reference for CreateFindingsReport Operation</seealso>
         public virtual Task<CreateFindingsReportResponse> CreateFindingsReportAsync(CreateFindingsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFindingsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFindingsReportResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.Inspector2
 
         internal virtual CreateSbomExportResponse CreateSbomExport(CreateSbomExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSbomExportResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
         public virtual Task<CreateSbomExportResponse> CreateSbomExportAsync(CreateSbomExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSbomExportResponseUnmarshaller.Instance;
 
@@ -1239,7 +1239,7 @@ namespace Amazon.Inspector2
 
         internal virtual DeleteCisScanConfigurationResponse DeleteCisScanConfiguration(DeleteCisScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
         public virtual Task<DeleteCisScanConfigurationResponse> DeleteCisScanConfigurationAsync(DeleteCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.Inspector2
 
         internal virtual DeleteCodeSecurityIntegrationResponse DeleteCodeSecurityIntegration(DeleteCodeSecurityIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -1339,7 +1339,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCodeSecurityIntegration">REST API Reference for DeleteCodeSecurityIntegration Operation</seealso>
         public virtual Task<DeleteCodeSecurityIntegrationResponse> DeleteCodeSecurityIntegrationAsync(DeleteCodeSecurityIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -1351,7 +1351,7 @@ namespace Amazon.Inspector2
 
         internal virtual DeleteCodeSecurityScanConfigurationResponse DeleteCodeSecurityScanConfiguration(DeleteCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1395,7 +1395,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCodeSecurityScanConfiguration">REST API Reference for DeleteCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<DeleteCodeSecurityScanConfigurationResponse> DeleteCodeSecurityScanConfigurationAsync(DeleteCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -1407,7 +1407,7 @@ namespace Amazon.Inspector2
 
         internal virtual DeleteFilterResponse DeleteFilter(DeleteFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFilterResponseUnmarshaller.Instance;
 
@@ -1451,7 +1451,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         public virtual Task<DeleteFilterResponse> DeleteFilterAsync(DeleteFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFilterResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.Inspector2
 
         internal virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1503,7 +1503,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1515,7 +1515,7 @@ namespace Amazon.Inspector2
 
         internal virtual DisableResponse Disable(DisableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Disable">REST API Reference for Disable Operation</seealso>
         public virtual Task<DisableResponse> DisableAsync(DisableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.Inspector2
 
         internal virtual DisableDelegatedAdminAccountResponse DisableDelegatedAdminAccount(DisableDelegatedAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DisableDelegatedAdminAccount">REST API Reference for DisableDelegatedAdminAccount Operation</seealso>
         public virtual Task<DisableDelegatedAdminAccountResponse> DisableDelegatedAdminAccountAsync(DisableDelegatedAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.Inspector2
 
         internal virtual DisassociateMemberResponse DisassociateMember(DisassociateMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberResponseUnmarshaller.Instance;
 
@@ -1672,7 +1672,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DisassociateMember">REST API Reference for DisassociateMember Operation</seealso>
         public virtual Task<DisassociateMemberResponse> DisassociateMemberAsync(DisassociateMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberResponseUnmarshaller.Instance;
 
@@ -1684,7 +1684,7 @@ namespace Amazon.Inspector2
 
         internal virtual EnableResponse Enable(EnableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableResponseUnmarshaller.Instance;
 
@@ -1728,7 +1728,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Enable">REST API Reference for Enable Operation</seealso>
         public virtual Task<EnableResponse> EnableAsync(EnableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableResponseUnmarshaller.Instance;
 
@@ -1740,7 +1740,7 @@ namespace Amazon.Inspector2
 
         internal virtual EnableDelegatedAdminAccountResponse EnableDelegatedAdminAccount(EnableDelegatedAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -1788,7 +1788,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EnableDelegatedAdminAccount">REST API Reference for EnableDelegatedAdminAccount Operation</seealso>
         public virtual Task<EnableDelegatedAdminAccountResponse> EnableDelegatedAdminAccountAsync(EnableDelegatedAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetCisScanReportResponse GetCisScanReport(GetCisScanReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
         public virtual Task<GetCisScanReportResponse> GetCisScanReportAsync(GetCisScanReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
 
@@ -1856,7 +1856,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetCisScanResultDetailsResponse GetCisScanResultDetails(GetCisScanResultDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
         public virtual Task<GetCisScanResultDetailsResponse> GetCisScanResultDetailsAsync(GetCisScanResultDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
 
@@ -1908,7 +1908,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetClustersForImageResponse GetClustersForImage(GetClustersForImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClustersForImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClustersForImageResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetClustersForImage">REST API Reference for GetClustersForImage Operation</seealso>
         public virtual Task<GetClustersForImageResponse> GetClustersForImageAsync(GetClustersForImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClustersForImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClustersForImageResponseUnmarshaller.Instance;
 
@@ -1960,7 +1960,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetCodeSecurityIntegrationResponse GetCodeSecurityIntegration(GetCodeSecurityIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -2004,7 +2004,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityIntegration">REST API Reference for GetCodeSecurityIntegration Operation</seealso>
         public virtual Task<GetCodeSecurityIntegrationResponse> GetCodeSecurityIntegrationAsync(GetCodeSecurityIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -2016,7 +2016,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetCodeSecurityScanResponse GetCodeSecurityScan(GetCodeSecurityScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityScanResponseUnmarshaller.Instance;
 
@@ -2064,7 +2064,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityScan">REST API Reference for GetCodeSecurityScan Operation</seealso>
         public virtual Task<GetCodeSecurityScanResponse> GetCodeSecurityScanAsync(GetCodeSecurityScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityScanResponseUnmarshaller.Instance;
 
@@ -2076,7 +2076,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetCodeSecurityScanConfigurationResponse GetCodeSecurityScanConfiguration(GetCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCodeSecurityScanConfiguration">REST API Reference for GetCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<GetCodeSecurityScanConfigurationResponse> GetCodeSecurityScanConfigurationAsync(GetCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -2132,7 +2132,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -2163,7 +2163,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -2175,7 +2175,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetDelegatedAdminAccountResponse GetDelegatedAdminAccount(GetDelegatedAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -2220,7 +2220,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetDelegatedAdminAccount">REST API Reference for GetDelegatedAdminAccount Operation</seealso>
         public virtual Task<GetDelegatedAdminAccountResponse> GetDelegatedAdminAccountAsync(GetDelegatedAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDelegatedAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDelegatedAdminAccountResponseUnmarshaller.Instance;
 
@@ -2232,7 +2232,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetEc2DeepInspectionConfigurationResponse GetEc2DeepInspectionConfiguration(GetEc2DeepInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2273,7 +2273,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration">REST API Reference for GetEc2DeepInspectionConfiguration Operation</seealso>
         public virtual Task<GetEc2DeepInspectionConfigurationResponse> GetEc2DeepInspectionConfigurationAsync(GetEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2285,7 +2285,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetEncryptionKeyResponse GetEncryptionKey(GetEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -2329,7 +2329,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
         public virtual Task<GetEncryptionKeyResponse> GetEncryptionKeyAsync(GetEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -2341,7 +2341,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetFindingsReportStatusResponse GetFindingsReportStatus(GetFindingsReportStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsReportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsReportStatusResponseUnmarshaller.Instance;
 
@@ -2385,7 +2385,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetFindingsReportStatus">REST API Reference for GetFindingsReportStatus Operation</seealso>
         public virtual Task<GetFindingsReportStatusResponse> GetFindingsReportStatusAsync(GetFindingsReportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFindingsReportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFindingsReportStatusResponseUnmarshaller.Instance;
 
@@ -2397,7 +2397,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetMemberResponse GetMember(GetMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
 
@@ -2441,7 +2441,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetMember">REST API Reference for GetMember Operation</seealso>
         public virtual Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemberResponseUnmarshaller.Instance;
 
@@ -2453,7 +2453,7 @@ namespace Amazon.Inspector2
 
         internal virtual GetSbomExportResponse GetSbomExport(GetSbomExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSbomExportResponseUnmarshaller.Instance;
 
@@ -2497,7 +2497,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
         public virtual Task<GetSbomExportResponse> GetSbomExportAsync(GetSbomExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSbomExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSbomExportResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListAccountPermissionsResponse ListAccountPermissions(ListAccountPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountPermissionsResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListAccountPermissions">REST API Reference for ListAccountPermissions Operation</seealso>
         public virtual Task<ListAccountPermissionsResponse> ListAccountPermissionsAsync(ListAccountPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountPermissionsResponseUnmarshaller.Instance;
 
@@ -2561,7 +2561,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCisScanConfigurationsResponse ListCisScanConfigurations(ListCisScanConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
 
@@ -2601,7 +2601,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
         public virtual Task<ListCisScanConfigurationsResponse> ListCisScanConfigurationsAsync(ListCisScanConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
 
@@ -2613,7 +2613,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCisScanResultsAggregatedByChecksResponse ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
 
@@ -2653,7 +2653,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
         public virtual Task<ListCisScanResultsAggregatedByChecksResponse> ListCisScanResultsAggregatedByChecksAsync(ListCisScanResultsAggregatedByChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
 
@@ -2665,7 +2665,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCisScanResultsAggregatedByTargetResourceResponse ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
 
@@ -2705,7 +2705,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
         public virtual Task<ListCisScanResultsAggregatedByTargetResourceResponse> ListCisScanResultsAggregatedByTargetResourceAsync(ListCisScanResultsAggregatedByTargetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
 
@@ -2717,7 +2717,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCisScansResponse ListCisScans(ListCisScansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
         public virtual Task<ListCisScansResponse> ListCisScansAsync(ListCisScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
 
@@ -2769,7 +2769,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCodeSecurityIntegrationsResponse ListCodeSecurityIntegrations(ListCodeSecurityIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityIntegrationsResponseUnmarshaller.Instance;
 
@@ -2809,7 +2809,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityIntegrations">REST API Reference for ListCodeSecurityIntegrations Operation</seealso>
         public virtual Task<ListCodeSecurityIntegrationsResponse> ListCodeSecurityIntegrationsAsync(ListCodeSecurityIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityIntegrationsResponseUnmarshaller.Instance;
 
@@ -2821,7 +2821,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCodeSecurityScanConfigurationAssociationsResponse ListCodeSecurityScanConfigurationAssociations(ListCodeSecurityScanConfigurationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityScanConfigurationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityScanConfigurationAssociationsResponseUnmarshaller.Instance;
 
@@ -2866,7 +2866,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityScanConfigurationAssociations">REST API Reference for ListCodeSecurityScanConfigurationAssociations Operation</seealso>
         public virtual Task<ListCodeSecurityScanConfigurationAssociationsResponse> ListCodeSecurityScanConfigurationAssociationsAsync(ListCodeSecurityScanConfigurationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityScanConfigurationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityScanConfigurationAssociationsResponseUnmarshaller.Instance;
 
@@ -2878,7 +2878,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCodeSecurityScanConfigurationsResponse ListCodeSecurityScanConfigurations(ListCodeSecurityScanConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityScanConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityScanConfigurationsResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCodeSecurityScanConfigurations">REST API Reference for ListCodeSecurityScanConfigurations Operation</seealso>
         public virtual Task<ListCodeSecurityScanConfigurationsResponse> ListCodeSecurityScanConfigurationsAsync(ListCodeSecurityScanConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSecurityScanConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSecurityScanConfigurationsResponseUnmarshaller.Instance;
 
@@ -2934,7 +2934,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCoverageResponse ListCoverage(ListCoverageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCoverage">REST API Reference for ListCoverage Operation</seealso>
         public virtual Task<ListCoverageResponse> ListCoverageAsync(ListCoverageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoverageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoverageResponseUnmarshaller.Instance;
 
@@ -2977,7 +2977,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListCoverageStatisticsResponse ListCoverageStatistics(ListCoverageStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoverageStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoverageStatisticsResponseUnmarshaller.Instance;
 
@@ -3008,7 +3008,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCoverageStatistics">REST API Reference for ListCoverageStatistics Operation</seealso>
         public virtual Task<ListCoverageStatisticsResponse> ListCoverageStatisticsAsync(ListCoverageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCoverageStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCoverageStatisticsResponseUnmarshaller.Instance;
 
@@ -3020,7 +3020,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListDelegatedAdminAccountsResponse ListDelegatedAdminAccounts(ListDelegatedAdminAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDelegatedAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDelegatedAdminAccountsResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListDelegatedAdminAccounts">REST API Reference for ListDelegatedAdminAccounts Operation</seealso>
         public virtual Task<ListDelegatedAdminAccountsResponse> ListDelegatedAdminAccountsAsync(ListDelegatedAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDelegatedAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDelegatedAdminAccountsResponseUnmarshaller.Instance;
 
@@ -3072,7 +3072,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListFiltersResponse ListFilters(ListFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFiltersResponseUnmarshaller.Instance;
 
@@ -3112,7 +3112,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListFilters">REST API Reference for ListFilters Operation</seealso>
         public virtual Task<ListFiltersResponse> ListFiltersAsync(ListFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFiltersResponseUnmarshaller.Instance;
 
@@ -3124,7 +3124,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListFindingAggregationsResponse ListFindingAggregations(ListFindingAggregationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingAggregationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingAggregationsResponseUnmarshaller.Instance;
 
@@ -3155,7 +3155,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListFindingAggregations">REST API Reference for ListFindingAggregations Operation</seealso>
         public virtual Task<ListFindingAggregationsResponse> ListFindingAggregationsAsync(ListFindingAggregationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingAggregationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingAggregationsResponseUnmarshaller.Instance;
 
@@ -3167,7 +3167,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
@@ -3198,7 +3198,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
@@ -3210,7 +3210,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -3251,7 +3251,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3298,7 +3298,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3310,7 +3310,7 @@ namespace Amazon.Inspector2
 
         internal virtual ListUsageTotalsResponse ListUsageTotals(ListUsageTotalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageTotalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageTotalsResponseUnmarshaller.Instance;
 
@@ -3350,7 +3350,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListUsageTotals">REST API Reference for ListUsageTotals Operation</seealso>
         public virtual Task<ListUsageTotalsResponse> ListUsageTotalsAsync(ListUsageTotalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageTotalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageTotalsResponseUnmarshaller.Instance;
 
@@ -3362,7 +3362,7 @@ namespace Amazon.Inspector2
 
         internal virtual ResetEncryptionKeyResponse ResetEncryptionKey(ResetEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -3407,7 +3407,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
         public virtual Task<ResetEncryptionKeyResponse> ResetEncryptionKeyAsync(ResetEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -3419,7 +3419,7 @@ namespace Amazon.Inspector2
 
         internal virtual SearchVulnerabilitiesResponse SearchVulnerabilities(SearchVulnerabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchVulnerabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchVulnerabilitiesResponseUnmarshaller.Instance;
 
@@ -3459,7 +3459,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities">REST API Reference for SearchVulnerabilities Operation</seealso>
         public virtual Task<SearchVulnerabilitiesResponse> SearchVulnerabilitiesAsync(SearchVulnerabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchVulnerabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchVulnerabilitiesResponseUnmarshaller.Instance;
 
@@ -3471,7 +3471,7 @@ namespace Amazon.Inspector2
 
         internal virtual SendCisSessionHealthResponse SendCisSessionHealth(SendCisSessionHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
 
@@ -3517,7 +3517,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
         public virtual Task<SendCisSessionHealthResponse> SendCisSessionHealthAsync(SendCisSessionHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
 
@@ -3529,7 +3529,7 @@ namespace Amazon.Inspector2
 
         internal virtual SendCisSessionTelemetryResponse SendCisSessionTelemetry(SendCisSessionTelemetryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
 
@@ -3575,7 +3575,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
         public virtual Task<SendCisSessionTelemetryResponse> SendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
 
@@ -3587,7 +3587,7 @@ namespace Amazon.Inspector2
 
         internal virtual StartCisSessionResponse StartCisSession(StartCisSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
 
@@ -3633,7 +3633,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
         public virtual Task<StartCisSessionResponse> StartCisSessionAsync(StartCisSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
 
@@ -3645,7 +3645,7 @@ namespace Amazon.Inspector2
 
         internal virtual StartCodeSecurityScanResponse StartCodeSecurityScan(StartCodeSecurityScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeSecurityScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeSecurityScanResponseUnmarshaller.Instance;
 
@@ -3693,7 +3693,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCodeSecurityScan">REST API Reference for StartCodeSecurityScan Operation</seealso>
         public virtual Task<StartCodeSecurityScanResponse> StartCodeSecurityScanAsync(StartCodeSecurityScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeSecurityScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeSecurityScanResponseUnmarshaller.Instance;
 
@@ -3705,7 +3705,7 @@ namespace Amazon.Inspector2
 
         internal virtual StopCisSessionResponse StopCisSession(StopCisSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
 
@@ -3751,7 +3751,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
         public virtual Task<StopCisSessionResponse> StopCisSessionAsync(StopCisSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
 
@@ -3763,7 +3763,7 @@ namespace Amazon.Inspector2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3801,7 +3801,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3813,7 +3813,7 @@ namespace Amazon.Inspector2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3848,7 +3848,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3860,7 +3860,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateCisScanConfigurationResponse UpdateCisScanConfiguration(UpdateCisScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -3904,7 +3904,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
         public virtual Task<UpdateCisScanConfigurationResponse> UpdateCisScanConfigurationAsync(UpdateCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
 
@@ -3916,7 +3916,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateCodeSecurityIntegrationResponse UpdateCodeSecurityIntegration(UpdateCodeSecurityIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -3971,7 +3971,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCodeSecurityIntegration">REST API Reference for UpdateCodeSecurityIntegration Operation</seealso>
         public virtual Task<UpdateCodeSecurityIntegrationResponse> UpdateCodeSecurityIntegrationAsync(UpdateCodeSecurityIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSecurityIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSecurityIntegrationResponseUnmarshaller.Instance;
 
@@ -3983,7 +3983,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateCodeSecurityScanConfigurationResponse UpdateCodeSecurityScanConfiguration(UpdateCodeSecurityScanConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -4031,7 +4031,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCodeSecurityScanConfiguration">REST API Reference for UpdateCodeSecurityScanConfiguration Operation</seealso>
         public virtual Task<UpdateCodeSecurityScanConfigurationResponse> UpdateCodeSecurityScanConfigurationAsync(UpdateCodeSecurityScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSecurityScanConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
@@ -4043,7 +4043,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -4085,7 +4085,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -4097,7 +4097,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateEc2DeepInspectionConfigurationResponse UpdateEc2DeepInspectionConfiguration(UpdateEc2DeepInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -4138,7 +4138,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">REST API Reference for UpdateEc2DeepInspectionConfiguration Operation</seealso>
         public virtual Task<UpdateEc2DeepInspectionConfigurationResponse> UpdateEc2DeepInspectionConfigurationAsync(UpdateEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -4150,7 +4150,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateEncryptionKeyResponse UpdateEncryptionKey(UpdateEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -4195,7 +4195,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
         public virtual Task<UpdateEncryptionKeyResponse> UpdateEncryptionKeyAsync(UpdateEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -4207,7 +4207,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateFilterResponse UpdateFilter(UpdateFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFilterResponseUnmarshaller.Instance;
 
@@ -4251,7 +4251,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
         public virtual Task<UpdateFilterResponse> UpdateFilterAsync(UpdateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFilterResponseUnmarshaller.Instance;
 
@@ -4263,7 +4263,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -4303,7 +4303,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -4315,7 +4315,7 @@ namespace Amazon.Inspector2
 
         internal virtual UpdateOrgEc2DeepInspectionConfigurationResponse UpdateOrgEc2DeepInspectionConfiguration(UpdateOrgEc2DeepInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrgEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrgEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -4356,7 +4356,7 @@ namespace Amazon.Inspector2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrgEc2DeepInspectionConfiguration">REST API Reference for UpdateOrgEc2DeepInspectionConfiguration Operation</seealso>
         public virtual Task<UpdateOrgEc2DeepInspectionConfigurationResponse> UpdateOrgEc2DeepInspectionConfigurationAsync(UpdateOrgEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrgEc2DeepInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrgEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
 

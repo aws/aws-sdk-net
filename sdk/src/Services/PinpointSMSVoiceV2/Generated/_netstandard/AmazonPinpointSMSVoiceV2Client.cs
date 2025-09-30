@@ -315,7 +315,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual AssociateOriginationIdentityResponse AssociateOriginationIdentity(AssociateOriginationIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOriginationIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOriginationIdentityResponseUnmarshaller.Instance;
 
@@ -373,7 +373,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateOriginationIdentity">REST API Reference for AssociateOriginationIdentity Operation</seealso>
         public virtual Task<AssociateOriginationIdentityResponse> AssociateOriginationIdentityAsync(AssociateOriginationIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOriginationIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOriginationIdentityResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual AssociateProtectConfigurationResponse AssociateProtectConfiguration(AssociateProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration">REST API Reference for AssociateProtectConfiguration Operation</seealso>
         public virtual Task<AssociateProtectConfigurationResponse> AssociateProtectConfigurationAsync(AssociateProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateEventDestinationResponse CreateEventDestination(CreateEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventDestinationResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateEventDestination">REST API Reference for CreateEventDestination Operation</seealso>
         public virtual Task<CreateEventDestinationResponse> CreateEventDestinationAsync(CreateEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventDestinationResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateOptOutListResponse CreateOptOutList(CreateOptOutListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOptOutListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOptOutListResponseUnmarshaller.Instance;
 
@@ -649,7 +649,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateOptOutList">REST API Reference for CreateOptOutList Operation</seealso>
         public virtual Task<CreateOptOutListResponse> CreateOptOutListAsync(CreateOptOutListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOptOutListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOptOutListResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreatePoolResponse CreatePool(CreatePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePoolResponseUnmarshaller.Instance;
 
@@ -723,7 +723,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreatePool">REST API Reference for CreatePool Operation</seealso>
         public virtual Task<CreatePoolResponse> CreatePoolAsync(CreatePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePoolResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateProtectConfigurationResponse CreateProtectConfiguration(CreateProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration">REST API Reference for CreateProtectConfiguration Operation</seealso>
         public virtual Task<CreateProtectConfigurationResponse> CreateProtectConfigurationAsync(CreateProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateRegistrationResponse CreateRegistration(CreateRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration">REST API Reference for CreateRegistration Operation</seealso>
         public virtual Task<CreateRegistrationResponse> CreateRegistrationAsync(CreateRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateRegistrationAssociationResponse CreateRegistrationAssociation(CreateRegistrationAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationAssociationResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation">REST API Reference for CreateRegistrationAssociation Operation</seealso>
         public virtual Task<CreateRegistrationAssociationResponse> CreateRegistrationAssociationAsync(CreateRegistrationAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationAssociationResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateRegistrationAttachmentResponse CreateRegistrationAttachment(CreateRegistrationAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationAttachmentResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment">REST API Reference for CreateRegistrationAttachment Operation</seealso>
         public virtual Task<CreateRegistrationAttachmentResponse> CreateRegistrationAttachmentAsync(CreateRegistrationAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationAttachmentResponseUnmarshaller.Instance;
 
@@ -975,7 +975,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateRegistrationVersionResponse CreateRegistrationVersion(CreateRegistrationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion">REST API Reference for CreateRegistrationVersion Operation</seealso>
         public virtual Task<CreateRegistrationVersionResponse> CreateRegistrationVersionAsync(CreateRegistrationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual CreateVerifiedDestinationNumberResponse CreateVerifiedDestinationNumber(CreateVerifiedDestinationNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedDestinationNumberResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber">REST API Reference for CreateVerifiedDestinationNumber Operation</seealso>
         public virtual Task<CreateVerifiedDestinationNumberResponse> CreateVerifiedDestinationNumberAsync(CreateVerifiedDestinationNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedDestinationNumberResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteAccountDefaultProtectConfigurationResponse DeleteAccountDefaultProtectConfiguration(DeleteAccountDefaultProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountDefaultProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountDefaultProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -1131,7 +1131,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration">REST API Reference for DeleteAccountDefaultProtectConfiguration Operation</seealso>
         public virtual Task<DeleteAccountDefaultProtectConfigurationResponse> DeleteAccountDefaultProtectConfigurationAsync(DeleteAccountDefaultProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountDefaultProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountDefaultProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -1201,7 +1201,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteDefaultMessageTypeResponse DeleteDefaultMessageType(DeleteDefaultMessageTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultMessageTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultMessageTypeResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteDefaultMessageType">REST API Reference for DeleteDefaultMessageType Operation</seealso>
         public virtual Task<DeleteDefaultMessageTypeResponse> DeleteDefaultMessageTypeAsync(DeleteDefaultMessageTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultMessageTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultMessageTypeResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteDefaultSenderIdResponse DeleteDefaultSenderId(DeleteDefaultSenderIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultSenderIdResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteDefaultSenderId">REST API Reference for DeleteDefaultSenderId Operation</seealso>
         public virtual Task<DeleteDefaultSenderIdResponse> DeleteDefaultSenderIdAsync(DeleteDefaultSenderIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultSenderIdResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteEventDestinationResponse DeleteEventDestination(DeleteEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventDestinationResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteEventDestination">REST API Reference for DeleteEventDestination Operation</seealso>
         public virtual Task<DeleteEventDestinationResponse> DeleteEventDestinationAsync(DeleteEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventDestinationResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteKeywordResponse DeleteKeyword(DeleteKeywordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeywordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeywordResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteKeyword">REST API Reference for DeleteKeyword Operation</seealso>
         public virtual Task<DeleteKeywordResponse> DeleteKeywordAsync(DeleteKeywordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeywordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeywordResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteMediaMessageSpendLimitOverrideResponse DeleteMediaMessageSpendLimitOverride(DeleteMediaMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -1486,7 +1486,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride">REST API Reference for DeleteMediaMessageSpendLimitOverride Operation</seealso>
         public virtual Task<DeleteMediaMessageSpendLimitOverrideResponse> DeleteMediaMessageSpendLimitOverrideAsync(DeleteMediaMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -1498,7 +1498,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteOptedOutNumberResponse DeleteOptedOutNumber(DeleteOptedOutNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptedOutNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptedOutNumberResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteOptedOutNumber">REST API Reference for DeleteOptedOutNumber Operation</seealso>
         public virtual Task<DeleteOptedOutNumberResponse> DeleteOptedOutNumberAsync(DeleteOptedOutNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptedOutNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptedOutNumberResponseUnmarshaller.Instance;
 
@@ -1565,7 +1565,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteOptOutListResponse DeleteOptOutList(DeleteOptOutListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptOutListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptOutListResponseUnmarshaller.Instance;
 
@@ -1616,7 +1616,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteOptOutList">REST API Reference for DeleteOptOutList Operation</seealso>
         public virtual Task<DeleteOptOutListResponse> DeleteOptOutListAsync(DeleteOptOutListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptOutListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptOutListResponseUnmarshaller.Instance;
 
@@ -1628,7 +1628,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeletePoolResponse DeletePool(DeletePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePoolResponseUnmarshaller.Instance;
 
@@ -1684,7 +1684,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeletePool">REST API Reference for DeletePool Operation</seealso>
         public virtual Task<DeletePoolResponse> DeletePoolAsync(DeletePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePoolResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteProtectConfigurationResponse DeleteProtectConfiguration(DeleteProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration">REST API Reference for DeleteProtectConfiguration Operation</seealso>
         public virtual Task<DeleteProtectConfigurationResponse> DeleteProtectConfigurationAsync(DeleteProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteProtectConfigurationRuleSetNumberOverrideResponse DeleteProtectConfigurationRuleSetNumberOverride(DeleteProtectConfigurationRuleSetNumberOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfigurationRuleSetNumberOverride">REST API Reference for DeleteProtectConfigurationRuleSetNumberOverride Operation</seealso>
         public virtual Task<DeleteProtectConfigurationRuleSetNumberOverrideResponse> DeleteProtectConfigurationRuleSetNumberOverrideAsync(DeleteProtectConfigurationRuleSetNumberOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
 
@@ -1805,7 +1805,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteRegistrationResponse DeleteRegistration(DeleteRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationResponseUnmarshaller.Instance;
 
@@ -1849,7 +1849,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration">REST API Reference for DeleteRegistration Operation</seealso>
         public virtual Task<DeleteRegistrationResponse> DeleteRegistrationAsync(DeleteRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteRegistrationAttachmentResponse DeleteRegistrationAttachment(DeleteRegistrationAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationAttachmentResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment">REST API Reference for DeleteRegistrationAttachment Operation</seealso>
         public virtual Task<DeleteRegistrationAttachmentResponse> DeleteRegistrationAttachmentAsync(DeleteRegistrationAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationAttachmentResponseUnmarshaller.Instance;
 
@@ -1917,7 +1917,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteRegistrationFieldValueResponse DeleteRegistrationFieldValue(DeleteRegistrationFieldValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationFieldValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationFieldValueResponseUnmarshaller.Instance;
 
@@ -1961,7 +1961,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue">REST API Reference for DeleteRegistrationFieldValue Operation</seealso>
         public virtual Task<DeleteRegistrationFieldValueResponse> DeleteRegistrationFieldValueAsync(DeleteRegistrationFieldValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistrationFieldValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistrationFieldValueResponseUnmarshaller.Instance;
 
@@ -1973,7 +1973,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2014,7 +2014,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteTextMessageSpendLimitOverrideResponse DeleteTextMessageSpendLimitOverride(DeleteTextMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTextMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTextMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteTextMessageSpendLimitOverride">REST API Reference for DeleteTextMessageSpendLimitOverride Operation</seealso>
         public virtual Task<DeleteTextMessageSpendLimitOverrideResponse> DeleteTextMessageSpendLimitOverrideAsync(DeleteTextMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTextMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTextMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteVerifiedDestinationNumberResponse DeleteVerifiedDestinationNumber(DeleteVerifiedDestinationNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedDestinationNumberResponseUnmarshaller.Instance;
 
@@ -2122,7 +2122,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber">REST API Reference for DeleteVerifiedDestinationNumber Operation</seealso>
         public virtual Task<DeleteVerifiedDestinationNumberResponse> DeleteVerifiedDestinationNumberAsync(DeleteVerifiedDestinationNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedDestinationNumberResponseUnmarshaller.Instance;
 
@@ -2134,7 +2134,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DeleteVoiceMessageSpendLimitOverrideResponse DeleteVoiceMessageSpendLimitOverride(DeleteVoiceMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVoiceMessageSpendLimitOverride">REST API Reference for DeleteVoiceMessageSpendLimitOverride Operation</seealso>
         public virtual Task<DeleteVoiceMessageSpendLimitOverrideResponse> DeleteVoiceMessageSpendLimitOverrideAsync(DeleteVoiceMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -2243,7 +2243,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -2289,7 +2289,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -2301,7 +2301,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeConfigurationSetsResponse DescribeConfigurationSets(DescribeConfigurationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -2353,7 +2353,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeConfigurationSets">REST API Reference for DescribeConfigurationSets Operation</seealso>
         public virtual Task<DescribeConfigurationSetsResponse> DescribeConfigurationSetsAsync(DescribeConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -2365,7 +2365,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeKeywordsResponse DescribeKeywords(DescribeKeywordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeywordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeywordsResponseUnmarshaller.Instance;
 
@@ -2418,7 +2418,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeKeywords">REST API Reference for DescribeKeywords Operation</seealso>
         public virtual Task<DescribeKeywordsResponse> DescribeKeywordsAsync(DescribeKeywordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeywordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeywordsResponseUnmarshaller.Instance;
 
@@ -2430,7 +2430,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeOptedOutNumbersResponse DescribeOptedOutNumbers(DescribeOptedOutNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptedOutNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptedOutNumbersResponseUnmarshaller.Instance;
 
@@ -2483,7 +2483,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptedOutNumbers">REST API Reference for DescribeOptedOutNumbers Operation</seealso>
         public virtual Task<DescribeOptedOutNumbersResponse> DescribeOptedOutNumbersAsync(DescribeOptedOutNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptedOutNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptedOutNumbersResponseUnmarshaller.Instance;
 
@@ -2495,7 +2495,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeOptOutListsResponse DescribeOptOutLists(DescribeOptOutListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptOutListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptOutListsResponseUnmarshaller.Instance;
 
@@ -2546,7 +2546,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptOutLists">REST API Reference for DescribeOptOutLists Operation</seealso>
         public virtual Task<DescribeOptOutListsResponse> DescribeOptOutListsAsync(DescribeOptOutListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptOutListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptOutListsResponseUnmarshaller.Instance;
 
@@ -2558,7 +2558,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribePhoneNumbersResponse DescribePhoneNumbers(DescribePhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribePhoneNumbers">REST API Reference for DescribePhoneNumbers Operation</seealso>
         public virtual Task<DescribePhoneNumbersResponse> DescribePhoneNumbersAsync(DescribePhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribePoolsResponse DescribePools(DescribePoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePoolsResponseUnmarshaller.Instance;
 
@@ -2679,7 +2679,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribePools">REST API Reference for DescribePools Operation</seealso>
         public virtual Task<DescribePoolsResponse> DescribePoolsAsync(DescribePoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePoolsResponseUnmarshaller.Instance;
 
@@ -2691,7 +2691,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeProtectConfigurationsResponse DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectConfigurationsResponseUnmarshaller.Instance;
 
@@ -2731,7 +2731,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations">REST API Reference for DescribeProtectConfigurations Operation</seealso>
         public virtual Task<DescribeProtectConfigurationsResponse> DescribeProtectConfigurationsAsync(DescribeProtectConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProtectConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProtectConfigurationsResponseUnmarshaller.Instance;
 
@@ -2743,7 +2743,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationAttachmentsResponse DescribeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationAttachmentsResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments">REST API Reference for DescribeRegistrationAttachments Operation</seealso>
         public virtual Task<DescribeRegistrationAttachmentsResponse> DescribeRegistrationAttachmentsAsync(DescribeRegistrationAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationAttachmentsResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationFieldDefinitionsResponse DescribeRegistrationFieldDefinitions(DescribeRegistrationFieldDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationFieldDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationFieldDefinitionsResponseUnmarshaller.Instance;
 
@@ -2833,7 +2833,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions">REST API Reference for DescribeRegistrationFieldDefinitions Operation</seealso>
         public virtual Task<DescribeRegistrationFieldDefinitionsResponse> DescribeRegistrationFieldDefinitionsAsync(DescribeRegistrationFieldDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationFieldDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationFieldDefinitionsResponseUnmarshaller.Instance;
 
@@ -2845,7 +2845,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationFieldValuesResponse DescribeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationFieldValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationFieldValuesResponseUnmarshaller.Instance;
 
@@ -2884,7 +2884,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues">REST API Reference for DescribeRegistrationFieldValues Operation</seealso>
         public virtual Task<DescribeRegistrationFieldValuesResponse> DescribeRegistrationFieldValuesAsync(DescribeRegistrationFieldValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationFieldValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationFieldValuesResponseUnmarshaller.Instance;
 
@@ -2896,7 +2896,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationsResponse DescribeRegistrations(DescribeRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationsResponseUnmarshaller.Instance;
 
@@ -2935,7 +2935,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations">REST API Reference for DescribeRegistrations Operation</seealso>
         public virtual Task<DescribeRegistrationsResponse> DescribeRegistrationsAsync(DescribeRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationsResponseUnmarshaller.Instance;
 
@@ -2947,7 +2947,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationSectionDefinitionsResponse DescribeRegistrationSectionDefinitions(DescribeRegistrationSectionDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationSectionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationSectionDefinitionsResponseUnmarshaller.Instance;
 
@@ -2985,7 +2985,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions">REST API Reference for DescribeRegistrationSectionDefinitions Operation</seealso>
         public virtual Task<DescribeRegistrationSectionDefinitionsResponse> DescribeRegistrationSectionDefinitionsAsync(DescribeRegistrationSectionDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationSectionDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationSectionDefinitionsResponseUnmarshaller.Instance;
 
@@ -2997,7 +2997,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationTypeDefinitionsResponse DescribeRegistrationTypeDefinitions(DescribeRegistrationTypeDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationTypeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationTypeDefinitionsResponseUnmarshaller.Instance;
 
@@ -3035,7 +3035,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions">REST API Reference for DescribeRegistrationTypeDefinitions Operation</seealso>
         public virtual Task<DescribeRegistrationTypeDefinitionsResponse> DescribeRegistrationTypeDefinitionsAsync(DescribeRegistrationTypeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationTypeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationTypeDefinitionsResponseUnmarshaller.Instance;
 
@@ -3047,7 +3047,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeRegistrationVersionsResponse DescribeRegistrationVersions(DescribeRegistrationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationVersionsResponseUnmarshaller.Instance;
 
@@ -3086,7 +3086,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions">REST API Reference for DescribeRegistrationVersions Operation</seealso>
         public virtual Task<DescribeRegistrationVersionsResponse> DescribeRegistrationVersionsAsync(DescribeRegistrationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistrationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistrationVersionsResponseUnmarshaller.Instance;
 
@@ -3098,7 +3098,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeSenderIdsResponse DescribeSenderIds(DescribeSenderIdsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSenderIdsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSenderIdsResponseUnmarshaller.Instance;
 
@@ -3150,7 +3150,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeSenderIds">REST API Reference for DescribeSenderIds Operation</seealso>
         public virtual Task<DescribeSenderIdsResponse> DescribeSenderIdsAsync(DescribeSenderIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSenderIdsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSenderIdsResponseUnmarshaller.Instance;
 
@@ -3162,7 +3162,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeSpendLimitsResponse DescribeSpendLimits(DescribeSpendLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpendLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpendLimitsResponseUnmarshaller.Instance;
 
@@ -3207,7 +3207,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeSpendLimits">REST API Reference for DescribeSpendLimits Operation</seealso>
         public virtual Task<DescribeSpendLimitsResponse> DescribeSpendLimitsAsync(DescribeSpendLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpendLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpendLimitsResponseUnmarshaller.Instance;
 
@@ -3219,7 +3219,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DescribeVerifiedDestinationNumbersResponse DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedDestinationNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedDestinationNumbersResponseUnmarshaller.Instance;
 
@@ -3258,7 +3258,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers">REST API Reference for DescribeVerifiedDestinationNumbers Operation</seealso>
         public virtual Task<DescribeVerifiedDestinationNumbersResponse> DescribeVerifiedDestinationNumbersAsync(DescribeVerifiedDestinationNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedDestinationNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedDestinationNumbersResponseUnmarshaller.Instance;
 
@@ -3270,7 +3270,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DisassociateOriginationIdentityResponse DisassociateOriginationIdentity(DisassociateOriginationIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOriginationIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOriginationIdentityResponseUnmarshaller.Instance;
 
@@ -3320,7 +3320,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateOriginationIdentity">REST API Reference for DisassociateOriginationIdentity Operation</seealso>
         public virtual Task<DisassociateOriginationIdentityResponse> DisassociateOriginationIdentityAsync(DisassociateOriginationIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOriginationIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOriginationIdentityResponseUnmarshaller.Instance;
 
@@ -3332,7 +3332,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DisassociateProtectConfigurationResponse DisassociateProtectConfiguration(DisassociateProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -3376,7 +3376,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration">REST API Reference for DisassociateProtectConfiguration Operation</seealso>
         public virtual Task<DisassociateProtectConfigurationResponse> DisassociateProtectConfigurationAsync(DisassociateProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -3388,7 +3388,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual DiscardRegistrationVersionResponse DiscardRegistrationVersion(DiscardRegistrationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DiscardRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DiscardRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -3432,7 +3432,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion">REST API Reference for DiscardRegistrationVersion Operation</seealso>
         public virtual Task<DiscardRegistrationVersionResponse> DiscardRegistrationVersionAsync(DiscardRegistrationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DiscardRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DiscardRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual GetProtectConfigurationCountryRuleSetResponse GetProtectConfigurationCountryRuleSet(GetProtectConfigurationCountryRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectConfigurationCountryRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectConfigurationCountryRuleSetResponseUnmarshaller.Instance;
 
@@ -3483,7 +3483,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet">REST API Reference for GetProtectConfigurationCountryRuleSet Operation</seealso>
         public virtual Task<GetProtectConfigurationCountryRuleSetResponse> GetProtectConfigurationCountryRuleSetAsync(GetProtectConfigurationCountryRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectConfigurationCountryRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectConfigurationCountryRuleSetResponseUnmarshaller.Instance;
 
@@ -3495,7 +3495,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3536,7 +3536,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3548,7 +3548,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ListPoolOriginationIdentitiesResponse ListPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoolOriginationIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoolOriginationIdentitiesResponseUnmarshaller.Instance;
 
@@ -3593,7 +3593,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListPoolOriginationIdentities">REST API Reference for ListPoolOriginationIdentities Operation</seealso>
         public virtual Task<ListPoolOriginationIdentitiesResponse> ListPoolOriginationIdentitiesAsync(ListPoolOriginationIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoolOriginationIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoolOriginationIdentitiesResponseUnmarshaller.Instance;
 
@@ -3605,7 +3605,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ListProtectConfigurationRuleSetNumberOverridesResponse ListProtectConfigurationRuleSetNumberOverrides(ListProtectConfigurationRuleSetNumberOverridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectConfigurationRuleSetNumberOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller.Instance;
 
@@ -3645,7 +3645,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListProtectConfigurationRuleSetNumberOverrides">REST API Reference for ListProtectConfigurationRuleSetNumberOverrides Operation</seealso>
         public virtual Task<ListProtectConfigurationRuleSetNumberOverridesResponse> ListProtectConfigurationRuleSetNumberOverridesAsync(ListProtectConfigurationRuleSetNumberOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtectConfigurationRuleSetNumberOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller.Instance;
 
@@ -3657,7 +3657,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ListRegistrationAssociationsResponse ListRegistrationAssociations(ListRegistrationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistrationAssociationsResponseUnmarshaller.Instance;
 
@@ -3696,7 +3696,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations">REST API Reference for ListRegistrationAssociations Operation</seealso>
         public virtual Task<ListRegistrationAssociationsResponse> ListRegistrationAssociationsAsync(ListRegistrationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistrationAssociationsResponseUnmarshaller.Instance;
 
@@ -3708,7 +3708,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3747,7 +3747,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutKeywordResponse PutKeyword(PutKeywordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeywordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeywordResponseUnmarshaller.Instance;
 
@@ -3819,7 +3819,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutKeyword">REST API Reference for PutKeyword Operation</seealso>
         public virtual Task<PutKeywordResponse> PutKeywordAsync(PutKeywordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutKeywordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutKeywordResponseUnmarshaller.Instance;
 
@@ -3831,7 +3831,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutMessageFeedbackResponse PutMessageFeedback(PutMessageFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMessageFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMessageFeedbackResponseUnmarshaller.Instance;
 
@@ -3879,7 +3879,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutMessageFeedback">REST API Reference for PutMessageFeedback Operation</seealso>
         public virtual Task<PutMessageFeedbackResponse> PutMessageFeedbackAsync(PutMessageFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMessageFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMessageFeedbackResponseUnmarshaller.Instance;
 
@@ -3891,7 +3891,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutOptedOutNumberResponse PutOptedOutNumber(PutOptedOutNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOptedOutNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOptedOutNumberResponseUnmarshaller.Instance;
 
@@ -3936,7 +3936,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutOptedOutNumber">REST API Reference for PutOptedOutNumber Operation</seealso>
         public virtual Task<PutOptedOutNumberResponse> PutOptedOutNumberAsync(PutOptedOutNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOptedOutNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOptedOutNumberResponseUnmarshaller.Instance;
 
@@ -3948,7 +3948,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutProtectConfigurationRuleSetNumberOverrideResponse PutProtectConfigurationRuleSetNumberOverride(PutProtectConfigurationRuleSetNumberOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
 
@@ -3992,7 +3992,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutProtectConfigurationRuleSetNumberOverride">REST API Reference for PutProtectConfigurationRuleSetNumberOverride Operation</seealso>
         public virtual Task<PutProtectConfigurationRuleSetNumberOverrideResponse> PutProtectConfigurationRuleSetNumberOverrideAsync(PutProtectConfigurationRuleSetNumberOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller.Instance;
 
@@ -4004,7 +4004,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutRegistrationFieldValueResponse PutRegistrationFieldValue(PutRegistrationFieldValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistrationFieldValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistrationFieldValueResponseUnmarshaller.Instance;
 
@@ -4048,7 +4048,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue">REST API Reference for PutRegistrationFieldValue Operation</seealso>
         public virtual Task<PutRegistrationFieldValueResponse> PutRegistrationFieldValueAsync(PutRegistrationFieldValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistrationFieldValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistrationFieldValueResponseUnmarshaller.Instance;
 
@@ -4060,7 +4060,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4103,7 +4103,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4115,7 +4115,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ReleasePhoneNumberResponse ReleasePhoneNumber(ReleasePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
 
@@ -4166,7 +4166,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleasePhoneNumber">REST API Reference for ReleasePhoneNumber Operation</seealso>
         public virtual Task<ReleasePhoneNumberResponse> ReleasePhoneNumberAsync(ReleasePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleasePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
 
@@ -4178,7 +4178,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual ReleaseSenderIdResponse ReleaseSenderId(ReleaseSenderIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseSenderIdResponseUnmarshaller.Instance;
 
@@ -4222,7 +4222,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId">REST API Reference for ReleaseSenderId Operation</seealso>
         public virtual Task<ReleaseSenderIdResponse> ReleaseSenderIdAsync(ReleaseSenderIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseSenderIdResponseUnmarshaller.Instance;
 
@@ -4234,7 +4234,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual RequestPhoneNumberResponse RequestPhoneNumber(RequestPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestPhoneNumberResponseUnmarshaller.Instance;
 
@@ -4283,7 +4283,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestPhoneNumber">REST API Reference for RequestPhoneNumber Operation</seealso>
         public virtual Task<RequestPhoneNumberResponse> RequestPhoneNumberAsync(RequestPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestPhoneNumberResponseUnmarshaller.Instance;
 
@@ -4295,7 +4295,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual RequestSenderIdResponse RequestSenderId(RequestSenderIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSenderIdResponseUnmarshaller.Instance;
 
@@ -4339,7 +4339,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId">REST API Reference for RequestSenderId Operation</seealso>
         public virtual Task<RequestSenderIdResponse> RequestSenderIdAsync(RequestSenderIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSenderIdResponseUnmarshaller.Instance;
 
@@ -4351,7 +4351,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SendDestinationNumberVerificationCodeResponse SendDestinationNumberVerificationCode(SendDestinationNumberVerificationCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDestinationNumberVerificationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDestinationNumberVerificationCodeResponseUnmarshaller.Instance;
 
@@ -4402,7 +4402,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode">REST API Reference for SendDestinationNumberVerificationCode Operation</seealso>
         public virtual Task<SendDestinationNumberVerificationCodeResponse> SendDestinationNumberVerificationCodeAsync(SendDestinationNumberVerificationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDestinationNumberVerificationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDestinationNumberVerificationCodeResponseUnmarshaller.Instance;
 
@@ -4414,7 +4414,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SendMediaMessageResponse SendMediaMessage(SendMediaMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMediaMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMediaMessageResponseUnmarshaller.Instance;
 
@@ -4461,7 +4461,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage">REST API Reference for SendMediaMessage Operation</seealso>
         public virtual Task<SendMediaMessageResponse> SendMediaMessageAsync(SendMediaMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMediaMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMediaMessageResponseUnmarshaller.Instance;
 
@@ -4473,7 +4473,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SendTextMessageResponse SendTextMessage(SendTextMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendTextMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendTextMessageResponseUnmarshaller.Instance;
 
@@ -4530,7 +4530,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendTextMessage">REST API Reference for SendTextMessage Operation</seealso>
         public virtual Task<SendTextMessageResponse> SendTextMessageAsync(SendTextMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendTextMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendTextMessageResponseUnmarshaller.Instance;
 
@@ -4542,7 +4542,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
@@ -4590,7 +4590,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         public virtual Task<SendVoiceMessageResponse> SendVoiceMessageAsync(SendVoiceMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
@@ -4602,7 +4602,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetAccountDefaultProtectConfigurationResponse SetAccountDefaultProtectConfiguration(SetAccountDefaultProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAccountDefaultProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAccountDefaultProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -4643,7 +4643,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration">REST API Reference for SetAccountDefaultProtectConfiguration Operation</seealso>
         public virtual Task<SetAccountDefaultProtectConfigurationResponse> SetAccountDefaultProtectConfigurationAsync(SetAccountDefaultProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAccountDefaultProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAccountDefaultProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -4655,7 +4655,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetDefaultMessageFeedbackEnabledResponse SetDefaultMessageFeedbackEnabled(SetDefaultMessageFeedbackEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultMessageFeedbackEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultMessageFeedbackEnabledResponseUnmarshaller.Instance;
 
@@ -4694,7 +4694,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultMessageFeedbackEnabled">REST API Reference for SetDefaultMessageFeedbackEnabled Operation</seealso>
         public virtual Task<SetDefaultMessageFeedbackEnabledResponse> SetDefaultMessageFeedbackEnabledAsync(SetDefaultMessageFeedbackEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultMessageFeedbackEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultMessageFeedbackEnabledResponseUnmarshaller.Instance;
 
@@ -4706,7 +4706,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetDefaultMessageTypeResponse SetDefaultMessageType(SetDefaultMessageTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultMessageTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultMessageTypeResponseUnmarshaller.Instance;
 
@@ -4754,7 +4754,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultMessageType">REST API Reference for SetDefaultMessageType Operation</seealso>
         public virtual Task<SetDefaultMessageTypeResponse> SetDefaultMessageTypeAsync(SetDefaultMessageTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultMessageTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultMessageTypeResponseUnmarshaller.Instance;
 
@@ -4766,7 +4766,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetDefaultSenderIdResponse SetDefaultSenderId(SetDefaultSenderIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultSenderIdResponseUnmarshaller.Instance;
 
@@ -4812,7 +4812,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultSenderId">REST API Reference for SetDefaultSenderId Operation</seealso>
         public virtual Task<SetDefaultSenderIdResponse> SetDefaultSenderIdAsync(SetDefaultSenderIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDefaultSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDefaultSenderIdResponseUnmarshaller.Instance;
 
@@ -4824,7 +4824,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetMediaMessageSpendLimitOverrideResponse SetMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetMediaMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetMediaMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4862,7 +4862,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride">REST API Reference for SetMediaMessageSpendLimitOverride Operation</seealso>
         public virtual Task<SetMediaMessageSpendLimitOverrideResponse> SetMediaMessageSpendLimitOverrideAsync(SetMediaMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetMediaMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetMediaMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4874,7 +4874,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetTextMessageSpendLimitOverrideResponse SetTextMessageSpendLimitOverride(SetTextMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTextMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTextMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4912,7 +4912,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetTextMessageSpendLimitOverride">REST API Reference for SetTextMessageSpendLimitOverride Operation</seealso>
         public virtual Task<SetTextMessageSpendLimitOverrideResponse> SetTextMessageSpendLimitOverrideAsync(SetTextMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTextMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTextMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4924,7 +4924,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SetVoiceMessageSpendLimitOverrideResponse SetVoiceMessageSpendLimitOverride(SetVoiceMessageSpendLimitOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVoiceMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVoiceMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4962,7 +4962,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetVoiceMessageSpendLimitOverride">REST API Reference for SetVoiceMessageSpendLimitOverride Operation</seealso>
         public virtual Task<SetVoiceMessageSpendLimitOverrideResponse> SetVoiceMessageSpendLimitOverrideAsync(SetVoiceMessageSpendLimitOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVoiceMessageSpendLimitOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVoiceMessageSpendLimitOverrideResponseUnmarshaller.Instance;
 
@@ -4974,7 +4974,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual SubmitRegistrationVersionResponse SubmitRegistrationVersion(SubmitRegistrationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -5018,7 +5018,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion">REST API Reference for SubmitRegistrationVersion Operation</seealso>
         public virtual Task<SubmitRegistrationVersionResponse> SubmitRegistrationVersionAsync(SubmitRegistrationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitRegistrationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitRegistrationVersionResponseUnmarshaller.Instance;
 
@@ -5030,7 +5030,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5076,7 +5076,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5088,7 +5088,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5129,7 +5129,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5141,7 +5141,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdateEventDestinationResponse UpdateEventDestination(UpdateEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventDestinationResponseUnmarshaller.Instance;
 
@@ -5194,7 +5194,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateEventDestination">REST API Reference for UpdateEventDestination Operation</seealso>
         public virtual Task<UpdateEventDestinationResponse> UpdateEventDestinationAsync(UpdateEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventDestinationResponseUnmarshaller.Instance;
 
@@ -5206,7 +5206,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdatePhoneNumberResponse UpdatePhoneNumber(UpdatePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -5257,7 +5257,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         public virtual Task<UpdatePhoneNumberResponse> UpdatePhoneNumberAsync(UpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -5269,7 +5269,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdatePoolResponse UpdatePool(UpdatePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePoolResponseUnmarshaller.Instance;
 
@@ -5316,7 +5316,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdatePool">REST API Reference for UpdatePool Operation</seealso>
         public virtual Task<UpdatePoolResponse> UpdatePoolAsync(UpdatePoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePoolResponseUnmarshaller.Instance;
 
@@ -5328,7 +5328,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdateProtectConfigurationResponse UpdateProtectConfiguration(UpdateProtectConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -5367,7 +5367,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration">REST API Reference for UpdateProtectConfiguration Operation</seealso>
         public virtual Task<UpdateProtectConfigurationResponse> UpdateProtectConfigurationAsync(UpdateProtectConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectConfigurationResponseUnmarshaller.Instance;
 
@@ -5379,7 +5379,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdateProtectConfigurationCountryRuleSetResponse UpdateProtectConfigurationCountryRuleSet(UpdateProtectConfigurationCountryRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectConfigurationCountryRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectConfigurationCountryRuleSetResponseUnmarshaller.Instance;
 
@@ -5421,7 +5421,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet">REST API Reference for UpdateProtectConfigurationCountryRuleSet Operation</seealso>
         public virtual Task<UpdateProtectConfigurationCountryRuleSetResponse> UpdateProtectConfigurationCountryRuleSetAsync(UpdateProtectConfigurationCountryRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProtectConfigurationCountryRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProtectConfigurationCountryRuleSetResponseUnmarshaller.Instance;
 
@@ -5433,7 +5433,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual UpdateSenderIdResponse UpdateSenderId(UpdateSenderIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSenderIdResponseUnmarshaller.Instance;
 
@@ -5472,7 +5472,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId">REST API Reference for UpdateSenderId Operation</seealso>
         public virtual Task<UpdateSenderIdResponse> UpdateSenderIdAsync(UpdateSenderIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSenderIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSenderIdResponseUnmarshaller.Instance;
 
@@ -5484,7 +5484,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         internal virtual VerifyDestinationNumberResponse VerifyDestinationNumber(VerifyDestinationNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDestinationNumberResponseUnmarshaller.Instance;
 
@@ -5529,7 +5529,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber">REST API Reference for VerifyDestinationNumber Operation</seealso>
         public virtual Task<VerifyDestinationNumberResponse> VerifyDestinationNumberAsync(VerifyDestinationNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDestinationNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDestinationNumberResponseUnmarshaller.Instance;
 

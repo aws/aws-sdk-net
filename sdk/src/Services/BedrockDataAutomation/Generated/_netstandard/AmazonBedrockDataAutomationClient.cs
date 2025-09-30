@@ -267,7 +267,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
 
@@ -306,7 +306,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
         public virtual Task<CreateBlueprintResponse> CreateBlueprintAsync(CreateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
 
@@ -318,7 +318,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual CreateBlueprintVersionResponse CreateBlueprintVersion(CreateBlueprintVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintVersionResponseUnmarshaller.Instance;
 
@@ -357,7 +357,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateBlueprintVersion">REST API Reference for CreateBlueprintVersion Operation</seealso>
         public virtual Task<CreateBlueprintVersionResponse> CreateBlueprintVersionAsync(CreateBlueprintVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintVersionResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual CreateDataAutomationProjectResponse CreateDataAutomationProject(CreateDataAutomationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationProject">REST API Reference for CreateDataAutomationProject Operation</seealso>
         public virtual Task<CreateDataAutomationProjectResponse> CreateDataAutomationProjectAsync(CreateDataAutomationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
 
@@ -456,7 +456,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
         public virtual Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
 
@@ -468,7 +468,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual DeleteDataAutomationProjectResponse DeleteDataAutomationProject(DeleteDataAutomationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteDataAutomationProject">REST API Reference for DeleteDataAutomationProject Operation</seealso>
         public virtual Task<DeleteDataAutomationProjectResponse> DeleteDataAutomationProjectAsync(DeleteDataAutomationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
         public virtual Task<GetBlueprintResponse> GetBlueprintAsync(GetBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual GetDataAutomationProjectResponse GetDataAutomationProject(GetDataAutomationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProject">REST API Reference for GetDataAutomationProject Operation</seealso>
         public virtual Task<GetDataAutomationProjectResponse> GetDataAutomationProjectAsync(GetDataAutomationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -612,7 +612,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
         public virtual Task<ListBlueprintsResponse> ListBlueprintsAsync(ListBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual ListDataAutomationProjectsResponse ListDataAutomationProjects(ListDataAutomationProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataAutomationProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataAutomationProjectsResponseUnmarshaller.Instance;
 
@@ -696,7 +696,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationProjects">REST API Reference for ListDataAutomationProjects Operation</seealso>
         public virtual Task<ListDataAutomationProjectsResponse> ListDataAutomationProjectsAsync(ListDataAutomationProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataAutomationProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataAutomationProjectsResponseUnmarshaller.Instance;
 
@@ -708,7 +708,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -807,7 +807,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -855,7 +855,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
 
@@ -894,7 +894,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
         public virtual Task<UpdateBlueprintResponse> UpdateBlueprintAsync(UpdateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.BedrockDataAutomation
 
         internal virtual UpdateDataAutomationProjectResponse UpdateDataAutomationProject(UpdateDataAutomationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataAutomationProjectResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.BedrockDataAutomation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateDataAutomationProject">REST API Reference for UpdateDataAutomationProject Operation</seealso>
         public virtual Task<UpdateDataAutomationProjectResponse> UpdateDataAutomationProjectAsync(UpdateDataAutomationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataAutomationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataAutomationProjectResponseUnmarshaller.Instance;
 

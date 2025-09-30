@@ -267,7 +267,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual CancelTaskResponse CancelTask(CancelTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTaskResponseUnmarshaller.Instance;
 
@@ -311,7 +311,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CancelTask">REST API Reference for CancelTask Operation</seealso>
         public virtual Task<CancelTaskResponse> CancelTaskAsync(CancelTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTaskResponseUnmarshaller.Instance;
 
@@ -323,7 +323,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual CreateTaskResponse CreateTask(CreateTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CreateTask">REST API Reference for CreateTask Operation</seealso>
         public virtual Task<CreateTaskResponse> CreateTaskAsync(CreateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual DescribeDeviceEc2InstancesResponse DescribeDeviceEc2Instances(DescribeDeviceEc2InstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceEc2InstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceEc2InstancesResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeDeviceEc2Instances">REST API Reference for DescribeDeviceEc2Instances Operation</seealso>
         public virtual Task<DescribeDeviceEc2InstancesResponse> DescribeDeviceEc2InstancesAsync(DescribeDeviceEc2InstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceEc2InstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceEc2InstancesResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public virtual Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual DescribeTaskResponse DescribeTask(DescribeTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/DescribeTask">REST API Reference for DescribeTask Operation</seealso>
         public virtual Task<DescribeTaskResponse> DescribeTaskAsync(DescribeTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual ListDeviceResourcesResponse ListDeviceResources(ListDeviceResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceResourcesResponseUnmarshaller.Instance;
 
@@ -606,7 +606,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDeviceResources">REST API Reference for ListDeviceResources Operation</seealso>
         public virtual Task<ListDeviceResourcesResponse> ListDeviceResourcesAsync(ListDeviceResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceResourcesResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -713,7 +713,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.SnowDeviceManagement
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.SnowDeviceManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

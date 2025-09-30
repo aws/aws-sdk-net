@@ -311,7 +311,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/AssociateServiceQuotaTemplate">REST API Reference for AssociateServiceQuotaTemplate Operation</seealso>
         public virtual AssociateServiceQuotaTemplateResponse AssociateServiceQuotaTemplate(AssociateServiceQuotaTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateServiceQuotaTemplateResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/AssociateServiceQuotaTemplate">REST API Reference for AssociateServiceQuotaTemplate Operation</seealso>
         public virtual Task<AssociateServiceQuotaTemplateResponse> AssociateServiceQuotaTemplateAsync(AssociateServiceQuotaTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateServiceQuotaTemplateResponseUnmarshaller.Instance;
             
@@ -408,7 +408,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
         public virtual CreateSupportCaseResponse CreateSupportCase(CreateSupportCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/CreateSupportCase">REST API Reference for CreateSupportCase Operation</seealso>
         public virtual Task<CreateSupportCaseResponse> CreateSupportCaseAsync(CreateSupportCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSupportCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSupportCaseResponseUnmarshaller.Instance;
             
@@ -505,7 +505,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DeleteServiceQuotaIncreaseRequestFromTemplate">REST API Reference for DeleteServiceQuotaIncreaseRequestFromTemplate Operation</seealso>
         public virtual DeleteServiceQuotaIncreaseRequestFromTemplateResponse DeleteServiceQuotaIncreaseRequestFromTemplate(DeleteServiceQuotaIncreaseRequestFromTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceQuotaIncreaseRequestFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceQuotaIncreaseRequestFromTemplateResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DeleteServiceQuotaIncreaseRequestFromTemplate">REST API Reference for DeleteServiceQuotaIncreaseRequestFromTemplate Operation</seealso>
         public virtual Task<DeleteServiceQuotaIncreaseRequestFromTemplateResponse> DeleteServiceQuotaIncreaseRequestFromTemplateAsync(DeleteServiceQuotaIncreaseRequestFromTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceQuotaIncreaseRequestFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceQuotaIncreaseRequestFromTemplateResponseUnmarshaller.Instance;
             
@@ -605,7 +605,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DisassociateServiceQuotaTemplate">REST API Reference for DisassociateServiceQuotaTemplate Operation</seealso>
         public virtual DisassociateServiceQuotaTemplateResponse DisassociateServiceQuotaTemplate(DisassociateServiceQuotaTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateServiceQuotaTemplateResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DisassociateServiceQuotaTemplate">REST API Reference for DisassociateServiceQuotaTemplate Operation</seealso>
         public virtual Task<DisassociateServiceQuotaTemplateResponse> DisassociateServiceQuotaTemplateAsync(DisassociateServiceQuotaTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateServiceQuotaTemplateResponseUnmarshaller.Instance;
             
@@ -701,7 +701,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAssociationForServiceQuotaTemplate">REST API Reference for GetAssociationForServiceQuotaTemplate Operation</seealso>
         public virtual GetAssociationForServiceQuotaTemplateResponse GetAssociationForServiceQuotaTemplate(GetAssociationForServiceQuotaTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociationForServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociationForServiceQuotaTemplateResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAssociationForServiceQuotaTemplate">REST API Reference for GetAssociationForServiceQuotaTemplate Operation</seealso>
         public virtual Task<GetAssociationForServiceQuotaTemplateResponse> GetAssociationForServiceQuotaTemplateAsync(GetAssociationForServiceQuotaTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociationForServiceQuotaTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociationForServiceQuotaTemplateResponseUnmarshaller.Instance;
             
@@ -785,7 +785,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAWSDefaultServiceQuota">REST API Reference for GetAWSDefaultServiceQuota Operation</seealso>
         public virtual GetAWSDefaultServiceQuotaResponse GetAWSDefaultServiceQuota(GetAWSDefaultServiceQuotaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAWSDefaultServiceQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAWSDefaultServiceQuotaResponseUnmarshaller.Instance;
 
@@ -822,7 +822,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAWSDefaultServiceQuota">REST API Reference for GetAWSDefaultServiceQuota Operation</seealso>
         public virtual Task<GetAWSDefaultServiceQuotaResponse> GetAWSDefaultServiceQuotaAsync(GetAWSDefaultServiceQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAWSDefaultServiceQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAWSDefaultServiceQuotaResponseUnmarshaller.Instance;
             
@@ -859,7 +859,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetRequestedServiceQuotaChange">REST API Reference for GetRequestedServiceQuotaChange Operation</seealso>
         public virtual GetRequestedServiceQuotaChangeResponse GetRequestedServiceQuotaChange(GetRequestedServiceQuotaChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestedServiceQuotaChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestedServiceQuotaChangeResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetRequestedServiceQuotaChange">REST API Reference for GetRequestedServiceQuotaChange Operation</seealso>
         public virtual Task<GetRequestedServiceQuotaChangeResponse> GetRequestedServiceQuotaChangeAsync(GetRequestedServiceQuotaChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestedServiceQuotaChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestedServiceQuotaChangeResponseUnmarshaller.Instance;
             
@@ -934,7 +934,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuota">REST API Reference for GetServiceQuota Operation</seealso>
         public virtual GetServiceQuotaResponse GetServiceQuota(GetServiceQuotaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceQuotaResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuota">REST API Reference for GetServiceQuota Operation</seealso>
         public virtual Task<GetServiceQuotaResponse> GetServiceQuotaAsync(GetServiceQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceQuotaResponseUnmarshaller.Instance;
             
@@ -1023,7 +1023,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuotaIncreaseRequestFromTemplate">REST API Reference for GetServiceQuotaIncreaseRequestFromTemplate Operation</seealso>
         public virtual GetServiceQuotaIncreaseRequestFromTemplateResponse GetServiceQuotaIncreaseRequestFromTemplate(GetServiceQuotaIncreaseRequestFromTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceQuotaIncreaseRequestFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceQuotaIncreaseRequestFromTemplateResponseUnmarshaller.Instance;
 
@@ -1073,7 +1073,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuotaIncreaseRequestFromTemplate">REST API Reference for GetServiceQuotaIncreaseRequestFromTemplate Operation</seealso>
         public virtual Task<GetServiceQuotaIncreaseRequestFromTemplateResponse> GetServiceQuotaIncreaseRequestFromTemplateAsync(GetServiceQuotaIncreaseRequestFromTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceQuotaIncreaseRequestFromTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceQuotaIncreaseRequestFromTemplateResponseUnmarshaller.Instance;
             
@@ -1114,7 +1114,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">REST API Reference for ListAWSDefaultServiceQuotas Operation</seealso>
         public virtual ListAWSDefaultServiceQuotasResponse ListAWSDefaultServiceQuotas(ListAWSDefaultServiceQuotasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAWSDefaultServiceQuotasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAWSDefaultServiceQuotasResponseUnmarshaller.Instance;
 
@@ -1154,7 +1154,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">REST API Reference for ListAWSDefaultServiceQuotas Operation</seealso>
         public virtual Task<ListAWSDefaultServiceQuotasResponse> ListAWSDefaultServiceQuotasAsync(ListAWSDefaultServiceQuotasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAWSDefaultServiceQuotasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAWSDefaultServiceQuotasResponseUnmarshaller.Instance;
             
@@ -1196,7 +1196,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistory">REST API Reference for ListRequestedServiceQuotaChangeHistory Operation</seealso>
         public virtual ListRequestedServiceQuotaChangeHistoryResponse ListRequestedServiceQuotaChangeHistory(ListRequestedServiceQuotaChangeHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRequestedServiceQuotaChangeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRequestedServiceQuotaChangeHistoryResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistory">REST API Reference for ListRequestedServiceQuotaChangeHistory Operation</seealso>
         public virtual Task<ListRequestedServiceQuotaChangeHistoryResponse> ListRequestedServiceQuotaChangeHistoryAsync(ListRequestedServiceQuotaChangeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRequestedServiceQuotaChangeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRequestedServiceQuotaChangeHistoryResponseUnmarshaller.Instance;
             
@@ -1278,7 +1278,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistoryByQuota">REST API Reference for ListRequestedServiceQuotaChangeHistoryByQuota Operation</seealso>
         public virtual ListRequestedServiceQuotaChangeHistoryByQuotaResponse ListRequestedServiceQuotaChangeHistoryByQuota(ListRequestedServiceQuotaChangeHistoryByQuotaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRequestedServiceQuotaChangeHistoryByQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRequestedServiceQuotaChangeHistoryByQuotaResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistoryByQuota">REST API Reference for ListRequestedServiceQuotaChangeHistoryByQuota Operation</seealso>
         public virtual Task<ListRequestedServiceQuotaChangeHistoryByQuotaResponse> ListRequestedServiceQuotaChangeHistoryByQuotaAsync(ListRequestedServiceQuotaChangeHistoryByQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRequestedServiceQuotaChangeHistoryByQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRequestedServiceQuotaChangeHistoryByQuotaResponseUnmarshaller.Instance;
             
@@ -1365,7 +1365,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotaIncreaseRequestsInTemplate">REST API Reference for ListServiceQuotaIncreaseRequestsInTemplate Operation</seealso>
         public virtual ListServiceQuotaIncreaseRequestsInTemplateResponse ListServiceQuotaIncreaseRequestsInTemplate(ListServiceQuotaIncreaseRequestsInTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceQuotaIncreaseRequestsInTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceQuotaIncreaseRequestsInTemplateResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotaIncreaseRequestsInTemplate">REST API Reference for ListServiceQuotaIncreaseRequestsInTemplate Operation</seealso>
         public virtual Task<ListServiceQuotaIncreaseRequestsInTemplateResponse> ListServiceQuotaIncreaseRequestsInTemplateAsync(ListServiceQuotaIncreaseRequestsInTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceQuotaIncreaseRequestsInTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceQuotaIncreaseRequestsInTemplateResponseUnmarshaller.Instance;
             
@@ -1454,7 +1454,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">REST API Reference for ListServiceQuotas Operation</seealso>
         public virtual ListServiceQuotasResponse ListServiceQuotas(ListServiceQuotasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceQuotasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceQuotasResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">REST API Reference for ListServiceQuotas Operation</seealso>
         public virtual Task<ListServiceQuotasResponse> ListServiceQuotasAsync(ListServiceQuotasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceQuotasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceQuotasResponseUnmarshaller.Instance;
             
@@ -1534,7 +1534,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -1571,7 +1571,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
             
@@ -1608,7 +1608,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1644,7 +1644,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1698,7 +1698,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/PutServiceQuotaIncreaseRequestIntoTemplate">REST API Reference for PutServiceQuotaIncreaseRequestIntoTemplate Operation</seealso>
         public virtual PutServiceQuotaIncreaseRequestIntoTemplateResponse PutServiceQuotaIncreaseRequestIntoTemplate(PutServiceQuotaIncreaseRequestIntoTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutServiceQuotaIncreaseRequestIntoTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutServiceQuotaIncreaseRequestIntoTemplateResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/PutServiceQuotaIncreaseRequestIntoTemplate">REST API Reference for PutServiceQuotaIncreaseRequestIntoTemplate Operation</seealso>
         public virtual Task<PutServiceQuotaIncreaseRequestIntoTemplateResponse> PutServiceQuotaIncreaseRequestIntoTemplateAsync(PutServiceQuotaIncreaseRequestIntoTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutServiceQuotaIncreaseRequestIntoTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutServiceQuotaIncreaseRequestIntoTemplateResponseUnmarshaller.Instance;
             
@@ -1802,7 +1802,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/RequestServiceQuotaIncrease">REST API Reference for RequestServiceQuotaIncrease Operation</seealso>
         public virtual RequestServiceQuotaIncreaseResponse RequestServiceQuotaIncrease(RequestServiceQuotaIncreaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestServiceQuotaIncreaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestServiceQuotaIncreaseResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/RequestServiceQuotaIncrease">REST API Reference for RequestServiceQuotaIncrease Operation</seealso>
         public virtual Task<RequestServiceQuotaIncreaseResponse> RequestServiceQuotaIncreaseAsync(RequestServiceQuotaIncreaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestServiceQuotaIncreaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestServiceQuotaIncreaseResponseUnmarshaller.Instance;
             
@@ -1898,7 +1898,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1981,7 +1981,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2018,7 +2018,7 @@ namespace Amazon.ServiceQuotas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

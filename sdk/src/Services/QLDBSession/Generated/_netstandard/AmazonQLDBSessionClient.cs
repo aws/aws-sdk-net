@@ -271,7 +271,7 @@ namespace Amazon.QLDBSession
 
         internal virtual SendCommandResponse SendCommand(SendCommandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.QLDBSession
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public virtual Task<SendCommandResponse> SendCommandAsync(SendCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCommandResponseUnmarshaller.Instance;
 

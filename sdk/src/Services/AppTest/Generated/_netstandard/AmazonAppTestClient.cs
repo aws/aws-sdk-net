@@ -268,7 +268,7 @@ namespace Amazon.AppTest
 
         internal virtual CreateTestCaseResponse CreateTestCase(CreateTestCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
 
@@ -307,7 +307,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/CreateTestCase">REST API Reference for CreateTestCase Operation</seealso>
         public virtual Task<CreateTestCaseResponse> CreateTestCaseAsync(CreateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestCaseResponseUnmarshaller.Instance;
 
@@ -319,7 +319,7 @@ namespace Amazon.AppTest
 
         internal virtual CreateTestConfigurationResponse CreateTestConfiguration(CreateTestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestConfigurationResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/CreateTestConfiguration">REST API Reference for CreateTestConfiguration Operation</seealso>
         public virtual Task<CreateTestConfigurationResponse> CreateTestConfigurationAsync(CreateTestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestConfigurationResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.AppTest
 
         internal virtual CreateTestSuiteResponse CreateTestSuite(CreateTestSuiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestSuiteResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/CreateTestSuite">REST API Reference for CreateTestSuite Operation</seealso>
         public virtual Task<CreateTestSuiteResponse> CreateTestSuiteAsync(CreateTestSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestSuiteResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.AppTest
 
         internal virtual DeleteTestCaseResponse DeleteTestCase(DeleteTestCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/DeleteTestCase">REST API Reference for DeleteTestCase Operation</seealso>
         public virtual Task<DeleteTestCaseResponse> DeleteTestCaseAsync(DeleteTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestCaseResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.AppTest
 
         internal virtual DeleteTestConfigurationResponse DeleteTestConfiguration(DeleteTestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestConfigurationResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/DeleteTestConfiguration">REST API Reference for DeleteTestConfiguration Operation</seealso>
         public virtual Task<DeleteTestConfigurationResponse> DeleteTestConfigurationAsync(DeleteTestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestConfigurationResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.AppTest
 
         internal virtual DeleteTestRunResponse DeleteTestRun(DeleteTestRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestRunResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/DeleteTestRun">REST API Reference for DeleteTestRun Operation</seealso>
         public virtual Task<DeleteTestRunResponse> DeleteTestRunAsync(DeleteTestRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestRunResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.AppTest
 
         internal virtual DeleteTestSuiteResponse DeleteTestSuite(DeleteTestSuiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestSuiteResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/DeleteTestSuite">REST API Reference for DeleteTestSuite Operation</seealso>
         public virtual Task<DeleteTestSuiteResponse> DeleteTestSuiteAsync(DeleteTestSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestSuiteResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.AppTest
 
         internal virtual GetTestCaseResponse GetTestCase(GetTestCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestCaseResponseUnmarshaller.Instance;
 
@@ -658,7 +658,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/GetTestCase">REST API Reference for GetTestCase Operation</seealso>
         public virtual Task<GetTestCaseResponse> GetTestCaseAsync(GetTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestCaseResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.AppTest
 
         internal virtual GetTestConfigurationResponse GetTestConfiguration(GetTestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestConfigurationResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/GetTestConfiguration">REST API Reference for GetTestConfiguration Operation</seealso>
         public virtual Task<GetTestConfigurationResponse> GetTestConfigurationAsync(GetTestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestConfigurationResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.AppTest
 
         internal virtual GetTestRunStepResponse GetTestRunStep(GetTestRunStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestRunStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestRunStepResponseUnmarshaller.Instance;
 
@@ -754,7 +754,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/GetTestRunStep">REST API Reference for GetTestRunStep Operation</seealso>
         public virtual Task<GetTestRunStepResponse> GetTestRunStepAsync(GetTestRunStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestRunStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestRunStepResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.AppTest
 
         internal virtual GetTestSuiteResponse GetTestSuite(GetTestSuiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestSuiteResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/GetTestSuite">REST API Reference for GetTestSuite Operation</seealso>
         public virtual Task<GetTestSuiteResponse> GetTestSuiteAsync(GetTestSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestSuiteResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestCasesResponse ListTestCases(ListTestCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestCases">REST API Reference for ListTestCases Operation</seealso>
         public virtual Task<ListTestCasesResponse> ListTestCasesAsync(ListTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestCasesResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestConfigurationsResponse ListTestConfigurations(ListTestConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestConfigurationsResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestConfigurations">REST API Reference for ListTestConfigurations Operation</seealso>
         public virtual Task<ListTestConfigurationsResponse> ListTestConfigurationsAsync(ListTestConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestConfigurationsResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestRunsResponse ListTestRuns(ListTestRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunsResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestRuns">REST API Reference for ListTestRuns Operation</seealso>
         public virtual Task<ListTestRunsResponse> ListTestRunsAsync(ListTestRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunsResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestRunStepsResponse ListTestRunSteps(ListTestRunStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunStepsResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestRunSteps">REST API Reference for ListTestRunSteps Operation</seealso>
         public virtual Task<ListTestRunStepsResponse> ListTestRunStepsAsync(ListTestRunStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunStepsResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestRunTestCasesResponse ListTestRunTestCases(ListTestRunTestCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunTestCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunTestCasesResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestRunTestCases">REST API Reference for ListTestRunTestCases Operation</seealso>
         public virtual Task<ListTestRunTestCasesResponse> ListTestRunTestCasesAsync(ListTestRunTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestRunTestCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestRunTestCasesResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.AppTest
 
         internal virtual ListTestSuitesResponse ListTestSuites(ListTestSuitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestSuitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestSuitesResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/ListTestSuites">REST API Reference for ListTestSuites Operation</seealso>
         public virtual Task<ListTestSuitesResponse> ListTestSuitesAsync(ListTestSuitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestSuitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestSuitesResponseUnmarshaller.Instance;
 
@@ -1150,7 +1150,7 @@ namespace Amazon.AppTest
 
         internal virtual StartTestRunResponse StartTestRun(StartTestRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTestRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTestRunResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/StartTestRun">REST API Reference for StartTestRun Operation</seealso>
         public virtual Task<StartTestRunResponse> StartTestRunAsync(StartTestRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTestRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTestRunResponseUnmarshaller.Instance;
 
@@ -1204,7 +1204,7 @@ namespace Amazon.AppTest
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.AppTest
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.AppTest
 
         internal virtual UpdateTestCaseResponse UpdateTestCase(UpdateTestCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
 
@@ -1342,7 +1342,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/UpdateTestCase">REST API Reference for UpdateTestCase Operation</seealso>
         public virtual Task<UpdateTestCaseResponse> UpdateTestCaseAsync(UpdateTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestCaseResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.AppTest
 
         internal virtual UpdateTestConfigurationResponse UpdateTestConfiguration(UpdateTestConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestConfigurationResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/UpdateTestConfiguration">REST API Reference for UpdateTestConfiguration Operation</seealso>
         public virtual Task<UpdateTestConfigurationResponse> UpdateTestConfigurationAsync(UpdateTestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestConfigurationResponseUnmarshaller.Instance;
 
@@ -1405,7 +1405,7 @@ namespace Amazon.AppTest
 
         internal virtual UpdateTestSuiteResponse UpdateTestSuite(UpdateTestSuiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestSuiteResponseUnmarshaller.Instance;
 
@@ -1444,7 +1444,7 @@ namespace Amazon.AppTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apptest-2022-12-06/UpdateTestSuite">REST API Reference for UpdateTestSuite Operation</seealso>
         public virtual Task<UpdateTestSuiteResponse> UpdateTestSuiteAsync(UpdateTestSuiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestSuiteResponseUnmarshaller.Instance;
 

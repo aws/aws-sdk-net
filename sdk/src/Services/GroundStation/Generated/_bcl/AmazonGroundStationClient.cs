@@ -283,7 +283,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CancelContact">REST API Reference for CancelContact Operation</seealso>
         public virtual CancelContactResponse CancelContact(CancelContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelContactResponseUnmarshaller.Instance;
 
@@ -312,7 +312,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CancelContact">REST API Reference for CancelContact Operation</seealso>
         public virtual Task<CancelContactResponse> CancelContactAsync(CancelContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelContactResponseUnmarshaller.Instance;
             
@@ -350,7 +350,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateConfig">REST API Reference for CreateConfig Operation</seealso>
         public virtual CreateConfigResponse CreateConfig(CreateConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateConfig">REST API Reference for CreateConfig Operation</seealso>
         public virtual Task<CreateConfigResponse> CreateConfigAsync(CreateConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigResponseUnmarshaller.Instance;
             
@@ -429,7 +429,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroup">REST API Reference for CreateDataflowEndpointGroup Operation</seealso>
         public virtual CreateDataflowEndpointGroupResponse CreateDataflowEndpointGroup(CreateDataflowEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataflowEndpointGroupResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateDataflowEndpointGroup">REST API Reference for CreateDataflowEndpointGroup Operation</seealso>
         public virtual Task<CreateDataflowEndpointGroupResponse> CreateDataflowEndpointGroupAsync(CreateDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataflowEndpointGroupResponseUnmarshaller.Instance;
             
@@ -500,7 +500,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
         public virtual CreateEphemerisResponse CreateEphemeris(CreateEphemerisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEphemerisResponseUnmarshaller.Instance;
 
@@ -529,7 +529,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
         public virtual Task<CreateEphemerisResponse> CreateEphemerisAsync(CreateEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEphemerisResponseUnmarshaller.Instance;
             
@@ -565,7 +565,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateMissionProfile">REST API Reference for CreateMissionProfile Operation</seealso>
         public virtual CreateMissionProfileResponse CreateMissionProfile(CreateMissionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMissionProfileResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateMissionProfile">REST API Reference for CreateMissionProfile Operation</seealso>
         public virtual Task<CreateMissionProfileResponse> CreateMissionProfileAsync(CreateMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMissionProfileResponseUnmarshaller.Instance;
             
@@ -630,7 +630,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteConfig">REST API Reference for DeleteConfig Operation</seealso>
         public virtual DeleteConfigResponse DeleteConfig(DeleteConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteConfig">REST API Reference for DeleteConfig Operation</seealso>
         public virtual Task<DeleteConfigResponse> DeleteConfigAsync(DeleteConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigResponseUnmarshaller.Instance;
             
@@ -689,7 +689,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteDataflowEndpointGroup">REST API Reference for DeleteDataflowEndpointGroup Operation</seealso>
         public virtual DeleteDataflowEndpointGroupResponse DeleteDataflowEndpointGroup(DeleteDataflowEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataflowEndpointGroupResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteDataflowEndpointGroup">REST API Reference for DeleteDataflowEndpointGroup Operation</seealso>
         public virtual Task<DeleteDataflowEndpointGroupResponse> DeleteDataflowEndpointGroupAsync(DeleteDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataflowEndpointGroupResponseUnmarshaller.Instance;
             
@@ -748,7 +748,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
         public virtual DeleteEphemerisResponse DeleteEphemeris(DeleteEphemerisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEphemerisResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
         public virtual Task<DeleteEphemerisResponse> DeleteEphemerisAsync(DeleteEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEphemerisResponseUnmarshaller.Instance;
             
@@ -807,7 +807,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteMissionProfile">REST API Reference for DeleteMissionProfile Operation</seealso>
         public virtual DeleteMissionProfileResponse DeleteMissionProfile(DeleteMissionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMissionProfileResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteMissionProfile">REST API Reference for DeleteMissionProfile Operation</seealso>
         public virtual Task<DeleteMissionProfileResponse> DeleteMissionProfileAsync(DeleteMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMissionProfileResponseUnmarshaller.Instance;
             
@@ -866,7 +866,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
         public virtual DescribeContactResponse DescribeContact(DescribeContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
         public virtual Task<DescribeContactResponse> DescribeContactAsync(DescribeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
             
@@ -925,7 +925,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
         public virtual DescribeEphemerisResponse DescribeEphemeris(DescribeEphemerisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEphemerisResponseUnmarshaller.Instance;
 
@@ -954,7 +954,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
         public virtual Task<DescribeEphemerisResponse> DescribeEphemerisAsync(DescribeEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEphemerisResponseUnmarshaller.Instance;
             
@@ -991,7 +991,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
         public virtual GetAgentConfigurationResponse GetAgentConfiguration(GetAgentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgentConfigurationResponseUnmarshaller.Instance;
 
@@ -1027,7 +1027,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
         public virtual Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(GetAgentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgentConfigurationResponseUnmarshaller.Instance;
             
@@ -1062,7 +1062,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetConfig">REST API Reference for GetConfig Operation</seealso>
         public virtual GetConfigResponse GetConfig(GetConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetConfig">REST API Reference for GetConfig Operation</seealso>
         public virtual Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigResponseUnmarshaller.Instance;
             
@@ -1126,7 +1126,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetDataflowEndpointGroup">REST API Reference for GetDataflowEndpointGroup Operation</seealso>
         public virtual GetDataflowEndpointGroupResponse GetDataflowEndpointGroup(GetDataflowEndpointGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataflowEndpointGroupResponseUnmarshaller.Instance;
 
@@ -1155,7 +1155,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetDataflowEndpointGroup">REST API Reference for GetDataflowEndpointGroup Operation</seealso>
         public virtual Task<GetDataflowEndpointGroupResponse> GetDataflowEndpointGroupAsync(GetDataflowEndpointGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataflowEndpointGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataflowEndpointGroupResponseUnmarshaller.Instance;
             
@@ -1185,7 +1185,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsage">REST API Reference for GetMinuteUsage Operation</seealso>
         public virtual GetMinuteUsageResponse GetMinuteUsage(GetMinuteUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMinuteUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMinuteUsageResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsage">REST API Reference for GetMinuteUsage Operation</seealso>
         public virtual Task<GetMinuteUsageResponse> GetMinuteUsageAsync(GetMinuteUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMinuteUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMinuteUsageResponseUnmarshaller.Instance;
             
@@ -1244,7 +1244,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMissionProfile">REST API Reference for GetMissionProfile Operation</seealso>
         public virtual GetMissionProfileResponse GetMissionProfile(GetMissionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMissionProfileResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMissionProfile">REST API Reference for GetMissionProfile Operation</seealso>
         public virtual Task<GetMissionProfileResponse> GetMissionProfileAsync(GetMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMissionProfileResponseUnmarshaller.Instance;
             
@@ -1303,7 +1303,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetSatellite">REST API Reference for GetSatellite Operation</seealso>
         public virtual GetSatelliteResponse GetSatellite(GetSatelliteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSatelliteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSatelliteResponseUnmarshaller.Instance;
 
@@ -1332,7 +1332,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetSatellite">REST API Reference for GetSatellite Operation</seealso>
         public virtual Task<GetSatelliteResponse> GetSatelliteAsync(GetSatelliteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSatelliteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSatelliteResponseUnmarshaller.Instance;
             
@@ -1362,7 +1362,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListConfigs">REST API Reference for ListConfigs Operation</seealso>
         public virtual ListConfigsResponse ListConfigs(ListConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigsResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListConfigs">REST API Reference for ListConfigs Operation</seealso>
         public virtual Task<ListConfigsResponse> ListConfigsAsync(ListConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigsResponseUnmarshaller.Instance;
             
@@ -1427,7 +1427,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContacts">REST API Reference for ListContacts Operation</seealso>
         public virtual ListContactsResponse ListContacts(ListContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
 
@@ -1462,7 +1462,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContacts">REST API Reference for ListContacts Operation</seealso>
         public virtual Task<ListContactsResponse> ListContactsAsync(ListContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContactsResponseUnmarshaller.Instance;
             
@@ -1492,7 +1492,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListDataflowEndpointGroups">REST API Reference for ListDataflowEndpointGroups Operation</seealso>
         public virtual ListDataflowEndpointGroupsResponse ListDataflowEndpointGroups(ListDataflowEndpointGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataflowEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataflowEndpointGroupsResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListDataflowEndpointGroups">REST API Reference for ListDataflowEndpointGroups Operation</seealso>
         public virtual Task<ListDataflowEndpointGroupsResponse> ListDataflowEndpointGroupsAsync(ListDataflowEndpointGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataflowEndpointGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataflowEndpointGroupsResponseUnmarshaller.Instance;
             
@@ -1551,7 +1551,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
         public virtual ListEphemeridesResponse ListEphemerides(ListEphemeridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEphemeridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEphemeridesResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
         public virtual Task<ListEphemeridesResponse> ListEphemeridesAsync(ListEphemeridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEphemeridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEphemeridesResponseUnmarshaller.Instance;
             
@@ -1610,7 +1610,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStations">REST API Reference for ListGroundStations Operation</seealso>
         public virtual ListGroundStationsResponse ListGroundStations(ListGroundStationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroundStationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroundStationsResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStations">REST API Reference for ListGroundStations Operation</seealso>
         public virtual Task<ListGroundStationsResponse> ListGroundStationsAsync(ListGroundStationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroundStationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroundStationsResponseUnmarshaller.Instance;
             
@@ -1669,7 +1669,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListMissionProfiles">REST API Reference for ListMissionProfiles Operation</seealso>
         public virtual ListMissionProfilesResponse ListMissionProfiles(ListMissionProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMissionProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMissionProfilesResponseUnmarshaller.Instance;
 
@@ -1698,7 +1698,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListMissionProfiles">REST API Reference for ListMissionProfiles Operation</seealso>
         public virtual Task<ListMissionProfilesResponse> ListMissionProfilesAsync(ListMissionProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMissionProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMissionProfilesResponseUnmarshaller.Instance;
             
@@ -1728,7 +1728,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListSatellites">REST API Reference for ListSatellites Operation</seealso>
         public virtual ListSatellitesResponse ListSatellites(ListSatellitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSatellitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSatellitesResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListSatellites">REST API Reference for ListSatellites Operation</seealso>
         public virtual Task<ListSatellitesResponse> ListSatellitesAsync(ListSatellitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSatellitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSatellitesResponseUnmarshaller.Instance;
             
@@ -1787,7 +1787,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1853,7 +1853,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
         public virtual RegisterAgentResponse RegisterAgent(RegisterAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAgentResponseUnmarshaller.Instance;
 
@@ -1889,7 +1889,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
         public virtual Task<RegisterAgentResponse> RegisterAgentAsync(RegisterAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAgentResponseUnmarshaller.Instance;
             
@@ -1919,7 +1919,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ReserveContact">REST API Reference for ReserveContact Operation</seealso>
         public virtual ReserveContactResponse ReserveContact(ReserveContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReserveContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReserveContactResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ReserveContact">REST API Reference for ReserveContact Operation</seealso>
         public virtual Task<ReserveContactResponse> ReserveContactAsync(ReserveContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReserveContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReserveContactResponseUnmarshaller.Instance;
             
@@ -1978,7 +1978,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2037,7 +2037,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2103,7 +2103,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
         public virtual UpdateAgentStatusResponse UpdateAgentStatus(UpdateAgentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
 
@@ -2139,7 +2139,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
         public virtual Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(UpdateAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAgentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
             
@@ -2175,7 +2175,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfig">REST API Reference for UpdateConfig Operation</seealso>
         public virtual UpdateConfigResponse UpdateConfig(UpdateConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigResponseUnmarshaller.Instance;
 
@@ -2210,7 +2210,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfig">REST API Reference for UpdateConfig Operation</seealso>
         public virtual Task<UpdateConfigResponse> UpdateConfigAsync(UpdateConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigResponseUnmarshaller.Instance;
             
@@ -2240,7 +2240,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
         public virtual UpdateEphemerisResponse UpdateEphemeris(UpdateEphemerisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEphemerisResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
         public virtual Task<UpdateEphemerisResponse> UpdateEphemerisAsync(UpdateEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEphemerisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEphemerisResponseUnmarshaller.Instance;
             
@@ -2305,7 +2305,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateMissionProfile">REST API Reference for UpdateMissionProfile Operation</seealso>
         public virtual UpdateMissionProfileResponse UpdateMissionProfile(UpdateMissionProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMissionProfileResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.GroundStation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateMissionProfile">REST API Reference for UpdateMissionProfile Operation</seealso>
         public virtual Task<UpdateMissionProfileResponse> UpdateMissionProfileAsync(UpdateMissionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMissionProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMissionProfileResponseUnmarshaller.Instance;
             

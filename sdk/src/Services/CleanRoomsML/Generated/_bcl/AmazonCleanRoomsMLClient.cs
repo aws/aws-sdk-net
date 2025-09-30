@@ -308,7 +308,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
         public virtual CancelTrainedModelResponse CancelTrainedModel(CancelTrainedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTrainedModelResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
         public virtual Task<CancelTrainedModelResponse> CancelTrainedModelAsync(CancelTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTrainedModelResponseUnmarshaller.Instance;
             
@@ -379,7 +379,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
         public virtual CancelTrainedModelInferenceJobResponse CancelTrainedModelInferenceJob(CancelTrainedModelInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTrainedModelInferenceJobResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
         public virtual Task<CancelTrainedModelInferenceJobResponse> CancelTrainedModelInferenceJobAsync(CancelTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTrainedModelInferenceJobResponseUnmarshaller.Instance;
             
@@ -453,7 +453,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateAudienceModel">REST API Reference for CreateAudienceModel Operation</seealso>
         public virtual CreateAudienceModelResponse CreateAudienceModel(CreateAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAudienceModelResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateAudienceModel">REST API Reference for CreateAudienceModel Operation</seealso>
         public virtual Task<CreateAudienceModelResponse> CreateAudienceModelAsync(CreateAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAudienceModelResponseUnmarshaller.Instance;
             
@@ -527,7 +527,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredAudienceModel">REST API Reference for CreateConfiguredAudienceModel Operation</seealso>
         public virtual CreateConfiguredAudienceModelResponse CreateConfiguredAudienceModel(CreateConfiguredAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredAudienceModelResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredAudienceModel">REST API Reference for CreateConfiguredAudienceModel Operation</seealso>
         public virtual Task<CreateConfiguredAudienceModelResponse> CreateConfiguredAudienceModelAsync(CreateConfiguredAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredAudienceModelResponseUnmarshaller.Instance;
             
@@ -595,7 +595,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
         public virtual CreateConfiguredModelAlgorithmResponse CreateConfiguredModelAlgorithm(CreateConfiguredModelAlgorithmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredModelAlgorithmResponseUnmarshaller.Instance;
 
@@ -627,7 +627,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
         public virtual Task<CreateConfiguredModelAlgorithmResponse> CreateConfiguredModelAlgorithmAsync(CreateConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredModelAlgorithmResponseUnmarshaller.Instance;
             
@@ -667,7 +667,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual CreateConfiguredModelAlgorithmAssociationResponse CreateConfiguredModelAlgorithmAssociation(CreateConfiguredModelAlgorithmAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual Task<CreateConfiguredModelAlgorithmAssociationResponse> CreateConfiguredModelAlgorithmAssociationAsync(CreateConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
             
@@ -746,7 +746,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
         public virtual CreateMLInputChannelResponse CreateMLInputChannel(CreateMLInputChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLInputChannelResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
         public virtual Task<CreateMLInputChannelResponse> CreateMLInputChannelAsync(CreateMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLInputChannelResponseUnmarshaller.Instance;
             
@@ -829,7 +829,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
         public virtual CreateTrainedModelResponse CreateTrainedModel(CreateTrainedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrainedModelResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
         public virtual Task<CreateTrainedModelResponse> CreateTrainedModelAsync(CreateTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrainedModelResponseUnmarshaller.Instance;
             
@@ -904,7 +904,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainingDataset">REST API Reference for CreateTrainingDataset Operation</seealso>
         public virtual CreateTrainingDatasetResponse CreateTrainingDataset(CreateTrainingDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrainingDatasetResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainingDataset">REST API Reference for CreateTrainingDataset Operation</seealso>
         public virtual Task<CreateTrainingDatasetResponse> CreateTrainingDatasetAsync(CreateTrainingDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrainingDatasetResponseUnmarshaller.Instance;
             
@@ -969,7 +969,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteAudienceGenerationJob">REST API Reference for DeleteAudienceGenerationJob Operation</seealso>
         public virtual DeleteAudienceGenerationJobResponse DeleteAudienceGenerationJob(DeleteAudienceGenerationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAudienceGenerationJobResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteAudienceGenerationJob">REST API Reference for DeleteAudienceGenerationJob Operation</seealso>
         public virtual Task<DeleteAudienceGenerationJobResponse> DeleteAudienceGenerationJobAsync(DeleteAudienceGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAudienceGenerationJobResponseUnmarshaller.Instance;
             
@@ -1036,7 +1036,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteAudienceModel">REST API Reference for DeleteAudienceModel Operation</seealso>
         public virtual DeleteAudienceModelResponse DeleteAudienceModel(DeleteAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAudienceModelResponseUnmarshaller.Instance;
 
@@ -1069,7 +1069,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteAudienceModel">REST API Reference for DeleteAudienceModel Operation</seealso>
         public virtual Task<DeleteAudienceModelResponse> DeleteAudienceModelAsync(DeleteAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAudienceModelResponseUnmarshaller.Instance;
             
@@ -1105,7 +1105,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredAudienceModel">REST API Reference for DeleteConfiguredAudienceModel Operation</seealso>
         public virtual DeleteConfiguredAudienceModelResponse DeleteConfiguredAudienceModel(DeleteConfiguredAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredAudienceModel">REST API Reference for DeleteConfiguredAudienceModel Operation</seealso>
         public virtual Task<DeleteConfiguredAudienceModelResponse> DeleteConfiguredAudienceModelAsync(DeleteConfiguredAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelResponseUnmarshaller.Instance;
             
@@ -1170,7 +1170,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredAudienceModelPolicy">REST API Reference for DeleteConfiguredAudienceModelPolicy Operation</seealso>
         public virtual DeleteConfiguredAudienceModelPolicyResponse DeleteConfiguredAudienceModelPolicy(DeleteConfiguredAudienceModelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
 
@@ -1199,7 +1199,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredAudienceModelPolicy">REST API Reference for DeleteConfiguredAudienceModelPolicy Operation</seealso>
         public virtual Task<DeleteConfiguredAudienceModelPolicyResponse> DeleteConfiguredAudienceModelPolicyAsync(DeleteConfiguredAudienceModelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
             
@@ -1232,7 +1232,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
         public virtual DeleteConfiguredModelAlgorithmResponse DeleteConfiguredModelAlgorithm(DeleteConfiguredModelAlgorithmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredModelAlgorithmResponseUnmarshaller.Instance;
 
@@ -1264,7 +1264,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
         public virtual Task<DeleteConfiguredModelAlgorithmResponse> DeleteConfiguredModelAlgorithmAsync(DeleteConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredModelAlgorithmResponseUnmarshaller.Instance;
             
@@ -1300,7 +1300,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual DeleteConfiguredModelAlgorithmAssociationResponse DeleteConfiguredModelAlgorithmAssociation(DeleteConfiguredModelAlgorithmAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual Task<DeleteConfiguredModelAlgorithmAssociationResponse> DeleteConfiguredModelAlgorithmAssociationAsync(DeleteConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
             
@@ -1368,7 +1368,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
         public virtual DeleteMLConfigurationResponse DeleteMLConfiguration(DeleteMLConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLConfigurationResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
         public virtual Task<DeleteMLConfigurationResponse> DeleteMLConfigurationAsync(DeleteMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLConfigurationResponseUnmarshaller.Instance;
             
@@ -1436,7 +1436,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
         public virtual DeleteMLInputChannelDataResponse DeleteMLInputChannelData(DeleteMLInputChannelDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLInputChannelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLInputChannelDataResponseUnmarshaller.Instance;
 
@@ -1471,7 +1471,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
         public virtual Task<DeleteMLInputChannelDataResponse> DeleteMLInputChannelDataAsync(DeleteMLInputChannelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLInputChannelDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLInputChannelDataResponseUnmarshaller.Instance;
             
@@ -1507,7 +1507,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
         public virtual DeleteTrainedModelOutputResponse DeleteTrainedModelOutput(DeleteTrainedModelOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrainedModelOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrainedModelOutputResponseUnmarshaller.Instance;
 
@@ -1542,7 +1542,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
         public virtual Task<DeleteTrainedModelOutputResponse> DeleteTrainedModelOutputAsync(DeleteTrainedModelOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrainedModelOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrainedModelOutputResponseUnmarshaller.Instance;
             
@@ -1578,7 +1578,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainingDataset">REST API Reference for DeleteTrainingDataset Operation</seealso>
         public virtual DeleteTrainingDatasetResponse DeleteTrainingDataset(DeleteTrainingDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrainingDatasetResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainingDataset">REST API Reference for DeleteTrainingDataset Operation</seealso>
         public virtual Task<DeleteTrainingDatasetResponse> DeleteTrainingDatasetAsync(DeleteTrainingDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrainingDatasetResponseUnmarshaller.Instance;
             
@@ -1643,7 +1643,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetAudienceGenerationJob">REST API Reference for GetAudienceGenerationJob Operation</seealso>
         public virtual GetAudienceGenerationJobResponse GetAudienceGenerationJob(GetAudienceGenerationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAudienceGenerationJobResponseUnmarshaller.Instance;
 
@@ -1672,7 +1672,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetAudienceGenerationJob">REST API Reference for GetAudienceGenerationJob Operation</seealso>
         public virtual Task<GetAudienceGenerationJobResponse> GetAudienceGenerationJobAsync(GetAudienceGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAudienceGenerationJobResponseUnmarshaller.Instance;
             
@@ -1702,7 +1702,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetAudienceModel">REST API Reference for GetAudienceModel Operation</seealso>
         public virtual GetAudienceModelResponse GetAudienceModel(GetAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAudienceModelResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetAudienceModel">REST API Reference for GetAudienceModel Operation</seealso>
         public virtual Task<GetAudienceModelResponse> GetAudienceModelAsync(GetAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAudienceModelResponseUnmarshaller.Instance;
             
@@ -1764,7 +1764,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual GetCollaborationConfiguredModelAlgorithmAssociationResponse GetCollaborationConfiguredModelAlgorithmAssociation(GetCollaborationConfiguredModelAlgorithmAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual Task<GetCollaborationConfiguredModelAlgorithmAssociationResponse> GetCollaborationConfiguredModelAlgorithmAssociationAsync(GetCollaborationConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
             
@@ -1829,7 +1829,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
         public virtual GetCollaborationMLInputChannelResponse GetCollaborationMLInputChannel(GetCollaborationMLInputChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationMLInputChannelResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
         public virtual Task<GetCollaborationMLInputChannelResponse> GetCollaborationMLInputChannelAsync(GetCollaborationMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationMLInputChannelResponseUnmarshaller.Instance;
             
@@ -1894,7 +1894,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
         public virtual GetCollaborationTrainedModelResponse GetCollaborationTrainedModel(GetCollaborationTrainedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationTrainedModelResponseUnmarshaller.Instance;
 
@@ -1926,7 +1926,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
         public virtual Task<GetCollaborationTrainedModelResponse> GetCollaborationTrainedModelAsync(GetCollaborationTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCollaborationTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCollaborationTrainedModelResponseUnmarshaller.Instance;
             
@@ -1956,7 +1956,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModel">REST API Reference for GetConfiguredAudienceModel Operation</seealso>
         public virtual GetConfiguredAudienceModelResponse GetConfiguredAudienceModel(GetConfiguredAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModel">REST API Reference for GetConfiguredAudienceModel Operation</seealso>
         public virtual Task<GetConfiguredAudienceModelResponse> GetConfiguredAudienceModelAsync(GetConfiguredAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelResponseUnmarshaller.Instance;
             
@@ -2015,7 +2015,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModelPolicy">REST API Reference for GetConfiguredAudienceModelPolicy Operation</seealso>
         public virtual GetConfiguredAudienceModelPolicyResponse GetConfiguredAudienceModelPolicy(GetConfiguredAudienceModelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
 
@@ -2044,7 +2044,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModelPolicy">REST API Reference for GetConfiguredAudienceModelPolicy Operation</seealso>
         public virtual Task<GetConfiguredAudienceModelPolicyResponse> GetConfiguredAudienceModelPolicyAsync(GetConfiguredAudienceModelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
             
@@ -2074,7 +2074,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
         public virtual GetConfiguredModelAlgorithmResponse GetConfiguredModelAlgorithm(GetConfiguredModelAlgorithmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredModelAlgorithmResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
         public virtual Task<GetConfiguredModelAlgorithmResponse> GetConfiguredModelAlgorithmAsync(GetConfiguredModelAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredModelAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredModelAlgorithmResponseUnmarshaller.Instance;
             
@@ -2136,7 +2136,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual GetConfiguredModelAlgorithmAssociationResponse GetConfiguredModelAlgorithmAssociation(GetConfiguredModelAlgorithmAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
 
@@ -2168,7 +2168,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
         public virtual Task<GetConfiguredModelAlgorithmAssociationResponse> GetConfiguredModelAlgorithmAssociationAsync(GetConfiguredModelAlgorithmAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfiguredModelAlgorithmAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfiguredModelAlgorithmAssociationResponseUnmarshaller.Instance;
             
@@ -2201,7 +2201,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
         public virtual GetMLConfigurationResponse GetMLConfiguration(GetMLConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLConfigurationResponseUnmarshaller.Instance;
 
@@ -2233,7 +2233,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
         public virtual Task<GetMLConfigurationResponse> GetMLConfigurationAsync(GetMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLConfigurationResponseUnmarshaller.Instance;
             
@@ -2266,7 +2266,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
         public virtual GetMLInputChannelResponse GetMLInputChannel(GetMLInputChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLInputChannelResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
         public virtual Task<GetMLInputChannelResponse> GetMLInputChannelAsync(GetMLInputChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLInputChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLInputChannelResponseUnmarshaller.Instance;
             
@@ -2331,7 +2331,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
         public virtual GetTrainedModelResponse GetTrainedModel(GetTrainedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainedModelResponseUnmarshaller.Instance;
 
@@ -2363,7 +2363,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
         public virtual Task<GetTrainedModelResponse> GetTrainedModelAsync(GetTrainedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainedModelResponseUnmarshaller.Instance;
             
@@ -2396,7 +2396,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
         public virtual GetTrainedModelInferenceJobResponse GetTrainedModelInferenceJob(GetTrainedModelInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainedModelInferenceJobResponseUnmarshaller.Instance;
 
@@ -2428,7 +2428,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
         public virtual Task<GetTrainedModelInferenceJobResponse> GetTrainedModelInferenceJobAsync(GetTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainedModelInferenceJobResponseUnmarshaller.Instance;
             
@@ -2458,7 +2458,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainingDataset">REST API Reference for GetTrainingDataset Operation</seealso>
         public virtual GetTrainingDatasetResponse GetTrainingDataset(GetTrainingDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainingDatasetResponseUnmarshaller.Instance;
 
@@ -2487,7 +2487,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainingDataset">REST API Reference for GetTrainingDataset Operation</seealso>
         public virtual Task<GetTrainingDatasetResponse> GetTrainingDatasetAsync(GetTrainingDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrainingDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrainingDatasetResponseUnmarshaller.Instance;
             
@@ -2514,7 +2514,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceExportJobs">REST API Reference for ListAudienceExportJobs Operation</seealso>
         public virtual ListAudienceExportJobsResponse ListAudienceExportJobs(ListAudienceExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceExportJobsResponseUnmarshaller.Instance;
 
@@ -2540,7 +2540,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceExportJobs">REST API Reference for ListAudienceExportJobs Operation</seealso>
         public virtual Task<ListAudienceExportJobsResponse> ListAudienceExportJobsAsync(ListAudienceExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceExportJobsResponseUnmarshaller.Instance;
             
@@ -2567,7 +2567,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceGenerationJobs">REST API Reference for ListAudienceGenerationJobs Operation</seealso>
         public virtual ListAudienceGenerationJobsResponse ListAudienceGenerationJobs(ListAudienceGenerationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceGenerationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceGenerationJobsResponseUnmarshaller.Instance;
 
@@ -2593,7 +2593,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceGenerationJobs">REST API Reference for ListAudienceGenerationJobs Operation</seealso>
         public virtual Task<ListAudienceGenerationJobsResponse> ListAudienceGenerationJobsAsync(ListAudienceGenerationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceGenerationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceGenerationJobsResponseUnmarshaller.Instance;
             
@@ -2620,7 +2620,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceModels">REST API Reference for ListAudienceModels Operation</seealso>
         public virtual ListAudienceModelsResponse ListAudienceModels(ListAudienceModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceModelsResponseUnmarshaller.Instance;
 
@@ -2646,7 +2646,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListAudienceModels">REST API Reference for ListAudienceModels Operation</seealso>
         public virtual Task<ListAudienceModelsResponse> ListAudienceModelsAsync(ListAudienceModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAudienceModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAudienceModelsResponseUnmarshaller.Instance;
             
@@ -2676,7 +2676,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
         public virtual ListCollaborationConfiguredModelAlgorithmAssociationsResponse ListCollaborationConfiguredModelAlgorithmAssociations(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationConfiguredModelAlgorithmAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationConfiguredModelAlgorithmAssociationsResponseUnmarshaller.Instance;
 
@@ -2705,7 +2705,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
         public virtual Task<ListCollaborationConfiguredModelAlgorithmAssociationsResponse> ListCollaborationConfiguredModelAlgorithmAssociationsAsync(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationConfiguredModelAlgorithmAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationConfiguredModelAlgorithmAssociationsResponseUnmarshaller.Instance;
             
@@ -2735,7 +2735,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
         public virtual ListCollaborationMLInputChannelsResponse ListCollaborationMLInputChannels(ListCollaborationMLInputChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationMLInputChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationMLInputChannelsResponseUnmarshaller.Instance;
 
@@ -2764,7 +2764,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
         public virtual Task<ListCollaborationMLInputChannelsResponse> ListCollaborationMLInputChannelsAsync(ListCollaborationMLInputChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationMLInputChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationMLInputChannelsResponseUnmarshaller.Instance;
             
@@ -2794,7 +2794,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
         public virtual ListCollaborationTrainedModelExportJobsResponse ListCollaborationTrainedModelExportJobs(ListCollaborationTrainedModelExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelExportJobsResponseUnmarshaller.Instance;
 
@@ -2823,7 +2823,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
         public virtual Task<ListCollaborationTrainedModelExportJobsResponse> ListCollaborationTrainedModelExportJobsAsync(ListCollaborationTrainedModelExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelExportJobsResponseUnmarshaller.Instance;
             
@@ -2853,7 +2853,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
         public virtual ListCollaborationTrainedModelInferenceJobsResponse ListCollaborationTrainedModelInferenceJobs(ListCollaborationTrainedModelInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelInferenceJobsResponseUnmarshaller.Instance;
 
@@ -2882,7 +2882,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
         public virtual Task<ListCollaborationTrainedModelInferenceJobsResponse> ListCollaborationTrainedModelInferenceJobsAsync(ListCollaborationTrainedModelInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelInferenceJobsResponseUnmarshaller.Instance;
             
@@ -2912,7 +2912,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
         public virtual ListCollaborationTrainedModelsResponse ListCollaborationTrainedModels(ListCollaborationTrainedModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelsResponseUnmarshaller.Instance;
 
@@ -2941,7 +2941,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
         public virtual Task<ListCollaborationTrainedModelsResponse> ListCollaborationTrainedModelsAsync(ListCollaborationTrainedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollaborationTrainedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollaborationTrainedModelsResponseUnmarshaller.Instance;
             
@@ -2968,7 +2968,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">REST API Reference for ListConfiguredAudienceModels Operation</seealso>
         public virtual ListConfiguredAudienceModelsResponse ListConfiguredAudienceModels(ListConfiguredAudienceModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredAudienceModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredAudienceModelsResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">REST API Reference for ListConfiguredAudienceModels Operation</seealso>
         public virtual Task<ListConfiguredAudienceModelsResponse> ListConfiguredAudienceModelsAsync(ListConfiguredAudienceModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredAudienceModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredAudienceModelsResponseUnmarshaller.Instance;
             
@@ -3024,7 +3024,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
         public virtual ListConfiguredModelAlgorithmAssociationsResponse ListConfiguredModelAlgorithmAssociations(ListConfiguredModelAlgorithmAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredModelAlgorithmAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredModelAlgorithmAssociationsResponseUnmarshaller.Instance;
 
@@ -3053,7 +3053,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
         public virtual Task<ListConfiguredModelAlgorithmAssociationsResponse> ListConfiguredModelAlgorithmAssociationsAsync(ListConfiguredModelAlgorithmAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredModelAlgorithmAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredModelAlgorithmAssociationsResponseUnmarshaller.Instance;
             
@@ -3080,7 +3080,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
         public virtual ListConfiguredModelAlgorithmsResponse ListConfiguredModelAlgorithms(ListConfiguredModelAlgorithmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredModelAlgorithmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredModelAlgorithmsResponseUnmarshaller.Instance;
 
@@ -3106,7 +3106,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
         public virtual Task<ListConfiguredModelAlgorithmsResponse> ListConfiguredModelAlgorithmsAsync(ListConfiguredModelAlgorithmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfiguredModelAlgorithmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfiguredModelAlgorithmsResponseUnmarshaller.Instance;
             
@@ -3136,7 +3136,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
         public virtual ListMLInputChannelsResponse ListMLInputChannels(ListMLInputChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLInputChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLInputChannelsResponseUnmarshaller.Instance;
 
@@ -3165,7 +3165,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
         public virtual Task<ListMLInputChannelsResponse> ListMLInputChannelsAsync(ListMLInputChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLInputChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLInputChannelsResponseUnmarshaller.Instance;
             
@@ -3195,7 +3195,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3224,7 +3224,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -3254,7 +3254,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
         public virtual ListTrainedModelInferenceJobsResponse ListTrainedModelInferenceJobs(ListTrainedModelInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelInferenceJobsResponseUnmarshaller.Instance;
 
@@ -3283,7 +3283,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
         public virtual Task<ListTrainedModelInferenceJobsResponse> ListTrainedModelInferenceJobsAsync(ListTrainedModelInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelInferenceJobsResponseUnmarshaller.Instance;
             
@@ -3313,7 +3313,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
         public virtual ListTrainedModelsResponse ListTrainedModels(ListTrainedModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelsResponseUnmarshaller.Instance;
 
@@ -3342,7 +3342,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
         public virtual Task<ListTrainedModelsResponse> ListTrainedModelsAsync(ListTrainedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelsResponseUnmarshaller.Instance;
             
@@ -3378,7 +3378,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">REST API Reference for ListTrainedModelVersions Operation</seealso>
         public virtual ListTrainedModelVersionsResponse ListTrainedModelVersions(ListTrainedModelVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelVersionsResponseUnmarshaller.Instance;
 
@@ -3413,7 +3413,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelVersions">REST API Reference for ListTrainedModelVersions Operation</seealso>
         public virtual Task<ListTrainedModelVersionsResponse> ListTrainedModelVersionsAsync(ListTrainedModelVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainedModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainedModelVersionsResponseUnmarshaller.Instance;
             
@@ -3440,7 +3440,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainingDatasets">REST API Reference for ListTrainingDatasets Operation</seealso>
         public virtual ListTrainingDatasetsResponse ListTrainingDatasets(ListTrainingDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainingDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainingDatasetsResponseUnmarshaller.Instance;
 
@@ -3466,7 +3466,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainingDatasets">REST API Reference for ListTrainingDatasets Operation</seealso>
         public virtual Task<ListTrainingDatasetsResponse> ListTrainingDatasetsAsync(ListTrainingDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrainingDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrainingDatasetsResponseUnmarshaller.Instance;
             
@@ -3496,7 +3496,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutConfiguredAudienceModelPolicy">REST API Reference for PutConfiguredAudienceModelPolicy Operation</seealso>
         public virtual PutConfiguredAudienceModelPolicyResponse PutConfiguredAudienceModelPolicy(PutConfiguredAudienceModelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
 
@@ -3525,7 +3525,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutConfiguredAudienceModelPolicy">REST API Reference for PutConfiguredAudienceModelPolicy Operation</seealso>
         public virtual Task<PutConfiguredAudienceModelPolicyResponse> PutConfiguredAudienceModelPolicyAsync(PutConfiguredAudienceModelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfiguredAudienceModelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfiguredAudienceModelPolicyResponseUnmarshaller.Instance;
             
@@ -3555,7 +3555,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
         public virtual PutMLConfigurationResponse PutMLConfiguration(PutMLConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMLConfigurationResponseUnmarshaller.Instance;
 
@@ -3584,7 +3584,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
         public virtual Task<PutMLConfigurationResponse> PutMLConfigurationAsync(PutMLConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMLConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMLConfigurationResponseUnmarshaller.Instance;
             
@@ -3620,7 +3620,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceExportJob">REST API Reference for StartAudienceExportJob Operation</seealso>
         public virtual StartAudienceExportJobResponse StartAudienceExportJob(StartAudienceExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAudienceExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAudienceExportJobResponseUnmarshaller.Instance;
 
@@ -3655,7 +3655,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceExportJob">REST API Reference for StartAudienceExportJob Operation</seealso>
         public virtual Task<StartAudienceExportJobResponse> StartAudienceExportJobAsync(StartAudienceExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAudienceExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAudienceExportJobResponseUnmarshaller.Instance;
             
@@ -3694,7 +3694,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceGenerationJob">REST API Reference for StartAudienceGenerationJob Operation</seealso>
         public virtual StartAudienceGenerationJobResponse StartAudienceGenerationJob(StartAudienceGenerationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAudienceGenerationJobResponseUnmarshaller.Instance;
 
@@ -3732,7 +3732,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceGenerationJob">REST API Reference for StartAudienceGenerationJob Operation</seealso>
         public virtual Task<StartAudienceGenerationJobResponse> StartAudienceGenerationJobAsync(StartAudienceGenerationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAudienceGenerationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAudienceGenerationJobResponseUnmarshaller.Instance;
             
@@ -3768,7 +3768,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
         public virtual StartTrainedModelExportJobResponse StartTrainedModelExportJob(StartTrainedModelExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTrainedModelExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTrainedModelExportJobResponseUnmarshaller.Instance;
 
@@ -3803,7 +3803,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
         public virtual Task<StartTrainedModelExportJobResponse> StartTrainedModelExportJobAsync(StartTrainedModelExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTrainedModelExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTrainedModelExportJobResponseUnmarshaller.Instance;
             
@@ -3842,7 +3842,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
         public virtual StartTrainedModelInferenceJobResponse StartTrainedModelInferenceJob(StartTrainedModelInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTrainedModelInferenceJobResponseUnmarshaller.Instance;
 
@@ -3880,7 +3880,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
         public virtual Task<StartTrainedModelInferenceJobResponse> StartTrainedModelInferenceJobAsync(StartTrainedModelInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTrainedModelInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTrainedModelInferenceJobResponseUnmarshaller.Instance;
             
@@ -3910,7 +3910,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3939,7 +3939,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3969,7 +3969,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3998,7 +3998,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4033,7 +4033,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/UpdateConfiguredAudienceModel">REST API Reference for UpdateConfiguredAudienceModel Operation</seealso>
         public virtual UpdateConfiguredAudienceModelResponse UpdateConfiguredAudienceModel(UpdateConfiguredAudienceModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredAudienceModelResponseUnmarshaller.Instance;
 
@@ -4067,7 +4067,7 @@ namespace Amazon.CleanRoomsML
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/UpdateConfiguredAudienceModel">REST API Reference for UpdateConfiguredAudienceModel Operation</seealso>
         public virtual Task<UpdateConfiguredAudienceModelResponse> UpdateConfiguredAudienceModelAsync(UpdateConfiguredAudienceModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfiguredAudienceModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfiguredAudienceModelResponseUnmarshaller.Instance;
             
