@@ -362,6 +362,56 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  DeleteGroupingConfiguration
+
+
+        /// <summary>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        DeleteGroupingConfigurationResponse DeleteGroupingConfiguration(DeleteGroupingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroupingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroupingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteGroupingConfiguration(DeleteGroupingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGroupingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroupingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteGroupingConfigurationResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        DeleteGroupingConfigurationResponse EndDeleteGroupingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteServiceLevelObjective
 
 
@@ -503,6 +553,108 @@ namespace Amazon.ApplicationSignals
         /// <returns>Returns a  GetServiceLevelObjectiveResult from ApplicationSignals.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetServiceLevelObjective">REST API Reference for GetServiceLevelObjective Operation</seealso>
         GetServiceLevelObjectiveResponse EndGetServiceLevelObjective(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAuditFindings
+
+
+        /// <summary>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditFindings service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuditFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAuditFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        IAsyncResult BeginListAuditFindings(ListAuditFindingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAuditFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAuditFindings.</param>
+        /// 
+        /// <returns>Returns a  ListAuditFindingsResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        ListAuditFindingsResponse EndListAuditFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListGroupingAttributeDefinitions
+
+
+        /// <summary>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListGroupingAttributeDefinitions service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        ListGroupingAttributeDefinitionsResponse ListGroupingAttributeDefinitions(ListGroupingAttributeDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGroupingAttributeDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupingAttributeDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        IAsyncResult BeginListGroupingAttributeDefinitions(ListGroupingAttributeDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGroupingAttributeDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupingAttributeDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListGroupingAttributeDefinitionsResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        ListGroupingAttributeDefinitionsResponse EndListGroupingAttributeDefinitions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -794,6 +946,54 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  ListServiceStates
+
+
+        /// <summary>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceStates service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        ListServiceStatesResponse ListServiceStates(ListServiceStatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceStates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        IAsyncResult BeginListServiceStates(ListServiceStatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceStates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceStates.</param>
+        /// 
+        /// <returns>Returns a  ListServiceStatesResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        ListServiceStatesResponse EndListServiceStates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -838,6 +1038,59 @@ namespace Amazon.ApplicationSignals
         /// <returns>Returns a  ListTagsForResourceResult from ApplicationSignals.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutGroupingConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        PutGroupingConfigurationResponse PutGroupingConfiguration(PutGroupingConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutGroupingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration operation on AmazonApplicationSignalsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutGroupingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        IAsyncResult BeginPutGroupingConfiguration(PutGroupingConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutGroupingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGroupingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutGroupingConfigurationResult from ApplicationSignals.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        PutGroupingConfigurationResponse EndPutGroupingConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

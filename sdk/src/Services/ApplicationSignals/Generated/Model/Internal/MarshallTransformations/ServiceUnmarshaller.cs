@@ -90,6 +90,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricReferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceGroup, ServiceGroupUnmarshaller>(ServiceGroupUnmarshaller.Instance);
+                    unmarshalledObject.ServiceGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -62,7 +62,8 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in one operation. If you omit this parameter,
-        /// the default of 50 is used. <pre><c> &lt;/p&gt; </c></pre>
+        /// the default of 50 is used. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public int MaxResults
@@ -81,7 +82,8 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Include this value, if it was returned by the previous operation, to get the next
-        /// set of service level objectives. <pre><c> &lt;/p&gt; </c></pre>
+        /// set of service level objectives. 
+        /// </para>
         /// </summary>
         public string NextToken
         {

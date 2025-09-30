@@ -89,6 +89,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMetricName())
+            {
+                context.Writer.WritePropertyName("MetricName");
+                context.Writer.Write(requestObject.MetricName);
+            }
+
             if(requestObject.IsSetMetricType())
             {
                 context.Writer.WritePropertyName("MetricType");

@@ -86,5 +86,15 @@ namespace Amazon.ApplicationSignals.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListServicesPaginator ListServices(ListServicesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceStates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListServiceStatesPaginator ListServiceStates(ListServiceStatesRequest request);
     }
 }

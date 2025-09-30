@@ -67,11 +67,15 @@ namespace Amazon.ApplicationSignals.Model
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
         /// If you are using this operation in a monitoring account, specify <c>true</c> to include
-        /// SLO from source accounts in the returned data. <pre><c> &lt;/p&gt; &lt;p&gt;When you
-        /// are monitoring an account, you can use Amazon Web Services account ID in &lt;code&gt;KeyAttribute&lt;/code&gt;
-        /// filter for service source account and &lt;code&gt;SloOwnerawsaccountID&lt;/code&gt;
-        /// for SLO source account with &lt;code&gt;IncludeLinkedAccounts&lt;/code&gt; to filter
-        /// the returned data to only a single source account. &lt;/p&gt; </c></pre>
+        /// SLO from source accounts in the returned data. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are monitoring an account, you can use Amazon Web Services account ID in
+        /// <c>KeyAttribute</c> filter for service source account and <c>SloOwnerawsaccountID</c>
+        /// for SLO source account with <c>IncludeLinkedAccounts</c> to filter the returned data
+        /// to only a single source account. 
+        /// </para>
         /// </summary>
         public bool IncludeLinkedAccounts
         {
