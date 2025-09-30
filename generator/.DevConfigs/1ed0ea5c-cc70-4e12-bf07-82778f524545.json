@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Update code generator to use fully qualified name for InvokeOptions to avoid name collisions"
-    ]
-  }
-}

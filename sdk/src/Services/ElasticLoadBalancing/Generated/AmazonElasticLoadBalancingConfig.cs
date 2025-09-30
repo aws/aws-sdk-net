@@ -33,7 +33,7 @@ namespace Amazon.ElasticLoadBalancing
     public partial class AmazonElasticLoadBalancingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Elastic Load Balancing", "4.0.1.4");
+            InternalSDKUtils.BuildUserAgentString("Elastic Load Balancing", "4.0.1.5");
 
         private static readonly AmazonElasticLoadBalancingEndpointResolver EndpointResolver =
             new AmazonElasticLoadBalancingEndpointResolver();
