@@ -3015,6 +3015,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetProfileHistoryRecord
+
+        /// <summary>
+        /// Returns a history record for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileHistoryRecord service method.</param>
+        /// 
+        /// <returns>The response from the GetProfileHistoryRecord service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual GetProfileHistoryRecordResponse GetProfileHistoryRecord(GetProfileHistoryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileHistoryRecordResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProfileHistoryRecord operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileHistoryRecord operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProfileHistoryRecord
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual IAsyncResult BeginGetProfileHistoryRecord(GetProfileHistoryRecordRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProfileHistoryRecord operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProfileHistoryRecord.</param>
+        /// 
+        /// <returns>Returns a  GetProfileHistoryRecordResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual GetProfileHistoryRecordResponse EndGetProfileHistoryRecord(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProfileHistoryRecordResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetProfileObjectType
 
         /// <summary>
@@ -4541,6 +4610,75 @@ namespace Amazon.CustomerProfiles
         public virtual ListProfileAttributeValuesResponse EndListProfileAttributeValues(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProfileAttributeValuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProfileHistoryRecords
+
+        /// <summary>
+        /// Returns a list of history records for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileHistoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListProfileHistoryRecords service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual ListProfileHistoryRecordsResponse ListProfileHistoryRecords(ListProfileHistoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileHistoryRecordsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfileHistoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileHistoryRecords operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfileHistoryRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual IAsyncResult BeginListProfileHistoryRecords(ListProfileHistoryRecordsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfileHistoryRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfileHistoryRecords.</param>
+        /// 
+        /// <returns>Returns a  ListProfileHistoryRecordsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual ListProfileHistoryRecordsResponse EndListProfileHistoryRecords(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfileHistoryRecordsResponse>(asyncResult);
         }
 
         #endregion

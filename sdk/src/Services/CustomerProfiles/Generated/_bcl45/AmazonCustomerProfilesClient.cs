@@ -3265,6 +3265,77 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetProfileHistoryRecord
+
+
+        /// <summary>
+        /// Returns a history record for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileHistoryRecord service method.</param>
+        /// 
+        /// <returns>The response from the GetProfileHistoryRecord service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual GetProfileHistoryRecordResponse GetProfileHistoryRecord(GetProfileHistoryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileHistoryRecordResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a history record for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileHistoryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProfileHistoryRecord service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileHistoryRecord">REST API Reference for GetProfileHistoryRecord Operation</seealso>
+        public virtual Task<GetProfileHistoryRecordResponse> GetProfileHistoryRecordAsync(GetProfileHistoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileHistoryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileHistoryRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetProfileHistoryRecordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProfileObjectType
 
 
@@ -4847,6 +4918,77 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListProfileAttributeValuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProfileHistoryRecords
+
+
+        /// <summary>
+        /// Returns a list of history records for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileHistoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListProfileHistoryRecords service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual ListProfileHistoryRecordsResponse ListProfileHistoryRecords(ListProfileHistoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileHistoryRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of history records for a specific profile, for a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileHistoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProfileHistoryRecords service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileHistoryRecords">REST API Reference for ListProfileHistoryRecords Operation</seealso>
+        public virtual Task<ListProfileHistoryRecordsResponse> ListProfileHistoryRecordsAsync(ListProfileHistoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProfileHistoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileHistoryRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProfileHistoryRecordsResponse>(request, options, cancellationToken);
         }
 
         #endregion
