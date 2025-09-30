@@ -36,6 +36,7 @@ namespace Amazon.DirectoryService.Model
     {
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _connectIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _connectIpsV6 = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customerUserName;
         private string _securityGroupId;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -44,7 +45,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of the Availability Zones that the directory is in.
+        /// The Availability Zones that the directory is in.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -75,6 +76,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetConnectIps()
         {
             return this._connectIps != null && (this._connectIps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectIpsV6. 
+        /// <para>
+        /// The IPv6 addresses of the AD Connector servers.
+        /// </para>
+        /// </summary>
+        public List<string> ConnectIpsV6
+        {
+            get { return this._connectIpsV6; }
+            set { this._connectIpsV6 = value; }
+        }
+
+        // Check to see if ConnectIpsV6 property is set
+        internal bool IsSetConnectIpsV6()
+        {
+            return this._connectIpsV6 != null && (this._connectIpsV6.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

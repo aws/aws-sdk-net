@@ -39,6 +39,7 @@ namespace Amazon.DirectoryService.Model
         private int? _radiusPort;
         private int? _radiusRetries;
         private List<string> _radiusServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _radiusServersIpv6 = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _radiusTimeout;
         private string _sharedSecret;
         private bool? _useSameUsername;
@@ -123,9 +124,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusServers. 
         /// <para>
-        /// An array of strings that contains the fully qualified domain name (FQDN) or IP addresses
-        /// of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-        /// load balancer.
+        /// The fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints,
+        /// or the FQDN or IP addresses of your RADIUS server load balancer.
         /// </para>
         /// </summary>
         public List<string> RadiusServers
@@ -138,6 +138,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetRadiusServers()
         {
             return this._radiusServers != null && (this._radiusServers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RadiusServersIpv6. 
+        /// <para>
+        /// The IPv6 addresses of the RADIUS server endpoints or RADIUS server load balancer.
+        /// </para>
+        /// </summary>
+        public List<string> RadiusServersIpv6
+        {
+            get { return this._radiusServersIpv6; }
+            set { this._radiusServersIpv6 = value; }
+        }
+
+        // Check to see if RadiusServersIpv6 property is set
+        internal bool IsSetRadiusServersIpv6()
+        {
+            return this._radiusServersIpv6 != null && (this._radiusServersIpv6.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

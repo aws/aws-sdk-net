@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IpRoute Marshaller
+    /// NetworkUpdateSettings Marshaller
     /// </summary>
-    public class IpRouteMarshaller : IRequestMarshaller<IpRoute, JsonMarshallerContext> 
+    public class NetworkUpdateSettingsMarshaller : IRequestMarshaller<NetworkUpdateSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,25 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IpRoute requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkUpdateSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCidrIp())
+            if(requestObject.IsSetCustomerDnsIpsV6())
             {
-                context.Writer.WritePropertyName("CidrIp");
-                context.Writer.Write(requestObject.CidrIp);
+                context.Writer.WritePropertyName("CustomerDnsIpsV6");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomerDnsIpsV6ListValue in requestObject.CustomerDnsIpsV6)
+                {
+                        context.Writer.Write(requestObjectCustomerDnsIpsV6ListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetCidrIpv6())
+            if(requestObject.IsSetNetworkType())
             {
-                context.Writer.WritePropertyName("CidrIpv6");
-                context.Writer.Write(requestObject.CidrIpv6);
-            }
-
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WritePropertyName("NetworkType");
+                context.Writer.Write(requestObject.NetworkType);
             }
 
         }
@@ -71,7 +70,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IpRouteMarshaller Instance = new IpRouteMarshaller();
+        public readonly static NetworkUpdateSettingsMarshaller Instance = new NetworkUpdateSettingsMarshaller();
 
     }
 }

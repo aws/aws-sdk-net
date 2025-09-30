@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains information for the <a>ConnectDirectory</a> operation when an AD Connector
-    /// directory is being created.
+    /// Contains connection settings for creating an AD Connector with the <a>ConnectDirectory</a>
+    /// action.
     /// </summary>
     public partial class DirectoryConnectSettings
     {
         private List<string> _customerDnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _customerDnsIpsV6 = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customerUserName;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
@@ -43,11 +44,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CustomerDnsIps. 
         /// <para>
-        /// A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
-        /// directory.
+        /// The IP addresses of DNS servers or domain controllers in your self-managed directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> CustomerDnsIps
         {
             get { return this._customerDnsIps; }
@@ -58,6 +57,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCustomerDnsIps()
         {
             return this._customerDnsIps != null && (this._customerDnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerDnsIpsV6. 
+        /// <para>
+        /// The IPv6 addresses of DNS servers or domain controllers in your self-managed directory.
+        /// </para>
+        /// </summary>
+        public List<string> CustomerDnsIpsV6
+        {
+            get { return this._customerDnsIpsV6; }
+            set { this._customerDnsIpsV6 = value; }
+        }
+
+        // Check to see if CustomerDnsIpsV6 property is set
+        internal bool IsSetCustomerDnsIpsV6()
+        {
+            return this._customerDnsIpsV6 != null && (this._customerDnsIpsV6.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

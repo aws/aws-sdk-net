@@ -39,6 +39,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _directoryId;
         private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsIpv6Addrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _remoteDomainName;
 
         /// <summary>
@@ -67,7 +68,6 @@ namespace Amazon.DirectoryService.Model
         /// The IP addresses of the remote DNS server associated with RemoteDomainName.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> DnsIpAddrs
         {
             get { return this._dnsIpAddrs; }
@@ -78,6 +78,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDnsIpAddrs()
         {
             return this._dnsIpAddrs != null && (this._dnsIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpv6Addrs. 
+        /// <para>
+        /// The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
+        /// </para>
+        /// </summary>
+        public List<string> DnsIpv6Addrs
+        {
+            get { return this._dnsIpv6Addrs; }
+            set { this._dnsIpv6Addrs = value; }
+        }
+
+        // Check to see if DnsIpv6Addrs property is set
+        internal bool IsSetDnsIpv6Addrs()
+        {
+            return this._dnsIpv6Addrs != null && (this._dnsIpv6Addrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

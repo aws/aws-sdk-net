@@ -86,6 +86,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDnsIpv6Addrs())
+                {
+                    context.Writer.WritePropertyName("DnsIpv6Addrs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDnsIpv6AddrsListValue in publicRequest.DnsIpv6Addrs)
+                    {
+                            context.Writer.Write(publicRequestDnsIpv6AddrsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRemoteDomainName())
                 {
                     context.Writer.WritePropertyName("RemoteDomainName");

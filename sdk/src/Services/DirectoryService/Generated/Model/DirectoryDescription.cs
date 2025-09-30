@@ -41,10 +41,12 @@ namespace Amazon.DirectoryService.Model
         private int? _desiredNumberOfDomainControllers;
         private string _directoryId;
         private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsIpv6Addrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DirectoryEdition _edition;
         private HybridSettingsDescription _hybridSettings;
         private DateTime? _launchTime;
         private string _name;
+        private NetworkType _networkType;
         private OSVersion _osVersion;
         private OwnerDirectoryDescription _ownerDirectoryDescription;
         private RadiusSettings _radiusSettings;
@@ -66,8 +68,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property AccessUrl. 
         /// <para>
         /// The access URL for the directory, such as <c>http://&lt;alias&gt;.awsapps.com</c>.
-        /// If no alias has been created for the directory, <c>&lt;alias&gt;</c> is the directory
-        /// identifier, such as <c>d-XXXXXXXXXX</c>.
+        /// If no alias exists, <c>&lt;alias&gt;</c> is the directory identifier, such as <c>d-XXXXXXXXXX</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -86,8 +87,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The alias for the directory. If no alias has been created for the directory, the alias
-        /// is the directory identifier, such as <c>d-XXXXXXXXXX</c>.
+        /// The alias for the directory. If no alias exists, the alias is the directory identifier,
+        /// such as <c>d-XXXXXXXXXX</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=62)]
@@ -106,9 +107,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ConnectSettings. 
         /// <para>
-        /// A <a>DirectoryConnectSettingsDescription</a> object that contains additional information
-        /// about an AD Connector directory. This member is only present if the directory is an
-        /// AD Connector directory.
+        ///  <a>DirectoryConnectSettingsDescription</a> object that contains additional information
+        /// about an AD Connector directory. Present only for AD Connector directories.
         /// </para>
         /// </summary>
         public DirectoryConnectSettingsDescription ConnectSettings
@@ -185,9 +185,8 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft
         /// AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory
-        /// servers. For an AD Connector directory, these are the IP addresses of the DNS servers
-        /// or domain controllers in your self-managed directory to which the AD Connector is
-        /// connected.
+        /// servers. For an AD Connector directory, these are the IP addresses of self-managed
+        /// directory to which the AD Connector is connected.
         /// </para>
         /// </summary>
         public List<string> DnsIpAddrs
@@ -200,6 +199,28 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDnsIpAddrs()
         {
             return this._dnsIpAddrs != null && (this._dnsIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpv6Addrs. 
+        /// <para>
+        /// The IPv6 addresses of the DNS servers for the directory. For a Simple AD or Microsoft
+        /// AD directory, these are the IPv6 addresses of the Simple AD or Microsoft AD directory
+        /// servers. For an AD Connector directory, these are the IPv6 addresses of the DNS servers
+        /// or domain controllers in your self-managed directory to which the AD Connector is
+        /// connected.
+        /// </para>
+        /// </summary>
+        public List<string> DnsIpv6Addrs
+        {
+            get { return this._dnsIpv6Addrs; }
+            set { this._dnsIpv6Addrs = value; }
+        }
+
+        // Check to see if DnsIpv6Addrs property is set
+        internal bool IsSetDnsIpv6Addrs()
+        {
+            return this._dnsIpv6Addrs != null && (this._dnsIpv6Addrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +263,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property LaunchTime. 
         /// <para>
-        /// Specifies when the directory was created.
+        /// The date and time when the directory was created.
         /// </para>
         /// </summary>
         public DateTime LaunchTime
@@ -273,6 +294,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the directory.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
@@ -314,8 +353,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusSettings. 
         /// <para>
-        /// A <a>RadiusSettings</a> object that contains information about the RADIUS server configured
-        /// for this directory.
+        /// Information about the <a>RadiusSettings</a> object configured for this directory.
         /// </para>
         /// </summary>
         public RadiusSettings RadiusSettings
@@ -464,8 +502,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SsoEnabled. 
         /// <para>
-        /// Indicates if single sign-on is enabled for the directory. For more information, see
-        /// <a>EnableSso</a> and <a>DisableSso</a>.
+        /// Indicates whether single sign-on is enabled for the directory. For more information,
+        /// see <a>EnableSso</a> and <a>DisableSso</a>.
         /// </para>
         /// </summary>
         public bool SsoEnabled
@@ -501,7 +539,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property StageLastUpdatedDateTime. 
         /// <para>
-        /// The date and time that the stage was last updated.
+        /// The date and time when the stage was last updated.
         /// </para>
         /// </summary>
         public DateTime StageLastUpdatedDateTime
@@ -556,8 +594,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property VpcSettings. 
         /// <para>
         /// A <a>DirectoryVpcSettingsDescription</a> object that contains additional information
-        /// about a directory. This member is only present if the directory is a Simple AD or
-        /// Managed Microsoft AD directory.
+        /// about a directory. Present only for Simple AD and Managed Microsoft AD directories.
         /// </para>
         /// </summary>
         public DirectoryVpcSettingsDescription VpcSettings

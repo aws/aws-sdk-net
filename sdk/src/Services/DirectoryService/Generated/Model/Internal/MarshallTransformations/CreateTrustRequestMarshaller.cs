@@ -80,6 +80,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetConditionalForwarderIpv6Addrs())
+                {
+                    context.Writer.WritePropertyName("ConditionalForwarderIpv6Addrs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConditionalForwarderIpv6AddrsListValue in publicRequest.ConditionalForwarderIpv6Addrs)
+                    {
+                            context.Writer.Write(publicRequestConditionalForwarderIpv6AddrsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");

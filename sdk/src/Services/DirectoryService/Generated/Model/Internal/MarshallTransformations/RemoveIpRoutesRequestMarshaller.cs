@@ -80,6 +80,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCidrIpv6s())
+                {
+                    context.Writer.WritePropertyName("CidrIpv6s");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCidrIpv6sListValue in publicRequest.CidrIpv6s)
+                    {
+                            context.Writer.Write(publicRequestCidrIpv6sListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");

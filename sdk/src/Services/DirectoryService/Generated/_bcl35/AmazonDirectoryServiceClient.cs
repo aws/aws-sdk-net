@@ -5853,7 +5853,7 @@ namespace Amazon.DirectoryService
         #region  UpdateDirectorySetup
 
         /// <summary>
-        /// Updates the directory for a particular update type.
+        /// Updates directory configuration for the specified update type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDirectorySetup service method.</param>
         /// 

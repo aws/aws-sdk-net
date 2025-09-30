@@ -30,28 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// OS version that the directory needs to be updated to.
+    /// Contains the directory size configuration for update operations.
     /// </summary>
-    public partial class OSUpdateSettings
+    public partial class DirectorySizeUpdateSettings
     {
-        private OSVersion _osVersion;
+        private DirectorySize _directorySize;
 
         /// <summary>
-        /// Gets and sets the property OSVersion. 
+        /// Gets and sets the property DirectorySize. 
         /// <para>
-        /// OS version that the directory needs to be updated to.
+        /// The target directory size for the update operation.
         /// </para>
         /// </summary>
-        public OSVersion OSVersion
+        public DirectorySize DirectorySize
         {
-            get { return this._osVersion; }
-            set { this._osVersion = value; }
+            get { return this._directorySize; }
+            set { this._directorySize = value; }
         }
 
-        // Check to see if OSVersion property is set
-        internal bool IsSetOSVersion()
+        // Check to see if DirectorySize property is set
+        internal bool IsSetDirectorySize()
         {
-            return this._osVersion != null;
+            return this._directorySize != null;
         }
 
     }

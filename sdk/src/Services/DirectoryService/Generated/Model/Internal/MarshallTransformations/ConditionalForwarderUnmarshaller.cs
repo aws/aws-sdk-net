@@ -72,6 +72,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsIpv6Addrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsIpv6Addrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RemoteDomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

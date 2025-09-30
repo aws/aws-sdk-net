@@ -47,6 +47,7 @@ namespace Amazon.DirectoryService.Model
     public partial class CreateTrustRequest : AmazonDirectoryServiceRequest
     {
         private List<string> _conditionalForwarderIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _conditionalForwarderIpv6Addrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _directoryId;
         private string _remoteDomainName;
         private SelectiveAuth _selectiveAuth;
@@ -70,6 +71,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetConditionalForwarderIpAddrs()
         {
             return this._conditionalForwarderIpAddrs != null && (this._conditionalForwarderIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConditionalForwarderIpv6Addrs. 
+        /// <para>
+        /// The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
+        /// </para>
+        /// </summary>
+        public List<string> ConditionalForwarderIpv6Addrs
+        {
+            get { return this._conditionalForwarderIpv6Addrs; }
+            set { this._conditionalForwarderIpv6Addrs = value; }
+        }
+
+        // Check to see if ConditionalForwarderIpv6Addrs property is set
+        internal bool IsSetConditionalForwarderIpv6Addrs()
+        {
+            return this._conditionalForwarderIpv6Addrs != null && (this._conditionalForwarderIpv6Addrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -81,6 +81,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
                 if(publicRequest.IsSetPassword())
                 {
                     context.Writer.WritePropertyName("Password");

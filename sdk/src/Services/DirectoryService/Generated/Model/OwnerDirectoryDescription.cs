@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Describes the directory owner account details that have been shared to the directory
-    /// consumer account.
+    /// Contains the directory owner account details shared with the directory consumer account.
     /// </summary>
     public partial class OwnerDirectoryDescription
     {
         private string _accountId;
         private string _directoryId;
         private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsIpv6Addrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private NetworkType _networkType;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
         private DirectoryVpcSettingsDescription _vpcSettings;
@@ -97,9 +98,45 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsIpv6Addrs. 
+        /// <para>
+        /// IPv6 addresses of the directory’s domain controllers.
+        /// </para>
+        /// </summary>
+        public List<string> DnsIpv6Addrs
+        {
+            get { return this._dnsIpv6Addrs; }
+            set { this._dnsIpv6Addrs = value; }
+        }
+
+        // Check to see if DnsIpv6Addrs property is set
+        internal bool IsSetDnsIpv6Addrs()
+        {
+            return this._dnsIpv6Addrs != null && (this._dnsIpv6Addrs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Network type of the directory in the directory owner account.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RadiusSettings. 
         /// <para>
-        /// A <a>RadiusSettings</a> object that contains information about the RADIUS server.
+        /// Information about the <a>RadiusSettings</a> object server configuration.
         /// </para>
         /// </summary>
         public RadiusSettings RadiusSettings
@@ -117,7 +154,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusStatus. 
         /// <para>
-        /// Information about the status of the RADIUS server.
+        /// The status of the RADIUS server.
         /// </para>
         /// </summary>
         public RadiusStatus RadiusStatus

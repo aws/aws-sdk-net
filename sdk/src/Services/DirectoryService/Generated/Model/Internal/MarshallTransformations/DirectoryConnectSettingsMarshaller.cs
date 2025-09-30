@@ -59,6 +59,17 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCustomerDnsIpsV6())
+            {
+                context.Writer.WritePropertyName("CustomerDnsIpsV6");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomerDnsIpsV6ListValue in requestObject.CustomerDnsIpsV6)
+                {
+                        context.Writer.Write(requestObjectCustomerDnsIpsV6ListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCustomerUserName())
             {
                 context.Writer.WritePropertyName("CustomerUserName");
