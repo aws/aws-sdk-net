@@ -63,10 +63,6 @@ namespace Amazon.DataZone.Model
     /// <para>
     /// User must have create permissions for data products in the project.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The domain must have Amazon DataZone publishing enabled.
-    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class CreateDataProductRequest : AmazonDataZoneRequest

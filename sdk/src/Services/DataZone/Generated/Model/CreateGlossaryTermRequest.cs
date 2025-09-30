@@ -54,7 +54,7 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Glossary must exist and be in an ENABLED state.
+    /// Glossary must exist.
     /// </para>
     ///  </li> <li> 
     /// <para>

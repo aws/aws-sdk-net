@@ -47,10 +47,6 @@ namespace Amazon.DataZone.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Ensure there are no active dependencies (e.g., published links, assets using the product).
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Domain and project must be active.
     /// </para>
     ///  </li> </ul>

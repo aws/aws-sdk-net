@@ -1091,8 +1091,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Form type must exist and be associated with the asset type. Use <c>create-form-type</c>
-        /// to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
+        ///  <c>formsInput</c> is required when it is associated as required in the <c>asset-type</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1178,8 +1178,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Form type must exist and be associated with the asset type. Use <c>create-form-type</c>
-        /// to define. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
+        ///  <c>formsInput</c> is required when it is associated as required in the <c>asset-type</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/datazone/create-form-type.html">create-form-type</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1422,7 +1422,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The form type with correct revision must be registered in the same domain.
+        ///  <c>formsInput</c> is required when asset has the form type. <c>typeRevision</c> should
+        /// be the latest version of form type. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1494,7 +1495,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The form type with correct revision must be registered in the same domain.
+        ///  <c>formsInput</c> is required when asset has the form type. <c>typeRevision</c> should
+        /// be the latest version of form type. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1561,8 +1563,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The form type with <c>typeIdentifier</c> and <c>typeRevision</c> must exist and be
-        /// published. 
+        /// The <c>formsInput</c> field is required, however, can be passed as empty (e.g. <c>-forms-input
+        /// {})</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1627,8 +1629,8 @@ namespace Amazon.DataZone
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The form type with <c>typeIdentifier</c> and <c>typeRevision</c> must exist and be
-        /// published. 
+        /// The <c>formsInput</c> field is required, however, can be passed as empty (e.g. <c>-forms-input
+        /// {})</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1815,10 +1817,6 @@ namespace Amazon.DataZone
         /// <para>
         /// User must have create permissions for data products in the project.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The domain must have Amazon DataZone publishing enabled.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataProduct service method.</param>
@@ -1891,10 +1889,6 @@ namespace Amazon.DataZone
         ///  </li> <li> 
         /// <para>
         /// User must have create permissions for data products in the project.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The domain must have Amazon DataZone publishing enabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2696,7 +2690,25 @@ namespace Amazon.DataZone
         /// <para>
         /// The name must be unique within the domain.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For custom form types, to indicate that a field should be searchable, annotate it
+        /// with <c>@amazon.datazone#searchable</c>. By default, searchable fields are indexed
+        /// for semantic search, where related query terms will match the attribute value even
+        /// if they are not stemmed or keyword matches. To indicate that a field should be indexed
+        /// for lexical search (which disables semantic search but supports stemmed and partial
+        /// matches), annotate it with <c>@amazon.datazone#searchable(modes:["LEXICAL"])</c>.
+        /// To indicate that a field should be indexed for technical identifier search (for more
+        /// information on technical identifier search, see: <a href="https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/">https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/</a>),
+        /// annotate it with <c>@amazon.datazone#searchable(modes:["TECHNICAL"])</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To denote that a field will store glossary term ids (which are filterable via the
+        /// Search/SearchListings APIs), annotate it with <c>@amazon.datazone#glossaryterm("${GLOSSARY_ID}")</c>,
+        /// where <c>${GLOSSARY_ID}</c> is the id of the glossary that the glossary terms stored
+        /// in the field belong to. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFormType service method.</param>
         /// 
@@ -2752,7 +2764,25 @@ namespace Amazon.DataZone
         /// <para>
         /// The name must be unique within the domain.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For custom form types, to indicate that a field should be searchable, annotate it
+        /// with <c>@amazon.datazone#searchable</c>. By default, searchable fields are indexed
+        /// for semantic search, where related query terms will match the attribute value even
+        /// if they are not stemmed or keyword matches. To indicate that a field should be indexed
+        /// for lexical search (which disables semantic search but supports stemmed and partial
+        /// matches), annotate it with <c>@amazon.datazone#searchable(modes:["LEXICAL"])</c>.
+        /// To indicate that a field should be indexed for technical identifier search (for more
+        /// information on technical identifier search, see: <a href="https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/">https://aws.amazon.com/blogs/big-data/streamline-data-discovery-with-precise-technical-identifier-search-in-amazon-sagemaker-unified-studio/</a>),
+        /// annotate it with <c>@amazon.datazone#searchable(modes:["TECHNICAL"])</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To denote that a field will store glossary term ids (which are filterable via the
+        /// Search/SearchListings APIs), annotate it with <c>@amazon.datazone#glossaryterm("${GLOSSARY_ID}")</c>,
+        /// where <c>${GLOSSARY_ID}</c> is the id of the glossary that the glossary terms stored
+        /// in the field belong to. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFormType service method.</param>
         /// <param name="cancellationToken">
@@ -2965,7 +2995,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Glossary must exist and be in an ENABLED state.
+        /// Glossary must exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3039,7 +3069,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Glossary must exist and be in an ENABLED state.
+        /// Glossary must exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4496,10 +4526,6 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Ensure there are no active dependencies (e.g., published links, assets using the product).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Domain and project must be active.
         /// </para>
         ///  </li> </ul>
@@ -4553,10 +4579,6 @@ namespace Amazon.DataZone
         ///  </li> <li> 
         /// <para>
         /// The user must have delete permissions for the data product.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Ensure there are no active dependencies (e.g., published links, assets using the product).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5415,7 +5437,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There should be no active assets or metadata linked to the glossary.
+        /// Glossary should not be linked to any active metadata forms.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5480,7 +5502,7 @@ namespace Amazon.DataZone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There should be no active assets or metadata linked to the glossary.
+        /// Glossary should not be linked to any active metadata forms.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -8040,7 +8062,25 @@ namespace Amazon.DataZone
         /// <para>
         /// The form type should not be deleted or in an invalid state.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// One use case for this API is to determine whether a form field is indexed for search.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// A searchable field will be annotated with <c>@amazon.datazone#searchable</c>. By default,
+        /// searchable fields are indexed for semantic search, where related query terms will
+        /// match the attribute value even if they are not stemmed or keyword matches. If a field
+        /// is indexed technical identifier search, it will be annotated with <c>@amazon.datazone#searchable(modes:["TECHNICAL"])</c>.
+        /// If a field is indexed for lexical search (supports stemmed and prefix matches but
+        /// not semantic matches), it will be annotated with <c>@amazon.datazone#searchable(modes:["LEXICAL"])</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A field storing glossary term IDs (which is filterable) will be annotated with <c>@amazon.datazone#glossaryterm("${glossaryId}")</c>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFormType service method.</param>
         /// 
@@ -8102,7 +8142,25 @@ namespace Amazon.DataZone
         /// <para>
         /// The form type should not be deleted or in an invalid state.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// One use case for this API is to determine whether a form field is indexed for search.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// A searchable field will be annotated with <c>@amazon.datazone#searchable</c>. By default,
+        /// searchable fields are indexed for semantic search, where related query terms will
+        /// match the attribute value even if they are not stemmed or keyword matches. If a field
+        /// is indexed technical identifier search, it will be annotated with <c>@amazon.datazone#searchable(modes:["TECHNICAL"])</c>.
+        /// If a field is indexed for lexical search (supports stemmed and prefix matches but
+        /// not semantic matches), it will be annotated with <c>@amazon.datazone#searchable(modes:["LEXICAL"])</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A field storing glossary term IDs (which is filterable) will be annotated with <c>@amazon.datazone#glossaryterm("${glossaryId}")</c>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFormType service method.</param>
         /// <param name="cancellationToken">
@@ -13241,7 +13299,51 @@ namespace Amazon.DataZone
 
 
         /// <summary>
-        /// Searches listings (records of an asset at a given time) in Amazon DataZone.
+        /// Searches listings in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// SearchListings is a powerful capability that enables users to discover and explore
+        /// published assets and data products across their organization. It provides both basic
+        /// and advanced search functionality, allowing users to find resources based on names,
+        /// descriptions, metadata, and other attributes. SearchListings also supports filtering
+        /// using various criteria such as creation date, owner, or status. This API is essential
+        /// for making the wealth of data resources in an organization discoverable and usable,
+        /// helping users find the right data for their needs quickly and efficiently.
+        /// </para>
+        ///  
+        /// <para>
+        /// SearchListings returns results in a paginated format. When the result set is large,
+        /// the response will include a nextToken, which can be used to retrieve the next page
+        /// of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SearchListings API gives users flexibility in specifying what kind of search is
+        /// run.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a free-text search, the <c>searchText</c> parameter must be supplied. By default,
+        /// all searchable fields are indexed for semantic search and will return semantic matches
+        /// for SearchListings queries. To prevent semantic search indexing for a custom form
+        /// attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// API documentation</a>. To run a lexical search query, enclose the query with double
+        /// quotes (""). This will disable semantic search even for fields that have semantic
+        /// search enabled and will only return results that contain the keywords wrapped by double
+        /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+        /// for all attributes annotated with @amazon.datazone#searchable.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a filtered search, provide filter clause using the filters parameter. To filter
+        /// on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  To find out whether an attribute has been annotated and indexed for a given search
+        /// type, use the GetFormType API to retrieve the form containing the attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchListings service method.</param>
         /// 
@@ -13273,7 +13375,51 @@ namespace Amazon.DataZone
 
 
         /// <summary>
-        /// Searches listings (records of an asset at a given time) in Amazon DataZone.
+        /// Searches listings in Amazon DataZone.
+        /// 
+        ///  
+        /// <para>
+        /// SearchListings is a powerful capability that enables users to discover and explore
+        /// published assets and data products across their organization. It provides both basic
+        /// and advanced search functionality, allowing users to find resources based on names,
+        /// descriptions, metadata, and other attributes. SearchListings also supports filtering
+        /// using various criteria such as creation date, owner, or status. This API is essential
+        /// for making the wealth of data resources in an organization discoverable and usable,
+        /// helping users find the right data for their needs quickly and efficiently.
+        /// </para>
+        ///  
+        /// <para>
+        /// SearchListings returns results in a paginated format. When the result set is large,
+        /// the response will include a nextToken, which can be used to retrieve the next page
+        /// of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SearchListings API gives users flexibility in specifying what kind of search is
+        /// run.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a free-text search, the <c>searchText</c> parameter must be supplied. By default,
+        /// all searchable fields are indexed for semantic search and will return semantic matches
+        /// for SearchListings queries. To prevent semantic search indexing for a custom form
+        /// attribute, see the <a href="https://docs.aws.amazon.com/datazone/latest/APIReference/API_CreateFormType.html">CreateFormType
+        /// API documentation</a>. To run a lexical search query, enclose the query with double
+        /// quotes (""). This will disable semantic search even for fields that have semantic
+        /// search enabled and will only return results that contain the keywords wrapped by double
+        /// quotes (order of tokens in the query is not enforced). Free-text search is supported
+        /// for all attributes annotated with @amazon.datazone#searchable.
+        /// </para>
+        ///  
+        /// <para>
+        /// To run a filtered search, provide filter clause using the filters parameter. To filter
+        /// on glossary terms, use the special attribute <c>__DataZoneGlossaryTerms</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  To find out whether an attribute has been annotated and indexed for a given search
+        /// type, use the GetFormType API to retrieve the form containing the attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchListings service method.</param>
         /// <param name="cancellationToken">

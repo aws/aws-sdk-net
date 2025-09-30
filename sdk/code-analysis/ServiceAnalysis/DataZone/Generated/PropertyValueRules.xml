@@ -5774,6 +5774,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ManagedEndpointCredentials.Id</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.MetadataFormReference.TypeIdentifier</property>
     <min>1</min>
     <max>385</max>
@@ -6125,7 +6130,8 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.ComputeArn</property>
     <min>0</min>
-    <max>256</max>
+    <max>2048</max>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:(elasticmapreduce|emr-serverless|emr-containers):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.InstanceProfileArn</property>
@@ -6143,6 +6149,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.ManagedEndpointArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesInput.PythonVirtualEnv</property>
     <min>0</min>
     <max>256</max>
@@ -6157,9 +6168,15 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.SparkEmrPropertiesOutput.ManagedEndpointArn</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesPatch.ComputeArn</property>
     <min>0</min>
-    <max>256</max>
+    <max>2048</max>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:(elasticmapreduce|emr-serverless|emr-containers):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesPatch.InstanceProfileArn</property>
@@ -6175,6 +6192,11 @@
     <property>Amazon.DataZone.Model.SparkEmrPropertiesPatch.LogUri</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SparkEmrPropertiesPatch.ManagedEndpointArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SparkEmrPropertiesPatch.PythonVirtualEnv</property>
