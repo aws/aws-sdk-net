@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Moving copying UserAgentDetails from the OriginalRequest to HttpHandler"
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

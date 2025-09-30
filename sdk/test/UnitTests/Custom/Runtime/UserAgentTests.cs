@@ -101,6 +101,30 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void TestUserAgentRequestAddition()
+        {
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = "test"
+            };
+
+            var uaComponent = "testing-component";
+
+            ((IAmazonWebServiceRequest)listObjectsV2Request).UserAgentDetails.AddUserAgentComponent(uaComponent);
+            ((IAmazonWebServiceRequest)listObjectsV2Request).UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_DISABLED);
+            var request = RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            Assert.IsTrue(userAgentHeader.Contains(uaComponent));
+
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+            Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.ACCOUNT_ID_MODE_DISABLED));
+
+        }
+
+        [TestMethod]
         public void TestUserAgentAdditionForPaginators()
         {
             var listObjectsV2Request = new ListObjectsV2Request
