@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB proxy to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }

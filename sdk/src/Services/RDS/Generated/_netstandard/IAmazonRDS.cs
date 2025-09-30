@@ -239,6 +239,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -246,6 +249,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -255,6 +261,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -725,6 +741,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SourceDatabaseNotSupportedException">
         /// The source DB instance isn't supported for a blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// The request would result in the user exceeding the allowed amount of storage available
+        /// across all DB instances.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
         Task<CreateBlueGreenDeploymentResponse> CreateBlueGreenDeploymentAsync(CreateBlueGreenDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -749,11 +769,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
         /// A CEV with the specified name already exists.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
         /// You have exceeded your CEV quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.Ec2ImagePropertiesNotSupportedException">
         /// The AMI configuration prerequisite has not been met.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
@@ -863,12 +889,19 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1654,6 +1687,12 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
         Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1898,6 +1937,12 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
         /// </exception>
@@ -2116,6 +2161,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -2489,6 +2537,9 @@ namespace Amazon.RDS
         /// <returns>The response from the DeleteTenantDatabase service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
+        /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -4329,6 +4380,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -4336,6 +4390,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -4588,6 +4645,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <c>DBParameterGroupName</c> doesn't refer to an existing DB parameter group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -4606,6 +4666,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -4613,6 +4676,13 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -4624,6 +4694,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotAvailableException">
         /// The <c>aurora-iopt1</c> storage type isn't available, because you modified the DB
         /// cluster to use this storage type less than one month ago.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -5081,6 +5154,12 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot doesn't allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         Task<ModifyDBSnapshotResponse> ModifyDBSnapshotAsync(ModifyDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -5165,6 +5244,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of subnets in a
         /// DB subnet groups.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -5532,6 +5614,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -5643,6 +5728,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -5774,6 +5862,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -5781,6 +5872,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -5790,6 +5884,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -5961,6 +6065,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
@@ -6072,12 +6180,19 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -6184,12 +6299,19 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -6681,6 +6803,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
         /// The DB shard group must be in the available state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -6791,6 +6916,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.

@@ -319,6 +319,7 @@ namespace Amazon.RDS.Model
         /// The master credentials for the DB instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

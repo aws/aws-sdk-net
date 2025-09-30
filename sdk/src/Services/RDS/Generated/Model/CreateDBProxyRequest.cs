@@ -82,7 +82,7 @@ namespace Amazon.RDS.Model
         /// it can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -262,7 +262,7 @@ namespace Amazon.RDS.Model
         /// in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

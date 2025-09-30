@@ -75,7 +75,7 @@ namespace Amazon.RDS.Model
         /// The identifier for the <c>DBProxy</c> to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -159,6 +159,7 @@ namespace Amazon.RDS.Model
         /// or contain two consecutive hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NewDBProxyName
         {
             get { return this._newDBProxyName; }
@@ -198,6 +199,7 @@ namespace Amazon.RDS.Model
         /// in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }
