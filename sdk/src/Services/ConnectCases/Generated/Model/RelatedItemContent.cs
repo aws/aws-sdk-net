@@ -35,7 +35,9 @@ namespace Amazon.ConnectCases.Model
     public partial class RelatedItemContent
     {
         private CommentContent _comment;
+        private ConnectCaseContent _connectCase;
         private ContactContent _contact;
+        private CustomContent _custom;
         private FileContent _file;
         private SlaContent _sla;
 
@@ -58,6 +60,24 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectCase. 
+        /// <para>
+        /// Content for a related Connect case
+        /// </para>
+        /// </summary>
+        public ConnectCaseContent ConnectCase
+        {
+            get { return this._connectCase; }
+            set { this._connectCase = value; }
+        }
+
+        // Check to see if ConnectCase property is set
+        internal bool IsSetConnectCase()
+        {
+            return this._connectCase != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Contact. 
         /// <para>
         /// Represents the content of a contact to be returned to agents.
@@ -73,6 +93,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContact()
         {
             return this._contact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom. 
+        /// <para>
+        /// Content for a custom related item
+        /// </para>
+        /// </summary>
+        public CustomContent Custom
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if Custom property is set
+        internal bool IsSetCustom()
+        {
+            return this._custom != null;
         }
 
         /// <summary>

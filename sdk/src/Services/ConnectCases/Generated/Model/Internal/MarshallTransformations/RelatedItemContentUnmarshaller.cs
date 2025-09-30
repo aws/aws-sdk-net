@@ -72,10 +72,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectCase", targetDepth))
+                {
+                    var unmarshaller = ConnectCaseContentUnmarshaller.Instance;
+                    unmarshalledObject.ConnectCase = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contact", targetDepth))
                 {
                     var unmarshaller = ContactContentUnmarshaller.Instance;
                     unmarshalledObject.Contact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("custom", targetDepth))
+                {
+                    var unmarshaller = CustomContentUnmarshaller.Instance;
+                    unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("file", targetDepth))

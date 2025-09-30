@@ -59,6 +59,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetConnectCase())
+            {
+                context.Writer.WritePropertyName("connectCase");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectCaseInputContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectCase, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContact())
             {
                 context.Writer.WritePropertyName("contact");
@@ -66,6 +77,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
                 var marshaller = ContactMarshaller.Instance;
                 marshaller.Marshall(requestObject.Contact, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCustom())
+            {
+                context.Writer.WritePropertyName("custom");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomInputContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Custom, context);
 
                 context.Writer.WriteObjectEnd();
             }

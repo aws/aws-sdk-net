@@ -35,7 +35,9 @@ namespace Amazon.ConnectCases.Model
     public partial class RelatedItemInputContent
     {
         private CommentContent _comment;
+        private ConnectCaseInputContent _connectCase;
         private Contact _contact;
+        private CustomInputContent _custom;
         private FileContent _file;
         private SlaInputContent _sla;
 
@@ -58,6 +60,24 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectCase. 
+        /// <para>
+        /// Input content for a related Connect case
+        /// </para>
+        /// </summary>
+        public ConnectCaseInputContent ConnectCase
+        {
+            get { return this._connectCase; }
+            set { this._connectCase = value; }
+        }
+
+        // Check to see if ConnectCase property is set
+        internal bool IsSetConnectCase()
+        {
+            return this._connectCase != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Contact. 
         /// <para>
         /// Object representing a contact in Amazon Connect as an API request field.
@@ -73,6 +93,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContact()
         {
             return this._contact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom. 
+        /// <para>
+        /// Input content for a custom related item
+        /// </para>
+        /// </summary>
+        public CustomInputContent Custom
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if Custom property is set
+        internal bool IsSetCustom()
+        {
+            return this._custom != null;
         }
 
         /// <summary>
